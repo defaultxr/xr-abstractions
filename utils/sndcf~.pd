@@ -1,0 +1,13 @@
+#N canvas 0 0 1600 852 10;
+#X obj 280 69 inlet;
+#X obj 280 127 *;
+#X obj 280 103 route float freq;
+#X obj 280 153 phasor~;
+#X obj 280 175 outlet~;
+#X obj 385 102 inlet;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 1 1 1;
+#X connect 3 0 4 0;
+#X connect 5 0 3 1;

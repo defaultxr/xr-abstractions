@@ -1,0 +1,7 @@
+#N canvas 0 0 1600 870 10;
+#X obj 164 62 inlet~;
+#X floatatom 164 100 5 0 0 0 - - -;
+#X obj 164 81 unsig~ \$1;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X coords 0 -1 1 1 75 15 1 121 100;

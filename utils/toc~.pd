@@ -1,0 +1,17 @@
+#N canvas 0 0 1598 868 10;
+#X obj 40 40 inlet~;
+#X obj 40 78 +~ 1;
+#X obj 43 143 outlet~;
+#X obj 119 39 lb \$1;
+#X obj 118 59 sel 0;
+#X obj 39 99 *~ 0.5;
+#X obj 136 104 / 2;
+#X msg 117 78 1;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 7 0;
+#X connect 4 1 6 0;
+#X connect 5 0 2 0;
+#X connect 6 0 5 1;
+#X connect 7 0 6 0;
