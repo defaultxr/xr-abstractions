@@ -1,6 +1,6 @@
 #N canvas 0 0 1600 870 10;
 #X obj 329 148 *~ 0;
-#X obj 374 132 / 100;
+#X obj 374 122 / 100;
 #X obj 297 195 *~ 1;
 #X obj 121 184 route 0 1;
 #X msg 65 20 0;
@@ -20,7 +20,7 @@
 -1 0 1;
 #X obj -50 240 line 1 5;
 #X obj 3 14 hsl 55 13 0 100 0 0 \$0-v empty volume -1 8 0 10 -24198
--1 -1 4651 1;
+-1 -1 5400 1;
 #X obj 288 -67 inlet;
 #X obj 288 396 outlet~;
 #X obj 338 396 outlet~;

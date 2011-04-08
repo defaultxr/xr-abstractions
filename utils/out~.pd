@@ -20,7 +20,7 @@
 #X obj 3 40 hsl 55 13 0 1 0 0 empty empty switch -1 8 0 10 -4032 -1
 -1 0 1;
 #X obj 3 14 hsl 55 13 0 100 0 0 \$0-v empty volume -1 8 0 10 -24198
--1 -1 1192 1;
+-1 -1 0 1;
 #X obj 252 -149 inlet;
 #X obj 288 396 outlet~;
 #X obj 338 396 outlet~;
@@ -106,6 +106,6 @@
 #X connect 42 0 43 0;
 #X connect 43 0 34 0;
 #X connect 44 0 16 0;
-#X connect 45 0 16 0;
+#X connect 45 0 34 0;
 #X connect 45 1 28 0;
 #X coords 0 -1 1 1 60 63 1 0 0;
