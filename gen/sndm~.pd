@@ -1,0 +1,17 @@
+#N canvas 0 0 1600 849 10;
+#X obj 322 304 inlet;
+#X obj 322 432 snd~ \$1;
+#X obj 322 413 sndcm~ \$2;
+#X obj 322 451 outlet~;
+#X text 505 369 sndm~ - just a shortcut for sndcm~ and snd~;
+#X obj 322 323 route open;
+#X obj 387 370 list prepend open;
+#X obj 387 389 list trim;
+#X connect 0 0 5 0;
+#X connect 1 0 3 0;
+#X connect 1 1 2 0;
+#X connect 2 0 1 0;
+#X connect 5 0 6 0;
+#X connect 5 1 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 1 1;

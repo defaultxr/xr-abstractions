@@ -1,0 +1,16 @@
+#N canvas 0 0 1600 871 10;
+#X obj 119 199 cos~;
+#X obj 119 167 +~;
+#X obj 119 233 outlet~;
+#X obj 119 115 phasor~;
+#X obj 119 86 inlet~;
+#X obj 135 146 inlet~;
+#X text 38 21 phase-modulation oscillator;
+#X text 41 256 originally from Frank Barknecht's PDX7 V2 \; modified
+slightly by defaultxr;
+#X text 38 57 signal inlets: 1: freq \, 2: phase;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 1 1;

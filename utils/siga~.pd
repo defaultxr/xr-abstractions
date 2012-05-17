@@ -1,0 +1,31 @@
+#N canvas 0 0 1600 871 10;
+#X obj 34 9 inlet~;
+#X floatatom 138 100 7 0 0 0 - - -;
+#X floatatom 138 148 7 0 0 0 min - -;
+#X floatatom 138 132 7 0 0 0 max - -;
+#X obj 100 149 bng 15 250 50 0 empty empty r 4 7 0 10 -262144 -1 -1
+;
+#X obj 34 36 unsig~ 31;
+#X floatatom 138 116 7 0 0 0 avg - -;
+#X obj 182 102 vsl 8 59 -1 1 0 0 \$0-dead \$0-deadr empty 0 -9 0 10
+-262144 -1 -1 4277 1;
+#X obj 13 124 steady 10000;
+#X obj 275 71 lop~ 0.5;
+#X obj 275 128 int;
+#X obj 275 109 * 10000;
+#X obj 275 147 / 10000;
+#X obj 275 90 unsig~ 120;
+#X connect 0 0 5 0;
+#X connect 0 0 9 0;
+#X connect 4 0 8 0;
+#X connect 5 0 1 0;
+#X connect 5 0 7 0;
+#X connect 5 0 8 0;
+#X connect 8 0 3 0;
+#X connect 8 1 2 0;
+#X connect 9 0 13 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 6 0;
+#X connect 13 0 11 0;
+#X coords 0 -1 1 1 90 64 1 100 100;

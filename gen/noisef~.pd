@@ -1,0 +1,10 @@
+#N canvas 551 317 308 131 10;
+#X obj 10 12 noise~;
+#X obj 9 66 samphold~;
+#X obj 9 89 outlet~;
+#X obj 60 42 phasor~ \$1;
+#X obj 84 12 inlet~;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 1 1;
+#X connect 4 0 3 0;

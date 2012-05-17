@@ -1,0 +1,17 @@
+#N canvas 388 175 800 848 10;
+#X obj 112 117 outlet~;
+#X obj 112 41 inlet~;
+#X text 44 -25 after an idea from Roman Haefeli and Martin Peach -
+modified by kvn dyn;
+#X obj 112 60 phasor~ \$1;
+#X obj 199 41 inlet~;
+#X text 240 41 takes input from -1 to 1;
+#X obj 112 79 expr~ $v1 < $v2;
+#X obj 199 60 atc~;
+#X obj 112 98 cta~;
+#X connect 1 0 3 0;
+#X connect 3 0 6 0;
+#X connect 4 0 7 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 1;
+#X connect 8 0 0 0;

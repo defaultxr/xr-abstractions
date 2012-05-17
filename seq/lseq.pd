@@ -1,0 +1,62 @@
+#N canvas 0 0 800 849 10;
+#X msg 209 409 \; vol \$1;
+#X msg 143 326 set \, addsemi \, add2 \$1 \, adddollar 1;
+#X obj 40 157 count;
+#X obj 67 138 list length;
+#X obj 157 90 inlet;
+#X msg 40 119 bang;
+#X obj 97 177 outlet;
+#X obj 289 82 inlet;
+#X obj 213 20 lb \$1;
+#X obj 213 39 sel 0 m 1;
+#X obj 40 176 spigot;
+#X msg 209 67 1;
+#X msg 238 62 0;
+#X obj 184 186 s2l /;
+#X obj 184 167 symbol;
+#X obj 184 224 symbol;
+#X obj 184 243 s2l ';
+#X text 277 36 m or 1 for manual \, i.e. if you want to specify which
+index of the list to parse;
+#X text 250 179 simple sequencer: format of list should be something
+like: target'value/target'value target'value. each step is separated
+by a space or a newline. multiple messages can be sent on the same
+step by separating them with a slash. target is where the value is
+sent to. if a step is just a 0 \, no messages are sent on that step.
+;
+#X floatatom 128 58 2 0 0 0 - - -;
+#X floatatom 114 58 2 0 0 0 - - -;
+#X obj 157 143 sel -;
+#X obj 184 205 list-drip;
+#X obj 209 275 list-idx 1;
+#X obj 143 275 list-idx 0;
+#X obj 157 113 list-idx;
+#X connect 1 0 0 0;
+#X connect 2 0 10 0;
+#X connect 3 0 2 1;
+#X connect 3 0 19 0;
+#X connect 4 0 3 0;
+#X connect 4 0 5 0;
+#X connect 4 0 25 0;
+#X connect 5 0 2 0;
+#X connect 7 0 20 0;
+#X connect 8 0 9 0;
+#X connect 9 0 11 0;
+#X connect 9 1 12 0;
+#X connect 9 2 12 0;
+#X connect 10 0 20 0;
+#X connect 11 0 10 1;
+#X connect 12 0 10 1;
+#X connect 13 0 22 0;
+#X connect 14 0 13 0;
+#X connect 15 0 16 0;
+#X connect 16 0 23 0;
+#X connect 16 0 24 0;
+#X connect 20 0 25 1;
+#X connect 21 1 6 0;
+#X connect 21 1 14 0;
+#X connect 22 0 15 0;
+#X connect 23 0 0 0;
+#X connect 24 0 1 0;
+#X connect 25 0 21 0;
+#X coords 0 -1 1 1 52 15 1 90 58;

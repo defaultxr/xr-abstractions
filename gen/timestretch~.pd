@@ -1,0 +1,30 @@
+#N canvas 0 0 1600 849 10;
+#X obj 182 70 inlet~;
+#X text 460 68 timestretch~ is supposed to generate a triangle sort
+of wave that \, when connected to a snd~ \, will time-stretch the sound
+smoothly.;
+#X obj 238 254 outlet~;
+#X obj 238 197 pulse~;
+#X obj 238 235 sndcf~;
+#X obj 419 70 inlet;
+#X obj 280 200 max~ 1;
+#X obj 238 216 *~;
+#X obj 348 70 inlet~;
+#X obj 182 139 clip~ -1 1;
+#X text 461 112 this is for playing a sound SLOWER \; if you provide
+a number larger than 1 or smaller than -1 to the first inlet~ \, then
+you will still get a "chipmunk effect". i may fix this eventually.
+;
+#X text 460 167 the left inlet~ is the speed to play the sound at (i.e.
+0.5 for half speed). the right inlet~ is for how much "folding" to
+do. judge for yourself... the control inlet should be connected to
+the control outlet of the snd~.;
+#X connect 0 0 6 0;
+#X connect 0 0 9 0;
+#X connect 3 0 7 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 1;
+#X connect 6 0 7 1;
+#X connect 7 0 4 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 1;

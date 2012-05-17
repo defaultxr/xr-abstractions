@@ -1,0 +1,298 @@
+#N canvas 0 0 1600 849 10;
+#X obj 53 427 kbdm;
+#X obj 55 239 map 5 4 3 2 1 0;
+#X floatatom 63 215 5 0 0 0 - - -;
+#X obj 46 215 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 55 258 5 0 0 0 - - -;
+#X text 104 -11 defaultxr's abstractions;
+#X text 73 10 thanks for checking out my abstractions! most of these
+are more about data processing/structuring than about generating sound
+but i've also included a few simple sound generators which you may
+find useful.;
+#X text 66 59 this "patch" is basically a very quick overview of (hopefully)
+all the things i've included in my abstractions package.;
+#X text 68 101 most of this isn't very impressive but i've tried to
+abstract away as much as i could so that building complex things can
+be done much more quickly and efficiently \, without having to duplicate
+functionality (which \, of course \, leads to bugs and unexpected behavior)...
+;
+#X text 64 185 ...so \, without further ado \, i present them to you:
+;
+#X text 149 231 [map] remaps floats or bangs on the left inlet to the
+list specified by the arguments or the right inlet. the list can be
+anything \, not just floats.;
+#X obj 55 285 c 1;
+#X text 112 282 [c] abstracts away MIDI CC messages. the first argument
+is the controller number to receive from \; the second argument is
+either a message to prefix to the output or "b" (without quotes) to
+only output a bang when the cc reaches 127;
+#X floatatom 55 304 5 0 0 0 - - -;
+#X obj 53 390 key;
+#X floatatom 53 409 5 0 0 0 - - -;
+#X floatatom 53 446 5 0 0 0 - - -;
+#X obj 54 496 lb 3 1;
+#X floatatom 54 515 5 0 0 0 - - -;
+#X floatatom 55 587 5 0 0 0 - - -;
+#X obj 55 549 key;
+#X floatatom 100 587 5 0 0 0 - - -;
+#X obj 55 568 keyrow 3;
+#X obj 43 636 unmap foo bar baz qux diggity;
+#X symbolatom 43 618 10 0 0 0 - - -;
+#X floatatom 43 655 5 0 0 0 - - -;
+#X text 262 618 [unmap] does the opposite of [map] - accepts symbols
+and will output the position of the first match in the list. if no
+match is found \, it will not output. (try typing any of the arguments
+into the symbol atom to see). as with [map] \, the list can be reset
+with the right inlet.;
+#X obj 214 617 r unmap;
+#X floatatom 100 550 5 0 0 0 - - -;
+#X text 138 548 [keyrow] translates ASCII codes of a specific keyboard
+row (in this case the first argument is 3 \, so zxcvbnm \, ./). the
+outlets output from 0-9. the left outlet is for lower-case/un-shifted
+characters \; the right is for upper-case/shifted characters. the right
+outlet changes the keyrow to react to.;
+#X floatatom 54 476 5 0 0 0 - - -;
+#X obj 37 476 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 99 472 [lb] is a simple loadbang abstraction. the first argument
+is the value to output. the second argument is the value to output
+if the first argument is 0 (useful \, for example \, if you provide
+a dollar argument for the first argument and it is not provided in
+the parent abstraction.). the inlet will pass floats and other values
+through \, but a bang will always output the initial value.;
+#X msg 7 409 oct \$1;
+#X floatatom 7 391 5 0 0 0 - - -;
+#X text 92 408 [kbdm] translates ASCII codes (like those sent by [key])
+to midi note numbers. send "oct [num]" messages to switch octaves (accepted
+range is -5 to 3... sorry if this is weird or wrong). open [kbdm] to
+read about the arguments.;
+#X obj 113 694 keyonchg b;
+#X obj 113 713 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 43 694 keyonoff g;
+#X floatatom 49 717 5 0 0 0 - - -;
+#X obj 43 735 print keyonoff;
+#X text 182 692 [keyonoff] was stolen from noisybox.net. i didn't make
+it!!! keyonchg outputs a bang whenever the \$1 key is pressed \; keyonoff
+will output 1 when the \$1 key is pressed and 0 when it's released.
+no duplicates are sent! :D included because i find them useful sometimes.
+;
+#X obj 53 774 keynum;
+#X floatatom 53 793 5 0 0 0 - - -;
+#X text 110 777 [keynum] only outputs number keys. if the first argument
+is "h" sans quotes \, it will also outputs a-f in case you want hexidecimal
+notation to be possible as well.;
+#X obj 1002 39 mono;
+#X obj 1004 17 notein;
+#X text 1062 19 [mono] is good for monosynths. open it for more information.
+it's pretty messy \; sorry about that. i need to redo it soon. it should
+be bug-free \, however (i posted an earlier version of it in reply
+to a thread and that version had a bug! how embarassing!);
+#X obj 1035 65 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 1035 83 5 0 0 0 - - -;
+#X floatatom 967 83 5 0 0 0 - - -;
+#X floatatom 1001 83 5 0 0 0 - - -;
+#X obj 576 39 kinv;
+#X obj 576 22 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 576 58 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 563 108 switcher;
+#X floatatom 560 128 5 0 0 0 - - -;
+#X floatatom 586 90 5 0 0 0 - - -;
+#X floatatom 547 86 5 0 0 0 - - -;
+#X msg 483 95 switch \$1;
+#X obj 483 78 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 623 95 [switcher] is a simple gui abstraction to switch between
+two inlets.;
+#X obj 564 178 router;
+#X floatatom 553 204 5 0 0 0 - - -;
+#X floatatom 587 204 5 0 0 0 - - -;
+#X floatatom 564 158 5 0 0 0 - - -;
+#X msg 493 165 switch \$1;
+#X obj 493 148 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 614 168 [router] is a simple gui abstraction to switch between
+two outlets.;
+#X text 605 32 [kinv] is a simple inverter (0 becomes 1 \, 1 becomes
+0). not terribly useful but i've used it in a few abstractions so it's
+included.;
+#X obj 56 339 cb;
+#X text 105 332 [cb] is similar to [c] but primarily for midi CC bend
+messages. it re-ranges the CC values to be between 0-127 instead of
+whatever they are originally. might not be terribly useful.;
+#X obj 558 273 emptysymbol;
+#X obj 558 292 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 583 245 symbol;
+#X msg 513 245 symbol foo;
+#X symbolatom 621 292 10 0 0 0 - - -;
+#X msg 482 273 symbol bar;
+#X text 635 265 [emptysymbol] - simple empty symbol selector.;
+#X obj 485 410 input;
+#X obj 521 410 inputn;
+#X obj 563 410 inputd;
+#X obj 487 315 keyname;
+#X obj 485 338 pack f s;
+#X obj 485 357 route 1;
+#X obj 485 376 spigot 0;
+#X obj 539 376 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X symbolatom 441 439 10 0 0 0 - - -;
+#X symbolatom 521 454 10 0 0 0 - - -;
+#X floatatom 545 436 5 0 0 0 - - -;
+#X symbolatom 495 477 10 0 0 0 - - -;
+#X symbolatom 563 490 10 0 0 0 - - -;
+#X floatatom 596 454 5 0 0 0 - - -;
+#X symbolatom 579 472 10 0 0 0 - - -;
+#X text 607 338 [input] \, [inputn] and [inputd] - simple input accumulator
+\, simple number accumulator \, and deluxe input accumulator. send
+keynames to their inlets \, and they accumulate the characters to build
+a symbol. these are kind of complicated but if you want more control
+over the keyboard as an input device \, you should look into them.
+the first outlet is the "preview outlet". the second outlet is the
+"output outlet" (press return to send the current preview to the output
+and reset the preview to blank). inputd's third outlet is the current
+position of the cursor within the preview.;
+#X obj 564 541 chars;
+#X symbolatom 564 523 10 0 0 0 - - -;
+#X obj 564 560 prepent set;
+#X msg 564 579 f o o b a r;
+#X text 659 534 [chars] is a simple abstraction to turn a symbol into
+a list of symbols.;
+#X obj 614 639 kspigot;
+#X text 651 619 [kspigot] - simple gui for a spigot. note that there
+are two inlets! they of course translate to the same inlets as a normal
+[spigot].;
+#X floatatom 614 656 5 0 0 0 - - -;
+#X floatatom 583 617 5 0 0 0 - - -;
+#X obj 622 619 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 614 749 kount;
+#X floatatom 579 707 5 0 0 0 - - -;
+#X floatatom 614 768 5 0 0 0 - - -;
+#X msg 523 705 reset;
+#X obj 562 707 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 614 694 5 0 0 0 - - -;
+#X msg 614 712 set \$1;
+#X floatatom 641 731 5 0 0 0 - - -;
+#X text 675 705 [kount] - my own counter. more advanced than [count].
+accepts bangs to output and increase the counter \, floats to reset
+and output the counter \, "set" to reset the counter without outputting
+\, and "reset" to set the counter to 0 without outputting. if an argument
+is given \, it counts up to that number just like [count]. if an argument
+is not given or is 0 \, [kount] will count up indefinitely. the right
+inlet changes the value of the argument.;
+#X obj 988 136 spacesym;
+#X text 1042 125 [spacesym] - simple abstraction to output a pseudo-space
+symbol. bang to get the symbol. if you use this symbol in a label \,
+for instance \, you can have spaces in a label. you might want to use
+this in combination with [l2s].;
+#X obj 980 186 taptempo;
+#X floatatom 980 205 5 0 0 0 - - -;
+#X text 1046 185 [taptempo] - self-explanatory;
+#X obj 972 339 list-without;
+#X obj 913 233 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 910 250 5 0 0 0 - - -;
+#X floatatom 910 287 5 0 0 0 - - -;
+#X obj 910 268 mrange 3;
+#X text 1046 238 [mrange] - scale 0-127 to arbitrary range. also works
+with two arguments.;
+#X text 1073 316 [list-without] - remove all instances of something
+from a list.;
+#X floatatom 1041 321 5 0 0 0 - - -;
+#X msg 948 314 3 2 1 2 3;
+#X msg 972 295 1 1 1;
+#X obj 1041 358 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 972 375 prepent set;
+#X msg 972 394 2 1 2;
+#X connect 0 0 16 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 11 0 13 0;
+#X connect 14 0 15 0;
+#X connect 15 0 0 0;
+#X connect 17 0 18 0;
+#X connect 20 0 22 0;
+#X connect 22 0 19 0;
+#X connect 22 1 21 0;
+#X connect 23 0 25 0;
+#X connect 24 0 23 0;
+#X connect 27 0 23 1;
+#X connect 28 0 22 1;
+#X connect 30 0 17 0;
+#X connect 31 0 17 0;
+#X connect 33 0 0 0;
+#X connect 34 0 33 0;
+#X connect 36 0 37 0;
+#X connect 38 0 39 0;
+#X connect 38 0 40 0;
+#X connect 42 0 43 0;
+#X connect 45 0 50 0;
+#X connect 45 1 51 0;
+#X connect 45 2 48 0;
+#X connect 45 2 49 0;
+#X connect 46 0 45 0;
+#X connect 46 1 45 1;
+#X connect 52 0 54 0;
+#X connect 53 0 52 0;
+#X connect 55 0 56 0;
+#X connect 57 0 55 1;
+#X connect 58 0 55 0;
+#X connect 59 0 55 0;
+#X connect 60 0 59 0;
+#X connect 62 0 63 0;
+#X connect 62 1 64 0;
+#X connect 65 0 62 0;
+#X connect 66 0 62 0;
+#X connect 67 0 66 0;
+#X connect 72 0 73 0;
+#X connect 72 1 76 0;
+#X connect 74 0 72 0;
+#X connect 75 0 72 0;
+#X connect 77 0 72 0;
+#X connect 79 0 87 0;
+#X connect 79 1 90 0;
+#X connect 80 0 88 0;
+#X connect 80 1 89 0;
+#X connect 81 0 91 0;
+#X connect 81 1 93 0;
+#X connect 81 2 92 0;
+#X connect 82 0 83 0;
+#X connect 82 1 83 1;
+#X connect 83 0 84 0;
+#X connect 84 0 85 0;
+#X connect 85 0 79 0;
+#X connect 85 0 80 0;
+#X connect 85 0 81 0;
+#X connect 86 0 85 1;
+#X connect 95 0 97 0;
+#X connect 96 0 95 0;
+#X connect 97 0 98 0;
+#X connect 100 0 102 0;
+#X connect 103 0 100 0;
+#X connect 104 0 100 1;
+#X connect 105 0 107 0;
+#X connect 106 0 105 0;
+#X connect 108 0 105 0;
+#X connect 109 0 105 0;
+#X connect 110 0 111 0;
+#X connect 111 0 105 0;
+#X connect 112 0 105 1;
+#X connect 116 0 117 0;
+#X connect 119 0 130 0;
+#X connect 119 1 129 0;
+#X connect 120 0 121 0;
+#X connect 121 0 123 0;
+#X connect 123 0 122 0;
+#X connect 126 0 119 1;
+#X connect 127 0 119 0;
+#X connect 128 0 119 0;
+#X connect 130 0 131 0;

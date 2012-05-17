@@ -1,0 +1,53 @@
+#N canvas 0 0 1600 849 10;
+#X obj 58 217 tracker;
+#X obj 383 219 drumseq;
+#X obj 651 220 anaseq;
+#X obj 377 307 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 440 310 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 518 308 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 577 310 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 337 143 bpmm;
+#X floatatom 656 398 5 0 0 0 - - -;
+#X floatatom 711 395 5 0 0 0 - - -;
+#X floatatom 777 397 5 0 0 0 - - -;
+#X floatatom 849 397 5 0 0 0 - - -;
+#X obj 63 409 print tracker;
+#X text 61 8 defaultxr's sequencer abstractions;
+#X text 55 42 these are all slightly more complex sequencers. [tracker]
+is basically a list of messages that can be edited using keyboard shortcuts
+(open it to read more). [drumseq] is a multi-pattern drum sequencer.
+there are 4 rows of 16 toggle boxes \, each box representing a step
+\, and each row representing an outlet. [anaseq] is an "analog sequencer".
+it too has multiple patterns and outlets. each step in the [anaseq]
+can be enabled or disabled as well using the row of toggles at the
+bottom.;
+#X text 428 83 [bpmm] is a beats-per-minute abstraction. the left outlet
+sends bangs on the downbeat \, as well as diagnostic messages (open
+the abstraction for information). the second outlet outputs a bang
+on each 16th note \, and the third outlet outputs floats ranging from
+0 to 15 for each 16th note. you'll probably want to connect the third
+outlet to these sequencers to keep them in sync. the fourth outlet
+is a signal outlet that outputs in the range of 0 to 1 in sync with
+the bpm.;
+#X text 342 481 the best thing you can do is open each sequencer abstraction
+and read the comments inside them! they're all fairly complex but relatively
+simple to use once you understand them.;
+#X obj -152 227 boxseq;
+#X text -146 368 also needed: [sbox];
+#X connect 0 0 12 0;
+#X connect 1 0 3 0;
+#X connect 1 1 4 0;
+#X connect 1 2 5 0;
+#X connect 1 3 6 0;
+#X connect 2 0 8 0;
+#X connect 2 1 9 0;
+#X connect 2 2 10 0;
+#X connect 2 3 11 0;
+#X connect 7 1 17 0;
+#X connect 7 2 0 0;
+#X connect 7 2 1 0;
+#X connect 7 2 2 0;

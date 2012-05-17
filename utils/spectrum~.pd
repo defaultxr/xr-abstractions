@@ -1,14 +1,14 @@
-#N canvas 0 0 509 623 10;
+#N canvas 0 0 1600 849 10;
 #X obj 345 207 rfft~;
 #X obj 270 278 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #N canvas 51 367 1153 478 (subpatch) 0;
-#X array \$0-spectrum 128 float 3;
+#X array \$0-spectrum 128 float 1;
 #A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-#X coords 0 256 128 0 200 150 1;
+#X coords 0 256 127 0 200 150 1;
 #X restore 46 389 graph;
 #X obj 345 234 *~;
 #X obj 372 234 *~;
@@ -20,15 +20,12 @@
 #X msg 56 100 \; pd dsp 1;
 #X obj 337 35 inlet~;
 #X obj 320 338 tabwrite~ \$0-spectrum;
-#X floatatom 220 375 4 0 0 0 - - -;
 #X obj 220 351 f \$0;
 #X obj 261 378 sel \$0;
-#X msg 298 407 bang;
+#X msg 332 369 bang;
 #X obj 220 332 loadbang;
-#X obj 287 472 outlet;
-#X obj 205 375 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X msg 284 446 set \$1-spectrum;
+#X obj 201 375 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
 #X connect 0 0 3 0;
 #X connect 0 0 3 1;
 #X connect 0 1 4 0;
@@ -42,12 +39,9 @@
 #X connect 9 0 1 0;
 #X connect 9 0 10 0;
 #X connect 11 0 0 0;
-#X connect 13 0 15 0;
-#X connect 14 0 13 0;
-#X connect 14 0 20 0;
-#X connect 15 1 16 0;
-#X connect 16 0 14 0;
+#X connect 13 0 17 0;
+#X connect 14 1 15 0;
+#X connect 15 0 13 0;
+#X connect 16 0 13 0;
 #X connect 17 0 14 0;
-#X connect 19 0 14 0;
-#X connect 20 0 18 0;
 #X coords 0 -1 1 1 200 164 2 46 375;

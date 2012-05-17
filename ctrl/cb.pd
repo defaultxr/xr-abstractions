@@ -1,0 +1,13 @@
+#N canvas 0 0 800 849 10;
+#X obj 126 29 bendin \$1;
+#X obj 126 48 / 129;
+#X obj 126 167 outlet;
+#X obj 126 102 vsl 15 20 0 127 0 0 empty empty empty 0 -9 0 10 -159808
+-1 -1 950 1;
+#X floatatom 182 75 5 0 0 0 - - -;
+#X obj 135 137 mrange \$1;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 3 0 2 0;
+#X coords 0 -1 1 1 41 25 1 100 100;

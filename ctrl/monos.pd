@@ -1,0 +1,31 @@
+#N canvas 0 0 800 849 10;
+#X obj 284 129 mono;
+#X text 399 111 monos - a convenient version of mono. this version
+of mono outputs data that resembles [notein]'s output \, but in a format
+that monosynths can understand.;
+#X obj 327 146 > 0;
+#X obj 327 165 change;
+#X obj 254 239 outlet;
+#X obj 327 239 outlet;
+#X obj 285 192 sel 0;
+#X obj 254 220 f;
+#X obj 320 95 t f f;
+#X obj 327 220 *;
+#X obj 407 166 sel 0;
+#X obj 327 184 t f f;
+#X obj 284 55 inlet;
+#X obj 320 55 inlet;
+#X connect 0 0 7 0;
+#X connect 0 1 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 11 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 8 0 0 1;
+#X connect 8 1 10 0;
+#X connect 9 0 5 0;
+#X connect 10 1 9 1;
+#X connect 11 0 6 0;
+#X connect 11 1 9 0;
+#X connect 12 0 0 0;
+#X connect 13 0 8 0;

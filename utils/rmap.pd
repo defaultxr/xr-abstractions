@@ -1,0 +1,44 @@
+#N canvas 0 0 800 849 10;
+#X obj 286 111 dollarg;
+#X obj 286 73 lb 0;
+#X obj 334 111 inlet;
+#X msg 361 245 reset;
+#X obj 301 245 list-drip;
+#X obj 301 284 t a b;
+#X obj 316 399 dyn~ 0 0 0 1;
+#X obj 316 418 outlet;
+#X text 424 175 rmap - receive map;
+#X text 424 224 output: [number] [value];
+#X obj 334 176 list;
+#X obj 316 335 pack s f;
+#X obj 286 92 t f b;
+#X obj 240 64 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 361 284 kount;
+#X msg 276 399 vis 1;
+#X obj 334 195 t a b;
+#X text 424 195 the argument list is a list of receive names. each
+receive name is mapped to a unique number.;
+#X obj 301 303 symbol;
+#X msg 316 354 newobj . r\$2 r \$1 \, newmsg . m\$2 0 \, send m\$2
+set \, send m\$2 add2 \$2 \, send m\$2 adddollar 1 \, conn r\$2 0 m\$2
+0 \, conn m\$2 0 0;
+#X connect 0 0 10 0;
+#X connect 1 0 12 0;
+#X connect 2 0 10 0;
+#X connect 3 0 6 0;
+#X connect 3 0 14 0;
+#X connect 4 0 5 0;
+#X connect 5 0 18 0;
+#X connect 5 1 14 0;
+#X connect 6 0 7 0;
+#X connect 10 0 16 0;
+#X connect 11 0 19 0;
+#X connect 12 0 0 0;
+#X connect 13 0 1 0;
+#X connect 14 0 11 1;
+#X connect 15 0 6 0;
+#X connect 16 0 4 0;
+#X connect 16 1 3 0;
+#X connect 18 0 11 0;
+#X connect 19 0 6 0;

@@ -1,0 +1,9 @@
+#N canvas 782 234 800 849 10;
+#X text 129 77 changes 0 to 1 and 1 to 0;
+#X obj 69 44 inlet~;
+#X obj 69 65 *~ -1;
+#X obj 69 86 +~ 1;
+#X obj 69 107 outlet~;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;

@@ -1,0 +1,171 @@
+#N canvas 0 0 800 836 10;
+#X obj 36 256 aphasor~;
+#X text 93 246 [aphasor~] - super simple abstraction of [phasor~].
+[phasor~]'s output ranges from 0 to 1 \, whereas [aphasor~] ranges
+from -1 to 1 i probably should've called this [saw~] instead. whatever.
+;
+#X obj 38 303 playsf~;
+#X text 84 300 [playsf~] - simple abstraction to [readsf~] - accepts
+an argument for the filename.;
+#X obj 38 340 noisef~;
+#X text 84 336 [noisef~] - super simple abstraction for sample/hold
+noise. nothing special!;
+#X obj 40 385 pmosc~;
+#X text 84 369 [pmosc~] - super simple phase modulation oscillator.
+stolen and edited from Frank Barknecht's PDX7 V2. if you have PDX7
+in your path \, this will conflict with the [pmosc~] from that! they
+have the same name but this one only has 2 inlets instead of 3;
+#X text 76 10 defaultxr's audio abstractions;
+#X text 57 83 i'm actually not very smart when it comes to audio stuff
+\, so most of these are probably extremely elementary. hopefully you'll
+at least find a few things of use.;
+#X text 54 121 also \, check this URL for a cool list of pd-extended
+objects: http://tinyurl.com/88k2qph - i find it VERY useful!;
+#X obj 39 450 snd~;
+#X text 76 431 [snd~] - soundfile abstraction. left inlet accepts audio
+signal from 0 to 1 to play through the file \, while the right inlet
+accepts an "open" message to change the file. the left outlet outputs
+the soundfile audio \, and the right outlet outputs messages that describe
+the soundfile. you should connect the right outlet to [sndcf~] \, [sndcl~]
+\, [sndcm~] \, or others \, or use abstractions like [sndf~] \, [sndm~]
+\, etc. this is probably my most useful abstraction! there is even
+a bit of code inside to transform a tilde into the name of your home
+directory! you'll have to edit it from mine \, of course...;
+#X obj 36 628 sndcf~;
+#X obj 36 647 sndcm~;
+#X obj 36 666 sndcl~;
+#X obj 78 628 sndf~;
+#X obj 78 647 sndm~;
+#X obj 78 666 sndl~;
+#X text 114 619 [sndcf~] \, [sndcl~] \, [sndcm~] - abstractions to
+control [snd~]. connect [snd~]'s right outlet to the right inlet of
+any of these \, and the left outlet of any of these to snd's left inlet.
+the easiest thing to do is just use [sndf~] \, [sndm~] \, or [sndl~].
+they take an argument to specify the soundfile \, and no extra connections
+are needed to play the file according to frequency \, midi number \,
+or line.;
+#X obj 46 172 pulse~;
+#X text 94 166 [pulse~] - pulsewave generator. left inlet is frequency
+\, right inlet accepts -1 to 1 to set pulse width.;
+#X obj 55 209 tri~;
+#X text 92 195 [tri~] - triangle and sawwave generator. left inlet
+is frequency \, middle inlet accepts -1 to 1 to set the shape of the
+wave \, and the right inlet accepts numbers to reset the phase.;
+#X obj 45 574 sndp~;
+#X text 84 566 [sndp~] - abstraction to tabplay~. first argument is
+the name of the soundfile. accepts numbers (0-127) for volume or bangs
+to play at full volume.;
+#X obj 468 113 psndp~;
+#X text 513 101 [psndp~] - polyphonic sound player. similar to [sndp~]
+\, but has 6 instances of tabplay~ \, which hopefully will prevent
+the sound from "cutting" when a new bang or number is received.;
+#X obj 469 155 psndm~;
+#X text 516 148 [psndm~] - polyphonic midi number sound player. similar
+to [sndm~] but with multiple instances \, so multiple notes can be
+played simultaneously.;
+#X obj 466 210 rec~;
+#X obj 427 239 recp~;
+#X obj 463 239 recsnd~;
+#X obj 482 298 sndd~;
+#X text 526 289 [sndd~] - sound duplicate. connect the right outlet
+of a [snd~] to the right inlet of [sndd~] and [sndd~] will act as a
+copy of the original [snd~] without reloading the file.;
+#X obj 482 351 cta~;
+#X obj 512 351 ctr~;
+#X obj 482 370 atc~;
+#X obj 512 370 atr~;
+#X obj 482 389 rtr;
+#X obj 458 351 cta;
+#X obj 448 390 atc;
+#X floatatom 448 372 5 0 0 0 - - -;
+#X floatatom 448 409 5 0 0 0 - - -;
+#X text 553 336 [cta~] \, [ctr~] \, [atc~] \, [atr~] \, [rtr] \, and
+others are abstractions to "re-range" a series of numbers. for example
+\, "cta" means control to audio. control being a range from 0 to 1
+\, audio being a range from -1 to 1 thus \, cta translates 0 to -1
+\, 0.5 to 0 \, and 1 to 1 [rtr] will translate an arbitrary range (\$1
+and \$2) to a different arbitrary range (\$3 to \$4). i haven't finished
+all of these but if you need others it should be easy to make them.
+i made a few of these late at night so they're probably not the greatest/most
+efficient things in the world. sorry!;
+#X obj 419 468 adsr~ 50 100 0.5 1000;
+#X text 552 450 [adsr~] - ADSR envelope. arguments are: attack time
+\, decay time \, sustain level \, release time \, and sustain time
+(all default to 0 if sustain time is -1 \, the envelope sustains until
+a 0 is received on the left inlet. i need to redo this abstraction
+in the future.;
+#X obj 464 538 kline~ 500;
+#X text 538 524 [kline~] - simple abstraction to [line~]. the first
+argument is the default time the line will take. you can change it
+with the right inlet or temporarily override it by sending a message
+with the destination as well as a time.;
+#X obj 458 618 view~;
+#X obj 936 128 kspigot~;
+#X text 955 110 [kspigot~] - simple gui abstraction for [*~]. when
+the toggle box is X'd \, the signal passes through. note that there
+are two inlets!;
+#X obj 944 91 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 902 90 sig~ 3;
+#X obj 936 145 unsig~ 100;
+#X floatatom 936 164 5 0 0 0 - - -;
+#X text 663 619 [view~] is an abstraction to view a signal. it also
+gives some information about the signal \, like the "current value"
+\, a moving average \, as well as an absolute top and bottom detected
+value. the number box is the refresh rate \, and the "r" button resets
+the top and bottom values.;
+#N canvas 0 0 1600 849 timestretching 0;
+#X obj 52 279 sndf~;
+#X obj 52 205 pulse~;
+#X obj 88 188 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 52 187 5 0 0 0 - - -;
+#X floatatom 85 170 5 0 0 0 - - -;
+#X msg 85 151 0;
+#X text 45 30 if you're looking to timestretch (change length without
+affecting pitch) \, an interesting thing to do is to connect a pulse
+to the inlet~ of a sndf~. this will stretch the sound by repeatedly
+playing it back and forth. if the pulse's PWM is set to 0 \, the soundfile
+will stay in one place. if the PWM is set to 0.5 \, the sound will
+play at half speed forward. if the PWM is set to 1 \, the sound will
+play at regular speed forward. to play backwards \, the PWM's value
+should be negative. the frequency of the pulse~ changes the "grain
+size". higher frequency means smaller "grains".;
+#X obj 79 241 openpanel;
+#X obj 79 224 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 79 260 open \$1;
+#X obj 52 329 output~;
+#X text 156 226 this only works for slowing things down. to play faster
+without altering pitch you'll have to find another method or alter
+this one to work.;
+#X connect 0 0 10 0;
+#X connect 0 0 10 1;
+#X connect 1 0 0 0;
+#X connect 2 0 1 1;
+#X connect 3 0 1 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 9 0 0 1;
+#X restore 101 705 pd timestretching;
+#X text 534 204 [rec~] - record a snippet of sound. the right inlet
+accepts 1 to start recording and 0 to stop \, or you can use the gui
+toggle to do the same thing. the bang is for re-sending the information
+to the outlet (press after you connect [rec~] to [recp~] or [recsnd~]).
+connect the outlet of [rec~] to an inlet of [recp~] or [recsnd~] to
+play the recorded snippet.;
+#X obj 458 599 osc~ 438;
+#X text 57 39 these are my fairly unimpressive audio abstractions for
+pure data. some of them have been stolen/ripped from other people's
+works. sorry if i did that and didn't credit you!;
+#X connect 30 0 31 0;
+#X connect 30 0 32 1;
+#X connect 41 0 43 0;
+#X connect 42 0 41 0;
+#X connect 50 0 54 0;
+#X connect 52 0 50 1;
+#X connect 53 0 50 0;
+#X connect 54 0 55 0;
+#X connect 59 0 49 0;
