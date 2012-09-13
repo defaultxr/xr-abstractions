@@ -7,8 +7,21 @@ please notify me if you get any "not found" errors while you're using any of the
 
 hopefully the comments in each one will be useful to you. below is a very incomplete overview of the contents of this library. i'll document it more in the future, maybe.
 
+ctrl
+====
+abstractions for controlling things
+
+demos
+=====
+demonstrations of the included abstractions (definitely open these if you want a tour of this library)
+
+gen
+===
+abstractions for generating sound
+
 seq
 ===
+sequencer abstractions
 
 bpmm - metro/gui for outputting bangs on the downbeat, bangs on 16th notes, and numbers for each 16th note. try connecting the third outlet to [anaseq] or [drumseq]
 
@@ -20,6 +33,7 @@ tracker - simple "tracker" controllable via the keyboard.
 
 utils
 =====
+miscellaneous utilities
 
 atr~, atr, atc~, atc, cta~, cta, ctr~, rtr - convert inputs from one range to another (i.e. atc~ converts audio from the range (-1 to 1) to the range (0 to 1); cta~ does the reverse; atr~ converts audio from the range (-1 to 1) to an arbitrary range specified as arguments)
 
