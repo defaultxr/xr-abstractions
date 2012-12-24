@@ -1,0 +1,20 @@
+#N canvas 0 29 1600 849 10;
+#X obj 78 168 editmode;
+#X floatatom 86 199 5 0 0 0 - - -;
+#X obj 56 219 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 78 131 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 284 144 editmode - (try to) detect when edit mode is on.;
+#X text 281 208 this abstraction attempts to guess when edit mode is
+on. when it's on \, it will output 1.. when it's off \, it will output
+0.. i've tried to make this detect all the possible key-combinations
+that could turn on edit mode (including the key-combos ctrl+1 \, ctrl+3
+\, ctrl+4 \, etc) but i can't detect all of them (such as ctrl+2) \,
+so this abstraction cannot be relied upon for accuracy. as far as i
+know \, there is no way to tell from pure data whether a window is
+in edit mode other than hacky things like this. if you figure something
+better out you should let me know!;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 3 0 0 0;

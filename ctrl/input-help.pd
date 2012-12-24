@@ -1,0 +1,36 @@
+#N canvas 0 29 1600 849 10;
+#X obj 142 109 keyname;
+#X obj 139 130 pack f s;
+#X obj 139 153 route 1;
+#X symbolatom 38 251 30 0 0 0 - - -;
+#X symbolatom 109 295 30 0 0 0 - - -;
+#X obj 139 177 spigot;
+#X obj 181 177 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 109 397 s2l;
+#X obj 141 361 makefilename %c;
+#X obj 141 323 loadbang;
+#X msg 141 342 1;
+#X msg 141 380 symbol \$1;
+#X text 340 125 input - input accumulator;
+#X obj 139 200 input;
+#X obj 109 416 print input;
+#X text 325 184 [input] allows you to accumulate a line of text by
+sending keynames to the inlet. [input]'s left outlet outputs a preview
+of the accumulated text whenever it changes \, and the right outlet
+outputs the "finished" text once you press enter. you can also use
+BackSpace to delete the last character you entered.;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 4 0 7 0;
+#X connect 5 0 13 0;
+#X connect 6 0 5 1;
+#X connect 7 0 14 0;
+#X connect 8 0 11 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 0;
+#X connect 11 0 7 1;
+#X connect 13 0 3 0;
+#X connect 13 1 4 0;

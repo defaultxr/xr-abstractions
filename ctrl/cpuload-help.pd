@@ -1,0 +1,5 @@
+#N canvas 0 29 1600 849 10;
+#X obj 164 168 cpuload;
+#X text 418 153 cpuload - display current cpu load average;
+#X text 413 199 this came with pure data \, i just stole it and turned
+it into an abstraction.;

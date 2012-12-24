@@ -1,0 +1,32 @@
+#N canvas 0 29 1600 849 10;
+#X obj 152 119 keyname;
+#X obj 149 140 pack f s;
+#X obj 149 163 route 1;
+#X symbolatom 48 261 30 0 0 0 - - -;
+#X floatatom 172 237 5 0 0 0 - - -;
+#X obj 149 187 spigot;
+#X obj 191 187 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 149 210 inputn;
+#X text 350 135 inputn - input accumulator for numbers;
+#X text 335 194 this is similar to [input] \, except that it is only
+for numbers. you can build up a number (even negative numbers or numbers
+with decimal points) by sending keynames to the inlet. right now \,
+[inputn] is pretty dumb in that it doesn't prevent you from putting
+more than one decimal point or from putting the dash in places where
+it doesn't make sense. therefore \, you'll have to be careful and watch
+pd's console window for any errors.;
+#X text 334 307 also \, take note that the left outlet outputs a symbol
+\, NOT a float. that's because if it outputted floats \, you wouldn't
+be able to tell if you had entered a period or dash until then next
+number you input.;
+#X text 342 392 ...so obviously there are a lot of things i could improve
+in this abstraction.;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 5 0 7 0;
+#X connect 6 0 5 1;
+#X connect 7 0 3 0;
+#X connect 7 1 4 0;

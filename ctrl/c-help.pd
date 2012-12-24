@@ -1,0 +1,26 @@
+#N canvas 0 29 1600 849 10;
+#X floatatom 93 215 5 0 0 0 - - -;
+#X obj 64 233 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 344 128 c - receive midi control value;
+#X obj 93 184 c 5;
+#X obj 129 311 c 5 vol;
+#X obj 61 310 osc~ 440;
+#X obj 79 358 o~;
+#X text 331 172 for the first argument \, you must provide a midi CC
+number. you can either leave the second argument empty to just get
+the values from 0-127 from the CC \, or you can provide "b" (without
+quotes) to get a bang every time the CC hits 127 you can provide any
+other symbol to prefix the output with that symbol (i.e. for routing
+purposes). if you provide a number for the second argument \, the range
+of the output will be scaled between 0 and that number.;
+#X obj 100 434 c 5 50;
+#X floatatom 103 459 5 0 0 0 - - -;
+#X obj 77 485 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X connect 3 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 0;
+#X connect 8 0 10 0;
+#X connect 8 0 9 0;
