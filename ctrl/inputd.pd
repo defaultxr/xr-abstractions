@@ -1,14 +1,14 @@
-#N canvas 0 0 1600 849 10;
-#X obj 265 38 inlet;
-#X obj 346 76 symbol;
-#X obj 265 57 route bang set;
-#X obj 314 420 l2s;
-#X msg 338 420 symbol;
-#X obj 384 420 loadbang;
-#X obj 272 315 prepent p;
-#X obj 265 169 t b b b;
-#X msg 304 188 r;
-#X msg 237 188 p;
+#N canvas 0 29 1600 849 10;
+#X obj 355 38 inlet;
+#X obj 436 76 symbol;
+#X obj 355 57 route bang set;
+#X obj 404 420 l2s;
+#X msg 428 420 symbol;
+#X obj 474 420 loadbang;
+#X obj 362 315 prepent p;
+#X obj 355 169 t b b b;
+#X msg 394 188 r;
+#X msg 327 188 p;
 #N canvas 0 0 800 849 control-charp 0;
 #X obj 207 216 inlet;
 #X obj 258 273 chars;
@@ -31,12 +31,12 @@
 #X connect 6 0 7 0;
 #X connect 6 1 1 0;
 #X connect 7 0 8 0;
-#X restore 619 114 pd control-charp;
-#X obj 384 114 t b b;
-#X obj 272 420 l2s;
-#X msg 265 207 set list;
-#X obj 272 439 outlet;
-#X obj 314 439 outlet;
+#X restore 709 114 pd control-charp;
+#X obj 474 114 t b b;
+#X obj 362 420 l2s;
+#X msg 355 207 set list;
+#X obj 362 439 outlet;
+#X obj 404 439 outlet;
 #N canvas 0 0 800 849 reset 0;
 #X obj 239 92 inlet;
 #X obj 296 356 outlet;
@@ -65,8 +65,8 @@
 #X connect 11 0 3 0;
 #X connect 12 0 11 0;
 #X connect 12 1 8 0;
-#X restore 305 114 pd reset;
-#X text -31 134 see also: input (version without cursor) \, inputn
+#X restore 395 114 pd reset;
+#X text -11 134 see also: input (version without cursor) \, inputn
 (for numbers).;
 #N canvas 0 0 800 849 backspace 0;
 #X obj 206 92 inlet;
@@ -91,7 +91,7 @@
 #X connect 7 2 6 0;
 #X connect 8 0 9 0;
 #X connect 9 0 1 0;
-#X restore 335 353 pd backspace;
+#X restore 425 353 pd backspace;
 #N canvas 0 0 800 849 cursor 0;
 #X obj 60 117 inlet;
 #X obj 110 117 inlet;
@@ -135,22 +135,22 @@
 #X connect 17 1 7 1;
 #X connect 17 1 13 2;
 #X connect 18 0 7 0;
-#X restore 496 145 pd cursor;
-#X obj 164 392 list length;
-#X obj 164 411 s \$0-length;
-#X obj 455 440 outlet;
-#X text -36 41 inputd - deluxe input accumulator and line editor. send
+#X restore 586 145 pd cursor;
+#X obj 254 392 list length;
+#X obj 254 411 s \$0-length;
+#X obj 545 440 outlet;
+#X text -16 41 inputd - deluxe input accumulator and line editor. send
 keynames to the inlet. Return will send the whole symbol to the middle
 outlet. the left outlet will show a preview of what is currently accumulated.
 the right outlet gives the cursor's position within the line. you can
 use left and right or up and down to move the cursor. backspace removes
 a character.;
-#X obj 346 95 sel Return Delete BackSpace Left Right Up Down;
-#X msg 463 171 b;
-#X msg 411 133 d;
-#X msg 272 244 list;
-#X obj 424 152 t b b;
-#X obj 272 334 route p r a;
+#X obj 436 95 sel Return Delete BackSpace Left Right Up Down;
+#X msg 553 171 b;
+#X msg 501 133 d;
+#X msg 362 244 list;
+#X obj 514 152 t b b;
+#X obj 362 334 route p r a;
 #N canvas 0 0 800 849 add 0;
 #X obj 130 40 inlet;
 #X obj 166 40 inlet;
@@ -177,9 +177,9 @@ a character.;
 #X connect 9 0 7 0;
 #X connect 10 0 11 0;
 #X connect 11 0 6 0;
-#X restore 314 372 pd add;
-#X msg 638 214 a;
-#X obj 619 133 t b b b a;
+#X restore 404 372 pd add;
+#X msg 728 214 a;
+#X obj 709 133 t b b b a;
 #X connect 0 0 2 0;
 #X connect 1 0 24 0;
 #X connect 2 0 7 0;

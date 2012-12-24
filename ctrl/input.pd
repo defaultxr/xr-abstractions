@@ -1,18 +1,18 @@
-#N canvas 0 0 1600 849 10;
-#X obj 265 38 inlet;
-#X obj 346 76 symbol;
-#X obj 346 95 sel Return BackSpace;
-#X obj 265 57 route bang set;
-#X msg 272 244 list;
-#X msg 463 133 add2 \$1 \, bang;
-#X obj 314 360 l2s;
-#X msg 338 360 symbol;
-#X obj 384 360 loadbang;
-#X obj 272 285 prepent p;
-#X obj 272 304 route p b r;
-#X obj 265 169 t b b b;
-#X msg 304 188 r;
-#X msg 237 188 p;
+#N canvas 0 29 1600 849 10;
+#X obj 345 38 inlet;
+#X obj 426 76 symbol;
+#X obj 426 95 sel Return BackSpace;
+#X obj 345 57 route bang set;
+#X msg 352 244 list;
+#X msg 543 133 add2 \$1 \, bang;
+#X obj 394 360 l2s;
+#X msg 418 360 symbol;
+#X obj 464 360 loadbang;
+#X obj 352 285 prepent p;
+#X obj 352 304 route p b r;
+#X obj 345 169 t b b b;
+#X msg 384 188 r;
+#X msg 317 188 p;
 #N canvas 0 0 800 849 control-charp 0;
 #X obj 207 216 inlet;
 #X obj 258 273 chars;
@@ -35,7 +35,7 @@
 #X connect 6 0 7 0;
 #X connect 6 1 1 0;
 #X connect 7 0 8 0;
-#X restore 463 114 pd control-charp;
+#X restore 543 114 pd control-charp;
 #N canvas 0 0 800 849 backspace 0;
 #X obj 167 148 inlet;
 #X obj 224 186 list-splat -1;
@@ -56,14 +56,14 @@
 #X connect 7 0 4 0;
 #X connect 8 0 5 0;
 #X connect 8 1 1 0;
-#X restore 293 323 pd backspace;
-#X obj 404 114 t b b;
-#X msg 431 133 b;
-#X obj 272 360 l2s;
-#X msg 265 207 set list;
-#X obj 272 379 outlet;
-#X obj 314 379 outlet;
-#X text -16 40 input - simple input accumulator. send keynames to the
+#X restore 373 323 pd backspace;
+#X obj 484 114 t b b;
+#X msg 511 133 b;
+#X obj 352 360 l2s;
+#X msg 345 207 set list;
+#X obj 352 379 outlet;
+#X obj 394 379 outlet;
+#X text -6 40 input - simple input accumulator. send keynames to the
 inlet. Return will send the whole symbol to the right outlet. the left
 outlet will show a preview of what is currently accumulated.;
 #N canvas 0 0 800 849 reset 0;
@@ -81,8 +81,8 @@ outlet will show a preview of what is currently accumulated.;
 #X connect 3 0 4 0;
 #X connect 4 0 2 0;
 #X connect 6 0 5 0;
-#X restore 305 114 pd reset;
-#X text -41 95 see also: inputn (for numbers) \, inputd (deluxe input
+#X restore 385 114 pd reset;
+#X text -31 95 see also: inputn (for numbers) \, inputd (deluxe input
 editor);
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
