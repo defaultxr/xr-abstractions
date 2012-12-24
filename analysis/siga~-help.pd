@@ -1,0 +1,21 @@
+#N canvas 0 29 1600 849 10;
+#X obj 67 291 siga~;
+#X text 459 134 siga~ - signal analysis;
+#X text 447 184 siga~ will show you the current value of the signal
+\, the average value of the signal \, and the maximum and minimum detected
+values. these values are all based on polling so you can't trust them
+to be the actual maximum \, minimum \, average \, etc. there is also
+a [vsl] which visualizes the current value of the signal as long as
+it is within the range of -1 to 1;
+#X text 443 289 the "r" [bng] button will reset the maximum and minimum
+recorded values.;
+#X obj 67 262 osc~ 9999;
+#X obj 167 291 siga~;
+#X obj 167 262 osc~ 0.5;
+#X obj 267 291 siga~;
+#X obj 267 262 +~ 50;
+#X obj 267 232 osc~ 0.5;
+#X connect 4 0 0 0;
+#X connect 6 0 5 0;
+#X connect 8 0 7 0;
+#X connect 9 0 8 0;

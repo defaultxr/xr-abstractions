@@ -1,0 +1,7 @@
+#N canvas 0 29 1600 849 10;
+#X obj 140 313 signum~;
+#X obj 140 268 osc~ 0.1;
+#X text 298 163 signum~ - signal number;
+#X text 293 202 basically like [unsig~] with a number box already attached.
+because i'm lazy.;
+#X connect 1 0 0 0;

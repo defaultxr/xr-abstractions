@@ -1,0 +1,13 @@
+#N canvas 0 29 1600 849 10;
+#X obj 84 268 spectrum~;
+#X obj 84 222 osc~;
+#X obj 84 154 phasor~ 1;
+#X obj 84 203 *~ 1000;
+#X floatatom 123 185 5 0 0 0 - - -;
+#X text 302 88 spectrum~ - spectrum analyzer;
+#X text 288 137 this just shows the FFT table for the input signal.
+the [nbx] shows the value of the [spectrum~]'s \$0.;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 1;

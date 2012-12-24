@@ -1,0 +1,18 @@
+#N canvas 0 0 800 849 10;
+#X obj 492 169 dollarg;
+#X obj 492 150 lb 0;
+#X obj 471 208 inlet;
+#X obj 471 246 outlet;
+#X obj 471 227 list-find;
+#X floatatom 527 253 5 0 0 0 - - -;
+#X obj 522 208 list trim;
+#X obj 540 169 inlet;
+#X text 173 209 unmap - map symbols received on the left inlet to their
+index in the list provided on the right inlet or as arguments.;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 4 1 5 0;
+#X connect 6 0 4 1;
+#X connect 7 0 6 0;

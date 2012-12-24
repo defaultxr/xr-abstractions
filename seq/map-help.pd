@@ -1,0 +1,184 @@
+#N canvas 0 29 1600 849 10;
+#X obj 127 173 map a b c d e f;
+#X obj 106 135 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 140 135 5 0 0 0 - - -;
+#X text 363 160 map - map bangs or floats to elements of a list;
+#X text 358 342 to set map's list \, you can either provide it as arguments
+\, or you can send a list to map's right inlet.;
+#X msg 68 162 reset;
+#X symbolatom 127 192 10 0 0 0 - - -;
+#X text 355 201 with map you can store a list containing any kind of
+elements. you can access one element from the list at a time \, either
+sequentially (by banging the left inlet repeatedly) or by index (by
+sending a float to the left inlet). floats out of the range of the
+list are automatically wrapped.;
+#X text 354 282 [map] uses an internal [count] object to keep track
+of which element the next bang will output. if you want the next bang
+to send the first element \, send a reset message to the left inlet.
+;
+#X obj 214 144 r list;
+#X text 358 390 despite its simplicity \, i've found [map] to be one
+of the most useful objects i've created. always keep it in mind when
+you are writing a complex patch-- i'm sure it will come in handy for
+you too.;
+#N canvas 0 29 1600 849 rhythm 0;
+#X obj 88 235 map 0 - 0 - 1 - - - - - 0 0 1 - - -;
+#X obj 58 282 sel 0 1;
+#X obj 88 98 tgl 30 0 empty empty start 33 14 1 30 -4034 -1 -1 0 1
+;
+#X obj 58 310 kick1~ 200 0 50;
+#X obj 139 441 o~;
+#X obj 77 329 snare1~ 5000 0 50;
+#X floatatom 139 198 5 0 0 0 - - -;
+#X obj 191 296 spigot;
+#X obj 224 279 tgl 15 0 empty empty hihat_toggle 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 191 315 bang;
+#X obj 191 353 snare1~ 9000 8000 10;
+#X obj 191 372 /~ 2;
+#X obj 245 334 + 1;
+#X obj 245 317 hradio 15 1 0 4 empty empty hihat_freq 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 192 403 loadbang;
+#X msg 192 422 vol 110;
+#X obj 88 216 metro 150;
+#X obj 191 334 bfilt2 1;
+#X obj 295 124 r r-map;
+#X msg 295 181 0 0 - - 1 1 - - 0 - 0 - 1 - 1 -;
+#X obj 139 179 bpm;
+#X floatatom 139 161 5 0 0 1 bpm - -;
+#X obj 139 142 lb 100;
+#X text 367 281 i know it doesn't sound that great \, but it's just
+an example what you can do with map if you're creative. if you don't
+want to have to worry about making sure each rhythm's length is a multiple
+of 4 \, check out the [drumseq] sequencer. note \, though \, that you
+can change the [map]'s list at any time and the rhythm never goes out
+of sync.;
+#X text 368 367 however \, this will not remain true if you change
+the list by editing the [map]'s arguments instead of sending it a new
+list via the right inlet... so use caution if you're going to make
+[map] rhythms when live-coding or whatever.;
+#X text 369 431 p.s. \, instead of a [metro] \, usually i use my own
+object called [bpmm]. you might want to try that out as well.;
+#X msg 295 143 0 - 0 - 1 - - - - - 0 0 1 - - -;
+#X msg 295 162 0 - - 0 1 0 - 1 0 - 0 - 1 - 0 -;
+#X symbolatom 315 200 50 0 0 0 - - -;
+#X obj 315 218 s2l;
+#X text 284 94 change the pattern by clicking the messages or typing
+your own into the symbol atom:;
+#X connect 0 0 1 0;
+#X connect 0 0 7 0;
+#X connect 1 0 3 0;
+#X connect 1 1 5 0;
+#X connect 2 0 16 0;
+#X connect 3 0 4 0;
+#X connect 5 0 4 0;
+#X connect 6 0 16 1;
+#X connect 7 0 9 0;
+#X connect 8 0 7 1;
+#X connect 9 0 17 0;
+#X connect 10 0 11 0;
+#X connect 11 0 4 0;
+#X connect 12 0 17 1;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 15 0 4 1;
+#X connect 16 0 0 0;
+#X connect 17 0 10 0;
+#X connect 18 0 0 1;
+#X connect 19 0 0 1;
+#X connect 20 0 6 0;
+#X connect 21 0 20 0;
+#X connect 22 0 21 0;
+#X connect 26 0 0 1;
+#X connect 27 0 0 1;
+#X connect 28 0 29 0;
+#X connect 29 0 0 1;
+#X restore 122 305 pd rhythm;
+#N canvas 0 29 1600 849 arpeggio 0;
+#X obj 98 108 tgl 30 0 empty empty start 33 14 1 30 -4034 -1 -1 0 1
+;
+#X msg 120 246 reset;
+#X obj 113 574 o~;
+#N canvas 0 29 1600 849 synth 0;
+#X obj 254 358 inlet;
+#X obj 254 377 mtof;
+#X obj 351 457 *~ 3000;
+#X obj 351 476 +~ 0;
+#X obj 254 396 t f b f;
+#X obj 254 533 moog~;
+#X obj 362 513 sig~ 2;
+#X msg 210 515 reset;
+#X obj 254 552 outlet~;
+#X obj 351 438 adsr~ 3 100 0.2 500;
+#X obj 254 468 pulse~;
+#X text 442 293 oh yeah and i'm not very good at synthesizers either
+;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 1;
+#X connect 4 0 10 0;
+#X connect 4 1 9 0;
+#X connect 4 2 3 1;
+#X connect 5 0 8 0;
+#X connect 6 0 5 2;
+#X connect 7 0 5 0;
+#X connect 9 0 2 0;
+#X connect 10 0 5 0;
+#X restore 113 345 pd synth;
+#X floatatom 113 327 5 0 0 0 - - -;
+#X obj 80 217 metro 100;
+#X obj 8 312 s2l ';
+#X obj 8 331 rchoice;
+#X floatatom 8 350 5 0 0 0 - - -;
+#X obj -55 293 route float;
+#X obj 218 474 vd~ \$0-blah;
+#X obj 218 417 osc~ 0.1;
+#X obj 218 493 /~ 3;
+#X obj 140 217 metro 1000;
+#X obj -55 274 map 100 100 500'100;
+#X floatatom 143 308 5 0 0 0 - - -;
+#X obj 113 267 map 5 5 4 2 1 1 0 0;
+#X obj 113 308 + 50;
+#X obj 124 385 delwrite~ \$0-blah 3000;
+#X obj 218 436 *~ 20;
+#X obj 218 455 +~ 2980;
+#X text 316 263 ok \, so i'm not very good at melodies... but you get
+the point: [map] makes a great arpeggiator.;
+#X obj 192 538 loadbang;
+#X msg 192 557 vol 110;
+#X connect 0 0 5 0;
+#X connect 0 0 13 0;
+#X connect 1 0 16 0;
+#X connect 3 0 2 0;
+#X connect 3 0 18 0;
+#X connect 4 0 3 0;
+#X connect 5 0 14 0;
+#X connect 5 0 16 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 5 1;
+#X connect 9 0 8 0;
+#X connect 9 1 6 0;
+#X connect 10 0 12 0;
+#X connect 11 0 19 0;
+#X connect 12 0 2 0;
+#X connect 12 0 18 0;
+#X connect 13 0 1 0;
+#X connect 14 0 9 0;
+#X connect 15 0 17 1;
+#X connect 16 0 17 0;
+#X connect 17 0 4 0;
+#X connect 19 0 20 0;
+#X connect 20 0 10 0;
+#X connect 22 0 23 0;
+#X connect 23 0 2 1;
+#X restore 122 324 pd arpeggio;
+#X text 99 282 here are some musical demos:;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 5 0 0 0;
+#X connect 9 0 0 1;

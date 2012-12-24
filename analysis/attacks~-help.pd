@@ -1,0 +1,7 @@
+#N canvas 0 29 1600 849 10;
+#X obj 202 240 attacks~;
+#X text 316 78 attacks~;
+#X text 319 108 attacks~ is supposed to find the "attack points" in
+a file. it makes a list which is supposed to be used by [snds~]. attacks~
+uses [fiddle~] internally so it's not that great. you probably shouldn't
+use this. it's a work-in-progress.;

@@ -1,0 +1,14 @@
+#N canvas 0 29 1600 849 10;
+#X obj 61 221 osc~ 0.25;
+#X obj 201 182 osc~ 0.25;
+#X obj 201 221 atc~;
+#X text 385 255 see also: [view~].;
+#X text 399 128 vsig~ - view signal;
+#X obj 61 260 vsig~;
+#X obj 201 260 vsig~;
+#X text 373 173 allows you to see graphically the current value of
+a signal \, assuming it's between -1 and 1 . if you'd rather view a
+signal between 0 and 1 \, try [vcsig~].;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 6 0;

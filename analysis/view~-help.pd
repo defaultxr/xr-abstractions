@@ -1,0 +1,31 @@
+#N canvas 0 29 1600 849 10;
+#X obj 41 445 view~;
+#X obj 41 367 osc~ 0.1;
+#X obj 251 445 view~;
+#X obj 251 406 osc~ 100;
+#X obj 461 445 view~;
+#X obj 671 445 view~;
+#X obj 461 406 tri~;
+#X obj 461 347 sig~ 100;
+#X obj 671 406 pulse~;
+#X obj 671 347 sig~ 100;
+#X obj 471 377 osc~ 0.1;
+#X obj 704 377 osc~ 0.1;
+#X text 472 91 view~ - view a signal;
+#X text 466 133 view~ allows you to see a signal \, as well as its
+current value \, average \, and top and bottom recorded values. the
+[nbx] allows you to change the refresh rate \, and the "r" [bng] allows
+you to erase the recorded top and bottom values.;
+#X text 35 250 the output of [view~] is clipped between -2 and 2 so
+that pd doesn't try drawing a waveform way out of the scope of the
+patch:;
+#X obj 41 406 *~ 10;
+#X connect 1 0 15 0;
+#X connect 3 0 2 0;
+#X connect 6 0 4 0;
+#X connect 7 0 6 0;
+#X connect 8 0 5 0;
+#X connect 9 0 8 0;
+#X connect 10 0 6 1;
+#X connect 11 0 8 1;
+#X connect 15 0 0 0;

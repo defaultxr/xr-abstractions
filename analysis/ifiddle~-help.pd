@@ -1,0 +1,32 @@
+#N canvas 0 29 1600 849 10;
+#X obj 273 246 ifiddle~;
+#X obj 253 190 osc~;
+#X floatatom 253 153 5 0 0 0 - - -;
+#X obj 253 171 mtof;
+#X text 393 55 ifiddle~ - interface fiddle~;
+#X obj 288 82 loadbang;
+#X msg 253 134 57;
+#X obj 273 227 *~;
+#X obj 288 208 line~;
+#X msg 288 134 1 \, 0.25 500;
+#X text 400 105 this is basically just a gui for fiddle~. the first
+2 outlets come straight from fiddle~'s first 2 outlets \, while the
+last 2 outlets are the unpacked output of fiddle~'s third outlet.;
+#X obj 307 303 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 273 302 5 0 0 0 - - -;
+#X floatatom 342 302 5 0 0 0 - - -;
+#X floatatom 377 302 5 0 0 0 - - -;
+#X connect 0 0 12 0;
+#X connect 0 1 11 0;
+#X connect 0 2 13 0;
+#X connect 0 3 14 0;
+#X connect 1 0 7 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 5 0 6 0;
+#X connect 5 0 9 0;
+#X connect 6 0 2 0;
+#X connect 7 0 0 0;
+#X connect 8 0 7 1;
+#X connect 9 0 8 0;

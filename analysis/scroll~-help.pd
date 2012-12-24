@@ -1,0 +1,27 @@
+#N canvas 0 29 1600 849 10;
+#X obj 244 266 scroll~;
+#X obj 244 111 osc~ 333;
+#X obj 280 152 atc~;
+#X obj 244 247 *~;
+#X obj 280 249 vcsig~;
+#X obj 280 133 osc~ 0.1;
+#X obj 280 211 bswitcher~;
+#X obj 306 173 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 303 190 kline~ 50;
+#X text 488 80 scroll~ - scrolling amplitude view;
+#X text 481 119 this abstraction shows you the amplitude of an incoming
+signal \, and scrolls it. right now it just uses [env~] internally
+but i might change it in the future.;
+#X text 475 185 the [tgl] stops polling the amplitude and also stops
+scrolling the view. so if you see something interesting you can pause
+it. the [nbx] changes how many milliseconds between each poll of the
+amplitude.;
+#X connect 1 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 0 0;
+#X connect 5 0 2 0;
+#X connect 6 0 4 0;
+#X connect 6 0 3 1;
+#X connect 7 0 8 0;
+#X connect 8 0 6 2;
