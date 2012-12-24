@@ -1,4 +1,4 @@
-#N canvas 0 0 1600 849 10;
+#N canvas 0 0 800 410 10;
 #X obj 91 238 random;
 #X obj 91 257 + \$1;
 #X obj 91 276 outlet;
@@ -9,6 +9,7 @@
 #X obj 174 166 f;
 #X obj 132 134 t b b f;
 #X obj 91 54 route bang list float;
+#X msg 173 73 0 \$1;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 3 0 9 0;
@@ -23,5 +24,6 @@
 #X connect 8 2 1 1;
 #X connect 9 0 0 0;
 #X connect 9 1 4 0;
-#X connect 9 2 6 0;
+#X connect 9 2 10 0;
 #X connect 9 3 4 0;
+#X connect 10 0 4 0;

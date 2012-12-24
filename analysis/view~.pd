@@ -1,4 +1,4 @@
-#N canvas 0 0 1600 849 10;
+#N canvas 0 29 1600 849 10;
 #X obj 158 28 inlet~;
 #X obj 241 101 tabwrite~ \$0-view;
 #N canvas 0 0 450 300 (subpatch) 0;
@@ -6,8 +6,11 @@
 #X coords 0 1 499 -1 200 140 1;
 #X restore -7 113 graph;
 #X obj 241 82 clip~ -2 2;
-#X obj 139 99 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-refresh cur:0.327402
-0 -8 0 10 -262144 -1 -1 75 256;
+#X obj 139 99 nbx 5 14 11 900 0 0 empty \$0-refresh cur:-0.0114381
+avg:0.00415101
+top:1.98441
+bot:-1.9093
+-145 36 0 10 -262144 -1 -1 75 256;
 #X obj 297 20 inlet;
 #X msg 343 58 0;
 #X obj 297 39 route float bang;
@@ -16,7 +19,6 @@
 #X obj 349 290 makefilename %c;
 #X msg 291 366 label;
 #X obj 288 221 average~ 10000;
-#X text 18 28 waveform display clips at 2;
 #X obj 268 309 pack f f f f s;
 #X obj 125 99 bng 14 250 50 0 empty empty r 3 6 0 10 -262144 -1 -1
 ;
@@ -28,33 +30,34 @@
 #X obj 420 211 loadbang;
 #X obj 420 230 t b b b;
 #X msg 349 271 10;
+#X text 28 8 waveform display. clips at 2;
 #X connect 0 0 3 0;
 #X connect 0 0 8 0;
 #X connect 0 0 12 0;
 #X connect 3 0 1 0;
-#X connect 4 0 18 1;
+#X connect 4 0 17 1;
 #X connect 5 0 7 0;
-#X connect 6 0 18 0;
-#X connect 7 0 18 1;
+#X connect 6 0 17 0;
+#X connect 7 0 17 1;
 #X connect 7 1 6 0;
 #X connect 7 1 1 0;
-#X connect 8 0 20 0;
-#X connect 10 0 14 4;
+#X connect 8 0 19 0;
+#X connect 10 0 13 4;
 #X connect 11 0 9 0;
-#X connect 12 0 14 1;
-#X connect 14 0 17 0;
-#X connect 15 0 16 0;
-#X connect 16 0 14 2;
-#X connect 16 1 14 3;
-#X connect 17 0 9 0;
-#X connect 18 0 1 0;
-#X connect 18 0 8 0;
-#X connect 19 0 9 0;
-#X connect 20 0 14 0;
-#X connect 20 1 16 0;
-#X connect 21 0 22 0;
-#X connect 22 0 18 0;
-#X connect 22 1 23 0;
-#X connect 22 2 19 0;
-#X connect 23 0 10 0;
+#X connect 12 0 13 1;
+#X connect 13 0 16 0;
+#X connect 14 0 15 0;
+#X connect 15 0 13 2;
+#X connect 15 1 13 3;
+#X connect 16 0 9 0;
+#X connect 17 0 1 0;
+#X connect 17 0 8 0;
+#X connect 18 0 9 0;
+#X connect 19 0 13 0;
+#X connect 19 1 15 0;
+#X connect 20 0 21 0;
+#X connect 21 0 17 0;
+#X connect 21 1 22 0;
+#X connect 21 2 18 0;
+#X connect 22 0 10 0;
 #X coords 0 -1 1 1 200 154 2 -7 99;

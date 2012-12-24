@@ -1,0 +1,11 @@
+#N canvas 0 0 1600 849 10;
+#X obj 103 100 hsl 128 15 -1 1 0 0 empty empty v0.762802 -2 8 0 10
+-262144 -1 -258113 11194 1;
+#X obj 100 61 unsig~ 30;
+#X obj 100 42 inlet~;
+#X msg 100 81 label v\$1;
+#X connect 1 0 0 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X coords 0 -1 1 1 133 15 2 100 100;

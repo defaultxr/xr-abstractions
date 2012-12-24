@@ -1,4 +1,4 @@
-#N canvas 0 0 1600 849 10;
+#N canvas 0 29 1600 849 10;
 #X obj 230 134 inlet;
 #X obj 209 229 f \$1;
 #X obj 261 229 pack \$3 \$2;
@@ -19,22 +19,24 @@
 #X obj 230 153 route attack decay sustain release bang float time bonk
 sus;
 #X obj 261 210 f \$3;
-#X text 562 269 by default the sustain section has a length of 0 send
-a time message to change this.;
 #X msg 209 248 1 \$1;
 #X obj 209 292 line;
 #X obj 209 311 outlet;
+#X text 573 342 FIX: just use 0 to release a note.;
+#X obj 379 206 sel 0;
+#X text 562 269 by default the sustain section has a length of 0..
+send a time message to change this.;
 #X connect 0 0 16 0;
-#X connect 1 0 19 0;
+#X connect 1 0 18 0;
 #X connect 1 0 4 0;
 #X connect 1 0 6 0;
 #X connect 2 0 5 0;
 #X connect 3 0 2 1;
 #X connect 3 0 6 1;
 #X connect 4 0 17 0;
-#X connect 5 0 20 0;
+#X connect 5 0 19 0;
 #X connect 6 0 12 0;
-#X connect 7 0 20 0;
+#X connect 7 0 19 0;
 #X connect 8 0 9 0;
 #X connect 9 0 7 0;
 #X connect 12 0 8 0;
@@ -46,10 +48,11 @@ a time message to change this.;
 #X connect 16 2 17 1;
 #X connect 16 3 9 1;
 #X connect 16 4 1 0;
+#X connect 16 5 22 0;
 #X connect 16 6 12 1;
 #X connect 16 7 13 0;
 #X connect 16 7 14 0;
 #X connect 16 8 17 1;
 #X connect 17 0 2 0;
+#X connect 18 0 19 0;
 #X connect 19 0 20 0;
-#X connect 20 0 21 0;

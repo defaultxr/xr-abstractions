@@ -1,8 +1,0 @@
-#N canvas 345 171 450 300 10;
-#X obj 136 100 makefilename /home/modula/misc/pd/saves/%s;
-#X obj 136 119 outlet;
-#X obj 136 81 symbol;
-#X obj 136 62 inlet;
-#X connect 0 0 1 0;
-#X connect 2 0 0 0;
-#X connect 3 0 2 0;
