@@ -1,4 +1,4 @@
-#N canvas 0 0 800 849 10;
+#N canvas 0 29 1600 849 10;
 #X obj 188 200 makefilename %c;
 #X msg 188 181 32;
 #X obj 188 162 bang;

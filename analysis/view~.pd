@@ -6,11 +6,8 @@
 #X coords 0 1 499 -1 200 140 1;
 #X restore -7 113 graph;
 #X obj 241 82 clip~ -2 2;
-#X obj 139 99 nbx 5 14 11 900 0 0 empty \$0-refresh cur:-0.0114381
-avg:0.00415101
-top:1.98441
-bot:-1.9093
--145 36 0 10 -262144 -1 -1 75 256;
+#X obj 139 99 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-refresh cur:-0.0114381
+0 -8 0 10 -262144 -1 -1 75 256;
 #X obj 297 20 inlet;
 #X msg 343 58 0;
 #X obj 297 39 route float bang;
