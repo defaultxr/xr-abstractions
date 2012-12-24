@@ -1,0 +1,22 @@
+#N canvas 800 0 800 849 10;
+#X symbolatom 100 100 20 0 0 0 - - -;
+#X obj 331 61 inlet;
+#X obj 331 80 route list float;
+#X obj 316 159 map;
+#X obj 316 178 symbol;
+#X text 379 55 marquee (to display elements of a list at regular intervals)
+;
+#X obj 316 247 outlet;
+#X obj 331 108 list;
+#X obj 263 138 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 248 102 ometro 4000;
+#X connect 1 0 2 0;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 0 0 0;
+#X connect 7 0 3 1;
+#X connect 8 0 3 0;
+#X connect 9 0 3 0;
+#X coords 0 -1 1 1 122 16 2 100 100;

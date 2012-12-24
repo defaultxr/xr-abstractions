@@ -1,0 +1,24 @@
+#N canvas 0 0 1600 849 10;
+#X obj 127 55 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -4034 -1
+-1 0;
+#X obj 69 -26 inlet;
+#X obj 88 125 outlet;
+#X obj 127 37 f;
+#X obj 69 -7 route switch;
+#X obj 130 125 outlet;
+#X obj 88 91 route 0 1;
+#X obj 88 72 prepent;
+#X obj 151 37 kinv;
+#X obj 165 -13 inlet;
+#X connect 0 0 7 1;
+#X connect 1 0 4 0;
+#X connect 3 0 0 0;
+#X connect 3 0 8 0;
+#X connect 4 0 3 0;
+#X connect 4 1 7 0;
+#X connect 6 0 2 0;
+#X connect 6 1 5 0;
+#X connect 7 0 6 0;
+#X connect 8 0 3 1;
+#X connect 9 0 3 0;
+#X coords 0 -1 1 1 30 15 2 127 55;

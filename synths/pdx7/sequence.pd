@@ -1,0 +1,10 @@
+#N canvas 91 12 1050 611 10;
+#X obj 174 135 rrad.pattseq /patt;
+#X obj 98 22 rrad.metro /m;
+#X obj 175 527 s NOTE;
+#X obj 175 494 pack 0 0;
+#X obj 379 31 careGUI;
+#X connect 0 0 3 0;
+#X connect 0 1 3 1;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;

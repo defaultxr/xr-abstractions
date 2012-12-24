@@ -1,0 +1,12 @@
+#N canvas 0 0 1600 871 10;
+#X obj 40 100 plugin~ random_fasa_oa;
+#X obj 104 62 inlet~;
+#X obj 169 81 atc~;
+#X obj 169 62 inlet~;
+#X obj 178 160 outlet~;
+#X text 139 25 random wave generator. right inlet is smoothness \,
+left is freq;
+#X connect 0 1 4 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 2;
+#X connect 3 0 2 0;

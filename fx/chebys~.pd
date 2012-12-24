@@ -1,0 +1,18 @@
+#N canvas 0 0 800 421 10;
+#X obj 40 40 inlet~;
+#X obj 82 59 dbtorms;
+#X obj 44 130 cheby~ \$1;
+#X obj 82 21 inlet;
+#X obj 82 40 unpack f f;
+#X obj 82 90 pack f f;
+#X msg 82 109 coef \$1 \$2;
+#X obj 44 149 outlet~;
+#X text 190 34 wrapper for cheby~ - chebyshev distortion;
+#X connect 0 0 2 0;
+#X connect 1 0 5 0;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 4 1 5 1;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;

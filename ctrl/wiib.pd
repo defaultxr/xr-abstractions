@@ -1,0 +1,17 @@
+#N canvas 0 0 800 849 10;
+#X obj 326 35 r wiimoteb;
+#X msg 326 73 \$2 \$1;
+#X obj 326 54 list;
+#X obj 406 94 outlet;
+#X obj 326 92 route 1;
+#X obj 326 111 symbol;
+#X obj 326 130 outlet;
+#X text 321 -14 wii buttons abstraction - left outlet only outputs
+the name of a button when it's pressed while the right outlet outputs
+the name and 1 for pressed \, 0 for releaased.;
+#X connect 0 0 2 0;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;

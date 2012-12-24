@@ -1,0 +1,18 @@
+#N canvas 0 0 1600 849 10;
+#X obj 147 181 plugin~ rateShifter;
+#X msg 147 161 control #1 \$1;
+#X obj 179 73 inlet;
+#X obj 63 90 inlet~;
+#X obj 258 215 outlet~;
+#X msg 108 188 info;
+#X obj 139 215 print rateshifter;
+#X obj 179 137 clip -4 4;
+#X obj 215 73 lb \$1 1;
+#X connect 0 0 6 0;
+#X connect 0 1 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 7 0;
+#X connect 3 0 0 1;
+#X connect 5 0 0 0;
+#X connect 7 0 1 0;
+#X connect 8 0 7 0;

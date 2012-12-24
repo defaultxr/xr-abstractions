@@ -1,0 +1,32 @@
+#N canvas 0 0 1600 849 10;
+#X obj 77 48 inlet~;
+#X obj 103 115 hsl 128 13 0 127 0 0 empty empty freq -2 8 0 10 -262144
+-1 -1 0 1;
+#X obj 103 128 hsl 128 13 0.001 4 0 0 empty empty resonance -2 8 0
+10 -262144 -1 -1 12700 1;
+#X obj 77 254 moog~;
+#X obj 77 274 outlet~;
+#X obj 84 205 kline~ 20;
+#X obj 145 205 kline~ 20;
+#X obj 218 100 bng 15 250 50 0 empty empty r 4 7 0 10 -262144 -1 -1
+;
+#X obj 83 178 mtof;
+#X msg 23 129 reset;
+#X obj 187 35 inlet;
+#X obj 187 54 route freq res;
+#X obj 185 78 autoscale 0 4;
+#X connect 0 0 3 0;
+#X connect 1 0 8 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 1;
+#X connect 6 0 3 2;
+#X connect 7 0 9 0;
+#X connect 8 0 5 0;
+#X connect 9 0 3 0;
+#X connect 10 0 11 0;
+#X connect 11 0 1 0;
+#X connect 11 1 12 0;
+#X connect 11 2 1 0;
+#X connect 12 0 2 0;
+#X coords 0 -1 1 1 133 41 1 100 100;

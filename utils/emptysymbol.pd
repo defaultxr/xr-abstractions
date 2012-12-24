@@ -1,0 +1,13 @@
+#N canvas 0 0 800 410 10;
+#X obj 45 87 inlet;
+#X obj 72 106 loadbang;
+#X obj 72 125 symbol;
+#X obj 45 144 sel a;
+#X obj 45 176 outlet;
+#X obj 87 176 outlet;
+#X text 166 63 empty symbol selector;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 1;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;

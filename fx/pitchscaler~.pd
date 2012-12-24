@@ -1,0 +1,17 @@
+#N canvas 800 0 800 421 10;
+#X obj 67 252 inlet~;
+#X obj 347 350 outlet~;
+#X msg 132 238 control #1 \$1;
+#X obj 96 181 inlet;
+#X obj 268 289 plugin~ pitchScale;
+#X obj 132 181 lb \$1 1;
+#X obj 132 200 min 2;
+#X obj 132 219 max 0.5;
+#X text 85 166 pitch coefficient (2 increases by one octave);
+#X connect 0 0 4 1;
+#X connect 2 0 4 0;
+#X connect 3 0 6 0;
+#X connect 4 1 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 2 0;

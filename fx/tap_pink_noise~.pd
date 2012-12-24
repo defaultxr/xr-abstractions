@@ -1,0 +1,16 @@
+#N canvas 0 0 798 868 10;
+#X msg 199 172 control #1 \$1;
+#X obj 305 224 outlet~;
+#X obj 406 57 inlet;
+#X obj 163 52 inlet~;
+#X obj 407 106 min 1;
+#X obj 407 128 max 0;
+#X obj 235 259 print tap_pinknoise;
+#X obj 256 198 plugin~ tap_pinknoise;
+#X connect 0 0 7 0;
+#X connect 2 0 4 0;
+#X connect 3 0 7 1;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 7 0 6 0;
+#X connect 7 1 1 0;

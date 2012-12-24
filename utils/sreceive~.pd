@@ -1,0 +1,16 @@
+#N canvas 0 0 1600 849 10;
+#X obj 165 50 inlet;
+#X obj 165 100 pack s \$0;
+#X obj 67 27 namecanvas \$0-sreceive;
+#N canvas 0 0 1600 849 \$0-receiver 0;
+#X obj 0 0 receive~ fuck;
+#X obj 0 30 outlet~;
+#X connect 0 0 1 0;
+#X restore 50 82 pd \$0-receiver;
+#X obj 50 107 outlet~;
+#X msg 165 119 \; pd-\$2-receiver clear \, obj 0 0 receive~ \$1 \,
+obj 0 30 outlet~ \, connect 0 0 1 0 \; \$2-sreceive connect 3 0 4 0
+;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 3 0 4 0;

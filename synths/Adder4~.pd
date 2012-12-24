@@ -1,0 +1,200 @@
+#N canvas 0 0 1600 849 10;
+#X obj 286 64 inlet;
+#X obj 286 83 route list;
+#X obj 286 131 pack f f f;
+#X obj 382 357 outlet~;
+#X obj 286 150 route 1 2 3 4;
+#N canvas 0 0 1600 849 interface 1;
+#X obj 462 117 namecanvas \$0-gui;
+#X obj 378 117 symbol \$0-gui;
+#X obj 378 98 loadbang;
+#X obj 333 98 * 71;
+#X obj 333 117 + 18;
+#X obj 333 60 r \$0-mode;
+#X obj 333 136 pack f s;
+#X floatatom 425 63 5 0 0 0 - - -;
+#X obj 110 89 cnv 15 152 46 empty empty empty 10 6 0 14 -262144 -33289
+0;
+#X obj 110 89 hradio 14 1 0 4 \$0-f1type \$0-f1typec low 1 9 0 10 -262144
+-1 -258113 0;
+#X obj 205 89 hsl 55 14 0 1 0 0 \$0-f1res \$0-f1resc resonance -2 9
+0 10 -262144 -1 -258113 0 1;
+#X obj 166 89 nbx 3 14 -60 60 0 0 \$0-f1trans \$0-f1transc empty 0
+-5 0 10 -262144 -1 -1 0 256;
+#X obj 110 160 cnv 15 152 46 empty empty empty 10 6 0 14 -262144 -33289
+0;
+#X floatatom 110 190 6 0 999999 3 - #0-attackc #0-attack;
+#X floatatom 148 190 6 0 999999 3 - #0-decayc #0-decay;
+#X floatatom 186 190 6 0 127 3 - #0-sustainc #0-sustain;
+#X floatatom 224 190 6 0 999999 3 - #0-releasec #0-release;
+#X obj 34 143 r \$0-env;
+#X floatatom 110 103 6 0 999999 3 - #0-fattackc #0-fattack;
+#X floatatom 148 103 6 0 999999 3 - #0-fdecayc #0-fdecay;
+#X floatatom 186 103 6 0 127 3 - #0-fsustainc #0-fsustain;
+#X floatatom 224 103 6 0 999999 3 - #0-freleasec #0-frelease;
+#X floatatom 110 119 5 0 0 1 env_mod #0-fenvmc #0-fenvm;
+#X obj 333 79 clip 0 2;
+#X obj 110 18 cnv 15 152 44 empty empty empty 10 6 0 14 -262144 -33289
+0;
+#X obj 116 162 envgen 136 24 1 0  ;
+#X msg 333 155 \; \$2 donecanvasdialog 1 -1 2 0 -1 0 1 152 46 110 \$1
+\, dirty 0;
+#X obj 110 18 hradio 14 1 0 4 \$0-o1wave \$0-o1wavec o1sin 1 9 0 10
+-262144 -1 -258113 0;
+#X obj 205 18 hsl 55 14 0 1 0 0 \$0-o1vol \$0-o1volc osc1vol -2 9 0
+10 -262144 -1 -258113 4700 1;
+#X obj 166 18 nbx 3 14 -60 60 0 0 \$0-o1trans \$0-o1transc empty 0
+-5 0 10 -262144 -1 -1 0 256;
+#X obj 110 32 hradio 14 1 0 4 \$0-o2wave \$0-o2wavec o2sin 1 9 0 10
+-262144 -1 -258113 0;
+#X obj 205 32 hsl 55 14 0 1 0 0 \$0-o2vol \$0-o2volc osc2vol -2 9 0
+10 -262144 -1 -258113 1700 1;
+#X obj 166 32 nbx 3 14 -60 60 0 0 \$0-o2trans \$0-o2transc empty 0
+-5 0 10 -262144 -1 -1 0 256;
+#X obj 110 46 hradio 14 1 0 4 \$0-o3wave \$0-o3wavec o3sin 1 9 0 10
+-262144 -1 -258113 0;
+#X obj 205 46 hsl 55 14 0 1 0 0 \$0-o3vol \$0-o3volc osc3vol -2 9 0
+10 -262144 -1 -258113 4200 1;
+#X obj 166 46 nbx 3 14 -60 60 0 0 \$0-o3trans \$0-o3transc empty 0
+-5 0 10 -262144 -1 -1 0 256;
+#X obj 256 301 unpack f f;
+#X obj 256 390 pack s f;
+#X obj 256 409 prepent set;
+#X obj 256 320 map o1wave o1trans o1vol o2wave o2trans o2vol o3wave
+o3trans o3vol f1type f1trans f1res fattack fdecay fsustain frelease
+fenvm attack decay sustain release;
+#X obj 256 428 outlet;
+#X obj 51 365 pack s \$0;
+#X msg 51 346 /home/modula/.pd/saves/adder-\$1;
+#X obj 24 327 t b s;
+#X obj 24 435 until;
+#X obj 24 454 count 21;
+#X msg 24 416 21;
+#X obj 24 473 t f f;
+#X obj 24 492 tabread \$0-savetable;
+#X msg 24 619 \; 2933-releasec \$1;
+#X obj 51 556 pack s \$0;
+#X msg 51 384 \; \$2-savetable read \$1;
+#X msg 51 575 set \, addsemi \, add2 \$2-\$1c \, adddollar 1;
+#X obj 51 511 map o1wave o1trans o1vol o2wave o2trans o2vol o3wave
+o3trans o3vol f1type f1trans f1res fattack fdecay fsustain frelease
+fenvm attack decay sustain release;
+#X obj -39 270 loadbang;
+#X obj -39 289 symbol \$1;
+#X obj 78 454 table \$0-savetable 21;
+#X obj -39 308 emptysymbol;
+#X obj 256 243 rmap \$0-o1wave \$0-o1trans \$0-o1vol \$0-o2wave \$0-o2trans
+\$0-o2vol \$0-o3wave \$0-o3trans \$0-o3vol \$0-f1type \$0-f1trans \$0-f1res
+\$0-fattack \$0-fdecay \$0-fsustain \$0-frelease \$0-fenvm \$0-attack
+\$0-decay \$0-sustain \$0-release;
+#X obj 454 525 pack f f f f;
+#X obj 527 435 mrange;
+#X obj 452 435 t b f;
+#X obj 527 454 t b f;
+#X obj 614 435 t b f;
+#X msg 454 544 0 \$1 1 \$2 \$3 \$4 \, freeze 1;
+#X obj 454 563 s \$0-env;
+#N canvas 0 0 1600 849 osc_wave_update 0;
+#X obj 345 358 inlet;
+#X obj 376 449 map sin tri sqr saw;
+#X obj 385 358 inlet;
+#X obj 425 358 inlet;
+#X obj 345 468 pack f s \$0;
+#X obj 345 406 unpack f f;
+#X msg 385 377 2 \$1;
+#X msg 425 377 3 \$1;
+#X msg 345 377 1 \$1;
+#X msg 345 487 \; \$3-o\$1wavec label o\$1\$2;
+#X connect 0 0 8 0;
+#X connect 1 0 4 1;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X connect 4 0 9 0;
+#X connect 5 0 4 0;
+#X connect 5 1 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X restore 331 434 pd osc_wave_update;
+#X obj 331 374 route 0 3 6 17 18 19 20;
+#X connect 1 0 6 1;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 23 0;
+#X connect 6 0 26 0;
+#X connect 7 0 23 0;
+#X connect 17 0 25 0;
+#X connect 23 0 3 0;
+#X connect 36 0 39 0;
+#X connect 36 1 37 1;
+#X connect 37 0 38 0;
+#X connect 38 0 40 0;
+#X connect 39 0 37 0;
+#X connect 41 0 51 0;
+#X connect 42 0 41 0;
+#X connect 43 0 46 0;
+#X connect 43 1 42 0;
+#X connect 44 0 45 0;
+#X connect 45 0 47 0;
+#X connect 46 0 44 0;
+#X connect 47 0 48 0;
+#X connect 47 1 53 0;
+#X connect 48 0 49 0;
+#X connect 50 0 52 0;
+#X connect 52 0 49 0;
+#X connect 53 0 50 0;
+#X connect 54 0 55 0;
+#X connect 55 0 57 0;
+#X connect 57 1 43 0;
+#X connect 58 0 36 0;
+#X connect 58 0 67 0;
+#X connect 59 0 64 0;
+#X connect 60 0 62 0;
+#X connect 61 0 59 0;
+#X connect 61 1 59 1;
+#X connect 62 0 59 0;
+#X connect 62 1 59 2;
+#X connect 63 0 59 0;
+#X connect 63 1 59 3;
+#X connect 64 0 65 0;
+#X connect 67 0 66 0;
+#X connect 67 1 66 1;
+#X connect 67 2 66 2;
+#X connect 67 3 59 0;
+#X connect 67 4 61 0;
+#X connect 67 5 60 0;
+#X connect 67 6 63 0;
+#X coords 0 -1 1 1 152 46 2 110 89;
+#X restore 100 114 pd interface;
+#X obj 210 100 hradio 14 1 0 3 \$0-mode empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 210 82 lb 0;
+#X obj 196 100 bng 14 250 50 0 \$0-save empty sv 1 7 0 10 -258113 -1
+-1;
+#X obj 286 244 Adder_voice~ \$1;
+#X obj 382 244 Adder_voice~ \$1;
+#X obj 478 244 Adder_voice~ \$1;
+#X obj 574 244 Adder_voice~ \$1;
+#X obj 286 102 poly 4 1;
+#X connect 0 0 1 0;
+#X connect 1 0 13 0;
+#X connect 1 1 9 0;
+#X connect 2 0 4 0;
+#X connect 4 0 9 0;
+#X connect 4 1 10 0;
+#X connect 4 2 11 0;
+#X connect 4 3 12 0;
+#X connect 5 0 9 0;
+#X connect 7 0 6 0;
+#X connect 9 0 3 0;
+#X connect 9 1 10 0;
+#X connect 10 0 3 0;
+#X connect 10 1 11 0;
+#X connect 11 0 3 0;
+#X connect 11 1 12 0;
+#X connect 12 0 3 0;
+#X connect 13 0 2 0;
+#X connect 13 1 2 1;
+#X connect 13 2 2 2;
+#X coords 0 -1 1 1 152 62 1 100 100;

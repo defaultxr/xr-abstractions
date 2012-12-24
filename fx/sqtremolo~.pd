@@ -1,0 +1,16 @@
+#N canvas 522 194 450 300 10;
+#X obj 228 54 pulse~;
+#X obj 228 74 +~ 1;
+#X obj 232 97 /~ 2;
+#X obj 177 25 inlet~;
+#X obj 220 25 inlet~;
+#X obj 263 25 inlet;
+#X obj 177 102 *~;
+#X obj 177 124 outlet~;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 6 1;
+#X connect 3 0 6 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 1;
+#X connect 6 0 7 0;

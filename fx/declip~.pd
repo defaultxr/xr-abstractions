@@ -1,0 +1,6 @@
+#N canvas 0 0 1600 871 10;
+#X obj 267 178 inlet~;
+#X obj 378 290 outlet~;
+#X obj 298 228 plugin~ declip;
+#X connect 0 0 2 1;
+#X connect 2 1 1 0;

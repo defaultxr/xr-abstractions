@@ -1,0 +1,67 @@
+#N canvas 0 29 1600 849 10;
+#X obj 241 39 namecanvas init;
+#X obj 66 48 bng 15 250 50 0 init-hide empty hide 17 7 0 10 -258113
+-1 -1;
+#N canvas 0 29 1600 849 osd-stuff 0;
+#N canvas 750 878 750 22 osd 1;
+#X obj 3 3 cnv 15 740 15 empty osd_cnv Welcome. 0 8 0 14 -1 -262144
+0;
+#X restore 328 33 pd osd;
+#X obj 77 72 r osd;
+#X obj 77 138 prepent label;
+#X obj 77 187 s osd_cnv;
+#X obj 92 100 spacesym;
+#X obj 77 119 l2s;
+#X obj 208 87 window_name pd-osd;
+#X msg 208 106 set the_mbar [\$1 cget -menu] \, \$1 configure -menu
+"";
+#X obj 186 48 loadbang;
+#X obj 208 125 sys_gui;
+#X text 78 15 sets up the OSD window.;
+#X msg 186 148 label_pos 0 8 \, color 22 0 \, vis_size 740 15 \, label
+Welcome.;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 1;
+#X connect 5 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 9 0;
+#X connect 8 0 6 0;
+#X connect 8 0 4 0;
+#X connect 8 0 11 0;
+#X connect 11 0 3 0;
+#X restore 66 144 pd osd-stuff;
+#N canvas 0 29 1600 849 self-hide 0;
+#X msg 63 105 \; init vis 0;
+#X obj 90 61 r init-hide;
+#X obj 36 61 loadbang;
+#X text 171 20 hides the init patch.;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X restore 66 125 pd self-hide;
+#N canvas 0 29 1600 849 pd-receive 0;
+#X obj 256 63 netreceive 3000;
+#X obj 343 101 delta;
+#X obj 343 120 sel -1 1;
+#X msg 343 139 disconnected;
+#X msg 365 158 connected;
+#X obj 343 82 t f f;
+#X obj 343 209 pack s f;
+#X obj 343 247 s osd;
+#X msg 343 228 1 client \$1. \$2 total connections.;
+#X text 257 32 allows you to use 'pd-send 3000' to semicolon-terminated
+messages to pd.;
+#X obj 214 122 print netreceived;
+#X connect 0 0 10 0;
+#X connect 0 1 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 6 0;
+#X connect 4 0 6 0;
+#X connect 5 0 1 0;
+#X connect 5 1 6 1;
+#X connect 6 0 8 0;
+#X connect 8 0 7 0;
+#X restore 66 163 pd pd-receive;
+#X text 203 101 my init patch.;

@@ -1,0 +1,42 @@
+#N canvas 800 0 1600 871 10;
+#X obj 133 21 keyonoff Control_L;
+#X obj 149 44 keyonoff Control_R;
+#X obj 116 78 spigot;
+#X obj 77 51 keyname;
+#X obj 116 97 atoi;
+#X msg 148 147 1;
+#X obj 148 186 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 212 95 sel ;
+#X obj 248 95 sel Escape;
+#X obj 116 116 route 1;
+#X obj 314 95 sel ;
+#X obj 350 95 sel ;
+#X obj 25 158 keyonchg Escape;
+#X text 165 182 this should be an X when edit mode is ON;
+#X text 183 244 problem for me: ctrl+2 cannot be detected;
+#X obj 148 208 outlet;
+#X obj 62 116 loadbang;
+#X obj 197 153 inlet;
+#X obj 190 208 s editmode;
+#X connect 0 0 2 1;
+#X connect 1 0 2 1;
+#X connect 2 0 4 0;
+#X connect 2 0 7 0;
+#X connect 2 0 8 0;
+#X connect 2 0 10 0;
+#X connect 2 0 11 0;
+#X connect 3 1 2 0;
+#X connect 4 0 9 0;
+#X connect 5 0 6 0;
+#X connect 6 0 15 0;
+#X connect 6 0 18 0;
+#X connect 7 0 6 0;
+#X connect 8 0 5 0;
+#X connect 9 0 5 0;
+#X connect 10 0 5 0;
+#X connect 11 0 5 0;
+#X connect 12 0 6 0;
+#X connect 16 0 5 0;
+#X connect 17 0 6 0;
+#X coords 0 -1 1 1 65 17 1 98 186;

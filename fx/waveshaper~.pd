@@ -1,0 +1,17 @@
+#N canvas 0 0 800 421 10;
+#X obj 197 252 inlet~;
+#X obj 347 350 outlet~;
+#X msg 268 238 control #1 \$1;
+#X obj 232 181 inlet;
+#X obj 268 289 plugin~ shaper;
+#X obj 268 200 min 10;
+#X obj 268 219 max -10;
+#X text 221 166 waveshape (negative values give cool sounds);
+#X obj 268 181 lb \$1 -1;
+#X connect 0 0 4 1;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 1 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X connect 8 0 5 0;

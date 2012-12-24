@@ -1,0 +1,12 @@
+#N canvas 34 359 968 471 10;
+#X obj 49 61 rrad.pdx7~ \$1;
+#X obj 49 35 inlet;
+#X obj 49 375 outlet~;
+#X obj 852 37 inlet;
+#X obj 852 377 outlet;
+#X obj 450 375 outlet~;
+#X connect 0 0 2 0;
+#X connect 0 1 5 0;
+#X connect 0 2 4 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 1;

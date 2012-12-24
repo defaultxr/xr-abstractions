@@ -1,0 +1,8 @@
+#N canvas 0 0 1600 849 10;
+#X obj 142 70 spigot;
+#X obj 142 89 outlet;
+#X obj 197 34 r numlock;
+#X obj 142 15 keyonchg \$1;
+#X connect 0 0 1 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 0;

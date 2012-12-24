@@ -1,0 +1,51 @@
+#N canvas 0 0 800 849 10;
+#X obj 126 188 comb~ \$1 \$2 \$3 \$4 \$5;
+#X obj 126 23 inlet~;
+#X obj 146 68 hsl 128 12 0 50 0 0 empty empty delay 2 6 0 10 -262144
+-1 -1 7366 1;
+#X obj 146 80 hsl 128 12 0 1 0 0 empty empty predly_coefficient 2 6
+0 10 -262144 -1 -1 8890 1;
+#X obj 146 92 hsl 128 12 0 1 0 0 empty empty postdly_coefficient 2
+6 0 10 -262144 -1 -1 1270 1;
+#X obj 146 104 hsl 128 12 0 1 0 0 empty empty output_coefficient 2
+6 0 10 -262144 -1 -1 11430 1;
+#X floatatom 282 63 5 0 0 0 - - -;
+#X floatatom 282 82 5 0 0 0 - - -;
+#X floatatom 282 101 5 0 0 0 - - -;
+#X floatatom 282 120 5 0 0 0 - - -;
+#X obj 126 214 outlet~;
+#X obj 179 16 lb \$1;
+#X obj 215 16 lb \$2;
+#X obj 251 16 lb \$3;
+#X obj 287 16 lb \$4;
+#X obj 78 154 kline~ 100;
+#X obj 144 154 kline~ 100;
+#X obj 210 154 kline~ 100;
+#X obj 276 154 kline~ 100;
+#X obj 179 -3 inlet;
+#X obj 215 -3 inlet;
+#X obj 251 -3 inlet;
+#X obj 287 -3 inlet;
+#X connect 0 0 10 0;
+#X connect 1 0 0 0;
+#X connect 2 0 6 0;
+#X connect 2 0 15 0;
+#X connect 3 0 7 0;
+#X connect 3 0 16 0;
+#X connect 4 0 8 0;
+#X connect 4 0 17 0;
+#X connect 5 0 9 0;
+#X connect 5 0 18 0;
+#X connect 11 0 2 0;
+#X connect 12 0 3 0;
+#X connect 13 0 4 0;
+#X connect 14 0 5 0;
+#X connect 15 0 0 1;
+#X connect 16 0 0 2;
+#X connect 17 0 0 3;
+#X connect 18 0 0 4;
+#X connect 19 0 11 0;
+#X connect 20 0 12 0;
+#X connect 21 0 13 0;
+#X connect 22 0 14 0;
+#X coords 0 -1 1 1 133 63 1 143 53;

@@ -1,0 +1,70 @@
+#N canvas 0 0 1600 849 10;
+#X obj 122 99 inlet;
+#X obj 305 477 outlet~;
+#X obj 305 455 line~;
+#X obj 416 89 inlet;
+#X obj 452 89 inlet;
+#X obj 305 409 pack f 0 1;
+#X msg 305 433 \$2 \, \$3 \$1;
+#X obj 352 307 lb \$1;
+#X text 386 303 if first arg is 1 \, changing line start/end points
+doesn't affect pitch--1 will play at same pitch;
+#X obj 293 307 spigot;
+#X obj 320 212 -;
+#X obj 320 182 t b f;
+#X obj 320 231 abs;
+#X floatatom 348 235 5 0 0 0 - - -;
+#X obj 320 118 lb 1;
+#X obj 269 333 moses;
+#X obj 375 409 pack f 1 0;
+#X obj 258 367 abs;
+#X floatatom 205 334 10 0 0 0 - - -;
+#X obj 269 307 * 1;
+#X obj 335 307 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 335 328 sel 0;
+#X msg 335 347 1;
+#X obj 269 219 *;
+#X obj 201 193 f 1;
+#X obj 122 118 route float time freq bang pitch;
+#X text 485 126 sndcl~ - sound control line. left inlet accepts a number
+to multiply the time by. for example \, 1 plays the sound at regular
+speed \, 2 plays it at half speed (double the time).;
+#X text 481 171 the second and third inlets accept numbers from 0 to
+1 to specify the start and end points \, respectively.;
+#X text 484 213 connect snd~'s right outlet to sndcl~'s left inlet
+\, and sndcl~'s audio outlet to snd~'s audio inlet.;
+#X connect 0 0 25 0;
+#X connect 2 0 1 0;
+#X connect 3 0 5 1;
+#X connect 3 0 10 0;
+#X connect 3 0 16 2;
+#X connect 4 0 5 2;
+#X connect 4 0 11 0;
+#X connect 4 0 16 1;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X connect 7 0 20 0;
+#X connect 9 0 19 1;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 11 1 10 1;
+#X connect 12 0 9 0;
+#X connect 12 0 13 0;
+#X connect 14 0 11 0;
+#X connect 15 0 17 0;
+#X connect 15 1 5 0;
+#X connect 16 0 6 0;
+#X connect 17 0 16 0;
+#X connect 19 0 15 0;
+#X connect 19 0 18 0;
+#X connect 20 0 9 1;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 19 1;
+#X connect 23 0 19 0;
+#X connect 24 0 23 0;
+#X connect 25 0 24 0;
+#X connect 25 1 23 1;
+#X connect 25 3 24 0;
+#X connect 25 4 20 0;

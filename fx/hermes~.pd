@@ -1,0 +1,6 @@
+#N canvas 0 0 450 300 10;
+#X obj 127 127 plugin~ hermesFilter;
+#X obj 201 79 inlet~;
+#X obj 227 175 outlet~;
+#X connect 0 1 2 0;
+#X connect 1 0 0 1;

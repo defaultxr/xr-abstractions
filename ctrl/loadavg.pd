@@ -1,0 +1,18 @@
+#N canvas 0 0 800 849 10;
+#X floatatom 116 266 5 0 0 0 - - -;
+#X obj 116 78 loadbang;
+#X obj 116 162 metro 1000;
+#X msg 116 106 1;
+#X floatatom 116 134 0 0 0 0 - - -;
+#X text 161 134 <-- on/off;
+#X msg 116 188 cat /proc/loadavg;
+#X obj 116 214 shell;
+#X obj 116 241 unpack f f f s f;
+#X connect 1 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
+#X coords 0 -1 1 1 70 16 1 78 266;

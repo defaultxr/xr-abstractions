@@ -1,0 +1,44 @@
+#N canvas 0 29 1600 849 10;
+#X obj 69 220 capslock;
+#X floatatom 69 259 5 0 0 0 - - -;
+#X obj 69 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 213 129 capslock - capslock detection;
+#X text 219 175 this is just a simple abstraction to test whether your
+caps-lock is on or off.;
+#X text 225 225 you can't rely on this for accuracy because it assumes
+that caps lock was off at the time of creation \, and all it does is
+toggles its internal value when it detects a push of the caps lock
+key.;
+#N canvas 0 29 1600 849 caps-cop 0;
+#X obj 210 377 hradio 69 1 0 2 empty empty THE_CAPS_COP_IS_AFTER_U
+0 -5 0 10 -1 -62784 -1 1;
+#X obj 191 156 capslock;
+#X obj 77 253 metro 300;
+#X obj 191 190 sel 1 0;
+#X msg 77 342 color 22 \$1 22;
+#X text 204 89 i have too much time on my hands \, clearly.;
+#X obj 77 272 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 77 323 + 13;
+#X obj 77 304 * 5;
+#X msg 210 249 color 22 22 22 \, label;
+#X obj 222 220 loadbang;
+#X msg 191 268 label THE_CAPS_COP_IS_AFTER_U \, label_pos 0 -5;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 11 0;
+#X connect 3 1 9 0;
+#X connect 4 0 0 0;
+#X connect 6 0 8 0;
+#X connect 6 0 0 0;
+#X connect 7 0 4 0;
+#X connect 8 0 7 0;
+#X connect 9 0 0 0;
+#X connect 10 0 9 0;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 158 100 2 200 357;
+#X restore 158 327 pd caps-cop;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;

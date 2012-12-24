@@ -1,0 +1,16 @@
+#N canvas 0 0 1600 849 10;
+#X obj 159 81 inlet~;
+#X obj 182 153 plugin~ chebstortion;
+#X obj 297 202 outlet~;
+#X obj 271 40 inlet;
+#X msg 271 97 control #1 \$1;
+#X obj 271 59 min 3;
+#X obj 271 78 max 0;
+#X obj 235 40 lb \$1;
+#X connect 0 0 1 1;
+#X connect 1 1 2 0;
+#X connect 3 0 5 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 5 0;

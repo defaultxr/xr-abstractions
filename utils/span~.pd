@@ -1,0 +1,13 @@
+#N canvas 0 0 1600 849 10;
+#X obj 40 40 inlet~;
+#X obj 97 40 inlet;
+#X obj 59 80 pan~;
+#X obj 113 69 lb \$1;
+#X obj 25 119 outlet~;
+#X obj 85 119 outlet~;
+#X text 185 79 span~ - simple pan (pan with arg);
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 4 0;
+#X connect 2 1 5 0;
+#X connect 3 0 2 1;
