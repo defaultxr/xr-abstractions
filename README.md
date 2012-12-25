@@ -53,7 +53,7 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `inputd` - input accumulator deluxe
 
-`inputn` - input accumulator for numbeers
+`inputn` - input accumulator for numbers
 
 `input` - input accumulator
 
@@ -61,7 +61,7 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `keyboardmidi` - 
 
-`keynum` - 
+`keynum` - get numbers from the keyboard. if "h" is provided as the first argument, also allows hexadecimal numbers (a-f).
 
 `keyonchg` - 
 
@@ -77,9 +77,9 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `khsl` - 
 
-`kspigot~` - 
+`kspigot~` - graphical audio spigot (left inlet is for the audio, right inlet is to open or close the spigot)
 
-`kspigot` - 
+`kspigot` - graphical message spigot (left inlet is for the messages, right inlet is to open or close the spigot)
 
 `mcb` - 
 
@@ -111,9 +111,9 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `nknum` - 
 
-`numlock` - 
+`numlock` - shows whether numlock is on or off and also outputs 1 or 0 depending.
 
-`nview` - 
+`nview` - view all incoming midi note values.
 
 `router` - 
 
@@ -141,77 +141,67 @@ gen
 ===
 abstractions for generating sound
 
-`analogosc~` - 
+`analog~` - analog simulation. basically supposed to be like line noise and a small dc offset. probably not a very good simulation of the actual analog sound.
 
-`analog~` - 
+`aphasor~` - bipolar version of `phasor~`
 
-`aphasor~` - 
-
-`fluid~` - 
+`fluid~` - FluidSynth (SoundFont) interface.
 
 `grain~` - 
 
 `granular~` - 
 
-`irsong~` - 
+`irsong~` - interface to `randomsong~`
 
-`mmo~` - 
+`noisef~` - noise frequency
 
-`noisef~` - 
+`playsf~` - play a file from the argument.
 
-`playsf~` - 
+`pmosc~` - phase modulation oscillator, stolen from PDX7, with a slight modification.
 
-`pmosc~` - 
+`psndm~` - polyphonic sound player, using midi notes for melodies. this needs work.
 
-`psndm~` - 
+`psndp~` - polyphonic sound player. similar to `sndp~` but with 8 voices.
 
-`psndp~` - 
+`pulse~` - non-band-limited pulse wave with modulatable pulse width.
 
-`pulse~` - 
+`random~` - random wave generator (based on a LADSPA plugin).
 
-`random~` - 
+`randomsong~` - play a random song from your hard drive (you'll probably have to modify this a lot for it to work for you)
 
-`randomsong~` - 
+`rec~` - record a snippet of sound to a table.
 
-`rec~` - 
+`recp~` - play the a snippet of sound from `rec~`.
 
-`recp~` - 
+`recsnd~` - allows access to the sound recorded with `rec~` in a similar manner to the way `snd~` allows.
 
-`recsnd~` - 
+`sine~` - extremely simple sine wave oscillator based on `phasor~` and `cos~`. might change this in the future.
 
-`sf~` - 
+`sndcf~` - generates a signal to control `snd~` based on frequency of the sound.
 
-`sine~` - 
+`sndcl~` - generates a signal to control `snd~` based on a `line~` (i.e. with start and end-points and a rate)
 
-`sndcf~` - 
+`sndcm~` - generates a signal to control `snd~` based on midi numbers (60 being the base note)
 
-`sndcl~` - 
+`sndd~` - sound duplicate. like `snd~` but does not re-load the file; simply re-uses the table containing the already-loaded file.
 
-`sndcm~` - 
+`sndf~` - sound frequency. play a sound at a rate multiplied by the normal rate.
 
-`sndcn~` - 
+`sndl~` - sound line. play a sound or snippets of it based a `line~`.
 
-`sndd~` - 
+`sndm~` - sound midi. play a sound based on midi note numbers, with 60 being the default base note.
 
-`sndf~` - 
+`snd~` - sound file. load a sound into a table and read through it via the audio inlet, with 0 being the beginning and 1 being the end.
 
-`sndl~` - 
+`sndp~` - sound play. load a sound into a table and bang to play the whole sound. good for drums.
 
-`sndm~` - 
+`snds~` - sound slices. play snippets of a sound that has been analyzed by `attacks~`
 
-`snd~` - 
+`srec~` - signal-based `rec~`. work-in-progress.
 
-`sndp~` - 
+`timestretch~` - "timestretch" a sound by repeatedly going back and forth through it.
 
-`sndrec~` - 
-
-`snds~` - 
-
-`srec~` - 
-
-`timestretch~` - 
-
-`tri~` - 
+`tri~` - non-band-limited triangle or saw wave.
 
 math
 ====
@@ -245,8 +235,6 @@ abstractions for altering or generating number streams
 
 `rangem` - scale a range to midi (0-127).
 
-`rhover` - random numbers hovering around a certain value.
-
 `round` - round a float to the nearest integer.
 
 `rrange` - random within a range (inclusive).
@@ -259,23 +247,23 @@ seq
 ===
 sequencer abstractions
 
-`adsr~` - 
+`adsr~` - attack decay sustain release envelope... well, kinda.
 
-`adsr` - 
+`adsr` - same as `adsr~`, but outputs messages instead of audio signal.
 
-`amap` - 
+`amap` - advanced version of `map`. has more features like random selection, insertion, deletion, and dumping the contents.
 
 `anaseq` - a sequencer made of vertical sliders; supports saving, loading, multiple patterns and more.
 
 `beat~` - 
 
-`boxseq` - 
+`boxseq` - 6x6 "box" sequencer. can be played in any direction, even diagonally. was an experiment. might change it later.
 
 `bpma` - 
 
-`bpmm2` - 
+`bpmm2` - was supposed to be the next version of `bpmm` with fewer outlets but i might delete this actually.
 
-`bpmm` - metro/gui for outputting bangs on the downbeat, bangs on each quarter note, and numbers for each quarter note. try connecting the third outlet to [anaseq] or [drumseq]
+`bpmm` - metro/gui for outputting bangs on the downbeat, bangs on each quarter note, and numbers for each quarter note. try connecting the third outlet to `anaseq` or `drumseq`
 
 `drumseq` - a 16x4 matrix of toggle boxes. supports saving, loading, multiple patterns and more.
 
@@ -293,7 +281,7 @@ sequencer abstractions
 
 `kline` - 
 
-`listman` - 
+`listman` - list manager. you can add elements to a list, remove them, check for their existence within the list, etc. you can't remove by index, only by value, so don't use this if you want to have multiple of the same element.
 
 `lmap` - 
 
@@ -301,25 +289,21 @@ sequencer abstractions
 
 `lolw` - 
 
-`map-help` - 
+`map` - map bangs or floats to elements of a list provided as arguments or set via the right inlet. probably the most useful abstraction you'll ever find.
 
-`map` - 
-
-`numseq` - 
-
-`ometro` - 
+`ometro` - "on metro". a `metro` that is on by default.
 
 `patr` - 
 
-`pattseq` - 
+`pattseq` - graphical sequencer similar to `drumseq` but outputs numbers rather than just bangs.
 
 `patw` - 
 
-`pb` - 
+`pb` - processor for betablocker. basically a little computer.
 
-`pmap` - 
+`pmap` - program map. related to `pb`.
 
-`rchoice` - 
+`rchoice` - random choice from either the arguments, or from the incoming list.
 
 `rmap` - 
 
@@ -327,19 +311,19 @@ sequencer abstractions
 
 `seqfill` - 
 
-`srush` - 
+`srush` - "snare rush" abstraction. might redo this to make it simpler.
 
-`stack` - 
+`stack` - a stack. you can push things onto the stack or pop them off of it.
 
-`taptempo` - 
+`taptempo` - tap or send bangs to get the tempo.
 
 `td~` - 
 
-`tmap` - 
+`tmap` - timed map that plays through the whole list with one bang.
 
 `tracker` - simple "tracker" sequencer controllable via the keyboard.
 
-`unmap` - 
+`unmap` - get the index of incoming values in a list provided either as arguments or via the right inlet. the opposite of `map`. 
 
 `vslz` - 
 
@@ -351,21 +335,21 @@ miscellaneous utilities
 
 `autosend` - 
 
-`chars` - 
+`chars` - separate a symbol into a list of its characters.
 
-`emptysymbol` - 
+`emptysymbol` - test if a symbol is the empty symbol.
 
-`hanning` - 
+`hanning` - hanning window.
 
 `hue_to_rgb` - 
 
-`init` - 
+`init` - my init patch. may or may not be useful to you.
 
 `itimer` - 
 
 `ktimer` - 
 
-`lb` - 
+`lb` - `loadbang` abstraction. lets you output a specific number or value on load, rather than just a bang.
 
 `limit~` - 
 
@@ -389,8 +373,6 @@ miscellaneous utilities
 
 `modulation~` - 
 
-`old-init` - 
-
 `o~` - interface for mono output to `dac~`.
 
 `parser` - 
@@ -401,7 +383,7 @@ miscellaneous utilities
 
 `po~` - panned mono output. same as `o~` but the first argument is the stereo panning position of the input, from -45 to 45.
 
-`porta~` - 
+`porta~` - portamento. might need work.
 
 `qtabwrite` - 
 
@@ -409,13 +391,13 @@ miscellaneous utilities
 
 `quote` - 
 
-`rporta~` - 
+`rporta~` - relative portamento. might need work.
 
 `so~` - interface for stereo output to `dac~`. see also: `o~`.
 
-`spacesym` - 
+`spacesym` - outputs a symbol that has a character that looks blank. thus, you can make symbols with "spaces" in them without them being lists. it's one of pd's quirks. don't know if this'll work everywhere.
 
-`span~` - 
+`span~` - simple panner. like `pan~` but lets you specify the panning position as an argument if you're lazy.
 
 `src~` - 
 
