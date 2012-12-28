@@ -4,7 +4,7 @@
 -1 -1;
 #N canvas 0 29 1600 849 osd-stuff 0;
 #N canvas 750 878 750 22 osd 1;
-#X obj 3 3 cnv 15 740 15 empty osd_cnv Welcome. 0 8 0 14 -1 -262144
+#X obj 4 0 cnv 15 735 15 empty osd_cnv Welcome. 0 8 0 14 -1 -262144
 0;
 #X restore 328 33 pd osd;
 #X obj 77 72 r osd;
@@ -18,7 +18,7 @@
 #X obj 186 48 loadbang;
 #X obj 208 125 sys_gui;
 #X text 78 15 sets up the OSD window.;
-#X msg 186 148 label_pos 0 8 \, color 22 0 \, vis_size 740 15 \, label
+#X msg 186 148 label_pos 0 8 \, color 22 0 \, vis_size 735 15 \, label
 Welcome.;
 #X connect 1 0 5 0;
 #X connect 2 0 3 0;

@@ -227,6 +227,8 @@ abstractions for altering or generating number streams
 
 `kount` - counts up to a certain number and loops, or indefinitely if no argument is given.
 
+`maybe` - 
+
 `minv` - 
 
 `mrange` - scale 0-127 to an arbitrary range.
@@ -328,6 +330,34 @@ sequencer abstractions
 `vslz` - 
 
 `xeroxer~` - 
+
+synths
+======
+"full-featured" synthesizers. a lot of these are scrapped designs or ripped from other people (although i've given credit). most of these aren't that great.
+
+`Adder4~` - scrapped
+
+`Adder~` - scrapped
+
+`Adder_voice~` - scrapped
+
+`filters~` - scrapped
+
+`fmFeedback~` - FM feedback synth stolen from NoizeHack, slightly modified by me.
+
+`kick1~` - extremely basic kick drum synth
+
+`kick2~` - another extremely basic kick drum synth
+
+`oscs~` - scrapped
+
+`snare1~` - extremely basic snare drum synth
+
+`snare2~` - another extremely basic snare drum synth
+
+`Synf~` - scrapped
+
+`tb303~` - TB303 clone. work-in-progress. probably doesn't sound much like the real thing.
 
 utils
 =====
