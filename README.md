@@ -373,8 +373,6 @@ miscellaneous utilities
 
 `hue_to_rgb` - 
 
-`init` - my init patch. may or may not be useful to you.
-
 `itimer` - 
 
 `ktimer` - 
