@@ -1,4 +1,4 @@
-#N canvas 0 0 800 849 10;
+#N canvas 0 29 800 849 10;
 #X obj 286 111 dollarg;
 #X obj 286 73 lb 0;
 #X obj 334 111 inlet;
@@ -20,9 +20,15 @@
 #X text 424 195 the argument list is a list of receive names. each
 receive name is mapped to a unique number.;
 #X obj 301 303 symbol;
-#X msg 316 354 newobj . r\$2 r \$1 \, newmsg . m\$2 0 \, send m\$2
-set \, send m\$2 add2 \$2 \, send m\$2 adddollar 1 \, conn r\$2 0 m\$2
+#X msg 66 484 newobj . r\$2 r \$1 \, newmsg . m\$2 0 \, send m\$2 set
+\, send m\$2 add2 \$2 \, send m\$2 adddollar 1 \, conn r\$2 0 m\$2
 0 \, conn m\$2 0 0;
+#X msg 316 354 newobj . r\$2 r \$1 \, newobj . p\$2 prepent \$2 \,
+conn r\$2 0 p\$2 0 \, conn p\$2 0 0;
+#X text 79 456 the old version which used messages and only passed
+the first word from each receive:;
+#X text 377 325 the new version requires [prepent] which is basically
+just [list prepend] and [list trim].;
 #X connect 0 0 10 0;
 #X connect 1 0 12 0;
 #X connect 2 0 10 0;
@@ -33,7 +39,7 @@ set \, send m\$2 add2 \$2 \, send m\$2 adddollar 1 \, conn r\$2 0 m\$2
 #X connect 5 1 14 0;
 #X connect 6 0 7 0;
 #X connect 10 0 16 0;
-#X connect 11 0 19 0;
+#X connect 11 0 20 0;
 #X connect 12 0 0 0;
 #X connect 13 0 1 0;
 #X connect 14 0 11 1;
@@ -41,4 +47,4 @@ set \, send m\$2 add2 \$2 \, send m\$2 adddollar 1 \, conn r\$2 0 m\$2
 #X connect 16 0 4 0;
 #X connect 16 1 3 0;
 #X connect 18 0 11 0;
-#X connect 19 0 6 0;
+#X connect 20 0 6 0;
