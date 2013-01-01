@@ -60,9 +60,7 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `input` - input accumulator
 
-`kbdm` - 
-
-`keyboardmidi` - 
+`kbdm` - convert numbers from `key` into midi note numbers so you can use your keyboard to play notes.
 
 `keynum` - get numbers from the keyboard. if "h" is provided as the first argument, also allows hexadecimal numbers (a-f).
 
@@ -70,11 +68,7 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `keyonoff` - 
 
-`keyrange` - 
-
-`keyrow` - 
-
-`keysonchg` - 
+`keyrow` - converts numbers from `key` into the numbers 0-9. in other words, use a row of keys as numbers.
 
 `kfilename` - abstraction for making paths. used by `snd~`, `drumseq`, `anaseq` and others. **NOTE: you might want to edit this since it uses my paths.**
 
@@ -106,7 +100,7 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `mstr` - 
 
-`nems` - 
+`nems` - non-edit mode spigot. only allows messages to pass when edit mode is off. doesn't work though
 
 `nkeyb` - 
 
@@ -136,6 +130,11 @@ demos
 =====
 demonstrations of the included abstractions (definitely open these if you want a tour of this library)
 
+fx
+===
+
+abstractions for many LADSPA effects, as well as interfaces for filters, etc.
+
 gen
 ===
 abstractions for generating sound
@@ -160,7 +159,7 @@ abstractions for generating sound
 
 `psndm~` - polyphonic sound player, using midi notes for melodies. this needs work.
 
-`psndp~` - polyphonic sound player. similar to `sndp~` but with 8 voices.
+`psndp~` - polyphonic sound player. similar to `sndp~` but with 6 voices.
 
 `pulse~` - non-band-limited pulse wave with modulatable pulse width.
 
@@ -330,13 +329,11 @@ synths
 ======
 "full-featured" synthesizers. a lot of these are scrapped designs. most of these aren't that great.
 
-`Adder4~` - scrapped
+`Adder4~` - 
 
-`Adder~` - scrapped
+`Adder~` - 
 
-`Adder_voice~` - scrapped
-
-`filters~` - scrapped
+`Adder_voice~` - voice for `Adder~`
 
 `fmFeedback~` - FM feedback synth stolen from NoizeHack, slightly modified by me.
 
@@ -344,19 +341,17 @@ synths
 
 `kick2~` - another extremely basic kick drum synth
 
-`oscs~` - scrapped
-
 `snare1~` - extremely basic snare drum synth
 
 `snare2~` - another extremely basic snare drum synth
 
-`Synf~` - scrapped
-
-`tb303~` - TB303 clone. work-in-progress. probably doesn't sound much like the real thing.
+`tb303~` - TB303 clone. probably doesn't sound much like the real thing. WIP
 
 utils
 =====
 miscellaneous utilities
+
+`*+~` - multiply and then add to a signal with one object.
 
 `autosend` - use the first item in a list as the destination for the rest of the list.
 
@@ -380,8 +375,6 @@ miscellaneous utilities
 
 `limit~` - handy limiter abstraction. basically just outputs a signal limited by `limiter~` in case you're lazy like me. be warned that this introduces a delay of 64 samples, of course.
 
-`listb` - 
-
 `list-find-1` - basically the same as `list-find` but only finds the first instance of an item in the list.
 
 `list-replacer` - replaces all instances of one item in a list with another list.
@@ -392,21 +385,15 @@ miscellaneous utilities
 
 `marquee` - display elements of a list at regular intervals.
 
-`mod~` - 
-
-`modulation~` - 
-
 `o~` - interface for mono output to `dac~`.
 
 `parser` - parses lisp-style commands from within the incoming message (i.e. "(function argument1 argument2 ... argumentN)") and outputs the original message with the output of each command replacing the command. currently accepts "rc" for `rchoice` and "rr" for `rrange`. it's a decent start but i will probably add memory to it as well. maybe eventually it will be a full-fledged lisp implementation! ha.
-
-`*+~` - multiply and then add to a signal with one object.
 
 `po~` - panned mono output. same as `o~` but the first argument is the stereo panning position of the input, from -45 to 45.
 
 `porta~` - portamento. might need work.
 
-`qtabwrite` - 
+`qtabwrite` - quick tab write. specify a table as the argument, and then you can send messages to the inlet or to qt-$1 in the format "INDEX VALUE"
 
 `qtimer` - quantizible timer. similar to `interval` but allows you to specify the granularity of output values.
 
@@ -420,11 +407,9 @@ miscellaneous utilities
 
 `span~` - simple panner. like `pan~` but lets you specify the panning position as an argument if you're lazy.
 
-`src~` - 
+`sreceive~` - settable receive. probably don't use this.
 
-`sreceive~` - 
-
-`ssend~` - 
+`ssend~` - settable send. probably don't use this.
 
 `sym` - turn a list into a symbol (basically just `l2s` except you don't need to send an empty symbol to the right inlet. see also: `chars`)
 
@@ -445,6 +430,7 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * fix `mcb`, `mck`, `m-client`, `mcl`, `mc`, `mct`, `mstr`, etc (i've redone these quite a few times already and i still haven't quite gotten them right)
 * rename `aphasor~`
 * make a better `analog~`
+* rename `pmosc~` to `pm~` so it doesn't conflict with `pmosc~` from PDX7
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 

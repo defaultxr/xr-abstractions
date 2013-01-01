@@ -1,7 +1,0 @@
-#N canvas 0 0 1600 870 10;
-#X obj 15 10 keyname;
-#X obj 41 237 outlet;
-#X obj 41 67 spigot;
-#X connect 0 0 2 1;
-#X connect 0 1 2 0;
-#X connect 2 0 1 0;
