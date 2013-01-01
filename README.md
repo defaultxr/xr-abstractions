@@ -8,11 +8,19 @@ Hopefully the comments in each one will be useful to you. below is an overview o
 
 analysis
 ========
-abstractions for analyzing stuff or displaying information from audio signals.
+abstractions for analyzing stuff or displaying information.
 
 `attacks~` - supposed to generate a list of a sound file's 'attacks', which could then be used for `snds~`. WIP.
 
+`cpuload` - display current CPU load average
+
+`cview` - view all incoming midi CC
+
 `ifiddle~` - graphical interface to `fiddle~`.
+
+`lview` - list view. shows the whole list received, as well as its length.
+
+`nview` - view all incoming midi note values.
 
 `scroll~` - scrolling amplitude view.
 
@@ -21,6 +29,8 @@ abstractions for analyzing stuff or displaying information from audio signals.
 `signum~` - current value of the signal. basically like `unsig~` with a number box gui.
 
 `spectrum~` - shows the FFT spectrum of the input.
+
+`tview` - text viewer. scrolls the last 5 received inputs.
 
 `vcsig~` - view control signal. shows the current value of an input signal graphically. assumes the signal is between 0 and 1.
 
@@ -40,13 +50,7 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `cnum` - control number. use your keyboard's numpad to increase or decrease a number. use 8 to increase it or 2 to decrease it. probably won't work if your numlock is on.
 
-`colors` - outputs a pd color when the left inlet is banged. otherwise, the inlets take floats: from left, the red amount, green amount, and blue amount.
-
 `c` - midi continuous controller interface
-
-`cpuload` - display current CPU load average
-
-`cview` - view all incoming midi CC
 
 `editmode` - (try to) detect edit mode
 
@@ -112,8 +116,6 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `numlock` - shows whether numlock is on or off and also outputs 1 or 0 depending.
 
-`nview` - view all incoming midi note values.
-
 `router` - 
 
 `sndsel` - sound selector. allows you to select a sound by browsing folders graphically, because `playlist` kind of sucks. i stole this from someone else's abstractions but i edited it a bit and i plan to redo it from scratch eventually.
@@ -123,10 +125,6 @@ abstractions for controlling things, either via keyboard or by clicking.
 `switcher~` - 
 
 `switcher` - 
-
-`tview` - text viewer. scrolls the last 5 received inputs.
-
-`vlist` - view list. shows the whole list received, as well as its length.
 
 `wiib` - 
 
@@ -228,9 +226,9 @@ abstractions for altering or generating number streams
 
 `kount` - counts up to a certain number and loops, or indefinitely if no argument is given.
 
-`maybe` - 
+`maybe` - maybe output a bang. numbers between 0 and 1 specify a probability of a bang (i.e. 0.25 is 25% chance of bang), numbers above 1 specify 1 in n chance of bang (i.e. 5 is 1 in 5 chance of bang, or 20%). banging the inlet is a 50% chance of bang.
 
-`minv` - 
+`minv` - "midi invert". 127 becomes 0, 0 becomes 127, and everything in between.
 
 `mrange` - scale 0-127 to an arbitrary range.
 
@@ -270,37 +268,33 @@ sequencer abstractions
 
 `drumseq` - a 16x4 matrix of toggle boxes. supports saving, loading, multiple patterns and more.
 
-`dust` - 
+`dust` - output bangs at random intervals lower than the provided argument.
 
 `edger~` - 
 
-`ft` - 
+`ft` - "friendly table". abstraction to make it easier to edit a table.
 
-`iadsr~` - 
+`iadsr~` - interface ADSR envelope. WIP.
 
-`ilist` - 
+`ilist` - indexed list manager. insert into or remove from a list by index, just by sending messages.
 
-`kline~` - 
+`kline~` - automatic line. like `line~` but floats don't jump, they start a line whose time is provided by the first argument.
 
-`kline` - 
+`kline` - automatic line. like `line` but floats don't jump, they start a line whose time is provided by the first argument.
 
 `listman` - list manager. you can add elements to a list, remove them, check for their existence within the list, etc. you can't remove by index, only by value, so don't use this if you want to have multiple of the same element.
 
-`lmap` - 
+`lmap` - line map. was supposed to be used to generate a complex line. but i might delete this.
 
-`lolr` - 
+`lolr` - list of lists reader. might delete this eventually.
 
-`lolw` - 
+`lolw` - list of lists writer. might delete this eventually.
 
 `map` - map bangs or floats to elements of a list provided as arguments or set via the right inlet. probably the most useful abstraction you'll ever find.
 
 `ometro` - "on metro". a `metro` that is on by default.
 
-`patr` - 
-
 `pattseq` - graphical sequencer similar to `drumseq` but outputs numbers rather than just bangs.
-
-`patw` - 
 
 `pb` - processor for betablocker. basically a little computer.
 
@@ -308,11 +302,11 @@ sequencer abstractions
 
 `rchoice` - random choice from either the arguments, or from the incoming list.
 
-`rmap` - 
+`rmap` - receive map. takes as arguments a list of names to receive from, and outputs data received from them with numbers prepended.
 
-`sbox` - 
+`sbox` - box abstraction used by `boxseq` and `pattseq`.
 
-`seqfill` - 
+`seqfill` - abstraction used by `drumseq`'s "e" command.
 
 `srush` - "snare rush" abstraction. might redo this to make it simpler.
 
@@ -320,7 +314,7 @@ sequencer abstractions
 
 `taptempo` - tap or send bangs to get the tempo.
 
-`td~` - 
+`td~` - table draw. supposed to draw into a table via messages, but it's not finished yet. probably never will be. might delete this.
 
 `tmap` - timed map that plays through the whole list with one bang.
 
@@ -328,7 +322,7 @@ sequencer abstractions
 
 `unmap` - get the index of incoming values in a list provided either as arguments or via the right inlet. the opposite of `map`. 
 
-`vslz` - 
+`vslz` - extremely simple 8-step vsl-based sequencer.
 
 `xeroxer~` - 
 
@@ -368,35 +362,35 @@ miscellaneous utilities
 
 `chars` - separate a symbol into a list of its characters.
 
+`colors` - outputs a pd color when the left inlet is banged. otherwise, the inlets take floats: from left, the red amount, green amount, and blue amount.
+
 `emptysymbol` - test if a symbol is the empty symbol.
 
 `hanning` - hanning window.
 
-`hue_to_rgb` - 
+`hue_to_rgb` - convert a hue to rgb colors. see also: `colors`
 
-`itimer` - 
+`interval` - outputs time between bangs, measured with `realtime`.
 
-`ktimer` - 
+`itimer` - interface timer. shows minutes, seconds, and milliseconds.
+
+`ktimer` - timer abstraction. outputs minutes, seconds, and milliseconds from an internal `realtime` object. this is used by `itimer` but i might delete this.
 
 `lb` - `loadbang` abstraction. lets you output a specific number or value on load, rather than just a bang.
 
-`limit~` - 
+`limit~` - handy limiter abstraction. basically just outputs a signal limited by `limiter~` in case you're lazy like me. be warned that this introduces a delay of 64 samples, of course.
 
 `listb` - 
 
-`list-find-1` - 
+`list-find-1` - basically the same as `list-find` but only finds the first instance of an item in the list.
 
-`list-remove` - 
+`list-replacer` - replaces all instances of one item in a list with another list.
 
-`list-replacer` - 
+`lists` - list store. basically works how `float` and `symbol` work, except, of course, that it's for lists.
 
-`list-reset` - 
+`list-without` - returns a list without all instances of the specified element.
 
-`lists` - 
-
-`list-without` - 
-
-`marquee` - 
+`marquee` - display elements of a list at regular intervals.
 
 `mod~` - 
 
@@ -404,11 +398,9 @@ miscellaneous utilities
 
 `o~` - interface for mono output to `dac~`.
 
-`parser` - 
+`parser` - parses lisp-style commands from within the incoming message (i.e. "(function argument1 argument2 ... argumentN)") and outputs the original message with the output of each command replacing the command. currently accepts "rc" for `rchoice` and "rr" for `rrange`. it's a decent start but i will probably add memory to it as well. maybe eventually it will be a full-fledged lisp implementation! ha.
 
-`*+~` - 
-
-`ping` - 
+`*+~` - multiply and then add to a signal with one object.
 
 `po~` - panned mono output. same as `o~` but the first argument is the stereo panning position of the input, from -45 to 45.
 
@@ -416,9 +408,9 @@ miscellaneous utilities
 
 `qtabwrite` - 
 
-`qtimer` - 
+`qtimer` - quantizible timer. similar to `interval` but allows you to specify the granularity of output values.
 
-`quote` - 
+`quote` - surrounds the input with quotes.
 
 `rporta~` - relative portamento. might need work.
 
@@ -434,7 +426,7 @@ miscellaneous utilities
 
 `ssend~` - 
 
-`sym` - 
+`sym` - turn a list into a symbol (basically just `l2s` except you don't need to send an empty symbol to the right inlet. see also: `chars`)
 
 `zyn~` - ZynAddSubFX "interface"
 
@@ -456,6 +448,6 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 
-* fix `editmode` so that it is accurate 100% of the time
-* make `keyonchg`, `keyonoff`, etc work properly
-* 
+* fix `editmode` so that it is accurate 100% of the time (maybe there is a way to query the editmode state of a certain patch - perhaps using `parentdollarzero` and `sys_gui`??)
+* make `keyonchg`, `keyonoff`, etc work properly (pd's `keyname`, `key`, `keyup`, etc, all detect from keyboard "repeat" events rather than actual physical keypresses or releases)
+* remove `span~` (pd's `pan~` object would need to accept an argument for this to happen)

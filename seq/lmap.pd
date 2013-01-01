@@ -1,4 +1,4 @@
-#N canvas 0 0 800 849 10;
+#N canvas 0 29 1600 849 10;
 #X obj 575 145 dollarg;
 #X obj 479 368 list-idx;
 #X obj 602 255 list length;

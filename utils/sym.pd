@@ -1,9 +1,9 @@
-#N canvas 0 0 800 849 10;
+#N canvas 0 29 1600 849 10;
 #X obj 40 2 inlet;
-#X obj 76 40 loadbang;
-#X obj 40 95 outlet;
-#X msg 76 59 symbol;
-#X obj 40 76 l2s;
+#X obj 55 40 loadbang;
+#X obj 40 97 outlet;
+#X msg 55 59 symbol;
+#X obj 40 78 l2s;
 #X obj 40 21 list;
 #X text 181 27 converts a list of characters to a symbol. see also:
 chars;
