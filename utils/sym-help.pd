@@ -1,0 +1,16 @@
+#N canvas 0 29 1600 849 10;
+#X symbolatom 75 251 10 0 0 0 - - -;
+#X obj 75 272 chars;
+#X symbolatom 75 337 10 0 0 0 - - -;
+#X obj 75 310 sym;
+#X text 233 132 sym - concatenate a list into a symbol;
+#X text 211 175 [sym] basically just concatenates a list into a symbol
+quickly. you can do the same thing just by sending an empty symbol
+to the right inlet of [l2s]. but [sym] is here if you're lazy.;
+#X text 117 271 <-- [chars] converts a symbol into a list of characters
+;
+#X text 100 306 <-- [sym] converts a list into a symbol (the opposite
+of [chars]!);
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;

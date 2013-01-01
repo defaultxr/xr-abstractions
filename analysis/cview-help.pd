@@ -1,0 +1,5 @@
+#N canvas 0 29 1600 849 10;
+#X obj 101 194 cview;
+#X text 368 174 cview - view all incoming midi CC.;
+#X text 336 226 this is just a diagnostic tool to allow you to visually
+see everything pd is getting in from midi CC.;

@@ -1,0 +1,41 @@
+#N canvas 800 29 800 849 10;
+#X obj 166 221 tview;
+#X symbolatom 186 150 10 0 0 0 - - -;
+#X obj 207 169 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 147 157 5 0 0 0 - - -;
+#X obj 98 164 r tview;
+#X msg 234 175 test message!;
+#X msg 244 196 list test!;
+#X text 365 122 tview - textual view of input history;
+#N canvas 800 29 800 849 note 0;
+#X obj 230 278 outlet;
+#X obj 191 108 bng 15 250 50 0 empty empty note 17 7 0 10 -262144 -1
+-1;
+#X obj 191 240 sel END;
+#X msg 126 192 0;
+#X msg 191 125 1;
+#X obj 230 259 s2l _;
+#X obj 191 144 metro 500;
+#X obj 191 163 map i_love_pure_data! :D it's_so_much_fun! i_hope_you_find
+my_patches_useful... END;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 2 1 5 0;
+#X connect 3 0 6 0;
+#X connect 4 0 6 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 2 0;
+#X coords 0 -1 1 1 50 15 2 191 108;
+#X restore 63 192 pd note;
+#X text 383 159 tview will show the last 5 inputs received by its inlet.
+this makes it easier to monitor what's going on. a toggle box is provided
+to stop input.;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 8 0 0 0;

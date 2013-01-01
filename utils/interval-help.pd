@@ -1,0 +1,13 @@
+#N canvas 0 29 1600 849 10;
+#X obj 51 296 interval;
+#X floatatom 51 325 5 0 0 0 - - -;
+#X obj 51 267 metro 300;
+#X obj 51 211 loadbang;
+#X obj 51 240 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 220 125 interval - measures the interval between bangs;
+#X text 222 174 uses the [realtime] object interally.;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
