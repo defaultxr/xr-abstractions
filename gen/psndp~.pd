@@ -1,9 +1,9 @@
-#N canvas 0 0 1600 849 10;
-#X obj 381 338 soundfiler;
+#N canvas 0 29 1600 849 10;
+#X obj 381 358 soundfiler;
 #X obj 456 222 loadbang;
 #X obj 456 251 f \$0;
-#X obj 381 287 pack s f;
-#X obj 297 338 table \$0-file;
+#X obj 381 307 pack s f;
+#X obj 297 358 table \$0-file;
 #X obj 120 585 outlet~;
 #X obj 381 250 symbol \$1;
 #X obj 319 250 openpanel;
@@ -51,14 +51,15 @@
 #X obj 278 453 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 46 356 route 0 1 2 3 4 5;
-#X msg 381 306 read -resize \$1 \$2-file \; \$2-file normalize;
+#X msg 381 326 read -resize \$1 \$2-file \; \$2-file normalize;
 #X obj 19 273 sel 0;
+#X obj 381 269 kfilename;
 #X connect 1 0 2 0;
 #X connect 1 0 6 0;
 #X connect 2 0 3 1;
 #X connect 3 0 44 0;
-#X connect 6 0 3 0;
 #X connect 6 0 9 0;
+#X connect 6 0 46 0;
 #X connect 7 0 6 0;
 #X connect 8 0 7 0;
 #X connect 10 0 6 0;
@@ -111,3 +112,4 @@
 #X connect 43 5 39 0;
 #X connect 44 0 0 0;
 #X connect 45 1 20 0;
+#X connect 46 0 3 0;

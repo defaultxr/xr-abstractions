@@ -1,11 +1,10 @@
 defaultxr's pure data abstractions
 ==================================
+This is a collection of pure data abstractions i've made. I don't use pd as much as i used to but this is probably the place where you'll find the latest versions of all my stuff.
 
-this is a collection of pure data abstractions i've made. i don't use pd as much as i used to but this is probably the place where you'll find the latest versions of all my stuff.
+Please notify me if you get any "not found" errors while you're using any of these (i may have forgotten to include some of them in the repository).
 
-please notify me if you get any "not found" errors while you're using any of these (i may have forgotten to include some of them in the repository).
-
-hopefully the comments in each one will be useful to you. below is an overview of the contents of this library.
+Hopefully the comments in each one will be useful to you. below is an overview of the contents of this library.
 
 analysis
 ========
@@ -13,7 +12,7 @@ abstractions for analyzing stuff or displaying information from audio signals.
 
 `attacks~` - supposed to generate a list of a sound file's 'attacks', which could then be used for `snds~`. WIP.
 
-`ifiddle~` - graphical interface to fiddle~.
+`ifiddle~` - graphical interface to `fiddle~`.
 
 `scroll~` - scrolling amplitude view.
 
@@ -73,7 +72,7 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `keysonchg` - 
 
-`kfilename` - abstraction to make paths typed shorter. used by `snd~` and others. **NOTE: you might want to edit this since it uses my paths.**
+`kfilename` - abstraction for making paths. used by `snd~`, `drumseq`, `anaseq` and others. **NOTE: you might want to edit this since it uses my paths.**
 
 `khsl` - 
 
@@ -126,6 +125,8 @@ abstractions for controlling things, either via keyboard or by clicking.
 `switcher` - 
 
 `tview` - text viewer. scrolls the last 5 received inputs.
+
+`vlist` - view list. shows the whole list received, as well as its length.
 
 `wiib` - 
 
@@ -333,7 +334,7 @@ sequencer abstractions
 
 synths
 ======
-"full-featured" synthesizers. a lot of these are scrapped designs or ripped from other people (although i've given credit). most of these aren't that great.
+"full-featured" synthesizers. a lot of these are scrapped designs. most of these aren't that great.
 
 `Adder4~` - scrapped
 
@@ -363,7 +364,7 @@ utils
 =====
 miscellaneous utilities
 
-`autosend` - 
+`autosend` - use the first item in a list as the destination for the rest of the list.
 
 `chars` - separate a symbol into a list of its characters.
 
@@ -435,5 +436,26 @@ miscellaneous utilities
 
 `sym` - 
 
-`zyn~` -
+`zyn~` - ZynAddSubFX "interface"
 
+FUTURE
+======
+
+In the future i plan to clean up a lot of these. Either by renaming them or by splitting up functionality, etc. There are also a few that i'd like to re-code or rethink entirely. Some of the things i want to change:
+
+* rename `kline` and `kline~` to `aline` and `aline~` since "k" doesn't mean anything and "a" would mean "automatic"
+* rename `kspigot` and `kspigot~`
+* rename `adsr` and `adsr~` to just `adr` and `adr~` and remove the sustain functionality
+* remake `adsr` and `adsr~` into actual ADSR envelopes
+* rename `bswitcher` and the other similar abstractions so that their names are more logical and easy to remember
+* `atc`, `cta`, `atr`, and the others should probably be renamed to something like `btu`, `utb`, and `btr`, since the technical term for a signal from 0 to 1 is "unipolar" and the technical term for a signal from -1 to 1 is "bipolar"
+* see if there are better ways to analyze the "volume" of a sound for `scroll~`
+* fix `mcb`, `mck`, `m-client`, `mcl`, `mc`, `mct`, `mstr`, etc (i've redone these quite a few times already and i still haven't quite gotten them right)
+* rename `aphasor~`
+* make a better `analog~`
+
+Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
+
+* fix `editmode` so that it is accurate 100% of the time
+* make `keyonchg`, `keyonoff`, etc work properly
+* 

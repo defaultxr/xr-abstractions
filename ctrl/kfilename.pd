@@ -1,8 +1,46 @@
-#N canvas 345 171 450 300 10;
-#X obj 136 100 makefilename /home/modula/misc/pd/saves/%s;
-#X obj 136 119 outlet;
-#X obj 136 81 symbol;
-#X obj 136 62 inlet;
-#X connect 0 0 1 0;
-#X connect 2 0 0 0;
-#X connect 3 0 2 0;
+#N canvas 0 29 800 849 10;
+#X obj 136 366 outlet;
+#X obj 136 43 inlet;
+#X obj 136 121 s2l /;
+#X obj 136 140 list-drip;
+#X msg 136 309 add2 \$1;
+#X obj 136 347 l2s /;
+#X obj 136 81 t a b;
+#X msg 31 178 symbol home/modula;
+#X text 326 49 kfilename - defaultxr's abstraction for shorter filenames.
+you might want to change some of the paths in the messages to directories
+you want to use.;
+#X obj 136 159 sel ~ ~s ~d;
+#X msg 77 197 symbol home/modula/misc/sounds;
+#X msg 93 216 symbol home/modula/misc/pd/saves;
+#X text 325 99 ~ can be used for your home directory. ~s can be used
+for your sounds directory. ~d is used by [drumseq] \, [anaseq] \, etc
+\, as the directory to save their data.;
+#X obj 136 62 symbol;
+#X msg 276 172 set /;
+#X text 324 234 i haven't the faintest idea about how to get this to
+work with windows but i'd guess you replace "set /" with "set c:/"
+or something like that.;
+#X msg 136 328 / home/modula/misc/sounds l kick01.wav;
+#X text 199 357 there will be 2 forward-slashes at the beginning of
+the output. don't know if there's an easy way to prevent this from
+happening but i don't really care that it does \, since it doesn't
+really affect anything.;
+#X connect 1 0 13 0;
+#X connect 2 0 3 0;
+#X connect 3 0 9 0;
+#X connect 3 1 16 0;
+#X connect 4 0 16 0;
+#X connect 5 0 0 0;
+#X connect 6 0 2 0;
+#X connect 6 1 14 0;
+#X connect 7 0 4 0;
+#X connect 9 0 7 0;
+#X connect 9 1 10 0;
+#X connect 9 2 11 0;
+#X connect 9 3 4 0;
+#X connect 10 0 4 0;
+#X connect 11 0 4 0;
+#X connect 13 0 6 0;
+#X connect 14 0 16 0;
+#X connect 16 0 5 0;

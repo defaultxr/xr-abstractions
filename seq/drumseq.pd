@@ -4,26 +4,26 @@
 #X obj 113 115 tgl 13 0 \$0-1x0s \$0-1x0r empty 17 7 0 10 -166441 -1
 -262144 0 1;
 #X obj 100 115 tgl 13 0 \$0-0x0s \$0-0x0r empty 17 7 0 10 -128992 -1
--262144 1 1;
+-262144 0 1;
 #X obj 139 115 tgl 13 0 \$0-3x0s \$0-3x0r empty 17 7 0 10 -262144 -1
 -262144 0 1;
 #X obj 126 115 tgl 13 0 \$0-2x0s \$0-2x0r empty 17 7 0 10 -233017 -1
 -262144 0 1;
-#X obj 165 115 tgl 13 0 \$0-5x0s \$0-5x0r empty 17 7 0 10 -258699 -1
+#X obj 165 115 tgl 13 0 \$0-5x0s \$0-5x0r empty 17 7 0 10 -166441 -1
 -262144 0 1;
 #X obj 152 115 tgl 13 0 \$0-4x0s \$0-4x0r empty 17 7 0 10 -128992 -1
--262144 1 1;
+-262144 0 1;
 #X obj 191 115 tgl 13 0 \$0-7x0s \$0-7x0r empty 17 7 0 10 -262144 -1
 -262144 0 1;
 #X obj 178 115 tgl 13 0 \$0-6x0s \$0-6x0r empty 17 7 0 10 -233017 -1
--262144 1 1;
+-262144 0 1;
 #X obj 217 115 tgl 13 0 \$0-9x0s \$0-9x0r empty 17 7 0 10 -166441 -1
 -262144 0 1;
 #X obj 204 115 tgl 13 0 \$0-8x0s \$0-8x0r empty 17 7 0 10 -128992 -1
 -262144 0 1;
 #X obj 243 115 tgl 13 0 \$0-11x0s \$0-11x0r empty 17 7 0 10 -262144
--1 -262144 1 1;
-#X obj 230 115 tgl 13 0 \$0-10x0s \$0-10x0r empty 17 7 0 10 -233017
+-1 -262144 0 1;
+#X obj 230 115 tgl 13 0 \$0-10x0s \$0-10x0r empty 17 7 0 10 -258699
 -1 -262144 0 1;
 #X obj 269 115 tgl 13 0 \$0-13x0s \$0-13x0r empty 17 7 0 10 -166441
 -1 -262144 0 1;
@@ -34,15 +34,15 @@
 #X obj 282 115 tgl 13 0 \$0-14x0s \$0-14x0r empty 17 7 0 10 -233017
 -1 -262144 0 1;
 #X obj 113 128 tgl 13 0 \$0-1x1s \$0-1x1r empty 17 7 0 10 -166441 -1
--262144 1 1;
+-262144 0 1;
 #X obj 100 128 tgl 13 0 \$0-0x1s \$0-0x1r empty 17 7 0 10 -128992 -1
 -262144 0 1;
 #X obj 139 128 tgl 13 0 \$0-3x1s \$0-3x1r empty 17 7 0 10 -262144 -1
 -262144 0 1;
 #X obj 126 128 tgl 13 0 \$0-2x1s \$0-2x1r empty 17 7 0 10 -233017 -1
 -262144 0 1;
-#X obj 165 128 tgl 13 0 \$0-5x1s \$0-5x1r empty 17 7 0 10 -258699 -1
--262144 1 1;
+#X obj 165 128 tgl 13 0 \$0-5x1s \$0-5x1r empty 17 7 0 10 -166441 -1
+-262144 0 1;
 #X obj 152 128 tgl 13 0 \$0-4x1s \$0-4x1r empty 17 7 0 10 -128992 -1
 -262144 0 1;
 #X obj 191 128 tgl 13 0 \$0-7x1s \$0-7x1r empty 17 7 0 10 -262144 -1
@@ -55,10 +55,10 @@
 -262144 0 1;
 #X obj 243 128 tgl 13 0 \$0-11x1s \$0-11x1r empty 17 7 0 10 -262144
 -1 -262144 0 1;
-#X obj 230 128 tgl 13 0 \$0-10x1s \$0-10x1r empty 17 7 0 10 -233017
--1 -262144 1 1;
+#X obj 230 128 tgl 13 0 \$0-10x1s \$0-10x1r empty 17 7 0 10 -258699
+-1 -262144 0 1;
 #X obj 269 128 tgl 13 0 \$0-13x1s \$0-13x1r empty 17 7 0 10 -166441
--1 -262144 1 1;
+-1 -262144 0 1;
 #X obj 256 128 tgl 13 0 \$0-12x1s \$0-12x1r empty 17 7 0 10 -128992
 -1 -262144 0 1;
 #X obj 295 128 tgl 13 0 \$0-15x1s \$0-15x1r empty 17 7 0 10 -262144
@@ -73,26 +73,26 @@
 -262144 0 1;
 #X obj 126 141 tgl 13 0 \$0-2x2s \$0-2x2r empty 17 7 0 10 -233017 -1
 -262144 0 1;
-#X obj 165 141 tgl 13 0 \$0-5x2s \$0-5x2r empty 17 7 0 10 -258699 -1
+#X obj 165 141 tgl 13 0 \$0-5x2s \$0-5x2r empty 17 7 0 10 -166441 -1
 -262144 0 1;
 #X obj 152 141 tgl 13 0 \$0-4x2s \$0-4x2r empty 17 7 0 10 -128992 -1
--262144 1 1;
+-262144 0 1;
 #X obj 191 141 tgl 13 0 \$0-7x2s \$0-7x2r empty 17 7 0 10 -262144 -1
 -262144 0 1;
 #X obj 178 141 tgl 13 0 \$0-6x2s \$0-6x2r empty 17 7 0 10 -233017 -1
--262144 1 1;
+-262144 0 1;
 #X obj 217 141 tgl 13 0 \$0-9x2s \$0-9x2r empty 17 7 0 10 -166441 -1
--262144 1 1;
+-262144 0 1;
 #X obj 204 141 tgl 13 0 \$0-8x2s \$0-8x2r empty 17 7 0 10 -128992 -1
 -262144 0 1;
 #X obj 243 141 tgl 13 0 \$0-11x2s \$0-11x2r empty 17 7 0 10 -262144
 -1 -262144 0 1;
-#X obj 230 141 tgl 13 0 \$0-10x2s \$0-10x2r empty 17 7 0 10 -233017
--1 -262144 1 1;
+#X obj 230 141 tgl 13 0 \$0-10x2s \$0-10x2r empty 17 7 0 10 -258699
+-1 -262144 0 1;
 #X obj 269 141 tgl 13 0 \$0-13x2s \$0-13x2r empty 17 7 0 10 -166441
 -1 -262144 0 1;
 #X obj 256 141 tgl 13 0 \$0-12x2s \$0-12x2r empty 17 7 0 10 -128992
--1 -262144 1 1;
+-1 -262144 0 1;
 #X obj 295 141 tgl 13 0 \$0-15x2s \$0-15x2r empty 17 7 0 10 -262144
 -1 -262144 0 1;
 #X obj 282 141 tgl 13 0 \$0-14x2s \$0-14x2r empty 17 7 0 10 -233017
@@ -102,10 +102,10 @@
 #X obj 100 154 tgl 13 0 \$0-0x3s \$0-0x3r empty 17 7 0 10 -128992 -1
 -262144 0 1;
 #X obj 139 154 tgl 13 0 \$0-3x3s \$0-3x3r empty 17 7 0 10 -262144 -1
--262144 1 1;
+-262144 0 1;
 #X obj 126 154 tgl 13 0 \$0-2x3s \$0-2x3r empty 17 7 0 10 -233017 -1
 -262144 0 1;
-#X obj 165 154 tgl 13 0 \$0-5x3s \$0-5x3r empty 17 7 0 10 -258699 -1
+#X obj 165 154 tgl 13 0 \$0-5x3s \$0-5x3r empty 17 7 0 10 -166441 -1
 -262144 0 1;
 #X obj 152 154 tgl 13 0 \$0-4x3s \$0-4x3r empty 17 7 0 10 -128992 -1
 -262144 0 1;
@@ -119,10 +119,10 @@
 -262144 0 1;
 #X obj 243 154 tgl 13 0 \$0-11x3s \$0-11x3r empty 17 7 0 10 -262144
 -1 -262144 0 1;
-#X obj 230 154 tgl 13 0 \$0-10x3s \$0-10x3r empty 17 7 0 10 -233017
+#X obj 230 154 tgl 13 0 \$0-10x3s \$0-10x3r empty 17 7 0 10 -258699
 -1 -262144 0 1;
 #X obj 269 154 tgl 13 0 \$0-13x3s \$0-13x3r empty 17 7 0 10 -166441
--1 -262144 1 1;
+-1 -262144 0 1;
 #X obj 256 154 tgl 13 0 \$0-12x3s \$0-12x3r empty 17 7 0 10 -128992
 -1 -262144 0 1;
 #X obj 295 154 tgl 13 0 \$0-15x3s \$0-15x3r empty 17 7 0 10 -262144
@@ -199,7 +199,7 @@
 #X obj 131 41 int;
 #X obj 235 100 bng 15 250 50 0 \$0-save empty sv 1 7 0 10 -258113 -1
 -1;
-#N canvas 800 0 800 836 writer 0;
+#N canvas 0 29 1600 849 writer 0;
 #X obj 101 -12 r \$0-0x0s;
 #X obj 161 -12 r \$0-1x0s;
 #X obj 221 -12 r \$0-2x0s;
@@ -437,7 +437,7 @@ or deselect multiple tgls without having to click each one individually.
 #X connect 10 0 0 1;
 #X restore 608 153 pd resize;
 #X obj 581 134 t f f;
-#X text 278 116 too buggy for now \, i'll fix it later -->;
+#X text 238 116 too buggy for now \, i'll fix it later -->;
 #X connect 0 0 16 0;
 #X connect 1 0 17 0;
 #X connect 2 0 18 0;
@@ -694,51 +694,55 @@ currently viewed pattern (send to it to change);
 #X obj 235 257 + 48;
 #X obj 399 -77 table \$0-dsdata 512;
 #X obj 10 -66 count 16;
-#N canvas 0 0 1600 849 saver 0;
+#N canvas 0 29 800 849 saver 0;
 #X obj 94 206 r \$0-save;
 #X obj 154 225 route bang symbol;
-#X msg 266 332 \; \$2-dsdata write \$1;
+#X msg 266 351 \; \$2-dsdata write \$1;
 #X obj 154 206 inlet;
 #X obj 203 256 symbol \$1;
-#X msg 266 294 /home/modula/.pd/saves/drumseq-\$1;
-#X obj 266 313 pack s \$0;
-#X obj 203 426 print;
+#X obj 266 332 pack s \$0;
 #X obj 203 275 emptysymbol;
-#X msg 203 364 cant write table - no name provided (open drumseq and
+#X msg 203 383 cant write table - no name provided (open drumseq and
 enter one in the symbol box);
-#X msg 229 396 drumseq data saved as \$1;
+#X obj 203 445 print drumseq;
+#X msg 229 415 data saved as \$1;
+#X obj 266 313 kfilename;
+#X msg 266 294 ~d/drumseq-\$1;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X connect 1 1 4 0;
 #X connect 1 2 4 0;
 #X connect 3 0 1 0;
-#X connect 4 0 8 0;
-#X connect 5 0 6 0;
-#X connect 6 0 2 0;
-#X connect 6 0 10 0;
-#X connect 8 0 9 0;
-#X connect 8 1 5 0;
-#X connect 9 0 7 0;
-#X connect 10 0 7 0;
+#X connect 4 0 6 0;
+#X connect 5 0 2 0;
+#X connect 5 0 9 0;
+#X connect 6 0 7 0;
+#X connect 6 1 11 0;
+#X connect 7 0 8 0;
+#X connect 9 0 8 0;
+#X connect 10 0 5 0;
+#X connect 11 0 10 0;
 #X restore 519 -58 pd saver;
-#N canvas 0 0 1600 871 loader 0;
+#N canvas 0 29 800 849 loader 0;
 #X obj 62 228 loadbang;
 #X obj 116 228 inlet;
 #X obj 176 264 symbol \$1;
-#X msg 176 321 \; \$2-dsdata read \$1;
-#X msg 176 283 /home/modula/.pd/saves/drumseq-\$1;
-#X obj 176 302 pack s \$0;
-#X obj 116 324 s \$0-rpat;
-#X msg 116 305 0;
+#X msg 176 340 \; \$2-dsdata read \$1;
+#X obj 176 321 pack s \$0;
+#X obj 116 343 s \$0-rpat;
+#X msg 116 324 0;
 #X obj 116 247 t b b;
-#X connect 0 0 8 0;
-#X connect 1 0 8 0;
-#X connect 2 0 4 0;
-#X connect 4 0 5 0;
-#X connect 5 0 3 0;
+#X msg 176 283 ~d/drumseq-\$1;
+#X obj 176 302 kfilename;
+#X connect 0 0 7 0;
+#X connect 1 0 7 0;
+#X connect 2 0 8 0;
+#X connect 4 0 3 0;
+#X connect 6 0 5 0;
 #X connect 7 0 6 0;
-#X connect 8 0 7 0;
-#X connect 8 1 2 0;
+#X connect 7 1 2 0;
+#X connect 8 0 9 0;
+#X connect 9 0 4 0;
 #X restore 573 -58 pd loader;
 #X obj 70 -17 s \$0-save;
 #X obj 252 -74 s \$0-copy;
@@ -769,37 +773,9 @@ enter one in the symbol box);
 #X connect 8 1 9 1;
 #X connect 9 0 10 0;
 #X restore 191 -74 pd set;
-#X text 398 -23 the sequencer accepts bangs to go to the next step
-\, or floats from 0 to 15 to specify the step.;
-#X text 399 44 if you send a "save" message without any extra parameters
-\, the sequencer will overwrite the data to the file specified by the
-drumseq's first argument (\$1). otherwise \, you can always send "save
-foo" to save to the file "foo".;
 #X symbolatom 519 -94 20 0 0 0 - - -;
-#X text 399 96 if you don't specify the filename to save the data to
-by providing a first argument for the drumseq \, it may attempt to
-write to the file "drumseq-0" which is most likely undesirable. if
-you've made a pattern without a first argument and you want to save
-it \, type a name in the symbol atom above and the data will be saved
-there. then you can add a first argument to the drumseq and it should
-load the newly-saved data.;
-#X text 399 6 WARNING: be sure to change the paths within the "pd saver"
-and "pd loader" sub-patches before you attempt to save \; it's unlikely
-that the path i use exists on your system.;
-#X text 401 189 send a "pat [number]" message to change the pattern
-being displayed. send a "play [number]" message to change the pattern
-being played.;
-#X text 402 231 the "go" button (as well as sending a "go" message)
-changes the playing pattern to the one currently displayed.;
-#X text 404 313 the "cp" button will copy the previous pattern to the
-current one. if you want to copy a different pattern \, you can send
-a "copy [from] [to]" message to copy from whichever pattern you want.
-;
 #X obj 340 396 r \$0-bypass;
 #X obj 222 -55 s \$0-bypass;
-#X text 404 363 sending a "bypass [number]" message will send a bang
-to the outlet specified by the number. outlets are indexed from zero.
-;
 #X symbolatom 573 -76 20 0 0 0 - - -;
 #N canvas 0 29 1600 849 seq 0;
 #X obj 179 34 inlet;
@@ -927,12 +903,8 @@ color \$2 \; \$3-\$1x3r color \$2;
 #X obj 131 60 s \$0-ppat;
 #X obj 84 -118 r drumseq;
 #X obj 144 -118 r \$0-ds;
-#X text 403 264 sending a "set [x] [y] [value]" message will change
-the value of the toggle for the specified box on the currently displayed
-pattern. without a value \, it toggles. remember that x and y are both
-indexed from zero!;
-#X connect 0 0 123 0;
-#X connect 71 0 126 0;
+#X connect 0 0 115 0;
+#X connect 71 0 118 0;
 #X connect 76 0 77 0;
 #X connect 77 0 85 0;
 #X connect 78 0 66 0;
@@ -965,21 +937,21 @@ indexed from zero!;
 #X connect 99 0 94 1;
 #X connect 100 0 96 1;
 #X connect 101 0 97 1;
-#X connect 103 0 121 0;
-#X connect 111 0 104 0;
-#X connect 117 0 82 0;
-#X connect 120 0 105 0;
-#X connect 123 0 103 0;
-#X connect 123 1 121 0;
-#X connect 123 2 106 0;
-#X connect 123 3 76 0;
-#X connect 123 4 71 0;
-#X connect 123 5 70 0;
-#X connect 123 6 108 0;
-#X connect 123 7 118 0;
-#X connect 123 8 107 0;
-#X connect 123 9 122 0;
-#X connect 124 0 123 0;
-#X connect 127 0 123 0;
-#X connect 128 0 123 0;
+#X connect 103 0 113 0;
+#X connect 109 0 104 0;
+#X connect 110 0 82 0;
+#X connect 112 0 105 0;
+#X connect 115 0 103 0;
+#X connect 115 1 113 0;
+#X connect 115 2 106 0;
+#X connect 115 3 76 0;
+#X connect 115 4 71 0;
+#X connect 115 5 70 0;
+#X connect 115 6 108 0;
+#X connect 115 7 111 0;
+#X connect 115 8 107 0;
+#X connect 115 9 114 0;
+#X connect 116 0 115 0;
+#X connect 119 0 115 0;
+#X connect 120 0 115 0;
 #X coords 0 -1 1 1 208 69 1 100 100;

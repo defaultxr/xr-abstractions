@@ -1,4 +1,4 @@
-#N canvas 0 0 1600 849 10;
+#N canvas 800 29 800 849 10;
 #X obj 250 -36 loadbang;
 #X obj 110 121 table \$0-file;
 #X obj 143 229 +~ 1;
@@ -43,36 +43,7 @@
 #X msg 194 80 read -maxsize 1.30148e+07 -resize \$1 \$2-file \; \$2-file
 normalize;
 #X obj 175 -50 route open;
-#N canvas 0 0 1600 849 replace-chars 0;
-#X obj 266 146 s2l /;
-#X obj 266 165 list-drip;
-#X msg 266 244 add2 \$1;
-#X obj 266 184 sel ~;
-#X obj 266 334 l2s /;
-#X obj 266 353 outlet;
-#X obj 266 87 inlet;
-#X msg 266 263 home modula 51290__k0wax__3fx-a.wav;
-#X obj 266 106 t a b;
-#X msg 342 178 set;
-#X obj 266 305 list prepend /;
-#X msg 161 203 symbol home/modula;
-#X connect 0 0 1 0;
-#X connect 1 0 3 0;
-#X connect 1 1 7 0;
-#X connect 2 0 7 0;
-#X connect 3 0 11 0;
-#X connect 3 1 2 0;
-#X connect 4 0 5 0;
-#X connect 6 0 8 0;
-#X connect 7 0 10 0;
-#X connect 8 0 0 0;
-#X connect 8 1 9 0;
-#X connect 9 0 7 0;
-#X connect 10 0 4 0;
-#X connect 11 0 2 0;
-#X restore 175 11 pd replace-chars;
-#X text 276 10 <-- you might want to edit the stuff in here a bit!
-;
+#X obj 175 11 kfilename;
 #X connect 0 0 5 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;

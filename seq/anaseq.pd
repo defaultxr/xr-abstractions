@@ -1,47 +1,47 @@
-#N canvas 0 0 1600 849 10;
+#N canvas 0 29 800 849 10;
 #X obj 23 17 vsl 13 128 0 127 0 0 \$0-volbar1 \$0-rvolbar1 empty 0
--9 0 10 -166441 -1 -262144 5800 1;
+-9 0 10 -166441 -1 -262144 0 1;
 #X obj 10 17 vsl 13 128 0 127 0 0 \$0-volbar0 \$0-rvolbar0 empty 0
--9 0 10 -128992 -1 -262144 6000 1;
+-9 0 10 -128992 -1 -262144 0 1;
 #X obj 49 17 vsl 13 128 0 127 0 0 \$0-volbar3 \$0-rvolbar3 empty 0
--9 0 10 -262144 -1 -262144 5400 1;
+-9 0 10 -262144 -1 -262144 0 1;
 #X obj 36 17 vsl 13 128 0 127 0 0 \$0-volbar2 \$0-rvolbar2 empty 0
--9 0 10 -233017 -1 -262144 5600 1;
+-9 0 10 -233017 -1 -262144 0 1;
 #X obj 75 17 vsl 13 128 0 127 0 0 \$0-volbar5 \$0-rvolbar5 empty 0
 -9 0 10 -166441 -1 -262144 0 1;
 #X obj 62 17 vsl 13 128 0 127 0 0 \$0-volbar4 \$0-rvolbar4 empty 0
--9 0 10 -128992 -1 -262144 6100 1;
+-9 0 10 -128992 -1 -262144 0 1;
 #X obj 101 17 vsl 13 128 0 127 0 0 \$0-volbar7 \$0-rvolbar7 empty 0
 -9 0 10 -262144 -1 -262144 0 1;
 #X obj 88 17 vsl 13 128 0 127 0 0 \$0-volbar6 \$0-rvolbar6 empty 0
 -9 0 10 -233017 -1 -262144 0 1;
 #X obj 127 17 vsl 13 128 0 127 0 0 \$0-volbar9 \$0-rvolbar9 empty 0
--9 0 10 -166441 -1 -262144 6500 1;
+-9 0 10 -166441 -1 -262144 0 1;
 #X obj 114 17 vsl 13 128 0 127 0 0 \$0-volbar8 \$0-rvolbar8 empty 0
--9 0 10 -128992 -1 -262144 7200 1;
+-9 0 10 -128992 -1 -262144 0 1;
 #X obj 153 17 vsl 13 128 0 127 0 0 \$0-volbar11 \$0-rvolbar11 empty
 0 -9 0 10 -262144 -1 -262144 0 1;
 #X obj 140 17 vsl 13 128 0 127 0 0 \$0-volbar10 \$0-rvolbar10 empty
-0 -9 0 10 -233017 -1 -262144 7200 1;
+0 -9 0 10 -233017 -1 -262144 0 1;
 #X obj 179 17 vsl 13 128 0 127 0 0 \$0-volbar13 \$0-rvolbar13 empty
 0 -9 0 10 -166441 -1 -262144 0 1;
 #X obj 166 17 vsl 13 128 0 127 0 0 \$0-volbar12 \$0-rvolbar12 empty
-0 -9 0 10 -128992 -1 -262144 6400 1;
+0 -9 0 10 -128992 -1 -262144 0 1;
 #X obj 205 17 vsl 13 128 0 127 0 0 \$0-volbar15 \$0-rvolbar15 empty
 0 -9 0 10 -262144 -1 -262144 0 1;
 #X obj 192 17 vsl 13 128 0 127 0 0 \$0-volbar14 \$0-rvolbar14 empty
 0 -9 0 10 -233017 -1 -262144 0 1;
 #X obj 55 179 inlet;
 #X obj 10 148 tgl 13 0 \$0-ts0 \$0-tr0 empty 17 7 0 10 -128992 -1 -262144
-1 1;
+0 1;
 #X obj 23 148 tgl 13 0 \$0-ts1 \$0-tr1 empty 17 7 0 10 -166441 -1 -262144
-1 1;
+0 1;
 #X obj 36 148 tgl 13 0 \$0-ts2 \$0-tr2 empty 17 7 0 10 -233017 -1 -262144
 0 1;
 #X obj 49 148 tgl 13 0 \$0-ts3 \$0-tr3 empty 17 7 0 10 -258699 -1 -262144
-1 1;
+0 1;
 #X obj 62 148 tgl 13 0 \$0-ts4 \$0-tr4 empty 17 7 0 10 -128992 -1 -262144
-1 1;
+0 1;
 #X obj 75 148 tgl 13 0 \$0-ts5 \$0-tr5 empty 17 7 0 10 -166441 -1 -262144
 0 1;
 #X obj 88 148 tgl 13 0 \$0-ts6 \$0-tr6 empty 17 7 0 10 -233017 -1 -262144
@@ -49,7 +49,7 @@
 #X obj 101 148 tgl 13 0 \$0-ts7 \$0-tr7 empty 17 7 0 10 -262144 -1
 -262144 0 1;
 #X obj 166 148 tgl 13 0 \$0-ts12 \$0-tr12 empty 17 7 0 10 -128992 -1
--262144 1 1;
+-262144 0 1;
 #X obj 179 148 tgl 13 0 \$0-ts13 \$0-tr13 empty 17 7 0 10 -166441 -1
 -262144 0 1;
 #X obj 192 148 tgl 13 0 \$0-ts14 \$0-tr14 empty 17 7 0 10 -233017 -1
@@ -57,11 +57,11 @@
 #X obj 205 148 tgl 13 0 \$0-ts15 \$0-tr15 empty 17 7 0 10 -262144 -1
 -262144 0 1;
 #X obj 114 148 tgl 13 0 \$0-ts8 \$0-tr8 empty 17 7 0 10 -128992 -1
--262144 1 1;
+-262144 0 1;
 #X obj 127 148 tgl 13 0 \$0-ts9 \$0-tr9 empty 17 7 0 10 -166441 -1
 -262144 0 1;
 #X obj 140 148 tgl 13 0 \$0-ts10 \$0-tr10 empty 17 7 0 10 -233017 -1
--262144 1 1;
+-262144 0 1;
 #X obj 153 148 tgl 13 0 \$0-ts11 \$0-tr11 empty 17 7 0 10 -262144 -1
 -262144 0 1;
 #X floatatom 204 0 2 0 7 0 - #0-cpatswitch #0-curpat;
@@ -98,7 +98,7 @@
 #X connect 4 1 1 0;
 #X restore 168 274 pd tog;
 #X obj 258 274 s \$0-cpatswitch;
-#N canvas 0 0 1600 849 play 1;
+#N canvas 0 0 1600 849 play 0;
 #X obj 290 332 inlet;
 #X obj 290 351 unpack f 0;
 #X obj 331 412 s;
@@ -488,57 +488,77 @@
 #X connect 48 0 16 0;
 #X connect 49 0 17 0;
 #X restore 283 114 pd vtogreadwrite;
-#N canvas 0 0 1600 871 saver 0;
+#N canvas 0 29 800 849 saver 0;
 #X obj 94 206 r \$0-save;
 #X obj 154 225 route bang symbol;
 #X obj 203 256 symbol \$1;
-#X obj 273 324 pack s \$0;
-#X msg 273 305 /home/modula/.pd/saves/anaseqb-\$1;
-#X msg 273 343 \; \$2-vbardata write \$1;
 #X text 249 149 send a symbol to the inlet to "save as...";
 #X obj 154 206 inlet;
-#X obj 63 324 pack s \$0;
-#X msg 63 343 \; \$2-vtogdata write \$1;
-#X msg 63 305 /home/modula/.pd/saves/anaseqt-\$1;
 #X text 356 211 anaseq stores its data in two files - anaseqb for the
 bars \, anaseqt for the toggle switches.;
+#X msg 423 325 ~d/anaseqb-\$1;
+#X msg 290 325 ~d/anaseqt-\$1;
+#X obj 423 363 pack s \$0;
+#X msg 423 382 \; \$2-vbardata write \$1;
+#X obj 290 363 pack s \$0;
+#X msg 290 382 \; \$2-vtogdata write \$1;
+#X obj 290 344 kfilename;
+#X obj 423 344 kfilename;
+#X obj 203 275 emptysymbol;
+#X obj 249 480 print anaseq;
+#X msg 249 416 data saved as \$1;
+#X msg 203 435 cant write table - no name provided (open anaseq and
+enter one in the symbol box);
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 2 0;
 #X connect 1 2 2 0;
-#X connect 2 0 4 0;
-#X connect 2 0 10 0;
-#X connect 3 0 5 0;
-#X connect 4 0 3 0;
-#X connect 7 0 1 0;
+#X connect 2 0 14 0;
+#X connect 4 0 1 0;
+#X connect 6 0 13 0;
+#X connect 7 0 12 0;
 #X connect 8 0 9 0;
-#X connect 10 0 8 0;
+#X connect 10 0 11 0;
+#X connect 10 0 16 0;
+#X connect 12 0 10 0;
+#X connect 13 0 8 0;
+#X connect 14 0 17 0;
+#X connect 14 1 6 0;
+#X connect 14 1 7 0;
+#X connect 16 0 15 0;
+#X connect 17 0 15 0;
 #X restore 445 95 pd saver;
-#N canvas 0 0 1600 871 loader 0;
+#N canvas 0 29 800 849 loader 0;
 #X obj 116 228 loadbang;
 #X obj 190 222 inlet;
 #X obj 143 266 symbol \$1;
-#X obj 351 331 pack s \$0;
-#X msg 116 395 0;
+#X msg 116 424 0;
 #X obj 116 247 t b b;
-#X msg 351 312 /home/modula/.pd/saves/anaseqb-\$1;
-#X msg 351 350 \; \$2-vbardata read \$1;
 #X text 354 202 send a symbol to the inlet to load a file.;
-#X obj 143 331 pack s \$0;
-#X msg 143 312 /home/modula/.pd/saves/anaseqt-\$1;
-#X msg 143 350 \; \$2-vtogdata read \$1;
-#X obj 116 414 s \$0-cpatswitch;
-#X connect 0 0 5 0;
+#X obj 116 443 s \$0-cpatswitch;
+#X msg 142 335 ~d/anaseqt-\$1;
+#X msg 269 335 ~d/anaseqb-\$1;
+#X obj 269 373 pack s \$0;
+#X msg 269 392 \; \$2-vbardata read \$1;
+#X obj 142 373 pack s \$0;
+#X msg 142 392 \; \$2-vtogdata read \$1;
+#X obj 142 354 kfilename;
+#X obj 269 354 kfilename;
+#X obj 143 285 emptysymbol;
+#X connect 0 0 4 0;
 #X connect 1 0 2 0;
-#X connect 2 0 6 0;
-#X connect 2 0 10 0;
-#X connect 3 0 7 0;
-#X connect 4 0 12 0;
-#X connect 5 0 4 0;
-#X connect 5 1 2 0;
-#X connect 6 0 3 0;
-#X connect 9 0 11 0;
-#X connect 10 0 9 0;
+#X connect 2 0 15 0;
+#X connect 3 0 6 0;
+#X connect 4 0 3 0;
+#X connect 4 1 2 0;
+#X connect 7 0 13 0;
+#X connect 8 0 14 0;
+#X connect 9 0 10 0;
+#X connect 11 0 12 0;
+#X connect 13 0 11 0;
+#X connect 14 0 9 0;
+#X connect 15 1 8 0;
+#X connect 15 1 7 0;
 #X restore 499 95 pd loader;
 #X symbolatom 445 59 20 0 0 0 - - -;
 #X symbolatom 499 77 20 0 0 0 - - -;
