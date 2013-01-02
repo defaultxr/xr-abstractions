@@ -1,27 +1,11 @@
 #N canvas 0 29 1600 849 10;
 #X obj 199 302 outlet~;
 #X obj -2 53 inlet;
-#X obj 341 173 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 326 173 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 311 173 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 356 173 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
 #X obj -2 72 route bang float open file list;
 #X text 71 52 polyphonic midi note player;
 #X msg 43 147 open \$1;
 #X obj 43 128 symbol;
 #X msg 34 91 \$1 127;
-#X obj 371 173 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 386 173 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 401 173 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 416 173 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
 #X obj 144 156 route 1 2 3 4 5 6 7 8;
 #X text 295 46 has 8 voices! wow!!!!!;
 #X obj 144 131 polys 8;
@@ -215,37 +199,70 @@
 #X connect 8 0 7 1;
 #X connect 9 0 6 0;
 #X restore 328 216 pd v8;
-#X connect 1 0 6 0;
-#X connect 6 1 10 0;
-#X connect 6 2 9 0;
-#X connect 6 3 9 0;
-#X connect 6 4 17 0;
-#X connect 8 0 18 1;
-#X connect 9 0 8 0;
-#X connect 10 0 17 0;
-#X connect 15 0 4 0;
-#X connect 15 0 18 0;
-#X connect 15 1 3 0;
-#X connect 15 1 19 0;
-#X connect 15 2 2 0;
-#X connect 15 2 21 0;
-#X connect 15 3 5 0;
-#X connect 15 3 22 0;
-#X connect 15 4 11 0;
-#X connect 15 4 23 0;
-#X connect 15 5 12 0;
-#X connect 15 5 24 0;
-#X connect 15 6 13 0;
-#X connect 15 6 25 0;
-#X connect 15 7 14 0;
-#X connect 15 7 26 0;
-#X connect 17 0 15 0;
+#N canvas 0 29 1600 849 voices 0;
+#X obj 200 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 215 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 230 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 245 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 260 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 275 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 290 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 305 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 163 62 inlet;
+#X msg 163 81 \$1 \$3;
+#X obj 163 100 unpack f f;
+#X obj 220 119 > 0;
+#X obj 163 148 pack f f;
+#X text 255 68 currently active voices;
+#X obj 163 167 route 1 2 3 4 5 6 7 8;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 12 0;
+#X connect 10 1 11 0;
+#X connect 11 0 12 1;
+#X connect 12 0 14 0;
+#X connect 14 0 0 0;
+#X connect 14 1 1 0;
+#X connect 14 2 2 0;
+#X connect 14 3 3 0;
+#X connect 14 4 4 0;
+#X connect 14 5 5 0;
+#X connect 14 6 6 0;
+#X connect 14 7 7 0;
+#X coords 0 -1 1 1 120 30 1 200 200;
+#X restore 298 148 pd voices;
+#X connect 1 0 2 0;
+#X connect 2 1 6 0;
+#X connect 2 2 5 0;
+#X connect 2 3 5 0;
+#X connect 2 4 9 0;
+#X connect 4 0 10 1;
+#X connect 5 0 4 0;
+#X connect 6 0 9 0;
+#X connect 7 0 10 0;
+#X connect 7 1 11 0;
+#X connect 7 2 13 0;
+#X connect 7 3 14 0;
+#X connect 7 4 15 0;
+#X connect 7 5 16 0;
+#X connect 7 6 17 0;
+#X connect 7 7 18 0;
+#X connect 9 0 7 0;
+#X connect 9 0 19 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 9 0;
+#X connect 13 0 0 0;
+#X connect 14 0 0 0;
+#X connect 15 0 0 0;
+#X connect 16 0 0 0;
+#X connect 17 0 0 0;
 #X connect 18 0 0 0;
-#X connect 19 0 0 0;
-#X connect 20 0 17 0;
-#X connect 21 0 0 0;
-#X connect 22 0 0 0;
-#X connect 23 0 0 0;
-#X connect 24 0 0 0;
-#X connect 25 0 0 0;
-#X connect 26 0 0 0;
