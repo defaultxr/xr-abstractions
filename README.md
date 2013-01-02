@@ -110,6 +110,8 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `numlock` - shows whether numlock is on or off and also outputs 1 or 0 depending.
 
+`polys` - similar to pd's built-in `poly` but allows you to specify a specific voice with note-offs (i.e. so you can have multiple voices with the same note). WIP: voice stealing is not yet implemented.
+
 `router` - 
 
 `sndsel` - sound selector. allows you to select a sound by browsing folders graphically, because `playlist` kind of sucks. i stole this from someone else's abstractions but i edited it a bit and i plan to redo it from scratch eventually.
@@ -434,6 +436,7 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * remove `seqfill` maybe.
 * redo `ft` maybe.
 * complete `stack`.
+* implement voice stealing in `polys`
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 
