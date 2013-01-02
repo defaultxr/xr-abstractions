@@ -1,10 +1,14 @@
 defaultxr's pure data abstractions
 ==================================
-This is a collection of pure data abstractions i've made. I don't use pd as much as i used to but this is probably the place where you'll find the latest versions of all my stuff.
+This is a collection of pure data abstractions i've made. This repository is now officially the place to find my abstractions.
 
-Please notify me if you get any "not found" errors while you're using any of these (i may have forgotten to include some of them in the repository).
+Please notify me of any bugs you find while using these abstractions.
 
-Hopefully the comments in each one will be useful to you. below is an overview of the contents of this library.
+I'm still working on writing help files for each of these. This collection is under constant development, so things might change, get renamed, removed, etc. But it's fairly likely it won't cause you any problems.
+
+Some of the abstractions i find most useful are: `map`, `snd~` (and all the objects that begin with "snd"), `o~`, `view~`, `drumseq`, `rrange`, `rchoice`, `bpmm`, `tb303~`, and `unmap`.
+
+Below is a quick overview of the included abstractions.
 
 analysis
 ========
@@ -443,3 +447,275 @@ Here are some things i'd like to be able to do, but can't (due to either bugs/mi
 * fix `editmode` so that it is accurate 100% of the time (maybe there is a way to query the editmode state of a certain patch - perhaps using `parentdollarzero` and `sys_gui`??)
 * make `keyonchg`, `keyonoff`, etc work properly (pd's `keyname`, `key`, `keyup`, etc, all detect from keyboard "repeat" events rather than actual physical keypresses or releases)
 * remove `span~` (pd's `pan~` object would need to accept an argument for this to happen)
+
+Help files still need to be written for:
+
+ctrl:
+* `cb`
+* `c`
+* `inputn`
+* `input`
+* `kbdm`
+* `keynum`
+* `keyonchg`
+* `keyonoff`
+* `keyrow`
+* `kfilename`
+* `khsl`
+* `kspigot~`
+* `kspigot`
+* `mcb`
+* `mck`
+* `m-client`
+* `mcl`
+* `mc`
+* `mct`
+* `mdrums`
+* `mono`
+* `monos`
+* `mspigot`
+* `mstr`
+* `nems`
+* `nkeyb`
+* `nkey`
+* `nknum`
+* `numlock`
+* `polys`
+* `router`
+* `sndsel`
+* `sswitcher~`
+* `switcher~`
+* `switcher`
+* `wiib`
+* `wiimotec`
+* `wiisring`
+
+fx:
+* `aliasing~`
+* `ampitchshift~`
+* `autocap~`
+* `autophaser~`
+* `bitcrush~`
+* `bitflip~`
+* `bodeshifter~`
+* `cfilter~`
+* `chaospad~`
+* `chebyshev~`
+* `chebys~`
+* `chorus~`
+* `combsplit~`
+* `comp~`
+* `cphaser~`
+* `crossover~`
+* `cvol~`
+* `decimator~`
+* `declip~`
+* `delayorama~`
+* `delay~`
+* `dist1~`
+* `dist2~`
+* `divider~`
+* `djeq~`
+* `djflanger~`
+* `dyson~`
+* `envdelay~`
+* `exp_decay~`
+* `expspect~`
+* `fad~`
+* `fastod~`
+* `flange~`
+* `flanger~`
+* `fmosc~`
+* `freqtracker~`
+* `gate~`
+* `gater~`
+* `gband~`
+* `gbutthigh~`
+* `giantflange~`
+* `gl_xover~`
+* `gsm~`
+* `gverb~`
+* `hardgate~`
+* `hardlimit~`
+* `hermes~`
+* `hilbert~`
+* `icomb~`
+* `idelayorama~`
+* `ifilter~`
+* `ifv~`
+* `imoog~`
+* `impulse2~`
+* `isvf~`
+* `kaoss`
+* `karaoke~`
+* `lofi~`
+* `mcomb~`
+* `mfv~`
+* `mmf~`
+* `multivoicechorus~`
+* `phaser~`
+* `phaserr~`
+* `pingpong~`
+* `pitchscalerhq~`
+* `pitchscaler~`
+* `plate~`
+* `pointercast~`
+* `rateshift2~`
+* `rateshifter~`
+* `rateshift~`
+* `retroflange~`
+* `revdelay~`
+* `reverb~`
+* `satan~`
+* `sc2~`
+* `sdly~`
+* `shaper~`
+* `sidechain~`
+* `sifter~`
+* `sinus~`
+* `skip~`
+* `soft~`
+* `sqtremolo~`
+* `svff~`
+* `tap_autopanner~`
+* `tap_chorus_flanger~`
+* `tap_doubler~`
+* `tapedelay~`
+* `tap_pink_noise~`
+* `tap_reflector~`
+* `tap_stereo_echo~`
+* `tap_vibrato~`
+* `valve~`
+* `valverect~`
+* `waveshaper~`
+* `waveterrain~`
+
+gen:
+* `analog~`
+* `aphasor~`
+* `fluid~`
+* `grain~`
+* `granular~`
+* `irsong~`
+* `noisef~`
+* `playsf~`
+* `pmosc~`
+* `psndm~`
+* `psndp~`
+* `random~`
+* `randomsong~`
+* `rec~`
+* `recp~`
+* `recsnd~`
+* `sine~`
+* `sndcf~`
+* `sndcl~`
+* `sndcm~`
+* `sndd~`
+* `sndf~`
+* `sndl~`
+* `sndm~`
+* `snd~`
+* `sndp~`
+* `snds~`
+* `srec~`
+* `timestretch~`
+
+math:
+* `atc~`
+* `atc`
+* `atr~`
+* `atr`
+* `cta~`
+* `cta`
+* `ctr~`
+* `kinv~`
+* `kinv`
+* `minv`
+* `mrange`
+* `num`
+* `rangem`
+* `rrange`
+* `rtr`
+* `transposer`
+
+seq:
+* `adsr~`
+* `adsr`
+* `amap`
+* `anaseq`
+* `beat~`
+* `boxseq`
+* `bpma`
+* `bpmm2`
+* `bpmm`
+* `dust`
+* `edger~`
+* `ft`
+* `iadsr~`
+* `ilist`
+* `kline~`
+* `kline`
+* `listman`
+* `lmap`
+* `lolr`
+* `lolw`
+* `ometro`
+* `pattseq`
+* `pb`
+* `pmap`
+* `rchoice`
+* `rmap`
+* `sbox`
+* `seqfill`
+* `srush`
+* `stack`
+* `taptempo`
+* `td~`
+* `tmap`
+* `tracker`
+* `unmap`
+* `vslz`
+* `xeroxer~`
+
+synths:
+* `Adder4~`
+* `Adder~`
+* `Adder_voice~`
+* `fmFeedback~`
+* `kick1~`
+* `kick2~`
+* `snare1~`
+* `snare2~`
+* `tb303~`
+
+utils:
+* `autosend`
+* `browser`
+* `chars`
+* `emptysymbol`
+* `hanning`
+* `hue_to_rgb`
+* `itimer`
+* `ktimer`
+* `limit~`
+* `list-find-1`
+* `list-replacer`
+* `lists`
+* `list-without`
+* `marquee`
+* `o~`
+* `parser`
+* `*+~`
+* `po~`
+* `porta~`
+* `qtabwrite`
+* `qtimer`
+* `quote`
+* `rporta~`
+* `so~`
+* `spacesym`
+* `span~`
+* `sreceive~`
+* `ssend~`
+* `zyn~`

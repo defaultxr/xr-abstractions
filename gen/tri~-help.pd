@@ -1,0 +1,29 @@
+#N canvas 0 29 1600 849 10;
+#X obj 95 330 view~;
+#X obj 162 197 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12600 1;
+#X floatatom 159 214 10 0 0 0 - - -;
+#X obj 159 232 sig~;
+#X obj 95 199 sig~ 159;
+#X msg 159 178 0;
+#X obj 159 159 loadbang;
+#X floatatom 95 181 5 0 0 0 - - -;
+#X obj 95 303 tri~;
+#X text 355 62 tri~ - reverse saw \, triangle \, and saw wave with
+modulatable width and phase reset.;
+#X text 355 101 tri~ outputs a bipolar non-band-limited saw/triangle
+wave with a modulatable width. the first inlet is for the frequency.
+the second takes a signal from -1 to 1 to specify the width \, with
+numbers below 0 resulting in a reverse saw \, numbers above 0 resulting
+in a forward saw \, and 0 resulting in a triangle wave. the third inlet
+can be used for a phase reset \, just like with [phasor~].;
+#X text 357 204 take note of what happens when the width is set to
+-1 or 1 ... i'm not sure how to fix this.;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 8 1;
+#X connect 4 0 8 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 4 0;
+#X connect 8 0 0 0;

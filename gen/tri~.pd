@@ -1,4 +1,4 @@
-#N canvas 0 20 1600 870 12;
+#N canvas 0 29 1600 849 12;
 #X obj 74 29 inlet~;
 #X obj 280 21 inlet~;
 #X obj 302 605 outlet~;
@@ -10,7 +10,7 @@
 #X obj 326 354 +~;
 #X obj 259 274 *~ -1;
 #X obj 302 529 *~;
-#X obj 449 282 expr~ pow($v1*($v1-1) \, -1);
+#X obj 447 284 expr~ pow($v1*($v1-1) \, -1);
 #X obj 96 136 phasor~ \$1;
 #X text 329 22 accepts -1 to 1 to change shape;
 #X obj 281 98 atc~;

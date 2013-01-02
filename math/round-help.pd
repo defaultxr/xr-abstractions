@@ -1,0 +1,11 @@
+#N canvas 0 29 1600 849 10;
+#X obj 67 192 round;
+#X obj 70 157 hsl 128 15 -2 2 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 7400 1;
+#X floatatom 67 174 5 0 0 0 - - -;
+#X floatatom 67 211 5 0 0 0 - - -;
+#X text 317 50 round - rounds a float to the nearest integer.;
+#X text 323 96 pretty self-explanatory if you ask me.;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
