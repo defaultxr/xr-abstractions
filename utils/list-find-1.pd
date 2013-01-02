@@ -1,4 +1,4 @@
-#N canvas 0 0 800 849 10;
+#N canvas 800 29 800 410 10;
 #X obj 91 359 f;
 #X obj 91 51 inlet;
 #X obj 183 47 inlet;
@@ -37,6 +37,8 @@
 or float) in a list.;
 #X obj 91 384 spigot 1;
 #X msg 142 416 0;
+#X text 256 194 left outlet is the index of the first value found \,
+right outlet is the total number of the values found.;
 #X connect 0 0 20 0;
 #X connect 1 0 12 0;
 #X connect 2 0 7 1;

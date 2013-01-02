@@ -157,7 +157,7 @@ abstractions for generating sound
 
 `pmosc~` - phase modulation oscillator, stolen from PDX7, with a slight modification.
 
-`psndm~` - polyphonic sound player, using midi notes for melodies. this needs work.
+`psndm~` - polyphonic sound player. you can send it midi numbers to play the sample at that value. it has 8 voices.
 
 `psndp~` - polyphonic sound player. similar to `sndp~` but with 6 voices.
 
@@ -271,7 +271,7 @@ sequencer abstractions
 
 `edger~` - 
 
-`ft` - "friendly table". abstraction to make it easier to edit a table.
+`ft` - "friendly table". abstraction to make it easier to edit a table. need to redo this.
 
 `iadsr~` - interface ADSR envelope. WIP.
 
@@ -305,11 +305,11 @@ sequencer abstractions
 
 `sbox` - box abstraction used by `boxseq` and `pattseq`.
 
-`seqfill` - abstraction used by `drumseq`'s "e" command.
+`seqfill` - abstraction used by `drumseq`'s "e" command. might remove this in the future.
 
 `srush` - "snare rush" abstraction. might redo this to make it simpler.
 
-`stack` - a stack. you can push things onto the stack or pop them off of it.
+`stack` - a stack. you can push things onto the stack or pop them off of it. WIP.
 
 `taptempo` - tap or send bangs to get the tempo.
 
@@ -431,6 +431,9 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * rename `aphasor~`
 * make a better `analog~`
 * rename `pmosc~` to `pm~` so it doesn't conflict with `pmosc~` from PDX7
+* remove `seqfill` maybe.
+* redo `ft` maybe.
+* complete `stack`.
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 
