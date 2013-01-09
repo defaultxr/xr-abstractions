@@ -1,0 +1,5 @@
+#N canvas 0 29 1600 849 10;
+#X obj 46 104 nview;
+#X text 175 38 nview - note view;
+#X text 164 67 displays all incoming midi note information \, straight
+from [notein];

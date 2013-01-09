@@ -1,0 +1,56 @@
+#N canvas 0 29 1600 849 10;
+#X msg 115 128 open \$1;
+#X obj 115 99 openpanel;
+#X obj 115 72 bng 15 250 50 0 empty empty select_a_wav 17 7 0 10 -262144
+-1 -1;
+#X obj 78 186 o~;
+#X obj 335 425 snd~;
+#X obj 421 425 sndp~;
+#X text 278 424 see also:;
+#X obj 84 366 o~;
+#X obj 84 337 snd~;
+#X obj 375 425 sndf~;
+#X floatatom 44 73 5 0 0 0 midi_note - -;
+#X obj 467 425 sndl~;
+#X obj 78 157 sndm~;
+#X obj 124 157 vcsig~;
+#X obj 78 95 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 114 283 5 0 0 0 midi_note - -;
+#X obj 148 305 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 114 337 sndcm~;
+#X text 275 76 sndm~ allows you to load a sound into memory (either
+by sending an "open" message to the right inlet or by providing the
+filename as the argument) and play through the whole thing using an
+internal line~. to play it \, you can send midi notes to the inlet
+(the default base note is 60 \, though this can be changed by providing
+a second argument or sending a meassage like "base 50" to change the
+base note to 50 \, for example) or by sending a bang to repeat the
+last note.;
+#X text 275 283 the left outlet outputs the sound \, while the right
+outlet outputs the value of the internal line~.;
+#X text 277 193 for example \, if you send a "50" and then a bang \,
+the sound will play at midi note 50 twice.;
+#X text 277 235 sndm~'s features are a superset of sndp~'s features.
+sndp~ can only accept bangs to play the sound at the original pitch.
+;
+#X text 275 320 <-- these two are the same! sndm~ is basically an abstraction
+to snd~ and sndcm~. sndcm~ generates the control values for snd~. keep
+this in mind if you want to do something more complex than what sndm~
+allows - it can probably be done with sndcm~ and snd if sndm~ isn't
+close enough to the functionality you need.;
+#X text 286 39 sndm~ - sound midi note;
+#X connect 0 0 8 1;
+#X connect 0 0 12 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 8 0 7 0;
+#X connect 8 1 17 0;
+#X connect 10 0 12 0;
+#X connect 12 0 3 0;
+#X connect 12 1 13 0;
+#X connect 14 0 12 0;
+#X connect 15 0 17 0;
+#X connect 16 0 17 0;
+#X connect 17 0 8 0;

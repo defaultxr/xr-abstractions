@@ -1,0 +1,15 @@
+#N canvas 0 29 1600 849 10;
+#X obj 49 251 lview;
+#X msg 44 191 this is a very long list. it's longer than the width
+of [lview] would allow but you can still see the whole thing... right?
+;
+#X msg 34 148 foo;
+#X msg 37 170 1 2 3 4;
+#X msg 24 127 bang;
+#X text 213 10 lview - list view;
+#X text 209 40 displays the entire list received on the inlet \, as
+well as the length of that list.;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;

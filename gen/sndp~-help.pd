@@ -1,0 +1,32 @@
+#N canvas 0 29 1600 849 10;
+#X msg 125 118 open \$1;
+#X obj 125 89 openpanel;
+#X obj 125 62 bng 15 250 50 0 empty empty select_a_wav 17 7 0 10 -262144
+-1 -1;
+#X obj 88 176 o~;
+#X obj 342 264 snd~;
+#X obj 474 264 sndm~;
+#X text 285 263 see also:;
+#X obj 382 264 sndf~;
+#X text 296 29 sndp~ - sound play;
+#X text 285 66 sndp~ allows you to load a sound into memory (either
+by sending an "open" message to the right inlet or by providing the
+filename as the argument) and play through the whole thing by sending
+a bang to the inlet.;
+#X obj 88 147 sndp~;
+#X obj 88 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 132 147 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 285 132 this is the simplest of the sound playing abstractions.
+it's a subset of sndm~. it can only play thru the whole sound at the
+original rate. this makes it best for drums.;
+#X obj 428 264 sndl~;
+#X text 285 198 the left outlet outputs the sound \, while the right
+outlet bangs once the sound has finished playing.;
+#X connect 0 0 10 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 10 0 3 0;
+#X connect 10 1 12 0;
+#X connect 11 0 10 0;

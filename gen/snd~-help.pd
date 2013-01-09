@@ -1,0 +1,29 @@
+#N canvas 0 29 1600 849 10;
+#X msg 89 118 open \$1;
+#X obj 89 89 openpanel;
+#X obj 89 62 bng 15 250 50 0 empty empty select_a_wav 17 7 0 10 -262144
+-1 -1;
+#X obj 68 176 o~;
+#X obj 17 118 aline~ 1000;
+#X obj 371 245 sndl~;
+#X obj 417 245 sndp~;
+#X obj 463 245 sndm~;
+#X text 268 244 see also:;
+#X text 276 29 snd~ - load a sound file into memory;
+#X obj 68 147 snd~;
+#X obj 325 245 sndf~;
+#X text 265 66 sndf~ allows you to load a sound into memory (either
+by sending an "open" message to the right inlet or by providing the
+filename as the argument) and read thru it by sending values from 0
+(start of the sound) to 1 (end of the sound) to the left inlet.;
+#X text 267 133 this abstraction is used internally by objects like
+sndf~ \, sndl~ \, sndm~ \, etc. for most purposes \, you'll probably
+find those a lot more convenient.;
+#X obj -43 89 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6000 1;
+#X connect 0 0 10 1;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 10 0;
+#X connect 10 0 3 0;
+#X connect 14 0 4 0;

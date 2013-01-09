@@ -1,0 +1,33 @@
+#N canvas 0 29 1600 849 10;
+#X obj 45 193 rmap one two three;
+#X obj 20 120 s one;
+#X obj 66 120 s two;
+#X obj 112 120 s three;
+#X floatatom 20 82 5 0 0 0 - - -;
+#X floatatom 66 82 5 0 0 0 - - -;
+#X floatatom 112 82 5 0 0 0 - - -;
+#X obj 61 221 print rmap;
+#X text 261 46 rmap - receive map;
+#X text 242 87 rmap takes a list of names to receive from. each name
+is indexed from zero and anything that receive gets will be output
+to rmap's outlet with that index prepended. this is useful if you have
+a bunch of receives that you want to get data from but you don't want
+to have to create them \, connect them \, and sort all their data manually.
+;
+#X text 252 182 NOTE: this uses the dyn~ object \, so you'll need that.
+;
+#X text 243 212 also \, any dynamic creation of objects in pure data
+is slow \, so it's advised only to use this for prototyping and replace
+it with static [receive] objects once you're done.;
+#X obj 45 252 route 0 1 2;
+#X floatatom 22 278 5 0 0 0 - - -;
+#X floatatom 58 280 5 0 0 0 - - -;
+#X floatatom 108 281 5 0 0 0 - - -;
+#X connect 0 0 7 0;
+#X connect 0 0 12 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 6 0 3 0;
+#X connect 12 0 13 0;
+#X connect 12 1 14 0;
+#X connect 12 2 15 0;

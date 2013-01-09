@@ -1,0 +1,35 @@
+#N canvas 0 29 1600 849 10;
+#X obj 42 249 maybe;
+#X text 278 43 maybe - maybe output a bang.;
+#X obj 27 44 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 42 268 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 51 226 5 0 0 0 - - -;
+#X msg 51 90 2;
+#X text 45 42 50% chance.;
+#X msg 46 69 0.5;
+#X text 73 67 50% chance.;
+#X msg 58 112 5;
+#X text 82 90 1 in 2 (50%) chance.;
+#X text 87 112 1 in 5 (20%) chance.;
+#X msg 66 135 0.2;
+#X text 100 135 20% chance.;
+#X msg 73 161 1;
+#X text 103 159 100% chance.;
+#X text 253 72 maybe might output a bang. the likelihood of a bang
+on the outlet depends on what you send to the inlet:;
+#X text 253 109 a bang - 50% chance.;
+#X text 252 134 a number above 1 - (1/that number) chance. (i.e. 5
+is a 1 in 5 chance);
+#X text 254 166 a number between 0 and 1 - (100*that number)% chance.
+(i.e. 0.2 is 20% chance);
+#X text 256 204 1 - 100% chance.;
+#X connect 0 0 3 0;
+#X connect 2 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 7 0 0 0;
+#X connect 9 0 0 0;
+#X connect 12 0 0 0;
+#X connect 14 0 0 0;

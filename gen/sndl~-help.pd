@@ -1,0 +1,65 @@
+#N canvas 0 29 1600 849 10;
+#X msg 105 118 open \$1;
+#X obj 105 89 openpanel;
+#X obj 105 62 bng 15 250 50 0 empty empty select_a_wav 17 7 0 10 -262144
+-1 -1;
+#X obj 68 176 o~;
+#X obj 328 535 snd~;
+#X obj 414 535 sndp~;
+#X obj 460 535 sndm~;
+#X text 271 534 see also:;
+#X obj 74 356 o~;
+#X obj 74 327 snd~;
+#X text 276 29 sndl~ - sound line;
+#X obj 368 535 sndf~;
+#X obj 68 147 sndl~;
+#X obj 104 327 sndcl~;
+#X floatatom 104 273 5 0 0 0 - - -;
+#X floatatom 120 291 5 0 0 0 - - -;
+#X floatatom 137 309 5 0 0 0 - - -;
+#X floatatom 34 63 5 0 0 0 multiple_of_time - -;
+#X floatatom 50 81 5 0 0 0 start_position - -;
+#X floatatom 67 99 5 0 0 0 end_position - -;
+#X text 265 66 sndl~ allows you to load a sound into memory (either
+by sending an "open" message to the right inlet or by providing the
+filename as the argument) and play through the whole thing or a section
+using an internal line~. the left inlet is the time to multiply the
+original time by. the middle inlet is the start position \, and the
+right inlet is the end position (keep in mind that the original starrt
+is 0 and the original end of the file is 1 \, for convenience (maybe)).
+;
+#X text 267 183 for example \, to play the sound at its original rate
+\, send a 1 to the left inlet. to play the sound at half its original
+speed \, send a 2 to the first inlet. to play through the sound at
+half its original time \, send a 0.5 to the left inlet. to play from
+the middle of the sound to the end of the sound \, send 0.5 to the
+middle inlet and 1 to the right inlet \, then a 1 to the left inlet.
+to play from the beginning of the sound to the middle of the sound
+\, send a 0 to the middle inlet \, a 0.5 to the right inlet \, and
+then a 1 to the left inlet.;
+#X text 270 307 also note that you can play the line "backwards" by
+sending negative numbers to the left inlet.;
+#X text 270 401 <-- these two are the same! sndl~ is basically an abstraction
+to snd~ and sndcl~. sndcl~ generates the control values for snd~. keep
+this in mind if you want to do something more complex than what sndl~
+allows - it can probably be done with sndcl~ and snd if sndl~ isn't
+close enough to the functionality you need.;
+#X text 271 349 the left outlet outputs the sound \, while the right
+outlet outputs the value of the line.;
+#X obj 114 146 vcsig~;
+#X connect 0 0 9 1;
+#X connect 0 0 12 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 9 0 8 0;
+#X connect 9 1 13 0;
+#X connect 12 0 3 0;
+#X connect 12 1 25 0;
+#X connect 13 0 9 0;
+#X connect 13 1 9 1;
+#X connect 14 0 13 0;
+#X connect 15 0 13 1;
+#X connect 16 0 13 2;
+#X connect 17 0 12 0;
+#X connect 18 0 12 1;
+#X connect 19 0 12 2;

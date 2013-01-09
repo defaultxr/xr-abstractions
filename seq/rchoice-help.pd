@@ -1,0 +1,18 @@
+#N canvas 800 29 800 849 10;
+#X symbolatom 38 275 10 0 0 0 - - -;
+#X obj 9 224 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 227 120 rchoice - randomly choose an element from a list;
+#X obj 38 256 rchoice foo bar baz;
+#X msg 111 200 spam ham eggs;
+#X msg 29 227 dog cat robot;
+#X msg 138 220 purple orange green;
+#X text 220 147 you can provide a default list as arguments \, or you
+can set the list by sending it to the right inlet. bang the left inlet
+to choose from the current list \, or send a list to the left inlet
+to choose from that list (without setting rchoice's list to it).;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 1;
+#X connect 5 0 3 0;
+#X connect 6 0 3 1;
