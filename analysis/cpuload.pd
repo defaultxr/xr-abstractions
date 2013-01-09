@@ -8,6 +8,8 @@
 #X msg 126 188 cat /proc/loadavg;
 #X obj 126 214 shell;
 #X obj 126 241 unpack f f f s f;
+#X obj 126 293 outlet;
+#X connect 0 0 9 0;
 #X connect 1 0 3 0;
 #X connect 2 0 6 0;
 #X connect 3 0 4 0;

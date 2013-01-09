@@ -1,0 +1,46 @@
+#N canvas 0 29 1600 849 10;
+#X obj 58 137 sndf~;
+#X msg 85 108 open \$1;
+#X obj 85 79 openpanel;
+#X obj 85 52 bng 15 250 50 0 empty empty select_a_wav 17 7 0 10 -262144
+-1 -1;
+#X floatatom 13 80 5 0 0 0 multiple_of_sound's_original_speed - -;
+#X obj 58 166 o~;
+#X text 266 19 sndf~ - sound frequency;
+#X text 255 56 sndf~ allows you to load a sound into memory (either
+by sending an "open" message to the right inlet or by providing the
+filename as the argument) and loop it at a multiple of its original
+speed.;
+#X text 257 123 for example \, to play the sound at its original speed
+\, send a value of 1 to the left inlet. to play it at twice the original
+speed \, send a value of 2 to the left inlet. to play at half speed
+\, send 0.5 to the left inlet.;
+#X obj 13 108 aline~ 1000;
+#X obj 315 355 snd~;
+#X obj 355 355 sndl~;
+#X obj 401 355 sndp~;
+#X obj 447 355 sndm~;
+#X text 258 354 see also:;
+#X floatatom 109 260 5 0 0 0 multiple_of_sound's_original_speed - -
+;
+#X obj 64 346 o~;
+#X obj 109 288 aline~ 1000;
+#X obj 64 317 snd~;
+#X obj 94 317 sndcf~;
+#X text 257 211 <-- these two are the same! sndf~ is basically an abstraction
+to snd~ and sndcf~. sndcf~ generates the control values for snd~. keep
+this in mind if you want to do something more complex than what sndf~
+allows - it can probably be done with sndcf~ and snd if sndf~ isn't
+close enough to the functionality you need.;
+#X connect 0 0 5 0;
+#X connect 1 0 0 1;
+#X connect 1 0 18 1;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 9 0;
+#X connect 9 0 0 0;
+#X connect 15 0 17 0;
+#X connect 17 0 19 0;
+#X connect 18 0 16 0;
+#X connect 18 1 19 1;
+#X connect 19 0 18 0;

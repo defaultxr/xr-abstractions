@@ -6,7 +6,7 @@ Please notify me of any bugs you find while using these abstractions.
 
 I'm still working on writing help files for each of these. This collection is under constant development, so things might change, get renamed, removed, etc. But it's fairly likely it won't cause you any problems.
 
-Some of the abstractions i find most useful are: `map`, `snd~` (and all the objects that begin with "snd"), `o~`, `view~`, `drumseq`, `rrange`, `rchoice`, `bpmm`, `tb303~`, and `unmap`.
+Some of the abstractions i find most useful are: `map`, `snd~` (and all the objects whose name includes "snd"), `o~`, `view~`, `drumseq`, `rrange`, `rchoice`, `bpmm`, `tb303~`, `rmap`, and `unmap`.
 
 Below is a quick overview of the included abstractions.
 
@@ -120,6 +120,8 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `sndsel` - sound selector. allows you to select a sound by browsing folders graphically, because `playlist` kind of sucks. i stole this from someone else's abstractions but i edited it a bit and i plan to redo it from scratch eventually.
 
+`sndsel2` - WIP successor to `sndsel`.
+
 `sswitcher~` - 
 
 `switcher~` - 
@@ -161,7 +163,7 @@ abstractions for generating sound
 
 `playsf~` - play a file from the argument.
 
-`pmosc~` - phase modulation oscillator, stolen from PDX7, with a slight modification.
+`pm~` - phase modulation oscillator, stolen from PDX7, with a slight modification.
 
 `psndm~` - polyphonic sound player. you can send it midi numbers to play the sample at that value. it has 8 voices.
 
@@ -257,6 +259,10 @@ sequencer abstractions
 
 `adsr` - same as `adsr~`, but outputs messages instead of audio signal.
 
+`aline~` - automatic line. like `line~` but floats don't jump, they start a line whose time is provided by the first argument.
+
+`aline` - automatic line. like `line` but floats don't jump, they start a line whose time is provided by the first argument.
+
 `amap` - advanced version of `map`. has more features like random selection, insertion, deletion, and dumping the contents.
 
 `anaseq` - a sequencer made of vertical sliders; supports saving, loading, multiple patterns and more.
@@ -283,17 +289,9 @@ sequencer abstractions
 
 `ilist` - indexed list manager. insert into or remove from a list by index, just by sending messages.
 
-`kline~` - automatic line. like `line~` but floats don't jump, they start a line whose time is provided by the first argument.
-
-`kline` - automatic line. like `line` but floats don't jump, they start a line whose time is provided by the first argument.
-
 `listman` - list manager. you can add elements to a list, remove them, check for their existence within the list, etc. you can't remove by index, only by value, so don't use this if you want to have multiple of the same element.
 
 `lmap` - line map. was supposed to be used to generate a complex line. but i might delete this.
-
-`lolr` - list of lists reader. might delete this eventually.
-
-`lolw` - list of lists writer. might delete this eventually.
 
 `map` - map bangs or floats to elements of a list provided as arguments or set via the right inlet. probably the most useful abstraction you'll ever find.
 
@@ -315,7 +313,7 @@ sequencer abstractions
 
 `srush` - "snare rush" abstraction. might redo this to make it simpler.
 
-`stack` - a stack. you can push things onto the stack or pop them off of it. WIP.
+`stack` - a stack. you can push things onto the stack or pop them off of it.
 
 `taptempo` - tap or send bangs to get the tempo.
 
@@ -359,15 +357,13 @@ miscellaneous utilities
 
 `*+~` - multiply and then add to a signal with one object.
 
-`autosend` - use the first item in a list as the destination for the rest of the list.
+`autosend` - use the first item in a message as the destination for the rest of the message.
 
 `chars` - separate a symbol into a list of its characters.
 
 `colors` - outputs a pd color when the left inlet is banged. otherwise, the inlets take floats: from left, the red amount, green amount, and blue amount.
 
 `emptysymbol` - test if a symbol is the empty symbol.
-
-`hanning` - hanning window.
 
 `hue_to_rgb` - convert a hue to rgb colors. see also: `colors`
 
@@ -390,6 +386,8 @@ miscellaneous utilities
 `list-without` - returns a list without all instances of the specified element.
 
 `marquee` - display elements of a list at regular intervals.
+
+`mp3conv` - use `lame` to convert an mp3 to wav, storing the wav in /tmp and outputting the filename of the wav when conversion finishes.
 
 `o~` - interface for mono output to `dac~`.
 
@@ -419,15 +417,12 @@ miscellaneous utilities
 
 `sym` - turn a list into a symbol (basically just `l2s` except you don't need to send an empty symbol to the right inlet. see also: `chars`)
 
-`zyn~` - ZynAddSubFX "interface"
-
 FUTURE
 ======
 
 In the future i plan to clean up a lot of these. Either by renaming them or by splitting up functionality, etc. There are also a few that i'd like to re-code or rethink entirely. Some of the things i want to change:
 
-* rename `kline` and `kline~` to `aline` and `aline~` since "k" doesn't mean anything and "a" would mean "automatic"
-* rename `kspigot` and `kspigot~`
+* rename `kspigot` and `kspigot~` to `ispigot` and `ispigot~`
 * rename `adsr` and `adsr~` to just `adr` and `adr~` and remove the sustain functionality
 * remake `adsr` and `adsr~` into actual ADSR envelopes
 * rename `bswitcher` and the other similar abstractions so that their names are more logical and easy to remember
@@ -436,11 +431,15 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * fix `mcb`, `mck`, `m-client`, `mcl`, `mc`, `mct`, `mstr`, etc (i've redone these quite a few times already and i still haven't quite gotten them right)
 * rename `aphasor~`
 * make a better `analog~`
-* rename `pmosc~` to `pm~` so it doesn't conflict with `pmosc~` from PDX7
 * remove `seqfill` maybe.
 * redo `ft` maybe.
-* complete `stack`.
+* improve `stack` (i.e. add "shift" and "unshift" operations; perhaps make it possible to push non-float elements onto the stack?)
 * implement voice stealing in `polys`
+* get `tracker` to use `kfilename`
+* make `randomsong~` use `mp3conv`
+* make `kfilename` (and all abstractions that use it) able to handle filenames with spaces
+* complete `sndsel2` and replace the original `sndsel` with it. delete `browser`.
+* remove `dyn~` from `rmap`; write the dynamic generation manually, so the receives, etc, aren't just thrown about randomly (i.e. so it's more convenient to copy & paste from inside `rmap`)
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 
@@ -599,7 +598,7 @@ gen:
 * `irsong~`
 * `noisef~`
 * `playsf~`
-* `pmosc~`
+* `pm~`
 * `psndm~`
 * `psndp~`
 * `random~`
@@ -612,11 +611,6 @@ gen:
 * `sndcl~`
 * `sndcm~`
 * `sndd~`
-* `sndf~`
-* `sndl~`
-* `sndm~`
-* `snd~`
-* `sndp~`
 * `snds~`
 * `srec~`
 * `timestretch~`
@@ -654,22 +648,15 @@ seq:
 * `ft`
 * `iadsr~`
 * `ilist`
-* `kline~`
-* `kline`
 * `listman`
 * `lmap`
-* `lolr`
-* `lolw`
 * `ometro`
 * `pattseq`
 * `pb`
 * `pmap`
-* `rchoice`
-* `rmap`
 * `sbox`
 * `seqfill`
 * `srush`
-* `stack`
 * `taptempo`
 * `td~`
 * `tmap`
@@ -693,8 +680,6 @@ utils:
 * `autosend`
 * `browser`
 * `chars`
-* `emptysymbol`
-* `hanning`
 * `hue_to_rgb`
 * `itimer`
 * `ktimer`
@@ -704,6 +689,7 @@ utils:
 * `lists`
 * `list-without`
 * `marquee`
+* `mp3conv`
 * `o~`
 * `parser`
 * `*+~`
@@ -718,4 +704,3 @@ utils:
 * `span~`
 * `sreceive~`
 * `ssend~`
-* `zyn~`

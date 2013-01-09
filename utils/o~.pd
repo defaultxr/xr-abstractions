@@ -1,19 +1,18 @@
-#N canvas 0 0 1600 849 10;
+#N canvas 0 29 1600 849 10;
 #X obj 249 116 inlet~;
 #X obj 262 -121 inlet;
 #X obj 103 115 hsl 55 13 0 127 0 0 \$0-v \$0-vols volume -1 8 0 10
--24198 -1 -1 0 1;
+-24198 -1 -1 5400 1;
 #X obj 294 322 outlet~;
 #X obj 303 301 dac~;
 #X obj 294 230 *~;
 #X obj 186 205 env~;
 #X obj 137 102 vsl 8 10 0 127 0 0 \$0-ms \$0-mr empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 882 1;
 #X obj 186 224 autoscale 0 127;
 #X obj 374 -7 r \$0-v;
 #X obj 374 125 / 127;
 #X obj 374 173 *~;
-#X obj 374 144 kline~ 50;
 #X obj 262 55 s \$0-vols;
 #X obj 262 17 line;
 #X obj 262 36 min 127;
@@ -66,7 +65,7 @@ select the individual instance \, or press enter to select them all.
 keys change the volume (leftmost (1) is 0% volume while rightmost (0)
 is 100% volume). qwer change the speed of keyboard volume changes (q
 is the slowest speed \, r is the fastest). t toggles muting.;
-#X obj 145 100 tgl 15 0 \$0-mc_tgls \$0-mc_tgl ov 2 7 0 10 -262144
+#X obj 145 100 tgl 15 0 \$0-mc_tgls \$0-mc_tgl empty 2 7 0 10 -262144
 -262144 -62784 0 1;
 #N canvas 0 0 1600 849 box 0;
 #X obj 89 -75 mc o';
@@ -148,37 +147,38 @@ is for mono output \, so~ is for stereo output \, and po~ is for panned
 mono output. with these abstractions you can control volume and mute
 with the keyboard (as described below) as well as with the mouse or
 via messages.;
-#X connect 0 0 21 0;
-#X connect 1 0 34 0;
-#X connect 5 0 22 0;
+#X obj 374 144 aline~ 50;
+#X connect 0 0 20 0;
+#X connect 1 0 33 0;
+#X connect 5 0 21 0;
 #X connect 6 0 8 0;
-#X connect 8 0 17 0;
+#X connect 8 0 16 0;
 #X connect 9 0 10 0;
-#X connect 9 0 20 1;
-#X connect 10 0 12 0;
+#X connect 9 0 19 1;
+#X connect 10 0 35 0;
 #X connect 11 0 5 1;
-#X connect 12 0 11 0;
-#X connect 12 0 11 1;
-#X connect 14 0 15 0;
-#X connect 15 0 13 0;
-#X connect 17 0 18 0;
-#X connect 18 0 16 0;
-#X connect 19 0 14 0;
-#X connect 19 1 20 0;
-#X connect 20 0 14 0;
-#X connect 21 0 5 0;
-#X connect 21 0 6 0;
-#X connect 22 0 4 0;
-#X connect 22 0 3 0;
-#X connect 22 0 4 1;
-#X connect 23 0 22 1;
-#X connect 24 0 34 0;
-#X connect 26 0 34 0;
-#X connect 27 0 34 0;
-#X connect 29 0 25 0;
-#X connect 33 0 34 0;
-#X connect 34 0 19 0;
-#X connect 34 1 19 0;
-#X connect 34 2 25 0;
-#X connect 34 3 25 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 0;
+#X connect 16 0 17 0;
+#X connect 17 0 15 0;
+#X connect 18 0 13 0;
+#X connect 18 1 19 0;
+#X connect 19 0 13 0;
+#X connect 20 0 5 0;
+#X connect 20 0 6 0;
+#X connect 21 0 4 0;
+#X connect 21 0 3 0;
+#X connect 21 0 4 1;
+#X connect 22 0 21 1;
+#X connect 23 0 33 0;
+#X connect 25 0 33 0;
+#X connect 26 0 33 0;
+#X connect 28 0 24 0;
+#X connect 32 0 33 0;
+#X connect 33 0 18 0;
+#X connect 33 1 18 0;
+#X connect 33 2 24 0;
+#X connect 33 3 24 0;
+#X connect 35 0 11 0;
+#X connect 35 0 11 1;
 #X coords 0 -1 1 1 60 30 1 100 100;

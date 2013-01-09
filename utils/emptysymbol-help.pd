@@ -1,0 +1,18 @@
+#N canvas 0 29 1600 849 10;
+#X obj 97 207 emptysymbol;
+#X obj 94 239 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 58 143 symbol;
+#X msg 76 162 symbol foo;
+#X msg 88 181 symbol bar;
+#X symbolatom 141 233 10 0 0 0 - - -;
+#X text 265 90 emptysymbol - detects the empty symbol;
+#X text 276 124 emptysymbol will send a bang to the left outlet if
+it receives an empty symbol on its inlet. if it receives a symbol that
+isn't empty \, then it will simply pass that symbol to its right outlet.
+;
+#X connect 0 0 1 0;
+#X connect 0 1 5 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;

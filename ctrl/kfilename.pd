@@ -1,46 +1,60 @@
-#N canvas 0 29 800 849 10;
-#X obj 136 366 outlet;
-#X obj 136 43 inlet;
-#X obj 136 121 s2l /;
-#X obj 136 140 list-drip;
-#X msg 136 309 add2 \$1;
-#X obj 136 347 l2s /;
-#X obj 136 81 t a b;
-#X msg 31 178 symbol home/modula;
-#X text 326 49 kfilename - defaultxr's abstraction for shorter filenames.
-you might want to change some of the paths in the messages to directories
-you want to use.;
-#X obj 136 159 sel ~ ~s ~d;
-#X msg 77 197 symbol home/modula/misc/sounds;
-#X msg 93 216 symbol home/modula/misc/pd/saves;
-#X text 325 99 ~ can be used for your home directory. ~s can be used
+#N canvas 800 468 800 410 10;
+#X obj 103 234 outlet;
+#X obj 103 118 inlet;
+#X obj 103 177 symbol;
+#X text 293 119 FIX: can't handle filenames with spaces. argh!!;
+#X text 295 59 ~ can be used for your home directory. ~s can be used
 for your sounds directory. ~d is used by [drumseq] \, [anaseq] \, etc
-\, as the directory to save their data.;
-#X obj 136 62 symbol;
-#X msg 276 172 set /;
-#X text 324 234 i haven't the faintest idea about how to get this to
-work with windows but i'd guess you replace "set /" with "set c:/"
-or something like that.;
-#X msg 136 328 / home/modula/misc/sounds l kick01.wav;
-#X text 199 357 there will be 2 forward-slashes at the beginning of
-the output. don't know if there's an easy way to prevent this from
-happening but i don't really care that it does \, since it doesn't
-really affect anything.;
-#X connect 1 0 13 0;
+\, as the directory to save their data. you can add your own shortcuts
+too if you'd like.;
+#X msg 103 215 symbol /\$1;
+#X text 171 211 i'm not sure about how to get this to work with windows
+but you'll probably need to change this message to something like "symbol
+c:/";
+#N canvas 800 468 800 410 shortcuts 0;
+#X obj 37 37 inlet;
+#X obj 223 166 inlet;
+#X obj 37 96 s2l /;
+#X obj 37 115 list-drip;
+#X msg 37 284 add2 \$1;
+#X obj 37 322 l2s /;
+#X obj 37 56 t a b;
+#X msg 37 303;
+#X obj 37 134 unmap ~ ~s ~d;
+#X msg 121 134 set;
+#X obj 37 183 map;
+#X obj 37 341 outlet;
+#X connect 0 0 6 0;
+#X connect 1 0 10 1;
 #X connect 2 0 3 0;
-#X connect 3 0 9 0;
-#X connect 3 1 16 0;
-#X connect 4 0 16 0;
-#X connect 5 0 0 0;
+#X connect 3 0 8 0;
+#X connect 3 1 7 0;
+#X connect 4 0 7 0;
+#X connect 5 0 11 0;
 #X connect 6 0 2 0;
-#X connect 6 1 14 0;
-#X connect 7 0 4 0;
+#X connect 6 1 9 0;
+#X connect 7 0 5 0;
+#X connect 8 0 10 0;
+#X connect 8 1 4 0;
 #X connect 9 0 7 0;
-#X connect 9 1 10 0;
-#X connect 9 2 11 0;
-#X connect 9 3 4 0;
 #X connect 10 0 4 0;
-#X connect 11 0 4 0;
-#X connect 13 0 6 0;
-#X connect 14 0 16 0;
-#X connect 16 0 5 0;
+#X restore 103 196 pd shortcuts;
+#X msg 172 164 home/modula home/modula/misc/sounds home/modula/misc/pd/saves
+;
+#X obj 172 145 loadbang;
+#X text 296 29 kfilename - abstraction for shorter filenames.;
+#X obj 103 137 route bang;
+#X obj 217 271 outlet;
+#X text 394 155 <-- a list of directories you use (not including the
+root (/) dir) - first should be ~ \, second should be ~s \, third should
+be ~d. note that you can add more but you'll have to edit the "pd shortcuts"
+subpatch.;
+#X connect 1 0 11 0;
+#X connect 2 0 7 0;
+#X connect 5 0 0 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 1;
+#X connect 8 0 12 0;
+#X connect 9 0 8 0;
+#X connect 11 0 8 0;
+#X connect 11 1 2 0;

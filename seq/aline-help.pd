@@ -1,0 +1,20 @@
+#N canvas 0 29 1600 849 10;
+#X floatatom 37 28 5 0 0 0 glide_to - -;
+#X floatatom 49 85 5 0 0 0 output - -;
+#X floatatom 118 28 5 0 0 0 in_msec - -;
+#X text 181 14 aline - automatic line;
+#X obj 49 56 aline 1000;
+#X text 181 51 aline is basically just an abstraction for line that
+automatically turns floats into ramp messages. in other words \, sending
+a float to the left inlet will not make the line "jump" to that value
+\; the line will ramp to that value over the amount of time provided
+as the first argument (or to the right inlet).;
+#X text 177 137 note that there is no loss of functionality if you
+use this! you can still send a pair of numbers to the left inlet to
+set the destination value and the ramp time simultaneously. thus \,
+you can still make the internal line jump to a value by sending a message
+like "5 0" to jump to the number 5 in 0 milliseconds.;
+#X text 182 233 see also: aline~;
+#X connect 0 0 4 0;
+#X connect 2 0 4 1;
+#X connect 4 0 1 0;

@@ -1,4 +1,4 @@
-#N canvas 800 29 800 849 10;
+#N canvas 0 29 1600 849 10;
 #X obj 250 -36 loadbang;
 #X obj 110 121 table \$0-file;
 #X obj 143 229 +~ 1;
@@ -12,7 +12,7 @@
 #X symbolatom -110 58 50 0 0 0 - - -;
 #X obj 165 -29 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text -75 170 control sound with audio signal from 0 to 1;
+#X text -119 171 control sound with audio signal from 0 to 1;
 #X floatatom 194 185 10 0 0 1 length - -;
 #X floatatom 304 263 10 0 0 1 time_from_0_to_1_to_play_at_normal_speed
 - -;
@@ -24,7 +24,7 @@
 #X obj 304 244 * 1000;
 #X obj 175 -69 inlet;
 #X obj 319 209 nbx 5 14 0 1e+37 0 0 empty empty sample_rate 56 8 0
-10 -262144 -1 -1 0 256;
+10 -262144 -1 -1 44100 256;
 #X obj 143 210 *~ 0;
 #X obj 143 191 wrap~;
 #X obj 280 158 wavinfo;

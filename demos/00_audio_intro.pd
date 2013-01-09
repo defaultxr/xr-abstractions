@@ -1,4 +1,4 @@
-#N canvas 0 0 800 836 10;
+#N canvas 0 29 800 849 10;
 #X obj 36 256 aphasor~;
 #X text 93 246 [aphasor~] - super simple abstraction of [phasor~].
 [phasor~]'s output ranges from 0 to 1 \, whereas [aphasor~] ranges
@@ -10,11 +10,6 @@ an argument for the filename.;
 #X obj 38 340 noisef~;
 #X text 84 336 [noisef~] - super simple abstraction for sample/hold
 noise. nothing special!;
-#X obj 40 385 pmosc~;
-#X text 84 369 [pmosc~] - super simple phase modulation oscillator.
-stolen and edited from Frank Barknecht's PDX7 V2. if you have PDX7
-in your path \, this will conflict with the [pmosc~] from that! they
-have the same name but this one only has 2 inlets instead of 3;
 #X text 76 10 defaultxr's audio abstractions;
 #X text 57 83 i'm actually not very smart when it comes to audio stuff
 \, so most of these are probably extremely elementary. hopefully you'll
@@ -94,7 +89,6 @@ efficient things in the world. sorry!;
 (all default to 0 if sustain time is -1 \, the envelope sustains until
 a 0 is received on the left inlet. i need to redo this abstraction
 in the future.;
-#X obj 464 538 kline~ 500;
 #X text 538 524 [kline~] - simple abstraction to [line~]. the first
 argument is the default time the line will take. you can change it
 with the right inlet or temporarily override it by sending a message
@@ -160,12 +154,16 @@ play the recorded snippet.;
 #X text 57 39 these are my fairly unimpressive audio abstractions for
 pure data. some of them have been stolen/ripped from other people's
 works. sorry if i did that and didn't credit you!;
-#X connect 30 0 31 0;
-#X connect 30 0 32 1;
-#X connect 41 0 43 0;
-#X connect 42 0 41 0;
-#X connect 50 0 54 0;
-#X connect 52 0 50 1;
-#X connect 53 0 50 0;
-#X connect 54 0 55 0;
-#X connect 59 0 49 0;
+#X obj 464 538 aline~ 500;
+#X obj 40 385 pm~;
+#X text 67 380 [pm~] - super simple phase modulation oscillator. stolen
+from Frank Barknecht's PDX7 V2 and then slightly modified.;
+#X connect 28 0 29 0;
+#X connect 28 0 30 1;
+#X connect 39 0 41 0;
+#X connect 40 0 39 0;
+#X connect 47 0 51 0;
+#X connect 49 0 47 1;
+#X connect 50 0 47 0;
+#X connect 51 0 52 0;
+#X connect 56 0 46 0;

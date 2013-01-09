@@ -1,0 +1,12 @@
+#N canvas 0 29 1600 849 10;
+#X obj 164 168 cpuload;
+#X text 418 153 cpuload - display current cpu load average;
+#X text 413 199 this came with pure data \, i just stole it and turned
+it into an abstraction.;
+#X floatatom 164 197 5 0 0 0 - - -;
+#X text 414 246 if you don't know what this is \, it's basically the
+number of jobs your cpu has had in queue over the last minute. if the
+number is less than one \, that means your cpu hasn't had any jobs
+in queue. if the number is more than one \, some processes had to wait
+while the cpu was taking care of others.;
+#X connect 0 0 3 0;
