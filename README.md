@@ -249,7 +249,7 @@ abstractions for altering or generating number streams
 
 `rtr` - "range to range" - scale one arbitrary range to another arbitrary range.
 
-`transposer` - 
+`transposer` - outputs number to multiply a frequency by in order to shift it by a number of semitones (provided as input or argument)
 
 seq
 ===
@@ -303,6 +303,8 @@ sequencer abstractions
 
 `pmap` - program map. related to `pb`.
 
+`proll` - piano roll-like sequencer. WIP.
+
 `rchoice` - random choice from either the arguments, or from the incoming list.
 
 `rmap` - receive map. takes as arguments a list of names to receive from, and outputs data received from them with numbers prepended.
@@ -340,6 +342,8 @@ synths
 `Adder_voice~` - voice for `Adder~`
 
 `fmFeedback~` - FM feedback synth stolen from NoizeHack, slightly modified by me.
+
+`hoover~` - hoover synth. WIP.
 
 `kick1~` - extremely basic kick drum synth
 

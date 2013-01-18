@@ -1,8 +1,8 @@
-#N canvas 0 0 800 870 10;
+#N canvas 0 29 1600 849 10;
 #X obj 129 77 inlet;
-#X obj 129 106 t b b;
-#X obj 125 135 realtime;
-#X obj 132 167 outlet;
+#X obj 129 96 t b b;
+#X obj 123 125 realtime;
+#X obj 123 144 outlet;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 2 1;

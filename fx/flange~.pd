@@ -1,4 +1,4 @@
-#N canvas 0 0 800 849 10;
+#N canvas 0 29 1600 849 10;
 #X obj 67 118 inlet~;
 #X obj 348 230 outlet~;
 #X msg 369 118 control #1 \$1;

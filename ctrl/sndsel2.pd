@@ -1,22 +1,22 @@
-#N canvas 800 468 800 410 10;
-#X obj 103 130 hsl 127 13 0 127 0 0 \$0-h0 \$0-h0r 138191__corsica-s__opal-creek-ice-1.wav
+#N canvas 800 29 800 410 10;
+#X obj 103 130 hsl 127 13 0 127 0 0 \$0-h0 \$0-h0r 4913__noisecollector__cat1.wav
 -2 6 0 10 -262144 -262144 -1 0 1;
-#X obj 103 143 hsl 127 13 0 127 0 0 \$0-h1 \$0-h1r 19185__fonogeno__fire-alarm.wav
+#X obj 103 143 hsl 127 13 0 127 0 0 \$0-h1 \$0-h1r 4914__noisecollector__cat2.wav
+-2 6 0 10 -262144 -262144 -258699 0 1;
+#X obj 103 156 hsl 127 13 0 127 0 0 \$0-h2 \$0-h2r 51290__k0wax__3fx-a.wav
 -2 6 0 10 -262144 -262144 -1 0 1;
-#X obj 103 156 hsl 127 13 0 127 0 0 \$0-h2 \$0-h2r 25032__sirplus__extreme-alarm.wav
+#X obj 103 169 hsl 127 13 0 127 0 0 \$0-h3 \$0-h3r 518__jenc__drill1.wav
 -2 6 0 10 -262144 -262144 -1 0 1;
-#X obj 103 169 hsl 127 13 0 127 0 0 \$0-h3 \$0-h3r 30935__aust-paul__possiblelazer.wav
+#X obj 103 182 hsl 127 13 0 127 0 0 \$0-h4 \$0-h4r 54047__guitarguy1985__buzzer.wav
 -2 6 0 10 -262144 -262144 -1 0 1;
-#X obj 103 182 hsl 127 13 0 127 0 0 \$0-h4 \$0-h4r 33657__corsica-s__meow.wav
+#X obj 103 195 hsl 127 13 0 127 0 0 \$0-h5 \$0-h5r 56262__q-k__shatter.wav
 -2 6 0 10 -262144 -262144 -1 0 1;
-#X obj 103 195 hsl 127 13 0 127 0 0 \$0-h5 \$0-h5r 41348__datasoundsample__glass-shatter.wav
+#X obj 103 208 hsl 127 13 0 127 0 0 \$0-h6 \$0-h6r 64073__vtkproductions-com__bell-school-ringing.wav
 -2 6 0 10 -262144 -262144 -1 0 1;
-#X obj 103 208 hsl 127 13 0 127 0 0 \$0-h6 \$0-h6r 42937__agfx__elec-hand-drill-drilling-metal-rough-2.wav
--2 6 0 10 -262144 -262144 -1 0 1;
-#X obj 103 221 hsl 127 13 0 127 0 0 \$0-h7 \$0-h7r 4913__noisecollector__cat1.wav
+#X obj 103 221 hsl 127 13 0 127 0 0 \$0-h7 \$0-h7r 72757__benboncan__fire-alarm.wav
 -2 6 0 10 -262144 -262144 -1 0 1;
 #X obj 232 132 vsl 8 99 1 0 0 0 \$0-scroll \$0-scrollr empty 9 2 0
-20 -262144 -1 -258113 9800 1;
+20 -262144 -1 -258113 8000 1;
 #N canvas 0 29 1600 849 init 0;
 #X obj 103 248 s;
 #X obj 103 124 until;
@@ -52,7 +52,7 @@
 #X obj 236 200 s \$0-dir-size;
 #X obj 236 181 list length;
 #X obj 216 219 s \$0-dir-contents;
-#N canvas 0 29 800 849 filter 0;
+#N canvas 0 468 800 410 filter 0;
 #X obj 67 57 inlet;
 #X obj 87 370 outlet;
 #X text 129 368 <-- outputs only the files and folders we want to see
@@ -196,7 +196,7 @@ and filter them according to the glob.;
 #X obj 197 162 t b a a;
 #X text 274 99 <-- receives the name of the directory we want from
 the symbol atom.;
-#N canvas 800 468 800 410 fix-path 0;
+#N canvas 0 29 800 849 fix-path 0;
 #X obj 187 19 inlet;
 #X obj 187 140 outlet;
 #X obj 187 76 kfilename;
@@ -233,7 +233,7 @@ the symbol atom.;
 #X connect 11 1 2 0;
 #X connect 12 0 13 0;
 #X restore 187 38 pd no-trailing-slash;
-#N canvas 800 468 800 410 shorten 0;
+#N canvas 0 468 800 410 shorten 0;
 #X obj 199 68 inlet;
 #X obj 199 187 outlet;
 #X obj 235 68 kfilename;
@@ -257,16 +257,18 @@ the symbol atom.;
 #X restore 452 147 pd go;
 #X symbolatom 100 114 23 0 0 0 - #0-dir #0-new-dir;
 #X obj 452 90 inlet;
-#N canvas 0 29 800 849 parse 0;
+#N canvas 0 29 800 410 parse 0;
 #X obj 37 37 inlet;
-#X obj 37 183 s \$0-new-dir;
 #X obj 37 56 route dir up back;
 #X obj 70 164 s \$0-up;
 #X obj 103 145 s \$0-back;
-#X connect 0 0 2 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 4 0;
+#X obj 37 202 s \$0-dir;
+#X obj 37 183 symbol;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 1 1 2 0;
+#X connect 1 2 3 0;
+#X connect 5 0 4 0;
 #X restore 452 109 pd parse;
 #X obj 226 100 bng 14 250 50 0 \$0-up empty ^ 4 10 0 12 -262144 -1
 -1;
@@ -275,7 +277,7 @@ the symbol atom.;
 #X obj 452 223 outlet;
 #X obj 198 100 tgl 14 0 \$0-preview empty p 4 7 0 10 -262144 -1 -1
 0 1;
-#N canvas 0 29 800 849 gui 0;
+#N canvas 800 29 800 410 gui 0;
 #X obj 148 7 r \$0-scroll;
 #X obj 148 64 *;
 #X obj 163 26 r \$0-dir-size;
@@ -293,18 +295,14 @@ the symbol atom.;
 42937__agfx__elec-hand-drill-drilling-metal-rough-2.wav 4913__noisecollector__cat1.wav
 4914__noisecollector__cat2.wav 51290__k0wax__3fx-a.wav 518__jenc__drill1.wav
 54047__guitarguy1985__buzzer.wav 56262__q-k__shatter.wav 64073__vtkproductions-com__bell-school-ringing.wav
-72757__benboncan__fire-alarm.wav Adventure Time/ Adventure Time Season 1 Complete/
-Adventure Time Season 2 Complete/ audio-projects/ Average White Band - AWB (1974)/
-Average White Band - Cut The Cake/ beatonthebrat.wav dc_mmo/ _deep/
-dog_barking.wav espk2.wav espk.wav farts-burps-m.wav farts-burps.wav
-fish/ gangnamsynth1.wav gpicview-0.2.1/ hurtsobad.wav images/ InnerSpace/
-iron gladec.wav iron glade.wav Kid Rock - Devil without a Cause [1998]/
-kidrocksyntro.wav korg em1 noise floor.wav Krovo ft Navytz/ krovo - less.wav
-krovo - new tones.wav krovo - plugh.wav laffs2.wav laffs.wav laser2.wav
-laser gallery.wav Legion of Rockfiends/ lovebird-art-training.wav messermp3/
-misc/ moms-disk/ nodebox/ oldmesser/ Ostensibly Ossified - Itchy.wav
-snd/ sweetsewage.wav ta/ When is a Lake a Pond/ [ www.TorrentDay.com ] - Check.It.Out.With.Dr.Steve.Brule.S02E05.HDTV.XviD-AFG/
-;
+72757__benboncan__fire-alarm.wav Average White Band - AWB (1974)/ Average White Band - Cut The Cake/
+Kid Rock - Devil without a Cause [1998]/ Krovo ft Navytz/ Razxca - Foonie Bloozyworbes/
+Razxca - 愛-Sakura-愛 - Razxca - Split/ _deep/ beatonthebrat.wav
+dc_mmo/ dog_barking.wav espk.wav espk2.wav ezBOOM.wav ezTISH.wav farts-burps-m.wav
+farts-burps.wav fish/ gangnamsynth1.wav hurtsobad.wav images/ iron glade.wav
+iron gladec.wav kidrocksyntro.wav korg em1 noise floor.wav laffs.wav
+laffs2.wav lovebird-art-training.wav messermp3/ misc/ moms-disk/ nodebox/
+snd/ sweetsewage.wav videon34.wav;
 #X obj 68 308 prepent set;
 #X obj 11 289 route bang;
 #X msg 11 328 set list;
@@ -454,11 +452,10 @@ snd/ sweetsewage.wav ta/ When is a Lake a Pond/ [ www.TorrentDay.com ] - Check.I
 #N canvas 0 29 800 849 the-eight 0;
 #X obj 37 37 inlet;
 #X obj 127 119 prepent set;
-#X msg 47 225 138191__corsica-s__opal-creek-ice-1.wav 19185__fonogeno__fire-alarm.wav
-25032__sirplus__extreme-alarm.wav 30935__aust-paul__possiblelazer.wav
-33657__corsica-s__meow.wav 41348__datasoundsample__glass-shatter.wav
-42937__agfx__elec-hand-drill-drilling-metal-rough-2.wav 4913__noisecollector__cat1.wav
-;
+#X msg 47 225 4913__noisecollector__cat1.wav 4914__noisecollector__cat2.wav
+51290__k0wax__3fx-a.wav 518__jenc__drill1.wav 54047__guitarguy1985__buzzer.wav
+56262__q-k__shatter.wav 64073__vtkproductions-com__bell-school-ringing.wav
+72757__benboncan__fire-alarm.wav;
 #X obj 47 284 outlet;
 #X obj 97 37 inlet;
 #X obj 47 265 list-idx;
@@ -488,33 +485,89 @@ snd/ sweetsewage.wav ta/ When is a Lake a Pond/ [ www.TorrentDay.com ] - Check.I
 #X restore 176 328 pd the-eight;
 #X obj 176 309 t f f;
 #X obj 245 270 s \$0-the-8;
-#N canvas 0 29 800 849 label 0;
-#X obj 55 97 inlet;
-#X obj 55 332 outlet;
-#X obj 95 156 t a a;
-#X msg 95 275 label \$2 \, color 0 0 \$1;
-#X obj 95 256 pack f s;
-#X obj 95 175 chars;
-#X obj 95 194 list-idx -1;
-#X obj 95 213 sel /;
-#X msg 116 234 22;
-#X msg 83 235 18;
-#X obj 55 116 emptysymbol;
-#X msg 55 275 label;
-#X connect 0 0 10 0;
+#N canvas 800 29 800 410 label 0;
+#X obj 65 57 inlet;
+#X obj 65 342 outlet;
+#X obj 105 116 t a a;
+#X msg 105 285 label \$2 \, color 0 0 \$1;
+#X obj 105 266 pack f s;
+#X obj 105 135 chars;
+#X obj 105 154 list-idx -1;
+#X obj 105 173 sel /;
+#X msg 105 192 18;
+#X obj 65 76 emptysymbol;
+#X msg 65 285 label;
+#N canvas 800 468 800 410 is-selected 0;
+#X obj 114 -6 inlet;
+#X obj 114 13 bang;
+#X obj 129 265 &&;
+#X msg 168 204 0;
+#X msg 129 204 1;
+#X obj 114 303 sel 0 1;
+#X msg 239 229 0;
+#X msg 200 229 1;
+#X obj 200 191 inlet;
+#X obj 114 377 outlet;
+#X obj 129 32 r \$0-actual-dir;
+#X obj 163 51 r \$0-selected;
+#X obj 190 108 s2l /;
+#X obj 190 127 list-splat -1;
+#X obj 190 146 l2s /;
+#X obj 114 284 f;
+#X obj 163 70 symbol;
+#X obj 129 185 sel foo;
+#X obj 200 210 sel foo;
+#X msg 190 165 symbol /\$1;
+#X symbolatom 282 181 30 0 0 0 - - -;
+#X msg 114 322 22;
+#X msg 133 341 13;
+#X obj 129 140 symbol;
+#X obj 163 89 t b a;
+#X connect 0 0 1 0;
+#X connect 1 0 15 0;
+#X connect 2 0 15 1;
+#X connect 3 0 2 1;
+#X connect 4 0 2 1;
+#X connect 5 0 21 0;
+#X connect 5 1 22 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;
+#X connect 8 0 18 0;
+#X connect 10 0 23 0;
+#X connect 11 0 16 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 13 1 18 1;
+#X connect 13 1 20 0;
+#X connect 14 0 19 0;
+#X connect 15 0 5 0;
+#X connect 16 0 24 0;
+#X connect 17 0 4 0;
+#X connect 17 1 3 0;
+#X connect 18 0 7 0;
+#X connect 18 1 6 0;
+#X connect 19 0 17 1;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 17 0;
+#X connect 24 0 23 0;
+#X connect 24 1 12 0;
+#X restore 132 192 pd is-selected;
+#X connect 0 0 9 0;
 #X connect 2 0 5 0;
 #X connect 2 1 4 1;
+#X connect 2 1 11 1;
 #X connect 3 0 1 0;
 #X connect 4 0 3 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
-#X connect 7 0 9 0;
-#X connect 7 1 8 0;
+#X connect 7 0 8 0;
+#X connect 7 1 11 0;
 #X connect 8 0 4 0;
-#X connect 9 0 4 0;
-#X connect 10 0 11 0;
-#X connect 10 1 2 0;
-#X connect 11 0 1 0;
+#X connect 9 0 10 0;
+#X connect 9 1 2 0;
+#X connect 10 0 1 0;
+#X connect 11 0 4 0;
 #X restore 176 405 pd label;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
@@ -550,43 +603,55 @@ snd/ sweetsewage.wav ta/ When is a Lake a Pond/ [ www.TorrentDay.com ] - Check.I
 #X connect 28 1 12 0;
 #X connect 30 0 10 0;
 #X restore 452 166 pd gui;
-#N canvas 0 29 800 849 back-up 0;
-#X obj 152 158 r \$0-back;
-#X obj 292 158 r \$0-up;
+#N canvas 0 468 800 410 back-up 0;
+#X obj 122 58 r \$0-back;
+#X obj 272 121 r \$0-up;
+#X obj 320 58 r \$0-actual-dir;
+#X obj 320 77 s2l /;
+#X obj 320 96 list-splat -1;
+#X obj 320 115 l2s /;
+#X obj 287 153 symbol;
+#X obj 287 172 s \$0-dir;
+#X msg 320 134 symbol /\$1;
+#X obj 122 96 print sndsel;
+#X msg 122 77 the back button ain't done yet;
+#X connect 0 0 10 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 8 0;
+#X connect 6 0 7 0;
+#X connect 8 0 6 1;
+#X connect 10 0 9 0;
 #X restore 452 185 pd back-up;
-#N canvas 0 29 800 849 click 0;
-#X obj 62 58 r \$0-h0;
-#X msg 62 77 0;
-#X obj 110 58 r \$0-h1;
-#X obj 158 58 r \$0-h2;
-#X obj 206 58 r \$0-h3;
-#X obj 254 58 r \$0-h4;
-#X obj 302 58 r \$0-h5;
-#X obj 350 58 r \$0-h6;
-#X obj 398 58 r \$0-h7;
-#X msg 110 77 1;
-#X msg 158 77 2;
-#X msg 206 77 3;
-#X msg 254 77 4;
-#X msg 302 77 5;
-#X msg 398 77 7;
-#X msg 350 77 6;
-#X obj 352 186 r \$0-the-8;
-#X obj 224 421 outlet;
-#X obj 272 165 list length;
-#X obj 224 203 spigot;
-#X obj 224 151 t f f;
-#X obj 257 184 <;
-#X obj 269 222 r \$0-actual-dir;
-#X obj 224 279 l2s /;
-#X obj 224 241 pack s s;
-#X msg 224 260 \$2 \$1;
-#X obj 224 336 s2l;
-#X obj 239 298 loadbang;
-#X obj 239 317 spacesym;
-#X obj 224 374 prepent open;
-#X obj 224 222 map;
-#N canvas 0 29 1600 849 preview 0;
+#N canvas 800 29 800 410 click 0;
+#X obj 62 18 r \$0-h0;
+#X msg 62 37 0;
+#X obj 110 18 r \$0-h1;
+#X obj 158 18 r \$0-h2;
+#X obj 206 18 r \$0-h3;
+#X obj 254 18 r \$0-h4;
+#X obj 302 18 r \$0-h5;
+#X obj 350 18 r \$0-h6;
+#X obj 398 18 r \$0-h7;
+#X msg 110 37 1;
+#X msg 158 37 2;
+#X msg 206 37 3;
+#X msg 254 37 4;
+#X msg 302 37 5;
+#X msg 398 37 7;
+#X msg 350 37 6;
+#X obj 352 136 r \$0-the-8;
+#X obj 224 323 outlet;
+#X obj 272 115 list length;
+#X obj 224 153 spigot;
+#X obj 257 134 <;
+#X obj 269 172 r \$0-actual-dir;
+#X obj 224 191 pack s s;
+#X obj 224 276 prepent open;
+#X obj 224 172 map;
+#N canvas 0 29 800 849 preview 0;
 #X obj 37 56 inlet;
 #X obj 95 56 r \$0-preview;
 #X obj 95 138 readsf~;
@@ -607,10 +672,10 @@ snd/ sweetsewage.wav ta/ When is a Lake a Pond/ [ www.TorrentDay.com ] - Check.I
 #X connect 5 0 2 0;
 #X connect 6 0 8 0;
 #X connect 8 0 2 0;
-#X restore 235 402 pd preview;
-#N canvas 0 29 800 849 directory 0;
+#X restore 235 304 pd preview;
+#N canvas 800 29 800 410 directory 0;
 #X obj 37 37 inlet;
-#X obj 37 206 outlet;
+#X obj 37 225 outlet;
 #X obj 64 75 file_type;
 #X obj 37 56 t a a;
 #X obj 37 149 prepent 0;
@@ -618,7 +683,10 @@ snd/ sweetsewage.wav ta/ When is a Lake a Pond/ [ www.TorrentDay.com ] - Check.I
 #X msg 107 113 1;
 #X obj 64 94 sel file folder;
 #X obj 37 168 route 0 1;
-#X obj 62 187 s \$0-dir;
+#X obj 62 187 symbol;
+#X obj 62 206 s \$0-dir;
+#X obj 11 263 s \$0-scroll;
+#X obj 11 244 bang;
 #X connect 0 0 3 0;
 #X connect 2 0 7 0;
 #X connect 3 0 4 0;
@@ -629,10 +697,16 @@ snd/ sweetsewage.wav ta/ When is a Lake a Pond/ [ www.TorrentDay.com ] - Check.I
 #X connect 7 0 5 0;
 #X connect 7 1 6 0;
 #X connect 8 0 1 0;
+#X connect 8 0 12 0;
 #X connect 8 1 9 0;
-#X restore 224 355 pd directory;
+#X connect 9 0 10 0;
+#X connect 12 0 11 0;
+#X restore 224 229 pd directory;
+#X msg 224 210 symbol \$2/\$1;
+#X obj 235 257 s \$0-selected;
+#X obj 224 111 t f f;
 #X connect 0 0 1 0;
-#X connect 1 0 20 0;
+#X connect 1 0 29 0;
 #X connect 2 0 9 0;
 #X connect 3 0 10 0;
 #X connect 4 0 11 0;
@@ -640,31 +714,28 @@ snd/ sweetsewage.wav ta/ When is a Lake a Pond/ [ www.TorrentDay.com ] - Check.I
 #X connect 6 0 13 0;
 #X connect 7 0 15 0;
 #X connect 8 0 14 0;
-#X connect 9 0 20 0;
-#X connect 10 0 20 0;
-#X connect 11 0 20 0;
-#X connect 12 0 20 0;
-#X connect 13 0 20 0;
-#X connect 14 0 20 0;
-#X connect 15 0 20 0;
+#X connect 9 0 29 0;
+#X connect 10 0 29 0;
+#X connect 11 0 29 0;
+#X connect 12 0 29 0;
+#X connect 13 0 29 0;
+#X connect 14 0 29 0;
+#X connect 15 0 29 0;
 #X connect 16 0 18 0;
-#X connect 16 0 30 1;
-#X connect 18 0 21 1;
-#X connect 19 0 30 0;
-#X connect 20 0 19 0;
-#X connect 20 1 21 0;
-#X connect 21 0 19 1;
-#X connect 22 0 24 1;
-#X connect 23 0 26 0;
-#X connect 24 0 25 0;
-#X connect 25 0 23 0;
-#X connect 26 0 32 0;
-#X connect 27 0 28 0;
-#X connect 28 0 26 1;
-#X connect 29 0 17 0;
-#X connect 29 0 31 0;
-#X connect 30 0 24 0;
-#X connect 32 0 29 0;
+#X connect 16 0 24 1;
+#X connect 18 0 20 1;
+#X connect 19 0 24 0;
+#X connect 20 0 19 1;
+#X connect 21 0 22 1;
+#X connect 22 0 27 0;
+#X connect 23 0 17 0;
+#X connect 23 0 25 0;
+#X connect 24 0 22 0;
+#X connect 26 0 23 0;
+#X connect 26 0 28 0;
+#X connect 27 0 26 0;
+#X connect 29 0 19 0;
+#X connect 29 1 20 0;
 #X restore 452 204 pd click;
 #X connect 12 0 13 0;
 #X connect 20 0 16 0;

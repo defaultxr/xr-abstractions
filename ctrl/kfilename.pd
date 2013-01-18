@@ -1,4 +1,4 @@
-#N canvas 800 468 800 410 10;
+#N canvas 0 468 800 410 10;
 #X obj 103 234 outlet;
 #X obj 103 118 inlet;
 #X obj 103 177 symbol;
@@ -19,7 +19,7 @@ c:/";
 #X msg 37 284 add2 \$1;
 #X obj 37 322 l2s /;
 #X obj 37 56 t a b;
-#X msg 37 303;
+#X msg 37 303 home/modula;
 #X obj 37 134 unmap ~ ~s ~d;
 #X msg 121 134 set;
 #X obj 37 183 map;
@@ -44,7 +44,6 @@ c:/";
 #X obj 172 145 loadbang;
 #X text 296 29 kfilename - abstraction for shorter filenames.;
 #X obj 103 137 route bang;
-#X obj 217 271 outlet;
 #X text 394 155 <-- a list of directories you use (not including the
 root (/) dir) - first should be ~ \, second should be ~s \, third should
 be ~d. note that you can add more but you'll have to edit the "pd shortcuts"
@@ -54,7 +53,6 @@ subpatch.;
 #X connect 5 0 0 0;
 #X connect 7 0 5 0;
 #X connect 8 0 7 1;
-#X connect 8 0 12 0;
 #X connect 9 0 8 0;
 #X connect 11 0 8 0;
 #X connect 11 1 2 0;

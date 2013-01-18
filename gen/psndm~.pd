@@ -1,4 +1,4 @@
-#N canvas 0 29 800 849 10;
+#N canvas 0 29 1600 849 10;
 #X obj 199 302 outlet~;
 #X obj -2 53 inlet;
 #X obj -2 72 route bang float open file list;
@@ -253,15 +253,15 @@
 #X connect 12 0 8 0;
 #X restore 328 216 pd v8;
 #N canvas 0 29 800 849 voices 0;
-#X obj 200 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 200 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 215 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 215 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 230 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 230 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 245 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 260 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 260 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 275 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -292,7 +292,9 @@
 #X connect 14 7 7 0;
 #X coords 0 -1 1 1 120 30 1 200 200;
 #X restore 298 148 pd voices;
+#X msg -2 111 60 127;
 #X connect 1 0 2 0;
+#X connect 2 0 20 0;
 #X connect 2 1 6 0;
 #X connect 2 2 5 0;
 #X connect 2 3 5 0;
@@ -319,3 +321,4 @@
 #X connect 16 0 0 0;
 #X connect 17 0 0 0;
 #X connect 18 0 0 0;
+#X connect 20 0 9 0;
