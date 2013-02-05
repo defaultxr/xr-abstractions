@@ -1,10 +1,6 @@
 #N canvas 0 29 1600 849 10;
-#X obj 100 115 cnv 15 150 69 empty \$0-cnv 
-
-
-
- 1 35 0 12 -90133
--262144 0;
+#X obj 100 115 cnv 15 150 69 empty \$0-cnv empty 1 35 0 12 -90133 -262144
+0;
 #N canvas 0 29 800 410 history 0;
 #X obj 324 132 inlet;
 #X obj 324 200 ilist;
@@ -83,6 +79,7 @@ to change vis_size and a few of the numbers in the "history" subpatch.
 1;
 #X obj 300 44 spigot;
 #X obj 235 81 loadbang;
+#X obj 436 25 inlet;
 #X connect 1 0 5 0;
 #X connect 2 0 13 0;
 #X connect 3 0 4 0;
@@ -96,4 +93,5 @@ to change vis_size and a few of the numbers in the "history" subpatch.
 #X connect 12 0 13 1;
 #X connect 13 0 3 0;
 #X connect 14 0 12 0;
+#X connect 15 0 12 0;
 #X coords 0 -1 1 1 150 84 1 100 100;

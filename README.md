@@ -118,9 +118,7 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `router` - 
 
-`sndsel` - sound selector. allows you to select a sound by browsing folders graphically, because `playlist` kind of sucks. i stole this from someone else's abstractions but i edited it a bit and i plan to redo it from scratch eventually.
-
-`sndsel2` - WIP successor to `sndsel`.
+`sndsel` - sound selector. allows you to select a sound by browsing folders graphically, because `playlist` kind of sucks. it's a work-in-progress, but it's probably ready for regular use.
 
 `sswitcher~` - 
 
@@ -419,7 +417,7 @@ miscellaneous utilities
 
 `ssend~` - settable send. probably don't use this.
 
-`sym` - turn a list into a symbol (basically just `l2s` except you don't need to send an empty symbol to the right inlet. see also: `chars`)
+`sym` - turn a list into a symbol (basically just `l2s` with an empty symbol sent to the right inlet. see also: `chars`)
 
 FUTURE
 ======
@@ -444,6 +442,8 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * make `kfilename` (and all abstractions that use it) able to handle filenames with spaces
 * complete `sndsel2` and replace the original `sndsel` with it. delete `browser`.
 * remove `dyn~` from `rmap`; write the dynamic generation manually, so the receives, etc, aren't just thrown about randomly (i.e. so it's more convenient to copy & paste from inside `rmap`)
+* finish `proll`
+* update `boxseq` and make it 4x4 instead of 6x6.
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 
