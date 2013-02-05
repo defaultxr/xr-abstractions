@@ -431,7 +431,7 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * `atc`, `cta`, `atr`, and the others should probably be renamed to something like `btu`, `utb`, and `btr`, since the technical term for a signal from 0 to 1 is "unipolar" and the technical term for a signal from -1 to 1 is "bipolar"
 * see if there are better ways to analyze the "volume" of a sound for `scroll~`
 * fix `mcb`, `mck`, `m-client`, `mcl`, `mc`, `mct`, `mstr`, etc (i've redone these quite a few times already and i still haven't quite gotten them right)
-* rename `aphasor~`
+* rename `aphasor~` to `saw~`
 * make a better `analog~`
 * remove `seqfill` maybe.
 * redo `ft` maybe.
@@ -440,10 +440,10 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * get `tracker` to use `kfilename`
 * make `randomsong~` use `mp3conv`
 * make `kfilename` (and all abstractions that use it) able to handle filenames with spaces
-* complete `sndsel2` and replace the original `sndsel` with it. delete `browser`.
 * remove `dyn~` from `rmap`; write the dynamic generation manually, so the receives, etc, aren't just thrown about randomly (i.e. so it's more convenient to copy & paste from inside `rmap`)
 * finish `proll`
 * update `boxseq` and make it 4x4 instead of 6x6.
+* add keyboard shortcuts to `drumseq` and other "bigger" abstractions.
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 
