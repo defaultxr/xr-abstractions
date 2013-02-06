@@ -24,7 +24,7 @@
 #X obj 304 244 * 1000;
 #X obj 175 -69 inlet;
 #X obj 319 209 nbx 5 14 0 1e+37 0 0 empty empty sample_rate 56 8 0
-10 -262144 -1 -1 44100 256;
+10 -262144 -1 -1 0 256;
 #X obj 143 210 *~ 0;
 #X obj 143 191 wrap~;
 #X obj 280 158 wavinfo;

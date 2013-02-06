@@ -440,7 +440,6 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * get `tracker` to use `kfilename`
 * make `randomsong~` use `mp3conv`
 * make `kfilename` (and all abstractions that use it) able to handle filenames with spaces
-* remove `dyn~` from `rmap`; write the dynamic generation manually, so the receives, etc, aren't just thrown about randomly (i.e. so it's more convenient to copy & paste from inside `rmap`)
 * finish `proll`
 * update `boxseq` and make it 4x4 instead of 6x6.
 * add keyboard shortcuts to `drumseq` and other "bigger" abstractions.
