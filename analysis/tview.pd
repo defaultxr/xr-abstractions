@@ -1,6 +1,10 @@
-#N canvas 0 29 1600 849 10;
-#X obj 100 115 cnv 15 150 69 empty \$0-cnv empty 1 35 0 12 -90133 -262144
-0;
+#N canvas 0 29 800 849 10;
+#X obj 100 115 cnv 15 150 69 empty \$0-cnv 0
+0
+0
+0
+blargh 1 35 0 12
+-90133 -262144 0;
 #N canvas 0 29 800 410 history 0;
 #X obj 324 132 inlet;
 #X obj 324 200 ilist;

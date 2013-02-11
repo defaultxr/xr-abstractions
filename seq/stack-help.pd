@@ -1,31 +1,20 @@
-#N canvas 0 468 800 410 10;
+#N canvas 0 29 800 849 10;
 #X msg 15 24 1 \, 2 \, 3;
 #X obj 73 52 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X text 141 26 stack - lifo stack for floats.;
 #X floatatom 37 44 5 0 0 0 - - -;
 #X floatatom 37 106 5 0 0 0 - - -;
 #X obj 37 77 stack 3;
-#X text 144 184 technically \, if you open the stack abstraction \,
-you will see that even if you do set a limit to the size of the stack
-\, it will still grow indefinitely \, but once you pop an item \, then
-the stack will reset to the size limit. in other words \, the limit
-takes effect only when you access the list \, but not when you add
-to it.;
-#X text 143 60 stack is an implementation of a last-in-first-out stack
-for floats. to push a float onto the stack (i.e. add it to the list)
-\, simply send the float to the inlet. to pop a float off the top of
-the stack (i.e. get the last item that was pushed and remove it from
-the stack) \, send a bang to the inlet. if there are no items left
-in the stack \, it will output zero. if you provide a non-zero argument
-\, the stack will not grow past that size (the least recent item to
-be pushed will be the first to be removed).;
-#X text 145 269 if you still don't understand \, click the "1 \, 2
-\, 3" message twice \, then open the stack abstraction. you'll see
-that there are 6 items. if you then bang the stack \, you will see
-there are 2 items (the third being the one that was output when you
-banged).;
-#X connect 0 0 5 0;
-#X connect 1 0 5 0;
-#X connect 3 0 5 0;
-#X connect 5 0 4 0;
+#X text 143 60 stack is an implementation of a last-in-first-out stack.
+to push something onto the stack (i.e. add it to the list) \, simply
+send the it to the inlet. to pop something off the top of the stack
+(i.e. get the last item that was pushed and remove it from the list)
+\, send a bang to the inlet. if there are no items left in the stack
+\, it will output bang. if you provide a non-zero argument \, the stack
+will not grow past that size (the least recent item to be pushed will
+be the first to be removed).;
+#X text 141 26 stack - last-in-first-out stack.;
+#X connect 0 0 4 0;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;

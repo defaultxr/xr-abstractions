@@ -303,6 +303,8 @@ sequencer abstractions
 
 `proll` - piano roll-like sequencer. WIP.
 
+`queue` - a queue. you can enqueue things onto the queue or dequeue them from it. see also: `stack`.
+
 `rchoice` - random choice from either the arguments, or from the incoming list.
 
 `rmap` - receive map. takes as arguments a list of names to receive from, and outputs data received from them with numbers prepended.
@@ -313,7 +315,7 @@ sequencer abstractions
 
 `srush` - "snare rush" abstraction. might redo this to make it simpler.
 
-`stack` - a stack. you can push things onto the stack or pop them off of it.
+`stack` - a stack. you can push things onto the stack or pop them off of it. see also: `queue`.
 
 `taptempo` - tap or send bangs to get the tempo.
 
@@ -435,7 +437,6 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * make a better `analog~`
 * remove `seqfill` maybe.
 * redo `ft` maybe.
-* improve `stack` (i.e. add "shift" and "unshift" operations; perhaps make it possible to push non-float elements onto the stack?)
 * implement voice stealing in `polys`
 * get `tracker` to use `kfilename`
 * make `randomsong~` use `mp3conv`
@@ -443,6 +444,7 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * finish `proll`
 * update `boxseq` and make it 4x4 instead of 6x6.
 * add keyboard shortcuts to `drumseq` and other "bigger" abstractions.
+* remove `kount` since it doesn't do anything that the built-ins `cup` and `count` can't do.
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 
@@ -657,6 +659,7 @@ seq:
 * `pattseq`
 * `pb`
 * `pmap`
+* `queue`
 * `sbox`
 * `seqfill`
 * `srush`

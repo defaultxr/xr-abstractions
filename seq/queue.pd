@@ -1,0 +1,44 @@
+#N canvas 800 29 800 410 10;
+#X obj 198 4 inlet;
+#X msg 248 64 add2 \$1;
+#X obj 320 311 outlet;
+#X obj 253 105 loadbang;
+#X obj 253 124 f \$1;
+#X obj 223 200 list-splat;
+#X obj 198 23 route bang float symbol;
+#X obj 333 42 symbol;
+#X obj 342 349 prepent set;
+#X obj 253 143 sel 0;
+#X msg 223 86 list;
+#X msg 125 135 set list;
+#X text 380 18 queue - first in first out queue. send a bang to dequeue
+or an item to enqueue.;
+#X text 380 75 outputs bang if there is nothing left on the queue.
+;
+#X text 380 47 first argument \, if nonzero \, is the maximum size
+of the queue (latest elements are erased first).;
+#X obj 251 275 list split 1;
+#X obj 280 162 * -1;
+#X obj 285 330 route bang;
+#X connect 0 0 6 0;
+#X connect 1 0 10 0;
+#X connect 3 0 4 0;
+#X connect 3 0 11 0;
+#X connect 4 0 9 0;
+#X connect 5 1 15 0;
+#X connect 5 2 15 0;
+#X connect 6 0 10 0;
+#X connect 6 1 1 0;
+#X connect 6 2 1 0;
+#X connect 6 3 7 0;
+#X connect 7 0 1 0;
+#X connect 8 0 10 0;
+#X connect 9 1 16 0;
+#X connect 10 0 5 0;
+#X connect 11 0 10 0;
+#X connect 15 0 2 0;
+#X connect 15 1 17 0;
+#X connect 15 2 2 0;
+#X connect 16 0 5 1;
+#X connect 17 0 11 0;
+#X connect 17 1 8 0;

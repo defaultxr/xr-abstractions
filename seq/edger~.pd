@@ -1,4 +1,4 @@
-#N canvas 0 0 1600 849 10;
+#N canvas 0 29 1600 849 10;
 #X obj 303 184 wrap~;
 #X obj 303 222 edge~;
 #X obj 303 165 inlet~;
@@ -8,6 +8,8 @@
 #X obj 378 184 / 10;
 #X obj 426 119 inlet;
 #X obj 378 119 lb \$1 5;
+#X text 345 260 zero to non- zero transition;
+#X text 378 237 non-zero to zero transition;
 #X connect 0 0 3 0;
 #X connect 1 0 4 0;
 #X connect 1 1 5 0;
