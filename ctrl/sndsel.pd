@@ -1,23 +1,23 @@
-#N canvas 800 29 800 410 10;
-#X obj 103 130 hsl 127 13 0 127 0 0 \$0-h0 \$0-h0r 4913__noisecollector__cat1.wav
+#N canvas 800 468 800 410 10;
+#X obj 111 130 hsl 127 13 0 127 0 0 \$0-h0 \$0-h0r 138191__corsica-s__opal-creek-ice-1.wav
+-2 6 0 10 -262144 -262144 -1 8000 1;
+#X obj 111 143 hsl 127 13 0 127 0 0 \$0-h1 \$0-h1r 19185__fonogeno__fire-alarm.wav
 -2 6 0 10 -262144 -262144 -1 0 1;
-#X obj 103 143 hsl 127 13 0 127 0 0 \$0-h1 \$0-h1r 4914__noisecollector__cat2.wav
+#X obj 111 156 hsl 127 13 0 127 0 0 \$0-h2 \$0-h2r 25032__sirplus__extreme-alarm.wav
+-2 6 0 10 -262144 -262144 -1 0 1;
+#X obj 111 169 hsl 127 13 0 127 0 0 \$0-h3 \$0-h3r 30935__aust-paul__possiblelazer.wav
+-2 6 0 10 -262144 -262144 -1 0 1;
+#X obj 111 182 hsl 127 13 0 127 0 0 \$0-h4 \$0-h4r 33657__corsica-s__meow.wav
 -2 6 0 10 -262144 -262144 -258699 0 1;
-#X obj 103 156 hsl 127 13 0 127 0 0 \$0-h2 \$0-h2r 51290__k0wax__3fx-a.wav
+#X obj 111 195 hsl 127 13 0 127 0 0 \$0-h5 \$0-h5r 41348__datasoundsample__glass-shatter.wav
 -2 6 0 10 -262144 -262144 -1 0 1;
-#X obj 103 169 hsl 127 13 0 127 0 0 \$0-h3 \$0-h3r 518__jenc__drill1.wav
+#X obj 111 208 hsl 127 13 0 127 0 0 \$0-h6 \$0-h6r 42937__agfx__elec-hand-drill-drilling-metal-rough-2.wav
 -2 6 0 10 -262144 -262144 -1 0 1;
-#X obj 103 182 hsl 127 13 0 127 0 0 \$0-h4 \$0-h4r 54047__guitarguy1985__buzzer.wav
+#X obj 111 221 hsl 127 13 0 127 0 0 \$0-h7 \$0-h7r 4913__noisecollector__cat1.wav
 -2 6 0 10 -262144 -262144 -1 0 1;
-#X obj 103 195 hsl 127 13 0 127 0 0 \$0-h5 \$0-h5r 56262__q-k__shatter.wav
--2 6 0 10 -262144 -262144 -1 0 1;
-#X obj 103 208 hsl 127 13 0 127 0 0 \$0-h6 \$0-h6r 64073__vtkproductions-com__bell-school-ringing.wav
--2 6 0 10 -262144 -262144 -1 0 1;
-#X obj 103 221 hsl 127 13 0 127 0 0 \$0-h7 \$0-h7r 72757__benboncan__fire-alarm.wav
--2 6 0 10 -262144 -262144 -1 0 1;
-#X obj 232 132 vsl 8 99 1 0 0 0 \$0-scroll \$0-scrollr empty 9 2 0
-20 -262144 -1 -258113 8000 1;
-#N canvas 0 29 1600 849 init 0;
+#X obj 100 132 vsl 8 99 1 0 0 0 \$0-scroll \$0-scrollr empty 0 -9 0
+10 -262144 -1 -1 9800 1;
+#N canvas 800 29 800 849 init 0;
 #X obj 103 248 s;
 #X obj 103 124 until;
 #X obj 103 143 t b b;
@@ -48,7 +48,7 @@
 #X connect 11 0 8 0;
 #X connect 13 0 12 0;
 #X restore 452 128 pd init;
-#N canvas 800 468 800 410 go 0;
+#N canvas 800 29 800 410 go 0;
 #X obj 236 200 s \$0-dir-size;
 #X obj 236 181 list length;
 #X obj 216 219 s \$0-dir-contents;
@@ -196,13 +196,13 @@ and filter them according to the glob.;
 #X obj 197 162 t b a a;
 #X text 274 99 <-- receives the name of the directory we want from
 the symbol atom.;
-#N canvas 0 29 800 849 fix-path 0;
+#N canvas 800 29 800 849 fix-path 0;
 #X obj 187 19 inlet;
 #X obj 187 140 outlet;
 #X obj 187 76 kfilename;
 #X symbolatom 197 103 40 0 0 0 - - -;
 #X obj 197 121 s \$0-actual-dir;
-#N canvas 800 468 800 410 no-trailing-slash 0;
+#N canvas 800 29 800 849 no-trailing-slash 0;
 #X obj 192 110 inlet;
 #X obj 192 129 chars;
 #X obj 219 167 list-idx -1;
@@ -233,7 +233,7 @@ the symbol atom.;
 #X connect 11 1 2 0;
 #X connect 12 0 13 0;
 #X restore 187 38 pd no-trailing-slash;
-#N canvas 0 468 800 410 shorten 0;
+#N canvas 800 29 800 849 shorten 0;
 #X obj 199 68 inlet;
 #X obj 199 187 outlet;
 #X obj 235 68 kfilename;
@@ -257,7 +257,7 @@ the symbol atom.;
 #X restore 452 147 pd go;
 #X symbolatom 100 114 23 0 0 0 - #0-dir #0-new-dir;
 #X obj 452 90 inlet;
-#N canvas 0 29 800 410 parse 0;
+#N canvas 800 29 800 849 parse 0;
 #X obj 37 37 inlet;
 #X obj 37 56 route dir up back;
 #X obj 70 164 s \$0-up;
@@ -277,7 +277,7 @@ the symbol atom.;
 #X obj 452 223 outlet;
 #X obj 198 100 tgl 14 0 \$0-preview empty p 4 7 0 10 -262144 -1 -1
 0 1;
-#N canvas 800 29 800 410 gui 0;
+#N canvas 800 468 800 410 gui 0;
 #X obj 148 7 r \$0-scroll;
 #X obj 148 64 *;
 #X obj 163 26 r \$0-dir-size;
@@ -285,27 +285,30 @@ the symbol atom.;
 #X obj 163 45 - 8;
 #X obj 148 140 list split;
 #X obj 148 102 t b f;
-#N canvas 0 29 800 849 the-list 0;
-#X obj 11 270 r \$0-dir-contents;
-#X obj 170 308 inlet;
-#X obj 81 526 outlet;
-#X msg 88 362 138191__corsica-s__opal-creek-ice-1.wav 19185__fonogeno__fire-alarm.wav
+#N canvas 800 468 800 410 the-list 0;
+#X obj 11 10 r \$0-dir-contents;
+#X obj 170 48 inlet;
+#X obj 31 266 outlet;
+#X msg 88 102 138191__corsica-s__opal-creek-ice-1.wav 19185__fonogeno__fire-alarm.wav
 25032__sirplus__extreme-alarm.wav 30935__aust-paul__possiblelazer.wav
 33657__corsica-s__meow.wav 41348__datasoundsample__glass-shatter.wav
 42937__agfx__elec-hand-drill-drilling-metal-rough-2.wav 4913__noisecollector__cat1.wav
 4914__noisecollector__cat2.wav 51290__k0wax__3fx-a.wav 518__jenc__drill1.wav
 54047__guitarguy1985__buzzer.wav 56262__q-k__shatter.wav 64073__vtkproductions-com__bell-school-ringing.wav
-72757__benboncan__fire-alarm.wav Average White Band - AWB (1974)/ Average White Band - Cut The Cake/
-Kid Rock - Devil without a Cause [1998]/ Krovo ft Navytz/ Razxca - Foonie Bloozyworbes/
-Razxca - 愛-Sakura-愛 - Razxca - Split/ _deep/ beatonthebrat.wav
-dc_mmo/ dog_barking.wav espk.wav espk2.wav ezBOOM.wav ezTISH.wav farts-burps-m.wav
-farts-burps.wav fish/ gangnamsynth1.wav hurtsobad.wav images/ iron glade.wav
-iron gladec.wav kidrocksyntro.wav korg em1 noise floor.wav laffs.wav
-laffs2.wav lovebird-art-training.wav messermp3/ misc/ moms-disk/ nodebox/
-snd/ sweetsewage.wav videon34.wav;
-#X obj 68 308 prepent set;
-#X obj 11 289 route bang;
-#X msg 11 328 set list;
+72757__benboncan__fire-alarm.wav African_Wooden_Drum/ audio-projects/
+Average White Band - AWB (1974)/ Average White Band - Cut The Cake/
+beatonthebrat.wav bowser cum.wav C5_Bell/ compilation/ cum growl.wav
+cyxnxdx-tweets/ dc_mmo/ _deep/ defaultxr-tweets/ dracula1.wav dracula2.wav
+dracula3.wav dracula.wav espk2.wav espk.wav iloverocknroll.wav images/
+iron gladec.wav iron glade.wav Kid Rock - Devil without a Cause [1998]/
+kidrocksyntro.wav Krovo ft Navytz/ laffs2.wav laffs.wav like it deep.wav
+LSF Sound Pack v2.0/ mario64_/ maryoclip.wav Melodica/ messermp3/ misc/
+moms-disk/ nodebox/ ParaSpace/ pokemonglich.wav radium-1.9.29/ Roland SC 55 Steel Drum and Ocean/
+sctutorial2013/ skyward sword/ snd/ Taco - Puttin' On The Ritz/ videon34.wav
+want my cum.wav;
+#X obj 68 48 prepent set;
+#X obj 11 29 route bang;
+#X msg 11 68 set list;
 #X connect 0 0 5 0;
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
@@ -382,7 +385,7 @@ snd/ sweetsewage.wav videon34.wav;
 #X connect 14 0 12 0;
 #X connect 14 1 11 0;
 #X restore 417 145 pd is-bot;
-#N canvas 0 29 800 849 is-neither 0;
+#N canvas 0 29 1600 849 is-neither 0;
 #X obj 212 138 inlet;
 #X obj 259 157 r \$0-dir-size;
 #X obj 212 157 t f f;
@@ -452,10 +455,11 @@ snd/ sweetsewage.wav videon34.wav;
 #N canvas 0 29 800 849 the-eight 0;
 #X obj 37 37 inlet;
 #X obj 127 119 prepent set;
-#X msg 47 225 4913__noisecollector__cat1.wav 4914__noisecollector__cat2.wav
-51290__k0wax__3fx-a.wav 518__jenc__drill1.wav 54047__guitarguy1985__buzzer.wav
-56262__q-k__shatter.wav 64073__vtkproductions-com__bell-school-ringing.wav
-72757__benboncan__fire-alarm.wav;
+#X msg 47 225 138191__corsica-s__opal-creek-ice-1.wav 19185__fonogeno__fire-alarm.wav
+25032__sirplus__extreme-alarm.wav 30935__aust-paul__possiblelazer.wav
+33657__corsica-s__meow.wav 41348__datasoundsample__glass-shatter.wav
+42937__agfx__elec-hand-drill-drilling-metal-rough-2.wav 4913__noisecollector__cat1.wav
+;
 #X obj 47 284 outlet;
 #X obj 97 37 inlet;
 #X obj 47 265 list-idx;

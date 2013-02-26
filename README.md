@@ -56,7 +56,7 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `c` - midi continuous controller interface
 
-`editmode` - (try to) detect edit mode
+`editmode` - detect whether edit mode is on or off.
 
 `inputd` - input accumulator deluxe
 
@@ -64,7 +64,13 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `input` - input accumulator
 
+`ispigot~` - graphical audio spigot (left inlet is for the audio, right inlet is to open or close the spigot)
+
+`ispigot` - graphical message spigot (left inlet is for the messages, right inlet is to open or close the spigot)
+
 `kbdm` - convert numbers from `key` into midi note numbers so you can use your keyboard to play notes.
+
+`keydrum` - use squares of the keyboard as drum pads.
 
 `keynum` - get numbers from the keyboard. if "h" is provided as the first argument, also allows hexadecimal numbers (a-f).
 
@@ -77,10 +83,6 @@ abstractions for controlling things, either via keyboard or by clicking.
 `kfilename` - abstraction for making paths. used by `snd~`, `drumseq`, `anaseq` and others. **NOTE: you might want to edit this since it uses my paths.**
 
 `khsl` - 
-
-`kspigot~` - graphical audio spigot (left inlet is for the audio, right inlet is to open or close the spigot)
-
-`kspigot` - graphical message spigot (left inlet is for the messages, right inlet is to open or close the spigot)
 
 `mcb` - 
 
@@ -104,7 +106,7 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `mstr` - 
 
-`nems` - non-edit mode spigot. only allows messages to pass when edit mode is off. doesn't work though
+`nems` - non-edit mode spigot. only allows messages to pass when edit mode is off.
 
 `nkeyb` - 
 
@@ -147,8 +149,6 @@ abstractions for generating sound
 
 `analog~` - analog simulation. basically supposed to be like line noise and a small dc offset. probably not a very good simulation of the actual analog sound.
 
-`aphasor~` - bipolar version of `phasor~`
-
 `fluid~` - FluidSynth (SoundFont) interface.
 
 `grain~` - 
@@ -156,6 +156,8 @@ abstractions for generating sound
 `granular~` - 
 
 `irsong~` - interface to `randomsong~`
+
+`looper~` - loop snippets of a sound graphically. WIP
 
 `noisef~` - noise frequency
 
@@ -179,13 +181,15 @@ abstractions for generating sound
 
 `recsnd~` - allows access to the sound recorded with `rec~` in a similar manner to the way `snd~` allows.
 
+`saw~` - bipolar version of `phasor~`
+
 `sine~` - extremely simple sine wave oscillator based on `phasor~` and `cos~`. might change this in the future.
 
 `sndcf~` - generates a signal to control `snd~` based on frequency of the sound.
 
 `sndcl~` - generates a signal to control `snd~` based on a `line~` (i.e. with start and end-points and a rate)
 
-`sndcm~` - generates a signal to control `snd~` based on midi numbers (60 being the base note)
+`sndcm~` - generates a signal to control `snd~` based on midi numbers (60 being the default base note)
 
 `sndd~` - sound duplicate. like `snd~` but does not re-load the file; simply re-uses the table containing the already-loaded file.
 
@@ -209,7 +213,7 @@ abstractions for generating sound
 
 math
 ====
-abstractions for altering or generating number streams 
+abstractions for altering or generating number streams
 
 `atc~` - "audio to control" - converts a bipolar signal (-1 to 1) to a unipolar signal (0 to 1)
 
@@ -265,11 +269,11 @@ sequencer abstractions
 
 `anaseq` - a sequencer made of vertical sliders; supports saving, loading, multiple patterns and more.
 
-`beat~` - 
+`beat~` - make beats from a phasor by dividing the phasor into $1 sections and outputting a bang every $2 sections.
 
 `boxseq` - 6x6 "box" sequencer. can be played in any direction, even diagonally. was an experiment. might change it later.
 
-`bpma` - 
+`bpma` - "bpm any". WIP.
 
 `bpmm2` - was supposed to be the next version of `bpmm` with fewer outlets but i might delete this actually.
 
@@ -282,6 +286,12 @@ sequencer abstractions
 `edger~` - 
 
 `ft` - "friendly table". abstraction to make it easier to edit a table. need to redo this.
+
+`hash` - hash table. operates similarly to `table` except keys and values can be any symbol, rather than just integers. see also: `hashread`, `hashwrite`
+
+`hashread` - read from `hash`'s hash table. analogous to `table`'s `tabread`.
+
+`hashwrite` - write to `hash`'s hash table. analogous to `table`'s `tabwrite`.
 
 `iadsr~` - interface ADSR envelope. WIP.
 
@@ -303,7 +313,7 @@ sequencer abstractions
 
 `proll` - piano roll-like sequencer. WIP.
 
-`queue` - a queue. you can enqueue things onto the queue or dequeue them from it. see also: `stack`.
+`queue` - a first-in-first-out queue. you can enqueue things onto the queue or dequeue them from it. see also: `stack`.
 
 `rchoice` - random choice from either the arguments, or from the incoming list.
 
@@ -315,7 +325,7 @@ sequencer abstractions
 
 `srush` - "snare rush" abstraction. might redo this to make it simpler.
 
-`stack` - a stack. you can push things onto the stack or pop them off of it. see also: `queue`.
+`stack` - a last-in-first-out stack. you can push things onto the stack or pop them off of it. see also: `queue`.
 
 `taptempo` - tap or send bangs to get the tempo.
 
@@ -366,6 +376,8 @@ miscellaneous utilities
 `chars` - separate a symbol into a list of its characters.
 
 `colors` - outputs a pd color when the left inlet is banged. otherwise, the inlets take floats: from left, the red amount, green amount, and blue amount.
+
+`e` - "every". only pass every $1 inputs, with an offset of $2.
 
 `emptysymbol` - test if a symbol is the empty symbol.
 
@@ -426,31 +438,30 @@ FUTURE
 
 In the future i plan to clean up a lot of these. Either by renaming them or by splitting up functionality, etc. There are also a few that i'd like to re-code or rethink entirely. Some of the things i want to change:
 
-* rename `kspigot` and `kspigot~` to `ispigot` and `ispigot~`
 * rename `adsr` and `adsr~` to just `adr` and `adr~` and remove the sustain functionality
 * remake `adsr` and `adsr~` into actual ADSR envelopes
 * rename `bswitcher` and the other similar abstractions so that their names are more logical and easy to remember
 * `atc`, `cta`, `atr`, and the others should probably be renamed to something like `btu`, `utb`, and `btr`, since the technical term for a signal from 0 to 1 is "unipolar" and the technical term for a signal from -1 to 1 is "bipolar"
 * see if there are better ways to analyze the "volume" of a sound for `scroll~`
 * fix `mcb`, `mck`, `m-client`, `mcl`, `mc`, `mct`, `mstr`, etc (i've redone these quite a few times already and i still haven't quite gotten them right)
-* rename `aphasor~` to `saw~`
 * make a better `analog~`
 * remove `seqfill` maybe.
 * redo `ft` maybe.
 * implement voice stealing in `polys`
 * get `tracker` to use `kfilename`
 * make `randomsong~` use `mp3conv`
-* make `kfilename` (and all abstractions that use it) able to handle filenames with spaces
 * finish `proll`
 * update `boxseq` and make it 4x4 instead of 6x6.
 * add keyboard shortcuts to `drumseq` and other "bigger" abstractions.
 * remove `kount` since it doesn't do anything that the built-ins `cup` and `count` can't do.
+* update `snd~` so that you can also index the sound by samples if the index is above 1.
+* finish `looper~`
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 
-* fix `editmode` so that it is accurate 100% of the time (maybe there is a way to query the editmode state of a certain patch - perhaps using `parentdollarzero` and `sys_gui`??)
 * make `keyonchg`, `keyonoff`, etc work properly (pd's `keyname`, `key`, `keyup`, etc, all detect from keyboard "repeat" events rather than actual physical keypresses or releases)
 * remove `span~` (pd's `pan~` object would need to accept an argument for this to happen)
+* make `kfilename` (and all abstractions that use it) able to handle filenames with spaces (should be possible in pd 0.44)
 
 Help files still need to be written for:
 
@@ -459,6 +470,8 @@ ctrl:
 * `c`
 * `inputn`
 * `input`
+* `ispigot~`
+* `ispigot`
 * `kbdm`
 * `keynum`
 * `keyonchg`
@@ -466,8 +479,6 @@ ctrl:
 * `keyrow`
 * `kfilename`
 * `khsl`
-* `kspigot~`
-* `kspigot`
 * `mcb`
 * `mck`
 * `m-client`
@@ -596,7 +607,6 @@ fx:
 
 gen:
 * `analog~`
-* `aphasor~`
 * `fluid~`
 * `grain~`
 * `granular~`
@@ -611,6 +621,7 @@ gen:
 * `rec~`
 * `recp~`
 * `recsnd~`
+* `saw~`
 * `sine~`
 * `sndcf~`
 * `sndcl~`
@@ -686,6 +697,7 @@ utils:
 * `autosend`
 * `browser`
 * `chars`
+* `e`
 * `hue_to_rgb`
 * `itimer`
 * `ktimer`

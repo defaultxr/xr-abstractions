@@ -1,4 +1,4 @@
-#N canvas 0 29 1600 849 10;
+#N canvas 800 29 800 849 10;
 #X obj 127 173 map a b c d e f;
 #X obj 106 135 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -177,6 +177,19 @@ the point: [map] makes a great arpeggiator.;
 #X connect 23 0 2 1;
 #X restore 122 324 pd arpeggio;
 #X text 99 282 here are some musical demos:;
+#N canvas 0 29 800 849 META 0;
+#X text 12 5 KEYWORDS map list sequencer;
+#X text 12 25 DESCRIPTION map bangs or floats to elements of a list
+;
+#X text 12 45 INLET_0 bang float list reset;
+#X text 12 65 INLET_1 list;
+#X text 12 105 LIBRARY defaultxr;
+#X text 12 125 AUTHOR modula t. worm;
+#X text 12 145 WEBSITE http://github.com/defaultxr/pure-data-patches
+;
+#X text 12 165 RELEASE_DATE 2013;
+#X text 12 85 OUTLET_0 output;
+#X restore 150 427 pd META;
 #X connect 0 0 6 0;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;

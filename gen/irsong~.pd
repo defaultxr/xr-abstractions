@@ -1,4 +1,4 @@
-#N canvas 800 29 800 849 10;
+#N canvas 0 29 1600 849 10;
 #X obj 225 201 outlet~;
 #X obj 273 201 outlet~;
 #X obj 265 78 loadbang;
@@ -6,8 +6,8 @@
 -262144 -1;
 #X obj 373 229 s \$0-resetr;
 #X obj 319 78 r \$0-reset;
-#X obj 153 370 hsl 105 8 0 1 0 0 \$0-NONE \$0-timebar Hideki_Naganuma
--2 -5 0 10 -262144 -1 -1 489 1;
+#X obj 153 370 hsl 105 8 0 1 0 0 \$0-NONE \$0-timebar empty -2 -5 0
+10 -262144 -1 -1 0 1;
 #X obj 443 313 list-idx -1;
 #X obj 443 332 * 1000;
 #X obj 428 351 /;

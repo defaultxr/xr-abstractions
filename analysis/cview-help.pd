@@ -1,5 +1,14 @@
-#N canvas 0 29 1600 849 10;
+#N canvas 0 29 800 849 10;
 #X obj 101 194 cview;
 #X text 368 174 cview - view all incoming midi CC.;
 #X text 336 226 this is just a diagnostic tool to allow you to visually
 see everything pd is getting in from midi CC.;
+#N canvas 0 29 800 849 META 0;
+#X text 12 45 LIBRARY defaultxr;
+#X text 12 65 AUTHOR modula t. worm;
+#X text 12 85 WEBSITE http://github.com/defaultxr/pure-data-patches
+;
+#X text 12 105 RELEASE_DATE 2013;
+#X text 12 5 KEYWORDS midi cc analysis gui;
+#X text 12 25 DESCRIPTION view all incoming midi cc;
+#X restore 130 267 pd META;

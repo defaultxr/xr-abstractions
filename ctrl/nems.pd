@@ -1,12 +1,21 @@
-#N canvas 0 0 1600 871 10;
-#X obj 156 54 r editmode;
-#X obj 120 73 inlet;
-#X obj 156 73 kinv;
-#X obj 120 92 spigot;
-#X text 245 49 nems - Not Edit Mode Spigot (only allow messages to
+#N canvas 0 29 800 849 10;
+#X obj 147 103 inlet;
+#X obj 183 103 kinv;
+#X obj 147 122 spigot;
+#X text 272 79 nems - Not Edit Mode Spigot (only allow messages to
 pass when edit mode is OFF);
-#X obj 120 111 outlet;
+#X obj 147 141 outlet;
+#X obj 156 6 loadbang;
+#X obj 183 84 editmode;
+#X obj 156 25 f \$1;
+#X obj 156 44 sel 0;
+#X msg 156 63 2;
 #X connect 0 0 2 0;
-#X connect 1 0 3 0;
-#X connect 2 0 3 1;
-#X connect 3 0 5 0;
+#X connect 1 0 2 1;
+#X connect 2 0 4 0;
+#X connect 5 0 7 0;
+#X connect 6 0 1 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 6 0;
+#X connect 9 0 6 0;

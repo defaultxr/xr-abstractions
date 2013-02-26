@@ -1,33 +1,42 @@
-#N canvas 0 29 1600 849 10;
-#X obj 45 193 rmap one two three;
-#X obj 20 120 s one;
-#X obj 66 120 s two;
-#X obj 112 120 s three;
-#X floatatom 20 82 5 0 0 0 - - -;
-#X floatatom 66 82 5 0 0 0 - - -;
-#X floatatom 112 82 5 0 0 0 - - -;
-#X obj 61 221 print rmap;
-#X text 261 46 rmap - receive map;
-#X text 242 87 rmap takes a list of names to receive from. each name
-is indexed from zero and anything that receive gets will be output
-to rmap's outlet with that index prepended. this is useful if you have
-a bunch of receives that you want to get data from but you don't want
-to have to create them \, connect them \, and sort all their data manually.
-;
-#X text 252 182 NOTE: this uses the dyn~ object \, so you'll need that.
-;
-#X text 243 212 also \, any dynamic creation of objects in pure data
-is slow \, so it's advised only to use this for prototyping and replace
-it with static [receive] objects once you're done.;
-#X obj 45 252 route 0 1 2;
-#X floatatom 22 278 5 0 0 0 - - -;
-#X floatatom 58 280 5 0 0 0 - - -;
-#X floatatom 108 281 5 0 0 0 - - -;
-#X connect 0 0 7 0;
-#X connect 0 0 12 0;
-#X connect 4 0 1 0;
-#X connect 5 0 2 0;
-#X connect 6 0 3 0;
-#X connect 12 0 13 0;
-#X connect 12 1 14 0;
-#X connect 12 2 15 0;
+#N canvas 0 29 800 849 10;
+#X obj 85 186 rmap foo bar baz;
+#X obj 85 238 route 0 1 2;
+#X floatatom 110 288 5 0 0 0 - - -;
+#X floatatom 72 288 5 0 0 0 - - -;
+#X floatatom 148 288 5 0 0 0 - - -;
+#X floatatom 110 115 5 0 0 0 - - -;
+#X floatatom 72 115 5 0 0 0 - - -;
+#X floatatom 148 115 5 0 0 0 - - -;
+#X obj 72 133 s foo;
+#X obj 110 133 s bar;
+#X obj 148 133 s baz;
+#X text 253 36 rmap - receive map;
+#X text 238 187 originally i used the [dyn~] object to generate the
+[receives] inside of [rmap] \, but [dyn~] throws generated objects
+around randomly. i hand-coded the new dynamic [receive] generation
+into [rmap] so now it's easier to copy/paste from inside the [rmap]
+to somewhere else.;
+#X text 241 260 because pure data is not designed to be dynamically
+patched \, you should (for efficiency reasons) remove [rmap] from your
+abstractions once you're done prototyping them \, replacing them with
+the contents of the [pd 0-receives] subpatch inside [rmap].;
+#X text 242 87 [rmap] takes as arguments a list of names to receive
+from. each name is indexed from zero and anything that that [receive]
+gets will be output to [rmap]'s outlet with that index prepended. this
+is useful if you have a bunch of [receive]s that you want to get data
+from but you don't want to have to create them \, connect them \, and
+sort all their data manually.;
+#X text 239 346 TL \, DR: [rmap] dynamically generates copy/pastable
+[receive]s based on the arguments you provide to it.;
+#X text 245 398 NOTE: you can also provide a list of receive names
+to the inlet to re-generate the [receive]s from the new list \, but
+again \, keep in mind that this is extremely inefficient.;
+#X obj 97 215 print rmap;
+#X connect 0 0 1 0;
+#X connect 0 0 17 0;
+#X connect 1 0 3 0;
+#X connect 1 1 2 0;
+#X connect 1 2 4 0;
+#X connect 5 0 9 0;
+#X connect 6 0 8 0;
+#X connect 7 0 10 0;

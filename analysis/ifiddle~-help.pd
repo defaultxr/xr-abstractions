@@ -1,4 +1,4 @@
-#N canvas 0 29 1600 849 10;
+#N canvas 0 29 800 849 10;
 #X obj 273 246 ifiddle~;
 #X obj 253 190 osc~;
 #X floatatom 253 153 5 0 0 0 - - -;
@@ -17,6 +17,20 @@ last 2 outlets are the unpacked output of fiddle~'s third outlet.;
 #X floatatom 273 302 5 0 0 0 - - -;
 #X floatatom 342 302 5 0 0 0 - - -;
 #X floatatom 377 302 5 0 0 0 - - -;
+#N canvas 0 29 800 849 META 0;
+#X text 12 145 LIBRARY defaultxr;
+#X text 12 165 AUTHOR modula t. worm;
+#X text 12 185 WEBSITE http://github.com/defaultxr/pure-data-patches
+;
+#X text 12 205 RELEASE_DATE 2013;
+#X text 12 5 KEYWORDS fiddle gui analysis;
+#X text 12 25 DESCRIPTION graphically show fiddle~ output;
+#X text 12 45 INLET_0 signal;
+#X text 12 65 OUTLET_0 cooked pitch;
+#X text 12 85 OUTLET_1 bang on attack;
+#X text 12 105 OUTLET_2 pitch;
+#X text 12 125 OUTLET_3 amplitude;
+#X restore 300 377 pd META;
 #X connect 0 0 12 0;
 #X connect 0 1 11 0;
 #X connect 0 2 13 0;

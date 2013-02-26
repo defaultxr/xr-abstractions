@@ -1,0 +1,33 @@
+#N canvas 800 29 800 849 10;
+#X obj 260 255 inlet;
+#X obj 393 245 inlet;
+#X text 336 22 hashwrite;
+#X obj 328 460 s \$1;
+#X msg 328 348 set foo \$1;
+#X msg 273 388 set;
+#X msg 393 314 set set \$1 \, adddollar 1;
+#X obj 393 264 route float;
+#X obj 456 283 symbol;
+#X obj 342 313 symbol;
+#X msg 446 354 set set \$1;
+#X text 341 49 send something to the right inlet to set the key \,
+and then something to the left inlet to set the value of that key.
+;
+#X text 333 91 remember that neither keys nor values can be lists.
+;
+#X obj 260 274 route bang float;
+#X connect 0 0 13 0;
+#X connect 1 0 7 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 4 0;
+#X connect 7 0 6 0;
+#X connect 7 0 10 0;
+#X connect 7 1 8 0;
+#X connect 8 0 6 0;
+#X connect 8 0 10 0;
+#X connect 9 0 4 0;
+#X connect 10 0 5 0;
+#X connect 13 0 5 0;
+#X connect 13 1 4 0;
+#X connect 13 2 9 0;

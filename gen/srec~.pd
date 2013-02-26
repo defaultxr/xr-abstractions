@@ -1,4 +1,4 @@
-#N canvas 0 0 800 849 10;
+#N canvas 0 29 800 849 10;
 #X obj 508 361 symbol \$0-foo;
 #X msg 508 380 table \$1;
 #X obj 322 470 outlet;
@@ -13,7 +13,7 @@
 #X obj 204 372 * 1000;
 #X obj 219 337 nbx 5 14 0 1e+37 0 0 empty empty sample_rate 56 8 0
 10 -262144 -1 -1 0 256;
-#X obj 221 316 wavinfo;
+#X obj 180 318 wavinfo;
 #X obj 204 353 /;
 #X msg 167 434 length \$1;
 #X obj 508 325 loadbang;

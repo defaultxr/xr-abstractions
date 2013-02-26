@@ -1,4 +1,4 @@
-#N canvas 0 0 800 849 10;
+#N canvas 0 29 1600 849 10;
 #X obj 402 168 tgl 15 0 empty empty empty 17 7 0 10 -257985 -1 -1 1
 1;
 #X obj 417 168 tgl 15 0 empty empty empty 17 7 0 10 -257985 -1 -1 0
@@ -20,7 +20,7 @@
 #X obj 293 269 spigot;
 #X obj 343 157 inlet;
 #X obj 343 269 spigot;
-#X text 97 93 mspigot - multispigot. 5 inlets can be "mixed" to the
+#X text 67 93 mspigot - multispigot. 5 inlets can be "mixed" to the
 outlet via the toggleboxes or the arguments.;
 #X obj 402 68 chars;
 #X obj 402 30 loadbang;

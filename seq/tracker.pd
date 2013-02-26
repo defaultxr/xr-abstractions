@@ -1,8 +1,7 @@
-#N canvas 0 29 1600 849 10;
-#X obj 50 115 cnv 9 24 9 empty \$0-rn0    0 0 4 0 10 -99865 -262144
-0;
+#N canvas 0 29 800 849 10;
+#X obj 50 115 cnv 9 24 9 empty \$0-rn0    0 0 4 0 10 -241291 -1 0;
 #X obj 50 125 cnv 9 24 9 empty \$0-rn1    1 0 4 0 10 -1 -262144 0;
-#X obj 50 135 cnv 9 24 9 empty \$0-rn2    2 0 4 0 10 -241291 -1 0;
+#X obj 50 135 cnv 9 24 9 empty \$0-rn2    2 0 4 0 10 -1 -262144 0;
 #X obj 50 145 cnv 9 24 9 empty \$0-rn3    3 0 4 0 10 -1 -262144 0;
 #X obj 50 155 cnv 9 24 9 empty \$0-rn4    4 0 4 0 10 -99865 -262144
 0;
@@ -24,9 +23,9 @@
 ;
 #X obj 50 265 cnv 9 24 9 empty \$0-rn15   15 0 4 0 10 -1 -262144 0
 ;
-#X obj 75 115 cnv 9 240 9 empty \$0-r0 blah 0 4 0 10 -258699 -1 0;
-#X obj 75 125 cnv 9 240 9 empty \$0-r1 _ 0 4 0 10 -143491 -262144 0
+#X obj 75 115 cnv 9 240 9 empty \$0-r0 _ 0 4 0 10 -143491 -262144 0
 ;
+#X obj 75 125 cnv 9 240 9 empty \$0-r1 _ 0 4 0 10 -258699 -1 0;
 #X obj 75 135 cnv 9 240 9 empty \$0-r2 _ 0 4 0 10 -143491 -262144 0
 ;
 #X obj 75 145 cnv 9 240 9 empty \$0-r3 _ 0 4 0 10 -143491 -262144 0
@@ -35,15 +34,15 @@
 ;
 #X obj 75 165 cnv 9 240 9 empty \$0-r5 _ 0 4 0 10 -143491 -262144 0
 ;
-#X obj 75 175 cnv 9 240 9 empty \$0-r6 blah2 0 4 0 10 -143491 -262144
-0;
+#X obj 75 175 cnv 9 240 9 empty \$0-r6 _ 0 4 0 10 -143491 -262144 0
+;
 #X obj 75 185 cnv 9 240 9 empty \$0-r7 _ 0 4 0 10 -143491 -262144 0
 ;
 #X obj 75 195 cnv 9 240 9 empty \$0-r8 _ 0 4 0 10 -143491 -262144 0
 ;
 #X obj 75 205 cnv 9 240 9 empty \$0-r9 _ 0 4 0 10 -143491 -262144 0
 ;
-#X obj 75 215 cnv 9 240 9 empty \$0-r10 blah3 0 4 0 10 -143491 -262144
+#X obj 75 215 cnv 9 240 9 empty \$0-r10 _ 0 4 0 10 -143491 -262144
 0;
 #X obj 75 225 cnv 9 240 9 empty \$0-r11 _ 0 4 0 10 -143491 -262144
 0;
@@ -53,11 +52,11 @@
 0;
 #X obj 75 255 cnv 9 240 9 empty \$0-r14 _ 0 4 0 10 -143491 -262144
 0;
-#X obj 75 265 cnv 9 240 9 empty \$0-r15 NO FUCKEN WHEY 0 4 0 10 -143491
--262144 0;
+#X obj 75 265 cnv 9 240 9 empty \$0-r15 _ 0 4 0 10 -143491 -262144
+0;
 #X obj 131 67 outlet;
 #X obj 131 29 inlet;
-#N canvas 0 29 1600 849 parse-keys 0;
+#N canvas 0 29 800 849 parse-keys 0;
 #X obj 200 177 prepent 0;
 #N canvas 0 29 1600 849 main-interface 0;
 #X obj 168 10 inlet;
@@ -307,12 +306,12 @@
 #X connect 13 10 12 0;
 #X connect 13 11 14 0;
 #X connect 13 12 15 0;
-#X restore 200 291 pd main-interface;
+#X restore 200 310 pd main-interface;
 #X msg 200 138 OFF;
 #X msg 161 121 ON;
 #X obj 241 119 symbol;
-#N canvas 0 29 1600 849 master 0;
-#X obj 504 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#N canvas 0 29 800 849 master 0;
+#X obj 504 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 490 75 1;
 #X msg 520 75 0;
@@ -356,7 +355,7 @@
 #X restore 241 100 pd master;
 #X obj 161 89 t b f b;
 #X obj 161 70 r \$0-mode;
-#N canvas 0 29 1600 849 insert 0;
+#N canvas 0 29 800 849 insert 0;
 #X obj 157 0 inlet;
 #X obj 190 387 s \$0-status;
 #X msg 190 340 label insert:;
@@ -428,8 +427,8 @@
 #X connect 31 0 14 0;
 #X connect 31 1 32 0;
 #X connect 32 0 5 0;
-#X restore 234 253 pd insert;
-#N canvas 0 0 800 410 insert-many 0;
+#X restore 234 272 pd insert;
+#N canvas 0 29 800 849 insert-many 0;
 #X obj 167 0 inlet;
 #X obj 200 387 s \$0-status;
 #X msg 150 320 label;
@@ -507,8 +506,8 @@
 #X connect 34 0 25 0;
 #X connect 34 1 29 0;
 #X connect 35 0 31 0;
-#X restore 252 234 pd insert-many;
-#N canvas 800 0 1600 849 copy-many 0;
+#X restore 252 253 pd insert-many;
+#N canvas 0 29 800 849 copy-many 0;
 #X obj 167 10 inlet;
 #X obj 200 437 s \$0-status;
 #X obj 414 153 s \$0-mode;
@@ -668,10 +667,10 @@
 #X connect 32 0 33 0;
 #X connect 33 0 1 0;
 #X connect 34 0 1 0;
-#X restore 269 215 pd copy-many;
-#X obj 200 196 route 0 1 2 3 4;
+#X restore 269 234 pd copy-many;
+#X obj 200 215 route 0 1 2 3 4;
 #X obj 131 70 lb 0;
-#N canvas 0 29 1600 849 edit-row 0;
+#N canvas 0 29 800 849 edit-row 0;
 #X obj 170 0 inlet;
 #X obj 305 48 r \$0-step-list;
 #X obj 329 67 r \$0-selected-step;
@@ -734,7 +733,7 @@
 #X msg 378 93 symbol;
 #X obj 381 232 outlet;
 #X msg 381 180 add2 \$1;
-#X msg 381 213 list N O   F U C K E N   W H E Y;
+#X msg 381 213 list N O F U C K E N W H E Y;
 #X obj 354 55 t a b;
 #X obj 354 36 inlet;
 #X obj 354 74 symbol;
@@ -805,8 +804,9 @@
 #X connect 36 0 35 0;
 #X connect 36 1 37 0;
 #X connect 37 0 14 0;
-#X restore 217 272 pd edit-row;
-#X connect 0 0 11 0;
+#X restore 217 291 pd edit-row;
+#X obj 200 196 nems 4;
+#X connect 0 0 14 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
 #X connect 4 0 0 0;
@@ -821,6 +821,7 @@
 #X connect 11 3 9 0;
 #X connect 11 4 10 0;
 #X connect 12 0 6 0;
+#X connect 14 0 11 0;
 #X restore 233 48 pd parse-keys;
 #N canvas 0 29 1600 849 process-input 0;
 #X obj 272 81 inlet;
@@ -891,7 +892,7 @@
 #X obj 381 281 outlet;
 #X obj 381 262 l2s;
 #X msg 381 180 add2 \$1;
-#X msg 381 213 N O   F U C K E N   W H E Y;
+#X msg 381 213 _;
 #X obj 354 55 t a b;
 #X msg 442 143 set;
 #X obj 354 36 inlet;
@@ -949,7 +950,7 @@
 #X obj 354 367 outlet;
 #X obj 354 348 l2s;
 #X msg 354 276 add2 \$1;
-#X msg 354 329       2;
+#X msg 354 329       0;
 #X msg 553 211 set;
 #X obj 354 46 inlet;
 #X obj 408 65 loadbang;
@@ -1125,21 +1126,22 @@
 #X connect 25 0 8 0;
 #X restore 343 138 pd view;
 #X obj 308 81 r \$0-tracker;
-#N canvas 0 0 800 849 edit 0;
+#N canvas 800 29 800 849 edit 0;
 #X obj 472 122 inlet;
-#X obj 472 229 symbol;
-#X obj 472 248 list-replace;
-#X obj 472 267 t b a;
-#X obj 499 286 s \$0-step-list;
-#X obj 472 305 s \$0-set-view-from-num;
+#X obj 505 248 symbol;
+#X obj 505 267 list-replace;
+#X obj 505 286 t b a;
+#X obj 532 305 s \$0-step-list;
+#X obj 505 324 s \$0-set-view-from-num;
 #X text 73 127 input is something like: [number] [symbol-for-step]
 ;
 #X obj 472 103 r \$0-edit;
 #X obj 472 141 list split 1;
 #X obj 535 172 r \$0-step-numbers-list;
 #X obj 472 191 list-find-1;
-#X obj 541 229 r \$0-step-list;
-#X obj 472 210 t b f;
+#X obj 574 248 r \$0-step-list;
+#X obj 505 229 t b f;
+#X obj 472 210 sel -1;
 #X connect 0 0 8 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -1149,42 +1151,44 @@
 #X connect 8 0 10 0;
 #X connect 8 1 1 1;
 #X connect 9 0 10 1;
-#X connect 10 0 12 0;
+#X connect 10 0 13 0;
 #X connect 11 0 2 2;
 #X connect 12 0 1 0;
 #X connect 12 1 2 1;
+#X connect 13 1 12 0;
 #X restore 379 119 pd edit;
-#N canvas 0 0 800 849 delete 0;
-#X obj 283 129 r \$0-step-numbers-list;
+#N canvas 800 29 800 849 delete 0;
+#X obj 316 96 r \$0-step-numbers-list;
 #X obj 235 173 list;
-#X obj 262 332 list-delete 0 1;
+#X obj 295 351 list-delete 0 1;
 #X obj 235 245 list-find-1;
 #X obj 235 192 t b a;
 #X obj 235 226 f;
 #X obj 185 144 t b f;
-#X obj 262 351 s \$0-step-numbers-list;
-#X obj 124 376 s \$0-step-list;
-#X obj 262 302 list;
-#X obj 262 283 t b f;
-#X obj 124 357 list-delete 0 1;
-#X obj 124 338 list;
-#X obj 172 302 r \$0-step-list;
-#X obj 99 395 s \$0-deleted-num;
-#X obj 124 302 t f b f;
-#X obj 235 264 t f f;
+#X obj 295 370 s \$0-step-numbers-list;
+#X obj 157 395 s \$0-step-list;
+#X obj 295 321 list;
+#X obj 295 302 t b f;
+#X obj 157 376 list-delete 0 1;
+#X obj 157 357 list;
+#X obj 205 321 r \$0-step-list;
+#X obj 132 414 s \$0-deleted-num;
+#X obj 157 321 t f b f;
+#X obj 268 283 t f f;
 #X obj 158 47 inlet;
 #X text 243 45 deletes one or more steps.;
 #X obj 185 85 route float list;
 #X obj 158 66 t b a;
 #X obj 231 104 list split 1;
-#X text -138 63 FIX THIS: maybe connect the bang to refresh the display
+#X text -198 63 FIX THIS: maybe connect the bang to refresh the display
 so it only happens after the list is completed.;
 #X obj 158 28 r \$0-delete-step;
+#X obj 235 264 sel -1;
 #X connect 0 0 1 1;
 #X connect 0 0 9 1;
 #X connect 1 0 4 0;
 #X connect 2 0 7 0;
-#X connect 3 0 16 0;
+#X connect 3 0 24 0;
 #X connect 4 0 5 0;
 #X connect 4 1 3 1;
 #X connect 5 0 3 0;
@@ -1208,103 +1212,105 @@ so it only happens after the list is completed.;
 #X connect 21 0 6 0;
 #X connect 21 1 19 0;
 #X connect 23 0 20 0;
+#X connect 24 1 16 0;
 #X restore 450 119 pd delete;
-#N canvas 0 0 800 849 insert 0;
-#X obj 263 69 inlet;
-#X text 298 69 inserts a new row.;
-#X obj 179 69 r \$0-new-step;
-#X obj 261 554 list-insert;
-#X obj 261 592 s \$0-step-numbers-list;
-#X obj 368 172 r \$0-step-numbers-list;
+#N canvas 800 29 800 849 insert 0;
+#X obj 263 49 inlet;
+#X text 298 49 inserts a new row.;
+#X obj 179 49 r \$0-new-step;
+#X obj 261 574 list-insert;
+#X obj 261 612 s \$0-step-numbers-list;
+#X obj 368 152 r \$0-step-numbers-list;
 #X obj 338 231 list length;
 #X obj 218 324 list-drip;
 #X obj 218 343 >;
 #X msg 218 362 add2 \$1;
 #X msg 270 362 set;
 #X obj 218 305 list;
-#X msg 218 396 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0;
-#X obj 281 475 sel 0;
+#X msg 218 396 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X obj 218 415 t b a;
 #X msg 218 437 1;
 #X obj 218 456 list-find-1;
-#X obj 281 494 f;
-#X obj 281 513 t b f;
-#X obj 261 535 f;
-#X obj 356 573 s \$0-step-list;
-#X obj 356 554 list-insert;
-#X obj 419 535 r \$0-step-list;
-#X msg 356 535 _;
+#X obj 281 514 f;
+#X obj 281 533 t b f;
+#X obj 261 555 f;
+#X obj 356 593 s \$0-step-list;
+#X obj 356 574 list-insert;
+#X obj 419 555 r \$0-step-list;
+#X msg 356 555 _;
 #X text 403 329 makes a blank new step. the "blank" step is actually
 just an underscore \, since it can't truly be blank in pure data...
 ;
 #X obj 191 248 f;
 #X obj 191 267 sel 0;
 #X obj 218 286 bang;
-#X obj 204 559 f;
-#X obj 116 201 s \$0-added-new;
-#X obj 179 182 t f f;
-#X obj 254 201 list-find-1;
+#X obj 204 579 f;
+#X obj 116 181 s \$0-added-new;
+#X obj 179 162 t f f;
+#X obj 254 181 list-find-1;
 #X obj 191 229 spigot;
-#X obj 206 201 t b f b;
+#X obj 206 181 t b f b;
 #X msg 256 224 0;
-#X msg 245 182 1;
-#X obj 179 100 route float list;
-#X obj 225 119 list split 1;
-#X connect 0 0 36 0;
-#X connect 2 0 36 0;
+#X msg 245 162 1;
+#X obj 179 80 route float list;
+#X obj 225 99 list split 1;
+#X obj 218 475 sel -1;
+#X obj 254 200 sel -1;
+#X connect 0 0 35 0;
+#X connect 2 0 35 0;
 #X connect 3 0 4 0;
 #X connect 5 0 6 0;
 #X connect 5 0 11 1;
 #X connect 5 0 3 2;
-#X connect 5 0 31 1;
-#X connect 6 0 17 1;
-#X connect 6 0 25 1;
+#X connect 5 0 30 1;
+#X connect 6 0 16 1;
+#X connect 6 0 24 1;
 #X connect 7 0 8 0;
 #X connect 7 1 12 0;
 #X connect 8 0 9 0;
 #X connect 9 0 12 0;
 #X connect 10 0 12 0;
 #X connect 11 0 7 0;
-#X connect 12 0 14 0;
-#X connect 13 0 17 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 13 1 15 1;
 #X connect 14 0 15 0;
-#X connect 14 1 16 1;
-#X connect 15 0 16 0;
+#X connect 15 0 37 0;
 #X connect 16 0 17 0;
-#X connect 16 1 13 0;
 #X connect 17 0 18 0;
-#X connect 18 0 19 0;
-#X connect 18 0 23 0;
-#X connect 18 1 3 1;
-#X connect 18 1 21 1;
-#X connect 19 0 3 0;
-#X connect 21 0 20 0;
-#X connect 22 0 21 2;
-#X connect 23 0 21 0;
-#X connect 25 0 26 0;
-#X connect 26 0 28 0;
-#X connect 26 1 27 0;
-#X connect 27 0 11 0;
-#X connect 28 0 4 0;
-#X connect 28 0 23 0;
-#X connect 30 0 29 0;
-#X connect 30 1 33 0;
-#X connect 31 0 34 0;
-#X connect 32 0 25 0;
-#X connect 33 0 32 0;
-#X connect 33 1 8 1;
-#X connect 33 1 10 0;
-#X connect 33 1 19 1;
-#X connect 33 1 28 1;
-#X connect 33 1 31 0;
-#X connect 33 2 35 0;
-#X connect 34 0 32 1;
-#X connect 35 0 32 1;
-#X connect 36 0 30 0;
-#X connect 36 1 37 0;
-#X connect 37 0 30 0;
-#X connect 37 1 36 0;
+#X connect 17 0 22 0;
+#X connect 17 1 3 1;
+#X connect 17 1 20 1;
+#X connect 18 0 3 0;
+#X connect 20 0 19 0;
+#X connect 21 0 20 2;
+#X connect 22 0 20 0;
+#X connect 24 0 25 0;
+#X connect 25 0 27 0;
+#X connect 25 1 26 0;
+#X connect 26 0 11 0;
+#X connect 27 0 4 0;
+#X connect 27 0 22 0;
+#X connect 29 0 28 0;
+#X connect 29 1 32 0;
+#X connect 30 0 38 0;
+#X connect 31 0 24 0;
+#X connect 32 0 31 0;
+#X connect 32 1 8 1;
+#X connect 32 1 10 0;
+#X connect 32 1 18 1;
+#X connect 32 1 27 1;
+#X connect 32 1 30 0;
+#X connect 32 2 34 0;
+#X connect 33 0 31 1;
+#X connect 34 0 31 1;
+#X connect 35 0 29 0;
+#X connect 35 1 36 0;
+#X connect 36 0 29 0;
+#X connect 36 1 35 0;
+#X connect 37 0 16 0;
+#X connect 37 1 16 0;
+#X connect 38 1 33 0;
 #X restore 414 138 pd insert;
 #N canvas 800 29 800 410 highlight-current-step 0;
 #X obj 227 116 inlet;
@@ -1542,7 +1548,7 @@ step;
 #X connect 35 0 33 0;
 #X restore 131 48 pd process-input;
 #X text 93 279 each msg row is 40 characters wide.;
-#X obj 249 101 cnv 11 65 13 empty \$0-status empty 0 5 0 10 -233017
+#X obj 249 101 cnv 11 65 13 empty \$0-status symbol 0 5 0 10 -262144
 -1 0;
 #X text 371 163 keys for main mode:;
 #X text 371 173 Up/Down - select row.;
@@ -1572,10 +1578,8 @@ fix the display).;
 #X obj 351 29 r \$0-step-numbers-list;
 #X obj 351 165 r \$0-step-list;
 #X obj 351 48 prepent set;
-#X msg 351 203 blah _ _ _ _ _ blah2 _ _ _ blah3 _ _ _ _ NOFUCKENWHEY
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _;
-#X msg 351 67 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
-21 22 23 24 25 26 27 28 29 30 31;
+#X msg 351 203 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _;
+#X msg 351 67 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
 #X obj 57 31 r \$0-current-step;
 #X floatatom 57 50 5 0 0 0 - - -;
 #X obj 57 68 r \$0-selected-step;
@@ -1597,9 +1601,10 @@ tracker has two main modes: the main mode \, in which you can scroll
 through the rows \, delete \, insert \, or switch to edit mode. edit
 mode allows you to edit an individual row's text.;
 #X obj 220 100 tgl 14 0 \$0-activated \$0-activatetgl empty 17 7 0
-10 -262144 -1 -1 1 1;
+10 -262144 -1 -1 0 1;
 #X text 371 374 to activate the tracker (and make it register keypresses)
-\, click the the tgl.;
+\, activate the tgl. if the patch that [tracker] is in is in edit mode
+\, [tracker] will not register keypresses.;
 #X connect 33 0 35 0;
 #X connect 35 0 32 0;
 #X coords 0 -1 1 1 265 176 1 50 100;

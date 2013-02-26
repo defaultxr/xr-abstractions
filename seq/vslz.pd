@@ -1,23 +1,21 @@
-#N canvas 0 29 1600 849 10;
+#N canvas 0 29 800 849 10;
 #X obj 378 199 vsl 10 64 0 63 0 0 \$0-v0-s \$0-v0-r empty 0 -9 0 10
--24198 -262144 -1 4700 1;
+-24198 -1 -1 5900 1;
 #X obj 388 199 vsl 10 64 0 63 0 0 \$0-v1-s \$0-v1-r empty 0 -9 0 10
--24198 -1 -1 3500 1;
+-24198 -262144 -1 4200 1;
 #X obj 398 199 vsl 10 64 0 63 0 0 \$0-v2-s \$0-v2-r empty 0 -9 0 10
--24198 -1 -1 4800 1;
+-24198 -1 -1 600 1;
 #X obj 408 199 vsl 10 64 0 63 0 0 \$0-v3-s \$0-v3-r empty 0 -9 0 10
--24198 -1 -1 3000 1;
+-24198 -1 -1 4700 1;
 #X obj 418 199 vsl 10 64 0 63 0 0 \$0-v4-s \$0-v4-r empty 0 -9 0 10
--24198 -1 -1 3500 1;
+-24198 -1 -1 2400 1;
 #X obj 428 199 vsl 10 64 0 63 0 0 \$0-v5-s \$0-v5-r empty 0 -9 0 10
--24198 -1 -1 4600 1;
+-24198 -1 -1 2800 1;
 #X obj 438 199 vsl 10 64 0 63 0 0 \$0-v6-s \$0-v6-r empty 0 -9 0 10
--24198 -1 -1 1200 1;
+-24198 -1 -1 3700 1;
 #X obj 448 199 vsl 10 64 0 63 0 0 \$0-v7-s \$0-v7-r empty 0 -9 0 10
--24198 -1 -1 4500 1;
+-24198 -1 -1 5400 1;
 #X obj 176 321 outlet;
-#X obj 199 364 rmap \$0-v0-s \$0-v1-s \$0-v2-s \$0-v3-s \$0-v4-s \$0-v5-s
-\$0-v6-s \$0-v7-s;
 #X obj 158 489 tabwrite \$0-t;
 #X obj 158 454 unpack f f;
 #X msg 158 435 \$2 \$1;
@@ -133,7 +131,7 @@
 #X obj 135 148 route bang float list;
 #X obj 118 182 count 8;
 #X obj 85 265 s \$0-cur;
-#N canvas 0 29 1600 849 set 0;
+#N canvas 0 29 800 849 set 0;
 #X obj 231 85 inlet;
 #X obj 231 144 pack f f \$0;
 #X msg 231 163 \; \$3-v\$1-r set \$2;
@@ -147,21 +145,60 @@
 #X connect 4 1 3 1;
 #X connect 5 0 4 0;
 #X restore 217 167 pd set;
-#X connect 9 0 12 0;
-#X connect 9 0 19 0;
+#N canvas 0 29 800 849 receives 0;
+#X obj 90 500 outlet;
+#X obj 90 110 r 2843-v0-s;
+#X obj 90 129 prepent 0;
+#X obj 160 110 r 2843-v1-s;
+#X obj 160 129 prepent 1;
+#X obj 230 110 r 2843-v2-s;
+#X obj 230 129 prepent 2;
+#X obj 300 110 r 2843-v3-s;
+#X obj 300 129 prepent 3;
+#X obj 370 110 r 2843-v4-s;
+#X obj 370 129 prepent 4;
+#X obj 440 110 r 2843-v5-s;
+#X obj 440 129 prepent 5;
+#X obj 510 110 r 2843-v6-s;
+#X obj 510 129 prepent 6;
+#X obj 580 110 r 2843-v7-s;
+#X obj 580 129 prepent 7;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
+#X connect 9 0 10 0;
+#X connect 10 0 0 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X connect 13 0 14 0;
+#X connect 14 0 0 0;
+#X connect 15 0 16 0;
+#X connect 16 0 0 0;
+#X restore 199 377 pd receives;
+#X obj 176 203 int;
+#X text 313 119 set a vsl by sending a "set [number] [value]" message.
+;
+#X connect 10 0 9 0;
+#X connect 10 1 9 1;
 #X connect 11 0 10 0;
-#X connect 11 1 10 1;
-#X connect 12 0 11 0;
-#X connect 13 0 16 0;
-#X connect 15 0 13 0;
-#X connect 15 0 24 0;
-#X connect 15 1 18 0;
-#X connect 16 0 8 0;
-#X connect 17 0 16 1;
-#X connect 18 0 17 0;
+#X connect 12 0 15 0;
+#X connect 14 0 12 0;
+#X connect 14 0 23 0;
+#X connect 14 1 17 0;
+#X connect 15 0 8 0;
+#X connect 16 0 15 1;
+#X connect 17 0 16 0;
+#X connect 20 0 21 0;
 #X connect 21 0 22 0;
-#X connect 22 0 23 0;
-#X connect 22 1 15 0;
-#X connect 22 2 25 0;
-#X connect 23 0 15 0;
+#X connect 21 1 26 0;
+#X connect 21 2 24 0;
+#X connect 22 0 14 0;
+#X connect 25 0 18 0;
+#X connect 25 0 11 0;
+#X connect 26 0 14 0;
 #X coords 0 -1 1 1 80 85 1 378 183;

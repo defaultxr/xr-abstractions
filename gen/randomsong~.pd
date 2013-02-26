@@ -1,4 +1,4 @@
-#N canvas 0 0 800 410 10;
+#N canvas 0 29 1600 849 10;
 #X obj 253 16 inlet;
 #X obj 253 54 shell;
 #X obj 253 254 readsf~ 2;

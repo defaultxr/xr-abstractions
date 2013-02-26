@@ -1,4 +1,4 @@
-#N canvas 0 29 1600 849 10;
+#N canvas 0 29 800 849 10;
 #X obj 356 166 inlet~;
 #X obj 356 205 *~ 1;
 #X obj 407 161 lb \$1 16;
@@ -13,7 +13,8 @@
 #X text 488 270 arg 1 is how many bangs should trigger for each cycle
 of the audio (phasor) input. outputs every [arg 2] bangs.;
 #X obj 377 186 - 1;
-#X obj 420 375 snapshot~;
+#X obj 420 356 snapshot~;
+#X obj 420 375 int;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 1 0 13 0;
@@ -25,4 +26,5 @@ of the audio (phasor) input. outputs every [arg 2] bangs.;
 #X connect 9 0 2 0;
 #X connect 10 0 4 0;
 #X connect 12 0 1 1;
-#X connect 13 0 8 0;
+#X connect 13 0 14 0;
+#X connect 14 0 8 0;
