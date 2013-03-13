@@ -456,6 +456,7 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * remove `kount` since it doesn't do anything that the built-ins `cup` and `count` can't do.
 * update `snd~` so that you can also index the sound by samples if the index is above 1.
 * finish `looper~`
+* replace `drumseq` with the new `drumseq2`
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 
