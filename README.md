@@ -217,8 +217,6 @@ abstractions for altering or generating number streams
 
 `kinv` - number inverter. 0 becomes 1, 1 becomes 0, and everything in between.
 
-`kount` - counts up to a certain number and loops, or indefinitely if no argument is given.
-
 `maybe` - maybe output a bang. numbers between 0 and 1 specify a probability of a bang (i.e. 0.25 is 25% chance of bang), numbers above 1 specify 1 in n chance of bang (i.e. 5 is 1 in 5 chance of bang, or 20%). banging the inlet is a 50% chance of bang.
 
 `minv` - "midi invert". 127 becomes 0, 0 becomes 127, and everything in between.
@@ -435,7 +433,6 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * finish `proll`
 * update `boxseq` and make it 4x4 instead of 6x6.
 * add keyboard shortcuts to `drumseq` and other "bigger" abstractions.
-* remove `kount` since it doesn't do anything that the built-ins `cup` and `count` can't do.
 * update `snd~` so that you can also index the sound by samples if the index is above 1.
 * finish `looper~`
 * replace `drumseq` with the new `drumseq2`
