@@ -62,7 +62,7 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `inputn` - input accumulator for numbers
 
-`input` - input accumulator
+`input` - input accumulator (similar to the `symbol` atom, but without a built-in GUI)
 
 `ispigot~` - graphical audio spigot (left inlet is for the audio, right inlet is to open or close the spigot)
 
@@ -74,65 +74,49 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `keynum` - get numbers from the keyboard. if "h" is provided as the first argument, also allows hexadecimal numbers (a-f).
 
-`keyonchg` - 
+`keyonchg` - outputs a bang when the $1 key is pressed.
 
-`keyonoff` - 
+`keyonoff` - outputs 1 when the $1 key is pressed and 0 when it is released.
 
 `keyrow` - converts numbers from `key` into the numbers 0-9. in other words, use a row of keys as numbers.
 
 `kfilename` - abstraction for making paths. used by `snd~`, `drumseq`, `anaseq` and others. **NOTE: you might want to edit this since it uses my paths.**
 
-`khsl` - 
+`mcb` - master control bang. don't use this, i'm going to fix it eventually.
 
-`mcb` - 
+`mck` - master control keyboard. don't use this.
 
-`mck` - 
+`m-client` - master control client. don't use this.
 
-`m-client` - 
+`mcl` - master control ...something. don't use it.
 
-`mcl` - 
+`mc` - master control client. don't use this.
 
-`mc` - 
+`mct` - master control toggle. don't use this.
 
-`mct` - 
+`mono` - monosynth implementation (keeps track of which keys are held down, only sending the most recent, including if more than one has been pressed/held down)
 
-`mdrums` - 
-
-`mono` - 
-
-`monos` - 
+`monos` - simpler version of mono. should work better with synths expecting input from something like `notein`.
 
 `mspigot` - multi-spigot. has 5 message inlets and allows you to graphically control which of them are mixed to the outlet.
 
-`mstr` - 
+`mstr` - master. don't use it. i'll make a better version eventually, maybe.
 
 `nems` - non-edit mode spigot. only allows messages to pass when edit mode is off.
-
-`nkeyb` - 
-
-`nkey` - 
-
-`nknum` - 
 
 `numlock` - shows whether numlock is on or off and also outputs 1 or 0 depending.
 
 `polys` - similar to pd's built-in `poly` but allows you to specify a specific voice with note-offs (i.e. so you can have multiple voices with the same note). WIP: voice stealing is not yet implemented.
 
-`router` - 
+`router` - routes one input (left inlet) to either the left or right outlet, depending on the state of the ratio control. the right inlet allows you to switch the outlet.
 
 `sndsel` - sound selector. allows you to select a sound by browsing folders graphically, because `playlist` kind of sucks. it's a work-in-progress, but it's probably ready for regular use.
 
-`sswitcher~` - 
+`sswitcher~` - stereo fader. might rename this to `sfader~` in the future.
 
-`switcher~` - 
+`switcher~` - fader. might rename this to `fader~` in the future.
 
-`switcher` - 
-
-`wiib` - 
-
-`wiimotec` - 
-
-`wiisring` - 
+`switcher` - switches between outputting the left inlet or the right inlet graphically via a ratio control. you can also change the inlet by sending a "switch" message to the first inlet.
 
 demos
 =====
@@ -151,9 +135,9 @@ abstractions for generating sound
 
 `fluid~` - FluidSynth (SoundFont) interface.
 
-`grain~` - 
+`grain~` - one "grain" of a sound file. part of `granular~`. needs to be fixed.
 
-`granular~` - 
+`granular~` - supposed to be a granular synth, but i didn't finish it. i might do that eventually.
 
 `irsong~` - interface to `randomsong~`
 
@@ -283,7 +267,7 @@ sequencer abstractions
 
 `dust` - output bangs at random intervals lower than the provided argument.
 
-`edger~` - 
+`edger~` - basically a convenient interface to `edge~`. left outlet bangs on a zero to non-zero transition, while the right bangs on a non-zero to zero transition.
 
 `ft` - "friendly table". abstraction to make it easier to edit a table. need to redo this.
 
@@ -339,15 +323,13 @@ sequencer abstractions
 
 `vslz` - extremely simple 8-step vsl-based sequencer.
 
-`xeroxer~` - 
-
 synths
 ======
 "full-featured" synthesizers. a lot of these are scrapped designs. most of these aren't that great.
 
-`Adder4~` - 
+`Adder4~` - was supposed to be a four-voice additive synth but i might remove it eventually.
 
-`Adder~` - 
+`Adder~` - was supposed to be one of the voices for `Adder4~` but i might remove it.
 
 `Adder_voice~` - voice for `Adder~`
 
@@ -403,7 +385,7 @@ miscellaneous utilities
 
 `marquee` - display elements of a list at regular intervals.
 
-`mp3conv` - use `lame` to convert an mp3 to wav, storing the wav in /tmp and outputting the filename of the wav when conversion finishes.
+`mp3conv` - use the `lame` command-line utility to convert an mp3 to wav, storing the wav in /tmp and outputting the filename of the wav when conversion finishes. obviously you'll need to have `lame` installed in order for this to actually work.
 
 `o~` - interface for mono output to `dac~`.
 
@@ -457,6 +439,8 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * update `snd~` so that you can also index the sound by samples if the index is above 1.
 * finish `looper~`
 * replace `drumseq` with the new `drumseq2`
+* rename `sswitcher~` and `switcher~` to `sfader~` and `fader~`, respectively.
+* finish `grain~` and `granular~`
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 
@@ -479,22 +463,17 @@ ctrl:
 * `keyonoff`
 * `keyrow`
 * `kfilename`
-* `khsl`
 * `mcb`
 * `mck`
 * `m-client`
 * `mcl`
 * `mc`
 * `mct`
-* `mdrums`
 * `mono`
 * `monos`
 * `mspigot`
 * `mstr`
 * `nems`
-* `nkeyb`
-* `nkey`
-* `nknum`
 * `numlock`
 * `polys`
 * `router`
@@ -502,9 +481,6 @@ ctrl:
 * `sswitcher~`
 * `switcher~`
 * `switcher`
-* `wiib`
-* `wiimotec`
-* `wiisring`
 
 fx:
 * `aliasing~`
@@ -681,7 +657,6 @@ seq:
 * `tracker`
 * `unmap`
 * `vslz`
-* `xeroxer~`
 
 synths:
 * `Adder4~`

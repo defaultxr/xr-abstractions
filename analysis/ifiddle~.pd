@@ -1,4 +1,4 @@
-#N canvas 800 0 800 849 10;
+#N canvas 0 29 1600 849 10;
 #X obj 387 183 inlet~;
 #X obj 387 202 fiddle~;
 #X obj 194 281 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -11,6 +11,7 @@
 #X obj 363 379 outlet;
 #X obj 413 379 outlet;
 #X obj 463 379 outlet;
+#X obj 459 183 inlet;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 1 0 7 0;
@@ -21,4 +22,5 @@
 #X connect 4 0 9 0;
 #X connect 4 1 6 0;
 #X connect 4 1 10 0;
+#X connect 11 0 1 0;
 #X coords 0 -1 1 1 111 45 1 162 265;

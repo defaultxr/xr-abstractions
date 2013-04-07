@@ -1,7 +1,6 @@
-#N canvas 0 0 1600 849 10;
-#X obj 114 86 kinv;
+#N canvas 0 29 1600 849 10;
 #X obj 127 55 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -257985 -1
--1 0;
+-1 1;
 #X obj 69 105 spigot 1;
 #X obj 151 105 spigot 0;
 #X obj 69 -26 inlet;
@@ -9,15 +8,16 @@
 #X obj 116 166 outlet;
 #X obj 140 15 f;
 #X obj 69 -7 route switch;
+#X obj 114 86 == 0;
 #X connect 0 0 2 1;
-#X connect 0 0 7 1;
-#X connect 1 0 0 0;
-#X connect 1 0 3 1;
-#X connect 2 0 6 0;
-#X connect 3 0 6 0;
-#X connect 4 0 8 0;
-#X connect 5 0 3 0;
-#X connect 7 0 1 0;
-#X connect 8 0 7 0;
-#X connect 8 1 2 0;
+#X connect 0 0 8 0;
+#X connect 1 0 5 0;
+#X connect 2 0 5 0;
+#X connect 3 0 7 0;
+#X connect 4 0 2 0;
+#X connect 6 0 0 0;
+#X connect 7 0 6 0;
+#X connect 7 1 1 0;
+#X connect 8 0 1 1;
+#X connect 8 0 6 1;
 #X coords 0 -1 1 1 30 15 2 127 55;

@@ -13,7 +13,7 @@
 #X obj 264 359 f;
 #X obj 255 297 t b b f;
 #X obj 115 208 moses;
-#X msg 108 339 0;
+#X msg 115 339 0;
 #X obj 179 184 f 60;
 #X text 430 276 sound control note - use midi notes numbers to play
 sounds. first argument is base note (defaults to 60).;

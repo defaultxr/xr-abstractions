@@ -7,21 +7,21 @@
 #X obj 517 562 r \$0-res1;
 #X obj 541 514 *~;
 #X obj 103 134 hsl 100 10 0 1000 0 0 \$0-env1 \$0-env env_mod 0 5 0
-8 -262144 -1 -1 3500 1;
+8 -262144 -1 -1 2000 1;
 #X obj 565 514 r \$0-env1;
 #X obj 526 533 +~;
 #X obj 103 124 hsl 100 10 0 4 0 0 \$0-res1 \$0-res resonance 0 5 0
-8 -262144 -1 -1 4900 1;
+8 -262144 -1 -1 1500 1;
 #X obj 103 114 hsl 100 10 0 127 0 0 \$0-cof1 \$0-cof cut_off_freq 0
-5 0 8 -262144 -1 -1 6405 1;
+5 0 8 -262144 -1 -1 9500 1;
 #X obj 526 415 r \$0-cof1;
 #X obj 526 434 mtof;
 #X obj 315 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 103 154 hsl 100 10 0 4 0 0 \$0-acc1 \$0-acc accent 0 5 0 8 -262144
--1 -1 0 1;
+-1 -1 1100 1;
 #X obj 103 144 hsl 100 10 3 2000 0 0 \$0-dcy1 \$0-dcy decay 0 5 0 8
--262144 -1 -1 9600 1;
+-262144 -1 -1 5800 1;
 #X msg 332 355 decay \$1;
 #X obj 332 336 r \$0-dcy1;
 #X obj 315 374 adsr~ 3 100 0 0;
@@ -63,7 +63,7 @@ decay dec accent acc osc;
 #X obj 511 353 -~ 0.5;
 #X obj 526 453 aline~ 150;
 #X obj 445 297 aline~ 10;
-#X obj 445 334 aphasor~;
+#X obj 445 334 saw~;
 #X connect 0 0 20 0;
 #X connect 1 0 37 0;
 #X connect 3 0 54 1;
