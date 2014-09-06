@@ -6,7 +6,18 @@ Please notify me of any bugs you find while using these abstractions.
 
 I'm still working on writing help files for each of these. This collection is under constant development, so things might change, get renamed, removed, etc. But hopefully it won't cause you too many problems.
 
-Some of the abstractions I find most useful are: `map`, `snd~` (and all the objects whose name includes "snd"), `o~`, `view~`, `drumseq`, `rrange`, `rchoice`, `bpmm`, `tb303~`, `rmap`, and `unmap`.
+Some of the abstractions I find most useful:
+* `map` - easy list access (useful for arpeggios, patterns, etc.)
+* `snd~` - easy sound file access (provide a filename as the first argument and it is automatically handled for you)
+* `o~` - easy `dac~` access (with volume control, keyboard shortcuts, etc)
+* `view~` - view the waveform (acts as a simple oscilloscope)
+* `drumseq` - simple and easy step sequencer (see also: `drumseq2`, the bigger and better version)
+* `rrange` - random range. easy way to get an integer within a specific range.
+* `rchoice` - random choice. choose randomly from a list provided as arguments or to the right inlet.
+* `bpmm` - clock for use with sequencers like `drumseq`, `anaseq`, etc.
+* `tb303~` - fake tb303 (simple and quick synth)
+* `rmap` - receive map (quickly create a lot of `receive` objects just by specifying them as arguments to this object)
+* `unmap` - map inputs to their indexes in a list (the functional inverse of `map`)
 
 Below is a quick overview of the included abstractions.
 
