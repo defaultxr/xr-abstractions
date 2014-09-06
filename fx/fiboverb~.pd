@@ -1,5 +1,5 @@
-#N canvas 800 0 800 871 10;
-#N canvas 0 0 1600 871 delay-network 0;
+#N canvas 0 29 1600 849 10;
+#N canvas 0 29 1600 849 delay-network 0;
 #N canvas 0 0 1600 871 snaresample 0;
 #X obj 67 145 hip~ 5;
 #X obj 67 47 r phase;
@@ -2028,7 +2028,7 @@
 #X obj 135 93 pack;
 #X msg 119 180 lines \$1 \$2 \$3 \$4 \$5 \$6 \$7 \$8 \$9 \$10 \$11
 \$12 \$13 \$14 \$15 \$16;
-#X msg 104 121 0;
+#X msg 104 121 1;
 #X obj 135 13 r \$0-donetable;
 #X msg 419 155 bang;
 #X text 463 135 hack \, rotate and discard one;
@@ -2126,7 +2126,7 @@
 #X obj 15 260 tabwrite \$0-fibs;
 #X obj 15 43 clip 0.1 0.8352;
 #X obj 49 211 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -6 0 10
--262144 -1 -1 4172.31 256;
+-262144 -1 -1 6755.72 256;
 #X obj 15 152 +;
 #X obj 15 235 clip 0 2048;
 #X obj 155 40 clip 3 21;
@@ -2175,15 +2175,15 @@
 #X connect 16 0 9 0;
 #X restore 253 -27 pd fibseqgen;
 #X obj 202 -27 inlet~;
-#X obj 100 101 cnv 15 180 300 empty empty fibonacci-verb 20 12 1 16
+#X obj 100 100 cnv 15 180 259 empty empty fibonacci-verb 20 12 1 16
 -170496 -66577 0;
-#X obj 111 163 hsl 160 10 0.1 0.85 0 0 \$0-seqscale \$0-seqscaler seq_scale
--2 6 0 8 -43582 -262144 -262144 5200 1;
-#X obj 111 173 hsl 160 10 3 21 0 0 \$0-seqstart \$0-seqstartr seq_start
--2 6 0 8 -39616 -262144 -262144 2150 1;
-#X obj 122 148 bng 15 250 50 0 \$0-testverb empty test 0 -6 0 8 -258049
+#X obj 111 153 hsl 160 10 0.1 0.85 0 0 \$0-seqscale \$0-seqscaler seq_scale
+-2 6 0 8 -43582 -262144 -262144 6360 1;
+#X obj 111 163 hsl 160 10 3 21 0 0 \$0-seqstart \$0-seqstartr seq_start
+-2 6 0 8 -39616 -262144 -262144 2650 1;
+#X obj 122 138 bng 15 250 50 0 \$0-testverb empty test 0 -6 0 8 -258049
 -259704 -1;
-#X obj 157 148 bng 15 250 50 0 \$0-resetverb empty reset_lines 0 -6
+#X obj 157 138 bng 15 250 50 0 \$0-resetverb empty reset_lines 0 -6
 0 8 -24198 -259704 -1;
 #X text 202 -90 A reverb based on the fib sequence;
 #X text 202 -71 Uses a [fdn~] unit and a closed form sequence generator
@@ -2192,12 +2192,12 @@
 #X obj 308 26 outlet~;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array \$0-fibs 16 float 3;
-#A 0 0.178885 0.940394 1.84434 3.40238 6.01876 10.3476 17.4472 29.03
-47.8668 78.4406 128.006 208.298 338.31 548.768 889.392 1440.63;
+#A 0 0.178885 2.13661 3.94155 6.97256 11.9874 20.2121 33.6304 55.4522
+90.8711 148.291 241.307 391.922 635.732 1030.33 1668.92 2048;
 #X coords 0 0 16 2048 160 160 1;
-#X restore 110 198 graph;
-#X obj 222 148 tgl 15 0 \$0-directonoff \$0-directonoffr first 0 -6
-0 8 -75584 -113662 -1 0 1;
+#X restore 110 188 graph;
+#X obj 222 138 tgl 15 0 \$0-directonoff \$0-directonoffr first 0 -6
+0 8 -75584 -113662 -1 1 1;
 #X obj 399 -19 loadbang;
 #X msg 399 4 0.4;
 #X msg 430 4 6;
@@ -2215,4 +2215,4 @@
 #X connect 15 0 17 0;
 #X connect 16 0 18 0;
 #X connect 20 0 21 0;
-#X coords 0 -1 1 1 180 260 1 100 100;
+#X coords 0 -1 1 1 180 259 1 100 100;

@@ -1,4 +1,4 @@
-#N canvas 0 29 1600 849 10;
+#N canvas 1680 29 1600 871 10;
 #X obj 542 285 inlet;
 #X obj 617 400 random 2;
 #X obj 542 304 route bang float;
@@ -13,16 +13,17 @@
 #X obj 617 439 < 1;
 #X msg 671 400 1;
 #X text 595 81 maybe - maybe output a bang;
-#X text 592 109 if you bang the inlet \, there is a 50% chance you
-will get a bang on the outlet. if you send a number at or above 1 \,
-there is a 1 in (that number) chance that there will be a bang on the
-outlet. if you send a number below 1 to the inlet \, there is a (that
-number)*100 chance that there will be a bang on the outlet.;
 #X text 661 230 10 - 1 in 10 chance of bang.;
 #X text 667 219 3 - 1 in 3 chance of bang.;
 #X text 649 208 0.75 - 75% chance of bang.;
 #X text 589 196 examples: bang - 50% chance of bang.;
 #X text 667 241 1 - 100% chance of bang.;
+#X text 592 109 if you bang the inlet \, there is a 50% chance you
+will get a bang on the outlet. if you send a number at or above 1 \,
+there is a 1 in (that number) chance that there will be a bang on the
+outlet. if you send a number below 1 to the inlet \, there is a (that
+number)*100 percent chance that there will be a bang on the outlet.
+;
 #X connect 0 0 2 0;
 #X connect 1 0 11 0;
 #X connect 2 0 3 0;

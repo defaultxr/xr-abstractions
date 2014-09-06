@@ -1,4 +1,4 @@
-#N canvas 0 29 1600 849 10;
+#N canvas 1680 29 1600 871 10;
 #X msg 105 118 open \$1;
 #X obj 105 89 openpanel;
 #X obj 105 62 bng 15 250 50 0 empty empty select_a_wav 17 7 0 10 -262144
@@ -39,14 +39,14 @@ to play from the beginning of the sound to the middle of the sound
 then a 1 to the left inlet.;
 #X text 270 307 also note that you can play the line "backwards" by
 sending negative numbers to the left inlet.;
-#X text 270 401 <-- these two are the same! sndl~ is basically an abstraction
-to snd~ and sndcl~. sndcl~ generates the control values for snd~. keep
-this in mind if you want to do something more complex than what sndl~
-allows - it can probably be done with sndcl~ and snd if sndl~ isn't
-close enough to the functionality you need.;
 #X text 271 349 the left outlet outputs the sound \, while the right
 outlet outputs the value of the line.;
 #X obj 114 146 vcsig~;
+#X text 270 401 <-- these two are the same! sndl~ is basically an abstraction
+to snd~ and sndcl~. sndcl~ generates the control values for snd~. keep
+this in mind if you want to do something more complex than what sndl~
+allows - it can probably be done with sndcl~ and snd~ if sndl~ isn't
+flexible enough for the functionality you need.;
 #X connect 0 0 9 1;
 #X connect 0 0 12 0;
 #X connect 1 0 0 0;
@@ -54,7 +54,6 @@ outlet outputs the value of the line.;
 #X connect 9 0 8 0;
 #X connect 9 1 13 0;
 #X connect 12 0 3 0;
-#X connect 12 1 25 0;
 #X connect 13 0 9 0;
 #X connect 13 1 9 1;
 #X connect 14 0 13 0;

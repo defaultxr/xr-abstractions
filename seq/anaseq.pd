@@ -1,68 +1,68 @@
-#N canvas 0 29 800 849 10;
+#N canvas 1680 29 1600 871 10;
 #X obj 23 17 vsl 13 128 0 127 0 0 \$0-volbar1 \$0-rvolbar1 empty 0
 -9 0 10 -166441 -1 -262144 0 1;
 #X obj 10 17 vsl 13 128 0 127 0 0 \$0-volbar0 \$0-rvolbar0 empty 0
--9 0 10 -128992 -1 -262144 0 1;
+-9 0 10 -162280 -1 -262144 7800 1;
 #X obj 49 17 vsl 13 128 0 127 0 0 \$0-volbar3 \$0-rvolbar3 empty 0
--9 0 10 -262144 -1 -262144 0 1;
+-9 0 10 -162280 -1 -262144 0 1;
 #X obj 36 17 vsl 13 128 0 127 0 0 \$0-volbar2 \$0-rvolbar2 empty 0
--9 0 10 -233017 -1 -262144 0 1;
+-9 0 10 -162280 -1 -262144 0 1;
 #X obj 75 17 vsl 13 128 0 127 0 0 \$0-volbar5 \$0-rvolbar5 empty 0
--9 0 10 -166441 -1 -262144 0 1;
+-9 0 10 -228856 -1 -262144 0 1;
 #X obj 62 17 vsl 13 128 0 127 0 0 \$0-volbar4 \$0-rvolbar4 empty 0
--9 0 10 -128992 -1 -262144 0 1;
+-9 0 10 -228856 -1 -262144 7800 1;
 #X obj 101 17 vsl 13 128 0 127 0 0 \$0-volbar7 \$0-rvolbar7 empty 0
--9 0 10 -262144 -1 -262144 0 1;
+-9 0 10 -228856 -1 -262144 0 1;
 #X obj 88 17 vsl 13 128 0 127 0 0 \$0-volbar6 \$0-rvolbar6 empty 0
 -9 0 10 -233017 -1 -262144 0 1;
 #X obj 127 17 vsl 13 128 0 127 0 0 \$0-volbar9 \$0-rvolbar9 empty 0
--9 0 10 -166441 -1 -262144 0 1;
+-9 0 10 -166441 -1 -262144 9000 1;
 #X obj 114 17 vsl 13 128 0 127 0 0 \$0-volbar8 \$0-rvolbar8 empty 0
--9 0 10 -128992 -1 -262144 0 1;
+-9 0 10 -162280 -1 -262144 7600 1;
 #X obj 153 17 vsl 13 128 0 127 0 0 \$0-volbar11 \$0-rvolbar11 empty
-0 -9 0 10 -262144 -1 -262144 0 1;
+0 -9 0 10 -162280 -1 -262144 0 1;
 #X obj 140 17 vsl 13 128 0 127 0 0 \$0-volbar10 \$0-rvolbar10 empty
-0 -9 0 10 -233017 -1 -262144 0 1;
+0 -9 0 10 -162280 -1 -262144 1600 1;
 #X obj 179 17 vsl 13 128 0 127 0 0 \$0-volbar13 \$0-rvolbar13 empty
-0 -9 0 10 -166441 -1 -262144 0 1;
+0 -9 0 10 -228856 -1 -262144 0 1;
 #X obj 166 17 vsl 13 128 0 127 0 0 \$0-volbar12 \$0-rvolbar12 empty
-0 -9 0 10 -128992 -1 -262144 0 1;
+0 -9 0 10 -228856 -1 -262144 6900 1;
 #X obj 205 17 vsl 13 128 0 127 0 0 \$0-volbar15 \$0-rvolbar15 empty
-0 -9 0 10 -262144 -1 -262144 0 1;
+0 -9 0 10 -228856 -1 -262144 0 1;
 #X obj 192 17 vsl 13 128 0 127 0 0 \$0-volbar14 \$0-rvolbar14 empty
 0 -9 0 10 -233017 -1 -262144 0 1;
 #X obj 55 179 inlet;
-#X obj 10 148 tgl 13 0 \$0-ts0 \$0-tr0 empty 17 7 0 10 -128992 -1 -262144
-0 1;
+#X obj 10 148 tgl 13 0 \$0-ts0 \$0-tr0 empty 17 7 0 10 -166441 -1 -262144
+1 1;
 #X obj 23 148 tgl 13 0 \$0-ts1 \$0-tr1 empty 17 7 0 10 -166441 -1 -262144
 0 1;
-#X obj 36 148 tgl 13 0 \$0-ts2 \$0-tr2 empty 17 7 0 10 -233017 -1 -262144
+#X obj 36 148 tgl 13 0 \$0-ts2 \$0-tr2 empty 17 7 0 10 -166441 -1 -262144
 0 1;
-#X obj 49 148 tgl 13 0 \$0-ts3 \$0-tr3 empty 17 7 0 10 -258699 -1 -262144
+#X obj 49 148 tgl 13 0 \$0-ts3 \$0-tr3 empty 17 7 0 10 -166441 -1 -262144
 0 1;
-#X obj 62 148 tgl 13 0 \$0-ts4 \$0-tr4 empty 17 7 0 10 -128992 -1 -262144
-0 1;
-#X obj 75 148 tgl 13 0 \$0-ts5 \$0-tr5 empty 17 7 0 10 -166441 -1 -262144
+#X obj 62 148 tgl 13 0 \$0-ts4 \$0-tr4 empty 17 7 0 10 -233017 -1 -262144
+1 1;
+#X obj 75 148 tgl 13 0 \$0-ts5 \$0-tr5 empty 17 7 0 10 -233017 -1 -262144
 0 1;
 #X obj 88 148 tgl 13 0 \$0-ts6 \$0-tr6 empty 17 7 0 10 -233017 -1 -262144
 0 1;
-#X obj 101 148 tgl 13 0 \$0-ts7 \$0-tr7 empty 17 7 0 10 -262144 -1
+#X obj 101 148 tgl 13 0 \$0-ts7 \$0-tr7 empty 17 7 0 10 -258699 -1
 -262144 0 1;
-#X obj 166 148 tgl 13 0 \$0-ts12 \$0-tr12 empty 17 7 0 10 -128992 -1
--262144 0 1;
-#X obj 179 148 tgl 13 0 \$0-ts13 \$0-tr13 empty 17 7 0 10 -166441 -1
+#X obj 166 148 tgl 13 0 \$0-ts12 \$0-tr12 empty 17 7 0 10 -233017 -1
+-262144 1 1;
+#X obj 179 148 tgl 13 0 \$0-ts13 \$0-tr13 empty 17 7 0 10 -233017 -1
 -262144 0 1;
 #X obj 192 148 tgl 13 0 \$0-ts14 \$0-tr14 empty 17 7 0 10 -233017 -1
 -262144 0 1;
-#X obj 205 148 tgl 13 0 \$0-ts15 \$0-tr15 empty 17 7 0 10 -262144 -1
+#X obj 205 148 tgl 13 0 \$0-ts15 \$0-tr15 empty 17 7 0 10 -233017 -1
 -262144 0 1;
-#X obj 114 148 tgl 13 0 \$0-ts8 \$0-tr8 empty 17 7 0 10 -128992 -1
--262144 0 1;
+#X obj 114 148 tgl 13 0 \$0-ts8 \$0-tr8 empty 17 7 0 10 -166441 -1
+-262144 1 1;
 #X obj 127 148 tgl 13 0 \$0-ts9 \$0-tr9 empty 17 7 0 10 -166441 -1
+-262144 1 1;
+#X obj 140 148 tgl 13 0 \$0-ts10 \$0-tr10 empty 17 7 0 10 -166441 -1
 -262144 0 1;
-#X obj 140 148 tgl 13 0 \$0-ts10 \$0-tr10 empty 17 7 0 10 -233017 -1
--262144 0 1;
-#X obj 153 148 tgl 13 0 \$0-ts11 \$0-tr11 empty 17 7 0 10 -262144 -1
+#X obj 153 148 tgl 13 0 \$0-ts11 \$0-tr11 empty 17 7 0 10 -166441 -1
 -262144 0 1;
 #X floatatom 204 0 2 0 7 0 - #0-cpatswitch #0-curpat;
 #X obj 189 0 bng 15 250 50 0 \$0-go empty go 1 7 0 10 -4034 -1 -1;
@@ -73,7 +73,7 @@
 #X obj 306 12 r \$0-curpat;
 #X obj 291 31 f;
 #X obj 27 237 count 16;
-#N canvas 0 0 1600 871 set 0;
+#N canvas 1680 29 1600 871 set 0;
 #X obj 260 263 inlet;
 #X obj 260 282 unpack f f;
 #X obj 313 352 s;
@@ -85,17 +85,30 @@
 #X connect 3 0 2 1;
 #X connect 4 0 3 0;
 #X restore 126 274 pd set;
-#N canvas 0 0 1600 871 tog 0;
-#X obj 324 276 inlet;
-#X obj 381 379 s;
-#X obj 396 340 pack 0 \$0;
-#X msg 396 359 symbol \$2-tr\$1;
-#X obj 324 295 unpack f f;
-#X connect 0 0 4 0;
-#X connect 2 0 3 0;
-#X connect 3 0 1 1;
-#X connect 4 0 2 0;
-#X connect 4 1 1 0;
+#N canvas 1680 29 1600 871 tog 0;
+#X obj 324 246 inlet;
+#X obj 345 418 unpack f f;
+#X msg 345 399 \$2 \$1;
+#X msg 371 480 \; \$3-tr\$2 \$1;
+#X obj 371 461 pack f f \$0;
+#X obj 351 284 list length;
+#X obj 324 265 t a a;
+#X obj 324 313 prepent;
+#X obj 263 453 pack f \$0;
+#X msg 263 472 \; \$2-tr\$1 bang;
+#X obj 324 332 route 1 2;
+#X connect 0 0 6 0;
+#X connect 1 0 4 0;
+#X connect 1 1 4 1;
+#X connect 2 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 7 1;
+#X connect 6 0 7 0;
+#X connect 6 1 5 0;
+#X connect 7 0 10 0;
+#X connect 8 0 9 0;
+#X connect 10 0 8 0;
+#X connect 10 1 2 0;
 #X restore 168 274 pd tog;
 #X obj 258 274 s \$0-cpatswitch;
 #N canvas 0 0 1600 849 play 0;
@@ -488,7 +501,7 @@
 #X connect 48 0 16 0;
 #X connect 49 0 17 0;
 #X restore 283 114 pd vtogreadwrite;
-#N canvas 0 29 800 849 saver 0;
+#N canvas 1680 29 1600 871 saver 0;
 #X obj 94 206 r \$0-save;
 #X obj 154 225 route bang symbol;
 #X obj 203 256 symbol \$1;
@@ -628,10 +641,7 @@ enter one in the symbol box);
 #X text 470 146 WARNING: be sure to change the paths within the "pd
 saver" and "pd loader" sub-patches before you attempt to save \; it's
 unlikely that the path i use exists on your system.;
-#X text 474 427 sending a "set [x] [y] [value]" message will change
-the value of the toggle for the specified box on the currently displayed
-pattern. remember that x and y are both indexed from zero!;
-#X text 475 476 the "cp" button will copy the previous pattern to the
+#X text 475 509 the "cp" button will copy the previous pattern to the
 current one. if you want to copy a different pattern \, you can send
 a "copy [from] [to]" message to copy from whichever pattern you want.
 ;
@@ -654,13 +664,13 @@ the pattern being played. since there are 4 outputs \, you can have
 #X text 473 391 the "go" button (as well as sending a "go" message)
 changes the pattern playing on the first outlet to the one currently
 displayed.;
-#X text 475 526 sending a "bypass [number] [value]" message will send
+#X text 475 559 sending a "bypass [number] [value]" message will send
 the value to the outlet specified by the number. remember that outlets
 are indexed from zero.;
 #X obj 55 198 route bang float set toggle tog play pat go copy bypass
 ;
 #X obj 349 217 s \$0-bypass;
-#N canvas 0 0 1600 849 seq 0;
+#N canvas 1680 29 1600 871 seq 0;
 #X obj 199 54 inlet;
 #X obj 199 73 % 16;
 #X obj 199 92 int;
@@ -670,7 +680,6 @@ are indexed from zero.;
 #X obj 294 240 f;
 #X obj 316 295 pack f f \$0;
 #X obj 294 259 t f f;
-#X obj 347 276 map 11 1 10 0;
 #X text 233 84 here's some math to make sure we get good numbers.;
 #X text 458 237 here's stuff to change the colors of the tgls.;
 #X obj 199 338 s \$0-seq;
@@ -678,20 +687,21 @@ are indexed from zero.;
 color 13 \; \$2-tr\$1 color 13;
 #X msg 316 314 \; \$3-tr\$1 color \$2 \; \$3-tr\$1 color \$2 \; \$3-tr\$1
 color \$2 \; \$3-tr\$1 color \$2;
+#X obj 347 276 map 1 1 1 1 10 10 10 10;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 5 0;
-#X connect 3 0 12 0;
-#X connect 4 0 13 0;
+#X connect 3 0 11 0;
+#X connect 4 0 12 0;
 #X connect 5 0 6 1;
 #X connect 5 1 6 0;
 #X connect 5 2 4 0;
 #X connect 6 0 8 0;
-#X connect 7 0 14 0;
+#X connect 7 0 13 0;
 #X connect 8 0 7 0;
-#X connect 8 1 9 0;
-#X connect 9 0 7 1;
+#X connect 8 1 14 0;
+#X connect 14 0 7 1;
 #X restore 84 274 pd seq;
 #X floatatom 139 0 3 0 127 0 - #0-vr #0-vs;
 #X obj -13 349 outlet;
@@ -701,27 +711,35 @@ color \$2 \; \$3-tr\$1 color \$2;
 #X obj 224 160 loadbang;
 #X msg 224 179 play 1 1 \, play 2 2 \, play 3 3;
 #X obj 291 50 s \$0-playpat0;
-#X connect 16 0 66 0;
+#X obj 1 179 r anaseq;
+#X text 474 427 sending a "set [x] [value]" message will change the
+value of the slider for the specified x-index on the currently displayed
+pattern. remember that x is indexed from zero!;
+#X text 475 467 sending a "tog [x] [value]" message will change the
+value of the toggle for the specified x-index on the currently displayed
+pattern.;
+#X connect 16 0 65 0;
 #X connect 37 0 38 1;
-#X connect 38 0 76 0;
-#X connect 39 0 68 0;
-#X connect 44 0 70 0;
-#X connect 44 1 71 0;
-#X connect 44 2 72 0;
-#X connect 44 3 73 0;
+#X connect 38 0 75 0;
+#X connect 39 0 67 0;
+#X connect 44 0 69 0;
+#X connect 44 1 70 0;
+#X connect 44 2 71 0;
+#X connect 44 3 72 0;
 #X connect 51 0 49 0;
 #X connect 52 0 50 0;
 #X connect 55 0 38 0;
-#X connect 66 0 39 0;
-#X connect 66 1 68 0;
-#X connect 66 2 40 0;
-#X connect 66 3 41 0;
-#X connect 66 4 41 0;
-#X connect 66 5 43 0;
-#X connect 66 6 42 0;
-#X connect 66 7 54 0;
-#X connect 66 8 56 0;
-#X connect 66 9 67 0;
-#X connect 74 0 75 0;
-#X connect 75 0 66 0;
+#X connect 65 0 39 0;
+#X connect 65 1 67 0;
+#X connect 65 2 40 0;
+#X connect 65 3 41 0;
+#X connect 65 4 41 0;
+#X connect 65 5 43 0;
+#X connect 65 6 42 0;
+#X connect 65 7 54 0;
+#X connect 65 8 56 0;
+#X connect 65 9 66 0;
+#X connect 73 0 74 0;
+#X connect 74 0 65 0;
+#X connect 76 0 65 0;
 #X coords 0 -1 1 1 208 163 1 10 0;

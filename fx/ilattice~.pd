@@ -1,0 +1,58 @@
+#N canvas 1680 29 1600 871 10;
+#X obj 100 121 vsl 11 70 -1 1 0 1 empty empty empty 20 8 0 8 -262144
+-1 -1 6900 1;
+#X msg 90 331 rc 0 \$1;
+#X obj 111 121 vsl 11 70 -1 1 0 1 empty empty empty 20 8 0 8 -262144
+-1 -1 700 1;
+#X obj 122 121 vsl 11 70 -1 1 0 1 empty empty empty 20 8 0 8 -262144
+-1 -1 6900 1;
+#X obj 133 121 vsl 11 70 -1 1 0 1 empty empty empty 20 8 0 8 -262144
+-1 -1 6900 1;
+#X obj 144 121 vsl 11 70 -1 1 0 1 empty empty empty 20 8 0 8 -262144
+-1 -1 6900 1;
+#X obj 155 121 vsl 11 70 -1 1 0 1 empty empty empty 20 8 0 8 -262144
+-1 -1 4876 1;
+#X obj 166 121 vsl 11 70 -1 1 0 1 empty empty empty 20 8 0 8 -262144
+-1 -1 6900 1;
+#X obj 177 121 vsl 11 70 -1 1 0 1 empty empty empty 20 8 0 8 -262144
+-1 -1 6900 1;
+#X msg 119 307 rc 1 \$1;
+#X msg 151 332 rc 2 \$1;
+#X msg 180 308 rc 3 \$1;
+#X msg 212 331 rc 4 \$1;
+#X msg 241 307 rc 5 \$1;
+#X msg 273 332 rc 6 \$1;
+#X msg 302 308 rc 7 \$1;
+#X floatatom 107 73 5 -1 1 0 - - -;
+#X obj 373 392 lattice~ 8;
+#X obj 373 238 inlet~;
+#X obj 373 411 outlet~;
+#X obj 107 54 lb 0;
+#X connect 0 0 1 0;
+#X connect 1 0 17 0;
+#X connect 2 0 9 0;
+#X connect 3 0 10 0;
+#X connect 4 0 11 0;
+#X connect 5 0 12 0;
+#X connect 6 0 13 0;
+#X connect 7 0 14 0;
+#X connect 8 0 15 0;
+#X connect 9 0 17 0;
+#X connect 10 0 17 0;
+#X connect 11 0 17 0;
+#X connect 12 0 17 0;
+#X connect 13 0 17 0;
+#X connect 14 0 17 0;
+#X connect 15 0 17 0;
+#X connect 16 0 0 0;
+#X connect 16 0 2 0;
+#X connect 16 0 3 0;
+#X connect 16 0 4 0;
+#X connect 16 0 5 0;
+#X connect 16 0 6 0;
+#X connect 16 0 7 0;
+#X connect 16 0 8 0;
+#X connect 17 0 19 0;
+#X connect 18 0 17 0;
+#X connect 20 0 16 0;
+#X coords 0 -1 1 1 88 94 1 100 100;

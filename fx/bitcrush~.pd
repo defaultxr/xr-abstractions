@@ -1,10 +1,10 @@
-#N canvas 800 0 800 849 10;
+#N canvas 1680 29 1600 871 10;
 #X obj 62 42 inlet~;
 #X obj 63 121 samphold~;
 #X obj 114 97 phasor~;
-#X obj 124 46 inlet;
+#X obj 131 46 inlet;
 #X obj 63 149 outlet~;
-#X floatatom 120 70 5 0 0 0 - - -;
+#X floatatom 127 70 5 0 0 0 - - -;
 #X obj 202 4 lb \$1 44099;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
@@ -12,4 +12,4 @@
 #X connect 3 0 5 0;
 #X connect 5 0 2 0;
 #X connect 6 0 5 0;
-#X coords 0 -1 1 1 82 16 1 70 70;
+#X coords 0 -1 1 1 89 16 1 70 70;

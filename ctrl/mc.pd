@@ -1,4 +1,4 @@
-#N canvas 0 0 1600 849 10;
+#N canvas 0 29 1600 849 10;
 #X obj 82 117 inlet;
 #X obj 325 326 symbol \$1;
 #X obj 168 76 r all-clients;

@@ -1,4 +1,4 @@
-#N canvas 0 0 1600 849 10;
+#N canvas 1680 29 1600 871 10;
 #X obj 147 181 plugin~ rateShifter;
 #X msg 147 161 control #1 \$1;
 #X obj 179 73 inlet;

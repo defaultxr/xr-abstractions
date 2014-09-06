@@ -1,11 +1,11 @@
-#N canvas 0 0 800 849 10;
+#N canvas 1680 29 1600 871 10;
 #X obj 319 69 inlet;
 #X obj 280 153 phasor~;
 #X obj 280 175 outlet~;
 #X obj 217 87 inlet~;
 #X obj 319 88 route float freq bang;
 #X msg 401 136 0;
-#X text -21 131 sndcf~ - soundfile control by frequency. connect the
+#X text 18 207 sndcf~ - soundfile control by frequency. connect the
 audio outlet to snd~'s audio inlet and snd~'s message outlet to sndcf~'s
 message inlet. then you can send an audio signal into sndcf~ representing
 the frequency you want to play the sound at. for example \, [sig~ 1]

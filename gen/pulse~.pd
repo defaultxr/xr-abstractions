@@ -1,4 +1,4 @@
-#N canvas 0 29 1600 849 10;
+#N canvas 1680 29 1600 871 10;
 #X obj 112 117 outlet~;
 #X obj 112 41 inlet~;
 #X obj 112 60 phasor~ \$1;

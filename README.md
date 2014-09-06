@@ -1,12 +1,12 @@
 defaultxr's pure data abstractions
 ==================================
-This is a collection of pure data abstractions i've made. This repository is now officially the place to find my abstractions.
+This is a collection of pure data abstractions I've made. [If you find these useful, please consider donating to me to support the development of these abstractions and other tools.](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=2NCRJC5JSZ5KN&lc=US&item_name=defaultxr&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted)
 
 Please notify me of any bugs you find while using these abstractions.
 
-I'm still working on writing help files for each of these. This collection is under constant development, so things might change, get renamed, removed, etc. But it's fairly likely it won't cause you any problems.
+I'm still working on writing help files for each of these. This collection is under constant development, so things might change, get renamed, removed, etc. But hopefully it won't cause you too many problems.
 
-Some of the abstractions i find most useful are: `map`, `snd~` (and all the objects whose name includes "snd"), `o~`, `view~`, `drumseq`, `rrange`, `rchoice`, `bpmm`, `tb303~`, `rmap`, and `unmap`.
+Some of the abstractions I find most useful are: `map`, `snd~` (and all the objects whose name includes "snd"), `o~`, `view~`, `drumseq`, `rrange`, `rchoice`, `bpmm`, `tb303~`, `rmap`, and `unmap`.
 
 Below is a quick overview of the included abstractions.
 
@@ -135,7 +135,7 @@ abstractions for generating sound
 
 `fluid~` - FluidSynth (SoundFont) interface.
 
-`grain~` - one "grain" of a sound file. part of `granular~`. needs to be fixed.
+`grain~` - one "grain" of a sound file. WIP.
 
 `granular~` - supposed to be a granular synth, but i didn't finish it. i might do that eventually.
 
@@ -421,6 +421,9 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * rename `adsr` and `adsr~` to just `adr` and `adr~` and remove the sustain functionality
 * remake `adsr` and `adsr~` into actual ADSR envelopes
 * rename `bswitcher` and the other similar abstractions so that their names are more logical and easy to remember
+  * `bswitcher~` -> `switcher~`
+  * `switcher~` -> `crossfade~`
+  * `sswitcher~` -> `scrossfade~`
 * `atc`, `cta`, `atr`, and the others should probably be renamed to something like `btu`, `utb`, and `btr`, since the technical term for a signal from 0 to 1 is "unipolar" and the technical term for a signal from -1 to 1 is "bipolar"
 * see if there are better ways to analyze the "volume" of a sound for `scroll~`
 * fix `mcb`, `mck`, `m-client`, `mcl`, `mc`, `mct`, `mstr`, etc (i've redone these quite a few times already and i still haven't quite gotten them right)
@@ -436,14 +439,18 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * update `snd~` so that you can also index the sound by samples if the index is above 1.
 * finish `looper~`
 * replace `drumseq` with the new `drumseq2`
-* rename `sswitcher~` and `switcher~` to `sfader~` and `fader~`, respectively.
 * finish `grain~` and `granular~`
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 
 * make `keyonchg`, `keyonoff`, etc work properly (pd's `keyname`, `key`, `keyup`, etc, all detect from keyboard "repeat" events rather than actual physical keypresses or releases)
+  * actually, this is probably because i'm using X, and X sucks. can't wait for wayland!
 * remove `span~` (pd's `pan~` object would need to accept an argument for this to happen)
 * make `kfilename` (and all abstractions that use it) able to handle filenames with spaces (should be possible in pd 0.44)
+
+Here are a few ideas i have:
+
+* make a bunch of abstractions for "patterns" based off of SuperCollider's pattern library.
 
 Help files still need to be written for:
 
