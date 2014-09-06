@@ -16,10 +16,10 @@ Some of the abstractions I find most useful:
 * `rchoice` - random choice. choose randomly from a list provided as arguments or to the right inlet.
 * `bpmm` - clock for use with sequencers like `drumseq`, `anaseq`, etc.
 * `tb303~` - fake tb303 (simple and quick synth)
-* `rmap` - receive map (quickly create a lot of `receive` objects just by specifying them as arguments to this object)
+* `rmap` - receive map (quickly create a lot of `receive` objects just by specifying them as arguments to `rmap`)
 * `unmap` - map inputs to their indexes in a list (the functional inverse of `map`)
 
-Below is a quick overview of the included abstractions.
+Below is a quick overview of most of the included abstractions.
 
 analysis
 ========
