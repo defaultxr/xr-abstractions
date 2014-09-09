@@ -433,20 +433,28 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * remake `adsr` and `adsr~` into actual ADSR envelopes
 * `atc`, `cta`, `atr`, and the others should probably be renamed to something like `btu`, `utb`, and `btr`, since the technical term for a signal from 0 to 1 is "unipolar" and the technical term for a signal from -1 to 1 is "bipolar"
 * see if there are better ways to analyze the "volume" of a sound for `scroll~`
-* fix `mcb`, `mck`, `m-client`, `mcl`, `mc`, `mct`, `mstr`, etc (i've redone these quite a few times already and i still haven't quite gotten them right)
+* fix `mc` and `master` and the stuff that depends on them
+  * `mcb`
+  * `mck`
+  * `m-client` (?)
+  * `mcl`
+  * `mct`
+  * `mstr` (?)
+  * have `mc` output empty symbol if `master` isn't detected (so stuff like `o~` doesn't have the wrong "name" from a save)
+  * FIX `master` NAME ALLOCATION POSSIBLE FREEZE(!)
 * make a better `analog~`
 * remove `seqfill` maybe.
 * redo `ft` maybe.
 * implement voice stealing in `polys`
 * get `tracker` to use `kfilename`
-* make `randomsong~` use `mp3conv`
+* make `randomsong~` use `mp3conv` and fix `mp3conv`
 * finish `proll`
 * add keyboard shortcuts to `drumseq` and other "bigger" abstractions.
 * update `snd~` so that you can also index the sound by samples if the index is above 1.
 * finish `looper~`
 * replace `drumseq` with the new `drumseq2`
 * finish `grain~` and `granular~`
-* remove a lot of the stuff in "fx", since a lot of it sucks and isn't even original material.
+* remove a lot of the stuff in "fx", since a lot of it either sucks or isn't even original material.
 * delete `Adder~`, `Adder4~`, and `Adder_voice~`
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
@@ -459,6 +467,8 @@ Here are some things i'd like to be able to do, but can't (due to either bugs/mi
 Here are a few ideas i have:
 
 * make a bunch of abstractions for "patterns" based off of SuperCollider's pattern library.
+* make `cline` (controllable line using `mc` and keyboard shortcuts or messages)
+  * make `o~` and the like use `cline` for the volume controls
 
 Help files still need to be written for:
 
