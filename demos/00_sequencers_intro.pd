@@ -1,4 +1,4 @@
-#N canvas 0 0 1600 849 10;
+#N canvas 1680 29 1600 871 10;
 #X obj 58 217 tracker;
 #X obj 383 219 drumseq;
 #X obj 651 220 anaseq;
@@ -15,7 +15,6 @@
 #X floatatom 711 395 5 0 0 0 - - -;
 #X floatatom 777 397 5 0 0 0 - - -;
 #X floatatom 849 397 5 0 0 0 - - -;
-#X obj 63 409 print tracker;
 #X text 61 8 defaultxr's sequencer abstractions;
 #X text 55 42 these are all slightly more complex sequencers. [tracker]
 is basically a list of messages that can be edited using keyboard shortcuts
@@ -25,7 +24,7 @@ there are 4 rows of 16 toggle boxes \, each box representing a step
 it too has multiple patterns and outlets. each step in the [anaseq]
 can be enabled or disabled as well using the row of toggles at the
 bottom.;
-#X text 428 83 [bpmm] is a beats-per-minute abstraction. the left outlet
+#X text 471 52 [bpmm] is a beats-per-minute abstraction. the left outlet
 sends bangs on the downbeat \, as well as diagnostic messages (open
 the abstraction for information). the second outlet outputs a bang
 on each 16th note \, and the third outlet outputs floats ranging from
@@ -36,9 +35,26 @@ the bpm.;
 #X text 342 481 the best thing you can do is open each sequencer abstraction
 and read the comments inside them! they're all fairly complex but relatively
 simple to use once you understand them.;
-#X obj -152 227 boxseq;
-#X text -146 368 also needed: [sbox];
-#X connect 0 0 12 0;
+#X text -107 404 also needed: [sbox];
+#X floatatom -82 309 5 0 0 0 - - -;
+#X obj -82 227 boxseq;
+#X obj 58 409 tview;
+#X obj 875 221 pattseq;
+#X floatatom 872 343 5 0 0 0 - - -;
+#X floatatom 961 329 5 0 0 0 - - -;
+#X floatatom 1033 328 5 0 0 0 - - -;
+#X floatatom 1112 321 5 0 0 0 - - -;
+#X obj 357 447 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 420 450 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 498 448 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 557 450 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 363 359 drumseq2;
+#X floatatom 594 443 5 0 0 0 - - -;
+#X connect 0 0 19 0;
 #X connect 1 0 3 0;
 #X connect 1 1 4 0;
 #X connect 1 2 5 0;
@@ -47,7 +63,19 @@ simple to use once you understand them.;
 #X connect 2 1 9 0;
 #X connect 2 2 10 0;
 #X connect 2 3 11 0;
-#X connect 7 1 17 0;
+#X connect 7 1 18 0;
+#X connect 7 1 29 0;
 #X connect 7 2 0 0;
 #X connect 7 2 1 0;
 #X connect 7 2 2 0;
+#X connect 7 2 20 0;
+#X connect 18 0 17 0;
+#X connect 20 0 21 0;
+#X connect 20 1 22 0;
+#X connect 20 2 23 0;
+#X connect 20 3 24 0;
+#X connect 29 0 25 0;
+#X connect 29 1 26 0;
+#X connect 29 2 27 0;
+#X connect 29 3 28 0;
+#X connect 29 4 30 0;

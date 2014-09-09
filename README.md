@@ -136,7 +136,7 @@ demonstrations of the included abstractions (definitely open these if you want a
 fx
 ===
 
-abstractions for many LADSPA effects, as well as interfaces for filters, etc.
+abstractions for many LADSPA effects, as well as interfaces for filters, etc. i might end up deleting a lot of these later since there's so many and it's hard to maintain them in a quality way.
 
 gen
 ===
@@ -431,10 +431,6 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 
 * rename `adsr` and `adsr~` to just `adr` and `adr~` and remove the sustain functionality
 * remake `adsr` and `adsr~` into actual ADSR envelopes
-* rename `bswitcher` and the other similar abstractions so that their names are more logical and easy to remember
-  * `bswitcher~` -> `switcher~`
-  * `switcher~` -> `crossfade~`
-  * `sswitcher~` -> `scrossfade~`
 * `atc`, `cta`, `atr`, and the others should probably be renamed to something like `btu`, `utb`, and `btr`, since the technical term for a signal from 0 to 1 is "unipolar" and the technical term for a signal from -1 to 1 is "bipolar"
 * see if there are better ways to analyze the "volume" of a sound for `scroll~`
 * fix `mcb`, `mck`, `m-client`, `mcl`, `mc`, `mct`, `mstr`, etc (i've redone these quite a few times already and i still haven't quite gotten them right)
@@ -445,12 +441,13 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * get `tracker` to use `kfilename`
 * make `randomsong~` use `mp3conv`
 * finish `proll`
-* update `boxseq` and make it 4x4 instead of 6x6.
 * add keyboard shortcuts to `drumseq` and other "bigger" abstractions.
 * update `snd~` so that you can also index the sound by samples if the index is above 1.
 * finish `looper~`
 * replace `drumseq` with the new `drumseq2`
 * finish `grain~` and `granular~`
+* remove a lot of the stuff in "fx", since a lot of it sucks and isn't even original material.
+* delete `Adder~`, `Adder4~`, and `Adder_voice~`
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 
@@ -498,104 +495,45 @@ ctrl:
 * `switcher`
 
 fx:
-* `aliasing~`
-* `ampitchshift~`
 * `autocap~`
-* `autophaser~`
-* `bitcrush~`
 * `bitflip~`
-* `bodeshifter~`
 * `cfilter~`
 * `chaospad~`
-* `chebyshev~`
-* `chebys~`
 * `chorus~`
-* `combsplit~`
 * `comp~`
-* `cphaser~`
-* `crossover~`
 * `cvol~`
-* `decimator~`
-* `declip~`
-* `delayorama~`
 * `delay~`
 * `dist1~`
 * `dist2~`
-* `divider~`
-* `djeq~`
-* `djflanger~`
-* `dyson~`
 * `envdelay~`
-* `exp_decay~`
 * `expspect~`
-* `fad~`
-* `fastod~`
 * `flange~`
 * `flanger~`
-* `fmosc~`
-* `freqtracker~`
 * `gate~`
 * `gater~`
-* `gband~`
-* `gbutthigh~`
-* `giantflange~`
-* `gl_xover~`
-* `gsm~`
-* `gverb~`
 * `hardgate~`
-* `hardlimit~`
-* `hermes~`
-* `hilbert~`
 * `icomb~`
 * `idelayorama~`
 * `ifilter~`
 * `ifv~`
 * `imoog~`
-* `impulse2~`
 * `isvf~`
 * `kaoss`
-* `karaoke~`
-* `lofi~`
 * `mcomb~`
 * `mfv~`
 * `mmf~`
-* `multivoicechorus~`
 * `phaser~`
 * `phaserr~`
 * `pingpong~`
-* `pitchscalerhq~`
-* `pitchscaler~`
-* `plate~`
-* `pointercast~`
 * `rateshift2~`
 * `rateshifter~`
 * `rateshift~`
-* `retroflange~`
-* `revdelay~`
 * `reverb~`
-* `satan~`
-* `sc2~`
 * `sdly~`
-* `shaper~`
-* `sidechain~`
-* `sifter~`
-* `sinus~`
 * `skip~`
 * `soft~`
 * `sqtremolo~`
 * `svff~`
-* `tap_autopanner~`
-* `tap_chorus_flanger~`
-* `tap_doubler~`
-* `tapedelay~`
-* `tap_pink_noise~`
-* `tap_reflector~`
-* `tap_stereo_echo~`
-* `tap_vibrato~`
-* `valve~`
-* `valverect~`
-* `waveshaper~`
-* `waveterrain~`
 
 gen:
 * `analog~`
