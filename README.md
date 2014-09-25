@@ -1,6 +1,6 @@
 defaultxr's pure data abstractions
 ==================================
-This is a collection of pure data abstractions I've made. [If you find these useful, please consider donating to me to support the development of these abstractions and other tools.](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=2NCRJC5JSZ5KN&lc=US&item_name=defaultxr&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted)
+This is a collection of abstractions I've made for Pure Data. [If you find these useful, please consider donating to me to support the development of these abstractions and other tools.](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=2NCRJC5JSZ5KN&lc=US&item_name=defaultxr&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted)
 
 Please notify me of any bugs you find while using these abstractions.
 
@@ -456,6 +456,8 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * finish `grain~` and `granular~`
 * remove a lot of the stuff in "fx", since a lot of it either sucks or isn't even original material.
 * delete `Adder~`, `Adder4~`, and `Adder_voice~`
+* move `master` to ctrl
+* make an "examples" folder full of better examples instead of cramming as many abstractions as possible into crappy "demos"
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 
@@ -474,7 +476,6 @@ Help files still need to be written for:
 
 ctrl:
 * `cb`
-* `c`
 * `inputn`
 * `input`
 * `ispigot~`
