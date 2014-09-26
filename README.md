@@ -57,8 +57,6 @@ ctrl
 ====
 abstractions for controlling things, either via keyboard or by clicking.
 
-`bswitcher~` - graphically switches between 2 audio inputs. there are 3 inlets: the middle is a message inlet accepting floats to select the input to send to the outlet, while the left and right inlets are the audio inputs.
-
 `capslock` - shows whether capslock is on or off and also outputs 1 or 0 depending.
 
 `cb` - control bend. shows the current value of the MIDI bend parameter, also adjusting its range to 0-127.
@@ -66,6 +64,8 @@ abstractions for controlling things, either via keyboard or by clicking.
 `cnum` - control number. use your keyboard's numpad to increase or decrease a number. use 8 to increase it or 2 to decrease it. probably won't work if your numlock is on.
 
 `c` - midi continuous controller interface
+
+`crossfade~` - graphical "crossfader". see also: `scrossfade~`
 
 `editmode` - detect whether edit mode is on or off.
 
@@ -121,11 +121,11 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 `router` - routes one input (left inlet) to either the left or right outlet, depending on the state of the ratio control. the right inlet allows you to switch the outlet.
 
+`scrossfade~` - graphical stereo "crossfader". see also: `crossfade~`
+
 `sndsel` - sound selector. allows you to select a sound by browsing folders graphically, because `playlist` kind of sucks. it's a work-in-progress, but it's probably ready for regular use.
 
-`sswitcher~` - stereo fader. might rename this to `sfader~` in the future.
-
-`switcher~` - fader. might rename this to `fader~` in the future.
+`switcher~` - graphically switches between 2 audio inputs. there are 3 inlets: the middle is a message inlet accepting floats to select the input to send to the outlet, while the left and right inlets are the audio inputs.
 
 `switcher` - switches between outputting the left inlet or the right inlet graphically via a ratio control. you can also change the inlet by sending a "switch" message to the first inlet.
 
