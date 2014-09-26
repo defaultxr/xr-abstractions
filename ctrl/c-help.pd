@@ -5,30 +5,35 @@
 #X text 344 128 c - receive midi control value;
 #X obj 61 310 osc~ 440;
 #X obj 79 358 o~;
-#X floatatom 100 467 5 0 0 0 - - -;
-#X obj 76 488 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X floatatom 100 497 5 0 0 0 - - -;
+#X obj 76 518 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X text 339 166 [c] is a convenient GUI and interface to MIDI CC messages.
 It will output the CC values from the CC number provided as the first
 argument.;
-#X obj 93 183 c 5;
-#X obj 100 434 c 5 50;
-#X text 346 224 You can also provide more arguments to [c] for additional
+#X text 339 211 You can also provide more arguments to [c] for additional
 functionality:;
-#X text 356 261 - provide "B" as an argument to only output "bang"
+#X text 349 248 - provide "B" as an argument to only output "bang"
 when the CC value is 127;
-#X text 356 291 - provide "R" as an argument to use [c]'s relative
+#X text 349 278 - provide "R" as an argument to use [c]'s relative
 mode.;
-#X text 356 311 - provide "I" as an argument to use [c]'s inverted
+#X text 349 298 - provide "I" as an argument to use [c]'s inverted
 relative mode.;
-#X text 356 339 - provide any other symbol as an argument to prefix
+#X text 349 326 - provide any other symbol as an argument to prefix
 [c]'s numeric output with that symbol.;
-#X text 356 369 - provide a number as an argument to scale [c]'s numeric
+#X text 349 356 - provide a number as an argument to scale [c]'s numeric
 output between 0 and that number.;
 #X obj 132 327 c 1 vol;
+#X obj 93 183 c 5;
+#X obj 100 464 c 5 50;
+#X floatatom 100 446 5 0 0 0 - - -;
+#X obj 103 429 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
 #X connect 3 0 4 0;
-#X connect 8 0 0 0;
-#X connect 8 0 1 0;
-#X connect 9 0 6 0;
-#X connect 9 0 5 0;
-#X connect 16 0 4 1;
+#X connect 14 0 4 1;
+#X connect 15 0 0 0;
+#X connect 15 0 1 0;
+#X connect 16 0 6 0;
+#X connect 16 0 5 0;
+#X connect 17 0 16 0;
+#X connect 18 0 17 0;

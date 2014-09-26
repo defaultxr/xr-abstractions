@@ -1,18 +1,18 @@
 #N canvas 1680 29 1600 871 10;
 #X obj 396 158 inlet;
 #X obj 103 134 hsl 100 10 0 1000 0 0 \$0-env1 \$0-env env 0 5 0 10
--262144 -1 -1 8500 1;
+-262144 -1 -1 3700 1;
 #X obj 103 124 hsl 100 10 0 4 0 0 \$0-res1 \$0-res res 0 5 0 10 -262144
--1 -1 7700 1;
+-1 -1 9200 1;
 #X obj 103 114 hsl 100 10 0 127 0 0 \$0-cof1 \$0-cof cutoff 0 5 0 10
--262144 -1 -1 800 1;
+-262144 -1 -1 7742 1;
 #X obj 103 154 hsl 100 10 0 4 0 0 \$0-acc1 \$0-acc accent 0 5 0 10
 -262144 -1 -1 0 1;
 #X obj 103 144 hsl 100 10 3 700 0 0 \$0-dcy1 \$0-dcy decay 0 5 0 10
--262144 -1 -1 2000 1;
+-262144 -1 -1 0 1;
 #X obj 347 285 outlet~;
-#X obj 177 100 hradio 14 1 0 2 \$0-osc \$0-osci square 0 -5 0 10 -262144
--1 -1 1;
+#X obj 177 100 hradio 14 1 0 2 \$0-osc \$0-osci saw 0 -5 0 10 -262144
+-1 -1 0;
 #N canvas 1680 29 1600 871 porta 0;
 #X obj 229 110 inlet;
 #X obj 229 189 s \$0-porta;
@@ -91,20 +91,18 @@
 #N canvas 1680 29 1600 871 res 0;
 #X obj 429 405 inlet;
 #X obj 429 477 s \$0-res;
-#X obj 465 424 mrange 1;
 #X obj 465 405 inlet;
+#X obj 465 424 mrange 4;
 #X connect 0 0 1 0;
-#X connect 2 0 1 0;
-#X connect 3 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
 #X restore 515 266 pd res;
 #N canvas 1680 29 1600 871 cutoff 0;
 #X obj 469 104 inlet;
 #X obj 469 176 s \$0-cof;
 #X obj 505 104 inlet;
-#X obj 505 123 mtof;
 #X connect 0 0 1 0;
-#X connect 2 0 3 0;
-#X connect 3 0 1 0;
+#X connect 2 0 1 0;
 #X restore 455 266 pd cutoff;
 #N canvas 1680 29 1600 871 env 0;
 #X obj 492 336 inlet;
@@ -115,8 +113,6 @@
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
 #X restore 557 266 pd env;
-#X obj 396 177 route float porta mporta cutoff mcutoff res mres env
-menv decay mdecay accent maccent osc mosc;
 #N canvas 1680 29 1600 871 decay 0;
 #X obj 607 250 + 3;
 #X obj 557 319 s \$0-dcy;
@@ -168,21 +164,23 @@ menv decay mdecay accent maccent osc mosc;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X restore 653 266 pd accent;
-#X connect 0 0 13 0;
+#X obj 396 177 route float porta mporta cutoff mcutoff res mres env
+menv decay mdecay accent maccent osc mosc;
+#X connect 0 0 16 0;
 #X connect 9 0 6 0;
-#X connect 13 0 9 0;
-#X connect 13 1 8 0;
-#X connect 13 2 8 1;
-#X connect 13 3 11 0;
-#X connect 13 4 11 1;
-#X connect 13 5 10 0;
-#X connect 13 6 10 1;
-#X connect 13 7 12 0;
-#X connect 13 8 12 1;
-#X connect 13 9 14 0;
-#X connect 13 10 14 1;
-#X connect 13 11 16 0;
-#X connect 13 12 16 1;
-#X connect 13 13 15 0;
-#X connect 13 14 15 1;
+#X connect 16 0 9 0;
+#X connect 16 1 8 0;
+#X connect 16 2 8 1;
+#X connect 16 3 11 0;
+#X connect 16 4 11 1;
+#X connect 16 5 10 0;
+#X connect 16 6 10 1;
+#X connect 16 7 12 0;
+#X connect 16 8 12 1;
+#X connect 16 9 13 0;
+#X connect 16 10 13 1;
+#X connect 16 11 15 0;
+#X connect 16 12 15 1;
+#X connect 16 13 14 0;
+#X connect 16 14 14 1;
 #X coords 0 -1 1 1 105 66 1 100 100;
