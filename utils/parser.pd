@@ -1,14 +1,14 @@
-#N canvas 0 0 1600 849 10;
+#N canvas 1680 29 1600 871 10;
 #X obj 200 46 inlet;
 #X text 297 35 parser - takes lists or symbols for input and evaluates
 "functions" \, replacing them with their result.;
 #X obj 200 65 list;
 #X obj 200 84 t a b;
-#X msg 200 236 _;
+#X msg 200 236 makesymbol0.25b 0 %s.24;
 #X msg 227 216 set;
 #X msg 200 197 add2 \$1;
 #X obj 200 103 list-drip;
-#N canvas 0 0 1600 849 functions 0;
+#N canvas 2480 29 800 871 functions 0;
 #X obj 109 62 inlet;
 #X msg 100 611;
 #X obj 100 630 l2s;
@@ -64,7 +64,7 @@
 #X msg 125 581 add2 \$1;
 #X obj 125 529 route float;
 #X obj 133 556 symbol;
-#X msg 190 327 bang \, set;
+#X msg 202 325 bang \, set;
 #X msg 125 472;
 #X obj 109 101 chars;
 #X obj 248 142 t b b b;

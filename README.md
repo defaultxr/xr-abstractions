@@ -458,6 +458,7 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * delete `Adder~`, `Adder4~`, and `Adder_voice~`
 * move `master` to ctrl
 * make an "examples" folder full of better examples instead of cramming as many abstractions as possible into crappy "demos"
+* rename `scroll~` to something more descriptive
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 

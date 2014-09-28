@@ -1,4 +1,4 @@
-#N canvas 0 0 800 849 10;
+#N canvas 2480 29 800 871 10;
 #X obj 40 2 inlet;
 #X obj 76 100 loadbang;
 #X obj 40 136 s2l;
@@ -8,7 +8,7 @@
 #X text 165 102 converts a symbol to a list of characters. see also:
 sym;
 #X obj 40 21 route float;
-#X obj 40 40 ftos;
+#X obj 40 40 makesymbol %s;
 #X connect 0 0 7 0;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
