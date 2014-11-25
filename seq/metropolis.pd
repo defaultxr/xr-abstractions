@@ -1,0 +1,54 @@
+#N canvas 1680 29 1600 871 10;
+#X obj 374 446 outlet~;
+#X obj 454 446 outlet~;
+#X obj 389 337 vradio 12 1 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 401 337 vradio 12 1 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 413 337 vradio 12 1 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 425 337 vradio 12 1 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 437 337 vradio 12 1 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 449 337 vradio 12 1 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 461 337 vradio 12 1 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 473 337 vradio 12 1 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 389 239 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 401 239 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 413 239 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 425 239 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 437 239 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 449 239 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 461 239 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 473 239 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 389 159 vsl 12 75 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 401 159 vsl 12 75 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 413 159 vsl 12 75 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 425 159 vsl 12 75 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 437 159 vsl 12 75 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 449 159 vsl 12 75 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 461 159 vsl 12 75 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 473 159 vsl 12 75 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X text 291 84 Intellijel Metropolis Eurorack Sequencer clone;
+#X text 518 286 pulse count;
+#X text 648 358 gate mode;
