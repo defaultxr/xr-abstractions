@@ -1,7 +1,0 @@
-#N canvas 231 229 775 641 10;
-#X obj 109 110 fiboverb;
-#X obj 109 77 adc~;
-#X obj 169 423 dac~;
-#X connect 0 0 2 0;
-#X connect 0 1 2 1;
-#X connect 1 0 0 0;

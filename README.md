@@ -1,10 +1,12 @@
 defaultxr's pure data abstractions
 ==================================
-This is a collection of abstractions I've made for Pure Data. [If you find these useful, please consider donating to me to support the development of these abstractions and other tools.](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=2NCRJC5JSZ5KN&lc=US&item_name=defaultxr&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted)
+This is a collection of abstractions I've made for Pure Data. It includes sequencers, GUIs, general utilities, and a few effects and synths. I'm still in the process of writing them, so consider them "beta", and expect changes if you upgrade later (which will hopefully be mentioned in commit messages). Some objects might get renamed, removed, or end up working/looking completely different later. Beware of this.
+
+I have only tested these in Pd-extended 0.43.4 on Arch Linux. Since they are just abstractions, they should work on any platform that Pd-extended runs on. I have not tested them on Pd-vanilla, but I doubt they would work since a lot of them depend on objects that are only provided by Pd-extended.
 
 Please notify me of any bugs you find while using these abstractions.
 
-I'm still working on writing help files for each of these. This collection is under constant development, so things might change, get renamed, removed, etc. But hopefully it won't cause you too many problems.
+[If you find this collection useful, please consider donating to me to support the development of these abstractions and other tools.](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=2NCRJC5JSZ5KN&lc=US&item_name=defaultxr&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted)
 
 Some of the abstractions I find most useful:
 * `map` - easy list access (useful for arpeggios, patterns, etc.)
@@ -459,6 +461,8 @@ In the future i plan to clean up a lot of these. Either by renaming them or by s
 * move `master` to ctrl
 * make an "examples" folder full of better examples instead of cramming as many abstractions as possible into crappy "demos"
 * rename `scroll~` to something more descriptive
+* finish `tb303~` (add accent function, perhaps improve GUI further)
+* make more synths (finish `hoover~`)
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 

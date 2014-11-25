@@ -10,13 +10,13 @@
 #X obj 253 216 symbol;
 #X obj 341 288 outlet;
 #X symbolatom 330 203 60 0 0 0 - - -;
-#X obj 253 153 route new;
+#X obj 253 152 route new;
 #X obj 330 94 route original time;
 #X obj 385 113 * 1000;
 #X obj 385 132 - 10000;
 #X obj 385 170 del;
 #X obj 385 151 max 0;
-#X msg 253 35 zsh /home/modula/misc/zsh/randomsong;
+#X msg 253 35 zsh /home/modula/misc/scripts/pdrandomsong;
 #X connect 0 0 16 0;
 #X connect 1 0 10 0;
 #X connect 1 1 5 0;

@@ -4,7 +4,7 @@
 "functions" \, replacing them with their result.;
 #X obj 200 65 list;
 #X obj 200 84 t a b;
-#X msg 200 236 makesymbol0.25b 0 %s.24;
+#X msg 200 236 _;
 #X msg 227 216 set;
 #X msg 200 197 add2 \$1;
 #X obj 200 103 list-drip;
