@@ -20,8 +20,8 @@ symbol.;
 #X msg 338 125 1;
 #X obj 4 -10 r c;
 #X obj 4 9 route \$1;
-#X obj 103 115 hsl 77 14 0 127 0 0 empty empty v25 -2 8 0 10 -159808
--1 -262144 1500 1;
+#X obj 103 115 hsl 77 14 0 127 0 0 empty empty v0 -2 8 0 10 -159808
+-1 -262144 0 1;
 #X obj 58 -10 r c-\$1;
 #X obj 100 -10 r c\$1;
 #X obj 136 -10 ctlin \$1;
