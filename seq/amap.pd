@@ -1,4 +1,4 @@
-#N canvas 2480 29 800 871 10;
+#N canvas 1680 29 1600 871 10;
 #X obj 730 145 dollarg;
 #X obj 478 368 list-idx;
 #X obj 757 225 list length;
@@ -176,6 +176,8 @@ an exclamation point and then the number of that item. for example
 #X msg 730 126 0;
 #X text 13 303 ins <item> <index> - insert an item into the list at
 the specified index.;
+#X text 411 61 TODO: * make index optional for ins command. * fix ins
+so that an index of -1 will append to the list.;
 #X connect 0 0 32 0;
 #X connect 1 0 30 0;
 #X connect 2 0 3 1;
