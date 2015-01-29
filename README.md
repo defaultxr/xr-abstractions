@@ -240,6 +240,8 @@ abstractions for altering or generating number streams
 
 `rangem` - scale a range to midi (0-127).
 
+`reciprocal` - outputs the reciprocal of the input.
+
 `round` - round a float to the nearest integer.
 
 `rrange` - random within a range (inclusive).
