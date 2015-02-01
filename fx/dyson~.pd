@@ -1,4 +1,4 @@
-#N canvas 0 0 800 410 10;
+#N canvas 1680 29 1600 871 10;
 #X obj 47 218 inlet~;
 #X obj 328 330 outlet~;
 #X msg 112 204 control #1 \$1;
@@ -21,8 +21,8 @@
 #X obj 397 194 min 1;
 #X obj 397 213 max 0;
 #X text 65 132 peak limit (dB);
-#X text 161 147 release time (s);
-#X text 248 148 fast compression ratio;
+#X text 151 147 release time (s);
+#X text 253 146 fast compression ratio;
 #X text 355 161 compression ratio;
 #X obj 303 161 lb \$3;
 #X obj 397 175 lb \$4;

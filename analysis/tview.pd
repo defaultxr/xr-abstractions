@@ -1,56 +1,47 @@
-#N canvas 0 29 800 849 10;
-#X obj 100 115 cnv 15 150 69 empty \$0-cnv 0
-0
-0
-0
-blargh 1 35 0 12
--90133 -262144 0;
-#N canvas 0 29 800 410 history 0;
-#X obj 324 132 inlet;
-#X obj 324 200 ilist;
-#X msg 324 181 ins 5 \$1 \, bang;
-#X obj 367 222 list length;
-#X obj 367 260 sel 1;
-#X obj 367 241 > 4;
-#X msg 367 279 rem 0;
-#X obj 324 304 outlet;
-#X obj 428 82 loadbang;
-#X obj 428 120 until;
-#X msg 428 101 5;
-#X obj 428 139 spacesym;
-#X connect 0 0 2 0;
-#X connect 1 0 3 0;
-#X connect 1 0 7 0;
-#X connect 2 0 1 0;
-#X connect 3 0 5 0;
-#X connect 4 0 6 0;
-#X connect 5 0 4 0;
-#X connect 6 0 1 0;
-#X connect 8 0 10 0;
-#X connect 9 0 11 0;
-#X connect 10 0 9 0;
-#X connect 11 0 2 0;
-#X restore 402 294 pd history;
-#X obj 300 25 inlet;
-#X obj 300 63 route bang;
-#N canvas 800 29 800 849 bang 0;
-#X obj 33 100 inlet;
-#X obj 33 194 outlet;
-#X msg 33 175 symbol ;
-#X obj 72 100 makefilename %c;
-#X obj 72 62 loadbang;
-#X msg 72 81 1;
-#X obj 33 119 bang;
-#X msg 72 119 set symbol \$1;
-#X connect 0 0 6 0;
-#X connect 2 0 1 0;
-#X connect 3 0 7 0;
-#X connect 4 0 5 0;
-#X connect 5 0 3 0;
-#X connect 6 0 2 0;
-#X connect 7 0 2 0;
-#X restore 300 175 pd bang;
-#N canvas 0 29 1600 849 cnv 0;
+#N canvas 1680 29 800 871 10;
+#X obj 100 115 cnv 15 150 69 empty \$0-cnv  
+ 
+ 
+  1 35 0 12 -90133
+-262144 0;
+#N canvas 1680 29 800 871 history 0;
+#X obj 164 64 inlet;
+#X obj 390 298 outlet;
+#X obj 343 171 l2s;
+#X msg 207 121 symbol bang;
+#X obj 164 140 list prepend list;
+#X obj 455 172 loadbang;
+#X msg 343 215 add2 \$1 \, bang;
+#X msg 343 249 list        ;
+#X msg 455 210 set \, add2 \$1 \, add2 \$1 \, add2 \$1 \, add2 \$1
+\, add2 \$1;
+#X obj 455 191 spacesym;
+#X obj 343 268 list split 1;
+#X obj 377 317 list prepend set list;
+#X obj 377 336 list trim;
+#X obj 164 83 route list bang symbol;
+#X msg 250 102 list symbol \$1;
+#X connect 0 0 13 0;
+#X connect 2 0 6 0;
+#X connect 3 0 6 0;
+#X connect 4 0 2 0;
+#X connect 5 0 9 0;
+#X connect 6 0 7 0;
+#X connect 7 0 10 0;
+#X connect 8 0 7 0;
+#X connect 9 0 8 0;
+#X connect 10 1 1 0;
+#X connect 10 1 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 7 0;
+#X connect 13 0 4 0;
+#X connect 13 1 3 0;
+#X connect 13 2 14 0;
+#X connect 13 3 2 0;
+#X connect 14 0 2 0;
+#X restore 280 203 pd history;
+#X obj 280 165 inlet;
+#N canvas 1680 29 800 871 cnv 0;
 #X obj 195 173 loadbang;
 #X obj 63 314 s \$0-cnv;
 #X msg 195 192 color 29 0 \, label_font 0 12 \, label_pos 1 35 \, label
@@ -72,30 +63,18 @@ to change vis_size and a few of the numbers in the "history" subpatch.
 #X connect 5 0 7 1;
 #X connect 6 0 5 0;
 #X connect 7 0 4 0;
-#X restore 402 313 pd cnv;
-#X obj 357 101 sel bang;
+#X restore 280 222 pd cnv;
 #X text 462 116 tview - text view;
 #X text 463 151 basically just a scrolling view of its input.;
-#X obj 357 82 l2s;
-#X obj 372 63 spacesym;
-#X obj 372 44 loadbang;
 #X obj 235 100 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 300 44 spigot;
+#X obj 280 184 spigot;
 #X obj 235 81 loadbang;
-#X obj 436 25 inlet;
-#X connect 1 0 5 0;
-#X connect 2 0 13 0;
-#X connect 3 0 4 0;
-#X connect 3 1 9 0;
-#X connect 4 0 1 0;
-#X connect 6 0 4 0;
-#X connect 6 1 1 0;
+#X obj 416 25 inlet;
+#X connect 1 0 3 0;
+#X connect 2 0 7 0;
+#X connect 6 0 7 1;
+#X connect 7 0 1 0;
+#X connect 8 0 6 0;
 #X connect 9 0 6 0;
-#X connect 10 0 9 1;
-#X connect 11 0 10 0;
-#X connect 12 0 13 1;
-#X connect 13 0 3 0;
-#X connect 14 0 12 0;
-#X connect 15 0 12 0;
 #X coords 0 -1 1 1 150 84 1 100 100;
