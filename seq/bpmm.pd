@@ -1,11 +1,11 @@
-#N canvas 0 29 800 849 10;
+#N canvas 1680 29 1600 871 10;
 #X obj 163 326 outlet;
 #X obj 90 327 outlet;
 #X obj 23 326 outlet;
 #X obj 68 -52 inlet;
 #X obj 68 -33 route bang float;
 #X obj 207 -4 lb \$1 120;
-#X obj 84 36 tgl 15 0 \$0-on-off \$0-cnv 5 1 7 0 10 -262144 -1 -1 1
+#X obj 84 36 tgl 15 0 \$0-on-off \$0-cnv 12 1 7 0 10 -62784 -1 -1 1
 1;
 #X obj 316 300 phasor~;
 #X obj 36 284 sel 0;
@@ -97,6 +97,7 @@ bpmm is started.;
 #X restore 84 91 pd 4th-notes;
 #X text 13 143 frequency of a phasor~ sync'd to the bar;
 #X obj 89 15 != 0;
+#X msg 66 254 bpm \$1;
 #X connect 3 0 4 0;
 #X connect 4 0 6 0;
 #X connect 4 1 14 0;
@@ -114,6 +115,7 @@ bpmm is started.;
 #X connect 15 2 8 0;
 #X connect 17 0 24 0;
 #X connect 17 0 25 0;
+#X connect 17 0 29 0;
 #X connect 18 0 4 0;
 #X connect 22 0 2 0;
 #X connect 24 0 12 0;
@@ -123,4 +125,5 @@ bpmm is started.;
 #X connect 26 0 15 0;
 #X connect 26 0 23 0;
 #X connect 28 0 6 0;
+#X connect 29 0 2 0;
 #X coords 0 -1 1 1 71 18 1 60 36;

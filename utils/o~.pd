@@ -1,4 +1,4 @@
-#N canvas 1680 29 1600 871 10;
+#N canvas 0 29 1600 871 10;
 #X obj 249 116 inlet~;
 #X obj 262 -121 inlet;
 #X obj 103 115 hsl 55 13 0 127 0 0 \$0-v \$0-vols volume -1 8 0 10
@@ -8,7 +8,7 @@
 #X obj 294 230 *~;
 #X obj 186 205 env~;
 #X obj 137 102 vsl 8 10 0 127 0 0 \$0-ms \$0-mr empty 0 -9 0 10 -262144
--1 -1 288 1;
+-1 -1 0 1;
 #X obj 186 224 autoscale 0 127;
 #X obj 374 -7 r \$0-v;
 #X obj 374 125 / 127;
@@ -65,9 +65,9 @@ select the individual instance \, or press enter to select them all.
 keys change the volume (leftmost (1) is 0% volume while rightmost (0)
 is 100% volume). qwer change the speed of keyboard volume changes (q
 is the slowest speed \, r is the fastest). t toggles muting.;
-#X obj 145 100 tgl 15 0 \$0-mc_tgls \$0-mc_tgl oy 2 7 0 10 -262144
+#X obj 145 100 tgl 15 0 \$0-mc_tgls \$0-mc_tgl oc 2 7 0 10 -262144
 -1 -62784 0 1;
-#N canvas 1680 29 1600 871 box 0;
+#N canvas 0 29 1600 871 box 0;
 #X msg 89 46 label \$1;
 #X obj 89 27 symbol;
 #X obj 98 102 pack f f;

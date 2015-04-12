@@ -1,4 +1,4 @@
-#N canvas 800 29 800 849 10;
+#N canvas 0 29 1680 1021 10;
 #X obj 102 -131 inlet;
 #X obj 305 477 outlet~;
 #X obj 305 455 line~;
@@ -49,7 +49,7 @@ speed \, 2 plays it at half speed (double the time).;
 #X obj 309 -7 unpack f f f;
 #X obj 284 -45 prepent;
 #X obj 452 89 f 1;
-#X msg 211 -93 1 0 1;
+#X msg 211 -93 1;
 #X connect 0 0 32 0;
 #X connect 2 0 1 0;
 #X connect 2 0 29 0;

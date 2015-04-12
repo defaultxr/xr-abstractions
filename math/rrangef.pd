@@ -1,6 +1,6 @@
 #N canvas 0 29 1600 871 10;
-#X obj 91 336 + \$1;
-#X obj 91 355 outlet;
+#X obj 91 317 + \$1;
+#X obj 91 336 outlet;
 #X obj 91 35 inlet;
 #X obj 132 165 unpack f f;
 #X obj 91 256 - \$1;
@@ -10,18 +10,18 @@
 #X obj 288 37 inlet;
 #X obj 132 184 t b f;
 #X obj 91 237 f \$2;
-#X text 332 62 rrange - random within a range \, inclusive.;
 #X obj 132 99 list trim;
-#X obj 91 294 t b f;
-#X obj 91 275 + 1;
-#X obj 91 317 random;
+#X obj 91 275 t b f;
+#X text 332 62 rrangef - random float within a range \, inclusive.
+;
+#X obj 91 298 randomF;
 #X connect 0 0 1 0;
 #X connect 2 0 5 0;
 #X connect 3 0 9 0;
 #X connect 3 1 10 1;
-#X connect 4 0 14 0;
+#X connect 4 0 12 0;
 #X connect 5 0 10 0;
-#X connect 5 1 12 0;
+#X connect 5 1 11 0;
 #X connect 5 2 6 0;
 #X connect 5 3 3 0;
 #X connect 6 0 3 0;
@@ -31,8 +31,7 @@
 #X connect 9 1 4 1;
 #X connect 9 1 0 1;
 #X connect 10 0 4 0;
-#X connect 12 0 3 0;
-#X connect 13 0 15 0;
-#X connect 13 1 15 1;
-#X connect 14 0 13 0;
-#X connect 15 0 0 0;
+#X connect 11 0 3 0;
+#X connect 12 0 14 0;
+#X connect 12 1 14 1;
+#X connect 14 0 0 0;
