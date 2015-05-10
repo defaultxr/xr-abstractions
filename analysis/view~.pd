@@ -1,4 +1,4 @@
-#N canvas 0 29 1600 849 10;
+#N canvas 1680 29 1600 871 10;
 #X obj 158 28 inlet~;
 #X obj 241 101 tabwrite~ \$0-view;
 #N canvas 0 0 450 300 (subpatch) 0;
@@ -6,8 +6,11 @@
 #X coords 0 1 499 -1 200 140 1;
 #X restore -7 113 graph;
 #X obj 241 82 clip~ -2 2;
-#X obj 139 99 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-refresh cur:-0.0338122
-0 -8 0 10 -262144 -1 -1 75 256;
+#X obj 157 99 nbx 3 14 11 900 0 0 empty \$0-refresh cur:0.282579
+avg:0.0688072
+top:0.999993
+bot:-0.999843
+-163 36 0 10 -262144 -1 -1 75 256;
 #X obj 297 20 inlet;
 #X msg 343 58 0;
 #X obj 297 39 route float bang;
@@ -17,17 +20,18 @@
 #X msg 291 366 label;
 #X obj 288 221 average~ 10000;
 #X obj 268 309 pack f f f f s;
-#X obj 125 99 bng 14 250 50 0 empty empty r 3 6 0 10 -262144 -1 -1
+#X obj 143 99 bng 14 250 50 0 empty empty r 3 6 0 10 -262144 -1 -1
 ;
 #X obj 295 164 steady 10000;
 #X msg 268 328 label cur:\$1\$5avg:\$2\$5top:\$3\$5bot:\$4;
 #X obj 241 39 metro 75;
-#X msg 332 366 label_pos -145 36 \, range 11 900 \, 75;
 #X obj 268 145 t f f;
 #X obj 420 211 loadbang;
 #X obj 420 230 t b b b;
 #X msg 349 271 10;
 #X text 28 8 waveform display. clips at 2;
+#X msg 332 366 label_pos -163 36 \, range 11 900 \, 75 \, size 3 14
+;
 #X connect 0 0 3 0;
 #X connect 0 0 8 0;
 #X connect 0 0 12 0;
@@ -38,7 +42,7 @@
 #X connect 7 0 17 1;
 #X connect 7 1 6 0;
 #X connect 7 1 1 0;
-#X connect 8 0 19 0;
+#X connect 8 0 18 0;
 #X connect 10 0 13 4;
 #X connect 11 0 9 0;
 #X connect 12 0 13 1;
@@ -49,12 +53,12 @@
 #X connect 16 0 9 0;
 #X connect 17 0 1 0;
 #X connect 17 0 8 0;
-#X connect 18 0 9 0;
-#X connect 19 0 13 0;
-#X connect 19 1 15 0;
-#X connect 20 0 21 0;
-#X connect 21 0 17 0;
-#X connect 21 1 22 0;
-#X connect 21 2 18 0;
-#X connect 22 0 10 0;
+#X connect 18 0 13 0;
+#X connect 18 1 15 0;
+#X connect 19 0 20 0;
+#X connect 20 0 17 0;
+#X connect 20 1 21 0;
+#X connect 20 2 23 0;
+#X connect 21 0 10 0;
+#X connect 23 0 9 0;
 #X coords 0 -1 1 1 200 154 2 -7 99;
