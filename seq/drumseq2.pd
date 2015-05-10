@@ -1,18 +1,18 @@
-#N canvas 2480 29 800 871 10;
+#N canvas 1680 29 1600 871 10;
 #X obj 87 210 inlet;
 #X obj 70 297 outlet;
 #X obj 121 297 outlet;
 #X obj 172 297 outlet;
 #X obj 223 297 outlet;
 #X obj 274 297 outlet;
-#N canvas 2480 29 800 871 drumseq2 1;
+#N canvas 1680 29 1600 871 drumseq2 0;
 #X obj 243 10 inlet;
 #X obj 76 269 outlet;
 #X obj 126 269 outlet;
 #X obj 176 269 outlet;
 #X obj 226 269 outlet;
 #X obj 276 269 outlet;
-#N canvas 2480 29 800 871 toggles 1;
+#N canvas 1680 29 1600 871 toggles 0;
 #X obj 11 28 r \$0-0x0s;
 #X obj 71 28 r \$0-1x0s;
 #X obj 131 28 r \$0-2x0s;
@@ -151,7 +151,7 @@
 #X obj 458 136 unpack f f f;
 #X obj 473 155 r \$0-vpato;
 #X obj 458 174 +;
-#N canvas 1680 29 800 871 mouse 1;
+#N canvas 1680 29 1600 871 mouse 0;
 #X obj 40 10 inlet;
 #X text 136 135 this subpatch enables you to click and drag to select
 or deselect multiple tgls without having to click each one individually.
@@ -178,10 +178,10 @@ or deselect multiple tgls without having to click each one individually.
 #X obj 13 435 change;
 #X obj 82 585 s \$0-ds2;
 #X msg 198 300 reset \$1;
-#X obj 13 369 round;
 #X obj 13 477 interpolate;
 #X obj 28 496 r \$0-vpato;
 #X obj 13 515 +;
+#X obj 13 369 int;
 #X connect 0 0 3 0;
 #X connect 3 0 19 0;
 #X connect 3 1 4 1;
@@ -202,7 +202,7 @@ or deselect multiple tgls without having to click each one individually.
 #X connect 13 1 12 0;
 #X connect 14 0 12 1;
 #X connect 15 0 12 1;
-#X connect 16 0 24 0;
+#X connect 16 0 27 0;
 #X connect 17 0 18 0;
 #X connect 18 0 21 0;
 #X connect 19 0 7 0;
@@ -211,12 +211,12 @@ or deselect multiple tgls without having to click each one individually.
 #X connect 19 2 23 0;
 #X connect 20 0 15 0;
 #X connect 20 0 8 0;
-#X connect 21 0 25 0;
-#X connect 23 0 25 0;
-#X connect 24 0 17 0;
-#X connect 25 0 27 0;
-#X connect 26 0 27 1;
-#X connect 27 0 4 0;
+#X connect 21 0 24 0;
+#X connect 23 0 24 0;
+#X connect 24 0 26 0;
+#X connect 25 0 26 1;
+#X connect 26 0 4 0;
+#X connect 27 0 17 0;
 #X restore 370 186 pd mouse;
 #X connect 0 0 117 0;
 #X connect 1 0 118 0;
@@ -359,7 +359,7 @@ or deselect multiple tgls without having to click each one individually.
 #X connect 136 0 137 1;
 #X connect 137 0 134 0;
 #X restore 58 44 pd toggles;
-#N canvas 2480 29 800 421 set 0;
+#N canvas 1680 29 1600 871 set 0;
 #X obj 177 38 inlet;
 #X obj 177 105 prepent;
 #X obj 177 57 t a a;
@@ -379,7 +379,7 @@ or deselect multiple tgls without having to click each one individually.
 #X connect 4 0 3 2;
 #X restore 154 164 pd 3-input;
 #X text 219 38 x \, y \, value. or: x \, y \, pat \, value.;
-#N canvas 2480 29 800 421 step-refresh 0;
+#N canvas 1680 29 1600 871 step-refresh 0;
 #X obj 37 37 inlet;
 #X obj 106 96 r \$0-vpat;
 #X obj 91 115 ==;
@@ -473,24 +473,24 @@ label \$1;
 #X connect 19 0 20 0;
 #X connect 20 0 4 0;
 #X restore 327 213 pd view;
-#N canvas 1680 29 1600 871 step 0;
+#N canvas 1680 29 800 871 step 0;
 #X obj 226 43 inlet;
-#X obj 300 668 s;
-#X msg 315 312 symbol \$3-\$1x\$2r;
-#X obj 104 624 > 0;
-#X obj 218 225 t a a;
-#X obj 258 423 r \$0-vpato;
+#X obj 300 719 s;
+#X msg 315 363 symbol \$3-\$1x\$2r;
+#X obj 104 675 > 0;
+#X obj 218 276 t a a;
+#X obj 258 444 r \$0-vpato;
 #X text 259 33 <-- send a message like "x y" to this and it will refresh
 that tgl based on the value in the 0-patterns table.;
-#X msg 104 662 set \$1;
-#X obj 218 206 pack f f \$0;
-#X obj 104 643 *;
-#X obj 213 325 r \$0-vpat;
-#X obj 92 306 t f f;
-#X text 231 511 <-- 0 if out of range;
-#X obj 92 268 unpack f f f;
-#X obj 208 511 <;
-#X obj 208 492 f;
+#X msg 104 713 set \$1;
+#X obj 218 257 pack f f \$0;
+#X obj 104 694 *;
+#X obj 213 376 r \$0-vpat;
+#X obj 92 357 t f f;
+#X text 231 562 <-- 0 if out of range;
+#X obj 92 319 unpack f f f;
+#X obj 208 562 <;
+#X obj 208 543 f;
 #X text 296 56 ...alternatively \, you can just send the x value and
 all the steps for that column will be reset.;
 #X obj 226 62 route float;
@@ -499,13 +499,13 @@ all the steps for that column will be reset.;
 #X obj 162 117 until;
 #X obj 162 174 f;
 #X obj 162 155 t b f;
-#N canvas 2480 29 800 871 color 0;
+#N canvas 1680 29 1600 871 color 0;
 #X obj 151 34 inlet;
-#X obj 141 530 outlet;
+#X obj 141 531 outlet;
 #X obj 151 53 sel 0 1;
 #X msg 141 110 5;
-#X obj 209 464 list-idx;
-#X msg 141 511 color \$1 22 13;
+#X obj 209 465 list-idx;
+#X msg 141 512 color \$1 22 13;
 #X obj 185 121 r \$0-cstep;
 #X obj 170 178 ==;
 #X obj 170 102 f;
@@ -516,11 +516,11 @@ all the steps for that column will be reset.;
 #X text 240 34 x;
 #X obj 185 140 -;
 #X obj 185 159 mod 16;
-#X obj 214 317 inlet;
-#X text 252 318 y;
+#X obj 254 317 inlet;
+#X text 292 318 y;
 #X text 194 178 is modulus of the current step;
 #X text 38 33 outside of pattern;
-#X obj 214 336 >= 2;
+#X obj 254 336 >= 2;
 #X obj 195 249 >= 0;
 #X obj 205 279 &&;
 #X obj 232 241 <= 15;
@@ -551,8 +551,8 @@ all the steps for that column will be reset.;
 #X connect 8 0 9 0;
 #X connect 9 0 6 1;
 #X restore 160 408 pd is-current-pat;
-#X obj 254 426 % 8;
-#X msg 209 445 1 1 1 1 10 10 10 10;
+#X obj 254 427 % 8;
+#X msg 209 446 1 1 1 1 10 10 10 10;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 2 1 8 0;
@@ -586,20 +586,22 @@ all the steps for that column will be reset.;
 #X connect 29 0 5 0;
 #X connect 30 0 4 1;
 #X connect 31 0 4 0;
-#X restore 248 574 pd color;
-#X obj 92 376 t f b;
-#X obj 104 586 + 100;
-#X obj 119 548 +;
-#X obj 161 490 * 512;
-#X obj 119 529 * 128;
-#X obj 104 567 +;
-#X obj 92 471 unpack f f f;
-#X obj 213 353 tabread \$0-t;
-#X obj 104 605 tabread \$0-t;
+#X restore 248 625 pd color;
+#X obj 92 427 t f b;
+#X obj 104 637 + 100;
+#X obj 119 599 +;
+#X obj 161 541 * 512;
+#X obj 119 580 * 128;
+#X obj 104 618 +;
+#X obj 92 522 unpack f f f;
+#X obj 213 404 tabread \$0-t;
+#X obj 104 656 tabread \$0-t;
 #X obj 226 81 t b f;
-#X obj 243 442 - 0;
-#X obj 92 452 pack f f 0;
-#X obj 92 357 + 0;
+#X obj 243 493 - 0;
+#X obj 92 503 pack f f 0;
+#X obj 92 408 + 0;
+#X obj 218 238 % 16;
+#X obj 289 119 unpack f f;
 #X connect 0 0 17 0;
 #X connect 2 0 1 1;
 #X connect 3 0 9 0;
@@ -622,11 +624,11 @@ all the steps for that column will be reset.;
 #X connect 14 0 23 0;
 #X connect 15 0 14 0;
 #X connect 17 0 33 0;
-#X connect 17 1 8 0;
+#X connect 17 1 38 0;
 #X connect 18 0 20 0;
 #X connect 19 0 22 0;
 #X connect 20 0 19 0;
-#X connect 21 0 8 0;
+#X connect 21 0 37 0;
 #X connect 22 0 21 0;
 #X connect 22 1 8 1;
 #X connect 23 0 1 0;
@@ -647,6 +649,9 @@ all the steps for that column will be reset.;
 #X connect 34 0 14 1;
 #X connect 35 0 30 0;
 #X connect 36 0 24 0;
+#X connect 37 0 8 0;
+#X connect 38 0 37 0;
+#X connect 38 1 8 1;
 #X restore 356 194 pd step;
 #N canvas 2480 479 800 421 init 0;
 #X obj 37 37 loadbang;
@@ -1359,7 +1364,7 @@ default TO);
 -258699 0 1;
 #X obj 178 115 tgl 13 0 \$0-6x0s \$0-6x0r empty 17 7 0 10 -233017 -1
 -258699 0 1;
-#X obj 217 115 tgl 13 0 \$0-9x0s \$0-9x0r empty 17 7 0 10 -166441 -1
+#X obj 217 115 tgl 13 0 \$0-9x0s \$0-9x0r empty 17 7 0 10 -258699 -1
 -258699 0 1;
 #X obj 204 115 tgl 13 0 \$0-8x0s \$0-8x0r empty 17 7 0 10 -166441 -1
 -258699 1 1;
@@ -1391,7 +1396,7 @@ default TO);
 -258699 0 1;
 #X obj 178 128 tgl 13 0 \$0-6x1s \$0-6x1r empty 17 7 0 10 -233017 -1
 -258699 0 1;
-#X obj 217 128 tgl 13 0 \$0-9x1s \$0-9x1r empty 17 7 0 10 -166441 -1
+#X obj 217 128 tgl 13 0 \$0-9x1s \$0-9x1r empty 17 7 0 10 -258699 -1
 -258699 0 1;
 #X obj 204 128 tgl 13 0 \$0-8x1s \$0-8x1r empty 17 7 0 10 -166441 -1
 -258699 0 1;
@@ -1409,7 +1414,7 @@ default TO);
 -1 -258699 0 1;
 #X obj 113 141 tgl 13 0 \$0-1x2s \$0-1x2r empty 17 7 0 10 -166441 -1
 -258699 0 1;
-#X obj 100 141 tgl 13 0 \$0-0x2s \$0-0x2r empty 17 7 0 10 -258699 -1
+#X obj 100 141 tgl 13 0 \$0-0x2s \$0-0x2r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 139 141 tgl 13 0 \$0-3x2s \$0-3x2r empty 17 7 0 10 -166441 -1
 -258699 0 1;
@@ -1423,12 +1428,12 @@ default TO);
 -258699 0 1;
 #X obj 178 141 tgl 13 0 \$0-6x2s \$0-6x2r empty 17 7 0 10 -233017 -1
 -258699 0 1;
-#X obj 217 141 tgl 13 0 \$0-9x2s \$0-9x2r empty 17 7 0 10 -166441 -1
+#X obj 217 141 tgl 13 0 \$0-9x2s \$0-9x2r empty 17 7 0 10 -258699 -1
 -258699 0 1;
 #X obj 204 141 tgl 13 0 \$0-8x2s \$0-8x2r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 243 141 tgl 13 0 \$0-11x2s \$0-11x2r empty 17 7 0 10 -166441
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 230 141 tgl 13 0 \$0-10x2s \$0-10x2r empty 17 7 0 10 -166441
 -1 -258699 0 1;
 #X obj 269 141 tgl 13 0 \$0-13x2s \$0-13x2r empty 17 7 0 10 -233017
@@ -1440,9 +1445,9 @@ default TO);
 #X obj 282 141 tgl 13 0 \$0-14x2s \$0-14x2r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 113 154 tgl 13 0 \$0-1x3s \$0-1x3r empty 17 7 0 10 -166441 -1
--258699 0 1;
-#X obj 100 154 tgl 13 0 \$0-0x3s \$0-0x3r empty 17 7 0 10 -258699 -1
 -258699 1 1;
+#X obj 100 154 tgl 13 0 \$0-0x3s \$0-0x3r empty 17 7 0 10 -166441 -1
+-258699 0 1;
 #X obj 139 154 tgl 13 0 \$0-3x3s \$0-3x3r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 126 154 tgl 13 0 \$0-2x3s \$0-2x3r empty 17 7 0 10 -166441 -1
@@ -1450,19 +1455,19 @@ default TO);
 #X obj 165 154 tgl 13 0 \$0-5x3s \$0-5x3r empty 17 7 0 10 -233017 -1
 -258699 0 1;
 #X obj 152 154 tgl 13 0 \$0-4x3s \$0-4x3r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 191 154 tgl 13 0 \$0-7x3s \$0-7x3r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 178 154 tgl 13 0 \$0-6x3s \$0-6x3r empty 17 7 0 10 -233017 -1
 -258699 0 1;
-#X obj 217 154 tgl 13 0 \$0-9x3s \$0-9x3r empty 17 7 0 10 -166441 -1
+#X obj 217 154 tgl 13 0 \$0-9x3s \$0-9x3r empty 17 7 0 10 -258699 -1
 -258699 0 1;
 #X obj 204 154 tgl 13 0 \$0-8x3s \$0-8x3r empty 17 7 0 10 -166441 -1
 -258699 1 1;
 #X obj 243 154 tgl 13 0 \$0-11x3s \$0-11x3r empty 17 7 0 10 -166441
 -1 -258699 0 1;
 #X obj 230 154 tgl 13 0 \$0-10x3s \$0-10x3r empty 17 7 0 10 -166441
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 269 154 tgl 13 0 \$0-13x3s \$0-13x3r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 256 154 tgl 13 0 \$0-12x3s \$0-12x3r empty 17 7 0 10 -233017
@@ -1496,9 +1501,9 @@ to the second 16 steps);
 -1;
 #X obj 250 100 bng 15 250 50 0 \$0-forward empty >> 1 8 0 10 -4034
 -1 -1;
-#X obj 276 100 cnv 2 2 2 empty \$0-co 16 -11 -5 0 10 -262144 -258699
+#X obj 276 100 cnv 2 2 2 empty \$0-co 48 -11 -5 0 10 -262144 -258699
 0;
-#X obj 306 100 cnv 2 2 2 empty \$0-po 7 -11 -5 0 10 -262144 -24198
+#X obj 306 100 cnv 2 2 2 empty \$0-po 57 -11 -5 0 10 -262144 -24198
 0;
 #X text 333 169 the first 4 outlets output bangs for each row. the
 right outlet outputs the number of the current step \, plus a bang
