@@ -1,18 +1,18 @@
-#N canvas 1680 29 800 871 10;
+#N canvas 2480 29 800 871 10;
 #X obj 87 210 inlet;
 #X obj 70 297 outlet;
 #X obj 121 297 outlet;
 #X obj 172 297 outlet;
 #X obj 223 297 outlet;
 #X obj 274 297 outlet;
-#N canvas 1680 29 800 871 drumseq2 0;
+#N canvas 2480 29 800 871 drumseq2 1;
 #X obj 243 10 inlet;
 #X obj 76 269 outlet;
 #X obj 126 269 outlet;
 #X obj 176 269 outlet;
 #X obj 226 269 outlet;
 #X obj 276 269 outlet;
-#N canvas 1680 29 800 871 toggles 0;
+#N canvas 2480 29 800 871 toggles 1;
 #X obj 11 28 r \$0-0x0s;
 #X obj 71 28 r \$0-1x0s;
 #X obj 131 28 r \$0-2x0s;
@@ -151,15 +151,15 @@
 #X obj 458 136 unpack f f f;
 #X obj 473 155 r \$0-vpato;
 #X obj 458 174 +;
-#N canvas 1680 29 800 871 mouse 0;
+#N canvas 1680 29 800 871 mouse 1;
 #X obj 40 10 inlet;
 #X text 136 135 this subpatch enables you to click and drag to select
 or deselect multiple tgls without having to click each one individually.
 ;
 #X text 118 29 x \, y \, state;
 #X obj 40 29 unpack f f f;
-#X obj 82 517 pack f f f;
-#X msg 82 536 set \$1 \$2 \$3;
+#X obj 82 547 pack f f f;
+#X msg 82 566 set \$1 \$2 \$3;
 #X obj 40 135 MouseState;
 #X msg 37 111 poll;
 #X msg 76 110 nopoll;
@@ -176,10 +176,12 @@ or deselect multiple tgls without having to click each one individually.
 #X obj 34 67 t b b f;
 #X obj 40 154 sel 0;
 #X obj 13 435 change;
-#X obj 82 555 s \$0-ds2;
+#X obj 82 585 s \$0-ds2;
 #X msg 198 300 reset \$1;
 #X obj 13 369 round;
 #X obj 13 477 interpolate;
+#X obj 28 496 r \$0-vpato;
+#X obj 13 515 +;
 #X connect 0 0 3 0;
 #X connect 3 0 19 0;
 #X connect 3 1 4 1;
@@ -212,7 +214,9 @@ or deselect multiple tgls without having to click each one individually.
 #X connect 21 0 25 0;
 #X connect 23 0 25 0;
 #X connect 24 0 17 0;
-#X connect 25 0 4 0;
+#X connect 25 0 27 0;
+#X connect 26 0 27 1;
+#X connect 27 0 4 0;
 #X restore 370 186 pd mouse;
 #X connect 0 0 117 0;
 #X connect 1 0 118 0;
@@ -355,7 +359,7 @@ or deselect multiple tgls without having to click each one individually.
 #X connect 136 0 137 1;
 #X connect 137 0 134 0;
 #X restore 58 44 pd toggles;
-#N canvas 1680 29 1600 871 set 0;
+#N canvas 2480 29 800 421 set 0;
 #X obj 177 38 inlet;
 #X obj 177 105 prepent;
 #X obj 177 57 t a a;
@@ -375,7 +379,7 @@ or deselect multiple tgls without having to click each one individually.
 #X connect 4 0 3 2;
 #X restore 154 164 pd 3-input;
 #X text 219 38 x \, y \, value. or: x \, y \, pat \, value.;
-#N canvas 1680 29 1600 871 step-refresh 0;
+#N canvas 2480 29 800 421 step-refresh 0;
 #X obj 37 37 inlet;
 #X obj 106 96 r \$0-vpat;
 #X obj 91 115 ==;
@@ -644,7 +648,7 @@ all the steps for that column will be reset.;
 #X connect 35 0 30 0;
 #X connect 36 0 24 0;
 #X restore 356 194 pd step;
-#N canvas 1680 29 1600 871 init 0;
+#N canvas 2480 479 800 421 init 0;
 #X obj 37 37 loadbang;
 #X obj 71 113 count 100;
 #X msg 71 75 100;
@@ -659,6 +663,7 @@ all the steps for that column will be reset.;
 #X msg 71 178 16;
 #X obj 37 56 t b b b b;
 #X obj 71 197 tabwrite \$0-t;
+#X obj 120 259 s \$0-vpat;
 #X connect 0 0 12 0;
 #X connect 1 0 10 0;
 #X connect 2 0 3 0;
@@ -667,6 +672,7 @@ all the steps for that column will be reset.;
 #X connect 5 1 6 0;
 #X connect 6 0 7 0;
 #X connect 8 0 9 0;
+#X connect 8 0 14 0;
 #X connect 10 0 11 0;
 #X connect 10 1 13 1;
 #X connect 11 0 13 0;
@@ -1338,91 +1344,91 @@ default TO);
 #X connect 22 11 23 0;
 #X restore 141 245 pd drumseq2;
 #X obj 113 115 tgl 13 0 \$0-1x0s \$0-1x0r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 100 115 tgl 13 0 \$0-0x0s \$0-0x0r empty -14 7 0 10 -166441
 -1 -258699 1 1;
 #X obj 139 115 tgl 13 0 \$0-3x0s \$0-3x0r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 126 115 tgl 13 0 \$0-2x0s \$0-2x0r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 165 115 tgl 13 0 \$0-5x0s \$0-5x0r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 152 115 tgl 13 0 \$0-4x0s \$0-4x0r empty 17 7 0 10 -233017 -1
 -258699 1 1;
 #X obj 191 115 tgl 13 0 \$0-7x0s \$0-7x0r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 178 115 tgl 13 0 \$0-6x0s \$0-6x0r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 217 115 tgl 13 0 \$0-9x0s \$0-9x0r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 204 115 tgl 13 0 \$0-8x0s \$0-8x0r empty 17 7 0 10 -166441 -1
 -258699 1 1;
 #X obj 243 115 tgl 13 0 \$0-11x0s \$0-11x0r empty 17 7 0 10 -166441
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 230 115 tgl 13 0 \$0-10x0s \$0-10x0r empty 17 7 0 10 -166441
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 269 115 tgl 13 0 \$0-13x0s \$0-13x0r empty 17 7 0 10 -233017
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 256 115 tgl 13 0 \$0-12x0s \$0-12x0r empty 17 7 0 10 -233017
 -1 -258699 1 1;
 #X obj 295 115 tgl 13 0 \$0-15x0s \$0-15x0r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 282 115 tgl 13 0 \$0-14x0s \$0-14x0r empty 17 7 0 10 -233017
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 113 128 tgl 13 0 \$0-1x1s \$0-1x1r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 100 128 tgl 13 0 \$0-0x1s \$0-0x1r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 139 128 tgl 13 0 \$0-3x1s \$0-3x1r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 126 128 tgl 13 0 \$0-2x1s \$0-2x1r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 165 128 tgl 13 0 \$0-5x1s \$0-5x1r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 152 128 tgl 13 0 \$0-4x1s \$0-4x1r empty 17 7 0 10 -233017 -1
 -258699 1 1;
 #X obj 191 128 tgl 13 0 \$0-7x1s \$0-7x1r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 178 128 tgl 13 0 \$0-6x1s \$0-6x1r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 217 128 tgl 13 0 \$0-9x1s \$0-9x1r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 204 128 tgl 13 0 \$0-8x1s \$0-8x1r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 243 128 tgl 13 0 \$0-11x1s \$0-11x1r empty 17 7 0 10 -166441
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 230 128 tgl 13 0 \$0-10x1s \$0-10x1r empty 17 7 0 10 -166441
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 269 128 tgl 13 0 \$0-13x1s \$0-13x1r empty 17 7 0 10 -233017
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 256 128 tgl 13 0 \$0-12x1s \$0-12x1r empty 17 7 0 10 -233017
 -1 -258699 1 1;
 #X obj 295 128 tgl 13 0 \$0-15x1s \$0-15x1r empty 17 7 0 10 -233017
--1 -258699 0 1;
+-1 -258699 1 1;
 #X obj 282 128 tgl 13 0 \$0-14x1s \$0-14x1r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 113 141 tgl 13 0 \$0-1x2s \$0-1x2r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 100 141 tgl 13 0 \$0-0x2s \$0-0x2r empty 17 7 0 10 -258699 -1
--258699 1 1;
+-258699 0 1;
 #X obj 139 141 tgl 13 0 \$0-3x2s \$0-3x2r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 126 141 tgl 13 0 \$0-2x2s \$0-2x2r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 165 141 tgl 13 0 \$0-5x2s \$0-5x2r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 152 141 tgl 13 0 \$0-4x2s \$0-4x2r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 191 141 tgl 13 0 \$0-7x2s \$0-7x2r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 178 141 tgl 13 0 \$0-6x2s \$0-6x2r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 217 141 tgl 13 0 \$0-9x2s \$0-9x2r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 204 141 tgl 13 0 \$0-8x2s \$0-8x2r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 243 141 tgl 13 0 \$0-11x2s \$0-11x2r empty 17 7 0 10 -166441
--1 -258699 0 1;
+-1 -258699 1 1;
 #X obj 230 141 tgl 13 0 \$0-10x2s \$0-10x2r empty 17 7 0 10 -166441
 -1 -258699 0 1;
 #X obj 269 141 tgl 13 0 \$0-13x2s \$0-13x2r empty 17 7 0 10 -233017
@@ -1434,27 +1440,27 @@ default TO);
 #X obj 282 141 tgl 13 0 \$0-14x2s \$0-14x2r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 113 154 tgl 13 0 \$0-1x3s \$0-1x3r empty 17 7 0 10 -166441 -1
--258699 1 1;
-#X obj 100 154 tgl 13 0 \$0-0x3s \$0-0x3r empty 17 7 0 10 -258699 -1
 -258699 0 1;
+#X obj 100 154 tgl 13 0 \$0-0x3s \$0-0x3r empty 17 7 0 10 -258699 -1
+-258699 1 1;
 #X obj 139 154 tgl 13 0 \$0-3x3s \$0-3x3r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 126 154 tgl 13 0 \$0-2x3s \$0-2x3r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 165 154 tgl 13 0 \$0-5x3s \$0-5x3r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 152 154 tgl 13 0 \$0-4x3s \$0-4x3r empty 17 7 0 10 -233017 -1
 -258699 1 1;
 #X obj 191 154 tgl 13 0 \$0-7x3s \$0-7x3r empty 17 7 0 10 -233017 -1
 -258699 1 1;
 #X obj 178 154 tgl 13 0 \$0-6x3s \$0-6x3r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 217 154 tgl 13 0 \$0-9x3s \$0-9x3r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 204 154 tgl 13 0 \$0-8x3s \$0-8x3r empty 17 7 0 10 -166441 -1
 -258699 1 1;
 #X obj 243 154 tgl 13 0 \$0-11x3s \$0-11x3r empty 17 7 0 10 -166441
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 230 154 tgl 13 0 \$0-10x3s \$0-10x3r empty 17 7 0 10 -166441
 -1 -258699 1 1;
 #X obj 269 154 tgl 13 0 \$0-13x3s \$0-13x3r empty 17 7 0 10 -233017
@@ -1490,7 +1496,7 @@ to the second 16 steps);
 -1;
 #X obj 250 100 bng 15 250 50 0 \$0-forward empty >> 1 8 0 10 -4034
 -1 -1;
-#X obj 276 100 cnv 2 2 2 empty \$0-co 0 -11 -5 0 10 -262144 -258699
+#X obj 276 100 cnv 2 2 2 empty \$0-co 16 -11 -5 0 10 -262144 -258699
 0;
 #X obj 306 100 cnv 2 2 2 empty \$0-po 7 -11 -5 0 10 -262144 -24198
 0;
