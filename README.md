@@ -2,11 +2,9 @@ defaultxr's pure data abstractions
 ==================================
 This is a collection of abstractions I've made for Pure Data. It includes sequencers, GUIs, general utilities, and a few effects and synths. I'm still in the process of writing them, so consider them "beta", and expect changes if you upgrade later (which will hopefully be mentioned in commit messages). Some objects might get renamed, removed, or end up working/looking completely different later. Beware of this.
 
-I have only tested these in Pd-extended 0.43.4 on Arch Linux. Since they are just abstractions, they should work on any platform that Pd-extended runs on. I have not tested them on Pd-vanilla, but I doubt they would work since a lot of them depend on objects that are only provided by Pd-extended.
+Right now, most of these abstractions will probably only work under Pd-extended 0.43. Since Pd-extended is no longer maintained, I'll slowly be working towards Pd-vanilla compatibility for this library.
 
 Please notify me of any bugs you find while using these abstractions.
-
-[If you find this collection useful, please consider donating to me to support the development of these abstractions and other tools.](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=2NCRJC5JSZ5KN&lc=US&item_name=defaultxr&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted)
 
 Some of the abstractions I find most useful:
 * `map` - easy list access (useful for arpeggios, patterns, etc.)
@@ -21,7 +19,17 @@ Some of the abstractions I find most useful:
 * `rmap` - receive map (quickly create a lot of `receive` objects just by specifying them as arguments to `rmap`)
 * `unmap` - map inputs to their indexes in a list (the inverse of `map`)
 
-Below is a quick overview of most of the included abstractions.
+vanilla
+=======
+
+Don't expect these abstractions to work under Pd-vanilla right now. Here's a (currently incomplete) list of libraries you'll need to install as dependencies:
+
+* zexy-v0.0.extended
+
+overview
+========
+
+Below is an overview of all of the included abstractions.
 
 analysis
 ========
@@ -433,6 +441,7 @@ FUTURE
 
 In the future i plan to clean up a lot of these. Either by renaming them or by splitting up functionality, etc. There are also a few that i'd like to re-code or rethink entirely. Some of the things i want to change:
 
+* clean out this library - remove incomplete extensions
 * rename `adsr` and `adsr~` to just `adr` and `adr~` and remove the sustain functionality
 * remake `adsr` and `adsr~` into actual ADSR envelopes
 * `atc`, `cta`, `atr`, and the others should probably be renamed to something like `btu`, `utb`, and `btr`, since the technical term for a signal from 0 to 1 is "unipolar" and the technical term for a signal from -1 to 1 is "bipolar"
