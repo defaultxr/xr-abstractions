@@ -1,18 +1,18 @@
-#N canvas 1680 29 1600 871 10;
+#N canvas 1680 50 1600 871 10;
 #X obj 87 210 inlet;
 #X obj 70 297 outlet;
 #X obj 121 297 outlet;
 #X obj 172 297 outlet;
 #X obj 223 297 outlet;
 #X obj 274 297 outlet;
-#N canvas 1680 29 1600 871 drumseq2 0;
+#N canvas 1680 50 1600 871 drumseq2 0;
 #X obj 243 10 inlet;
 #X obj 76 269 outlet;
 #X obj 126 269 outlet;
 #X obj 176 269 outlet;
 #X obj 226 269 outlet;
 #X obj 276 269 outlet;
-#N canvas 1680 29 1600 871 toggles 0;
+#N canvas 1680 50 1600 871 toggles 0;
 #X obj 11 28 r \$0-0x0s;
 #X obj 71 28 r \$0-1x0s;
 #X obj 131 28 r \$0-2x0s;
@@ -151,7 +151,7 @@
 #X obj 458 136 unpack f f f;
 #X obj 473 155 r \$0-vpato;
 #X obj 458 174 +;
-#N canvas 1680 29 1600 871 mouse 0;
+#N canvas 1680 50 1600 871 mouse 0;
 #X obj 40 10 inlet;
 #X text 136 135 this subpatch enables you to click and drag to select
 or deselect multiple tgls without having to click each one individually.
@@ -359,13 +359,13 @@ or deselect multiple tgls without having to click each one individually.
 #X connect 136 0 137 1;
 #X connect 137 0 134 0;
 #X restore 58 44 pd toggles;
-#N canvas 1680 29 1600 871 set 0;
+#N canvas 1680 50 1600 871 set 0;
 #X obj 177 38 inlet;
 #X obj 177 105 prepent;
 #X obj 177 57 t a a;
 #X obj 177 124 route 3 4;
 #X obj 216 86 list length;
-#N canvas 1680 29 1600 871 3-input 0;
+#N canvas 1680 50 1600 871 3-input 0;
 #X obj 27 43 inlet;
 #X obj 27 123 outlet;
 #X obj 27 62 unpack f f f;
@@ -379,7 +379,7 @@ or deselect multiple tgls without having to click each one individually.
 #X connect 4 0 3 2;
 #X restore 154 164 pd 3-input;
 #X text 219 38 x \, y \, value. or: x \, y \, pat \, value.;
-#N canvas 1680 29 1600 871 step-refresh 0;
+#N canvas 1680 50 1600 871 step-refresh 0;
 #X obj 37 37 inlet;
 #X obj 106 96 r \$0-vpat;
 #X obj 91 115 ==;
@@ -428,7 +428,7 @@ or deselect multiple tgls without having to click each one individually.
 #X connect 14 0 11 0;
 #X connect 15 0 10 0;
 #X restore 299 232 pd set;
-#N canvas 0 29 1600 871 view 0;
+#N canvas 0 50 1600 871 view 0;
 #X obj 259 12 inlet;
 #X obj 322 130 unpack f f;
 #X obj 349 199 s \$0-vpat;
@@ -473,7 +473,7 @@ label \$1;
 #X connect 19 0 20 0;
 #X connect 20 0 4 0;
 #X restore 327 213 pd view;
-#N canvas 1680 29 800 871 step 0;
+#N canvas 1680 50 800 871 step 0;
 #X obj 226 43 inlet;
 #X obj 300 719 s;
 #X msg 315 363 symbol \$3-\$1x\$2r;
@@ -499,7 +499,7 @@ all the steps for that column will be reset.;
 #X obj 162 117 until;
 #X obj 162 174 f;
 #X obj 162 155 t b f;
-#N canvas 1680 29 1600 871 color 0;
+#N canvas 1680 50 1600 871 color 0;
 #X obj 151 34 inlet;
 #X obj 141 531 outlet;
 #X obj 151 53 sel 0 1;
@@ -529,7 +529,7 @@ all the steps for that column will be reset.;
 #X text 214 297 0 if not in view;
 #X obj 190 357 ||;
 #X obj 190 376 sel 1 0;
-#N canvas 0 29 1600 849 is-current-pat 0;
+#N canvas 0 50 1600 849 is-current-pat 0;
 #X obj 88 113 inlet;
 #X obj 103 132 r \$0-vpat;
 #X obj 125 151 r \$0-playpat;
@@ -685,7 +685,7 @@ all the steps for that column will be reset.;
 #X connect 12 1 8 0;
 #X connect 12 2 2 0;
 #X restore 58 25 pd init;
-#N canvas 0 29 800 849 resize 0;
+#N canvas 0 50 800 849 resize 0;
 #X obj 142 18 inlet;
 #X text 140 2 resize a pattern;
 #X obj 142 37 route float;
@@ -699,21 +699,21 @@ all the steps for that column will be reset.;
 #X msg 299 109 \$1;
 #X obj 224 128 tabwrite \$0-t;
 #X msg 224 90 \$2;
-#N canvas 0 29 800 849 clip 0;
+#N canvas 1920 29 1920 1051 clip 1;
 #X obj 37 37 inlet;
-#X obj 103 80 > 128;
+#X obj 113 80 > 128;
 #X obj 37 80 clip 1 128;
-#X obj 103 99 sel 1;
-#X obj 103 150 normal drumseq2;
+#X obj 113 99 sel 1;
 #X obj 37 150 outlet;
-#X msg 103 118 patterns cannot exceed 128 steps - clipping resize request
+#X msg 113 118 patterns cannot exceed 128 steps - clipping resize request
 to 128;
+#X obj 113 150 print drumseq2;
 #X connect 0 0 2 0;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
-#X connect 2 0 5 0;
-#X connect 3 0 6 0;
-#X connect 6 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 5 0 6 0;
 #X restore 224 109 pd clip;
 #X connect 0 0 2 0;
 #X connect 2 0 5 0;
@@ -729,7 +729,7 @@ to 128;
 #X connect 12 0 13 0;
 #X connect 13 0 11 0;
 #X restore 384 175 pd resize;
-#N canvas 0 29 1600 871 seq 0;
+#N canvas 0 50 1600 871 seq 0;
 #X obj 234 -4 inlet;
 #X obj 135 408 outlet;
 #X obj 185 408 outlet;
@@ -749,7 +749,7 @@ to 128;
 #X obj 207 350 route 0 1 2 3;
 #X obj 271 127 f 0;
 #X obj 234 104 t f b;
-#N canvas 800 29 800 871 visual-feedback 0;
+#N canvas 800 50 800 871 visual-feedback 0;
 #X obj 135 40 inlet;
 #X obj 215 78 ftos;
 #X obj 215 116 s \$0-po;
@@ -762,7 +762,7 @@ label \$1;
 #X obj 177 170 r \$0-vpato;
 #X obj 162 189 -;
 #X obj 162 208 mod 16;
-#X floatatom 128 209 5 0 0 0 - - -;
+#X floatatom 128 209 5 0 0 0 - - -, f 5;
 #X connect 0 0 1 0;
 #X connect 0 0 5 0;
 #X connect 1 0 3 0;
@@ -776,7 +776,7 @@ label \$1;
 #X connect 10 0 6 0;
 #X connect 10 0 11 0;
 #X restore 255 238 pd visual-feedback;
-#N canvas 0 29 1600 871 each 0;
+#N canvas 0 50 1600 871 each 0;
 #X obj 405 259 inlet;
 #X obj 502 751 outlet;
 #X obj 405 361 until;
@@ -836,7 +836,7 @@ label \$1;
 #X obj 271 146 tabread \$0-t;
 #X obj 323 42 r \$0-next-step-set;
 #X obj 207 271 t f f f;
-#N canvas 1680 29 800 871 queued-pattern-switch 0;
+#N canvas 1680 50 800 871 queued-pattern-switch 0;
 #X obj 285 255 r \$0-queue-pattern;
 #X obj 249 255 inlet;
 #X obj 249 274 sel 0;
@@ -887,7 +887,7 @@ label \$1;
 #X connect 25 1 5 0;
 #X connect 25 2 26 0;
 #X restore 243 112 pd seq;
-#N canvas 0 29 1600 871 play 0;
+#N canvas 0 50 1600 871 play 0;
 #X obj 422 36 inlet;
 #X obj 422 153 s \$0-playpat;
 #X obj 422 68 i;
@@ -902,7 +902,7 @@ label \$1;
 #X connect 4 0 5 0;
 #X connect 6 0 2 1;
 #X restore 412 156 pd play;
-#N canvas 0 29 1600 849 load 0;
+#N canvas 0 50 1600 849 load 0;
 #X obj 212 142 inlet;
 #X obj 212 199 kfilename;
 #X obj 212 161 symbol;
@@ -921,7 +921,7 @@ label \$1;
 #X connect 6 0 1 0;
 #X connect 8 0 5 0;
 #X restore 440 137 pd load;
-#N canvas 0 29 1600 849 save 0;
+#N canvas 0 50 1600 849 save 0;
 #X obj 282 62 inlet;
 #X obj 339 199 kfilename;
 #X obj 339 131 symbol;
@@ -945,7 +945,7 @@ label \$1;
 #X connect 9 1 2 0;
 #X connect 10 0 3 0;
 #X restore 469 118 pd save;
-#N canvas 1680 29 800 871 controls 0;
+#N canvas 1680 50 800 871 controls 0;
 #X obj 414 83 r \$0-view-pattern;
 #X obj 529 191 s \$0-ds2;
 #X msg 414 142 view \$1;
@@ -956,7 +956,7 @@ label \$1;
 #X msg 142 121 2;
 #X msg 56 121 0.5;
 #X obj 103 102 t b b b;
-#N canvas 0 29 1600 849 resize 0;
+#N canvas 0 50 1600 849 resize 0;
 #X obj 76 198 inlet;
 #X obj 160 255 inlet;
 #X obj 76 323 i;
@@ -977,7 +977,7 @@ label \$1;
 #X connect 8 0 9 0;
 #X connect 9 0 3 0;
 #X restore 29 200 pd resize;
-#N canvas 0 29 1600 849 copy 0;
+#N canvas 0 50 1600 849 copy 0;
 #X obj 290 155 inlet;
 #X obj 422 155 inlet;
 #X obj 575 176 r \$0-vpat;
@@ -1053,7 +1053,7 @@ label \$1;
 #X obj -31 83 r \$0-save;
 #X obj -31 121 s \$0-ds2;
 #X msg -31 102 save;
-#N canvas 1680 29 1600 871 shifted 0;
+#N canvas 1680 50 1600 871 shifted 0;
 #X obj 401 194 inlet;
 #X obj 461 194 inlet;
 #X obj 401 261 route 0 1;
@@ -1066,7 +1066,7 @@ label \$1;
 #X connect 2 1 3 0;
 #X connect 5 0 2 0;
 #X restore 178 117 pd shifted;
-#N canvas 1680 29 1600 871 shift-key 0;
+#N canvas 1680 50 1600 871 shift-key 0;
 #X obj 307 241 outlet;
 #X obj 307 131 keyname;
 #X obj 307 222 &&;
@@ -1082,7 +1082,7 @@ label \$1;
 #X connect 4 0 2 1;
 #X connect 5 0 2 1;
 #X restore 299 -2 pd shift-key;
-#N canvas 1680 29 1600 871 shifted 0;
+#N canvas 1680 50 1600 871 shifted 0;
 #X obj 407 233 inlet;
 #X obj 467 233 inlet;
 #X obj 407 300 route 0 1;
@@ -1095,7 +1095,7 @@ label \$1;
 #X connect 2 1 3 0;
 #X connect 5 0 2 0;
 #X restore 291 114 pd shifted;
-#N canvas 1680 29 1600 871 next-steps 0;
+#N canvas 1680 50 1600 871 next-steps 0;
 #X obj 362 304 inlet;
 #X obj 377 323 r \$0-vpato;
 #X obj 412 517 s \$0-ds2;
@@ -1124,7 +1124,7 @@ label \$1;
 #X connect 11 0 5 0;
 #X connect 12 0 8 1;
 #X restore 291 191 pd next-steps;
-#N canvas 2480 29 800 421 next-pattern 0;
+#N canvas 2480 50 800 421 next-pattern 0;
 #X obj 37 37 inlet;
 #X obj 60 56 r \$0-vpat;
 #X obj 60 75 + 1;
@@ -1137,7 +1137,7 @@ label \$1;
 #X connect 4 0 3 0;
 #X connect 5 0 4 0;
 #X restore 348 168 pd next-pattern;
-#N canvas 1680 29 800 871 prev-steps 0;
+#N canvas 1680 50 800 871 prev-steps 0;
 #X obj 349 323 inlet;
 #X obj 349 399 max 0;
 #X obj 349 380 - 16;
@@ -1156,7 +1156,7 @@ label \$1;
 #X connect 7 0 6 1;
 #X connect 8 0 4 1;
 #X restore 178 191 pd prev-steps;
-#N canvas 2480 29 800 421 prev-pattern 0;
+#N canvas 2480 50 800 421 prev-pattern 0;
 #X obj 37 37 inlet;
 #X obj 60 56 r \$0-vpat;
 #X obj 37 138 s \$0-ds2;
@@ -1171,7 +1171,7 @@ label \$1;
 #X restore 235 168 pd prev-pattern;
 #X obj 569 83 r \$0-play-pattern;
 #X obj 522 83 r \$0-go;
-#N canvas 1680 29 800 871 go 0;
+#N canvas 1680 50 800 871 go 0;
 #X obj 401 194 inlet;
 #X obj 461 194 inlet;
 #X obj 401 261 route 0 1;
@@ -1224,28 +1224,28 @@ label \$1;
 #X obj 58 82 table \$0-t 50787;
 #X text 457 223 each pattern can have a maximum of 128 steps.;
 #X text 456 246 there are 4 instruments;
-#N canvas 1680 29 1600 871 next 0;
+#N canvas 1680 50 1600 871 next 0;
 #X obj 466 98 inlet;
 #X obj 466 146 s \$0-next-step-set;
 #X text 547 103 set the next step. useful for keeping the sequencer
 in sync when you're using bangs to drive it.;
 #X connect 0 0 1 0;
 #X restore 497 99 pd next;
-#N canvas 1680 29 1600 871 queue 0;
+#N canvas 1680 50 1600 871 queue 0;
 #X obj 372 137 inlet;
 #X obj 372 156 s \$0-queue-pattern;
 #X connect 0 0 1 0;
 #X restore 525 80 pd queue;
 #X obj 243 29 route bang float set view step resize play load save
 next queue copy;
-#N canvas 0 29 1600 871 copy 0;
+#N canvas 0 50 1600 871 copy 0;
 #X obj 37 37 inlet;
 #X obj 37 56 route bang float list;
 #X text 209 40 copy FROM TO;
 #X text 213 62 or copy FROM (current is the default TO);
 #X text 220 87 or copy (current-1 is the default FROM \, current is
 default TO);
-#N canvas 0 29 800 421 float 0;
+#N canvas 0 50 800 421 float 0;
 #X obj 81 135 inlet;
 #X obj 81 173 outlet;
 #X obj 126 135 r \$0-vpat;
@@ -1256,7 +1256,7 @@ default TO);
 #X restore 58 85 pd float;
 #X obj 146 197 !=;
 #X obj 146 138 unpack f f;
-#N canvas 0 29 800 421 bang 0;
+#N canvas 0 50 800 421 bang 0;
 #X obj 123 83 inlet;
 #X obj 138 102 r \$0-vpat;
 #X obj 138 121 - 1;
@@ -1351,7 +1351,7 @@ default TO);
 #X obj 113 115 tgl 13 0 \$0-1x0s \$0-1x0r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 100 115 tgl 13 0 \$0-0x0s \$0-0x0r empty -14 7 0 10 -166441
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 139 115 tgl 13 0 \$0-3x0s \$0-3x0r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 126 115 tgl 13 0 \$0-2x0s \$0-2x0r empty 17 7 0 10 -166441 -1
@@ -1359,15 +1359,15 @@ default TO);
 #X obj 165 115 tgl 13 0 \$0-5x0s \$0-5x0r empty 17 7 0 10 -233017 -1
 -258699 0 1;
 #X obj 152 115 tgl 13 0 \$0-4x0s \$0-4x0r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 191 115 tgl 13 0 \$0-7x0s \$0-7x0r empty 17 7 0 10 -233017 -1
 -258699 0 1;
 #X obj 178 115 tgl 13 0 \$0-6x0s \$0-6x0r empty 17 7 0 10 -233017 -1
 -258699 0 1;
-#X obj 217 115 tgl 13 0 \$0-9x0s \$0-9x0r empty 17 7 0 10 -258699 -1
+#X obj 217 115 tgl 13 0 \$0-9x0s \$0-9x0r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 204 115 tgl 13 0 \$0-8x0s \$0-8x0r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 243 115 tgl 13 0 \$0-11x0s \$0-11x0r empty 17 7 0 10 -166441
 -1 -258699 0 1;
 #X obj 230 115 tgl 13 0 \$0-10x0s \$0-10x0r empty 17 7 0 10 -166441
@@ -1375,7 +1375,7 @@ default TO);
 #X obj 269 115 tgl 13 0 \$0-13x0s \$0-13x0r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 256 115 tgl 13 0 \$0-12x0s \$0-12x0r empty 17 7 0 10 -233017
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 295 115 tgl 13 0 \$0-15x0s \$0-15x0r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 282 115 tgl 13 0 \$0-14x0s \$0-14x0r empty 17 7 0 10 -233017
@@ -1391,12 +1391,12 @@ default TO);
 #X obj 165 128 tgl 13 0 \$0-5x1s \$0-5x1r empty 17 7 0 10 -233017 -1
 -258699 0 1;
 #X obj 152 128 tgl 13 0 \$0-4x1s \$0-4x1r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 191 128 tgl 13 0 \$0-7x1s \$0-7x1r empty 17 7 0 10 -233017 -1
 -258699 0 1;
 #X obj 178 128 tgl 13 0 \$0-6x1s \$0-6x1r empty 17 7 0 10 -233017 -1
 -258699 0 1;
-#X obj 217 128 tgl 13 0 \$0-9x1s \$0-9x1r empty 17 7 0 10 -258699 -1
+#X obj 217 128 tgl 13 0 \$0-9x1s \$0-9x1r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 204 128 tgl 13 0 \$0-8x1s \$0-8x1r empty 17 7 0 10 -166441 -1
 -258699 0 1;
@@ -1407,14 +1407,14 @@ default TO);
 #X obj 269 128 tgl 13 0 \$0-13x1s \$0-13x1r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 256 128 tgl 13 0 \$0-12x1s \$0-12x1r empty 17 7 0 10 -233017
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 295 128 tgl 13 0 \$0-15x1s \$0-15x1r empty 17 7 0 10 -233017
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 282 128 tgl 13 0 \$0-14x1s \$0-14x1r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 113 141 tgl 13 0 \$0-1x2s \$0-1x2r empty 17 7 0 10 -166441 -1
 -258699 0 1;
-#X obj 100 141 tgl 13 0 \$0-0x2s \$0-0x2r empty 17 7 0 10 -166441 -1
+#X obj 100 141 tgl 13 0 \$0-0x2s \$0-0x2r empty 17 7 0 10 -258699 -1
 -258699 0 1;
 #X obj 139 141 tgl 13 0 \$0-3x2s \$0-3x2r empty 17 7 0 10 -166441 -1
 -258699 0 1;
@@ -1428,7 +1428,7 @@ default TO);
 -258699 0 1;
 #X obj 178 141 tgl 13 0 \$0-6x2s \$0-6x2r empty 17 7 0 10 -233017 -1
 -258699 0 1;
-#X obj 217 141 tgl 13 0 \$0-9x2s \$0-9x2r empty 17 7 0 10 -258699 -1
+#X obj 217 141 tgl 13 0 \$0-9x2s \$0-9x2r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 204 141 tgl 13 0 \$0-8x2s \$0-8x2r empty 17 7 0 10 -166441 -1
 -258699 0 1;
@@ -1445,8 +1445,8 @@ default TO);
 #X obj 282 141 tgl 13 0 \$0-14x2s \$0-14x2r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 113 154 tgl 13 0 \$0-1x3s \$0-1x3r empty 17 7 0 10 -166441 -1
--258699 1 1;
-#X obj 100 154 tgl 13 0 \$0-0x3s \$0-0x3r empty 17 7 0 10 -166441 -1
+-258699 0 1;
+#X obj 100 154 tgl 13 0 \$0-0x3s \$0-0x3r empty 17 7 0 10 -258699 -1
 -258699 0 1;
 #X obj 139 154 tgl 13 0 \$0-3x3s \$0-3x3r empty 17 7 0 10 -166441 -1
 -258699 0 1;
@@ -1460,10 +1460,10 @@ default TO);
 -258699 0 1;
 #X obj 178 154 tgl 13 0 \$0-6x3s \$0-6x3r empty 17 7 0 10 -233017 -1
 -258699 0 1;
-#X obj 217 154 tgl 13 0 \$0-9x3s \$0-9x3r empty 17 7 0 10 -258699 -1
+#X obj 217 154 tgl 13 0 \$0-9x3s \$0-9x3r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 204 154 tgl 13 0 \$0-8x3s \$0-8x3r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 243 154 tgl 13 0 \$0-11x3s \$0-11x3r empty 17 7 0 10 -166441
 -1 -258699 0 1;
 #X obj 230 154 tgl 13 0 \$0-10x3s \$0-10x3r empty 17 7 0 10 -166441
@@ -1487,7 +1487,7 @@ it has \, can be expanded or shrunk by the base size of the pattern.
 i.e. if a pattern has 16 steps \, this function will allow you to instantly
 convert it into a 32-step pattern (copying over the first 16 steps
 to the second 16 steps);
-#X floatatom 265 100 2 0 99 0 - #0-vpatc #0-view-pattern;
+#X floatatom 265 100 2 0 99 0 - #0-vpatc #0-view-pattern, f 2;
 #X obj 279 100 bng 15 250 50 0 \$0-go empty go 1 7 0 10 -4034 -1 -1
 ;
 #X obj 190 100 bng 15 250 50 0 \$0-save empty sv 1 7 0 10 -258113 -1
@@ -1496,12 +1496,12 @@ to the second 16 steps);
 -1 -1;
 #X obj 220 100 bng 15 250 50 0 \$0-expand empty ++ 1 8 0 10 -257985
 -1 -1;
-#X floatatom 294 100 2 0 99 0 - #0-playpatc #0-play-pattern;
+#X floatatom 294 100 2 0 99 0 - #0-playpatc #0-play-pattern, f 2;
 #X obj 235 100 bng 15 250 50 0 \$0-back empty << 1 8 0 10 -4034 -1
 -1;
 #X obj 250 100 bng 15 250 50 0 \$0-forward empty >> 1 8 0 10 -4034
 -1 -1;
-#X obj 276 100 cnv 2 2 2 empty \$0-co 48 -11 -5 0 10 -262144 -258699
+#X obj 276 100 cnv 2 2 2 empty \$0-co 0 -11 -5 0 10 -262144 -258699
 0;
 #X obj 306 100 cnv 2 2 2 empty \$0-po 57 -11 -5 0 10 -262144 -24198
 0;

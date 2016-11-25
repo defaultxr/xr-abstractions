@@ -22,9 +22,10 @@ Some of the abstractions I find most useful:
 vanilla
 =======
 
-Don't expect these abstractions to work under Pd-vanilla right now. Here's a (currently incomplete) list of libraries you'll need to install as dependencies:
+Don't expect these abstractions to work under Pd-vanilla right now. Here's a (currently incomplete) list of libraries you'll need to install as dependencies. All of these should be available from Pd vanilla's Help->Find externals menu.
 
 * zexy-v0.0.extended
+* cyclone
 
 overview
 ========
