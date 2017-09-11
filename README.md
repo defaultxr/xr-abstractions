@@ -341,19 +341,13 @@ synths
 ======
 "full-featured" synthesizers. a lot of these are scrapped designs. most of these aren't that great.
 
-* `Adder4~` - was supposed to be a four-voice additive synth but I might remove it eventually.
-
-* `Adder~` - was supposed to be one of the voices for `Adder4~` but I might remove it.
-
-* `Adder_voice~` - voice for `Adder~`
-
-* `fmFeedback~` - FM feedback synth stolen from NoizeHack, slightly modified by me.
-
 * `hoover~` - hoover synth. WIP.
 
 * `kick1~` - extremely basic kick drum synth
 
 * `kick2~` - another extremely basic kick drum synth
+
+* `kick3~` - yet another extremely basic kick drum synth
 
 * `snare1~` - extremely basic snare drum synth
 
@@ -436,6 +430,7 @@ In the future I plan to clean up a lot of these. Either by renaming them or by s
 
 * make sure all of these abstractions work with the new version of Pd (vanilla).
 * clean out this library - remove incomplete extensions
+* split out the LADSPA abstractions into their own library.
 * rename `adsr` and `adsr~` to just `adr` and `adr~` and remove the sustain functionality
 * remake `adsr` and `adsr~` into actual ADSR envelopes
 * `atc`, `cta`, `atr`, and the others should probably be renamed to something like `btu`, `utb`, and `btr`, since the technical term for a signal from 0 to 1 is "unipolar" and the technical term for a signal from -1 to 1 is "bipolar"
@@ -462,7 +457,6 @@ In the future I plan to clean up a lot of these. Either by renaming them or by s
 * replace `drumseq` with the new `drumseq2`
 * finish `grain~` and `granular~`
 * remove a lot of the stuff in "fx", since a lot of it either sucks or isn't even original material.
-* delete `Adder~`, `Adder4~`, and `Adder_voice~`
 * move `master` to ctrl
 * make an "examples" folder full of better examples instead of cramming as many abstractions as possible into crappy "demos"
 * rename `scroll~` to something more descriptive
@@ -500,7 +494,7 @@ seq:
 * `adsr~`, `adsr`, `amap`, `anaseq`, `beat~`, `boxseq`, `bpma`, `bpmm2`, `bpmm`, `dust`, `edger~`, `ft`, `iadsr~`, `ilist`, `listman`, `lmap`, `ometro`, `pattseq`, `pb`, `pmap`, `queue`, `sbox`, `seqfill`, `srush`, `taptempo`, `td~`, `tmap`, `tracker`, `unmap`, `vslz`
 
 synths:
-* `Adder4~`, `Adder~`, `Adder_voice~`, `fmFeedback~`, `kick1~`, `kick2~`, `snare1~`, `snare2~`, `tb303~`
+* `hoover~`, `kick1~`, `kick2~`, `kick3~`, `snare1~`, `snare2~`, `tb303~`
 
 utils:
 * `autosend`, `browser`, `chars`, `e`, `hue_to_rgb`, `itimer`, `ktimer`, `limit~`, `list-find-1`, `list-replacer`, `lists`, `list-without`, `marquee`, `mp3conv`, `o~`, `parser`, `*+~`, `po~`, `porta~`, `qtabwrite`, `qtimer`, `quote`, `rporta~`, `so~`, `spacesym`, `span~`, `sreceive~`, `ssend~`
