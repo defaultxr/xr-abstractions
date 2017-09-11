@@ -1,4 +1,4 @@
-defaultxr's pure data abstractions
+defaultxr's Pure Data Abstractions
 ==================================
 This is a collection of abstractions I've made for Pure Data. It includes sequencers, GUIs, general utilities, and a few effects and synths. I'm still in the process of writing them, so consider them "beta", and expect changes if you upgrade later (which will hopefully be mentioned in commit messages). Some objects might get renamed, removed, or end up working/looking completely different later. Beware of this.
 
@@ -20,7 +20,7 @@ Some of the abstractions I find most useful:
 * `unmap` - map inputs to their indexes in a list (the inverse of `map`)
 * `tview` - GUI view of incoming messages
 
-requirements
+Requirements
 ============
 
 Here's a list of the libraries that this one depends on. All of these should be installed automatically if you're using Pd 0.48
@@ -30,20 +30,19 @@ Here's a list of the libraries that this one depends on. All of these should be 
 * motex
 * zexy
 
-installation
+Installation
 ============
 
 After you install the requirements listed above, the abstractions should "just work". However there are a few that you may want to edit:
 
 * `kfilename` - this abstraction is used to shorten filenames. So for example, `~` is replaced with `/home/modula` by default. You will most likely want to change that so that it points to your home directory instead.
 
-overview
+Overview
 ========
-
 Below is an overview of all of the included abstractions.
 
 ctrl
-====
+----
 abstractions for controlling things, either via keyboard or by clicking.
 
 * `ca` - FIX
@@ -109,16 +108,15 @@ abstractions for controlling things, either via keyboard or by clicking.
 * `switcher` - switches between outputting the left inlet or the right inlet graphically via a ratio control. you can also change the inlet by sending a "switch" message to the first inlet.
 
 demos
-=====
+-----
 demonstrations of the included abstractions (definitely open these if you want a tour of this library)
 
 fx
-===
-
+--
 abstractions for many LADSPA effects, as well as interfaces for filters, etc. I might end up deleting a lot of these later since there's so many and it's hard to maintain them in a quality way.
 
 gen
-===
+---
 abstractions for generating sound
 
 * `analog~` - analog simulation. basically supposed to be like line noise and a small dc offset. probably not a very good simulation of the actual analog sound.
@@ -170,7 +168,7 @@ abstractions for generating sound
 * `tri~` - non-band-limited triangle or saw wave.
 
 guis
-====
+----
 abstractions whose primary purpose is to display information.
 
 * `cpuload` - shows current CPU load average (FIX for pd 0.48)
@@ -196,7 +194,7 @@ abstractions whose primary purpose is to display information.
 * `vsig~` - "view signal". shows a graphical representation of the signal from -1 to 1.
 
 math
-====
+----
 abstractions for altering or generating number streams
 
 * `atc~` - "audio to control" - converts a bipolar signal (-1 to 1) to a unipolar signal (0 to 1)
@@ -238,7 +236,7 @@ abstractions for altering or generating number streams
 * `transposer` - outputs number to multiply a frequency by in order to shift it by a number of semitones (provided as input or argument)
 
 seq
-===
+---
 sequencer abstractions
 
 * `adsr~` - attack decay sustain release envelope... well, kinda.
@@ -324,7 +322,7 @@ sequencer abstractions
 * `vslz` - extremely simple 8-step vsl-based sequencer.
 
 synths
-======
+------
 "full-featured" synthesizers. a lot of these are scrapped designs. most of these aren't that great.
 
 * `hoover~` - hoover synth. WIP.
@@ -342,7 +340,7 @@ synths
 * `tb303~` - TB303 clone. probably doesn't sound much like the real thing. WIP
 
 utils
-=====
+-----
 miscellaneous utilities
 
 * `*+~` - multiply and then add to a signal with one object.
@@ -409,7 +407,7 @@ miscellaneous utilities
 
 * `sym` - turn a list into a symbol (basically just `l2s` with an empty symbol sent to the right inlet. see also: `chars`)
 
-FUTURE
+Future
 ======
 
 In the future I plan to clean up a lot of these. Either by renaming them or by splitting up functionality, etc. There are also a few that i'd like to re-code or rethink entirely. Some of the things I want to change:
@@ -439,6 +437,7 @@ In the future I plan to clean up a lot of these. Either by renaming them or by s
 * make an "examples" folder full of better examples instead of cramming as many abstractions as possible into crappy "demos"
 * rename `scroll~` to something more descriptive
 * finish `tb303~` (add accent function, perhaps improve GUI further) and `hoover~`
+* finish writing help files for all abstractions
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 
@@ -452,26 +451,3 @@ Here are a few ideas I have:
 * make a bunch of abstractions for "patterns" based off of SuperCollider's pattern library.
 * make `cline` (controllable line using `mc` and keyboard shortcuts or messages)
   * make `o~` and the like use `cline` for the volume controls
-
-Help files still need to be written for:
-
-ctrl:
-* `cb`, `inputn`, `input`, `ispigot~`, `ispigot`, `kbdm`, `keynum`, `keyonchg`, `keyonoff`, `keyrow`, `kfilename`, `mcb`, `mck`, `m-client`, `mcl`, `mc`, `mct`, `mono`, `monos`, `mspigot`, `mstr`, `nems`, `numlock`, `polys`, `router`, `sndsel`, `sswitcher~`, `switcher~`, `switcher`
-
-fx:
-* `autocap~`, `bitflip~`, `cfilter~`, `chaospad~`, `chorus~`, `comp~`, `cvol~`, `delay~`, `dist1~`, `dist2~`, `envdelay~`, `expspect~`, `flange~`, `flanger~`, `gate~`, `gater~`, `hardgate~`, `icomb~`, `idelayorama~`, `ifilter~`, `ifv~`, `imoog~`, `isvf~`, `kaoss`, `mcomb~`, `mfv~`, `mmf~`, `phaser~`, `phaserr~`, `pingpong~`, `rateshift2~`, `rateshifter~`, `rateshift~`, `reverb~`, `sdly~`, `skip~`, `soft~`, `sqtremolo~`, `svff~`
-
-gen:
-* `analog~`, `fluid~`, `grain~`, `granular~`, `irsong~`, `noisef~`, `playsf~`, `pm~`, `psndm~`, `psndp~`, `random~`, `randomsong~`, `rec~`, `recp~`, `recsnd~`, `saw~`, `sine~`, `sndcf~`, `sndcl~`, `sndcm~`, `sndd~`, `snds~`, `srec~`, `timestretch~`
-
-math:
-* `atc~`, `atc`, `atr~`, `atr`, `cta~`, `cta`, `ctr~`, `kinv~`, `kinv`, `minv`, `mrange`, `num`, `rangem`, `rrange`, `rtr` `transposer`
-
-seq:
-* `adsr~`, `adsr`, `amap`, `anaseq`, `beat~`, `boxseq`, `bpma`, `bpmm2`, `bpmm`, `dust`, `edger~`, `ft`, `iadsr~`, `ilist`, `listman`, `lmap`, `ometro`, `pattseq`, `pb`, `pmap`, `queue`, `sbox`, `seqfill`, `srush`, `taptempo`, `td~`, `tmap`, `tracker`, `unmap`, `vslz`
-
-synths:
-* `hoover~`, `kick1~`, `kick2~`, `kick3~`, `snare1~`, `snare2~`, `tb303~`
-
-utils:
-* `autosend`, `browser`, `chars`, `e`, `hue_to_rgb`, `itimer`, `ktimer`, `limit~`, `list-find-1`, `list-replacer`, `lists`, `list-without`, `marquee`, `mp3conv`, `o~`, `parser`, `*+~`, `po~`, `porta~`, `qtabwrite`, `qtimer`, `quote`, `rporta~`, `so~`, `spacesym`, `span~`, `sreceive~`, `ssend~`
