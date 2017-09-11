@@ -46,6 +46,8 @@ ctrl
 ====
 abstractions for controlling things, either via keyboard or by clicking.
 
+* `ca` - FIX
+
 * `capslock` - shows whether capslock is on or off and also outputs 1 or 0 depending.
 
 * `cb` - control bend. shows the current value of the MIDI bend parameter, also adjusting its range to 0-127.
@@ -121,16 +123,6 @@ abstractions for generating sound
 
 * `analog~` - analog simulation. basically supposed to be like line noise and a small dc offset. probably not a very good simulation of the actual analog sound.
 
-* `fluid~` - FluidSynth (SoundFont) interface.
-
-* `grain~` - one "grain" of a sound file. WIP.
-
-* `granular~` - supposed to be a granular synth, but I didn't finish it. I might do that eventually.
-
-* `irsong~` - interface to `randomsong~`
-
-* `looper~` - loop snippets of a sound graphically. WIP
-
 * `noisef~` - noise frequency
 
 * `playsf~` - play a file from the argument.
@@ -142,10 +134,6 @@ abstractions for generating sound
 * `psndp~` - polyphonic sound player. similar to `sndp~` but with 6 voices.
 
 * `pulse~` - non-band-limited pulse wave with modulatable pulse width.
-
-* `random~` - random wave generator (based on a LADSPA plugin).
-
-* `randomsong~` - play a random song from your hard drive (you'll probably have to modify this a lot for it to work for you)
 
 * `rec~` - record a snippet of sound to a table.
 
@@ -175,13 +163,37 @@ abstractions for generating sound
 
 * `sndp~` - sound play. load a sound into a table and bang to play the whole sound. good for drums.
 
-* `snds~` - sound slices. play snippets of a sound that has been analyzed by `attacks~`
-
-* `srec~` - signal-based `rec~`. work-in-progress.
+* `stsnd~` - FIX
 
 * `timestretch~` - "timestretch" a sound by repeatedly going back and forth through it.
 
 * `tri~` - non-band-limited triangle or saw wave.
+
+guis
+====
+abstractions whose primary purpose is to display information.
+
+* `cpuload` - shows current CPU load average (FIX for pd 0.48)
+
+* `cview` - `ctlin` gui (works as drop-in replacement!)
+
+* `ifiddle~` - `fiddle~` gui (works as a drop-in replacement!)
+
+* `lview` - list view. shows the whole list received and its length.
+
+* `nview` - `notein` gui (works as a drop-in replacement!)
+
+* `scroll~` - scrolling amplitude view.
+
+* `siga~` - signal analysis. shows the current value, average value, maximum and minimum values, and a `vsl` to plot the input. there is also a `bng` to reset the recorded maximum and minimum.
+
+* `spectrum~` - shows the FFT spectrum of the input.
+
+* `tview` - text viewer. scrolls the last 5 received inputs.
+
+* `view~` - waveform view.
+
+* `vsig~` - "view signal". shows a graphical representation of the signal from -1 to 1.
 
 math
 ====
@@ -224,32 +236,6 @@ abstractions for altering or generating number streams
 * `rtr` - "range to range" - scale one arbitrary range to another arbitrary range.
 
 * `transposer` - outputs number to multiply a frequency by in order to shift it by a number of semitones (provided as input or argument)
-
-guis
-====
-abstractions whose primary purpose is to display information.
-
-* `cpuload` - shows current CPU load average (FIX for pd 0.48)
-
-* `cview` - `ctlin` gui (works as drop-in replacement!)
-
-* `ifiddle~` - `fiddle~` gui (works as a drop-in replacement!)
-
-* `lview` - list view. shows the whole list received and its length.
-
-* `nview` - `notein` gui (works as a drop-in replacement!)
-
-* `scroll~` - scrolling amplitude view.
-
-* `siga~` - signal analysis. shows the current value, average value, maximum and minimum values, and a `vsl` to plot the input. there is also a `bng` to reset the recorded maximum and minimum.
-
-* `spectrum~` - shows the FFT spectrum of the input.
-
-* `tview` - text viewer. scrolls the last 5 received inputs.
-
-* `view~` - waveform view.
-
-* `vsig~` - "view signal". shows a graphical representation of the signal from -1 to 1.
 
 seq
 ===
@@ -429,7 +415,7 @@ FUTURE
 In the future I plan to clean up a lot of these. Either by renaming them or by splitting up functionality, etc. There are also a few that i'd like to re-code or rethink entirely. Some of the things I want to change:
 
 * make sure all of these abstractions work with the new version of Pd (vanilla).
-* sort through these folders: ctrl, demos, examples, fx, gen, math, seq, utils
+* sort through these folders: ctrl, demos, examples, fx, math, seq, utils
 * clean out this library - remove incomplete extensions
 * split out the LADSPA abstractions into their own library.
 * rename `adsr` and `adsr~` to just `adr` and `adr~` and remove the sustain functionality

@@ -1,52 +1,52 @@
-#N canvas 0 29 1600 849 10;
-#X obj 250 -36 loadbang;
-#X obj 143 229 +~ 1;
-#X obj 86 322 outlet~;
-#X obj 175 -8 symbol \$1;
-#X obj 143 172 inlet~;
-#X obj 115 -8 openpanel;
-#X obj 98 -8 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#N canvas 1920 30 1920 1050 10;
+#X obj 379 44 loadbang;
+#X obj 272 309 +~ 1;
+#X obj 215 402 outlet~;
+#X obj 304 72 symbol \$1;
+#X obj 272 252 inlet~;
+#X obj 244 72 openpanel;
+#X obj 227 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X symbolatom -110 58 50 0 0 0 - - -;
-#X obj 165 -29 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X symbolatom 19 138 50 0 0 0 - - -, f 50;
+#X obj 294 51 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 10 251 control sound with audio signal from 0 to 1;
+#X floatatom 323 265 10 0 0 1 length - -, f 10;
+#X floatatom 433 343 10 0 0 1 time_from_0_to_1_to_play_at_normal_speed
+- -, f 10;
+#X floatatom 577 258 20 0 0 1 freq - -, f 20;
+#X obj 516 403 outlet;
+#X msg 433 361 time \$1;
+#X msg 577 276 freq \$1;
+#X obj 577 239 expr 1/$f1;
+#X obj 433 324 * 1000;
+#X obj 304 11 inlet;
+#X obj 448 289 nbx 5 14 0 1e+37 0 0 empty empty sample_rate 56 8 0
+10 -262144 -1 -1 0 256;
+#X obj 272 290 *~ 0;
+#X obj 272 271 wrap~;
+#X obj 409 238 wavinfo;
+#X obj 433 305 /;
+#X obj 323 201 soundfiler;
+#X obj 323 226 f;
+#X msg 609 392 table \$1;
+#X obj 609 354 loadbang;
+#X msg 350 336 length \$1;
+#X obj 592 358 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text -119 171 control sound with audio signal from 0 to 1;
-#X floatatom 194 185 10 0 0 1 length - -;
-#X floatatom 304 263 10 0 0 1 time_from_0_to_1_to_play_at_normal_speed
-- -;
-#X floatatom 448 178 20 0 0 1 freq - -;
-#X obj 387 323 outlet;
-#X msg 304 281 time \$1;
-#X msg 448 196 freq \$1;
-#X obj 448 159 expr 1/$f1;
-#X obj 304 244 * 1000;
-#X obj 175 -69 inlet;
-#X obj 319 209 nbx 5 14 0 1e+37 0 0 empty empty sample_rate 56 8 0
-10 -262144 -1 -1 44100 256;
-#X obj 143 210 *~ 0;
-#X obj 143 191 wrap~;
-#X obj 280 158 wavinfo;
-#X obj 304 225 /;
-#X obj 194 121 soundfiler;
-#X obj 194 146 f;
-#X msg 480 312 table \$1;
-#X obj 480 274 loadbang;
-#X msg 221 256 length \$1;
-#X obj 463 278 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 194 57 pack s \$0;
-#X obj 175 30 t a a a;
-#X msg 387 243 rate \$1;
-#X obj 175 -50 route open;
-#X obj 175 11 kfilename;
-#X msg 194 80 read -maxsize 1.30148e+07 -resize \$1 \$2-file1 \$2-file2
+#X obj 323 137 pack s \$0;
+#X obj 304 110 t a a a;
+#X msg 516 323 rate \$1;
+#X obj 304 30 route open;
+#X obj 304 91 kfilename;
+#X msg 323 160 read -maxsize 1.30148e+07 -resize \$1 \$2-file1 \$2-file2
 \; \$2-file normalize;
-#X obj 104 121 table \$0-file1;
-#X obj 104 140 table \$0-file2;
-#X obj 86 303 tabread4~ \$0-file1;
-#X obj 200 322 outlet~;
-#X obj 200 303 tabread4~ \$0-file2;
-#X obj 480 293 symbol \$0-file1;
+#X obj 233 201 table \$0-file1;
+#X obj 233 220 table \$0-file2;
+#X obj 215 383 tabread4~ \$0-file1;
+#X obj 329 402 outlet~;
+#X obj 329 383 tabread4~ \$0-file2;
+#X obj 609 373 symbol \$0-file1;
 #X connect 0 0 3 0;
 #X connect 1 0 38 0;
 #X connect 1 0 40 0;
