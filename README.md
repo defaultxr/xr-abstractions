@@ -429,21 +429,14 @@ FUTURE
 In the future I plan to clean up a lot of these. Either by renaming them or by splitting up functionality, etc. There are also a few that i'd like to re-code or rethink entirely. Some of the things I want to change:
 
 * make sure all of these abstractions work with the new version of Pd (vanilla).
+* sort through these folders: ctrl, demos, examples, fx, gen, math, seq, utils
 * clean out this library - remove incomplete extensions
 * split out the LADSPA abstractions into their own library.
 * rename `adsr` and `adsr~` to just `adr` and `adr~` and remove the sustain functionality
 * remake `adsr` and `adsr~` into actual ADSR envelopes
 * `atc`, `cta`, `atr`, and the others should probably be renamed to something like `btu`, `utb`, and `btr`, since the technical term for a signal from 0 to 1 is "unipolar" and the technical term for a signal from -1 to 1 is "bipolar"
 * see if there are better ways to analyze the "volume" of a sound for `scroll~`
-* fix `mc` and `master` and the stuff that depends on them
-  * `mcb`
-  * `mck`
-  * `m-client` (?)
-  * `mcl`
-  * `mct`
-  * `mstr` (?)
-  * have `mc` output empty symbol if `master` isn't detected (so stuff like `o~` doesn't have the wrong "name" from a save)
-  * FIX `master` NAME ALLOCATION POSSIBLE FREEZE(!)
+* re-add `mc` for `o~`??
 * make a better `analog~`
 * remove `seqfill` maybe.
 * redo `ft` maybe.
@@ -457,11 +450,9 @@ In the future I plan to clean up a lot of these. Either by renaming them or by s
 * replace `drumseq` with the new `drumseq2`
 * finish `grain~` and `granular~`
 * remove a lot of the stuff in "fx", since a lot of it either sucks or isn't even original material.
-* move `master` to ctrl
 * make an "examples" folder full of better examples instead of cramming as many abstractions as possible into crappy "demos"
 * rename `scroll~` to something more descriptive
-* finish `tb303~` (add accent function, perhaps improve GUI further)
-* make more synths (finish `hoover~`)
+* finish `tb303~` (add accent function, perhaps improve GUI further) and `hoover~`
 
 Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 
