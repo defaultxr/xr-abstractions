@@ -1,29 +1,29 @@
-#N canvas 0 29 1600 871 10;
-#X obj 249 116 inlet~;
-#X obj 262 -121 inlet;
-#X obj 103 115 hsl 55 13 0 127 0 0 \$0-v \$0-vols volume -1 8 0 10
--24198 -1 -1 4252 1;
-#X obj 294 322 outlet~;
-#X obj 303 301 dac~;
-#X obj 294 230 *~;
-#X obj 186 205 env~;
-#X obj 137 102 vsl 8 10 0 127 0 0 \$0-ms \$0-mr empty 0 -9 0 10 -262144
+#N canvas 1920 30 1920 1050 10;
+#X obj 249 246 inlet~;
+#X obj 262 9 inlet;
+#X obj 103 245 hsl 55 13 0 127 0 0 \$0-v \$0-vols volume -1 8 0 10
+-24198 -1 -1 0 1;
+#X obj 294 452 outlet~;
+#X obj 303 431 dac~;
+#X obj 294 360 *~;
+#X obj 186 335 env~;
+#X obj 137 232 vsl 8 10 0 127 0 0 \$0-ms \$0-mr empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 186 224 autoscale 0 127;
-#X obj 374 -7 r \$0-v;
-#X obj 374 125 / 127;
-#X obj 374 173 *~;
-#X obj 262 55 s \$0-vols;
-#X obj 262 17 line;
-#X obj 262 36 min 127;
-#X obj 186 281 s \$0-mr;
-#X obj 186 243 min 127;
-#X obj 186 262 max 0;
-#X obj 262 -34 t a b;
-#X obj 289 -15 f;
-#X obj 249 135 hip~ 5;
-#X obj 294 268 *~ 1;
-#N canvas 800 0 1600 849 mute 0;
+#X obj 186 354 autoscale 0 127;
+#X obj 374 123 r \$0-v;
+#X obj 374 255 / 127;
+#X obj 374 303 *~;
+#X obj 262 185 s \$0-vols;
+#X obj 262 147 line;
+#X obj 262 166 min 127;
+#X obj 186 411 s \$0-mr;
+#X obj 186 373 min 127;
+#X obj 186 392 max 0;
+#X obj 262 96 t a b;
+#X obj 289 115 f;
+#X obj 249 265 hip~ 5;
+#X obj 294 398 *~ 1;
+#N canvas 800 50 1600 849 mute 0;
 #X obj 507 274 route 0 1;
 #X msg 444 294 color 13 22 22;
 #X msg 537 294 color 16 22 22;
@@ -49,25 +49,25 @@
 #X connect 8 0 4 0;
 #X connect 9 0 8 0;
 #X connect 10 0 8 0;
-#X restore 315 249 pd mute;
-#X obj 304 -121 r out;
-#X obj 332 -32 s \$0-mute;
-#X obj 340 -121 r o;
-#X obj 364 -121 r \$0-o;
-#X obj 128 100 tgl 9 0 \$0-mutes \$0-mute empty 17 7 0 10 -262144 -1
+#X restore 315 379 pd mute;
+#X obj 304 9 r out;
+#X obj 332 98 s \$0-mute;
+#X obj 340 9 r o;
+#X obj 364 9 r \$0-o;
+#X obj 128 230 tgl 9 0 \$0-mutes \$0-mute empty 17 7 0 10 -262144 -1
 -1 1 1;
-#X obj 339 -56 lb 1;
-#X text 429 34 the o~ and so~ objects reserve the Menu-o key-combination.
+#X obj 339 74 lb 1;
+#X text 439 184 the o~ and so~ objects reserve the Menu-o key-combination.
 when you press Menu-o \, you will also have to type another key to
 select the individual instance \, or press enter to select them all.
 ;
-#X text 431 84 keys: when the o~ or so~ object is selected \, the number
-keys change the volume (leftmost (1) is 0% volume while rightmost (0)
-is 100% volume). qwer change the speed of keyboard volume changes (q
-is the slowest speed \, r is the fastest). t toggles muting.;
-#X obj 145 100 tgl 15 0 \$0-mc_tgls \$0-mc_tgl oc 2 7 0 10 -262144
+#X text 441 254 keys: when the o~ or so~ object is selected \, the
+number keys change the volume (leftmost (1) is 0% volume while rightmost
+(0) is 100% volume). qwer change the speed of keyboard volume changes
+(q is the slowest speed \, r is the fastest). t toggles muting.;
+#X obj 145 230 tgl 15 0 \$0-mc_tgls \$0-mc_tgl oc 2 7 0 10 -262144
 -1 -62784 0 1;
-#N canvas 0 29 1600 871 box 0;
+#N canvas 0 50 1600 871 box 0;
 #X msg 89 46 label \$1;
 #X obj 89 27 symbol;
 #X obj 98 102 pack f f;
@@ -138,14 +138,14 @@ is the slowest speed \, r is the fastest). t toggles muting.;
 #X connect 27 4 15 0;
 #X connect 27 5 14 0;
 #X connect 28 0 27 0;
-#X restore 220 -121 pd box;
-#X obj 262 -80 route vol mvol mute bang;
-#X text 429 -23 o~ \, so~ \, and po~ are standard output objects. o~
+#X restore 220 9 pd box;
+#X obj 262 50 route vol mvol mute bang;
+#X text 439 107 o~ \, so~ \, and po~ are standard output objects. o~
 is for mono output \, so~ is for stereo output \, and po~ is for panned
 mono output. with these abstractions you can control volume and mute
 with the keyboard (as described below) as well as with the mouse or
 via messages.;
-#X obj 374 144 aline~ 50;
+#X obj 374 274 aline~ 50;
 #X connect 0 0 20 0;
 #X connect 1 0 33 0;
 #X connect 5 0 21 0;
@@ -179,4 +179,4 @@ via messages.;
 #X connect 33 3 24 0;
 #X connect 35 0 11 0;
 #X connect 35 0 11 1;
-#X coords 0 -1 1 1 60 30 1 100 100;
+#X coords 0 -1 1 1 60 30 1 100 230;

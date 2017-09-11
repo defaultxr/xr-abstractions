@@ -1,53 +1,73 @@
-#N canvas 0 468 800 410 10;
-#X obj 103 234 outlet;
+#N canvas 1920 30 1920 1050 10;
+#X obj 103 584 outlet;
 #X obj 103 118 inlet;
-#X obj 103 177 symbol;
-#X text 293 119 FIX: can't handle filenames with spaces. argh!!;
-#X text 295 59 ~ can be used for your home directory. ~s can be used
+#X obj 103 227 symbol;
+#X text 623 119 FIX: can't handle filenames with spaces. argh!!;
+#X text 625 59 ~ can be used for your home directory. ~s can be used
 for your sounds directory. ~d is used by [drumseq] \, [anaseq] \, etc
 \, as the directory to save their data. you can add your own shortcuts
 too if you'd like.;
-#X msg 103 215 symbol /\$1;
-#X text 171 211 i'm not sure about how to get this to work with windows
+#X msg 103 565 symbol /\$1;
+#X text 501 211 i'm not sure about how to get this to work with windows
 but you'll probably need to change this message to something like "symbol
 c:/";
-#N canvas 800 468 800 410 shortcuts 0;
+#N canvas 1920 30 1920 1050 shortcuts 0;
 #X obj 37 37 inlet;
 #X obj 223 166 inlet;
-#X obj 37 96 s2l /;
 #X obj 37 115 list-drip;
 #X msg 37 284 add2 \$1;
-#X obj 37 322 l2s /;
 #X obj 37 56 t a b;
-#X msg 37 303 home/modula;
+#X msg 37 303 ;
 #X obj 37 134 unmap ~ ~s ~d;
 #X msg 121 134 set;
 #X obj 37 183 map;
 #X obj 37 341 outlet;
-#X connect 0 0 6 0;
-#X connect 1 0 10 1;
-#X connect 2 0 3 0;
-#X connect 3 0 8 0;
-#X connect 3 1 7 0;
-#X connect 4 0 7 0;
-#X connect 5 0 11 0;
-#X connect 6 0 2 0;
-#X connect 6 1 9 0;
+#X obj 37 322 list tosymbol /;
+#X obj 37 96 symbol tolist /;
+#X connect 0 0 4 0;
+#X connect 1 0 8 1;
+#X connect 2 0 6 0;
+#X connect 2 1 5 0;
+#X connect 3 0 5 0;
+#X connect 4 0 11 0;
+#X connect 4 1 7 0;
+#X connect 5 0 10 0;
+#X connect 6 0 8 0;
+#X connect 6 1 3 0;
 #X connect 7 0 5 0;
-#X connect 8 0 10 0;
-#X connect 8 1 4 0;
-#X connect 9 0 7 0;
-#X connect 10 0 4 0;
-#X restore 103 196 pd shortcuts;
-#X msg 172 164 home/modula home/modula/misc/sounds home/modula/misc/pd/saves
+#X connect 8 0 3 0;
+#X connect 10 0 9 0;
+#X connect 11 0 2 0;
+#X restore 103 306 pd shortcuts;
+#X msg 172 214 home/modula home/modula/misc/sounds home/modula/misc/pd/saves
 ;
-#X obj 172 145 loadbang;
-#X text 296 29 kfilename - abstraction for shorter filenames.;
+#X obj 172 195 loadbang;
+#X text 626 29 kfilename - abstraction for shorter filenames.;
 #X obj 103 137 route bang;
-#X text 394 155 <-- a list of directories you use (not including the
+#X text 724 155 <-- a list of directories you use (not including the
 root (/) dir) - first should be ~ \, second should be ~s \, third should
 be ~d. note that you can add more but you'll have to edit the "pd shortcuts"
 subpatch.;
+#X obj 126 379 unmap ~ ~s ~d;
+#X msg 201 430 add2 \$1;
+#X obj 126 398 map home/modula home/modula/misc/sounds home/modula/misc/pd/saves
+;
+#X obj 444 280 list fromsymbol;
+#X msg 444 261 symbol /home/modula;
+#X msg 444 337 47;
+#X obj 444 356 list-find;
+#X obj 444 471 list split;
+#X obj 444 375 t b f;
+#X obj 444 432 list store;
+#X obj 535 385 print lfr;
+#X obj 444 493 list split 1;
+#X obj 482 514 list tosymbol;
+#X obj 482 531 t a b;
+#X msg 542 554 add2 /;
+#X msg 467 553 add2 \$1;
+#X msg 616 578 / home/modula / modula / home;
+#X obj 444 318 t b a a b;
+#X msg 625 381 set;
 #X connect 1 0 11 0;
 #X connect 2 0 7 0;
 #X connect 5 0 0 0;
@@ -56,3 +76,26 @@ subpatch.;
 #X connect 9 0 8 0;
 #X connect 11 0 8 0;
 #X connect 11 1 2 0;
+#X connect 13 0 15 0;
+#X connect 13 1 14 0;
+#X connect 16 0 30 0;
+#X connect 17 0 16 0;
+#X connect 18 0 19 0;
+#X connect 19 0 21 0;
+#X connect 19 1 23 0;
+#X connect 20 0 24 0;
+#X connect 20 1 24 0;
+#X connect 21 0 22 0;
+#X connect 21 1 20 1;
+#X connect 22 0 20 0;
+#X connect 24 1 25 0;
+#X connect 25 0 26 0;
+#X connect 26 0 28 0;
+#X connect 26 1 27 0;
+#X connect 27 0 29 0;
+#X connect 28 0 29 0;
+#X connect 30 0 18 0;
+#X connect 30 1 19 1;
+#X connect 30 2 22 1;
+#X connect 30 3 31 0;
+#X connect 31 0 29 0;
