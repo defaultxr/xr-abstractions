@@ -1,8 +1,0 @@
-#N canvas 0 0 800 871 10;
-#X obj 115 26 inlet~;
-#X obj 235 198 outlet~;
-#X obj 124 139 plugin~ waveTerrain;
-#X obj 174 31 inlet~;
-#X connect 0 0 2 1;
-#X connect 2 1 1 0;
-#X connect 3 0 2 2;

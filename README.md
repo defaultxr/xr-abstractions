@@ -43,7 +43,7 @@ Below is an overview of all of the included abstractions.
 
 ctrl
 ----
-abstractions for controlling things, either via keyboard or by clicking.
+Abstractions for controlling things, either via keyboard or by clicking.
 
 * `ca` - FIX
 
@@ -109,15 +109,91 @@ abstractions for controlling things, either via keyboard or by clicking.
 
 demos
 -----
-demonstrations of the included abstractions (definitely open these if you want a tour of this library)
+Demonstrations of the included abstractions (definitely open these if you want a tour of this library)
 
 fx
 --
-abstractions for many LADSPA effects, as well as interfaces for filters, etc. I might end up deleting a lot of these later since there's so many and it's hard to maintain them in a quality way.
+Various small effects or GUIs for them.
+
+See also: [pd-ladspa-abstractions](https://github.com/defaultxr/pd-ladspa-abstractions), a set of LADSPA-wrapping abstractions.
+
+* `autocap~` - 
+
+* `bitcrush~` - 
+
+* `bitflip~` - 
+
+* `chaospad~` - 
+
+* `chebys~` - 
+
+* `chorus~` - 
+
+* `comp~` - 
+
+* `cvol~` - 
+
+* `delay~` - 
+
+* `dist1~` - 
+
+* `dist2~` - 
+
+* `envdelay~` - 
+
+* `expspect~` - 
+
+* `flanger~` - 
+
+* `gater~` - 
+
+* `icomb~` - 
+
+* `ifilter~` - 
+
+* `ifv~` - 
+
+* `ilattice~` - 
+
+* `imoog~` - 
+
+* `isvf~` - 
+
+* `kaoss` - 
+
+* `mcomb~` - 
+
+* `mfv~` - 
+
+* `mmf~` - 
+
+* `phaser~` - 
+
+* `pingpong~` - 
+
+* `pitchshifter~` - 
+
+* `rateshift2~` - 
+
+* `rateshift~` - 
+
+* `sdly~` - 
+
+* `shaper~` - 
+
+* `sidechain~` - 
+
+* `skip~` - 
+
+* `soft~` - 
+
+* `sqtremolo~` - 
+
+* `stautocap~` - 
 
 gen
 ---
-abstractions for generating sound
+Abstractions for generating sound.
 
 * `analog~` - analog simulation. basically supposed to be like line noise and a small dc offset. probably not a very good simulation of the actual analog sound.
 
@@ -169,7 +245,7 @@ abstractions for generating sound
 
 guis
 ----
-abstractions whose primary purpose is to display information.
+Abstractions whose primary purpose is to display information.
 
 * `cpuload` - shows current CPU load average (FIX for pd 0.48)
 
@@ -195,7 +271,7 @@ abstractions whose primary purpose is to display information.
 
 math
 ----
-abstractions for altering or generating number streams
+Abstractions for altering or generating number streams
 
 * `atc~` - "audio to control" - converts a bipolar signal (-1 to 1) to a unipolar signal (0 to 1)
 
@@ -237,7 +313,7 @@ abstractions for altering or generating number streams
 
 seq
 ---
-sequencer abstractions
+Sequencers!
 
 * `adsr~` - attack decay sustain release envelope... well, kinda.
 
@@ -323,7 +399,7 @@ sequencer abstractions
 
 synths
 ------
-"full-featured" synthesizers. a lot of these are scrapped designs. most of these aren't that great.
+"Full-featured" synthesizers, many of which actually aren't even completed yet.
 
 * `hoover~` - hoover synth. WIP.
 
@@ -341,7 +417,7 @@ synths
 
 utils
 -----
-miscellaneous utilities
+Miscellaneous utilities.
 
 * `*+~` - multiply and then add to a signal with one object.
 
