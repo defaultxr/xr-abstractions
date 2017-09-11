@@ -1,18 +1,18 @@
 #N canvas 1920 30 1920 1050 10;
-#X obj 100 115 cnv 15 150 71 empty \$0-cnv 201
-129
-183
-50
-162 1 35
-0 12 -90133 -262144 0;
-#N canvas 1920 50 1920 1050 history 0;
+#X obj 100 115 cnv 15 150 71 empty \$0-cnv 
+
+
+
+ 1 35 0 12 -90133 -262144
+0;
+#N canvas 1920 30 1920 1050 history 0;
 #X obj 164 64 inlet;
 #X obj 390 298 outlet;
 #X msg 207 121 symbol bang;
 #X obj 164 140 list prepend list;
 #X obj 455 172 loadbang;
 #X msg 343 215 add2 \$1 \, bang;
-#X msg 343 249 list 201 129 183 50 162;
+#X msg 343 249 list     ;
 #X msg 455 210 set \, add2 \$1 \, add2 \$1 \, add2 \$1 \, add2 \$1
 \, add2 \$1;
 #X obj 455 191 spacesym;
@@ -20,13 +20,13 @@
 #X obj 377 317 list prepend set list;
 #X obj 377 336 list trim;
 #X msg 250 102 list symbol \$1;
-#X obj 343 171 list tosymbol;
 #X obj 382 140 symbol;
 #X obj 352 140 ftos;
 #X obj 164 83 route list bang symbol list float;
-#X connect 0 0 16 0;
+#X obj 343 171 zexy/list2symbol;
+#X connect 0 0 15 0;
 #X connect 2 0 5 0;
-#X connect 3 0 13 0;
+#X connect 3 0 16 0;
 #X connect 4 0 8 0;
 #X connect 5 0 6 0;
 #X connect 6 0 9 0;
@@ -36,19 +36,19 @@
 #X connect 9 1 10 0;
 #X connect 10 0 11 0;
 #X connect 11 0 6 0;
-#X connect 12 0 13 0;
+#X connect 12 0 16 0;
 #X connect 13 0 5 0;
 #X connect 14 0 5 0;
-#X connect 15 0 5 0;
-#X connect 16 0 3 0;
-#X connect 16 1 2 0;
-#X connect 16 2 12 0;
-#X connect 16 3 13 0;
-#X connect 16 4 15 0;
-#X connect 16 5 14 0;
+#X connect 15 0 3 0;
+#X connect 15 1 2 0;
+#X connect 15 2 12 0;
+#X connect 15 3 16 0;
+#X connect 15 4 14 0;
+#X connect 15 5 13 0;
+#X connect 16 0 5 0;
 #X restore 280 203 pd history;
 #X obj 280 165 inlet;
-#N canvas 0 30 1920 1050 cnv 0;
+#N canvas 0 50 1920 1050 cnv 0;
 #X obj 156 153 loadbang;
 #X obj 63 314 s \$0-cnv;
 #X obj 63 158 inlet;

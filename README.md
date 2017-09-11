@@ -117,7 +117,7 @@ Various small effects or GUIs for them.
 
 See also: [pd-ladspa-abstractions](https://github.com/defaultxr/pd-ladspa-abstractions), a set of LADSPA-wrapping abstractions.
 
-* `autocap~` - 
+* `autocap~` - automatic capture.
 
 * `bitcrush~` - 
 
@@ -129,19 +129,11 @@ See also: [pd-ladspa-abstractions](https://github.com/defaultxr/pd-ladspa-abstra
 
 * `chorus~` - 
 
-* `comp~` - 
-
-* `cvol~` - 
-
 * `delay~` - 
 
 * `dist1~` - 
 
 * `dist2~` - 
-
-* `envdelay~` - 
-
-* `expspect~` - 
 
 * `flanger~` - 
 
@@ -158,8 +150,6 @@ See also: [pd-ladspa-abstractions](https://github.com/defaultxr/pd-ladspa-abstra
 * `imoog~` - 
 
 * `isvf~` - 
-
-* `kaoss` - 
 
 * `mcomb~` - 
 
