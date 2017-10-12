@@ -1,5 +1,5 @@
 #N canvas 1920 30 1920 1050 10;
-#X obj 295 26 loadbang;
+#X obj 295 56 loadbang;
 #X obj 230 231 table \$0-file;
 #X obj 263 339 +~ 1;
 #X obj 263 405 tabread4~ \$0-file;
@@ -14,7 +14,7 @@
 #X msg 568 306 freq \$1;
 #X obj 568 269 expr 1/$f1;
 #X obj 424 354 * 1000;
-#X obj 229 26 inlet;
+#X obj 449 56 inlet;
 #X obj 263 320 *~ 0;
 #X obj 263 301 wrap~;
 #X obj 400 268 wavinfo;
@@ -31,18 +31,15 @@
 #X msg 507 353 rate \$1;
 #X msg 314 190 read -maxsize 1.30148e+07 -resize \$1 \$2-file \; \$2-file
 normalize;
-#X obj 229 45 route open;
+#X obj 449 75 route open;
 #X obj 295 121 kfilename;
 #X floatatom 424 373 12 0 0 1 time - -, f 12;
 #X floatatom 439 306 5 0 0 1 sample_rate - -, f 5;
-#X obj 295 45 dollarg 0;
-#X obj 310 83 spacesym;
-#X obj 310 64 loadbang;
-#X obj 169 45 openpanel;
-#X obj 152 45 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 389 75 openpanel;
+#X obj 372 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 295 102 zexy/nop;
-#X connect 0 0 34 0;
+#X obj 295 75 dollarg 0;
+#X connect 0 0 36 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 5 0 17 0;
@@ -74,14 +71,12 @@ normalize;
 #X connect 27 2 18 0;
 #X connect 28 0 10 0;
 #X connect 29 0 20 0;
-#X connect 30 0 39 0;
+#X connect 30 0 31 0;
 #X connect 31 0 27 0;
 #X connect 32 0 11 0;
 #X connect 33 0 28 0;
 #X connect 33 0 19 1;
-#X connect 34 0 39 0;
-#X connect 36 0 35 0;
-#X connect 37 0 30 0;
-#X connect 38 0 37 0;
-#X connect 39 0 31 0;
+#X connect 34 0 30 0;
+#X connect 35 0 34 0;
+#X connect 36 0 31 0;
 #X coords 0 0 1 1 73 17 0;
