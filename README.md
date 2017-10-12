@@ -1,5 +1,5 @@
-defaultxr's Pure Data Abstractions
-==================================
+# defaultxr's Pure Data Abstractions
+
 This is a collection of abstractions I've made for Pure Data. It includes sequencers, GUIs, general utilities, and a few effects and synths. I'm still in the process of writing them, so consider them "beta", and expect changes if you upgrade later (which will hopefully be mentioned in commit messages). Some objects might get renamed, removed, or end up working/looking completely different later. Beware of this.
 
 Right now, most of these abstractions will probably only work under Pd-extended 0.43. Since Pd-extended is no longer maintained, I'll slowly be working towards Pd-vanilla compatibility for this library.
@@ -20,8 +20,7 @@ Some of the abstractions I find most useful:
 * `unmap` - map inputs to their indexes in a list (the inverse of `map`)
 * `tview` - GUI view of incoming messages
 
-Requirements
-============
+# Requirements
 
 Here's a list of the libraries that this one depends on. All of these should be installed automatically if you're using Pd 0.48
 
@@ -30,22 +29,21 @@ Here's a list of the libraries that this one depends on. All of these should be 
 * motex
 * zexy
 
-Installation
-============
+# Installation
 
 After you install the requirements listed above, the abstractions should "just work". However there are a few that you may want to edit:
 
 * `kfilename` - this abstraction is used to shorten filenames. So for example, `~` is replaced with `/home/modula` by default. You will most likely want to change that so that it points to your home directory instead.
 
-Overview
-========
+# Overview
+
 Below is an overview of all of the included abstractions.
 
-ctrl
-----
+## ctrl
+
 Abstractions for controlling things, either via keyboard or by clicking.
 
-* `ca` - FIX
+* `ca` - control interface. 1st arg is MIDI CC number, 2nd (optional) arg can be `B` to output bang when the CC hits 127, `I` to invert the CCs, a number to change the range from 0 to that number, or ... (FIX: how is this different from `c`?)
 
 * `capslock` - shows whether capslock is on or off and also outputs 1 or 0 depending.
 
@@ -107,12 +105,12 @@ Abstractions for controlling things, either via keyboard or by clicking.
 
 * `switcher` - switches between outputting the left inlet or the right inlet graphically via a ratio control. you can also change the inlet by sending a "switch" message to the first inlet.
 
-demos
------
+## demos
+
 Demonstrations of the included abstractions (definitely open these if you want a tour of this library)
 
-fx
---
+## fx
+
 Various small effects or GUIs for them.
 
 See also: [pd-ladspa-abstractions](https://github.com/defaultxr/pd-ladspa-abstractions), a set of LADSPA-wrapping abstractions.
@@ -181,8 +179,8 @@ See also: [pd-ladspa-abstractions](https://github.com/defaultxr/pd-ladspa-abstra
 
 * `stautocap~` - 
 
-gen
----
+## gen
+
 Abstractions for generating sound.
 
 * `analog~` - analog simulation. basically supposed to be like line noise and a small dc offset. probably not a very good simulation of the actual analog sound.
@@ -233,8 +231,8 @@ Abstractions for generating sound.
 
 * `tri~` - non-band-limited triangle or saw wave.
 
-guis
-----
+## guis
+
 Abstractions whose primary purpose is to display information.
 
 * `cpuload` - shows current CPU load average (FIX for pd 0.48)
@@ -259,8 +257,8 @@ Abstractions whose primary purpose is to display information.
 
 * `vsig~` - "view signal". shows a graphical representation of the signal from -1 to 1.
 
-math
-----
+## math
+
 Abstractions for altering or generating number streams
 
 * `atc~` - "audio to control" - converts a bipolar signal (-1 to 1) to a unipolar signal (0 to 1)
@@ -301,8 +299,8 @@ Abstractions for altering or generating number streams
 
 * `transposer` - outputs number to multiply a frequency by in order to shift it by a number of semitones (provided as input or argument)
 
-seq
----
+## seq
+
 Sequencers!
 
 * `adsr~` - attack decay sustain release envelope... well, kinda.
@@ -387,8 +385,8 @@ Sequencers!
 
 * `vslz` - extremely simple 8-step vsl-based sequencer.
 
-synths
-------
+## synths
+
 "Full-featured" synthesizers, many of which actually aren't even completed yet.
 
 * `hoover~` - hoover synth. WIP.
@@ -405,8 +403,8 @@ synths
 
 * `tb303~` - TB303 clone. probably doesn't sound much like the real thing. WIP
 
-utils
------
+## utils
+
 Miscellaneous utilities.
 
 * `*+~` - multiply and then add to a signal with one object.
@@ -473,8 +471,7 @@ Miscellaneous utilities.
 
 * `sym` - turn a list into a symbol (basically just `l2s` with an empty symbol sent to the right inlet. see also: `chars`)
 
-Future
-======
+# Future
 
 In the future I plan to clean up a lot of these. Either by renaming them or by splitting up functionality, etc. There are also a few that i'd like to re-code or rethink entirely. Some of the things I want to change:
 
