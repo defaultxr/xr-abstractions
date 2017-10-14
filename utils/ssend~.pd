@@ -1,14 +1,19 @@
-#N canvas 0 0 1600 849 10;
+#N canvas 1920 30 1920 1050 10;
 #X obj 40 40 inlet~;
 #X obj 155 40 inlet;
-#N canvas 0 0 1600 849 \$0-sender 0;
+#N canvas 1920 30 1920 1050 \$0-sender 0;
 #X obj 0 0 inlet~;
-#X obj 0 30 send~ fuck;
+#X obj 0 30 send~ bar;
+#X connect 0 0 1 0;
 #X restore 40 72 pd \$0-sender;
 #X obj 155 90 pack s \$0;
 #X obj 57 17 namecanvas \$0-ssend;
 #X msg 155 109 \; pd-\$2-sender clear \, obj 0 0 inlet~ \, obj 0 30
 send~ \$1 \, connect 0 0 1 0 \; \$2-ssend connect 0 0 2 0;
+#X obj 191 40 loadbang;
+#X obj 191 59 symbol \$1;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 3 0 5 0;
+#X connect 6 0 7 0;
+#X connect 7 0 3 0;

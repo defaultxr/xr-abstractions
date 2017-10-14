@@ -465,9 +465,9 @@ Miscellaneous utilities.
 
 * `span~` - simple panner. like `pan~` but lets you specify the panning position as an argument if you're lazy.
 
-* `sreceive~` - settable receive. probably don't use this.
+* `sreceive~` - settable receive.
 
-* `ssend~` - settable send. probably don't use this.
+* `ssend~` - settable send.
 
 * `sym` - turn a list into a symbol (basically just `l2s` with an empty symbol sent to the right inlet. see also: `chars`)
 
@@ -502,7 +502,7 @@ In the future I plan to clean up a lot of these. Either by renaming them or by s
 * finish `tb303~` (add accent function, perhaps improve GUI further) and `hoover~`
 * finish writing help files for all abstractions
 
-Here are some things i'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
+Here are some things I'd like to be able to do, but can't (due to either bugs/missing features in Pure Data, or just my lack of knowledge):
 
 * make `keyonchg`, `keyonoff`, etc work properly (pd's `keyname`, `key`, `keyup`, etc, all detect from keyboard "repeat" events rather than actual physical keypresses or releases)
   * actually, this is probably because i'm using X, and X sucks. can't wait for wayland!
