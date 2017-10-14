@@ -1,4 +1,4 @@
-#N canvas 0 29 1600 849 10;
+#N canvas 1920 30 1920 1050 10;
 #X obj 41 445 view~;
 #X obj 41 367 osc~ 0.1;
 #X obj 251 445 view~;
@@ -10,17 +10,24 @@
 #X obj 671 406 pulse~;
 #X obj 671 347 sig~ 100;
 #X obj 471 377 osc~ 0.1;
-#X obj 704 377 osc~ 0.1;
+#X obj 687 377 osc~ 0.1;
 #X text 472 91 view~ - view a signal;
-#X text 466 133 view~ allows you to see a signal \, as well as its
-current value \, average \, and top and bottom recorded values. the
-[nbx] allows you to change the refresh rate \, and the "r" [bng] allows
-you to erase the recorded top and bottom values.;
-#X text 35 250 the output of [view~] is clipped between -2 and 2 so
-that pd doesn't try drawing a waveform way out of the scope of the
-patch:;
 #X obj 41 406 *~ 10;
-#X connect 1 0 15 0;
+#X text 466 133 view~ allows you to see a signal. It also shows the
+"current" value (snapshotted each time the internal metro bangs) \,
+and a running minimum and maximum value. You can change the refresh
+rate with the number box \, and reset the minimum and maximum to 0
+with the "r" bang.;
+#X text 33 254 The output of [view~] is clipped between -2 and 2 so
+that pd doesn't try drawing a waveform way out of the scope of the
+patch. Otherwise you might end up with some really big scrollbars :)
+;
+#X text 465 217 view~ also has a mode switch \; in the first mode \,
+the display is redrawn every time the internal metro bangs. In the
+second mode \, the view is redrawn whenever the signal rises above
+zero. In the third mode \, the view is only redrawn when view~'s right
+inlet receives a bang.;
+#X connect 1 0 13 0;
 #X connect 3 0 2 0;
 #X connect 6 0 4 0;
 #X connect 7 0 6 0;
@@ -28,4 +35,4 @@ patch:;
 #X connect 9 0 8 0;
 #X connect 10 0 6 1;
 #X connect 11 0 8 1;
-#X connect 15 0 0 0;
+#X connect 13 0 0 0;
