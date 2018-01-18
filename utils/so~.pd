@@ -1,4 +1,4 @@
-#N canvas 1680 29 1600 871 10;
+#N canvas 1680 50 1600 871 10;
 #X obj 249 116 inlet~;
 #X obj 297 116 inlet~;
 #X obj 262 -121 inlet;
@@ -11,7 +11,7 @@
 #X obj 294 230 *~;
 #X obj 186 205 env~;
 #X obj 137 102 vsl 8 10 0 127 0 0 \$0-ms \$0-mr empty 0 -9 0 10 -262144
--1 -1 673 1;
+-1 -1 0 1;
 #X obj 186 224 autoscale 0 127;
 #X obj 374 -7 r \$0-v;
 #X obj 374 125 / 127;
@@ -28,7 +28,7 @@
 #X obj 297 135 hip~ 5;
 #X obj 294 268 *~ 1;
 #X obj 325 268 *~ 1;
-#N canvas 800 0 1600 849 mute 0;
+#N canvas 800 50 1600 849 mute 0;
 #X obj 507 274 route 0 1;
 #X msg 444 294 color 13 22 22;
 #X msg 537 294 color 16 22 22;
@@ -75,7 +75,7 @@ keys change the volume (leftmost (1) is 0% volume while rightmost (0)
 is 100% volume). qwer change the speed of keyboard volume changes (q
 is the slowest speed \, r is the fastest). t toggles muting.;
 #X obj 262 -80 route vol mvol mute bang;
-#N canvas 1680 29 1600 871 box 1;
+#N canvas 1920 30 1920 1050 box 1;
 #X obj 89 -56 route name ON OFF MENU key;
 #X msg 89 46 label \$1;
 #X obj 89 27 symbol;
@@ -104,9 +104,9 @@ is the slowest speed \, r is the fastest). t toggles muting.;
 #X msg 293 217 vol \$1 \$2;
 #X msg 365 136 mute;
 #X obj 293 198 pack f 1000;
-#X obj 435 10 r13;
 #X msg 435 -9 set \$1;
 #X obj 89 -75 mc o;
+#X obj 435 10 receive13;
 #X connect 0 0 2 0;
 #X connect 0 1 5 0;
 #X connect 0 2 6 0;
@@ -115,7 +115,7 @@ is the slowest speed \, r is the fastest). t toggles muting.;
 #X connect 0 5 15 0;
 #X connect 1 0 14 0;
 #X connect 2 0 1 0;
-#X connect 2 0 29 0;
+#X connect 2 0 28 0;
 #X connect 3 0 4 0;
 #X connect 4 0 14 0;
 #X connect 5 0 3 0;
@@ -148,9 +148,9 @@ is the slowest speed \, r is the fastest). t toggles muting.;
 #X connect 25 0 15 0;
 #X connect 26 0 15 0;
 #X connect 27 0 25 0;
-#X connect 28 0 15 0;
-#X connect 29 0 28 0;
-#X connect 30 0 0 0;
+#X connect 28 0 30 0;
+#X connect 29 0 0 0;
+#X connect 30 0 15 0;
 #X restore 220 -121 pd box;
 #X obj 145 100 tgl 15 0 \$0-mc_tgls \$0-mc_tgl os 2 7 0 10 -262144
 -262144 -62784 0 1;

@@ -1,29 +1,33 @@
-#N canvas 1680 29 1600 871 10;
-#X obj 150 186 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#N canvas 1920 30 1920 1050 10;
+#X obj 480 236 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 167 182 this should be an X when edit mode is ON;
-#X obj 150 208 outlet;
-#X obj 195 148 route editmode;
-#X obj 195 129 receive13;
-#X msg 195 110 set \$1;
-#X obj 168 91 t a a;
-#X obj 150 -38 loadbang;
-#X obj 177 0 f \$1;
-#X obj 177 19 sel 0;
-#X obj 168 72 window_name;
-#X msg 168 45 1;
-#X msg 41 127 \; \$1 editmode \, editmode;
-#X obj 150 -19 t b b;
-#X obj 228 -32 inlet;
-#X text -312 205 i originally thought that toggling edit mode twice
-would be an easy way to determine whether it's active in a certain
-patch but i realized that has strange side-effects so i disabled it.
-;
-#X text -312 124 edit mode is active by default on new patches and
-inactive by default on loaded patches. we assume that edit mode is
-active since that's the more common case. it's also less likely to
-cause unwanted things to happen since usually you'll want to disable
-functions when edit mode is on.;
+#X text 497 232 this should be an X when edit mode is ON;
+#X obj 480 258 outlet;
+#X obj 525 198 route editmode;
+#X obj 525 179 receive13;
+#X msg 525 160 set \$1;
+#X obj 498 141 t a a;
+#X obj 480 12 loadbang;
+#X obj 507 50 f \$1;
+#X obj 507 69 sel 0;
+#X obj 498 122 window_name;
+#X msg 498 95 1;
+#X msg 621 117 \; \$1 editmode \, editmode;
+#X obj 480 31 t b b;
+#X obj 558 18 inlet;
+#X text 612 55 I originally thought that toggling edit mode twice would
+be an easy way to determine whether it's active in a certain patch...
+But I realized that has strange side effects \, so I disabled it.;
+#X text 68 125 Edit mode is active by default on new patches and inactive
+by default on loaded patches. We assume that edit mode is active at
+first since that's the more common case. It's also less likely to cause
+unwanted things to happen since usually you'll want to disable functions
+when edit mode is on.;
+#X text 67 19 editmode - output 1 when edit mode is on \, output 0
+when it's off.;
+#X text 66 62 Note that this abstraction is not 100% reliable \, because
+(as far as I'm currently aware) it's not possible to detect with complete
+certainty whether edit mode is on in a Pd patch.;
 #X connect 0 0 2 0;
 #X connect 3 0 0 0;
 #X connect 4 0 3 0;
@@ -38,4 +42,4 @@ functions when edit mode is on.;
 #X connect 13 0 0 0;
 #X connect 13 1 8 0;
 #X connect 14 0 8 0;
-#X coords 0 -1 1 1 67 17 1 98 186;
+#X coords 0 -1 1 1 67 15 1 428 236;

@@ -2,40 +2,31 @@
 #X obj 249 246 inlet~;
 #X obj 262 9 inlet;
 #X obj 103 245 hsl 55 13 0 127 0 0 \$0-v \$0-vols volume -1 8 0 10
--24198 -1 -1 0 1;
-#X obj 294 452 outlet~;
-#X obj 303 431 dac~;
-#X obj 294 360 *~;
-#X obj 186 335 env~;
-#X obj 137 232 vsl 8 10 0 127 0 0 \$0-ms \$0-mr empty 0 -9 0 10 -262144
--1 -1 0 1;
-#X obj 186 354 autoscale 0 127;
+-258699 -1 -1 3000 1;
+#X obj 304 337 *~;
+#X obj 137 232 vsl 8 10 0 100 0 0 \$0-ms \$0-mr empty 0 -9 0 10 -262144
+-66577 -262144 669 1;
 #X obj 374 123 r \$0-v;
-#X obj 374 255 / 127;
-#X obj 374 303 *~;
+#X obj 374 214 / 127;
+#X obj 374 265 *~;
 #X obj 262 185 s \$0-vols;
 #X obj 262 147 line;
 #X obj 262 166 min 127;
-#X obj 186 411 s \$0-mr;
-#X obj 186 373 min 127;
-#X obj 186 392 max 0;
 #X obj 262 96 t a b;
 #X obj 289 115 f;
 #X obj 249 265 hip~ 5;
-#X obj 294 398 *~ 1;
-#N canvas 800 50 1600 849 mute 0;
-#X obj 507 274 route 0 1;
-#X msg 444 294 color 13 22 22;
-#X msg 537 294 color 16 22 22;
-#X obj 515 327 s \$0-vols;
-#X obj 449 212 sel 0;
-#X msg 433 235 0;
-#X msg 480 235 1;
-#X obj 407 367 outlet;
-#X obj 449 192 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X obj 356 153 lb 1;
-#X obj 449 173 r \$0-mutes;
+#X obj 304 375 *~ 1;
+#N canvas 1920 50 1920 1050 mute 0;
+#X obj 491 277 route 0 1;
+#X msg 491 307 color 13 22 22;
+#X msg 584 307 color 16 22 22;
+#X obj 491 340 s \$0-vols;
+#X obj 449 216 sel 0;
+#X msg 449 235 0;
+#X msg 476 235 1;
+#X obj 449 279 outlet;
+#X obj 419 193 lb 1;
+#X obj 449 193 r \$0-mutes;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
 #X connect 1 0 3 0;
@@ -47,136 +38,102 @@
 #X connect 6 0 0 0;
 #X connect 6 0 7 0;
 #X connect 8 0 4 0;
-#X connect 9 0 8 0;
-#X connect 10 0 8 0;
-#X restore 315 379 pd mute;
-#X obj 304 9 r out;
-#X obj 332 98 s \$0-mute;
-#X obj 340 9 r o;
-#X obj 364 9 r \$0-o;
+#X connect 9 0 4 0;
+#X restore 325 356 pd mute;
+#X obj 298 9 r out;
+#X obj 328 98 s \$0-mute;
+#X obj 334 9 r o;
+#X obj 358 9 r \$0-o;
 #X obj 128 230 tgl 9 0 \$0-mutes \$0-mute empty 17 7 0 10 -262144 -1
--1 1 1;
-#X obj 339 74 lb 1;
-#X text 439 184 the o~ and so~ objects reserve the Menu-o key-combination.
-when you press Menu-o \, you will also have to type another key to
-select the individual instance \, or press enter to select them all.
-;
-#X text 441 254 keys: when the o~ or so~ object is selected \, the
+-1 0 1;
+#X obj 299 74 lb 1;
+#X text 475 554 keys: when the o~ or so~ object is selected \, the
 number keys change the volume (leftmost (1) is 0% volume while rightmost
 (0) is 100% volume). qwer change the speed of keyboard volume changes
 (q is the slowest speed \, r is the fastest). t toggles muting.;
-#X obj 145 230 tgl 15 0 \$0-mc_tgls \$0-mc_tgl oc 2 7 0 10 -262144
+#X obj 145 230 tgl 15 0 \$0-mc_tgls \$0-mc_tgl empty 2 7 0 10 -262144
 -1 -62784 0 1;
-#N canvas 0 50 1600 871 box 0;
-#X msg 89 46 label \$1;
-#X obj 89 27 symbol;
-#X obj 98 102 pack f f;
-#X msg 98 121 color \$1 0 \$2;
-#X msg 119 -5 18;
-#X msg 150 -5 0;
-#X obj 156 55 sel 18 0;
-#X obj 156 36 f;
-#X obj 180 -5 sel 0 1;
-#X msg 199 14 13;
-#X msg 178 74 18;
-#X msg 156 74 0;
-#X obj 180 -37 t b f;
-#X obj 89 147 s \$0-mc_tgl;
-#X obj 550 156 outlet;
-#X obj 259 38 unpack s f;
-#X obj 316 57 keyrow;
-#X obj 316 76 expr ($f1/9)*127;
-#X obj 259 95 sel q w e r t;
-#X msg 218 136 30000;
-#X msg 258 136 10000;
-#X msg 297 136 5000;
-#X msg 331 136 1000;
-#X obj 11 -75 r \$0-mc_tgls;
-#X msg 293 217 vol \$1 \$2;
-#X msg 365 136 mute;
-#X obj 293 198 pack f 1000;
-#X obj 89 -56 route name ON OFF MENU key;
-#X obj 89 -75 mc o;
-#X connect 0 0 13 0;
-#X connect 1 0 0 0;
+#X obj 374 233 aline~ 50;
+#X obj 275 459 outlet~;
+#X obj 304 438 dac~;
+#X obj 354 459 outlet~;
+#X obj 304 413 pan~;
+#X obj 325 394 r \$0-pan;
+#X obj 262 50 route vol mvol mute bang pan;
+#X obj 394 98 s \$0-pan;
+#X obj 402 73 lb \$1;
+#X text 477 32 o~ and so~ are my take on output abstractions. They're
+compact \, and designed to be easy to control. I also made them give
+visual feedback so it's easier to tell what's going on.;
+#X text 476 201 The small toggle in the top row is the mute switch.
+When active \, the volume slider is green and sound is sent to the
+dac. When muted \, the volume slider is red and no sound is output.
+;
+#X text 476 327 The big toggle--to the right of the level meter--is
+a "select". When it is active \, this abstraction will respond to its
+keyboard shortcuts. It automatically deactivates itself when you enter
+edit mode.;
+#X text 476 396 The volume slider should be self-explanatory. When
+it's red \, it means the output is muted. Click the small toggle to
+unmute.;
+#X text 477 487 M -;
+#X text 477 6 o~ / so~ - output control;
+#X text 479 102 Arguments:;
+#X text 479 171 Interface:;
+#X text 476 456 Keyboard Shortcuts (when the big toggle is active):
+;
+#X text 477 130 \$1 = panning position (o~ only). from -45 (hard left)
+to 45 (hard right). defaults to 0 which is center.;
+#N canvas 1920 50 1920 1050 meter 0;
+#X obj 572 182 inlet~;
+#X obj 602 229 threshold~ 1 100 1 100;
+#X obj 572 229 env~;
+#X obj 572 321 s \$0-mr;
+#X msg 731 248 color 0 2 0;
+#X msg 602 248 color 13 2 0;
+#X connect 0 0 2 0;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 1 1 4 0;
 #X connect 2 0 3 0;
-#X connect 3 0 13 0;
-#X connect 4 0 2 0;
-#X connect 4 0 7 1;
-#X connect 5 0 2 0;
-#X connect 5 0 7 1;
-#X connect 6 0 11 0;
-#X connect 6 1 10 0;
-#X connect 7 0 6 0;
-#X connect 8 0 7 0;
-#X connect 8 1 9 0;
-#X connect 9 0 2 1;
-#X connect 10 0 2 1;
-#X connect 11 0 2 1;
-#X connect 12 0 2 0;
-#X connect 12 1 8 0;
-#X connect 15 0 18 0;
-#X connect 15 1 16 0;
-#X connect 16 0 17 0;
-#X connect 17 0 26 0;
-#X connect 18 0 19 0;
-#X connect 18 1 20 0;
-#X connect 18 2 21 0;
-#X connect 18 3 22 0;
-#X connect 18 4 25 0;
-#X connect 19 0 26 1;
-#X connect 20 0 26 1;
-#X connect 21 0 26 1;
-#X connect 22 0 26 1;
-#X connect 24 0 14 0;
-#X connect 25 0 14 0;
-#X connect 26 0 24 0;
-#X connect 27 0 1 0;
-#X connect 27 1 4 0;
-#X connect 27 2 5 0;
-#X connect 27 3 12 0;
-#X connect 27 4 15 0;
-#X connect 27 5 14 0;
-#X connect 28 0 27 0;
-#X restore 220 9 pd box;
-#X obj 262 50 route vol mvol mute bang;
-#X text 439 107 o~ \, so~ \, and po~ are standard output objects. o~
-is for mono output \, so~ is for stereo output \, and po~ is for panned
-mono output. with these abstractions you can control volume and mute
-with the keyboard (as described below) as well as with the mouse or
-via messages.;
-#X obj 374 274 aline~ 50;
-#X connect 0 0 20 0;
-#X connect 1 0 33 0;
-#X connect 5 0 21 0;
-#X connect 6 0 8 0;
-#X connect 8 0 16 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X restore 249 337 pd meter;
+#X text 475 266 The vertical slider to the right of the mute is a level
+meter. It shows you the level of the incoming signal and has a red
+background when the signal is outside of -1 to 1 ("clipping"). It does
+not react to clicks.;
+#X connect 0 0 13 0;
+#X connect 1 0 30 0;
+#X connect 3 0 14 0;
+#X connect 5 0 6 0;
+#X connect 5 0 12 1;
+#X connect 6 0 24 0;
+#X connect 7 0 3 1;
 #X connect 9 0 10 0;
-#X connect 9 0 19 1;
-#X connect 10 0 35 0;
-#X connect 11 0 5 1;
-#X connect 13 0 14 0;
-#X connect 14 0 12 0;
-#X connect 16 0 17 0;
-#X connect 17 0 15 0;
-#X connect 18 0 13 0;
-#X connect 18 1 19 0;
-#X connect 19 0 13 0;
-#X connect 20 0 5 0;
-#X connect 20 0 6 0;
-#X connect 21 0 4 0;
-#X connect 21 0 3 0;
-#X connect 21 0 4 1;
-#X connect 22 0 21 1;
-#X connect 23 0 33 0;
-#X connect 25 0 33 0;
-#X connect 26 0 33 0;
-#X connect 28 0 24 0;
-#X connect 32 0 33 0;
-#X connect 33 0 18 0;
-#X connect 33 1 18 0;
-#X connect 33 2 24 0;
-#X connect 33 3 24 0;
-#X connect 35 0 11 0;
-#X connect 35 0 11 1;
+#X connect 10 0 8 0;
+#X connect 11 0 9 0;
+#X connect 11 1 12 0;
+#X connect 12 0 9 0;
+#X connect 13 0 3 0;
+#X connect 13 0 43 0;
+#X connect 14 0 28 0;
+#X connect 15 0 14 1;
+#X connect 16 0 30 0;
+#X connect 18 0 30 0;
+#X connect 19 0 30 0;
+#X connect 21 0 17 0;
+#X connect 24 0 7 0;
+#X connect 24 0 7 1;
+#X connect 28 0 26 0;
+#X connect 28 0 25 0;
+#X connect 28 1 27 0;
+#X connect 28 1 26 1;
+#X connect 29 0 28 1;
+#X connect 30 0 11 0;
+#X connect 30 1 11 0;
+#X connect 30 2 17 0;
+#X connect 30 3 17 0;
+#X connect 30 4 31 0;
+#X connect 32 0 31 0;
 #X coords 0 -1 1 1 60 30 1 100 230;

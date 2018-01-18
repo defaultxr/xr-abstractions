@@ -19,12 +19,11 @@ c:/";
 #X obj 103 265 zexy/symbol2list /;
 #X obj 103 284 list-drip;
 #X msg 155 395 set;
-#X msg 103 457 home/modula/misc/sounds loops x;
+#X msg 103 457;
 #X obj 103 246 t a b;
 #X obj 103 476 zexy/list2symbol /;
 #X text 344 301 edit the "unmap" and "map" objects to change the list
 of abbreviations in use.;
-#X obj 28 197 r foo;
 #X connect 1 0 7 0;
 #X connect 2 0 15 0;
 #X connect 4 0 0 0;
@@ -42,4 +41,3 @@ of abbreviations in use.;
 #X connect 15 0 11 0;
 #X connect 15 1 13 0;
 #X connect 16 0 4 0;
-#X connect 18 0 7 0;

@@ -465,9 +465,9 @@ Miscellaneous utilities.
 
 * `span~` - simple panner. like `pan~` but lets you specify the panning position as an argument if you're lazy.
 
-* `sreceive~` - settable receive.
+* `sreceive~` - settable `receive~`.
 
-* `ssend~` - settable send.
+* `ssend~` - settable `send~`.
 
 * `sym` - turn a list into a symbol (basically just `l2s` with an empty symbol sent to the right inlet. see also: `chars`)
 
