@@ -1,20 +1,20 @@
-#N canvas 0 29 1600 849 10;
+#N canvas 1920 30 1920 1050 10;
 #X obj 575 315 inlet;
-#X text 769 318 e - "every";
+#X text 819 338 e - "every";
 #X obj 575 444 outlet;
-#X text 769 356 output every \$1-th input \, with an offset of \$2.
+#X text 819 376 output every \$1-th input \, with an offset of \$2.
 ;
 #X obj 575 334 t a b;
-#X obj 602 353 count \$1;
 #X obj 602 402 == \$2;
 #X obj 575 425 spigot;
-#X obj 626 315 inlet;
-#X obj 686 315 inlet;
+#X obj 701 315 inlet;
+#X obj 746 385 inlet;
+#X obj 602 353 modulo_counter \$1;
 #X connect 0 0 4 0;
-#X connect 4 0 7 0;
-#X connect 4 1 5 0;
-#X connect 5 0 6 0;
-#X connect 6 0 7 1;
-#X connect 7 0 2 0;
+#X connect 4 0 6 0;
+#X connect 4 1 9 0;
+#X connect 5 0 6 1;
+#X connect 6 0 2 0;
+#X connect 7 0 9 1;
 #X connect 8 0 5 1;
-#X connect 9 0 6 1;
+#X connect 9 0 5 0;
