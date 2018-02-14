@@ -514,3 +514,8 @@ Here are a few ideas I have:
 * make a bunch of abstractions for "patterns" based off of SuperCollider's pattern library.
 * make `cline` (controllable line using `mc` and keyboard shortcuts or messages)
   * make `o~` and the like use `cline` for the volume controls
+
+# Notes
+
+* `list-drip` -> `drip`
+* `ftos` -> `makefilename %s`
