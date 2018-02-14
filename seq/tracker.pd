@@ -1,4 +1,4 @@
-#N canvas 1680 29 1600 871 10;
+#N canvas 1920 30 1920 1050 10;
 #X obj 50 115 cnv 9 24 9 empty \$0-rn0 empty 0 4 0 10 -1 -262144 0
 ;
 #X obj 50 125 cnv 9 24 9 empty \$0-rn1 empty 0 4 0 10 -1 -262144 0
@@ -65,12 +65,12 @@
 0;
 #X obj 131 67 outlet;
 #X obj 131 29 inlet;
-#N canvas 1680 29 1600 871 parse-keys 0;
+#N canvas 1680 50 1600 871 parse-keys 0;
 #X obj 200 177 prepent 0;
-#N canvas 0 29 1600 849 main-interface 0;
+#N canvas 0 50 1600 849 main-interface 0;
 #X obj 168 10 inlet;
 #X obj 168 29 symbol;
-#N canvas 0 29 1600 849 sel 0;
+#N canvas 0 50 1600 849 sel 0;
 #X obj 168 227 inlet;
 #X msg 168 252 -1;
 #X msg 196 252 1;
@@ -168,7 +168,7 @@
 #X connect 41 0 1 0;
 #X connect 41 1 2 0;
 #X restore 152 81 pd sel;
-#N canvas 0 0 800 849 delete 0;
+#N canvas 0 50 800 849 delete 0;
 #X obj 249 210 inlet;
 #X obj 285 210 r \$0-step-numbers-list;
 #X obj 249 267 list-idx;
@@ -176,7 +176,7 @@
 #X obj 294 248 r \$0-selected-step;
 #X obj 249 229 bang;
 #X obj 249 286 s \$0-delete-step;
-#X floatatom 331 271 5 0 0 0 - - -;
+#X floatatom 331 271 5 0 0 0 - - -, f 5;
 #X connect 0 0 5 0;
 #X connect 1 0 3 1;
 #X connect 2 0 6 0;
@@ -185,14 +185,14 @@
 #X connect 4 0 7 0;
 #X connect 5 0 3 0;
 #X restore 219 181 pd delete;
-#N canvas 0 0 800 849 reset 0;
+#N canvas 0 50 800 849 reset 0;
 #X obj 40 40 inlet;
 #X obj 40 78 s \$0-set-view-from-num;
 #X obj 40 59 bang;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X restore 237 162 pd reset;
-#N canvas 0 0 1600 849 copy-one 0;
+#N canvas 0 50 1600 849 copy-one 0;
 #X obj 40 40 inlet;
 #X obj 129 164 s \$0-copy-list;
 #X msg 129 145 list \$1;
@@ -213,7 +213,7 @@
 #X connect 8 1 2 0;
 #X connect 9 0 5 1;
 #X restore 271 143 pd copy-one;
-#N canvas 0 0 1600 849 paste 0;
+#N canvas 0 50 1600 849 paste 0;
 #X obj 88 44 inlet;
 #X obj 124 44 r \$0-copy-list;
 #X obj 88 76 list;
@@ -254,7 +254,7 @@
 #X msg 254 200 3;
 #X msg 289 199 4;
 #X msg 323 199 1;
-#N canvas 0 0 1600 849 erase 0;
+#N canvas 0 50 1600 849 erase 0;
 #X obj 88 76 inlet;
 #X obj 130 57 r \$0-selected-step;
 #X obj 145 76 r \$0-step-numbers-list;
@@ -276,7 +276,7 @@
 #X connect 9 0 8 0;
 #X restore 341 105 pd erase;
 #X obj 168 48 sel Up Down i D r I c C p Return E a Q;
-#N canvas 0 29 1600 849 activate 0;
+#N canvas 0 50 1600 849 activate 0;
 #X obj 40 40 inlet;
 #X obj 76 40 r \$0-selected-step;
 #X obj 40 116 f;
@@ -289,7 +289,7 @@
 #X connect 4 0 2 1;
 #X connect 5 0 4 1;
 #X restore 358 86 pd activate;
-#N canvas 0 29 1600 849 quit 0;
+#N canvas 0 50 1600 849 quit 0;
 #X obj 40 40 inlet;
 #X msg 40 59 0;
 #X obj 40 78 s \$0-activatetgl;
@@ -319,8 +319,8 @@
 #X msg 200 138 OFF;
 #X msg 161 121 ON;
 #X obj 241 119 symbol;
-#N canvas 1680 29 1600 871 master 0;
-#X obj 504 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#N canvas 1680 50 1600 871 master 0;
+#X obj 504 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 490 75 1;
 #X msg 520 75 0;
@@ -362,7 +362,7 @@
 #X restore 241 100 pd master;
 #X obj 161 89 t b f b;
 #X obj 161 70 r \$0-mode;
-#N canvas 0 29 800 849 insert 0;
+#N canvas 0 50 800 849 insert 0;
 #X obj 157 0 inlet;
 #X obj 190 387 s \$0-status;
 #X msg 190 340 label insert:;
@@ -435,7 +435,7 @@
 #X connect 31 1 32 0;
 #X connect 32 0 5 0;
 #X restore 234 272 pd insert;
-#N canvas 0 29 800 849 insert-many 0;
+#N canvas 0 50 800 849 insert-many 0;
 #X obj 167 0 inlet;
 #X obj 200 387 s \$0-status;
 #X msg 150 320 label;
@@ -514,7 +514,7 @@
 #X connect 34 1 29 0;
 #X connect 35 0 31 0;
 #X restore 252 253 pd insert-many;
-#N canvas 0 29 800 849 copy-many 0;
+#N canvas 0 50 800 849 copy-many 0;
 #X obj 167 10 inlet;
 #X obj 200 437 s \$0-status;
 #X obj 414 153 s \$0-mode;
@@ -535,7 +535,7 @@
 #X msg 258 390 label c:\$1;
 #X obj 278 98 input;
 #X obj 167 48 sel Escape ON OFF;
-#N canvas 0 0 1600 849 accepted 0;
+#N canvas 0 50 1600 849 accepted 0;
 #X obj 193 36 inlet;
 #X obj 256 210 outlet;
 #X obj 193 112 ftos;
@@ -570,7 +570,7 @@
 #X obj 468 333 sel 0;
 #X obj 414 115 t b a;
 #X obj 435 248 spigot;
-#N canvas 0 0 800 849 make-copy-list 0;
+#N canvas 0 50 800 849 make-copy-list 0;
 #X obj 349 295 inlet;
 #X obj 370 333 r \$0-step-numbers-list;
 #X obj 349 352 list;
@@ -677,7 +677,7 @@
 #X restore 269 234 pd copy-many;
 #X obj 200 215 route 0 1 2 3 4;
 #X obj 131 70 lb 0;
-#N canvas 0 29 800 849 edit-row 0;
+#N canvas 0 50 800 849 edit-row 0;
 #X obj 170 0 inlet;
 #X obj 305 48 r \$0-step-list;
 #X obj 329 67 r \$0-selected-step;
@@ -709,7 +709,7 @@
 #X obj 377 86 r \$0-step-numbers-list;
 #X obj 356 124 list-idx;
 #X obj 356 105 list;
-#N canvas 0 0 800 849 update 0;
+#N canvas 0 50 800 849 update 0;
 #X obj 40 40 inlet;
 #X obj 116 40 inlet;
 #X obj 77 126 prepent;
@@ -734,7 +734,7 @@
 #X obj 66 200 s \$0-set-view-from-num;
 #X msg 269 248 list;
 #X obj 269 229 emptysymbol;
-#N canvas 0 0 800 849 parse-for-label 0;
+#N canvas 0 50 800 849 parse-for-label 0;
 #X obj 354 112 list-drip;
 #X obj 354 93 s2l;
 #X msg 378 93 symbol;
@@ -830,7 +830,7 @@
 #X connect 12 0 6 0;
 #X connect 14 0 11 0;
 #X restore 233 48 pd parse-keys;
-#N canvas 1680 29 1600 871 process-input 0;
+#N canvas 1920 30 1920 1050 process-input 1;
 #X obj 272 81 inlet;
 #X obj 272 480 outlet;
 #X obj 272 252 map;
@@ -841,7 +841,7 @@
 #X obj 272 347 map;
 #X obj 296 347 r \$0-step-list;
 #X obj 272 461 list trim;
-#N canvas 0 29 1600 849 view 0;
+#N canvas 0 50 1600 849 view 0;
 #X obj 334 155 inlet;
 #X obj 334 174 route float;
 #X obj 361 193 r \$0-step-numbers-list;
@@ -865,7 +865,7 @@
 #X obj 452 352 r \$0-selected-step;
 #X obj 437 371 <=;
 #X obj 437 390 sel 1 0;
-#N canvas 0 29 800 849 update-display 0;
+#N canvas 0 50 800 849 update-display 0;
 #X obj 304 75 list;
 #X obj 304 94 list split;
 #X obj 332 162 route bang;
@@ -892,7 +892,7 @@
 #X obj 52 155 route bang;
 #X obj 124 373 pack s f \$0;
 #X msg 124 392 \; \$3-r\$2 label \$1;
-#N canvas 0 0 800 849 parse-for-label 0;
+#N canvas 0 50 800 849 parse-for-label 0;
 #X obj 354 112 list-drip;
 #X obj 354 93 s2l;
 #X msg 378 93 symbol;
@@ -944,13 +944,13 @@
 #X obj 36 21 max 0;
 #X obj 52 116 list split 16;
 #X obj 196 -38 inlet;
-#X floatatom 318 -8 5 0 0 0 - - -;
-#N canvas 0 29 800 849 set-rn 0;
+#X floatatom 318 -8 5 0 0 0 - - -, f 5;
+#N canvas 0 50 800 849 set-rn 0;
 #X obj 199 280 inlet;
 #X obj 79 285 inlet;
 #X text 31 268 number to display;
 #X text 190 263 rn number;
-#N canvas 0 29 800 849 parse-num-for-label 0;
+#N canvas 0 50 800 849 parse-num-for-label 0;
 #X obj 354 197 list-drip;
 #X obj 354 103 s2l;
 #X msg 378 103 symbol;
@@ -1133,7 +1133,7 @@
 #X connect 25 0 8 0;
 #X restore 343 138 pd view;
 #X obj 308 81 r \$0-tracker;
-#N canvas 800 29 800 849 edit 0;
+#N canvas 800 50 800 849 edit 0;
 #X obj 472 122 inlet;
 #X obj 505 248 symbol;
 #X obj 505 267 list-replace;
@@ -1164,7 +1164,7 @@
 #X connect 12 1 2 1;
 #X connect 13 1 12 0;
 #X restore 379 119 pd edit;
-#N canvas 800 29 800 849 delete 0;
+#N canvas 800 50 800 849 delete 0;
 #X obj 316 96 r \$0-step-numbers-list;
 #X obj 235 173 list;
 #X obj 295 351 list-delete 0 1;
@@ -1221,7 +1221,7 @@ so it only happens after the list is completed.;
 #X connect 23 0 20 0;
 #X connect 24 1 16 0;
 #X restore 450 119 pd delete;
-#N canvas 800 29 800 849 insert 0;
+#N canvas 800 50 800 849 insert 0;
 #X obj 263 49 inlet;
 #X text 298 49 inserts a new row.;
 #X obj 179 49 r \$0-new-step;
@@ -1321,7 +1321,7 @@ just an underscore \, since it can't truly be blank in pure data...
 #X connect 37 1 16 0;
 #X connect 38 1 33 0;
 #X restore 414 138 pd insert;
-#N canvas 800 29 800 410 highlight-current-step 0;
+#N canvas 800 50 800 410 highlight-current-step 0;
 #X obj 227 116 inlet;
 #X obj 246 135 r \$0-visible-step-nums;
 #X obj 246 247 unmap;
@@ -1363,15 +1363,14 @@ displayed range \, it will highlight "step 16" which is the "unselected"
 #X connect 14 0 16 0;
 #X connect 16 0 15 0;
 #X restore 308 328 pd highlight-current-step;
-#N canvas 0 0 800 849 mode 0;
+#N canvas 0 50 800 849 mode 0;
 #X obj 496 170 inlet;
 #X restore 486 138 pd mode;
 #X obj 272 442 s2l ;
 #X obj 272 366 s2l \,;
 #X obj 272 385 list-drip;
 #X obj 272 404 route float;
-#X obj 272 423 ftos;
-#N canvas 0 0 1600 849 save 0;
+#N canvas 0 50 1600 849 save 0;
 #X obj 211 92 inlet;
 #X obj 329 273 r \$0-step-numbers-list;
 #X obj 386 292 r \$0-step-list;
@@ -1415,11 +1414,11 @@ displayed range \, it will highlight "step 16" which is the "unselected"
 #X connect 17 0 12 0;
 #X connect 18 0 4 0;
 #X restore 521 194 pd save;
-#X symbolatom 521 176 10 0 0 0 - - -;
+#X symbolatom 521 176 10 0 0 0 - - -, f 10;
 #X obj 521 157 symbol;
-#X symbolatom 557 232 10 0 0 0 - - -;
+#X symbolatom 557 232 10 0 0 0 - - -, f 10;
 #X obj 557 213 symbol;
-#N canvas 0 0 1600 849 load 0;
+#N canvas 0 50 1600 849 load 0;
 #X obj 211 92 inlet;
 #X obj 211 164 emptysymbol;
 #X obj 4 252 print tracker;
@@ -1468,8 +1467,8 @@ displayed range \, it will highlight "step 16" which is the "unselected"
 #X obj 344 187 list length;
 #X obj 308 187 kount;
 #X obj 272 187 unmap;
-#X floatatom 238 277 5 0 0 0 - - -;
-#N canvas 0 0 1600 849 loadbang 0;
+#X floatatom 238 277 5 0 0 0 - - -, f 5;
+#N canvas 0 50 1600 849 loadbang 0;
 #X obj 95 46 loadbang;
 #X text 147 34 i've been having trouble with [cnv] randomly changing
 back to its defaults when tracker loads. not sure what causes it so
@@ -1508,13 +1507,14 @@ i'll just reset them manually.;
 step;
 #X msg 593 119 set \$1;
 #X obj 212 81 r tracker;
-#X connect 0 0 33 0;
+#X obj 272 423 makefilename %s;
+#X connect 0 0 32 0;
 #X connect 2 0 4 0;
-#X connect 2 0 31 0;
+#X connect 2 0 30 0;
 #X connect 3 0 2 1;
 #X connect 3 0 6 1;
-#X connect 3 0 28 0;
-#X connect 3 0 30 1;
+#X connect 3 0 27 0;
+#X connect 3 0 29 1;
 #X connect 4 0 5 0;
 #X connect 4 0 6 0;
 #X connect 4 0 15 0;
@@ -1522,61 +1522,61 @@ step;
 #X connect 7 0 18 0;
 #X connect 8 0 7 1;
 #X connect 9 0 1 0;
-#X connect 11 0 33 0;
+#X connect 11 0 32 0;
 #X connect 17 0 9 0;
 #X connect 18 0 19 0;
 #X connect 19 0 20 0;
-#X connect 20 0 21 0;
+#X connect 20 0 35 0;
 #X connect 20 1 17 0;
-#X connect 21 0 17 0;
+#X connect 22 0 21 0;
 #X connect 23 0 22 0;
-#X connect 24 0 23 0;
-#X connect 25 0 27 0;
-#X connect 26 0 25 0;
-#X connect 28 0 29 1;
-#X connect 29 0 2 0;
-#X connect 30 0 29 0;
-#X connect 32 0 27 0;
-#X connect 33 0 30 0;
-#X connect 33 1 29 0;
-#X connect 33 2 10 0;
-#X connect 33 3 12 0;
-#X connect 33 4 14 0;
-#X connect 33 5 13 0;
-#X connect 33 6 16 0;
-#X connect 33 7 24 0;
-#X connect 33 8 26 0;
-#X connect 33 9 34 0;
-#X connect 34 0 29 0;
-#X connect 35 0 33 0;
+#X connect 24 0 26 0;
+#X connect 25 0 24 0;
+#X connect 27 0 28 1;
+#X connect 28 0 2 0;
+#X connect 29 0 28 0;
+#X connect 31 0 26 0;
+#X connect 32 0 29 0;
+#X connect 32 1 28 0;
+#X connect 32 2 10 0;
+#X connect 32 3 12 0;
+#X connect 32 4 14 0;
+#X connect 32 5 13 0;
+#X connect 32 6 16 0;
+#X connect 32 7 23 0;
+#X connect 32 8 25 0;
+#X connect 32 9 33 0;
+#X connect 33 0 28 0;
+#X connect 34 0 32 0;
+#X connect 35 0 17 0;
 #X restore 131 48 pd process-input;
 #X text 93 279 each msg row is 40 characters wide.;
-#X obj 249 101 cnv 11 65 13 empty \$0-status symbol 0 5 0 10 -262144
+#X obj 249 101 cnv 11 65 13 empty \$0-status symbol 0 5 0 10 -233017
 -1 0;
-#X text 371 163 keys for main mode:;
-#X text 371 173 Up/Down - select row.;
-#X text 371 183 Enter - edit selected row.;
-#X text 371 193 i - insert a new row (asks for number).;
-#X text 371 203 I - insert many rows (asks for the number of rows to
+#X text 371 193 keys for main mode:;
+#X text 371 203 Up/Down - select row.;
+#X text 371 213 Enter - edit selected row.;
+#X text 371 223 i - insert a new row (asks for number).;
+#X text 371 233 I - insert many rows (asks for the number of rows to
 insert at the end of the pattern).;
-#X text 371 234 c - copy selected row.;
-#X text 371 244 C - copy many rows (asks for row range to copy).;
-#X text 371 264 r - refresh tracker display (sometimes it may glitch
+#X text 371 269 c - copy selected row.;
+#X text 371 279 C - copy many rows (asks for row range to copy).;
+#X text 371 299 r - refresh tracker display (sometimes it may glitch
 up. if this happens \, press ESC to return to main mode \, then r to
 fix the display).;
-#X text 371 296 ESC - return to main mode or cancel current operation.
+#X text 371 337 ESC - return to main mode or cancel current operation.
 ;
-#X text 371 224 D - delete a row (WARNING: does not ask for confirmation!).
+#X text 371 259 D - delete a row (WARNING: does not ask for confirmation!).
 ;
 #X text 93 302 status is 11 characters wide.;
-#X text 371 254 p - paste row or rows (overwriting data).;
+#X text 371 289 p - paste row or rows (overwriting data).;
 #X obj 234 100 bng 14 250 50 0 \$0-save empty sv 1 6 0 10 -258113 -1
 -1;
-#X text 371 306 a - activate row.;
-#X text 371 326 E - erase row.;
-#X text 371 316 Q - deselect the tracker ("Quit").;
+#X text 371 347 a - activate row.;
+#X text 371 367 E - erase row.;
+#X text 371 357 Q - deselect the tracker ("Quit").;
 #X text 370 78 tracker - a simple "tracker" for pure data.;
-#N canvas 1680 29 1600 871 current-values 0;
+#N canvas 1680 50 1600 871 current-values 0;
 #X obj 351 184 prepent set;
 #X obj 351 29 r \$0-step-numbers-list;
 #X obj 351 165 r \$0-step-list;
@@ -1592,12 +1592,12 @@ b0.75 b(rc0.75-) b0.75 b0 _ _ _ b0 _ _ _ b0 _ _ _ b0 _ _ _
 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66
 67 68 69 70 71 72 73 74 75 76 77 78 79;
 #X obj 57 31 r \$0-current-step;
-#X floatatom 57 50 5 0 0 0 - - -;
+#X floatatom 57 50 5 0 0 0 - - -, f 5;
 #X obj 57 68 r \$0-selected-step;
-#X floatatom 57 87 5 0 0 0 - - -;
+#X floatatom 57 87 5 0 0 0 - - -, f 5;
 #X obj 57 105 r \$0-deleted-num;
 #X text 90 124 number of the row that has just been deleted.;
-#X floatatom 57 124 5 0 0 0 - - -;
+#X floatatom 57 124 5 0 0 0 - - -, f 5;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 2 0 0 0;
@@ -1612,8 +1612,8 @@ tracker has two main modes: the main mode \, in which you can scroll
 through the rows \, delete \, insert \, or switch to edit mode. edit
 mode allows you to edit an individual row's text.;
 #X obj 220 100 tgl 14 0 \$0-activated \$0-activatetgl empty 17 7 0
-10 -262144 -1 -1 0 1;
-#X text 371 374 to activate the tracker (and make it register keypresses)
+10 -262144 -1 -1 1 1;
+#X text 371 415 to activate the tracker (and make it register keypresses)
 \, activate the tgl. if the patch that [tracker] is in is in edit mode
 \, [tracker] will not register keypresses.;
 #X connect 33 0 35 0;
