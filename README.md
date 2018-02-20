@@ -155,6 +155,8 @@ See also: [pd-ladspa-abstractions](https://github.com/defaultxr/pd-ladspa-abstra
 
 * `mmf~` - 
 
+* `old_flanger~` - older version of `flanger~`. deprecated; don't use.
+
 * `phaser~` - 
 
 * `pingpong~` - 

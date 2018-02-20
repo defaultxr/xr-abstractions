@@ -1,55 +1,55 @@
-#N canvas 0 29 1680 1021 10;
-#X obj 102 -131 inlet;
-#X obj 305 477 outlet~;
-#X obj 305 455 line~;
-#X obj 305 409 pack f 0 1;
-#X msg 305 433 \$2 \, \$3 \$1;
-#X obj 352 307 lb \$1;
-#X text 386 303 if first arg is 1 \, changing line start/end points
+#N canvas 0 59 1600 817 10;
+#X obj 102 29 inlet;
+#X obj 305 637 outlet~;
+#X obj 305 615 line~;
+#X obj 305 569 pack f 0 1;
+#X msg 305 593 \$2 \, \$3 \$1;
+#X obj 352 467 lb \$1;
+#X text 386 463 if first arg is 1 \, changing line start/end points
 doesn't affect pitch--1 will play at same pitch;
-#X obj 293 307 spigot;
-#X obj 320 212 -;
-#X obj 320 182 t b f;
-#X obj 320 231 abs;
-#X floatatom 348 235 5 0 0 0 - - -;
-#X obj 320 148 lb 1;
-#X obj 269 333 moses;
-#X obj 375 409 pack f 1 0;
-#X obj 258 367 abs;
-#X floatatom 205 334 10 0 0 0 - - -;
-#X obj 269 307 * 1;
-#X obj 335 307 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 293 467 spigot;
+#X obj 320 372 -;
+#X obj 320 342 t b f;
+#X obj 320 391 abs;
+#X floatatom 348 395 5 0 0 0 - - -, f 5;
+#X obj 320 308 lb 1;
+#X obj 269 493 moses;
+#X obj 375 569 pack f 1 0;
+#X obj 258 527 abs;
+#X floatatom 205 494 10 0 0 0 - - -, f 10;
+#X obj 269 467 * 1;
+#X obj 335 467 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 335 328 sel 0;
-#X msg 335 347 1;
-#X obj 269 288 *;
-#X obj 102 224 f 1;
-#X text 485 126 sndcl~ - sound control line. left inlet accepts a number
+#X obj 335 488 sel 0;
+#X msg 335 507 1;
+#X obj 269 448 *;
+#X obj 102 384 f 1;
+#X text 485 286 sndcl~ - sound control line. left inlet accepts a number
 to multiply the time by. for example \, 1 plays the sound at regular
 speed \, 2 plays it at half speed (double the time).;
-#X text 481 171 the second and third inlets accept numbers from 0 to
+#X text 481 331 the second and third inlets accept numbers from 0 to
 1 to specify the start and end points \, respectively.;
-#X text 484 213 connect snd~'s right outlet to sndcl~'s left inlet
+#X text 484 373 connect snd~'s right outlet to sndcl~'s left inlet
 \, and sndcl~'s audio outlet to snd~'s audio inlet.;
-#X obj 427 528 outlet;
-#X obj 427 509 sel;
-#X obj 427 464 change;
-#X obj 427 445 unsig~ 5;
-#X msg 442 490 \$3;
-#X text 494 447 the right outlet bangs when the snippet finishes playing.
+#X obj 427 688 outlet;
+#X obj 427 669 sel;
+#X obj 427 624 change;
+#X obj 427 605 unsig~ 5;
+#X msg 442 650 \$3;
+#X text 494 607 the right outlet bangs when the snippet finishes playing.
 ;
-#X obj 102 -112 route float time freq bang pitch list;
-#X obj 416 70 inlet;
-#X obj 416 89 f;
-#X obj 452 70 inlet;
-#X obj 284 -93 t a a;
-#X obj 323 -64 list length;
-#X obj 284 -26 route 2 3;
-#X obj 284 12 unpack f f;
-#X obj 309 -7 unpack f f f;
-#X obj 284 -45 prepent;
-#X obj 452 89 f 1;
-#X msg 211 -93 1;
+#X obj 102 48 route float time freq bang pitch list;
+#X obj 416 230 inlet;
+#X obj 416 249 f;
+#X obj 452 230 inlet;
+#X obj 284 67 t a a;
+#X obj 323 96 list length;
+#X obj 284 134 route 2 3;
+#X obj 284 172 unpack f f;
+#X obj 309 153 unpack f f f;
+#X obj 284 115 prepent;
+#X obj 452 249 f 1;
+#X msg 211 67 1;
 #X connect 0 0 32 0;
 #X connect 2 0 1 0;
 #X connect 2 0 29 0;
