@@ -303,7 +303,7 @@ Abstractions for altering or generating number streams
 
 ## seq
 
-Sequencers!
+Sequencers (and the like)!
 
 * `adsr~` - attack decay sustain release envelope... well, kinda.
 
@@ -326,6 +326,8 @@ Sequencers!
 * `bpmm2` - was supposed to be the next version of `bpmm` with fewer outlets but I might delete this actually.
 
 * `bpmm` - metro/gui for outputting bangs on the downbeat, bangs on each quarter note, and numbers for each quarter note. try connecting the third outlet to `anaseq` or `drumseq`
+
+* `burst` - burst generator a la modular synths: when a bang is received, it outputs N bangs, spaced M milliseconds apart.
 
 * `drumseq` - a 16x4 matrix of toggle boxes. supports saving, loading, multiple patterns and more.
 
