@@ -1,4 +1,4 @@
-#N canvas 800 468 800 410 10;
+#N canvas 1920 30 1920 1050 10;
 #X obj 492 149 dollarg;
 #X obj 492 130 lb 0;
 #X obj 471 189 inlet;

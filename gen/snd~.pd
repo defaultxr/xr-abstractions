@@ -1,14 +1,14 @@
-#N canvas 1920 30 1920 1050 10;
+#N canvas 0 30 1920 1050 10;
 #X obj 297 18 loadbang;
 #X obj 240 191 table \$0-file;
 #X obj 273 299 +~ 1;
 #X obj 273 365 tabread4~ \$0-file;
 #X obj 273 384 outlet~;
 #X obj 273 242 inlet~;
-#X symbolatom 20 128 50 0 0 0 - - -, f 50;
+#X symbolatom 20 128 50 0 0 0 - - -;
 #X text 11 241 control sound with audio signal from 0 to 1;
-#X floatatom 324 255 10 0 0 1 length - -, f 10;
-#X floatatom 593 291 20 0 0 1 freq - -, f 20;
+#X floatatom 324 255 10 0 0 1 length - -;
+#X floatatom 593 291 20 0 0 1 freq - -;
 #X obj 517 423 outlet;
 #X msg 434 349 time \$1;
 #X msg 593 307 freq \$1;
@@ -29,8 +29,8 @@
 normalize;
 #X obj 451 37 route open;
 #X obj 297 83 kfilename;
-#X floatatom 434 333 12 0 0 1 time - -, f 12;
-#X floatatom 449 266 5 0 0 1 sample_rate - -, f 5;
+#X floatatom 434 333 12 0 0 1 time - -;
+#X floatatom 449 266 5 0 0 1 sample_rate - -;
 #X obj 391 37 openpanel;
 #X obj 391 20 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
