@@ -1,28 +1,23 @@
-#N canvas 1680 29 1600 871 10;
-#X obj 249 116 inlet~;
-#X obj 262 -121 inlet;
-#X obj 103 115 hsl 55 13 0 127 0 0 \$0-v \$0-vols volume -1 8 0 10
+#N canvas 1920 30 1920 1050 10;
+#X obj 240 286 inlet~;
+#X obj 262 39 inlet;
+#X obj 103 275 hsl 55 13 0 127 0 0 \$0-v \$0-vols volume -1 8 0 10
 -24198 -1 -1 0 1;
-#X obj 266 352 outlet~;
-#X obj 295 331 dac~;
-#X obj 294 230 *~;
-#X obj 186 205 env~;
-#X obj 137 102 vsl 8 10 0 127 0 0 \$0-ms \$0-mr empty 0 -9 0 10 -262144
+#X obj 266 512 outlet~;
+#X obj 295 491 dac~;
+#X obj 294 390 *~;
+#X obj 137 262 vsl 8 10 0 127 0 0 \$0-ms \$0-mr empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 186 224 autoscale 0 127;
-#X obj 374 -7 r \$0-v;
-#X obj 374 125 / 127;
-#X obj 374 173 *~;
-#X obj 262 55 s \$0-vols;
-#X obj 262 17 line;
-#X obj 262 36 min 127;
-#X obj 186 281 s \$0-mr;
-#X obj 186 243 min 127;
-#X obj 186 262 max 0;
-#X obj 262 -34 t a b;
-#X obj 289 -15 f;
-#X obj 249 135 hip~ 5;
-#X obj 294 268 *~ 1;
+#X obj 374 153 r \$0-v;
+#X obj 374 285 / 127;
+#X obj 374 333 *~;
+#X obj 262 215 s \$0-vols;
+#X obj 262 177 line;
+#X obj 262 196 min 127;
+#X obj 262 126 t a b;
+#X obj 289 145 f;
+#X obj 240 305 hip~ 5;
+#X obj 294 428 *~ 1;
 #N canvas 800 0 1600 849 mute 0;
 #X obj 507 274 route 0 1;
 #X msg 444 294 color 13 22 22;
@@ -49,32 +44,32 @@
 #X connect 8 0 4 0;
 #X connect 9 0 8 0;
 #X connect 10 0 8 0;
-#X restore 315 249 pd mute;
-#X obj 304 -121 r out;
-#X obj 329 -32 s \$0-mute;
-#X obj 340 -121 r o;
-#X obj 364 -121 r \$0-o;
-#X obj 128 100 tgl 9 0 \$0-mutes \$0-mute empty 17 7 0 10 -262144 -1
+#X restore 315 409 pd mute;
+#X obj 304 39 r out;
+#X obj 329 128 s \$0-mute;
+#X obj 340 39 r o;
+#X obj 364 39 r \$0-o;
+#X obj 128 260 tgl 9 0 \$0-mutes \$0-mute empty 17 7 0 10 -262144 -1
 -1 1 1;
-#X obj 336 -56 lb 1;
-#X text 429 28 the o~ and so~ objects reserve the Menu-o key-combination.
+#X obj 336 104 lb 1;
+#X text 429 188 the o~ and so~ objects reserve the Menu-o key-combination.
 when you press Menu-o \, you will also have to type another key to
 select the individual instance \, or press enter to select them all.
 ;
-#X text 429 -23 o~ and so~ are standard output objects. o~ is for mono
+#X text 429 137 o~ and so~ are standard output objects. o~ is for mono
 output \, so~ is for stereo output. with these abstractions you can
 control volume and mute with the keyboard (as described below) as well
 as with the mouse or via messages.;
-#X text 431 78 keys: when the o~ or so~ object is selected \, the number
-keys change the volume (leftmost (1) is 0% volume while rightmost (0)
-is 100% volume). qwer change the speed of keyboard volume changes (q
-is the slowest speed \, r is the fastest). t toggles muting.;
-#X obj 432 -84 lb \$1;
-#X obj 262 -80 route vol mvol mute pan;
-#X obj 345 352 outlet~;
-#X obj 295 306 pan~;
-#X obj 370 -56 s \$0-pan;
-#X obj 316 287 r \$0-pan;
+#X text 431 238 keys: when the o~ or so~ object is selected \, the
+number keys change the volume (leftmost (1) is 0% volume while rightmost
+(0) is 100% volume). qwer change the speed of keyboard volume changes
+(q is the slowest speed \, r is the fastest). t toggles muting.;
+#X obj 432 76 lb \$1;
+#X obj 262 80 route vol mvol mute pan;
+#X obj 345 512 outlet~;
+#X obj 295 466 pan~;
+#X obj 370 104 s \$0-pan;
+#X obj 316 447 r \$0-pan;
 #N canvas 1680 29 1600 871 box 0;
 #X obj 89 -56 route name ON OFF MENU key;
 #X msg 89 46 label \$1;
@@ -146,45 +141,56 @@ is the slowest speed \, r is the fastest). t toggles muting.;
 #X connect 26 0 15 0;
 #X connect 27 0 25 0;
 #X connect 28 0 0 0;
-#X restore 220 -121 pd box;
-#X obj 145 100 tgl 15 0 \$0-mc_tgls \$0-mc_tgl op 2 7 0 10 -262144
+#X restore 220 39 pd box;
+#X obj 145 260 tgl 15 0 \$0-mc_tgls \$0-mc_tgl empty 2 7 0 10 -262144
 -262144 -62784 0 1;
-#X obj 374 144 aline~ 50;
-#X connect 0 0 20 0;
-#X connect 1 0 33 0;
-#X connect 5 0 21 0;
-#X connect 6 0 8 0;
-#X connect 8 0 16 0;
-#X connect 9 0 10 0;
-#X connect 9 0 19 1;
-#X connect 10 0 40 0;
-#X connect 11 0 5 1;
-#X connect 13 0 14 0;
-#X connect 14 0 12 0;
-#X connect 16 0 17 0;
-#X connect 17 0 15 0;
-#X connect 18 0 13 0;
-#X connect 18 1 19 0;
-#X connect 19 0 13 0;
-#X connect 20 0 5 0;
-#X connect 20 0 6 0;
-#X connect 21 0 35 0;
-#X connect 22 0 21 1;
-#X connect 23 0 33 0;
-#X connect 25 0 33 0;
-#X connect 26 0 33 0;
-#X connect 28 0 24 0;
-#X connect 32 0 36 0;
-#X connect 33 0 18 0;
-#X connect 33 1 18 0;
-#X connect 33 2 24 0;
-#X connect 33 3 36 0;
-#X connect 35 0 4 0;
-#X connect 35 0 3 0;
-#X connect 35 1 34 0;
-#X connect 35 1 4 1;
-#X connect 37 0 35 1;
-#X connect 38 0 33 0;
-#X connect 40 0 11 0;
-#X connect 40 0 11 1;
-#X coords 0 -1 1 1 60 30 1 100 100;
+#X obj 374 304 aline~ 50;
+#N canvas 1920 30 1920 1050 meter 0;
+#X obj 572 402 inlet~;
+#X obj 602 449 threshold~ 1 100 1 100;
+#X obj 572 449 env~;
+#X obj 572 541 s \$0-mr;
+#X msg 731 468 color 0 2 0;
+#X msg 602 468 color 13 2 0;
+#X connect 0 0 2 0;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 1 1 4 0;
+#X connect 2 0 3 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X restore 240 390 pd meter;
+#X connect 0 0 15 0;
+#X connect 1 0 28 0;
+#X connect 5 0 16 0;
+#X connect 7 0 8 0;
+#X connect 7 0 14 1;
+#X connect 8 0 35 0;
+#X connect 9 0 5 1;
+#X connect 11 0 12 0;
+#X connect 12 0 10 0;
+#X connect 13 0 11 0;
+#X connect 13 1 14 0;
+#X connect 14 0 11 0;
+#X connect 15 0 5 0;
+#X connect 15 0 36 0;
+#X connect 16 0 30 0;
+#X connect 17 0 16 1;
+#X connect 18 0 28 0;
+#X connect 20 0 28 0;
+#X connect 21 0 28 0;
+#X connect 23 0 19 0;
+#X connect 27 0 31 0;
+#X connect 28 0 13 0;
+#X connect 28 1 13 0;
+#X connect 28 2 19 0;
+#X connect 28 3 31 0;
+#X connect 30 0 4 0;
+#X connect 30 0 3 0;
+#X connect 30 1 29 0;
+#X connect 30 1 4 1;
+#X connect 32 0 30 1;
+#X connect 33 0 28 0;
+#X connect 35 0 9 0;
+#X connect 35 0 9 1;
+#X coords 0 -1 1 1 60 30 1 100 260;
