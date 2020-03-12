@@ -281,7 +281,9 @@ Abstractions for altering or generating number streams
 
 * `kinv` - number inverter. 0 becomes 1, 1 becomes 0, and everything in between.
 
-* `maybe` - maybe output a bang. numbers between 0 and 1 specify a probability of a bang (i.e. 0.25 is 25% chance of bang), numbers above 1 specify 1 in n chance of bang (i.e. 5 is 1 in 5 chance of bang, or 20%). banging the inlet is a 50% chance of bang.
+* `maybe` - maybe output a 1 or 0. numbers between 0 and 1 specify the probability of a 1 (i.e. 0.25 is 25% chance of 1), numbers above 1 specify 1 in n chance (i.e. 5 is a 1 in 5 chance (20%)). banging the inlet is a 50% chance.
+
+* `maybeb` - like `maybe`, but outputs a bang instead of a 1 and nothing instead of a 0.
 
 * `minv` - "midi invert". 127 becomes 0, 0 becomes 127, and everything in between.
 
