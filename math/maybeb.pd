@@ -6,6 +6,8 @@
 #X text 139 70 maybeb - maybe output a bang;
 #X text 164 114 basically just a convenience wrapper around [maybe]
 ;
+#X obj 90 37 inlet;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
+#X connect 6 0 1 1;
