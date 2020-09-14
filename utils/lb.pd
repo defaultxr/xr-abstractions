@@ -1,20 +1,30 @@
-#N canvas 0 29 1600 849 10;
+#N canvas 1920 30 1920 1050 10;
 #X obj 233 122 loadbang;
-#X obj 260 212 outlet;
-#X obj 209 126 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 233 141 f \$1;
-#X obj 233 160 sel 0;
-#X obj 233 179 f \$2;
-#X obj 287 58 inlet;
+#X obj 260 215 outlet;
+#X obj 287 57 inlet;
 #X obj 287 77 route bang float;
-#X connect 0 0 3 0;
+#X obj 233 182 any \$2;
+#X obj 233 142 any \$1;
+#X obj 233 162 route 0;
+#X text 437 52 [lb] - loadbang with a default and "fallback";
+#X text 438 92 [lb] is like [loadbang] \, but you can provide a number
+as an argument and it will output that number instead of a bang.;
+#X text 439 140 A second argument can be provided to specify a value
+if the first argument is zero. This is useful as a "fallback" value.
+For example \, if you use \$1 as the first argument but it's not provided
+in the parent patch \, then [lb]'s second argument will be output instead.
+This is because arguments that aren't provided default to 0 . Of course
+\, you need to be careful about this since if the argument IS provided
+\, and it's provided as a 0 \, then the second argument of [lb] will
+be output instead of 0 as the user intended. If that's a concern \,
+you might want to manually parse the list of arguments with an object
+like [dollarg] instead.;
+#X connect 0 0 5 0;
 #X connect 2 0 3 0;
-#X connect 3 0 4 0;
-#X connect 4 0 5 0;
-#X connect 4 1 1 0;
-#X connect 5 0 1 0;
-#X connect 6 0 7 0;
-#X connect 7 0 2 0;
-#X connect 7 1 1 0;
-#X connect 7 2 1 0;
+#X connect 3 0 5 0;
+#X connect 3 1 1 0;
+#X connect 3 2 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 6 1 1 0;
