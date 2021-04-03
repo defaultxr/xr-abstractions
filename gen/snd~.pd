@@ -1,4 +1,4 @@
-#N canvas 0 30 1920 1050 10;
+#N canvas 1920 30 1920 1050 10;
 #X obj 297 18 loadbang;
 #X obj 240 191 table \$0-file;
 #X obj 273 299 +~ 1;

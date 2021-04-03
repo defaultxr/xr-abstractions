@@ -1,9 +1,9 @@
-#N canvas 312 101 450 300 10;
-#X obj 214 9 inlet~;
-#X obj 188 46 z~ 64;
-#X obj 233 42 limiter~;
-#X obj 214 85 *~;
-#X obj 216 116 outlet~;
+#N canvas 1920 30 1920 1050 10;
+#X obj 194 33 inlet~;
+#X obj 193 86 z~ 64;
+#X obj 229 86 limiter~;
+#X obj 214 125 *~;
+#X obj 214 147 outlet~;
 #X connect 0 0 2 0;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;

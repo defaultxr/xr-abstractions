@@ -1,13 +1,13 @@
 #N canvas 1920 30 1920 1050 10;
-#X obj 103 449 outlet;
+#X obj 103 450 outlet;
 #X obj 103 25 inlet;
 #X obj 103 122 symbol;
 #X text 345 104 ~ can be used for your home directory. ~s can be used
 for your sounds directory. ~d is used by [drumseq] \, [anaseq] \, etc
 \, as the directory to save their data. you can add your own shortcuts
 too if you'd like.;
-#X msg 103 410 symbol /\$1;
-#X text 181 396 i'm not sure about how to get this to work with windows
+#X msg 103 411 symbol /\$1;
+#X text 181 397 i'm not sure about how to get this to work with windows
 but you'll probably need to change this message to something like "symbol
 c:/";
 #X text 346 74 kfilename - abstraction for shorter filenames.;
@@ -17,30 +17,30 @@ c:/";
 ;
 #X obj 103 160 zexy/symbol2list /;
 #X msg 155 290 set;
-#X msg 103 352 home/modula/misc/sounds d Yamaha EX5 C 013.wav;
 #X obj 103 141 t a b;
-#X obj 103 371 zexy/list2symbol /;
+#X obj 103 372 zexy/list2symbol /;
 #X text 344 196 edit the "unmap" and "map" objects to change the list
 of abbreviations in use.;
 #X obj 103 179 list-drip;
 #X obj 103 44 route bang list;
-#X obj 126 68 zexy/list2symbol;
-#X connect 1 0 17 0;
-#X connect 2 0 13 0;
+#X obj 126 88 zexy/list2symbol;
+#X msg 103 352;
+#X connect 1 0 16 0;
+#X connect 2 0 12 0;
 #X connect 4 0 0 0;
 #X connect 7 0 9 0;
 #X connect 7 1 8 0;
-#X connect 8 0 12 0;
+#X connect 8 0 18 0;
 #X connect 9 0 8 0;
-#X connect 10 0 16 0;
-#X connect 11 0 12 0;
-#X connect 12 0 14 0;
-#X connect 13 0 10 0;
-#X connect 13 1 11 0;
-#X connect 14 0 4 0;
-#X connect 16 0 7 0;
-#X connect 16 1 12 0;
+#X connect 10 0 15 0;
+#X connect 11 0 18 0;
+#X connect 12 0 10 0;
+#X connect 12 1 11 0;
+#X connect 13 0 4 0;
+#X connect 15 0 7 0;
+#X connect 15 1 18 0;
+#X connect 16 0 2 0;
+#X connect 16 1 17 0;
+#X connect 16 2 17 0;
 #X connect 17 0 2 0;
-#X connect 17 1 18 0;
-#X connect 17 2 2 0;
-#X connect 18 0 2 0;
+#X connect 18 0 13 0;
