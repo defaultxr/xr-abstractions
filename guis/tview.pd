@@ -1,14 +1,10 @@
 #N canvas 1920 30 1920 1050 10;
-#X obj 100 115 cnv 15 150 71 empty \$0-cnv bang
-bang
-bang
-bang
-bang
-1 35 0 12 -90133 -262144 0;
+#X obj 100 115 cnv 15 150 71 empty \$0-cnv empty 1 35 0 12 -90133 -262144
+0;
 #N canvas 1920 30 1920 1050 history 0;
 #X obj 164 64 inlet;
 #X obj 390 303 outlet;
-#X msg 207 124 symbol bang;
+#X msg 205 124 symbol bang;
 #X obj 164 144 list prepend list;
 #X obj 455 165 loadbang;
 #X msg 343 219 add2 \$1 \, bang;
@@ -18,36 +14,35 @@ bang
 #X obj 343 273 list split 1;
 #X obj 377 323 list prepend set list;
 #X obj 377 343 list trim;
-#X msg 250 104 list symbol \$1;
+#X msg 246 104 list symbol \$1;
 #X obj 439 144 symbol;
 #X obj 343 175 zexy/list2symbol;
 #X obj 343 144 makefilename %s;
-#X msg 343 253          ;
-#X obj 164 84 route list bang symbol list float;
 #X obj 520 166 r \$0-clear;
+#X obj 164 84 route list bang symbol float;
+#X msg 343 253          ;
 #X connect 0 0 16 0;
 #X connect 2 0 5 0;
 #X connect 3 0 13 0;
 #X connect 4 0 7 0;
-#X connect 5 0 15 0;
-#X connect 6 0 15 0;
+#X connect 5 0 17 0;
+#X connect 6 0 17 0;
 #X connect 7 0 6 0;
 #X connect 8 1 1 0;
 #X connect 8 1 9 0;
 #X connect 9 0 10 0;
-#X connect 10 0 15 0;
+#X connect 10 0 17 0;
 #X connect 11 0 13 0;
 #X connect 12 0 5 0;
 #X connect 13 0 5 0;
 #X connect 14 0 5 0;
-#X connect 15 0 8 0;
+#X connect 15 0 7 0;
 #X connect 16 0 3 0;
 #X connect 16 1 2 0;
 #X connect 16 2 11 0;
 #X connect 16 3 13 0;
-#X connect 16 4 14 0;
-#X connect 16 5 12 0;
-#X connect 17 0 7 0;
+#X connect 16 4 13 0;
+#X connect 17 0 8 0;
 #X restore 280 205 pd history;
 #X obj 280 165 inlet;
 #N canvas 1920 30 1920 1050 cnv 0;
@@ -78,12 +73,12 @@ label \, vis_size 150 71;
 #X restore 280 225 pd cnv;
 #X text 462 116 tview - text view;
 #X text 463 151 basically just a scrolling view of its input.;
-#X obj 235 100 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 235 100 tgl 15 0 empty empty empty 17 7 0 10 -257985 -1 -1 1
 1;
 #X obj 280 185 spigot;
 #X obj 235 80 loadbang;
 #X obj 416 25 inlet;
-#X obj 220 100 bng 15 250 50 0 \$0-clear empty clear -26 7 0 8 -262144
+#X obj 220 100 bng 15 250 50 0 \$0-clear empty clear -26 7 0 8 -261234
 -1 -1;
 #X connect 1 0 3 0;
 #X connect 2 0 7 0;
