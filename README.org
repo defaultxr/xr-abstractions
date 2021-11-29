@@ -174,6 +174,7 @@ Abstractions for altering or generating number streams
 - ~round~ - round a float to the nearest integer.
 - ~rrange~ - random within a range (inclusive).
 - ~rtr~ - "range to range" - scale one arbitrary range to another arbitrary range.
+- ~runningmax~~ - output the highest value seen in a signal.
 - ~transposer~ - outputs number to multiply a frequency by in order to shift it by a number of semitones (provided as input or argument)
 ** seq
 Sequencers (and the like)!

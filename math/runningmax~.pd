@@ -1,0 +1,41 @@
+#N canvas 1920 30 1920 1050 12;
+#X obj 627 316 threshold~;
+#X obj 617 344 snapshot~;
+#X msg 694 293 0;
+#X obj 604 436 change;
+#X obj 638 468 bang;
+#X msg 715 442 set \$1 0 \$1 0;
+#X obj 523 434 moses;
+#X obj 618 225 inlet~;
+#X obj 667 225 inlet;
+#X obj 604 493 outlet;
+#X obj 548 344 snapshot~;
+#X obj 740 307 route bang float;
+#X obj 667 248 route bang reset float;
+#X text 722 95 runningmax~ - output the highest value seen in the signal.
+the right inlet can be used as a threshold reset \; send a bang to
+reset to the current value \, or a float to reset to the specified
+value.;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 1 0 6 0;
+#X connect 2 0 0 1;
+#X connect 3 0 5 0;
+#X connect 3 0 4 0;
+#X connect 3 0 6 1;
+#X connect 3 0 9 0;
+#X connect 4 0 2 0;
+#X connect 5 0 0 0;
+#X connect 6 1 3 0;
+#X connect 7 0 1 0;
+#X connect 7 0 0 0;
+#X connect 7 0 10 0;
+#X connect 8 0 12 0;
+#X connect 10 0 3 0;
+#X connect 10 0 6 1;
+#X connect 11 0 10 0;
+#X connect 11 1 12 0;
+#X connect 12 0 10 0;
+#X connect 12 1 11 0;
+#X connect 12 2 6 1;
+#X connect 12 2 3 0;
