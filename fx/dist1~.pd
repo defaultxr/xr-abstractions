@@ -1,10 +1,10 @@
-#N canvas 1920 30 1920 1050 10;
+#N canvas 1920 32 1920 1048 10;
 #X obj 216 59 inlet~;
 #X obj 216 231 outlet~;
 #X obj 216 212 clip~ -1 1;
 #X obj 258 59 inlet;
 #X obj 216 193 *~ 1;
-#X floatatom 191 111 2 1 99 0 - - -;
+#X floatatom 211 111 2 1 99 0 - - -;
 #X obj 294 59 lb \$1 1;
 #X connect 0 0 4 0;
 #X connect 2 0 1 0;
@@ -12,4 +12,4 @@
 #X connect 4 0 2 0;
 #X connect 5 0 4 1;
 #X connect 6 0 5 0;
-#X coords 0 -1 1 1 52 16 1 153 111;
+#X coords 0 -1 1 1 72 16 1 153 111;
