@@ -1,31 +1,36 @@
-#N canvas 800 29 800 849 10;
-#N canvas 800 29 800 849 \$0-receives 0;
+#N canvas 1920 30 1920 1050 10;
+#N canvas 1920 30 1920 1050 \$0-receives 0;
 #X obj 0 400 outlet;
-#X restore 201 532 pd \$0-receives;
-#X obj 201 551 outlet;
-#X obj 186 221 dollarg;
+#X obj 70 10 r one;
+#X obj 70 29 prepent 1;
+#X obj 140 10 r two;
+#X obj 140 29 prepent 2;
+#X obj 210 10 r three;
+#X obj 210 29 prepent 3;
+#X restore 201 540 pd \$0-receives;
+#X obj 201 560 outlet;
+#X obj 186 223 dollarg;
 #X obj 186 183 lb 0;
-#X obj 234 221 inlet;
-#X obj 201 355 list-drip;
-#X obj 201 374 t a b;
+#X obj 234 223 inlet;
+#X obj 201 360 list-drip;
+#X obj 201 380 t a b;
 #X text 324 175 rmap - receive map;
 #X text 324 301 output: [number] [value];
-#X obj 234 286 list;
-#X obj 186 202 t f b;
-#X obj 234 305 t a b;
-#X obj 201 393 symbol;
-#X msg 261 355 0;
-#X obj 261 374 cup;
-#X obj 289 355 f \$0;
+#X obj 234 289 list;
+#X obj 186 203 t f b;
+#X obj 234 309 t a b;
+#X obj 201 400 symbol;
+#X msg 261 360 0;
+#X obj 314 360 f \$0;
 #X obj 371 92 namecanvas \$0-rmap;
-#X obj 261 393 * 2;
-#X obj 240 439 + 1;
-#X obj 264 439 + 2;
-#X obj 201 464 pack s f f f f \$0;
-#X obj 288 439 * 70;
-#X msg 201 483 \; pd-\$6-receives obj \$5 10 r \$1 \, obj \$5 29 prepent
+#X obj 261 400 * 2;
+#X obj 240 446 + 1;
+#X obj 264 446 + 2;
+#X obj 201 471 pack s f f f f \$0;
+#X obj 288 446 * 70;
+#X msg 201 491 \; pd-\$6-receives obj \$5 10 r \$1 \, obj \$5 29 prepent
 \$2 \, connect \$3 0 \$4 0 \, connect \$4 0 0 0;
-#X msg 289 374 \; pd-\$1-receives clear \, obj 0 400 outlet \; \$1-rmap
+#X msg 314 380 \; pd-\$1-receives clear \, obj 0 400 outlet \; \$1-rmap
 connect 0 0 1 0;
 #X text 324 195 dynamically generates receives for each of its arguments.
 any messages that the receives receive are prepended with a unique
@@ -35,27 +40,31 @@ number so that the output of [rmap] can be separated by using [route].
 copy and paste the generated objects from inside the [pd 0-receives]
 subpatch instead of leaving an [rmap] in your abstractions or patches.
 ;
+#X obj 261 380 int;
+#X obj 285 380 + 1;
 #X connect 0 0 1 0;
 #X connect 2 0 9 0;
 #X connect 3 0 10 0;
 #X connect 4 0 9 0;
 #X connect 5 0 6 0;
 #X connect 6 0 12 0;
-#X connect 6 1 14 0;
+#X connect 6 1 25 0;
 #X connect 9 0 11 0;
 #X connect 10 0 2 0;
 #X connect 11 0 5 0;
 #X connect 11 1 13 0;
-#X connect 11 1 15 0;
-#X connect 12 0 20 0;
-#X connect 13 0 14 0;
-#X connect 14 0 17 0;
-#X connect 14 0 20 1;
-#X connect 14 0 21 0;
-#X connect 15 0 23 0;
-#X connect 17 0 18 0;
-#X connect 17 0 19 0;
-#X connect 18 0 20 2;
-#X connect 19 0 20 3;
-#X connect 20 0 22 0;
-#X connect 21 0 20 4;
+#X connect 11 1 14 0;
+#X connect 12 0 19 0;
+#X connect 13 0 25 0;
+#X connect 14 0 22 0;
+#X connect 16 0 17 0;
+#X connect 16 0 18 0;
+#X connect 17 0 19 2;
+#X connect 18 0 19 3;
+#X connect 19 0 21 0;
+#X connect 20 0 19 4;
+#X connect 25 0 16 0;
+#X connect 25 0 19 1;
+#X connect 25 0 20 0;
+#X connect 25 0 26 0;
+#X connect 26 0 25 1;

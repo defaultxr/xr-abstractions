@@ -2,10 +2,10 @@
 #X obj 249 246 inlet~;
 #X obj 262 9 inlet;
 #X obj 103 245 hsl 55 13 0 127 0 0 \$0-v \$0-vols volume -1 8 0 10
--258699 -1 -1 3000 1;
+-24198 -1 -1 0 1;
 #X obj 304 337 *~;
-#X obj 137 232 vsl 8 10 0 100 0 0 \$0-ms \$0-mr empty 0 -9 0 10 -262144
--66577 -262144 669 1;
+#X obj 152 232 vsl 8 10 0 100 0 0 \$0-ms \$0-mr empty 0 -9 0 10 -262144
+-66577 -262144 0 1;
 #X obj 374 123 r \$0-v;
 #X obj 374 214 / 127;
 #X obj 374 265 *~;
@@ -16,7 +16,7 @@
 #X obj 289 115 f;
 #X obj 249 265 hip~ 5;
 #X obj 304 375 *~ 1;
-#N canvas 1920 50 1920 1050 mute 0;
+#N canvas 1920 30 1920 1050 mute 0;
 #X obj 491 277 route 0 1;
 #X msg 491 307 color 13 22 22;
 #X msg 584 307 color 16 22 22;
@@ -44,15 +44,9 @@
 #X obj 328 98 s \$0-mute;
 #X obj 334 9 r o;
 #X obj 358 9 r \$0-o;
-#X obj 128 230 tgl 9 0 \$0-mutes \$0-mute empty 17 7 0 10 -262144 -1
--1 0 1;
+#X obj 143 230 tgl 9 0 \$0-mutes \$0-mute empty 17 7 0 10 -262144 -1
+-1 1 1;
 #X obj 299 74 lb 1;
-#X text 475 554 keys: when the o~ or so~ object is selected \, the
-number keys change the volume (leftmost (1) is 0% volume while rightmost
-(0) is 100% volume). qwer change the speed of keyboard volume changes
-(q is the slowest speed \, r is the fastest). t toggles muting.;
-#X obj 145 230 tgl 15 0 \$0-mc_tgls \$0-mc_tgl empty 2 7 0 10 -262144
--1 -62784 0 1;
 #X obj 374 233 aline~ 50;
 #X obj 275 459 outlet~;
 #X obj 304 438 dac~;
@@ -62,29 +56,20 @@ number keys change the volume (leftmost (1) is 0% volume while rightmost
 #X obj 262 50 route vol mvol mute bang pan;
 #X obj 394 98 s \$0-pan;
 #X obj 402 73 lb \$1;
-#X text 477 32 o~ and so~ are my take on output abstractions. They're
-compact \, and designed to be easy to control. I also made them give
-visual feedback so it's easier to tell what's going on.;
-#X text 476 201 The small toggle in the top row is the mute switch.
+#X text 476 151 The small toggle in the top row is the mute switch.
 When active \, the volume slider is green and sound is sent to the
 dac. When muted \, the volume slider is red and no sound is output.
 ;
-#X text 476 327 The big toggle--to the right of the level meter--is
+#X text 476 277 The big toggle--to the right of the level meter--is
 a "select". When it is active \, this abstraction will respond to its
 keyboard shortcuts. It automatically deactivates itself when you enter
 edit mode.;
-#X text 476 396 The volume slider should be self-explanatory. When
+#X text 476 346 The volume slider should be self-explanatory. When
 it's red \, it means the output is muted. Click the small toggle to
 unmute.;
-#X text 477 487 M -;
-#X text 477 6 o~ / so~ - output control;
-#X text 479 102 Arguments:;
-#X text 479 171 Interface:;
-#X text 476 456 Keyboard Shortcuts (when the big toggle is active):
-;
-#X text 477 130 \$1 = panning position (o~ only). from -45 (hard left)
-to 45 (hard right). defaults to 0 which is center.;
-#N canvas 1920 50 1920 1050 meter 0;
+#X text 479 52 Arguments:;
+#X text 479 121 Interface:;
+#N canvas 1920 30 1920 1050 meter 0;
 #X obj 572 182 inlet~;
 #X obj 602 229 threshold~ 1 100 1 100;
 #X obj 572 229 env~;
@@ -99,16 +84,19 @@ to 45 (hard right). defaults to 0 which is center.;
 #X connect 4 0 3 0;
 #X connect 5 0 3 0;
 #X restore 249 337 pd meter;
-#X text 475 266 The vertical slider to the right of the mute is a level
+#X text 475 216 The vertical slider to the right of the mute is a level
 meter. It shows you the level of the incoming signal and has a red
 background when the signal is outside of -1 to 1 ("clipping"). It does
 not react to clicks.;
+#X text 477 80 \$1 = panning position (o~ only). from -45 (hard left)
+to 45 (hard right). defaults to 0 which is center.;
+#X text 477 6 o~ & so~ - output audio to dac~ with conveniences;
 #X connect 0 0 13 0;
-#X connect 1 0 30 0;
+#X connect 1 0 28 0;
 #X connect 3 0 14 0;
 #X connect 5 0 6 0;
 #X connect 5 0 12 1;
-#X connect 6 0 24 0;
+#X connect 6 0 22 0;
 #X connect 7 0 3 1;
 #X connect 9 0 10 0;
 #X connect 10 0 8 0;
@@ -116,24 +104,24 @@ not react to clicks.;
 #X connect 11 1 12 0;
 #X connect 12 0 9 0;
 #X connect 13 0 3 0;
-#X connect 13 0 43 0;
-#X connect 14 0 28 0;
+#X connect 13 0 36 0;
+#X connect 14 0 26 0;
 #X connect 15 0 14 1;
-#X connect 16 0 30 0;
-#X connect 18 0 30 0;
-#X connect 19 0 30 0;
+#X connect 16 0 28 0;
+#X connect 18 0 28 0;
+#X connect 19 0 28 0;
 #X connect 21 0 17 0;
-#X connect 24 0 7 0;
-#X connect 24 0 7 1;
-#X connect 28 0 26 0;
-#X connect 28 0 25 0;
-#X connect 28 1 27 0;
-#X connect 28 1 26 1;
-#X connect 29 0 28 1;
-#X connect 30 0 11 0;
-#X connect 30 1 11 0;
-#X connect 30 2 17 0;
-#X connect 30 3 17 0;
-#X connect 30 4 31 0;
-#X connect 32 0 31 0;
+#X connect 22 0 7 0;
+#X connect 22 0 7 1;
+#X connect 26 0 24 0;
+#X connect 26 0 23 0;
+#X connect 26 1 25 0;
+#X connect 26 1 24 1;
+#X connect 27 0 26 1;
+#X connect 28 0 11 0;
+#X connect 28 1 11 0;
+#X connect 28 2 17 0;
+#X connect 28 3 17 0;
+#X connect 28 4 29 0;
+#X connect 30 0 29 0;
 #X coords 0 -1 1 1 60 30 1 100 230;

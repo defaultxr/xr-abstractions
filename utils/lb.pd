@@ -9,7 +9,7 @@
 #X text 437 52 [lb] - loadbang with a default and "fallback";
 #X text 438 92 [lb] is like [loadbang] \, but you can provide a number
 as an argument and it will output that number instead of a bang.;
-#X text 439 140 A second argument can be provided to specify a value
+#X text 438 140 A second argument can be provided to specify a value
 if the first argument is zero. This is useful as a "fallback" value.
 For example \, if you use \$1 as the first argument but it's not provided
 in the parent patch \, then [lb]'s second argument will be output instead.
@@ -17,8 +17,8 @@ This is because arguments that aren't provided default to 0 . Of course
 \, you need to be careful about this since if the argument IS provided
 \, and it's provided as a 0 \, then the second argument of [lb] will
 be output instead of 0 as the user intended. If that's a concern \,
-you might want to manually parse the list of arguments with an object
-like [dollarg] instead.;
+you might want to manually parse the arguments \, which you can get
+by sending an "args" message to [pdcontrol].;
 #X connect 0 0 5 0;
 #X connect 2 0 3 0;
 #X connect 3 0 5 0;
