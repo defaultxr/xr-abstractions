@@ -1,22 +1,22 @@
-#N canvas 1680 29 1600 871 10;
-#X obj 111 130 hsl 127 13 0 127 0 0 \$0-h0 \$0-h0r OVERTONE.wav -2
-6 0 10 -262144 -262144 -258699 0 1;
-#X obj 111 143 hsl 127 13 0 127 0 0 \$0-h1 \$0-h1r PAAH.wav -2 6 0
-10 -262144 -262144 -1 0 1;
-#X obj 111 156 hsl 127 13 0 127 0 0 \$0-h2 \$0-h2r PASSION.wav -2 6
+#N canvas 2880 32 960 1048 10;
+#X obj 111 130 hsl 127 13 0 127 0 0 \$0-h0 \$0-h0r 9929__davepape__boink-0006.wav
+-2 6 0 10 -262144 -262144 -1 0 1;
+#X obj 111 143 hsl 127 13 0 127 0 0 \$0-h1 \$0-h1r N64 Samples/ -2
+6 0 10 -262144 -262144 -62784 0 1;
+#X obj 111 156 hsl 127 13 0 127 0 0 \$0-h2 \$0-h2r anime/ -2 6 0 10
+-262144 -262144 -62784 0 1;
+#X obj 111 169 hsl 127 13 0 127 0 0 \$0-h3 \$0-h3r aust-paul-lazer.wav
+-2 6 0 10 -262144 -262144 -1 0 1;
+#X obj 111 182 hsl 127 13 0 127 0 0 \$0-h4 \$0-h4r balloon.wav -2 6
 0 10 -262144 -262144 -1 0 1;
-#X obj 111 169 hsl 127 13 0 127 0 0 \$0-h3 \$0-h3r PBELLCR1.wav -2
-6 0 10 -262144 -262144 -1 0 1;
-#X obj 111 182 hsl 127 13 0 127 0 0 \$0-h4 \$0-h4r PBELLCR2.wav -2
-6 0 10 -262144 -262144 -1 0 1;
-#X obj 111 195 hsl 127 13 0 127 0 0 \$0-h5 \$0-h5r PBELLCRA.wav -2
-6 0 10 -262144 -262144 -1 0 1;
-#X obj 111 208 hsl 127 13 0 127 0 0 \$0-h6 \$0-h6r PDEEPKIC.wav -2
-6 0 10 -262144 -262144 -1 0 1;
-#X obj 111 221 hsl 127 13 0 127 0 0 \$0-h7 \$0-h7r PDPGONGL.wav -2
-6 0 10 -262144 -262144 -1 0 1;
-#X obj 100 132 vsl 8 99 1 0 0 0 \$0-scroll \$0-scrollr empty 0 -9 0
-10 -262144 -33289 -33289 4288 1;
+#X obj 111 195 hsl 127 13 0 127 0 0 \$0-h5 \$0-h5r bass/ -2 6 0 10
+-262144 -262144 -62784 0 1;
+#X obj 111 208 hsl 127 13 0 127 0 0 \$0-h6 \$0-h6r bird.wav -2 6 0
+10 -262144 -262144 -1 0 1;
+#X obj 111 221 hsl 127 13 0 127 0 0 \$0-h7 \$0-h7r bleepeater-samples/
+-2 6 0 10 -262144 -262144 -62784 0 1;
+#X obj 100 132 vsl 8 99 1 0 0 0 \$0-scroll \$0-scrollr empty 143 -25
+0 10 -262144 -33289 -33289 9800 1;
 #N canvas 1680 29 1600 871 init 0;
 #X obj 103 248 s;
 #X obj 103 124 until;
@@ -277,231 +277,36 @@ the symbol atom.;
 #X obj 452 223 outlet;
 #X obj 198 100 tgl 14 0 \$0-preview empty p 4 7 0 10 -262144 -1 -1
 0 1;
-#N canvas 1680 29 1600 871 gui 1;
-#X obj 108 7 r \$0-scroll;
-#X obj 108 64 *;
-#X obj 163 26 r \$0-dir-size;
-#X obj 163 45 - 8;
-#X obj 208 321 list split;
+#N canvas 2880 32 960 1048 gui 0;
+#X obj 108 137 r \$0-scroll;
+#X obj 108 194 *;
+#X obj 163 156 r \$0-dir-size;
+#X obj 163 175 - 8;
+#X obj 208 451 list split;
 #N canvas 2480 29 800 871 the-list 0;
 #X obj 11 10 r \$0-dir-contents;
 #X obj 170 48 inlet;
 #X obj 31 266 outlet;
-#X msg 88 102 2REVKIC1.wav 2REVKIC2.wav 2REVKIC3.wav 2REVKIC4.wav 2REVKIC5.wav
-2REVKIC6.wav 2REVKIC7.wav 2REVKIC8.wav 2REVKIC9.wav 2REVKICK.wav 60CYCLES.wav
-70S_FUNK.wav 808SNARE.wav 808_CLAP.wav 808_CLSD.wav 808_COW.wav 808_HI.wav
-808_LOW.wav 808_MID.wav 808_OPEN.wav 808_RIM.wav 8CWPITCH.wav 8_SPLASH.wav
-909KICK1.wav 909KICK2.wav 909KICK3.wav 909_CLAP.wav AFRO.wav AGGRESSO.wav
-AGOGOPIT.wav AGOGO_HI.wav AGOGO_LO.wav AMBISTIC.wav AMINDIAN.wav ANACOWBE.wav
-ANAKICK.wav ANASNARE.wav ARENA.wav ASSAULT.wav BADBRETH.wav BALLO_HI.wav
-BEADSHA1.wav BEADSHA2.wav BEADSHAK.wav BEAD_POT.wav BEAT_BOX.wav BEAUTY.wav
-BEEFRANK.wav BIGOBREK.wav BIG_CLAP.wav BIG_ONE.wav BIG_O_HI.wav BIG_O_LO.wav
-BIG_RIM.wav BIT_TOMH.wav BIT_TOML.wav BLAST.wav BLASTCYM.wav BLITZ.wav
-BLITZ_2.wav BLOCK_HI.wav BLOCK_LO.wav BLUSPRKL.wav BOLANDYN.wav BOLANGOO.wav
-BOMBTOMH.wav BOMBTOML.wav BOMBTOMM.wav BONGOHID.wav BONGOHIS.wav BONGOLOD.wav
-BONGOLOS.wav BONGO_LO.wav BONK.wav BOWELS.wav BRAINETR.wav BRIKHAUS.wav
-BRONZE.wav BRTCRASH.wav BRTLOOSE.wav BRTLOOSR.wav BRTTITE1.wav BRTTITE2.wav
-BRT_CLSD.wav BRT_FOOT.wav BRT_HALF.wav BRT_OPEN.wav BRUSHFAT.wav BRUSHRIM.wav
-BRUSHTHN.wav CABASA.wav CABASA_D.wav CARPET.wav CASTANE1.wav CASTANE2.wav
-CASTANE3.wav CASTANET.wav CHOKED.wav CHROME.wav CHROMEHI.wav CHROMRNG.wav
-CITY.wav CLANKER.wav CLASCHEX.wav CLAVE.wav CLAVEKOR.wav CLAVE_D.wav
-CLEAN.wav CLSCSNAP.wav COMPRESD.wav CONGAHEE.wav CONGAHID.wav CONGALOD.wav
-CONGAMU1.wav CONGAMUT.wav CONGASL1.wav CONGASL2.wav CONGASLA.wav CONGA_HI.wav
-CONGA_LO.wav COWBELL.wav COWBELL1.wav CRANK_IT.wav CRASHRHD.wav CRASHRSF.wav
-CRISP.wav CRNCHFLP.wav CRNCHHED.wav CRUISER.wav CRUNCH.wav CUBAN.wav
-CUICA_HI.wav CUICA_LO.wav CYBERWAV.wav CYBO.wav CYMPARTS.wav DARK_FAT.wav
-DEEPROOM.wav DEEPSTIK.wav DEEP_IIX.wav DINGOBOY.wav DIRTYMUT.wav DMBACKMI.wav
-DMBCHBAL.wav DMBRTAMB.wav DMFEELSG.wav DMFRONTM.wav DMFUSION.wav DMHIGATE.wav
-DMINTHEK.wav DMKINETI.wav DMLOWSOL.wav DMLRGROO.wav DMMEDROO.wav DMPILLOW.wav
-DMPLASTI.wav DMPUNCHY.wav DMREGGAE.wav DMRUBBRB.wav DMSIMPLE.wav DMSLAMMI.wav
-DMSPEEDM.wav DM_BASIC.wav DM_FOOT.wav DM_FORUM.wav DM_LITE.wav DRUM_2.wav
-DRUM_3.wav DRYSHELL.wav DRYSTICK.wav DRYTOM6-.wav DRYTOM7-.wav DRY__IIX.wav
-DYN_PICC.wav E-TOM-LR.wav EASTERNV.wav ELEPHANT.wav EL_BELL.wav ETHNIKA.wav
-ETHNO.wav EXO_HI.wav EXO_LOW.wav EXO_MID.wav FACEBEAT.wav FAR_AWAY.wav
-FAT_BOY.wav FAT_GRID.wav FAT_HEAD.wav FAT_PICC.wav FLNGCLSD.wav FLNGHALF.wav
-FREAKRIM.wav FREAKY.wav FUNKY.wav GET_REAL.wav GHATABLA.wav GHATAMHI.wav
-GHATAMLO.wav GIRTH_HI.wav GIRTH_LO.wav GRAVEL.wav GRINDER.wav GRITTY.wav
-GROOVY.wav GUIRO.wav GUN_PICC.wav H01BD-LR.wav H01CLAP-.wav H01CONGA.wav
-H01COWBE.wav H01HH-LR.wav H01SD-LR.wav H01SHAKE.wav H01TAMB-.wav H01TIMBA.wav
-H02BD-LR.wav H02CLAP-.wav H02CONGA.wav H02COWBE.wav H02HH-LR.wav H02PERC-.wav
-H02SD-LR.wav H02TAMB-.wav H02TIMBA.wav H03BD-LR.wav H03CLAP-.wav H03HH-LR.wav
-H03PERC-.wav H03SD-LR.wav H03SHAKE.wav H03TAMB-.wav H04BD-LR.wav H04CLAP-.wav
-H04HH-LR.wav H04SD-LR.wav H04SHAKE.wav H04TAMB-.wav H05BD-LR.wav H05CLAP-.wav
-H05HH-LR.wav H05PERC-.wav H05SD-LR.wav H05SHAKE.wav H06BD-LR.wav H06HH-LR.wav
-H06PERC-.wav H06SD-LR.wav H06SHAKE.wav H07BD-LR.wav H07CLAP-.wav H07HH-LR.wav
-H07PERC-.wav H07SHAKE.wav H07TAMB-.wav H08BD-LR.wav H08CLAP-.wav H08HH-LR.wav
-H08SD-LR.wav H08SHAKE.wav H08TAMB-.wav H09BD-LR.wav H09CYMB-.wav H09HH-LR.wav
-H09PERC-.wav H09SD-LR.wav H09SHAKE.wav H09TAMB-.wav H10BD-LR.wav H10HH-LR.wav
-H10SD-LR.wav H11BD-LR.wav H11CLAP-.wav H11CYMB-.wav H11HH-LR.wav H11PERC-.wav
-H11SD-LR.wav H11SHAKE.wav H12BD-LR.wav H12CLAP-.wav H12HH-LR.wav H12SHAKE.wav
-H13BD-LR.wav H13CLAP-.wav H13HH-LR.wav H13PERC-.wav H13SD-LR.wav H13SHAKE.wav
-H14BD-LR.wav H14CLAP-.wav H14HH-LR.wav H14PERC-.wav H14SD-LR.wav H14SHAKE.wav
-H15BD-LR.wav H15CLAP-.wav H15SD-LR.wav H15SHAKE.wav H16BD-LR.wav H16CLAP-.wav
-H16HH-LR.wav H16PERC-.wav H16SD-LR.wav H17BD-LR.wav H17CLAP-.wav H17CYMB-.wav
-H17HH-LR.wav H17PERC-.wav H18BD-LR.wav H18CLAP-.wav H18CYMB-.wav H18HH-LR.wav
-H18PERC-.wav H18SD-LR.wav H19CLAP-.wav H19CYMB-.wav H19PERC-.wav H19SD-LR.wav
-H20BD-LR.wav H20CYMB-.wav H20HH-LR.wav H20PERC-.wav H20SD-LR.wav H21BD-LR.wav
-H21CYMB-.wav H21HH-LR.wav H21PERC-.wav H21SD-LR.wav H22BD-LR.wav H22CYMB-.wav
-H22HH-LR.wav H22PERC-.wav H22SD-LR.wav H23BD-LR.wav H23CYMB-.wav H23HH-LR.wav
-H23PERC-.wav H23SD-LR.wav H24CYMB-.wav H24HH-LR.wav H24PERC-.wav H24SD-LR.wav
-H25BD-LR.wav H25CYMB-.wav H25HH-LR.wav H25PERC-.wav H25SD-LR.wav H26BD-LR.wav
-H26CYMB-.wav H26HH-LR.wav H26PERC-.wav H27BD-LR.wav H27CYMB-.wav H27HH-LR.wav
-H28BD-LR.wav H28CYMB-.wav H28HH-LR.wav H28SD-LR.wav H29BD-LR.wav H29CYMB-.wav
-H29HH-LR.wav H29PERC-.wav H29SD-LR.wav H30BD-LR.wav H30CYMB-.wav H30PERC-.wav
-H30SD-LR.wav H31BD-LR.wav H31CYMB-.wav H31HH-LR.wav H31PERC-.wav H31SD-LR.wav
-H32BD-LR.wav H32CYMB-.wav H32HH-LR.wav H32PERC-.wav H32SD-LR.wav H33BD-LR.wav
-H33CYMB-.wav H33PERC-.wav H33SD-LR.wav H34BD-LR.wav H34HH-LR.wav H34SD-LR.wav
-H35BD-LR.wav H35CYMB-.wav H35SD-LR.wav H36BD-LR.wav H36HH-LR.wav H36SD-LR.wav
-H37BD-LR.wav H37HH-LR.wav H37SD-LR.wav H38BD-LR.wav H38HH-LR.wav H38SD-LR.wav
-H39BD-LR.wav H39HH-LR.wav H40BD-LR.wav H40HH-LR.wav H41BD-LR.wav H41HH-LR.wav
-H42BD-LR.wav H42HH-LR.wav H43BD-LR.wav H43HH-LR.wav H44BD-LR.wav H44HH-LR.wav
-H45BD-LR.wav H45HH-LR.wav H46BD-LR.wav H46HH-LR.wav H47BD-LR.wav H48BD-LR.wav
-H49BD-LR.wav H50BD-LR.wav H52BD-LR.wav H53BD-LR.wav H54BD-LR.wav H55BD-LR.wav
-HAJI.wav HALL_FLR.wav HALL_HI.wav HALL_LOW.wav HALL_MID.wav HAMMERED.wav
-HANDDRU1.wav HANDDRUM.wav HARDWARE.wav HARD_ATK.wav HARD_RIM.wav HAS_EDGE.wav
-HAWAII.wav HAZEY.wav HEARTLND.wav HERO_FLR.wav HERO_HI.wav HERO_LOW.wav
-HERO_MID.wav HEXFLOOR.wav HEXSNARE.wav HEX_HI.wav HEX_KICK.wav HEX_LOW.wav
-HEX_MID.wav HIENERGY.wav HIP_HOP.wav HITOM-LR.wav HI_AMBI.wav HOLO.wav
-I-M_CLAY.wav IBID.wav ICECRASH.wav IIXSNARE.wav INDSCPLN.wav INSIDEHI.wav
-INSIDELO.wav INSIDEMD.wav JAZZ_HI.wav JAZZ_HIT.wav JAZZ_LOW.wav JUNKDRWR.wav
-JUNK_MAN.wav KAMKO.wav KICKDRY4.wav KICKDRY5.wav KICKDRY6.wav KICKDRY7.wav
-KICKREV1.wav KICKREV2.wav KICKREVS.wav KICKROO1.wav KICKROO2.wav KICKROOM.wav
-KIDSTUFF.wav KIK_DRY1.wav KIK_DRY2.wav KIK_DRY3.wav KIK_GAT1.wav KIK_GAT2.wav
-KIK_PRO1.wav KIK_PRO2.wav KIK_REV1.wav KIK_ROM1.wav KIK_ROM2.wav KIK_ROM3.wav
-KIK_TEK1.wav KING.wav KOOSH.wav KRAFTY.wav LITECLSD.wav LITEHALF.wav
-LITEOPEN.wav LITESNAP.wav LITE_DYN.wav LIVESTIK.wav LMCSDHIH.wav LMCYMBA1.wav
-LMCYMBAL.wav LMOPNHH1.wav LMOPNHH2.wav LMSNARE1.wav LMSNARE2.wav LMSNARE3.wav
-LMTOMMID.wav LM_CLAPS.wav LM_KICK1.wav LM_KICK2.wav LM_RIM.wav LM_TOMHI.wav
-LM_TOMLO.wav LONGTAIL.wav LOOSE.wav LOOSELUG.wav LOW_PICC.wav LOW_RING.wav
-LRCRASH1.wav LRCRASH2.wav MAD_ROTO.wav MAKRAKFL.wav MAKRAKHI.wav MAKRAKLO.wav
-MAKRAKMD.wav MANGLER.wav MARACAS.wav MCONGAHI.wav MCONGALO.wav MCOWBELL.wav
-MDRKM-HI.wav MDRKW-CH.wav METALGAT.wav METALTIK.wav METLHARM.wav METLPIPE.wav
-MHIBELLS.wav MHIHATC1.wav MHIHATCS.wav MHIHATO1.wav MHIHATOP.wav MICROCYM.wav
-MICROPIC.wav MIDTOM-L.wav MLGHTW-H.wav MMA-HHC1.wav MMA-HHC2.wav MMA-HHCS.wav
-MMA-HHHO.wav MMA-HHOP.wav MMA-HHPE.wav MMA-NKIC.wav MMA-RTO1.wav MMA-RTO2.wav
-MMA-RTOM.wav MMA-WTO1.wav MMA-WTOM.wav MMANACBZ.wav MMANACLA.wav MMANAD-T.wav
-MMANAKI1.wav MMANAKI2.wav MMANAKI3.wav MMANAKI4.wav MMANAKI5.wav MMANAKI6.wav
-MMANAKI7.wav MMANAKIC.wav MMANASN1.wav MMANASN2.wav MMANASN3.wav MMANASN4.wav
-MMANASN5.wav MMANASN6.wav MMANASNA.wav MMANATKK.wav MMANATO1.wav MMANATO2.wav
-MMANATOM.wav MMD-ATOM.wav MMETALPI.wav MONASTIC.wav MOTOR.wav MRIDECYM.wav
-MSIDESTI.wav MTIMBAL1.wav MTIMBALE.wav MTUBELLH.wav MTUBELLL.wav MTUBELLM.wav
-MTYTUBEH.wav MWOODBLO.wav MWOODHIT.wav MWOODKN1.wav MWOODKNO.wav MWOODSHA.wav
-MY_TRIBE.wav M_CLAPS1.wav M_CRASH1.wav M_KICK_1.wav M_KICK_2.wav M_KICK_3.wav
-M_SHAKER.wav M_SNARE1.wav M_SNARE2.wav M_SNARE3.wav M_SNARE4.wav M_TOMHI1.wav
-M_TOMLO1.wav NAGARA.wav NATIVE.wav NICEPICC.wav NOGGIN.wav NOISE_HI.wav
-NOISE_LO.wav NOIZECYM.wav OBERGEIL.wav OILCANHI.wav OILCANLO.wav OILPITCH.wav
-OIL_CAN.wav OL_SKOOL.wav OMEGA_FL.wav OMEGA_HI.wav OMEGA_LO.wav OMEGA_MD.wav
-OOBLADYN.wav OOBLA_HI.wav OOBLA_LO.wav OPEN_HI.wav OPEN_LOW.wav OPEN_MID.wav
-ORCHCYMB.wav ORCHHAL1.wav ORCHHALL.wav ORCHROLL.wav ORCHROOM.wav ORGCOWBE.wav
-ORGCSDH1.wav ORGCSDHH.wav ORGKICK1.wav ORGOPNHH.wav ORGSNARE.wav ORG_RIM.wav
-OVERTONE.wav PAAH.wav PASSION.wav PBELLCR1.wav PBELLCR2.wav PBELLCRA.wav
-PDEEPKIC.wav PDPGONGL.wav PDPGONGM.wav PERC_500.wav PGLOCKE1.wav PGLOCKEN.wav
-PICCOLO.wav PICCROOM.wav PINGRIDE.wav PINSTRPH.wav PINSTRPL.wav PINSTRPM.wav
-PIPEBOMB.wav PLUCKY.wav PLUMBING.wav PMETALHI.wav PMETALLO.wav PMK-LOOP.wav
-PMN-BEL1.wav PMN-BEL2.wav PMN-BELL.wav PMN-BLSD.wav PMWOODY1.wav PMWOODYD.wav
-PO-BELLH.wav PO-BELLL.wav PO-RIMS1.wav PO-RIMSH.wav PO-SNAR1.wav PO-SNAR2.wav
-PO-SNAR3.wav PO-SNAR4.wav PO-SNAR5.wav PO-SNARE.wav PO-SNARO.wav PO-WOOD1.wav
-PO-WOOD2.wav PO-WOODB.wav POPCHEEK.wav POSTMDRN.wav POWERSNA.wav PPIATTIH.wav
-PPIATTIL.wav PRODUCER.wav PSILOFLR.wav PSILOLOW.wav PSILOMID.wav PSILO_HI.wav
-PTIMPAN1.wav PTIMPAN2.wav PTIMPAN3.wav PTIMPAN4.wav PTIMPANI.wav PTUBELL1.wav
-PTUBELLH.wav PTUBELLL.wav PWRBALLA.wav PWRTOM5-.wav PWRTOM6-.wav PWR_DOWN.wav
-PWR_ROCK.wav QANACOWB.wav QANAHIH1.wav QANAHIHA.wav QANAKIC1.wav QANAKIC2.wav
-QANAKIC3.wav QANAKIC4.wav QANAKICK.wav QANARID1.wav QANARIDE.wav QANASNAR.wav
-QANATOMH.wav QANATOML.wav QANATOMM.wav QBONGOHI.wav QBONGOLO.wav QCASTANE.wav
-QCLBEL1-.wav QCLBEL2-.wav QCLBEL3-.wav QCLBEL4-.wav QCONGALO.wav QCONGAMI.wav
-QCONGASL.wav QCOWBELL.wav QCYMBALS.wav QDEEPTAI.wav QDPRIDES.wav QE-TOMMI.wav
-QEDRIDES.wav QFLOORT1.wav QFLOORTO.wav QGUIROLO.wav QGUIROSH.wav QHIHATCS.wav
-QHIHATHF.wav QHIHATOP.wav QHIHATPE.wav QHIHATSI.wav QHIRIDES.wav QIMPACT1.wav
-QIMPACT2.wav QMDRIDES.wav QMETALC1.wav QMETALCH.wav QMETALHI.wav QMIDTAIK.wav
-QPWRTOMH.wav QPWRTOML.wav QPWRTOMM.wav QSDSTOMH.wav QSDSTOML.wav QSDSTOMM.wav
-QSHAKERS.wav QSIDESTI.wav QSLEIGHB.wav QSTONEHI.wav QSYNCLAP.wav QTAMBOUR.wav
-QTIMBAL1.wav QTIMBALE.wav QTIMPAN1.wav QTIMPAN2.wav QTIMPANI.wav QTRIANGL.wav
-QVIBRASL.wav QWATERD1.wav QWATERDR.wav QWHISTL1.wav QWHISTLE.wav QWINDCHI.wav
-QWOODBL1.wav QWOODBLO.wav QWOODHI1.wav QWOODHI2.wav QWOODHIT.wav Q_CABASA.wav
-Q_CHINA.wav Q_CRASH.wav Q_KICK_1.wav Q_KICK_2.wav Q_KICK_3.wav Q_KICK_4.wav
-Q_RIDE_1.wav Q_RIDE_2.wav Q_SHAKER.wav Q_SNAPS.wav Q_SNARE1.wav Q_SNARE2.wav
-Q_SNARE3.wav Q_SNARE4.wav Q_SNARE5.wav Q_SNARE6.wav Q_SNARE7.wav Q_SNARE8.wav
-Q_SNARE9.wav Q_SPLASH.wav Q_TOMMID.wav Q_TOM_LO.wav RAGOGODU.wav RAGOGOHI.wav
-RAINSHAK.wav RAINSTIK.wav RANK.wav RAPPOTAB.wav RAP_CLSD.wav RAP_HALF.wav
-RAP_OPEN.wav RAP_WAVE.wav RATLBWAP.wav RATLWOOD.wav RATTLE.wav RAUNCHY.wav
-RBONGOHI.wav RCABASA1.wav RCABASA2.wav RCONGAHI.wav RCONGALO.wav RCONGAS1.wav
-RCONGASL.wav RCOWBEL1.wav RCOWBELL.wav RCUPRID1.wav RCUPRIDE.wav RDEEPCRA.wav
-RDEEPRID.wav RDEEPTO1.wav RDEEPTOM.wav RDRYKIC1.wav RDRYKIC2.wav RDRYKIC3.wav
-RDRYKIC4.wav RDRYKICK.wav RDRYSNA1.wav RDRYSNA2.wav RDRYSNA3.wav RDRYSNA4.wav
-RDRYSNA5.wav RDRYSNA6.wav RDRYSNAR.wav RDRYTOM1.wav RDRYTOM2.wav RDRYTOM3.wav
-RDRYTOM4.wav RDRYTOM5.wav RDRYTOM6.wav RDRYTOM7.wav RDRYTOMD.wav RDRYTOMF.wav
-RDRYTOMH.wav RDRYTOMM.wav RECO_HI.wav RECO_LO.wav RELEASE.wav RFLOORTO.wav
-RFXTOMLO.wav RFXTOMMD.wav RHIHATC1.wav RHIHATCS.wav RHIHATHF.wav RHIHATO1.wav
-RHIHATOP.wav RHIHATPE.wav RHISPLA1.wav RHISPLAS.wav RIDE.wav RIDEBELL.wav
-RIDE_CUP.wav RIDE_CYM.wav ROCKCLUB.wav ROKLOOSE.wav ROKSLOSH.wav ROK_CLSD.wav
-ROK_FOOT.wav ROK_OPEN.wav ROUNDAMB.wav ROUNDATK.wav RPCSTOM1.wav RPCSTOM2.wav
-RPCSTOMF.wav RPCSTOMH.wav RPCSTOML.wav RPCSTOMM.wav RPWRTOM1.wav RPWRTOMH.wav
-RPWRTOML.wav RPWRTOMM.wav RREVCYM1.wav RREVCYMB.wav RREVSNA1.wav RREVSNAR.wav
-RSFTCABA.wav RSFTTAMB.wav RSFTTOMF.wav RSIDESTI.wav RSNARE10.wav RSNARE11.wav
-RSNARE12.wav RSNARE13.wav RSRSIDES.wav RTRASHME.wav RWHISTL1.wav RWHISTLE.wav
-RWOODBLH.wav RWOODBLM.wav RWOODBLO.wav RXAGOGOH.wav RXAGOGOL.wav RXBONGOH.wav
-RXBONGOL.wav RXCASTA1.wav RXCASTAN.wav RXCONGAH.wav RXCONGAL.wav RXCONGAM.wav
-RXCOWBEL.wav RXCRASH1.wav RXCRASH2.wav RXCRASH3.wav RXDRYTO1.wav RXDRYTOM.wav
-RXFLOORT.wav RXFXCYM1.wav RXFXCYMB.wav RXFXTOMH.wav RXFXTOML.wav RXHIHAT1.wav
-RXHIHATC.wav RXHIHATO.wav RXRIMSHO.wav RXSHAKER.wav RXSIDEKI.wav RXSNARE1.wav
-RXSNARE2.wav RXSNARE3.wav RXSNARE4.wav RXSYNTO1.wav RXSYNTO2.wav RXSYNTO3.wav
-RXSYNTOM.wav RXTAMBOU.wav RXTIMBA1.wav RXTIMBAL.wav RXTIMPA1.wav RXTIMPAN.wav
-RXTOMMID.wav RXWHISTL.wav RX_CHINA.wav RX_CLAPS.wav RX_CUICA.wav RX_KICK1.wav
-RX_KICK2.wav RX_KICK3.wav RX_KICK4.wav RX_RIDE1.wav RX_RIDE2.wav RX_TOMHI.wav
-RX_TOMLO.wav R_AGOGO.wav R_CLAPS1.wav R_CLAPS2.wav R_CRASH1.wav R_CRASH2.wav
-R_CRASH3.wav R_CYMBAL.wav R_HITOM1.wav R_HITOM2.wav R_KICK_1.wav R_KICK_2.wav
-R_KICK_3.wav R_KICK_4.wav R_KICK_5.wav R_KICK_6.wav R_KICK_7.wav R_KICK_8.wav
-R_KICK_9.wav R_MIDTOM.wav R_RIDE.wav R_SNARE1.wav R_SNARE2.wav R_SNARE3.wav
-R_SNARE4.wav R_SNARE5.wav R_SNARE6.wav R_SNARE7.wav R_SNARE8.wav R_SNARE9.wav
-R_SPLASH.wav R_TAIKO.wav SALVO_HI.wav SALVO_LO.wav SALVO_MD.wav SCAGOGOH.wav
-SCAGOGOL.wav SCANAKIC.wav SCB-SNA1.wav SCB-SNAR.wav SCBELLCL.wav SCBELLTR.wav
-SCBONGOH.wav SCBONGOL.wav SCCABASA.wav SCCASTAN.wav SCCLAPS1.wav SCCLAPS2.wav
-SCCLAVES.wav SCCONGA1.wav SCCONGAH.wav SCCONGAL.wav SCCOWBEL.wav SCCRASH1.wav
-SCCRASH2.wav SCCUPRID.wav SCDPE-KI.wav SCE-SNA1.wav SCE-SNAR.wav SCGUIRO1.wav
-SCGUIRO2.wav SCHIHATC.wav SCHIHATO.wav SCHIHATP.wav SCJAZZK1.wav SCJAZZKI.wav
-SCJINGLB.wav SCLGSPLA.wav SCLITESN.wav SCMARACA.wav SCO-BELL.wav SCO-CRAS.wav
-SCO-PIAT.wav SCO-SNAR.wav SCPWRKIC.wav SCPWRSNA.wav SCQUICAL.wav SCQUICAM.wav
-SCRATCHR.wav SCSHAKER.wav SCSNARE1.wav SCSNARE2.wav SCSTICKS.wav SCSURDOM.wav
-SCSURDOO.wav SCTAMBOU.wav SCTIMBA1.wav SCTIMBAL.wav SCTIMPA1.wav SCTIMPAN.wav
-SCTOMHI1.wav SCTOMHI2.wav SCTOMHI3.wav SCTOMHI4.wav SCTOMLO1.wav SCTOMLO2.wav
-SCTOMLO3.wav SCTOMLO4.wav SCTOMMI1.wav SCTOMMI2.wav SCTOMMI3.wav SCTOMMID.wav
-SCTRIAN1.wav SCTRIANG.wav SCVIBRAS.wav SCWHIST1.wav SCWHISTL.wav SCWINDCH.wav
-SCWOODB1.wav SCWOODBL.wav SC_CHINA.wav SC_KICK1.wav SC_KICK2.wav SC_RIDE1.wav
-SC_RIDE2.wav SESSION.wav SHAKERHI.wav SHAKERLO.wav SHAKERRY.wav SHARPSHA.wav
-SHRED.wav SIDESTIC.wav SKOOL.wav SLAPDYND.wav SLAPROOM.wav SLEIGHBE.wav
-SLOWFUNK.wav SMOKE.wav SNAREO.wav SNARERE1.wav SNARERE2.wav SNAREREV.wav
-SNARERO1.wav SNARERO2.wav SNARERO3.wav SNAREROM.wav SNAREROO.wav SNIP.wav
-SNOWJOB.wav SNR_DRY1.wav SNR_DRY2.wav SNR_DRY3.wav SNR_DRY4.wav SNR_GAT1.wav
-SNR_PRO1.wav SNR_REV1.wav SNR_REV2.wav SNR_RIM1.wav SNR_RIM2.wav SNR_ROM1.wav
-SNR_ROM2.wav SNR_ROM3.wav SNR_ROM4.wav SNR_ROM5.wav SNR_ROM6.wav SNR_ROM7.wav
-SNR_SIDE.wav SNR_TEK1.wav SOLAR.wav SONARWAV.wav SPACEPRC.wav SPECK.wav
-SPECTRAL.wav SPLASH.wav SPLAT.wav SPUD.wav SQUISH.wav SR_CLSD.wav SR_HALF.wav
-SR_OPEN.wav STAGES.wav STEAK.wav STERCHIN.wav STERDARK.wav STERPHAZ.wav
-STER_BRT.wav STICK.wav STICKROO.wav STIK-SNR.wav STUDIOHI.wav STUDIOLO.wav
-STUDIOMD.wav STUTTER.wav SUPERRAV.wav SYNCRASH.wav SYNSHAK1.wav SYNSHAK2.wav
-SYNSHAKE.wav SYN_PANG.wav TABLA.wav TABLADY1.wav TABLADYN.wav TABLCHRD.wav
-TALKINGH.wav TALKINGL.wav TAMBPITC.wav TAMBRINE.wav TATONKA.wav TAVIL_HI.wav
-TAVIL_LO.wav TBONGOH1.wav TBONGOHI.wav TCABASAL.wav TCONGAHI.wav TCYMBAL1.wav
-TDEEPCLA.wav TECHTIK.wav TEMPLEHI.wav TEMPLELO.wav THIHATCL.wav THIHATOP.wav
-THIHATPE.wav THIKGATE.wav THINSKIN.wav THUMB.wav TIGHTLUG.wav TIKTAK.wav
-TIMBLEHI.wav TIMBLELO.wav TIMBL_HI.wav TIMBL_LO.wav TINY_E.wav TIPSHANK.wav
-TOM_DRY1.wav TOM_DRY2.wav TOM_DRY3.wav TOM_DRY4.wav TOM_DRY5.wav TOM_POW1.wav
-TOM_ROM1.wav TOM_ROM2.wav TOPBRASS.wav TPWRKICK.wav TRANSBEL.wav TRASHER.wav
-TRASHIER.wav TRIANGL.wav TRIANGL1.wav TRIANGLE.wav TRIANGLP.wav TRIBAL.wav
-TRIDECUP.wav TRIMSHOT.wav TSHAKERL.wav TSTICKHI.wav TTOMLOAM.wav TWOODBLM.wav
-TYPEWRIT.wav T_KICK_1.wav T_KICK_2.wav T_KICK_3.wav T_KICK_4.wav T_RIDE_1.wav
-T_SHAKER.wav T_SNARE1.wav T_SNARE2.wav T_SNARE3.wav T_SNARE4.wav T_SNARE5.wav
-UDU.wav ULTRATHI.wav UNDERWOR.wav U_BAHN.wav VANAKICK.wav VELO-RIM.wav
-VELORIDE.wav VFATOMED.wav VFATOMHI.wav VFATOMSH.wav VFATTOM1.wav VFATTOM2.wav
-VHIBELL-.wav VIBRASLA.wav VINTAGE.wav VLOBELL-.wav VMDBELL-.wav VMETALH1.wav
-VMETALHI.wav VSMETALH.wav VSUBKIC1.wav VSUBKIC2.wav VSUBKIC3.wav VSUBKIC4.wav
-VSUBKICK.wav VTOMDLG-.wav VTOMMD1-.wav VTOMMID3.wav VTOMSFT-.wav V_TDTOMS.wav
-V_TD_TOM.wav V_TOMHI2.wav V_TOMMD2.wav V_ZAPTOM.wav WARMKICK.wav WARMROOM.wav
-WARPAINT.wav WEASEL.wav WER_BORG.wav WETWEASL.wav WET_WOOD.wav WHISTLE.wav
-WITHCLAP.wav WONK.wav WOOD.wav WOODCLIF.wav WOODY.wav WOOD_HI.wav WOOD_LO.wav
-WOO_HAN.wav XCASTANE.wav XE-DRUM1.wav XMBBELLS.wav XPANDO.wav XRCYMBAL.wav
-XSTONEBE.wav XSYNCLAP.wav XTIMBALE.wav X_CLAVES.wav X_CONGA.wav X_HOLZKS.wav
-ZAP_CLSD.wav ZAP_OPEN.wav ZIP_CLSD.wav ZIP_OPEN.wav ZOOTMUTE.wav;
+#X msg 88 102 9929__davepape__boink-0006.wav N64 Samples/ anime/ aust-paul-lazer.wav
+balloon.wav bass/ bird.wav bleepeater-samples/ boomclick01.wav buzz.wav
+buzzer.wav cbb-imp.wav chirp.wav d/ dropshave.wav drums/ dwewdwuw.wav
+eatanappel.wav electric.wav explode.wav faucet.wav fingerdrumming.wav
+fiphe.wav flange-blow.wav flizzle.wav fltr1.wav frog.wav frog1.wav
+from/ game-boy-player-error.wav glass-shatter.wav glasssmash.wav grunt.wav
+hannabarbara.wav ice-crackle1.wav ice-hit1.wav ice1.wav impulse-responses/
+l/ lighter1.wav lighter2.wav lighter3.wav lighter4.wav lion-growl.wav
+loops/ lp-hahn-12-warn-beep.wav mario-commercial/ maryoclip.wav me-hhh.wav
+melody/ misc/ music/ nat-tap1.wav nat-tap2.wav non/ old/ oomf.wav packs/
+percdubba.wav pf_gyfhoomd_boom.wav piano3.wav piano_dings.wav pit01.wav
+plant-kill.wav projector-screen.wav projector-start-run-stop-18fps.wav
+purring.wav quickrecordscratching.wav radical-cym.wav rattleLoop.wav
+rattleclack.wav rattlecrash.wav recordskip.wav ricdatstore.wav roguclick.wav
+sawblade.wav scrape01.wav scrape02.wav scw/ sh/ shaveblast.wav shavestart.wav
+slap.wav slidde.wav slow-riff.wav smashwarble.wav sneeze.wav sodacan/
+sonic/ splattr.wav squeak.wav srnr-hit.wav storm1.wav tch.wav textures/
+thunder_03.wav thunder_04.wav toony-bonks.wav tr808/ tr909/ train01.wav
+train02.wav tremcrash.wav unknwn9.wav usat_bomb.wav voice/ whpish01.wav
+whuuup.wav winshut.wav zzap.wav;
 #X obj 68 48 prepent set;
 #X obj 11 29 route bang;
 #X msg 11 68 set list;
@@ -512,146 +317,21 @@ ZAP_CLSD.wav ZAP_OPEN.wav ZIP_CLSD.wav ZIP_OPEN.wav ZOOTMUTE.wav;
 #X connect 5 0 6 0;
 #X connect 5 1 4 0;
 #X connect 6 0 3 0;
-#X restore 208 302 pd the-list;
-#X obj 286 300 s \$0-view-from;
-#X obj 236 367 list split 8;
-#X obj 236 605 s;
-#X msg 272 547 symbol \$2-h\$1r;
-#X obj 272 528 pack f \$0;
-#X obj 420 69 r \$0-view-from;
-#N canvas 0 29 1600 849 is-top 0;
-#X obj 37 37 inlet;
-#X obj 37 56 t f f;
-#X obj 37 75 == 0;
-#X obj 86 152 f;
-#X obj 37 94 sel 1;
-#X obj 37 266 s \$0-scrollr;
-#X obj 86 171 outlet;
-#X obj 86 133 bang;
-#X obj 94 209 r \$0-dir-size;
-#X msg 37 247 label Top\$2of\$2\$3;
-#X obj 65 190 spacesym;
-#X obj 37 228 pack 0 s f;
-#X obj 37 164 t b b;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 1 1 3 1;
-#X connect 2 0 4 0;
-#X connect 3 0 6 0;
-#X connect 4 0 12 0;
-#X connect 4 1 7 0;
-#X connect 7 0 3 0;
-#X connect 8 0 11 2;
-#X connect 9 0 5 0;
-#X connect 10 0 11 1;
-#X connect 11 0 9 0;
-#X connect 12 0 11 0;
-#X connect 12 1 10 0;
-#X restore 447 126 pd is-top;
-#N canvas 0 29 1600 849 is-bot 0;
-#X obj 215 146 - 8;
-#X obj 200 165 ==;
-#X obj 200 108 t f f;
-#X obj 200 184 sel 1;
-#X obj 227 222 f;
-#X obj 227 203 bang;
-#X obj 215 127 r \$0-dir-size;
-#X obj 200 89 inlet;
-#X obj 227 241 outlet;
-#X obj 200 359 s \$0-scrollr;
-#X obj 257 302 r \$0-dir-size;
-#X obj 228 283 spacesym;
-#X obj 200 321 pack 0 s f;
-#X msg 200 340 label Bot\$2of\$2\$3;
-#X obj 200 260 t b b;
-#X connect 0 0 1 1;
-#X connect 1 0 3 0;
-#X connect 2 0 1 0;
-#X connect 2 1 4 1;
-#X connect 3 0 14 0;
-#X connect 3 1 5 0;
-#X connect 4 0 8 0;
-#X connect 5 0 4 0;
-#X connect 6 0 0 0;
-#X connect 7 0 2 0;
-#X connect 10 0 12 2;
-#X connect 11 0 12 1;
-#X connect 12 0 13 0;
-#X connect 13 0 9 0;
-#X connect 14 0 12 0;
-#X connect 14 1 11 0;
-#X restore 447 145 pd is-bot;
-#N canvas 0 29 1600 849 is-neither 0;
-#X obj 212 138 inlet;
-#X obj 259 157 r \$0-dir-size;
-#X obj 212 157 t f f;
-#X obj 212 190 /;
-#X obj 300 315 spacesym;
-#X obj 219 372 s \$0-scrollr;
-#X obj 165 230 * 100;
-#X obj 165 249 int;
-#X msg 165 268 symbol \$1%;
-#X obj 178 298 t a b;
-#X msg 219 353 label \$1\$4(\$2/\$3);
-#X obj 219 334 pack s f f s;
-#X connect 0 0 2 0;
-#X connect 1 0 3 1;
-#X connect 1 0 11 2;
-#X connect 2 0 3 0;
-#X connect 2 1 11 1;
-#X connect 3 0 6 0;
-#X connect 4 0 11 3;
-#X connect 6 0 7 0;
-#X connect 7 0 8 0;
-#X connect 8 0 9 0;
-#X connect 9 0 11 0;
-#X connect 9 1 4 0;
-#X connect 10 0 5 0;
-#X connect 11 0 10 0;
-#X restore 447 164 pd is-neither;
-#X obj 420 88 t b f;
-#X obj 420 221 s \$0-scrollr;
-#X msg 420 202 label;
-#X obj 420 183 del 1500;
-#N canvas 2480 29 800 871 is-all 0;
-#X obj 248 120 inlet;
-#X obj 248 177 <= 8;
-#X obj 267 215 f;
-#X obj 248 196 sel 1 0;
-#X obj 267 234 outlet;
-#X obj 248 335 s \$0-scrollr;
-#X obj 385 151 r \$0-dir-size;
-#X obj 276 278 spacesym;
-#X obj 248 297 pack 0 s f;
-#X msg 248 316 label All\$2of\$2\$3;
-#X obj 248 139 t b f;
-#X obj 248 158 f;
-#X obj 248 253 t b b;
-#X connect 0 0 10 0;
-#X connect 1 0 3 0;
-#X connect 2 0 4 0;
-#X connect 3 0 12 0;
-#X connect 3 1 2 0;
-#X connect 6 0 8 2;
-#X connect 6 0 11 1;
-#X connect 7 0 8 1;
-#X connect 8 0 9 0;
-#X connect 9 0 5 0;
-#X connect 10 0 11 0;
-#X connect 10 1 2 1;
-#X connect 11 0 1 0;
-#X connect 12 0 8 0;
-#X connect 12 1 7 0;
-#X restore 447 107 pd is-all;
-#X obj 236 452 until;
-#X msg 236 433 8;
-#X obj 236 414 t b a;
-#X obj 236 471 count 8;
+#X restore 208 432 pd the-list;
+#X obj 286 430 s \$0-view-from;
+#X obj 236 497 list split 8;
+#X obj 236 735 s;
+#X msg 272 677 symbol \$2-h\$1r;
+#X obj 272 658 pack f \$0;
+#X obj 236 582 until;
+#X msg 236 563 8;
+#X obj 236 544 t b a;
+#X obj 236 601 count 8;
 #N canvas 0 29 800 849 the-eight 0;
 #X obj 37 37 inlet;
 #X obj 127 119 prepent set;
-#X msg 47 225 OVERTONE.wav PAAH.wav PASSION.wav PBELLCR1.wav PBELLCR2.wav
-PBELLCRA.wav PDEEPKIC.wav PDPGONGL.wav;
+#X msg 47 225 9929__davepape__boink-0006.wav N64 Samples/ anime/ aust-paul-lazer.wav
+balloon.wav bass/ bird.wav bleepeater-samples/;
 #X obj 47 284 outlet;
 #X obj 97 37 inlet;
 #X obj 47 265 list-idx;
@@ -678,9 +358,9 @@ PBELLCRA.wav PDEEPKIC.wav PDPGONGL.wav;
 #X connect 11 1 1 0;
 #X connect 11 1 7 0;
 #X connect 12 0 6 1;
-#X restore 236 509 pd the-eight;
-#X obj 236 490 t f f;
-#X obj 305 451 s \$0-the-8;
+#X restore 236 639 pd the-eight;
+#X obj 236 620 t f f;
+#X obj 305 581 s \$0-the-8;
 #N canvas 800 29 800 410 label 0;
 #X obj 65 57 inlet;
 #X obj 65 342 outlet;
@@ -764,104 +444,213 @@ PBELLCRA.wav PDEEPKIC.wav PDPGONGL.wav;
 #X connect 9 1 2 0;
 #X connect 10 0 1 0;
 #X connect 11 0 4 0;
-#X restore 236 586 pd label;
-#X obj 208 135 r \$0-top;
-#X obj 301 218 s \$0-scrollr;
-#X obj 301 161 /;
-#X msg 301 199 set \$1;
-#X text 422 48 scrollbar text (i.e. Top \, Bot \, All \, %);
-#X obj 301 180 clip 0 1;
-#X obj 290 -72 keyname;
-#X obj 290 -53 pack f s;
-#X obj 290 -34 route 1;
-#X obj 290 4 sel Up Down;
-#X obj 290 -15 symbol;
-#X obj 76 -91 cursor;
-#X obj 76 -72 route button;
-#X msg 60 32 1;
-#X obj 76 -34 sel 1;
-#X msg 32 32 0;
-#X obj 76 -53 route 1;
-#X obj 208 168 int;
-#X obj 290 61 +;
-#X obj 290 80 spigot;
-#X obj 32 71 s \$0-spigot;
-#X obj 323 61 r \$0-spigot;
-#X obj 190 -30 s \$0-scrollr;
-#X msg 190 -49 color \$1 12 12;
-#X obj 190 -68 map 0 17;
-#X msg 290 23 -1;
-#X msg 321 23 1;
-#X obj 208 202 t b i;
-#X obj 108 83 int;
+#X restore 236 716 pd label;
+#X obj 208 265 r \$0-top;
+#X obj 301 348 s \$0-scrollr;
+#X obj 301 291 /;
+#X msg 301 329 set \$1;
+#X text 504 61 scrollbar text (i.e. Top \, Bot \, All \, %);
+#X obj 301 310 clip 0 1;
+#X obj 290 58 keyname;
+#X obj 290 77 pack f s;
+#X obj 290 96 route 1;
+#X obj 290 134 sel Up Down;
+#X obj 290 115 symbol;
+#X obj 76 39 cursor;
+#X obj 76 58 route button;
+#X msg 60 162 1;
+#X obj 76 96 sel 1;
+#X msg 32 162 0;
+#X obj 76 77 route 1;
+#X obj 208 298 int;
+#X obj 290 191 +;
+#X obj 290 210 spigot;
+#X obj 32 201 s \$0-spigot;
+#X obj 323 191 r \$0-spigot;
+#X obj 190 100 s \$0-scrollr;
+#X msg 190 81 color \$1 12 12;
+#X obj 190 62 map 0 17;
+#X msg 290 153 -1;
+#X msg 321 153 1;
+#X obj 208 332 t b i;
+#X obj 108 213 int;
+#N canvas 1920 32 960 1048 show-position 0;
+#X obj 28 180 <= 8;
+#X obj 47 220 f;
+#X obj 28 200 sel 1 0;
+#X obj 227 612 s \$0-scrollr;
+#X obj 165 152 r \$0-dir-size;
+#X obj 56 285 spacesym;
+#X obj 28 305 pack 0 s f;
+#X obj 28 140 t b f;
+#X obj 28 160 f;
+#X obj 28 260 t b b;
+#X obj 263 238 t f f;
+#X obj 263 258 == 0;
+#X obj 312 337 f;
+#X obj 263 278 sel 1;
+#X obj 312 317 bang;
+#X obj 320 397 r \$0-dir-size;
+#X obj 291 377 spacesym;
+#X obj 263 416 pack 0 s f;
+#X obj 263 350 t b b;
+#X text 268 219 is it the top?;
+#X text 41 118 is it all?;
+#X obj 470 283 - 8;
+#X obj 455 302 ==;
+#X obj 455 245 t f f;
+#X obj 455 321 sel 1;
+#X obj 482 359 f;
+#X obj 482 340 bang;
+#X obj 470 264 r \$0-dir-size;
+#X obj 512 439 r \$0-dir-size;
+#X obj 483 420 spacesym;
+#X obj 455 458 pack 0 s f;
+#X obj 455 397 t b b;
+#X text 466 229 is it the bottom?;
+#X obj 723 296 r \$0-dir-size;
+#X obj 676 296 t f f;
+#X obj 676 329 /;
+#X obj 764 454 spacesym;
+#X obj 629 369 * 100;
+#X obj 629 388 int;
+#X msg 629 407 symbol \$1%;
+#X obj 642 437 t a b;
+#X obj 683 473 pack s f f s;
+#X text 627 274 if it's not all \, top \, or bottom \, show a percent
+;
+#X obj 148 642 s \$0-scrollr;
+#X msg 148 622 label;
+#X obj 148 602 del 1500;
+#X obj 28 70 r \$0-view-from;
+#X obj 200 568 t b a;
+#X msg 263 436 symbol Top\$2of\$2\$3;
+#X msg 455 477 symbol Bot\$2of\$2\$3;
+#X msg 683 492 symbol \$1\$4(\$2/\$3);
+#X msg 28 325 symbol All\$2of\$2\$3;
+#X msg 200 548 label_pos 143 -25 \, label \$1;
+#X connect 0 0 2 0;
+#X connect 1 0 10 0;
+#X connect 2 0 9 0;
+#X connect 2 1 1 0;
+#X connect 4 0 6 2;
+#X connect 4 0 8 1;
+#X connect 5 0 6 1;
+#X connect 6 0 51 0;
+#X connect 7 0 8 0;
+#X connect 7 1 1 1;
+#X connect 8 0 0 0;
+#X connect 9 0 6 0;
+#X connect 9 1 5 0;
+#X connect 10 0 11 0;
+#X connect 10 1 12 1;
+#X connect 11 0 13 0;
+#X connect 12 0 23 0;
+#X connect 13 0 18 0;
+#X connect 13 1 14 0;
+#X connect 14 0 12 0;
+#X connect 15 0 17 2;
+#X connect 16 0 17 1;
+#X connect 17 0 48 0;
+#X connect 18 0 17 0;
+#X connect 18 1 16 0;
+#X connect 21 0 22 1;
+#X connect 22 0 24 0;
+#X connect 23 0 22 0;
+#X connect 23 1 25 1;
+#X connect 24 0 31 0;
+#X connect 24 1 26 0;
+#X connect 25 0 34 0;
+#X connect 26 0 25 0;
+#X connect 27 0 21 0;
+#X connect 28 0 30 2;
+#X connect 29 0 30 1;
+#X connect 30 0 49 0;
+#X connect 31 0 30 0;
+#X connect 31 1 29 0;
+#X connect 33 0 35 1;
+#X connect 33 0 41 2;
+#X connect 34 0 35 0;
+#X connect 34 1 41 1;
+#X connect 35 0 37 0;
+#X connect 36 0 41 3;
+#X connect 37 0 38 0;
+#X connect 38 0 39 0;
+#X connect 39 0 40 0;
+#X connect 40 0 41 0;
+#X connect 40 1 36 0;
+#X connect 41 0 50 0;
+#X connect 44 0 43 0;
+#X connect 45 0 44 0;
+#X connect 46 0 7 0;
+#X connect 47 0 45 0;
+#X connect 47 1 3 0;
+#X connect 48 0 52 0;
+#X connect 49 0 52 0;
+#X connect 50 0 52 0;
+#X connect 51 0 52 0;
+#X connect 52 0 47 0;
+#X restore 398 62 pd show-position;
 #X connect 0 0 1 0;
-#X connect 0 0 41 0;
-#X connect 1 0 56 0;
+#X connect 0 0 32 0;
+#X connect 1 0 47 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 1;
-#X connect 3 0 30 1;
+#X connect 3 0 21 1;
 #X connect 4 1 7 0;
 #X connect 4 2 7 0;
 #X connect 5 0 4 0;
-#X connect 7 0 22 0;
-#X connect 7 2 22 0;
+#X connect 7 0 13 0;
+#X connect 7 2 13 0;
 #X connect 9 0 8 1;
 #X connect 10 0 9 0;
-#X connect 11 0 15 0;
-#X connect 12 0 13 0;
-#X connect 13 0 14 0;
+#X connect 11 0 14 0;
+#X connect 12 0 11 0;
+#X connect 13 0 12 0;
+#X connect 13 1 15 1;
+#X connect 13 1 17 0;
+#X connect 14 0 16 0;
 #X connect 15 0 18 0;
-#X connect 15 1 19 0;
-#X connect 17 0 16 0;
-#X connect 18 0 17 0;
-#X connect 19 0 12 0;
-#X connect 20 0 23 0;
-#X connect 21 0 20 0;
-#X connect 22 0 21 0;
-#X connect 22 1 24 1;
-#X connect 22 1 26 0;
-#X connect 23 0 25 0;
-#X connect 24 0 27 0;
-#X connect 25 0 24 0;
-#X connect 25 1 10 0;
-#X connect 27 0 8 0;
-#X connect 28 0 45 0;
-#X connect 30 0 33 0;
-#X connect 31 0 29 0;
-#X connect 33 0 31 0;
-#X connect 34 0 35 0;
-#X connect 34 1 35 1;
-#X connect 35 0 36 0;
-#X connect 36 0 38 0;
-#X connect 37 0 53 0;
-#X connect 37 1 54 0;
-#X connect 38 0 37 0;
-#X connect 39 0 40 0;
-#X connect 40 0 44 0;
-#X connect 41 0 39 0;
-#X connect 41 0 48 0;
-#X connect 41 0 52 0;
-#X connect 42 0 43 0;
-#X connect 43 0 39 0;
-#X connect 43 0 48 0;
-#X connect 43 0 52 0;
-#X connect 44 0 42 0;
-#X connect 45 0 46 1;
-#X connect 45 0 55 0;
-#X connect 46 0 47 0;
-#X connect 47 0 45 0;
-#X connect 47 0 56 1;
-#X connect 47 0 30 0;
-#X connect 49 0 47 1;
-#X connect 51 0 50 0;
-#X connect 52 0 51 0;
-#X connect 53 0 46 0;
-#X connect 54 0 46 0;
-#X connect 55 0 5 0;
-#X connect 55 1 4 1;
-#X connect 55 1 6 0;
-#X connect 56 0 46 1;
-#X connect 56 0 45 0;
+#X connect 16 0 15 0;
+#X connect 16 1 10 0;
+#X connect 18 0 8 0;
+#X connect 19 0 36 0;
+#X connect 21 0 24 0;
+#X connect 22 0 20 0;
+#X connect 24 0 22 0;
+#X connect 25 0 26 0;
+#X connect 25 1 26 1;
+#X connect 26 0 27 0;
+#X connect 27 0 29 0;
+#X connect 28 0 44 0;
+#X connect 28 1 45 0;
+#X connect 29 0 28 0;
+#X connect 30 0 31 0;
+#X connect 31 0 35 0;
+#X connect 32 0 30 0;
+#X connect 32 0 39 0;
+#X connect 32 0 43 0;
+#X connect 33 0 34 0;
+#X connect 34 0 30 0;
+#X connect 34 0 39 0;
+#X connect 34 0 43 0;
+#X connect 35 0 33 0;
+#X connect 36 0 37 1;
+#X connect 36 0 46 0;
+#X connect 37 0 38 0;
+#X connect 38 0 36 0;
+#X connect 38 0 47 1;
+#X connect 38 0 21 0;
+#X connect 40 0 38 1;
+#X connect 42 0 41 0;
+#X connect 43 0 42 0;
+#X connect 44 0 37 0;
+#X connect 45 0 37 0;
+#X connect 46 0 5 0;
+#X connect 46 1 4 1;
+#X connect 46 1 6 0;
+#X connect 47 0 37 1;
+#X connect 47 0 36 0;
 #X restore 452 166 pd gui;
 #N canvas 2480 29 800 871 back-up 0;
 #X obj 122 58 r \$0-back;
