@@ -1,23 +1,23 @@
-#N canvas 2880 32 960 1048 10;
-#X obj 111 130 hsl 127 13 0 127 0 0 \$0-h0 \$0-h0r 9929__davepape__boink-0006.wav
--2 6 0 10 -262144 -262144 -1 0 1;
-#X obj 111 143 hsl 127 13 0 127 0 0 \$0-h1 \$0-h1r N64 Samples/ -2
+#N canvas 1920 32 1920 1048 10;
+#X obj 111 130 hsl 127 13 0 127 0 0 \$0-h0 \$0-h0r bakku-no-oni-shoku/
+-2 6 0 10 -262144 -262144 -62784 0 1;
+#X obj 111 143 hsl 127 13 0 127 0 0 \$0-h1 \$0-h1r Bitwig Studio/ -2
 6 0 10 -262144 -262144 -62784 0 1;
-#X obj 111 156 hsl 127 13 0 127 0 0 \$0-h2 \$0-h2r anime/ -2 6 0 10
--262144 -262144 -62784 0 1;
-#X obj 111 169 hsl 127 13 0 127 0 0 \$0-h3 \$0-h3r aust-paul-lazer.wav
--2 6 0 10 -262144 -262144 -1 0 1;
-#X obj 111 182 hsl 127 13 0 127 0 0 \$0-h4 \$0-h4r balloon.wav -2 6
-0 10 -262144 -262144 -1 0 1;
-#X obj 111 195 hsl 127 13 0 127 0 0 \$0-h5 \$0-h5r bass/ -2 6 0 10
--262144 -262144 -62784 0 1;
-#X obj 111 208 hsl 127 13 0 127 0 0 \$0-h6 \$0-h6r bird.wav -2 6 0
-10 -262144 -262144 -1 0 1;
-#X obj 111 221 hsl 127 13 0 127 0 0 \$0-h7 \$0-h7r bleepeater-samples/
+#X obj 110 156 hsl 128 15 0 127 0 0 \$0-h2 \$0-h2r [DmonHiro] -2 -8
+0 10 -262144 -1 -1 0 1;
+#X obj 111 169 hsl 127 13 0 127 0 0 \$0-h3 \$0-h3r dragon-ball-z/ -2
+6 0 10 -262144 -262144 -62784 0 1;
+#X obj 111 182 hsl 127 13 0 127 0 0 \$0-h4 \$0-h4r dunkey-music/ -2
+6 0 10 -262144 -262144 -62784 0 1;
+#X obj 111 195 hsl 127 13 0 127 0 0 \$0-h5 \$0-h5r easy-magic/ -2 6
+0 10 -262144 -262144 -62784 0 1;
+#X obj 111 208 hsl 127 13 0 127 0 0 \$0-h6 \$0-h6r Golden Age of Video Games - Age of the Cartridge v10.0/
+-2 6 0 10 -262144 -262144 -62784 0 1;
+#X obj 111 221 hsl 127 13 0 127 0 0 \$0-h7 \$0-h7r keystrokes of motherfucking hell/
 -2 6 0 10 -262144 -262144 -62784 0 1;
 #X obj 100 132 vsl 8 99 1 0 0 0 \$0-scroll \$0-scrollr empty 143 -25
 0 10 -262144 -33289 -33289 9800 1;
-#N canvas 1680 29 1600 871 init 0;
+#N canvas 1920 32 1920 1048 init 0;
 #X obj 103 248 s;
 #X obj 103 124 until;
 #X obj 103 143 t b b;
@@ -47,8 +47,8 @@
 #X connect 10 0 9 0;
 #X connect 11 0 8 0;
 #X connect 13 0 12 0;
-#X restore 452 128 pd init;
-#N canvas 1680 29 800 871 go 0;
+#X restore 422 118 pd init;
+#N canvas 1920 32 1920 1048 go 0;
 #X obj 236 200 s \$0-dir-size;
 #X obj 236 181 list length;
 #X obj 216 219 s \$0-dir-contents;
@@ -67,85 +67,85 @@
 #X msg 87 351 list;
 #X obj 94 220 route list;
 #X obj 94 239 route folder file;
-#N canvas 800 29 800 849 glob 0;
-#X obj 195 147 inlet;
-#X obj 207 399 s2l .pd;
-#X obj 207 418 route list symbol;
-#X obj 314 231 r \$0-extensions;
-#X obj 207 667 outlet;
-#X msg 207 648 \$1\$2;
-#X obj 195 185 t a b;
-#X msg 222 204 reset \, bang;
-#X obj 207 610 list-idx 0;
-#X msg 246 361 .wav;
-#X obj 222 266 count;
-#X obj 341 269 list length;
-#X obj 314 250 t a a;
-#X obj 246 380 list-idx;
-#X obj 314 288 prepent set;
-#X obj 195 166 symbol;
-#X obj 256 437 bang;
-#X obj 239 314 t f b f;
-#X obj 117 312 sel 0;
-#X obj 144 331 bang;
-#X obj 179 238 symbol;
-#X text -175 312 bangs on left outlet when there is no match -->;
-#X text 287 435 <-- not matched yet \, so try again...;
-#X text 125 610 a match! -->;
-#X text 412 231 <-- extensions must have a .;
-#X obj 87 410 t a a;
-#X obj 114 429 list length;
-#X obj 114 448 == 2;
-#X obj 81 467 spigot;
-#X obj 207 629 pack s s;
-#X obj 81 486 t a a;
-#X obj 108 505 list-idx 1;
-#X obj 108 524 route float;
-#X obj 108 543 == 0;
-#X obj 171 543 bang;
-#X msg 171 562 0;
-#X obj 75 591 spigot;
-#X connect 0 0 15 0;
+#N canvas 1920 32 1920 1048 glob 0;
+#X obj 385 27 inlet;
+#X obj 397 279 s2l .pd;
+#X obj 397 298 route list symbol;
+#X obj 504 111 r \$0-extensions;
+#X obj 397 547 outlet;
+#X msg 397 528 \$1\$2;
+#X obj 385 65 t a b;
+#X msg 412 84 reset \, bang;
+#X obj 397 490 list-idx 0;
+#X msg 436 241 .wav;
+#X obj 531 149 list length;
+#X obj 504 130 t a a;
+#X obj 436 260 list-idx;
+#X obj 504 168 prepent set;
+#X obj 385 46 symbol;
+#X obj 446 317 bang;
+#X obj 429 194 t f b f;
+#X obj 307 192 sel 0;
+#X obj 334 211 bang;
+#X obj 369 118 symbol;
+#X text 15 192 bangs on left outlet when there is no match -->;
+#X text 477 315 <-- not matched yet \, so try again...;
+#X text 315 490 a match! -->;
+#X text 602 111 <-- extensions must have a .;
+#X obj 277 290 t a a;
+#X obj 304 309 list length;
+#X obj 304 328 == 2;
+#X obj 271 347 spigot;
+#X obj 397 509 pack s s;
+#X obj 271 366 t a a;
+#X obj 298 385 list-idx 1;
+#X obj 298 404 route float;
+#X obj 298 423 == 0;
+#X obj 361 423 bang;
+#X msg 361 442 0;
+#X obj 265 471 spigot;
+#X obj 412 146 kount;
+#X connect 0 0 14 0;
 #X connect 1 0 2 0;
-#X connect 2 0 25 0;
-#X connect 2 1 16 0;
-#X connect 3 0 12 0;
+#X connect 2 0 24 0;
+#X connect 2 1 15 0;
+#X connect 3 0 11 0;
 #X connect 5 0 4 0;
-#X connect 6 0 20 0;
+#X connect 6 0 19 0;
 #X connect 6 1 7 0;
-#X connect 7 0 10 0;
-#X connect 8 0 29 0;
-#X connect 9 0 13 0;
-#X connect 10 0 17 0;
-#X connect 11 0 10 1;
-#X connect 12 0 14 0;
-#X connect 12 1 11 0;
-#X connect 13 0 1 1;
-#X connect 13 0 29 1;
-#X connect 14 0 9 0;
-#X connect 15 0 6 0;
-#X connect 16 0 10 0;
-#X connect 17 0 18 0;
-#X connect 17 1 9 0;
-#X connect 17 2 13 1;
-#X connect 18 1 19 0;
-#X connect 19 0 20 0;
-#X connect 20 0 1 0;
-#X connect 25 0 28 0;
-#X connect 25 1 26 0;
-#X connect 26 0 27 0;
-#X connect 27 0 28 1;
-#X connect 28 0 30 0;
-#X connect 29 0 5 0;
-#X connect 30 0 36 0;
-#X connect 30 1 31 0;
+#X connect 7 0 36 0;
+#X connect 8 0 28 0;
+#X connect 9 0 12 0;
+#X connect 10 0 36 1;
+#X connect 11 0 13 0;
+#X connect 11 1 10 0;
+#X connect 12 0 1 1;
+#X connect 12 0 28 1;
+#X connect 13 0 9 0;
+#X connect 14 0 6 0;
+#X connect 15 0 36 0;
+#X connect 16 0 17 0;
+#X connect 16 1 9 0;
+#X connect 16 2 12 1;
+#X connect 17 1 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 1 0;
+#X connect 24 0 27 0;
+#X connect 24 1 25 0;
+#X connect 25 0 26 0;
+#X connect 26 0 27 1;
+#X connect 27 0 29 0;
+#X connect 28 0 5 0;
+#X connect 29 0 35 0;
+#X connect 29 1 30 0;
+#X connect 30 0 31 0;
 #X connect 31 0 32 0;
-#X connect 32 0 33 0;
-#X connect 32 1 34 0;
-#X connect 33 0 36 1;
-#X connect 34 0 35 0;
-#X connect 35 0 36 1;
-#X connect 36 0 8 0;
+#X connect 31 1 33 0;
+#X connect 32 0 35 1;
+#X connect 33 0 34 0;
+#X connect 34 0 35 1;
+#X connect 35 0 8 0;
+#X connect 36 0 16 0;
 #X restore 143 258 pd glob;
 #N canvas 800 29 800 849 spacer 0;
 #X obj 93 44 inlet;
@@ -196,7 +196,7 @@ and filter them according to the glob.;
 #X obj 197 162 t b a a;
 #X text 274 99 <-- receives the name of the directory we want from
 the symbol atom.;
-#N canvas 800 29 800 849 fix-path 0;
+#N canvas 1920 32 1920 1048 fix-path 0;
 #X obj 187 19 inlet;
 #X obj 187 140 outlet;
 #X obj 187 76 kfilename;
@@ -254,9 +254,9 @@ the symbol atom.;
 #X connect 8 1 2 0;
 #X connect 8 2 1 0;
 #X connect 10 0 3 0;
-#X restore 452 147 pd go;
+#X restore 422 147 pd go;
 #X symbolatom 100 114 23 0 0 0 - #0-dir #0-new-dir;
-#X obj 452 90 inlet;
+#X obj 422 60 inlet;
 #N canvas 1680 29 800 871 parse 0;
 #X obj 37 37 inlet;
 #X obj 37 56 route dir up back;
@@ -269,44 +269,33 @@ the symbol atom.;
 #X connect 1 1 2 0;
 #X connect 1 2 3 0;
 #X connect 5 0 4 0;
-#X restore 452 109 pd parse;
+#X restore 422 89 pd parse;
 #X obj 226 100 bng 14 250 50 0 \$0-up empty ^ 4 10 0 12 -262144 -1
 -1;
 #X obj 212 100 bng 14 250 50 0 \$0-back empty < 3 8 0 12 -262144 -1
 -1;
-#X obj 452 223 outlet;
+#X obj 422 263 outlet;
 #X obj 198 100 tgl 14 0 \$0-preview empty p 4 7 0 10 -262144 -1 -1
 0 1;
-#N canvas 2880 32 960 1048 gui 0;
+#N canvas 1920 32 1920 1048 gui 0;
 #X obj 108 137 r \$0-scroll;
 #X obj 108 194 *;
 #X obj 163 156 r \$0-dir-size;
 #X obj 163 175 - 8;
 #X obj 208 451 list split;
-#N canvas 2480 29 800 871 the-list 0;
+#N canvas 1920 32 1920 1048 the-list 0;
 #X obj 11 10 r \$0-dir-contents;
 #X obj 170 48 inlet;
 #X obj 31 266 outlet;
-#X msg 88 102 9929__davepape__boink-0006.wav N64 Samples/ anime/ aust-paul-lazer.wav
-balloon.wav bass/ bird.wav bleepeater-samples/ boomclick01.wav buzz.wav
-buzzer.wav cbb-imp.wav chirp.wav d/ dropshave.wav drums/ dwewdwuw.wav
-eatanappel.wav electric.wav explode.wav faucet.wav fingerdrumming.wav
-fiphe.wav flange-blow.wav flizzle.wav fltr1.wav frog.wav frog1.wav
-from/ game-boy-player-error.wav glass-shatter.wav glasssmash.wav grunt.wav
-hannabarbara.wav ice-crackle1.wav ice-hit1.wav ice1.wav impulse-responses/
-l/ lighter1.wav lighter2.wav lighter3.wav lighter4.wav lion-growl.wav
-loops/ lp-hahn-12-warn-beep.wav mario-commercial/ maryoclip.wav me-hhh.wav
-melody/ misc/ music/ nat-tap1.wav nat-tap2.wav non/ old/ oomf.wav packs/
-percdubba.wav pf_gyfhoomd_boom.wav piano3.wav piano_dings.wav pit01.wav
-plant-kill.wav projector-screen.wav projector-start-run-stop-18fps.wav
-purring.wav quickrecordscratching.wav radical-cym.wav rattleLoop.wav
-rattleclack.wav rattlecrash.wav recordskip.wav ricdatstore.wav roguclick.wav
-sawblade.wav scrape01.wav scrape02.wav scw/ sh/ shaveblast.wav shavestart.wav
-slap.wav slidde.wav slow-riff.wav smashwarble.wav sneeze.wav sodacan/
-sonic/ splattr.wav squeak.wav srnr-hit.wav storm1.wav tch.wav textures/
-thunder_03.wav thunder_04.wav toony-bonks.wav tr808/ tr909/ train01.wav
-train02.wav tremcrash.wav unknwn9.wav usat_bomb.wav voice/ whpish01.wav
-whuuup.wav winshut.wav zzap.wav;
+#X msg 88 102 bakku-no-oni-shoku/ Bitwig Studio/ [DmonHiro] Tonari No Kyuuketsuki-san (BD\\\\\\\, 720p)/
+dragon-ball-z/ dunkey-music/ easy-magic/ Golden Age of Video Games - Age of the Cartridge v10.0/
+keystrokes of motherfucking hell/ left-secular.wav Limp_Bizkit__Rollin/
+madanonymous/ misc/ mtw-mix/ Nintendo 64/ ominous-fart-rev.wav ooz of dl/
+sample-album/ Sega Genesis/ shooter3ddemo/ soundcloud-archives/ spleeter/
+StraightOuttaTheIntensiveCareUnit...ItsSpeedbassRecovery-NksProd61/
+ST-XX/ test.wav The Turntablist - 1996 - Super Duck Breaks - STH2004/
+think2.wav tmp/ tosecdcus20190822/ Totilix/ voxen/ Your Additional Golden Age Torrents/
+;
 #X obj 68 48 prepent set;
 #X obj 11 29 route bang;
 #X msg 11 68 set list;
@@ -327,21 +316,22 @@ whuuup.wav winshut.wav zzap.wav;
 #X msg 236 563 8;
 #X obj 236 544 t b a;
 #X obj 236 601 count 8;
-#N canvas 0 29 800 849 the-eight 0;
+#N canvas 1920 32 1920 1048 the-eight 0;
 #X obj 37 37 inlet;
-#X obj 127 119 prepent set;
-#X msg 47 225 9929__davepape__boink-0006.wav N64 Samples/ anime/ aust-paul-lazer.wav
-balloon.wav bass/ bird.wav bleepeater-samples/;
-#X obj 47 284 outlet;
+#X obj 127 139 prepent set;
+#X msg 47 275 bakku-no-oni-shoku/ Bitwig Studio/ [DmonHiro] Tonari No Kyuuketsuki-san (BD\\\\\\\, 720p)/
+dragon-ball-z/ dunkey-music/ easy-magic/ Golden Age of Video Games - Age of the Cartridge v10.0/
+keystrokes of motherfucking hell/;
+#X obj 47 414 outlet;
 #X obj 97 37 inlet;
-#X obj 47 265 list-idx;
-#X obj 112 164 >=;
-#X obj 127 145 list length;
-#X obj 112 183 sel 0 1;
-#X msg 131 202 symbol;
-#X obj 37 56 t f f;
-#X obj 97 56 route bang;
-#X msg 97 75 0;
+#X obj 47 385 list-idx;
+#X obj 112 194 >=;
+#X obj 127 165 list length;
+#X obj 112 223 sel 0 1;
+#X msg 131 252 symbol;
+#X obj 37 66 t f f;
+#X obj 97 66 route bang;
+#X msg 97 95 0;
 #X connect 0 0 10 0;
 #X connect 1 0 2 0;
 #X connect 2 0 5 0;
@@ -472,7 +462,6 @@ balloon.wav bass/ bird.wav bleepeater-samples/;
 #X obj 190 62 map 0 17;
 #X msg 290 153 -1;
 #X msg 321 153 1;
-#X obj 208 332 t b i;
 #X obj 108 213 int;
 #N canvas 1920 32 960 1048 show-position 0;
 #X obj 28 180 <= 8;
@@ -591,9 +580,10 @@ balloon.wav bass/ bird.wav bleepeater-samples/;
 #X connect 51 0 52 0;
 #X connect 52 0 47 0;
 #X restore 398 62 pd show-position;
+#X obj 208 332 t b f;
 #X connect 0 0 1 0;
 #X connect 0 0 32 0;
-#X connect 1 0 47 0;
+#X connect 1 0 46 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 1;
 #X connect 3 0 21 1;
@@ -636,22 +626,22 @@ balloon.wav bass/ bird.wav bleepeater-samples/;
 #X connect 34 0 43 0;
 #X connect 35 0 33 0;
 #X connect 36 0 37 1;
-#X connect 36 0 46 0;
+#X connect 36 0 48 0;
 #X connect 37 0 38 0;
 #X connect 38 0 36 0;
-#X connect 38 0 47 1;
+#X connect 38 0 46 1;
 #X connect 38 0 21 0;
 #X connect 40 0 38 1;
 #X connect 42 0 41 0;
 #X connect 43 0 42 0;
 #X connect 44 0 37 0;
 #X connect 45 0 37 0;
-#X connect 46 0 5 0;
-#X connect 46 1 4 1;
-#X connect 46 1 6 0;
-#X connect 47 0 37 1;
-#X connect 47 0 36 0;
-#X restore 452 166 pd gui;
+#X connect 46 0 37 1;
+#X connect 46 0 36 0;
+#X connect 48 0 5 0;
+#X connect 48 1 4 1;
+#X connect 48 1 6 0;
+#X restore 422 176 pd gui;
 #N canvas 2480 29 800 871 back-up 0;
 #X obj 122 58 r \$0-back;
 #X obj 272 121 r \$0-up;
@@ -673,10 +663,10 @@ balloon.wav bass/ bird.wav bleepeater-samples/;
 #X connect 6 0 7 0;
 #X connect 8 0 6 1;
 #X connect 10 0 9 0;
-#X restore 452 185 pd back-up;
-#N canvas 1680 29 800 871 click 0;
+#X restore 422 205 pd back-up;
+#N canvas 1920 32 1920 1048 click 0;
 #X obj 62 18 r \$0-h0;
-#X msg 62 37 0;
+#X msg 62 38 0;
 #X obj 110 18 r \$0-h1;
 #X obj 158 18 r \$0-h2;
 #X obj 206 18 r \$0-h3;
@@ -684,22 +674,22 @@ balloon.wav bass/ bird.wav bleepeater-samples/;
 #X obj 302 18 r \$0-h5;
 #X obj 350 18 r \$0-h6;
 #X obj 398 18 r \$0-h7;
-#X msg 110 37 1;
-#X msg 158 37 2;
-#X msg 206 37 3;
-#X msg 254 37 4;
-#X msg 302 37 5;
-#X msg 398 37 7;
-#X msg 350 37 6;
-#X obj 352 136 r \$0-the-8;
-#X obj 224 323 outlet;
-#X obj 272 115 list length;
-#X obj 224 153 spigot;
-#X obj 257 134 <;
-#X obj 269 172 r \$0-actual-dir;
-#X obj 224 191 pack s s;
-#X obj 224 276 prepent open;
-#X obj 224 172 map;
+#X msg 110 38 1;
+#X msg 158 38 2;
+#X msg 206 38 3;
+#X msg 254 38 4;
+#X msg 302 38 5;
+#X msg 398 38 7;
+#X msg 350 38 6;
+#X obj 352 137 r \$0-the-8;
+#X obj 224 334 outlet;
+#X obj 272 116 list length;
+#X obj 224 156 spigot;
+#X obj 257 136 <;
+#X obj 269 176 r \$0-actual-dir;
+#X obj 224 196 pack s s;
+#X obj 224 285 prepent open;
+#X obj 224 176 map;
 #N canvas 0 29 800 849 preview 0;
 #X obj 37 56 inlet;
 #X obj 95 56 r \$0-preview;
@@ -721,7 +711,7 @@ balloon.wav bass/ bird.wav bleepeater-samples/;
 #X connect 5 0 2 0;
 #X connect 6 0 8 0;
 #X connect 8 0 2 0;
-#X restore 235 304 pd preview;
+#X restore 235 314 pd preview;
 #N canvas 800 29 800 410 directory 0;
 #X obj 37 37 inlet;
 #X obj 37 225 outlet;
@@ -750,10 +740,10 @@ balloon.wav bass/ bird.wav bleepeater-samples/;
 #X connect 8 1 9 0;
 #X connect 9 0 10 0;
 #X connect 12 0 11 0;
-#X restore 224 229 pd directory;
-#X msg 224 210 symbol \$2/\$1;
-#X obj 235 257 s \$0-selected;
-#X obj 224 111 t f f;
+#X restore 224 236 pd directory;
+#X msg 224 216 symbol \$2/\$1;
+#X obj 235 265 s \$0-selected;
+#X obj 224 112 t f f;
 #X connect 0 0 1 0;
 #X connect 1 0 29 0;
 #X connect 2 0 9 0;
@@ -785,7 +775,7 @@ balloon.wav bass/ bird.wav bleepeater-samples/;
 #X connect 27 0 26 0;
 #X connect 29 0 19 0;
 #X connect 29 1 20 0;
-#X restore 452 204 pd click;
+#X restore 422 234 pd click;
 #X floatatom 352 135 5 0 0 0 - - -;
 #X obj 352 164 s \$0-top;
 #X connect 12 0 13 0;
