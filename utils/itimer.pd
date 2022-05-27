@@ -1,21 +1,21 @@
-#N canvas 0 0 800 849 10;
-#X obj 206 116 ktimer;
-#X floatatom 133 133 4 0 0 0 - - -;
-#X floatatom 119 133 2 0 0 0 - - -;
-#X floatatom 105 133 2 0 0 0 - - -;
-#X msg 208 82 start;
-#X msg 251 85 stop;
-#X obj 129 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+#N canvas 1920 32 1920 1048 10;
+#X obj 226 116 ktimer;
+#X floatatom 153 133 4 0 0 0 - - -;
+#X floatatom 139 133 2 0 0 0 - - -;
+#X floatatom 125 133 2 0 0 0 - - -;
+#X msg 228 82 start;
+#X msg 271 85 stop;
+#X obj 149 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
 -1;
-#X obj 144 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
+#X obj 164 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
 -1 -1;
-#X obj 208 8 inlet;
-#X obj 208 60 sel 1 0;
-#X obj 174 146 outlet;
-#X obj 216 146 outlet;
-#X obj 258 146 outlet;
-#X obj 208 27 route float bang;
-#X obj 274 52 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 228 8 inlet;
+#X obj 228 60 sel 1 0;
+#X obj 194 146 outlet;
+#X obj 236 146 outlet;
+#X obj 278 146 outlet;
+#X obj 228 27 route float bang;
+#X obj 294 52 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X connect 0 0 3 0;
 #X connect 0 0 10 0;
@@ -33,4 +33,4 @@
 #X connect 13 0 9 0;
 #X connect 13 1 14 0;
 #X connect 14 0 13 0;
-#X coords 0 -1 1 1 54 31 1 105 118;
+#X coords 0 -1 1 1 74 32 1 105 118;
