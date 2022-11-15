@@ -1,10 +1,11 @@
-#N canvas 0 29 1600 849 10;
+#N canvas 1920 32 1920 1048 10;
 #X obj 9 12 noise~;
 #X obj 9 96 samphold~;
 #X obj 9 119 outlet~;
 #X obj 60 72 phasor~ \$1;
 #X obj 60 12 inlet~;
 #X obj 60 43 max~ 0;
+#X text 146 27 White noise at the provided frequency.;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 3 0 1 1;

@@ -1,11 +1,14 @@
-#N canvas 0 0 800 410 10;
+#N canvas 1920 32 1920 1048 10;
 #X obj 45 87 inlet;
-#X obj 72 106 loadbang;
-#X obj 72 125 symbol;
-#X obj 45 144 sel a;
-#X obj 45 176 outlet;
-#X obj 87 176 outlet;
-#X text 166 63 empty symbol selector;
+#X obj 72 107 loadbang;
+#X obj 72 127 symbol;
+#X obj 45 147 sel a;
+#X obj 45 179 outlet;
+#X obj 87 179 outlet;
+#X text 163 63 Empty symbol selector.;
+#X text 160 94 Bangs its left outlet when it receives the empty symbol
+\; passes the input to the right outlet when it receives anything else.
+;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 1;

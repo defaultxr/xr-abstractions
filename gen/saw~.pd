@@ -1,9 +1,11 @@
-#N canvas 0 30 1600 849 10;
+#N canvas 1920 32 1920 1048 10;
 #X obj 98 64 inlet~;
 #X obj 155 64 inlet;
-#X obj 98 121 outlet~;
-#X obj 98 83 phasor~ \$1;
-#X obj 98 102 cta~;
+#X obj 98 127 outlet~;
+#X obj 98 85 phasor~ \$1;
+#X obj 98 106 cta~;
+#X text 96 13 Basic saw wave oscillator. Basically just a bipolar version
+of [phasor~].;
 #X connect 0 0 3 0;
 #X connect 1 0 3 1;
 #X connect 3 0 4 0;
