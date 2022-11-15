@@ -1,28 +1,27 @@
 #+TITLE: xr-abstractions
 
-This is a collection of abstractions I've made for Pure Data. It includes sequencers, GUIs, general utilities, and a few effects and synths. I'm still in the process of writing them, so consider them "beta", and expect changes if you upgrade later (which will hopefully be mentioned in commit messages). Some objects might get renamed, removed, or end up working/looking completely different later. Beware of this.
+This is a collection of abstractions I've made for Pure Data. It includes sequencers, GUIs, general utilities, and a few effects and synths. I'm still in the process of writing them, so consider this collection to be in the "beta" stage, and expect changes if you upgrade later (which will hopefully be mentioned in commit messages). Some objects might get renamed, removed, or end up working/looking completely different later. Beware of this.
 
-Right now, most of these abstractions will probably only work under Pd-extended 0.43. Since Pd-extended is no longer maintained, I'll slowly be working towards Pd-vanilla compatibility for this library.
+Right now, most of these abstractions will probably only work under Pd-extended 0.43. Since Pd-extended is no longer maintained, I'm slowly be working towards ensuring full Pd-vanilla compatibility for this library.
 
 Please notify me of any bugs you find while using these abstractions.
 
 Some of the abstractions I find most useful:
-- ~map~ - convenient list access; provide a list as arguments or to the second inlet, then send numbers or bangs to the first inlet to get elements from the list.
-- ~unmap~ - the inverse of ~map~; provide a list, then send items to the first inlet to get the index of the item in the list.
-- ~rmap~ - receive map (quickly create a lot of ~receive~ objects just by specifying them as arguments to ~rmap~)
-- ~snd~~ - easy sound file access; provide a filename as the first argument to load it, then send a signal in the range 0-1 to read from the buffer.
-- ~o~~ - output a mono signal to both speakers equally, with a few conveniences like a volume slider and mute toggle.
-- ~so~~ - like ~o~~ but for stereo signals.
-- ~view~~ - view the waveform; basically a simple oscilloscope.
-- ~tview~ - "text view"; GUI showing the last 5 messages to the inlet.
-- ~drumseq2~ - convenient step sequencer GUI (soon to be renamed to either just ~drumseq~ or ~ds~. the original ~drumseq~ (still included) is now deprecated so don't use it!)
-- ~rrange~ - random range; get random integers within a specified range.
-- ~rchoice~ - random choice; get random elements from a provided list.
-- ~bpmm~ - clock GUI to generate bangs, floats, and synced phasor signal to a specified BPM. made for use with sequencers like ~drumseq~, ~anaseq~, etc.
-- ~tb303~~ - basic tb303 imitation.
+- ~map~ - Map to the elements of a list; provide a list as arguments (or send one to the second inlet), then send numbers or bangs to the first inlet to get the list item at the specified index.
+- ~unmap~ - The inverse of ~map~; provide a list, then send items to the first inlet to get the index of the item in the list.
+- ~rmap~ - Receive map; quickly create a lot of ~receive~ objects just by specifying them as arguments to ~rmap~.
+- ~snd~~ - Convenient sound file access; provide a filename as the first argument to load it, then send a signal in the range 0-1 to the first inlet to read from the buffer.
+- ~o~~ - Output a mono signal to your DAC (speakers), with a few conveniences like a volume slider and mute toggle.
+- ~so~~ - Like ~o~~ but for stereo signals.
+- ~view~~ - Waveform view; basically a simple oscilloscope.
+- ~tview~ - Text view; a simple GUI showing the last 5 messages to the inlet.
+- ~drumseq2~ - Four-track step sequencer GUI; soon to be renamed to either just ~drumseq~ or ~ds~. the original ~drumseq~ (still included) is now deprecated so don't use it!)
+- ~rrange~ - Random range; outputs random integers within the specified range.
+- ~rchoice~ - Random choice; outputs random elements from the provided list.
+- ~bpmm~ - Tempo clock GUI to generate bangs, floats, and a synced phasor signal to the specified BPM. Made for use with sequencers like ~drumseq~, ~anaseq~, etc.
+- ~tb303~~ - Basic Roland TB-303 imitation.
 
 * Requirements
-
 Here's a list of the libraries that this one depends on. All of these should be installed automatically if you're using Pd 0.48.
 
 - cyclone
@@ -32,16 +31,16 @@ Here's a list of the libraries that this one depends on. All of these should be 
 - zexy
 
 * Installation
-
-After you install the requirements listed above, the abstractions should "just work". However there are a few that you may want to edit:
+Once you have the requirements listed above, the abstractions should "just work". However there are a few that you may want to edit:
 
 - ~kfilename~ - this abstraction is used to shorten filenames. So for example, ~~~ is replaced with ~/home/modula~ by default. You will most likely want to change that so that it points to your home directory instead.
 
 * Overview
-
 Below is an overview of all of the included abstractions.
+
 ** ctrl
 Abstractions for controlling things, either via keyboard or by clicking.
+
 - ~ca~ - control interface. 1st arg is MIDI CC number, 2nd (optional) arg can be ~B~ to output bang when the CC hits 127, ~I~ to invert the CCs, a number to change the range from 0 to that number, or ... (FIX: how is this different from ~c~?)
 - ~capslock~ - shows whether capslock is on or off and also outputs 1 or 0 depending.
 - ~cb~ - control bend. shows the current value of the MIDI bend parameter, also adjusting its range to 0-127.
@@ -73,11 +72,14 @@ Abstractions for controlling things, either via keyboard or by clicking.
 - ~sndsel~ - sound selector. allows you to select a sound by browsing folders graphically, because ~playlist~ kind of sucks. it's a work-in-progress, but it's probably ready for regular use.
 - ~switcher~~ - graphically switches between 2 audio inputs. there are 3 inlets: the middle is a message inlet accepting floats to select the input to send to the outlet, while the left and right inlets are the audio inputs.
 - ~switcher~ - switches between outputting the left inlet or the right inlet graphically via a ratio control. you can also change the inlet by sending a "switch" message to the first inlet.
+
 ** demos
-Demonstrations of the included abstractions (definitely open these if you want a tour of this library)
+Demonstrations of the included abstractions (definitely open these if you want a tour of this library).
+
 ** fx
-Various small effects or GUIs for them.
+Various small effects, or GUIs for them.
 See also: [[https://github.com/defaultxr/pd-ladspa-abstractions][pd-ladspa-abstractions]], a set of LADSPA-wrapping abstractions.
+
 - ~autocap~~ - automatic capture.
 - ~bitcrush~~ - 
 - ~bitflip~~ - 
@@ -113,38 +115,37 @@ See also: [[https://github.com/defaultxr/pd-ladspa-abstractions][pd-ladspa-abstr
 - ~stautocap~~ - 
 
 ** gen
-
 Abstractions for generating sound.
 
-- ~analog~~ - analog simulation. basically supposed to be like line noise and a small dc offset. probably not a very good simulation of the actual analog sound.
-- ~noisef~~ - noise frequency
-- ~playsf~~ - play a file from the argument.
-- ~pm~~ - phase modulation oscillator, stolen from PDX7, with a slight modification.
-- ~psndm~~ - polyphonic sound player. you can send it midi numbers to play the sample at that value. it has 8 voices.
-- ~psndp~~ - polyphonic sound player. similar to ~sndp~~ but with 6 voices.
-- ~pulse~~ - non-band-limited pulse wave with modulatable pulse width.
-- ~rec~~ - record a snippet of sound to a table.
-- ~recp~~ - play the a snippet of sound from ~rec~~.
-- ~recsnd~~ - allows access to the sound recorded with ~rec~~ in a similar manner to the way ~snd~~ allows.
-- ~saw~~ - bipolar version of ~phasor~~
-- ~sine~~ - extremely simple sine wave oscillator based on ~phasor~~ and ~cos~~. might change this in the future.
-- ~sndcf~~ - generates a signal to control ~snd~~ based on frequency of the sound.
-- ~sndcl~~ - generates a signal to control ~snd~~ based on a ~line~~ (i.e. with start and end-points and a rate)
-- ~sndcm~~ - generates a signal to control ~snd~~ based on midi numbers (60 being the default base note)
-- ~sndd~~ - sound duplicate. like ~snd~~ but does not re-load the file; simply re-uses the table containing the already-loaded file.
-- ~sndf~~ - sound frequency. play a sound at a rate multiplied by the normal rate.
-- ~sndl~~ - sound line. play a sound or snippets of it based a ~line~~.
-- ~sndm~~ - sound midi. play a sound based on midi note numbers, with 60 being the default base note.
-- ~snd~~ - sound file. load a sound into a table and read through it via the audio inlet, with 0 being the beginning and 1 being the end.
-- ~sndp~~ - sound play. load a sound into a table and bang to play the whole sound. good for drums.
-- ~stsnd~~ - FIX
-- ~timestretch~~ - "timestretch" a sound by repeatedly going back and forth through it.
-- ~tri~~ - non-band-limited triangle or saw wave.
+- ~analog~~ - analog "simulation". Basically supposed to be like quiet line noise and a small dc offset, for providing as input to your synths to make them not as static. [FIX - improve this]
+- ~noisef~~ - Noise with a frequency input. Effectively just white noise through sample+hold.
+- ~playsf~~ - play a file from the argument. Effectively just a slightly more convenient wrapper around ~readsf~~.
+- ~pm~~ - Basic sine-based phase modulation oscillator.
+- ~psndm~~ - polyphonic midinote-based sound player. You can send it midi numbers to play the sample at different rates. It has 8 voices. [FIX - can this be improved with ~poly~~?]
+- ~psndp~~ - polyphonic sound player. Similar to ~sndp~~ but with 6 voices. [FIX - can this be improved with ~poly~~?]
+- ~pulse~~ - Basic pulse wave oscillator with modulatable pulse width.
+- ~rec~~ - basic "sampler". Record a snippet of sound to a table.
+- ~recp~~ - basic "sample player" for ~rec~~. Just plays the a snippet of sound from ~rec~~. [FIX - can this be merged into ~rec~~?]
+- ~recsnd~~ - allows access to the sound recorded with ~rec~~ in a similar manner to the way ~snd~~ allows. [FIX - can this be merged into ~recp~~?]
+- ~saw~~ - Basic saw wave oscillator. Effectively just a bipolar version of ~phasor~~.
+- ~sine~~ - basic sine wave oscillator. Based on ~phasor~~ and ~cos~~. [FIX - this is redundant with ~pm~~.]
+- ~snd~~ - convenient sound file access; provide a filename as the first argument to load it, then send a signal in the range 0-1 to the first inlet to read from the buffer.
+- ~sndcf~~ - ~snd~~ control based on multiple of the sound's base rate. [FIX - rename to ~sndcr~~]
+- ~sndcl~~ - ~snd~~ control based on ~line~~. Allows you to specify the start and end points and the time between them.
+- ~sndcm~~ - ~snd~~ control based on midi note numbers. 60 is the default midi note number [FIX]
+- ~sndd~~ - sound duplicate. Like ~snd~~ but does not re-load the file; simply re-uses the existing table containing the already-loaded file. Useful for polyphony.
+- ~sndf~~ - sound frequency. Play a sound at a rate multiplied by the normal rate. Effectively just shorthand for ~snd~~ and ~sndcf~~.
+- ~sndl~~ - sound line. Play a sound or snippets of it based a ~line~~. Effectively just shorthand for ~snd~~ and ~sndcl~~.
+- ~sndm~~ - sound midi. Play a sound based on midi note numbers, with 60 being the default base note. Effectively just shorthand for ~snd~~ and ~sndcm~~.
+- ~sndp~~ - sound play. Loads a sound into a table and accepts bangs to play the whole sound. Handy for one-shot samples like drums.
+- ~stsnd~~ - stereo sound. Similar to ~snd~~ but for stereo samples. [FIX - check if this works]
+- ~timestretch~~ - "timestretch" a sound by going back and forth through it.
+- ~tri~~ - Basic triangle oscillator. Can be smoothly morphed to an upward or downward saw wave using its second signal inlet.
 
 ** guis
-
 Abstractions whose primary purpose is to display information.
-- ~cpuload~ - shows current CPU load average (FIX for pd 0.48)
+
+- ~cpuload~ - Shows the current 1-minute load average (basically CPU usage %) of the system.
 - ~cview~ - ~ctlin~ gui (works as drop-in replacement!)
 - ~ifiddle~~ - ~fiddle~~ gui (works as a drop-in replacement!)
 - ~lview~ - list view. shows the whole list received and its length.
@@ -155,8 +156,10 @@ Abstractions whose primary purpose is to display information.
 - ~tview~ - text viewer. scrolls the last 5 received inputs.
 - ~view~~ - waveform view.
 - ~vsig~~ - "view signal". shows a graphical representation of the signal from -1 to 1.
+
 ** math
-Abstractions for altering or generating number streams
+Abstractions for altering or generating streams of numbers.
+
 - ~atc~~ - "audio to control" - converts a bipolar signal (-1 to 1) to a unipolar signal (0 to 1)
 - ~atc~ - "audio to control" - converts bipolar numbers (-1 to 1) to unipolar numbers (0 to 1)
 - ~atr~~ - "audio to range" - converts a bipolar signal (-1 to 1) to an arbitrary range specified as arguments or via inlets.
@@ -178,8 +181,10 @@ Abstractions for altering or generating number streams
 - ~rtr~ - "range to range" - scale one arbitrary range to another arbitrary range.
 - ~runningmax~~ - output the highest value seen in a signal.
 - ~transposer~ - outputs number to multiply a frequency by in order to shift it by a number of semitones (provided as input or argument)
+
 ** seq
-Sequencers (and the like)!
+Sequencers and similar high level control objects.
+
 - ~adsr~~ - attack decay sustain release envelope... well, kinda.
 - ~adsr~ - same as ~adsr~~, but outputs messages instead of audio signal.
 - ~aline~~ - automatic line. like ~line~~ but floats don't jump, they start a line whose time is provided by the first argument.
@@ -224,8 +229,8 @@ Sequencers (and the like)!
 - ~vslz~ - extremely simple 8-step vsl-based sequencer.
 
 ** synths
-
 "Full-featured" synthesizers, many of which actually aren't even completed yet.
+
 - ~hoover~~ - hoover synth. WIP.
 - ~kick1~~ - extremely basic kick drum synth
 - ~kick2~~ - another extremely basic kick drum synth
@@ -233,14 +238,16 @@ Sequencers (and the like)!
 - ~snare1~~ - extremely basic snare drum synth
 - ~snare2~~ - another extremely basic snare drum synth
 - ~tb303~~ - TB303 clone. probably doesn't sound much like the real thing. WIP
+
 ** utils
 Miscellaneous utilities.
+
 - ~*+~~ - multiply and then add to a signal with one object.
 - ~autosend~ - use the first item in a message as the destination for the rest of the message.
 - ~chars~ - separate a symbol into a list of its characters.
 - ~colors~ - outputs a pd color when the left inlet is banged. otherwise, the inlets take floats: from left, the red amount, green amount, and blue amount.
 - ~e~ - "Every". Pass through every $1-th input, with an offset of $2.
-- ~emptysymbol~ - test if a symbol is the empty symbol.
+- ~emptysymbol~ - Test if a symbol is the empty symbol.
 - ~hue_to_rgb~ - convert a hue to rgb colors. see also: ~colors~
 - ~interval~ - outputs time between bangs, measured with ~realtime~.
 - ~itimer~ - interface timer. shows minutes, seconds, and milliseconds.
@@ -267,6 +274,7 @@ Miscellaneous utilities.
 - ~sreceive~~ - settable ~receive~~.
 - ~ssend~~ - settable ~send~~.
 - ~sym~ - turn a list into a symbol (basically just ~l2s~ with an empty symbol sent to the right inlet. see also: ~chars~)
+
 * Future
 
 In the future I plan to clean up a lot of these. Either by renaming them or by splitting up functionality, etc. There are also a few that i'd like to re-code or rethink entirely. Some of the things I want to change:
@@ -285,6 +293,7 @@ some of the functionality used by them can either be reproduced myself, or may b
 - ~dollarg~ can be replaced by ~pdcontrol~'s ~args~ message.
 - maybe ~list-drip~ can be replaced by ~drip~ ?
 - maybe ~ftos~ can be replaced by ~makefilename %s~ ?
+- remove ~arraysize~ ?
 
 ** general/ideas
 - finish writing help files for all abstractions.
@@ -316,5 +325,5 @@ some of the functionality used by them can either be reproduced myself, or may b
 Ideas I have and would like to implement, but which I don't think are possible in Pure Data yet, either due to bugs or missing features, or perhaps just my lack of knowing how to do so.
 
 - make ~keyonchg~, ~keyonoff~, etc work properly. Pd's ~keyname~, ~key~, ~keyup~, etc, all detect keyboard "repeat" events and it doesn't seem to be possible to easily filter them to only detect "key pressed" and "key release" events.
-- remove ~span~~. Pd's ~pan~~ object would need to accept panning as an argument for this to be possible.
+- remove ~span~~. motex's ~pan~~ object would need to accept panning as an argument for this to be possible.
 - make ~kfilename~ (and all abstractions that use it) able to handle filenames with spaces (should be possible in pd 0.44 and above?)
