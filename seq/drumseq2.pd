@@ -1233,93 +1233,99 @@ in sync when you're using bangs to drive it.;
 #X obj 372 156 s \$0-queue-pattern;
 #X connect 0 0 1 0;
 #X restore 503 122 pd queue;
-#N canvas 1920 30 1920 1050 copy 0;
-#X obj 57 17 inlet;
-#X obj 57 36 route bang float list;
-#X text 229 20 copy FROM TO;
-#X text 233 42 or copy FROM (current is the default TO);
-#X text 240 67 or copy (current-1 is the default FROM \, current is
-default TO);
-#N canvas 0 50 800 421 float 0;
-#X obj 81 135 inlet;
-#X obj 81 173 outlet;
-#X obj 126 135 r \$0-vpat;
-#X obj 81 154 pack 0 0;
-#X connect 0 0 3 0;
-#X connect 2 0 3 1;
-#X connect 3 0 1 0;
-#X restore 78 65 pd float;
-#X obj 166 177 !=;
-#X obj 166 118 unpack f f;
-#N canvas 0 50 800 421 bang 0;
-#X obj 123 83 inlet;
-#X obj 138 102 r \$0-vpat;
-#X obj 138 121 - 1;
-#X obj 123 140 f;
-#X obj 123 159 outlet;
-#X connect 0 0 3 0;
-#X connect 1 0 2 0;
-#X connect 2 0 3 1;
-#X connect 3 0 4 0;
-#X restore 17 74 pd bang;
-#X obj 139 99 t a a;
-#X obj 139 200 spigot;
-#X text 181 201 don't bother copying a pattern to itself.;
-#X obj 139 432 + 100;
-#X obj 139 413 +;
-#X obj 154 394 * 512;
-#X obj 139 451 tabread \$0-t;
-#X obj 139 219 unpack f f;
-#X msg 139 307 512;
-#X obj 139 326 until;
-#X obj 139 288 t b f;
-#X obj 214 491 + 100;
-#X obj 214 472 +;
-#X obj 229 453 * 512;
-#X obj 139 510 tabwrite \$0-t;
-#X obj 139 364 t f f;
-#X obj 253 340 tabread \$0-t;
-#X obj 253 359 tabwrite \$0-t;
-#X obj 223 137 clip 0 99;
-#X obj 166 137 clip 0 99;
-#X obj 196 238 clip 0 99;
-#X obj 139 238 clip 0 99;
-#X obj 139 345 modulo_counter 512;
+#N canvas 1920 32 1920 1048 copy 0;
+#X obj 157 44 inlet;
+#X obj 157 76 route bang float list;
+#X text 320 30 copy FROM TO;
+#X obj 285 254 !=;
+#X obj 285 224 unpack f f;
+#X obj 258 277 spigot;
+#X text 300 278 don't bother copying a pattern to itself.;
+#X obj 298 551 + 100;
+#X obj 298 530 +;
+#X obj 313 509 * 512;
+#X obj 298 572 tabread \$0-t;
+#X obj 258 298 unpack f f;
+#X msg 258 396 512;
+#X obj 258 417 until;
+#X obj 258 375 t b f;
+#X obj 373 616 + 100;
+#X obj 373 595 +;
+#X obj 388 574 * 512;
+#X obj 298 637 tabwrite \$0-t;
+#X obj 298 479 t f f;
+#X obj 362 401 tabread \$0-t;
+#X obj 362 422 tabwrite \$0-t;
+#X obj 195 277 r \$0-vpat;
+#X obj 145 272 sel 0;
+#X obj 145 295 f 0;
+#X obj 149 139 r \$0-vpat;
+#X obj 104 160 pack 0 0;
+#X obj 59 95 r \$0-vpat;
+#X obj 59 117 - 1;
+#X obj 44 139 f;
+#X text 320 52 or copy FROM - TO defaults to the currently-viewed pattern
+;
+#X text 320 77 or copy - FROM defaults to pattern before the currently-viewed
+\, and TO defaults to the current.;
+#X obj 239 125 unpack f f;
+#X obj 239 148 clip 0 99;
+#X obj 239 171 pack f f;
+#X obj 299 148 clip 0 99;
+#X obj 239 193 t a a a;
+#X obj 154 223 unpack f f;
+#X obj 224 445 f 0;
+#X obj 252 445 + 1;
+#X obj 278 445 % 512;
+#X obj 145 318 s \$0-view-pattern;
 #X connect 0 0 1 0;
-#X connect 1 0 8 0;
-#X connect 1 1 5 0;
-#X connect 1 2 9 0;
-#X connect 5 0 1 0;
-#X connect 6 0 10 1;
-#X connect 7 0 28 0;
-#X connect 7 1 27 0;
-#X connect 8 0 1 0;
-#X connect 9 0 10 0;
-#X connect 9 1 7 0;
-#X connect 10 0 16 0;
-#X connect 12 0 15 0;
-#X connect 13 0 12 0;
-#X connect 14 0 13 1;
-#X connect 15 0 23 0;
-#X connect 16 0 30 0;
-#X connect 16 1 29 0;
-#X connect 17 0 18 0;
-#X connect 18 0 31 0;
-#X connect 19 0 17 0;
-#X connect 19 1 14 0;
-#X connect 20 0 23 1;
-#X connect 21 0 20 0;
-#X connect 22 0 21 1;
-#X connect 24 0 13 0;
-#X connect 24 1 21 0;
-#X connect 25 0 26 0;
-#X connect 27 0 6 1;
-#X connect 28 0 6 0;
-#X connect 29 0 26 1;
-#X connect 29 0 22 0;
-#X connect 30 0 25 0;
-#X connect 30 0 19 0;
-#X connect 31 0 24 0;
+#X connect 1 0 29 0;
+#X connect 1 1 26 0;
+#X connect 1 2 32 0;
+#X connect 3 0 5 1;
+#X connect 4 0 3 0;
+#X connect 4 1 3 1;
+#X connect 5 0 11 0;
+#X connect 7 0 10 0;
+#X connect 8 0 7 0;
+#X connect 9 0 8 1;
+#X connect 10 0 18 0;
+#X connect 11 0 20 0;
+#X connect 11 0 14 0;
+#X connect 11 1 21 1;
+#X connect 11 1 17 0;
+#X connect 12 0 13 0;
+#X connect 13 0 38 0;
+#X connect 14 0 12 0;
+#X connect 14 1 9 0;
+#X connect 15 0 18 1;
+#X connect 16 0 15 0;
+#X connect 17 0 16 1;
+#X connect 19 0 8 0;
+#X connect 19 1 16 0;
+#X connect 20 0 21 0;
+#X connect 22 0 23 1;
+#X connect 22 0 24 1;
+#X connect 23 0 24 0;
+#X connect 24 0 41 0;
+#X connect 25 0 26 1;
+#X connect 26 0 1 0;
+#X connect 27 0 28 0;
+#X connect 28 0 29 1;
+#X connect 29 0 1 0;
+#X connect 32 0 33 0;
+#X connect 32 1 35 0;
+#X connect 33 0 34 0;
+#X connect 34 0 36 0;
+#X connect 35 0 34 1;
+#X connect 36 0 37 0;
+#X connect 36 1 5 0;
+#X connect 36 2 4 0;
+#X connect 37 1 23 0;
+#X connect 38 0 19 0;
+#X connect 38 0 39 0;
+#X connect 39 0 40 0;
+#X connect 40 0 38 1;
 #X restore 529 102 pd copy;
 #N canvas 1920 32 1920 1048 unknown 0;
 #X obj 64 54 inlet;
@@ -1361,13 +1367,13 @@ next queue copy e;
 #X connect 20 13 19 0;
 #X restore 141 245 pd drumseq2;
 #X obj 113 115 tgl 13 0 \$0-1x0s \$0-1x0r empty 17 7 0 10 -166441 -1
--258699 0 1;
+-258699 1 1;
 #X obj 100 115 tgl 13 0 \$0-0x0s \$0-0x0r empty -14 7 0 10 -166441
--1 -258699 0 1;
+-1 -258699 1 1;
 #X obj 139 115 tgl 13 0 \$0-3x0s \$0-3x0r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 126 115 tgl 13 0 \$0-2x0s \$0-2x0r empty 17 7 0 10 -166441 -1
--258699 0 1;
+-258699 1 1;
 #X obj 165 115 tgl 13 0 \$0-5x0s \$0-5x0r empty 17 7 0 10 -233017 -1
 -258699 0 1;
 #X obj 152 115 tgl 13 0 \$0-4x0s \$0-4x0r empty 17 7 0 10 -233017 -1
@@ -1376,18 +1382,18 @@ next queue copy e;
 -258699 0 1;
 #X obj 178 115 tgl 13 0 \$0-6x0s \$0-6x0r empty 17 7 0 10 -233017 -1
 -258699 0 1;
-#X obj 217 115 tgl 13 0 \$0-9x0s \$0-9x0r empty 17 7 0 10 -258699 -1
+#X obj 217 115 tgl 13 0 \$0-9x0s \$0-9x0r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 204 115 tgl 13 0 \$0-8x0s \$0-8x0r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 243 115 tgl 13 0 \$0-11x0s \$0-11x0r empty 17 7 0 10 -166441
 -1 -258699 0 1;
 #X obj 230 115 tgl 13 0 \$0-10x0s \$0-10x0r empty 17 7 0 10 -166441
--1 -258699 0 1;
+-1 -258699 1 1;
 #X obj 269 115 tgl 13 0 \$0-13x0s \$0-13x0r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 256 115 tgl 13 0 \$0-12x0s \$0-12x0r empty 17 7 0 10 -233017
--1 -258699 0 1;
+-1 -258699 1 1;
 #X obj 295 115 tgl 13 0 \$0-15x0s \$0-15x0r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 282 115 tgl 13 0 \$0-14x0s \$0-14x0r empty 17 7 0 10 -233017
@@ -1403,17 +1409,17 @@ next queue copy e;
 #X obj 165 128 tgl 13 0 \$0-5x1s \$0-5x1r empty 17 7 0 10 -233017 -1
 -258699 0 1;
 #X obj 152 128 tgl 13 0 \$0-4x1s \$0-4x1r empty 17 7 0 10 -233017 -1
--258699 0 1;
+-258699 1 1;
 #X obj 191 128 tgl 13 0 \$0-7x1s \$0-7x1r empty 17 7 0 10 -233017 -1
 -258699 0 1;
 #X obj 178 128 tgl 13 0 \$0-6x1s \$0-6x1r empty 17 7 0 10 -233017 -1
 -258699 0 1;
-#X obj 217 128 tgl 13 0 \$0-9x1s \$0-9x1r empty 17 7 0 10 -258699 -1
--258699 0 1;
+#X obj 217 128 tgl 13 0 \$0-9x1s \$0-9x1r empty 17 7 0 10 -166441 -1
+-258699 1 1;
 #X obj 204 128 tgl 13 0 \$0-8x1s \$0-8x1r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 243 128 tgl 13 0 \$0-11x1s \$0-11x1r empty 17 7 0 10 -166441
--1 -258699 0 1;
+-1 -258699 1 1;
 #X obj 230 128 tgl 13 0 \$0-10x1s \$0-10x1r empty 17 7 0 10 -166441
 -1 -258699 0 1;
 #X obj 269 128 tgl 13 0 \$0-13x1s \$0-13x1r empty 17 7 0 10 -233017
@@ -1423,11 +1429,11 @@ next queue copy e;
 #X obj 295 128 tgl 13 0 \$0-15x1s \$0-15x1r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 282 128 tgl 13 0 \$0-14x1s \$0-14x1r empty 17 7 0 10 -233017
--1 -258699 0 1;
+-1 -258699 1 1;
 #X obj 113 141 tgl 13 0 \$0-1x2s \$0-1x2r empty 17 7 0 10 -166441 -1
 -258699 0 1;
-#X obj 100 141 tgl 13 0 \$0-0x2s \$0-0x2r empty 17 7 0 10 -166441 -1
--258699 0 1;
+#X obj 100 141 tgl 13 0 \$0-0x2s \$0-0x2r empty 17 7 0 10 -24198 -1
+-258699 1 1;
 #X obj 139 141 tgl 13 0 \$0-3x2s \$0-3x2r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 126 141 tgl 13 0 \$0-2x2s \$0-2x2r empty 17 7 0 10 -166441 -1
@@ -1439,8 +1445,8 @@ next queue copy e;
 #X obj 191 141 tgl 13 0 \$0-7x2s \$0-7x2r empty 17 7 0 10 -233017 -1
 -258699 0 1;
 #X obj 178 141 tgl 13 0 \$0-6x2s \$0-6x2r empty 17 7 0 10 -233017 -1
--258699 0 1;
-#X obj 217 141 tgl 13 0 \$0-9x2s \$0-9x2r empty 17 7 0 10 -258699 -1
+-258699 1 1;
+#X obj 217 141 tgl 13 0 \$0-9x2s \$0-9x2r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 204 141 tgl 13 0 \$0-8x2s \$0-8x2r empty 17 7 0 10 -166441 -1
 -258699 0 1;
@@ -1451,37 +1457,37 @@ next queue copy e;
 #X obj 269 141 tgl 13 0 \$0-13x2s \$0-13x2r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 256 141 tgl 13 0 \$0-12x2s \$0-12x2r empty 17 7 0 10 -233017
--1 -258699 0 1;
+-1 -258699 1 1;
 #X obj 295 141 tgl 13 0 \$0-15x2s \$0-15x2r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 282 141 tgl 13 0 \$0-14x2s \$0-14x2r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 113 154 tgl 13 0 \$0-1x3s \$0-1x3r empty 17 7 0 10 -166441 -1
 -258699 0 1;
-#X obj 100 154 tgl 13 0 \$0-0x3s \$0-0x3r empty 17 7 0 10 -166441 -1
+#X obj 100 154 tgl 13 0 \$0-0x3s \$0-0x3r empty 17 7 0 10 -24198 -1
 -258699 0 1;
 #X obj 139 154 tgl 13 0 \$0-3x3s \$0-3x3r empty 17 7 0 10 -166441 -1
--258699 0 1;
+-258699 1 1;
 #X obj 126 154 tgl 13 0 \$0-2x3s \$0-2x3r empty 17 7 0 10 -166441 -1
--258699 0 1;
+-258699 1 1;
 #X obj 165 154 tgl 13 0 \$0-5x3s \$0-5x3r empty 17 7 0 10 -233017 -1
 -258699 0 1;
 #X obj 152 154 tgl 13 0 \$0-4x3s \$0-4x3r empty 17 7 0 10 -233017 -1
--258699 0 1;
+-258699 1 1;
 #X obj 191 154 tgl 13 0 \$0-7x3s \$0-7x3r empty 17 7 0 10 -233017 -1
--258699 0 1;
+-258699 1 1;
 #X obj 178 154 tgl 13 0 \$0-6x3s \$0-6x3r empty 17 7 0 10 -233017 -1
 -258699 0 1;
-#X obj 217 154 tgl 13 0 \$0-9x3s \$0-9x3r empty 17 7 0 10 -258699 -1
--258699 0 1;
+#X obj 217 154 tgl 13 0 \$0-9x3s \$0-9x3r empty 17 7 0 10 -166441 -1
+-258699 1 1;
 #X obj 204 154 tgl 13 0 \$0-8x3s \$0-8x3r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 243 154 tgl 13 0 \$0-11x3s \$0-11x3r empty 17 7 0 10 -166441
 -1 -258699 0 1;
 #X obj 230 154 tgl 13 0 \$0-10x3s \$0-10x3r empty 17 7 0 10 -166441
--1 -258699 0 1;
+-1 -258699 1 1;
 #X obj 269 154 tgl 13 0 \$0-13x3s \$0-13x3r empty 17 7 0 10 -233017
--1 -258699 0 1;
+-1 -258699 1 1;
 #X obj 256 154 tgl 13 0 \$0-12x3s \$0-12x3r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 295 154 tgl 13 0 \$0-15x3s \$0-15x3r empty 17 7 0 10 -233017
