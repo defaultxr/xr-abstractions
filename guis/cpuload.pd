@@ -1,20 +1,37 @@
-#N canvas 0 29 1600 849 10;
+#N canvas 0 32 1920 1048 10;
 #X floatatom 126 266 5 0 0 0 - - -;
-#X obj 126 78 loadbang;
 #X obj 126 162 metro 1000;
-#X msg 126 106 1;
-#X floatatom 126 134 0 0 0 0 - - -;
-#X text 171 134 <-- on/off;
 #X msg 126 188 cat /proc/loadavg;
 #X obj 126 214 shell;
 #X obj 126 241 unpack f f f s f;
 #X obj 126 293 outlet;
-#X connect 0 0 9 0;
-#X connect 1 0 3 0;
-#X connect 2 0 6 0;
+#X obj 126 140 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 126 42 inlet;
+#X msg 126 112 0;
+#X msg 165 112 1;
+#X obj 126 88 moses 1;
+#X obj 69 65 loadbang;
+#X text 289 63 cpuload - show the current 1-minute load average (basically
+the CPU usage %) of the system.;
+#X obj 126 65 route float bang;
+#X text 290 110 inputs: a positive float enables automatic gui updates
+\, a non-positive disables it.;
+#X text 291 149 a bang input can be used to trigger an immediate update.
+;
+#X text 289 178 output: the load average is passed to the outlet.;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
 #X connect 3 0 4 0;
-#X connect 4 0 2 0;
-#X connect 6 0 7 0;
-#X connect 7 0 8 0;
-#X connect 8 0 0 0;
+#X connect 4 0 0 0;
+#X connect 6 0 1 0;
+#X connect 7 0 13 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 8 0;
+#X connect 10 1 9 0;
+#X connect 11 0 6 0;
+#X connect 13 0 10 0;
+#X connect 13 1 2 0;
 #X coords 0 -1 1 1 80 16 1 78 266;
