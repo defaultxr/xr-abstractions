@@ -1,14 +1,14 @@
-#N canvas 0 32 1920 1048 10;
+#N canvas 1920 32 1920 1048 10;
 #X obj 87 210 inlet;
 #X obj 70 327 outlet;
 #X obj 121 327 outlet;
 #X obj 172 327 outlet;
 #X obj 223 327 outlet;
 #X obj 274 327 outlet;
-#N canvas 0 32 1920 1048 drumseq2 0;
+#N canvas 1920 32 1920 1048 drumseq2 0;
 #X obj 243 9 inlet;
-#X obj 243 269 outlet;
-#X obj 285 269 outlet;
+#X obj 238 302 outlet;
+#X obj 280 302 outlet;
 #N canvas 1920 30 1920 1050 toggles 0;
 #X obj 11 358 r \$0-0x0s;
 #X obj 71 358 r \$0-1x0s;
@@ -424,7 +424,7 @@ or deselect multiple tgls without having to click each one individually.
 #X connect 13 0 11 1;
 #X connect 14 0 11 0;
 #X connect 15 0 10 0;
-#X restore 299 242 pd set;
+#X restore 295 282 pd set;
 #N canvas 1920 32 1920 1048 view 0;
 #X obj 259 12 inlet;
 #X obj 379 468 s \$0-vpat;
@@ -482,7 +482,7 @@ label \$1/\$2;
 #X connect 24 0 26 0;
 #X connect 25 0 24 0;
 #X connect 26 0 17 0;
-#X restore 327 222 pd view;
+#X restore 321 262 pd view;
 #N canvas 1920 30 1920 1050 step 0;
 #X obj 226 43 inlet;
 #X obj 300 719 s;
@@ -662,7 +662,7 @@ all the steps for that column will be reset.;
 #X connect 37 0 36 0;
 #X connect 37 1 8 1;
 #X connect 38 0 21 0;
-#X restore 356 202 pd step;
+#X restore 347 242 pd step;
 #N canvas 1920 30 1920 1050 init 0;
 #X obj 37 37 loadbang;
 #X msg 71 75 100;
@@ -738,7 +738,7 @@ to 128;
 #X connect 10 0 11 1;
 #X connect 12 0 13 0;
 #X connect 13 0 11 0;
-#X restore 384 182 pd resize;
+#X restore 373 222 pd resize;
 #N canvas 0 32 1920 1048 seq 0;
 #X obj 234 11 inlet;
 #X obj 178 908 outlet;
@@ -872,7 +872,7 @@ label \$1;
 #X connect 39 1 2 0;
 #X connect 39 1 23 1;
 #X connect 39 2 14 0;
-#X restore 243 112 pd seq;
+#X restore 243 152 pd seq;
 #N canvas 1920 32 1920 1048 play 0;
 #X obj 422 36 inlet;
 #X obj 422 153 s \$0-playpat;
@@ -887,7 +887,7 @@ label \$1;
 #X connect 3 0 1 0;
 #X connect 4 0 5 0;
 #X connect 6 0 2 1;
-#X restore 412 162 pd play;
+#X restore 399 202 pd play;
 #N canvas 1920 30 1920 1050 load 0;
 #X obj 212 142 inlet;
 #X obj 212 199 kfilename;
@@ -906,7 +906,7 @@ label \$1;
 #X connect 5 1 7 0;
 #X connect 6 0 1 0;
 #X connect 8 0 5 0;
-#X restore 440 142 pd load;
+#X restore 425 182 pd load;
 #N canvas 1920 30 1920 1050 save 0;
 #X obj 282 62 inlet;
 #X obj 339 131 symbol;
@@ -930,7 +930,7 @@ label \$1;
 #X connect 8 1 1 0;
 #X connect 9 0 2 0;
 #X connect 10 0 7 0;
-#X restore 469 122 pd save;
+#X restore 451 162 pd save;
 #N canvas 1920 32 1920 1048 controls 0;
 #X obj 464 93 r \$0-view-pattern;
 #X obj 579 201 s \$0-ds2;
@@ -1220,22 +1220,19 @@ label \$1;
 #X connect 25 0 26 0;
 #X restore 58 65 pd controls;
 #X obj 58 85 table \$0-t 50787;
-#X text 457 223 each pattern can have a maximum of 128 steps.;
-#X text 456 246 there are 4 instruments;
+#X text 457 263 each pattern can have a maximum of 128 steps.;
 #N canvas 1920 32 1920 1048 next 0;
 #X obj 466 98 inlet;
 #X obj 466 146 s \$0-next-step-set;
 #X text 547 103 set the next step. useful for keeping the sequencer
 in sync when you're using bangs to drive it.;
 #X connect 0 0 1 0;
-#X restore 497 102 pd next;
+#X restore 477 142 pd next;
 #N canvas 1920 30 1920 1050 queue 0;
 #X obj 372 137 inlet;
 #X obj 372 156 s \$0-queue-pattern;
 #X connect 0 0 1 0;
-#X restore 525 82 pd queue;
-#X obj 243 29 route bang float set view step resize play load save
-next queue copy;
+#X restore 503 122 pd queue;
 #N canvas 1920 30 1920 1050 copy 0;
 #X obj 57 17 inlet;
 #X obj 57 36 route bang float list;
@@ -1323,25 +1320,45 @@ default TO);
 #X connect 30 0 25 0;
 #X connect 30 0 19 0;
 #X connect 31 0 24 0;
-#X restore 553 62 pd copy;
-#X text 178 364 0-vpat - currently viewed pattern;
-#X text 177 381 0-playpat - currently playing pattern;
-#X text 177 399 0-vpato - currently viewed pattern x offset;
-#X connect 0 0 19 0;
+#X restore 529 102 pd copy;
+#N canvas 1920 32 1920 1048 unknown 0;
+#X obj 64 54 inlet;
+#X obj 64 94 print drumseq;
+#X msg 64 74 "\$1": unsupported input.;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X restore 582 62 pd unknown;
+#X obj 243 29 route bang float set view step resize play load save
+next queue copy e;
+#N canvas 1920 32 1920 1048 e 0;
+#X obj 61 30 inlet;
+#X msg 61 52 "e" message is not yet supported.;
+#X obj 61 75 print;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 555 82 pd e;
+#X text 456 286 there are 4 instruments.;
+#X text 177 419 0-vpato - x offset of the view into the current pattern.
+;
+#X text 177 401 0-playpat - currently playing pattern.;
+#X text 178 384 0-vpat - currently viewed pattern.;
+#X connect 0 0 20 0;
 #X connect 9 0 1 0;
 #X connect 9 1 2 0;
-#X connect 19 0 9 0;
-#X connect 19 1 9 0;
-#X connect 19 2 4 0;
-#X connect 19 3 5 0;
-#X connect 19 4 6 0;
-#X connect 19 5 8 0;
-#X connect 19 6 10 0;
-#X connect 19 7 11 0;
-#X connect 19 8 12 0;
-#X connect 19 9 17 0;
-#X connect 19 10 18 0;
-#X connect 19 11 20 0;
+#X connect 20 0 9 0;
+#X connect 20 1 9 0;
+#X connect 20 2 4 0;
+#X connect 20 3 5 0;
+#X connect 20 4 6 0;
+#X connect 20 5 8 0;
+#X connect 20 6 10 0;
+#X connect 20 7 11 0;
+#X connect 20 8 12 0;
+#X connect 20 9 16 0;
+#X connect 20 10 17 0;
+#X connect 20 11 18 0;
+#X connect 20 12 21 0;
+#X connect 20 13 19 0;
 #X restore 141 245 pd drumseq2;
 #X obj 113 115 tgl 13 0 \$0-1x0s \$0-1x0r empty 17 7 0 10 -166441 -1
 -258699 0 1;
@@ -1350,28 +1367,28 @@ default TO);
 #X obj 139 115 tgl 13 0 \$0-3x0s \$0-3x0r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 126 115 tgl 13 0 \$0-2x0s \$0-2x0r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 165 115 tgl 13 0 \$0-5x0s \$0-5x0r empty 17 7 0 10 -233017 -1
 -258699 0 1;
 #X obj 152 115 tgl 13 0 \$0-4x0s \$0-4x0r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 191 115 tgl 13 0 \$0-7x0s \$0-7x0r empty 17 7 0 10 -233017 -1
 -258699 0 1;
 #X obj 178 115 tgl 13 0 \$0-6x0s \$0-6x0r empty 17 7 0 10 -233017 -1
--258699 1 1;
-#X obj 217 115 tgl 13 0 \$0-9x0s \$0-9x0r empty 17 7 0 10 -166441 -1
+-258699 0 1;
+#X obj 217 115 tgl 13 0 \$0-9x0s \$0-9x0r empty 17 7 0 10 -258699 -1
 -258699 0 1;
 #X obj 204 115 tgl 13 0 \$0-8x0s \$0-8x0r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 243 115 tgl 13 0 \$0-11x0s \$0-11x0r empty 17 7 0 10 -166441
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 230 115 tgl 13 0 \$0-10x0s \$0-10x0r empty 17 7 0 10 -166441
 -1 -258699 0 1;
 #X obj 269 115 tgl 13 0 \$0-13x0s \$0-13x0r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 256 115 tgl 13 0 \$0-12x0s \$0-12x0r empty 17 7 0 10 -233017
--1 -258699 1 1;
-#X obj 295 115 tgl 13 0 \$0-15x0s \$0-15x0r empty 17 7 0 10 -258699
+-1 -258699 0 1;
+#X obj 295 115 tgl 13 0 \$0-15x0s \$0-15x0r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 282 115 tgl 13 0 \$0-14x0s \$0-14x0r empty 17 7 0 10 -233017
 -1 -258699 0 1;
@@ -1388,23 +1405,23 @@ default TO);
 #X obj 152 128 tgl 13 0 \$0-4x1s \$0-4x1r empty 17 7 0 10 -233017 -1
 -258699 0 1;
 #X obj 191 128 tgl 13 0 \$0-7x1s \$0-7x1r empty 17 7 0 10 -233017 -1
--258699 1 1;
+-258699 0 1;
 #X obj 178 128 tgl 13 0 \$0-6x1s \$0-6x1r empty 17 7 0 10 -233017 -1
 -258699 0 1;
-#X obj 217 128 tgl 13 0 \$0-9x1s \$0-9x1r empty 17 7 0 10 -166441 -1
--258699 1 1;
+#X obj 217 128 tgl 13 0 \$0-9x1s \$0-9x1r empty 17 7 0 10 -258699 -1
+-258699 0 1;
 #X obj 204 128 tgl 13 0 \$0-8x1s \$0-8x1r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 243 128 tgl 13 0 \$0-11x1s \$0-11x1r empty 17 7 0 10 -166441
 -1 -258699 0 1;
 #X obj 230 128 tgl 13 0 \$0-10x1s \$0-10x1r empty 17 7 0 10 -166441
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 269 128 tgl 13 0 \$0-13x1s \$0-13x1r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 256 128 tgl 13 0 \$0-12x1s \$0-12x1r empty 17 7 0 10 -233017
 -1 -258699 0 1;
-#X obj 295 128 tgl 13 0 \$0-15x1s \$0-15x1r empty 17 7 0 10 -258699
--1 -258699 1 1;
+#X obj 295 128 tgl 13 0 \$0-15x1s \$0-15x1r empty 17 7 0 10 -233017
+-1 -258699 0 1;
 #X obj 282 128 tgl 13 0 \$0-14x1s \$0-14x1r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 113 141 tgl 13 0 \$0-1x2s \$0-1x2r empty 17 7 0 10 -166441 -1
@@ -1423,7 +1440,7 @@ default TO);
 -258699 0 1;
 #X obj 178 141 tgl 13 0 \$0-6x2s \$0-6x2r empty 17 7 0 10 -233017 -1
 -258699 0 1;
-#X obj 217 141 tgl 13 0 \$0-9x2s \$0-9x2r empty 17 7 0 10 -166441 -1
+#X obj 217 141 tgl 13 0 \$0-9x2s \$0-9x2r empty 17 7 0 10 -258699 -1
 -258699 0 1;
 #X obj 204 141 tgl 13 0 \$0-8x2s \$0-8x2r empty 17 7 0 10 -166441 -1
 -258699 0 1;
@@ -1435,16 +1452,16 @@ default TO);
 -1 -258699 0 1;
 #X obj 256 141 tgl 13 0 \$0-12x2s \$0-12x2r empty 17 7 0 10 -233017
 -1 -258699 0 1;
-#X obj 295 141 tgl 13 0 \$0-15x2s \$0-15x2r empty 17 7 0 10 -258699
--1 -258699 1 1;
+#X obj 295 141 tgl 13 0 \$0-15x2s \$0-15x2r empty 17 7 0 10 -233017
+-1 -258699 0 1;
 #X obj 282 141 tgl 13 0 \$0-14x2s \$0-14x2r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 113 154 tgl 13 0 \$0-1x3s \$0-1x3r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 100 154 tgl 13 0 \$0-0x3s \$0-0x3r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 139 154 tgl 13 0 \$0-3x3s \$0-3x3r empty 17 7 0 10 -166441 -1
--258699 1 1;
+-258699 0 1;
 #X obj 126 154 tgl 13 0 \$0-2x3s \$0-2x3r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 165 154 tgl 13 0 \$0-5x3s \$0-5x3r empty 17 7 0 10 -233017 -1
@@ -1454,20 +1471,20 @@ default TO);
 #X obj 191 154 tgl 13 0 \$0-7x3s \$0-7x3r empty 17 7 0 10 -233017 -1
 -258699 0 1;
 #X obj 178 154 tgl 13 0 \$0-6x3s \$0-6x3r empty 17 7 0 10 -233017 -1
--258699 1 1;
-#X obj 217 154 tgl 13 0 \$0-9x3s \$0-9x3r empty 17 7 0 10 -166441 -1
+-258699 0 1;
+#X obj 217 154 tgl 13 0 \$0-9x3s \$0-9x3r empty 17 7 0 10 -258699 -1
 -258699 0 1;
 #X obj 204 154 tgl 13 0 \$0-8x3s \$0-8x3r empty 17 7 0 10 -166441 -1
 -258699 0 1;
 #X obj 243 154 tgl 13 0 \$0-11x3s \$0-11x3r empty 17 7 0 10 -166441
--1 -258699 1 1;
+-1 -258699 0 1;
 #X obj 230 154 tgl 13 0 \$0-10x3s \$0-10x3r empty 17 7 0 10 -166441
 -1 -258699 0 1;
 #X obj 269 154 tgl 13 0 \$0-13x3s \$0-13x3r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 256 154 tgl 13 0 \$0-12x3s \$0-12x3r empty 17 7 0 10 -233017
 -1 -258699 0 1;
-#X obj 295 154 tgl 13 0 \$0-15x3s \$0-15x3r empty 17 7 0 10 -258699
+#X obj 295 154 tgl 13 0 \$0-15x3s \$0-15x3r empty 17 7 0 10 -233017
 -1 -258699 0 1;
 #X obj 282 154 tgl 13 0 \$0-14x3s \$0-14x3r empty 17 7 0 10 -233017
 -1 -258699 0 1;
@@ -1498,7 +1515,7 @@ to the second 16 steps);
 -1 -1;
 #X obj 276 100 cnv 2 2 2 empty \$0-co 0/16 -31 -5 0 10 -262144 -258699
 0;
-#X obj 306 100 cnv 2 2 2 empty \$0-po 15 -11 -5 0 10 -262144 -24198
+#X obj 306 100 cnv 2 2 2 empty \$0-po 9 -11 -5 0 10 -262144 -24198
 0;
 #X text 333 169 the first 4 outlets output bangs for each row. the
 right outlet outputs the number of the current step \, plus a bang
