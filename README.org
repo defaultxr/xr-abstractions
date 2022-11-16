@@ -95,7 +95,7 @@ See also: [[https://github.com/defaultxr/pd-ladspa-abstractions][pd-ladspa-abstr
 - ~ifilter~~ - 
 - ~ifv~~ - 
 - ~ilattice~~ - 
-- ~imoog~~ - 
+- ~imoog~~ - Graphical interface for the ~moog~~ low pass filter.
 - ~isvf~~ - 
 - ~mcomb~~ - 
 - ~mfv~~ - 
