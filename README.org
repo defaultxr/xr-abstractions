@@ -170,7 +170,7 @@ Abstractions for altering or generating streams of numbers.
 - ~ctr~~ - "control to range" - converts a unipolar signal (0 to 1) to an arbitrary range specified as arguments or via inlets.
 - ~kinv~~ - signal inverter. 0 becomes 1, 1 becomes 0, and everything in between.
 - ~kinv~ - number inverter. 0 becomes 1, 1 becomes 0, and everything in between.
-- ~maybe~ - maybe output a 1 or 0. numbers between 0 and 1 specify the probability of a 1 (i.e. 0.25 is 25% chance of 1), numbers above 1 specify 1 in n chance (i.e. 5 is a 1 in 5 chance (20%)). banging the inlet is a 50% chance.
+- ~maybe~ - Maybe pass the left input through with a specific probability. The right inlet sets the probability; floats between 0 and 1 specify the probability as a percent (i.e. 0.25 is 25% chance); integers above 1 specify 1 in n chance (i.e. "5" is a 1 in 5 chance or 20%). Banging the inlet is a 50% chance. Similar in operation to ~coin~.
 - ~minv~ - "midi invert". 127 becomes 0, 0 becomes 127, and everything in between.
 - ~mrange~ - scale 0-127 to an arbitrary range.
 - ~num~ - holds a number and allows you to add, subtract, multiply, or divide from that number via messages.

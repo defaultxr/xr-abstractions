@@ -1,8 +1,7 @@
-#N canvas 1920 30 1920 1050 10;
+#N canvas 1920 30 1920 1048 10;
 #X obj 42 249 maybe;
-#X obj 27 44 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X floatatom 51 226 5 0 0 0 - - -;
+#X obj 27 44 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X floatatom 51 226 5 0 0 0 - - - 0;
 #X msg 51 90 2;
 #X msg 46 69 0.5;
 #X text 73 67 50% chance.;
@@ -18,24 +17,14 @@
 #X text 387 323 10 - 1 in 10 chance of 1;
 #X text 393 334 1 - 100% chance of 1;
 #X text 375 301 0.75 - 75% chance of 1;
-#X text 317 60 The probability of a "heads" result defaults to 50%
-\, but you can change it by providing a number as an argument \, or
-by sending a number to the second inlet. Sending a number to the first
-(hot) inlet sets the probability and triggers the "coin flip" at that
-probability.;
-#X text 316 151 Sending a bang to the first inlet triggers the coin
-flip at the currently-set probability.;
-#X text 319 15 [maybe] - "flip a coin" and output a 1 on "heads" or
-a 0 on "tails".;
-#X text 308 202 Setting the probability (N) to a number between 0 and
-1 means an N/1 probability. i.e. 0.5 is a 50% probability \, 0.25 is
-a 25% \, etc. Setting the probability above 1 means a 1/N probability
-\, i.e. 2 is 1/2 probability \, 100 is 1/100 .;
-#X text 312 378 See also: [maybeb] - same \, but outputs a bang on
-"heads" and nothing on tails.;
-#X floatatom 42 269 5 0 0 0 - - -;
+#X text 317 60 The probability of a "heads" result defaults to 50% \, but you can change it by providing a number as an argument \, or by sending a number to the second inlet. Sending a number to the first (hot) inlet sets the probability and triggers the "coin flip" at that probability.;
+#X text 316 151 Sending a bang to the first inlet triggers the coin flip at the currently-set probability.;
+#X text 319 15 [maybe] - "flip a coin" and output a 1 on "heads" or a 0 on "tails".;
+#X text 308 202 Setting the probability (N) to a number between 0 and 1 means an N/1 probability. i.e. 0.5 is a 50% probability \, 0.25 is a 25% \, etc. Setting the probability above 1 means a 1/N probability \, i.e. 2 is 1/2 probability \, 100 is 1/100 .;
+#X floatatom 42 269 5 0 0 0 - - - 0;
 #X text 45 42 Trigger with currently-set probability.;
-#X connect 0 0 23 0;
+#X text 312 378 See also: [coin] - used internally in [maybe] \; simply outputs a 1 on heads and a 0 on tails.;
+#X connect 0 0 22 0;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;

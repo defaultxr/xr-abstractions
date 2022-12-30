@@ -1,66 +1,37 @@
-#N canvas 1920 30 1920 1050 10;
-#X obj 92 434 inlet;
-#X obj 247 747 random 2;
-#X obj 92 454 route bang float;
-#X obj 218 683 moses 1;
-#X obj 247 807 outlet;
-#X obj 257 704 t b f b;
-#X obj 177 740 t b b f;
-#X obj 247 786 < 1;
-#X msg 301 747 1;
-#X obj 177 719 * 1000;
-#X msg 196 762 1000;
-#X text 139 289 examples: bang - 50% chance of 1;
-#X text 217 312 3 - 1 in 3 chance of 1;
-#X text 211 323 10 - 1 in 10 chance of 1;
-#X text 217 334 1 - 100% chance of 1;
-#X text 199 301 0.75 - 75% chance of 1;
-#X obj 212 434 inlet;
-#X obj 133 620 f;
-#X obj 220 509 dollarg;
-#X obj 220 489 loadbang;
-#X obj 259 549 sel 0 1;
-#X obj 278 579 f \$1;
-#X msg 247 579 2;
-#X obj 259 529 > 0;
-#X text 151 60 The probability of a "heads" result defaults to 50%
-\, but you can change it by providing a number as an argument \, or
-by sending a number to the second inlet. Sending a number to the first
-(hot) inlet sets the probability and triggers the "coin flip" at that
-probability.;
-#X text 150 151 Sending a bang to the first inlet triggers the coin
-flip at the currently-set probability.;
-#X text 153 15 [maybe] - "flip a coin" and output a 1 on "heads" or
-a 0 on "tails".;
-#X text 142 202 Setting the probability (N) to a number between 0 and
-1 means an N/1 probability. i.e. 0.5 is a 50% probability \, 0.25 is
-a 25% \, etc. Setting the probability above 1 means a 1/N probability
-\, i.e. 2 is 1/2 probability \, 100 is 1/100 .;
-#X text 136 382 See also: [maybeb] - same \, but outputs a bang on
-"heads" and nothing on tails.;
-#X connect 0 0 2 0;
-#X connect 1 0 7 0;
-#X connect 2 0 17 0;
-#X connect 2 1 3 0;
-#X connect 2 1 17 1;
-#X connect 3 0 9 0;
-#X connect 3 1 5 0;
-#X connect 5 0 1 0;
-#X connect 5 1 1 1;
-#X connect 5 2 8 0;
-#X connect 6 0 1 0;
-#X connect 6 1 10 0;
-#X connect 6 2 7 1;
-#X connect 7 0 4 0;
-#X connect 8 0 7 1;
-#X connect 9 0 6 0;
-#X connect 10 0 1 1;
-#X connect 16 0 17 1;
-#X connect 17 0 2 0;
-#X connect 18 1 23 0;
-#X connect 19 0 18 0;
-#X connect 20 0 22 0;
-#X connect 20 1 21 0;
-#X connect 21 0 17 1;
-#X connect 22 0 17 1;
-#X connect 23 0 20 0;
+#N canvas 1920 30 1920 1048 10;
+#X text 400 252 3 - 1 in 3 chance of 1;
+#X text 394 263 10 - 1 in 10 chance of 1;
+#X text 400 274 1 - 100% chance of 1;
+#X text 382 241 0.75 - 75% chance of 1;
+#X obj 170 160 inlet;
+#X obj 170 183 t a b;
+#X obj 170 253 spigot;
+#X obj 170 276 outlet;
+#X obj 221 126 inlet;
+#X obj 212 101 pdcontrol;
+#X msg 212 78 args;
+#X obj 212 55 loadbang;
+#X msg 212 176 0.5;
+#X obj 212 153 route bang float;
+#X obj 258 176 moses 0;
+#X obj 197 206 f;
+#X text 323 40 [maybe] - For each input \, "flip a coin" with a specific probability of heads. If heads \, output the input. if tails \, don't.;
+#X text 321 93 The probability of a heads defaults to 50% \, but you can change it by providing a number as an argument \, or by sending a number to the second inlet.;
+#X text 322 157 Setting the probability (N) to a number between 0 and 1 means an N/1 probability. i.e. 0.5 is a 50% probability \, 0.25 is a 25% \, etc. Setting the probability above 1 means a 1/N probability \, i.e. 2 is 1/2 probability \, 100 is 1/100.;
+#X text 322 229 examples: 0.5 - 50% chance of 1;
+#X text 322 300 See also: [coin] - Simply outputs 1 on "heads" and 0 on "tails" \, also with settable probability.;
+#X obj 197 229 coin;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 1 15 0;
+#X connect 6 0 7 0;
+#X connect 8 0 13 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 12 0 15 1;
+#X connect 13 0 12 0;
+#X connect 13 1 14 0;
+#X connect 14 1 15 1;
+#X connect 15 0 21 0;
+#X connect 21 0 6 1;
