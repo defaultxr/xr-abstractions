@@ -277,7 +277,9 @@ Miscellaneous utilities.
 
 * Future
 
-In the future I plan to clean up a lot of these. Either by renaming them or by splitting up functionality, etc. There are also a few that i'd like to re-code or rethink entirely. Some of the things I want to change:
+There is a lot of work to be done for this library to clean it up, fix bugs, add features, and remove deprecated/broken/unneeded abstractions. If you're using this library, keep an eye on the commit log when updating to note potentially breaking changes.
+
+Here is a list of tasks and ideas for the future of the library:
 
 ** cleanup
 - make sure all of these abstractions work with the new version of Pd (vanilla).
@@ -287,6 +289,9 @@ In the future I plan to clean up a lot of these. Either by renaming them or by s
 - remake ~adsr~ and ~adsr~~ into actual ADSR envelopes
 - ~atc~, ~cta~, ~atr~, and the others should probably be renamed to something like ~btu~, ~utb~, and ~btr~, since the technical term for a signal from 0 to 1 is "unipolar" and the technical term for a signal from -1 to 1 is "bipolar"
 - remove a lot of the stuff in "fx", since a lot of it either sucks or isn't even original material.
+- remove usage of ~fiddle~~ since it is now deprecated in favor of ~sigmund~~ or ~bonk~~.
+- use ~swap~ instead of a "$2 $1" message.
+- remove ~list-nth~? ~list store~ has a ~get~ message that can be used for the same (including sublists).
 
 ** decrease library dependencies
 some of the functionality used by them can either be reproduced myself, or may be part of modern versions of pd.
@@ -298,9 +303,12 @@ some of the functionality used by them can either be reproduced myself, or may b
 ** general/ideas
 - finish writing help files for all abstractions.
 - make an "examples" folder full of better examples instead of cramming as many abstractions as possible into crappy "demos"
-- make a bunch of abstractions for "patterns" based off of SuperCollider's pattern library.
+- make abstractions for "patterns" inspired by the pattern libraries of SuperCollider/[[https://github.com/defaultxr/cl-patterns][cl-patterns]] (this might be best done as a separate library; perhaps it could be called "pd-patterns"?)
 - make ~cline~ (controllable line using ~mc~ and keyboard shortcuts or messages)
   - make ~o~~ and the like use ~cline~ for the volume controls
+- consistent color coding for different types of GUI abstractions. (is there some already-existing convention that can be followed for this?)
+- update all abstractions that contain state (~drumseq~, ~anaseq~, etc) to make use of ~savestate~.
+- add the library to [[https://github.com/pure-data/deken][Deken]].
 
 ** object improvements
 - see if there are better ways to analyze the "volume" of a sound for ~scroll~~
