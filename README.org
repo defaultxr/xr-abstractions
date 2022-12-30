@@ -291,7 +291,6 @@ Here is a list of tasks and ideas for the future of the library:
 - remove a lot of the stuff in "fx", since a lot of it either sucks or isn't even original material.
 - remove usage of ~fiddle~~ since it is now deprecated in favor of ~sigmund~~ or ~bonk~~.
 - use ~swap~ instead of a "$2 $1" message.
-- remove ~list-nth~? ~list store~ has a ~get~ message that can be used for the same (including sublists).
 
 ** decrease library dependencies
 some of the functionality used by them can either be reproduced myself, or may be part of modern versions of pd.
