@@ -224,7 +224,7 @@ Sequencers and similar high level control objects.
 - ~taptempo~ - tap or send bangs to get the tempo.
 - ~td~~ - table draw. supposed to draw into a table via messages, but it's not finished yet. probably never will be. might delete this.
 - ~tmap~ - timed map that plays through the whole list with one bang.
-- ~tracker~ - simple "tracker" sequencer controllable via the keyboard.
+- ~tracker~ - DEPRECATED; just use messages instead. A tracker-inspired GUI that was a bad idea, isn't actually very useful, and is glitchy (can even crash Pd sometimes). Don't use it!
 - ~unmap~ - get the index of incoming values in a list provided either as arguments or via the right inlet. the opposite of ~map~. 
 - ~vslz~ - extremely simple 8-step vsl-based sequencer.
 
