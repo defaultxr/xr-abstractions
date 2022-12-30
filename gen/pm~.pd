@@ -1,16 +1,17 @@
 #N canvas 1920 32 1920 1048 10;
-#X obj 119 199 cos~;
-#X obj 119 167 +~;
-#X obj 119 233 outlet~;
-#X obj 119 115 phasor~;
-#X obj 119 86 inlet~;
-#X obj 135 142 inlet~;
+#X obj 119 249 cos~;
+#X obj 119 217 +~;
+#X obj 119 283 outlet~;
+#X obj 119 165 phasor~;
+#X obj 119 136 inlet~;
+#X obj 135 192 inlet~;
 #X text 38 57 signal inlets: 1: freq \, 2: phase;
-#X text 41 256 Modified slightly from the version in Frank Barknecht's
-"PDX7".;
+#X text 41 306 Modified slightly from the version in Frank Barknecht's "PDX7".;
 #X text 38 21 Basic sine-based phase modulation oscillator.;
+#X obj 119 110 lb \$1;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 3 0 1 0;
 #X connect 4 0 3 0;
 #X connect 5 0 1 1;
+#X connect 9 0 4 0;
