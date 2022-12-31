@@ -276,7 +276,6 @@ Miscellaneous utilities.
 - ~sym~ - turn a list into a symbol (basically just ~l2s~ with an empty symbol sent to the right inlet. see also: ~chars~)
 
 * Future
-
 There is a lot of work to be done for this library to clean it up, fix bugs, add features, and remove deprecated/broken/unneeded abstractions. If you're using this library, keep an eye on the commit log when updating to note potentially breaking changes.
 
 Here is a list of tasks and ideas for the future of the library:
@@ -290,7 +289,7 @@ Here is a list of tasks and ideas for the future of the library:
 - ~atc~, ~cta~, ~atr~, and the others should probably be renamed to something like ~btu~, ~utb~, and ~btr~, since the technical term for a signal from 0 to 1 is "unipolar" and the technical term for a signal from -1 to 1 is "bipolar"
 - remove a lot of the stuff in "fx", since a lot of it either sucks or isn't even original material.
 - remove usage of ~fiddle~~ since it is now deprecated in favor of ~sigmund~~ or ~bonk~~.
-- use ~swap~ instead of a "$2 $1" message.
+- use ~swap~ instead of a "$2 $1" message when possible.
 
 ** decrease library dependencies
 some of the functionality used by them can either be reproduced myself, or may be part of modern versions of pd.
@@ -316,17 +315,28 @@ some of the functionality used by them can either be reproduced myself, or may b
 - make a better ~analog~~
 - remove ~seqfill~ maybe.
 - redo ~ft~ maybe.
-- improve ~kfilename~ (does pd support filenames with spaces now?)
-- make ~tracker~ use ~kfilename~
+- improve ~kfilename~; pd support filenames with spaces now. check if there is some way to store global data in a "variable" so that path abbreviations can be calculated just once without needing a "master patch". ~value~ is just a numeric value so it can't be used for this.
 - implement voice stealing in ~polys~
-- make ~randomsong~~ use ~mp3conv~ and fix ~mp3conv~
-- finish ~proll~
+- make ~randomsong~~ use ~mp3conv~ (and fix ~mp3conv~).
+- finish ~proll~ (improve GUI; maybe rename to ~piano-roll~?)
 - add keyboard shortcuts to ~drumseq~ and other "bigger" abstractions.
 - update ~snd~~ so that you can also index the sound by samples, or maybe just make a separate version of ~snd~~ that always indexes by samples or time (seconds/etc).
-- finish ~looper~~
+- finish ~looper~~.
 - replace ~drumseq~ with the new ~drumseq2~
 - finish ~grain~~ and ~granular~~
-- finish ~tb303~~ (add accent function, perhaps improve GUI further) and ~hoover~~
+- finish ~tb303~~ (add accent function, perhaps improve GUI further) and ~hoover~~.
+
+** testing
+Ideas for (unit) testing the library.
+- ~pd~ supports the following command line flags which will likely be useful for this:
+  - ~-path~ - add to the search path.
+  - ~-nostdpath~ - don't include the standard search paths (i.e. "extra").
+  - ~-open~ - open a specific patch on startup.
+  - ~-verbose~ - increase verbosity when starting up and searching for objects.
+  - ~-nogui~ - don't open the gui.
+  - ~-send~ - send a message on startup after patches are loaded.
+  - ~-noprefs~ - don't load preferences.
+  - ~-batch~ - run offline, as a batch process.
 
 ** not possible?
 Ideas I have and would like to implement, but which I don't think are possible in Pure Data yet, either due to bugs or missing features, or perhaps just my lack of knowing how to do so.
