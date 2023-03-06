@@ -1,20 +1,12 @@
-#N canvas 0 29 800 849 10;
-#X obj 378 199 vsl 10 64 0 63 0 0 \$0-v0-s \$0-v0-r empty 0 -9 0 10
--24198 -1 -1 5900 1;
-#X obj 388 199 vsl 10 64 0 63 0 0 \$0-v1-s \$0-v1-r empty 0 -9 0 10
--24198 -262144 -1 4200 1;
-#X obj 398 199 vsl 10 64 0 63 0 0 \$0-v2-s \$0-v2-r empty 0 -9 0 10
--24198 -1 -1 600 1;
-#X obj 408 199 vsl 10 64 0 63 0 0 \$0-v3-s \$0-v3-r empty 0 -9 0 10
--24198 -1 -1 4700 1;
-#X obj 418 199 vsl 10 64 0 63 0 0 \$0-v4-s \$0-v4-r empty 0 -9 0 10
--24198 -1 -1 2400 1;
-#X obj 428 199 vsl 10 64 0 63 0 0 \$0-v5-s \$0-v5-r empty 0 -9 0 10
--24198 -1 -1 2800 1;
-#X obj 438 199 vsl 10 64 0 63 0 0 \$0-v6-s \$0-v6-r empty 0 -9 0 10
--24198 -1 -1 3700 1;
-#X obj 448 199 vsl 10 64 0 63 0 0 \$0-v7-s \$0-v7-r empty 0 -9 0 10
--24198 -1 -1 5400 1;
+#N canvas 0 29 1920 1048 10;
+#X obj 378 199 vsl 10 64 0 63 0 0 \$0-v0-s \$0-v0-r empty 0 -9 0 10 #14e814 #000000 #000000 0 1;
+#X obj 388 199 vsl 10 64 0 63 0 0 \$0-v1-s \$0-v1-r empty 0 -9 0 10 #14e814 #fcfcfc #000000 0 1;
+#X obj 398 199 vsl 10 64 0 63 0 0 \$0-v2-s \$0-v2-r empty 0 -9 0 10 #14e814 #000000 #000000 0 1;
+#X obj 408 199 vsl 10 64 0 63 0 0 \$0-v3-s \$0-v3-r empty 0 -9 0 10 #14e814 #000000 #000000 0 1;
+#X obj 418 199 vsl 10 64 0 63 0 0 \$0-v4-s \$0-v4-r empty 0 -9 0 10 #14e814 #000000 #000000 0 1;
+#X obj 428 199 vsl 10 64 0 63 0 0 \$0-v5-s \$0-v5-r empty 0 -9 0 10 #14e814 #000000 #000000 0 1;
+#X obj 438 199 vsl 10 64 0 63 0 0 \$0-v6-s \$0-v6-r empty 0 -9 0 10 #14e814 #000000 #000000 0 1;
+#X obj 448 199 vsl 10 64 0 63 0 0 \$0-v7-s \$0-v7-r empty 0 -9 0 10 #14e814 #000000 #000000 0 1;
 #X obj 176 321 outlet;
 #X obj 158 489 tabwrite \$0-t;
 #X obj 158 454 unpack f f;
@@ -25,39 +17,39 @@
 #X obj 176 302 spigot;
 #X obj 203 264 tabread \$0-t;
 #X obj 203 245 + 8;
-#N canvas 0 29 1600 849 double-click 0;
-#X obj 183 196 inlet;
-#X obj 202 417 timer;
-#X obj 169 455 spigot;
-#X obj 202 436 < 200;
-#X obj 183 215 t a b b;
-#X obj 101 250 unpack f f;
-#X obj 158 283 t f f;
-#X obj 164 321 ==;
-#X obj 103 317 ==;
-#X obj 128 359 &&;
-#X obj 128 378 sel 1;
-#X obj 128 397 f;
-#X obj 101 283 t f f f;
-#X obj 169 474 + 8;
-#X obj 188 527 tabread \$0-t;
-#X obj 188 546 == 0;
-#X obj 188 565 tabwrite \$0-t;
-#X obj 169 493 t b f f;
-#X obj 169 603 until;
-#X msg 169 584 8;
-#X obj 169 622 count 8;
-#X obj 169 660 + 8;
-#X obj 169 679 tabread \$0-t;
-#X obj 169 717 * 3;
-#X obj 169 736 + 13;
-#X obj 169 641 t f f;
-#X obj 169 755 pack f f f \$0;
-#X msg 169 774 \; \$4-v\$2-r color \$1 \$3 22;
-#X obj 219 736 * 22;
-#X obj 219 717 !=;
-#X obj 284 628 r \$0-cur;
-#X obj 284 647 t b f;
+#N canvas 0 29 1920 1048 double-click 0;
+#X obj 183 116 inlet;
+#X obj 202 337 timer;
+#X obj 169 375 spigot;
+#X obj 202 356 < 200;
+#X obj 183 135 t a b b;
+#X obj 101 170 unpack f f;
+#X obj 158 203 t f f;
+#X obj 164 241 ==;
+#X obj 103 237 ==;
+#X obj 128 279 &&;
+#X obj 128 298 sel 1;
+#X obj 128 317 f;
+#X obj 101 203 t f f f;
+#X obj 169 394 + 8;
+#X obj 188 447 tabread \$0-t;
+#X obj 188 466 == 0;
+#X obj 188 485 tabwrite \$0-t;
+#X obj 169 413 t b f f;
+#X obj 169 523 until;
+#X msg 169 504 8;
+#X obj 169 542 count 8;
+#X obj 169 580 + 8;
+#X obj 169 599 tabread \$0-t;
+#X obj 169 637 * 3;
+#X obj 169 656 + 13;
+#X obj 169 561 t f f;
+#X obj 169 675 pack f f f \$0;
+#X msg 169 694 \; \$4-v\$2-r color \$1 \$3 22;
+#X obj 219 656 * 22;
+#X obj 219 637 !=;
+#X obj 284 548 r \$0-cur;
+#X obj 284 567 t b f;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 2 0 13 0;
@@ -181,8 +173,8 @@
 #X connect 16 0 0 0;
 #X restore 199 377 pd receives;
 #X obj 176 203 int;
-#X text 313 119 set a vsl by sending a "set [number] [value]" message.
-;
+#X text 313 119 set a vsl by sending a "set [number] [value]" message.;
+#X obj 218 321 outlet;
 #X connect 10 0 9 0;
 #X connect 10 1 9 1;
 #X connect 11 0 10 0;
@@ -190,6 +182,7 @@
 #X connect 14 0 12 0;
 #X connect 14 0 23 0;
 #X connect 14 1 17 0;
+#X connect 14 1 28 0;
 #X connect 15 0 8 0;
 #X connect 16 0 15 1;
 #X connect 17 0 16 0;
