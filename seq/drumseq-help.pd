@@ -1,75 +1,71 @@
-#N canvas 0 29 1600 849 10;
-#X obj 54 385 drumseq;
-#X text 354 38 drumseq - drum sequencer;
-#X text 327 71 drumseq is a drum sequencer abstraction. it has a relatively
+#N canvas 1920 32 1920 1048 10;
+#X text 445 24 drumseq - drum sequencer;
+#X text 418 57 drumseq is a drum sequencer abstraction. it has a relatively
 simple interface but has many functions accessible by sending messages
 to the inlet \, or sending a message to "ds".;
-#X text 328 127 the sequencer accepts bangs to go to the next step
+#X text 419 113 the sequencer accepts bangs to go to the next step
 \, or floats from 0 to 15 to specify the step.;
-#X text 329 194 if you send a "save" message without any extra parameters
+#X text 420 200 if you send a "save" message without any extra parameters
 \, the sequencer will overwrite the data to the file specified by the
 drumseq's first argument (\$1). otherwise \, you can always send "save
 foo" to save to the file "foo".;
-#X text 328 294 send a "pat [number]" message to change the pattern
+#X text 419 320 send a "pat [number]" message to change the pattern
 being displayed. send a "play [number]" message to change the pattern
 being played.;
-#X text 329 336 the "go" button (as well as sending a "go" message)
+#X text 420 372 the "go" button (as well as sending a "go" message)
 changes the playing pattern to the one currently displayed.;
-#X text 331 418 the "cp" button will copy the previous pattern to the
+#X text 422 481 the "cp" button will copy the previous pattern to the
 current one. if you want to copy a different pattern \, you can send
 a "copy [from] [to]" message to copy from whichever pattern you want.
 ;
-#X text 331 468 sending a "bypass [number]" message will send a bang
+#X text 422 541 sending a "bypass [number]" message will send a bang
 to the outlet specified by the number. outlets are indexed from zero.
 ;
-#X text 330 369 sending a "set [x] [y] [value]" message will change
+#X text 421 415 sending a "set [x] [y] [value]" message will change
 the value of the toggle for the specified box on the currently displayed
 pattern. without a value \, it toggles. remember that x and y are both
 indexed from zero!;
-#N canvas 0 29 1600 849 loadbang 0;
-#X obj 77 227 outlet;
-#X obj 55 37 loadbang;
-#X msg 51 74 e 0 0'15'4 \, e 1 4'15'8 \, e 2 0'15'2 \, pat 1 \, e 0
-0'15'2 \, e 1 4'15'8 \, e 2 0'15'1 \, pat 0;
-#X connect 1 0 2 0;
-#X connect 2 0 0 0;
-#X restore 26 266 pd loadbang;
-#X obj 44 488 kick1~ 500 0 50;
-#X obj 113 592 o~;
-#X obj 80 298 bpmm;
-#X floatatom 122 323 5 0 0 0 - - -;
-#X obj 67 337 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 122 517 snare1~ 9000 50 50;
-#X text 331 248 the first number box on the drumseq is the number for
+#X obj 135 474 kick1~ 500 0 50;
+#X obj 204 578 o~;
+#X obj 133 292 bpmm;
+#X floatatom 186 328 5 0 0 0 - - -;
+#X obj 158 327 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 213 503 snare1~ 9000 50 50;
+#X text 422 264 the first number box on the drumseq is the number for
 the pattern being displayed. the second is for the pattern being played.
 ;
-#X obj 64 461 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 133 463 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 155 447 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 181 537 snare1~ 9000 9000 10;
-#X obj 200 465 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 224 449 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 329 154 you might want to look at the [kfilename] object \,
+#X obj 272 523 snare1~ 9000 9000 10;
+#X obj 291 451 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 420 150 you might want to look at the [kfilename] object \,
 since [drumseq] uses it to reference the directory for saving and loading
 the pattern data.;
-#X text 330 512 there is also an "e" message. "e" stands for "every"
+#X text 421 592 there is also an "e" message. "e" stands for "every"
 and the format of the message is: "e [row] [start]'[end]'[every]".
 so \, for instance \, if you send "e 0 0'15'1" \, every step in the
 first row will be activated. if you send "e 1 2'15'2" \, every other
 step in the second row will be activated \, starting with the third
 step.;
-#X connect 0 0 11 0;
-#X connect 0 0 18 0;
-#X connect 0 1 16 0;
-#X connect 0 1 19 0;
-#X connect 0 2 20 0;
-#X connect 0 2 21 0;
-#X connect 10 0 0 0;
-#X connect 11 0 12 0;
-#X connect 13 2 14 0;
-#X connect 14 0 0 0;
-#X connect 15 0 0 0;
-#X connect 16 0 12 0;
-#X connect 20 0 12 0;
+#X msg 47 227 e 0 0'15'4 \, e 1 4'15'8 \, e 2 0'15'2 \, pat 1 \, e
+0 0'15'2 \, e 1 4'15'8 \, e 2 0'15'1 \, pat 0;
+#X obj 47 207 loadbang;
+#X obj 145 371 drumseq2;
+#X connect 9 0 10 0;
+#X connect 11 1 13 0;
+#X connect 12 0 24 0;
+#X connect 13 0 24 0;
+#X connect 14 0 10 0;
+#X connect 18 0 10 0;
+#X connect 22 0 24 0;
+#X connect 23 0 22 0;
+#X connect 24 0 9 0;
+#X connect 24 0 16 0;
+#X connect 24 1 14 0;
+#X connect 24 1 17 0;
+#X connect 24 2 18 0;
+#X connect 24 2 19 0;
