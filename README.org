@@ -15,7 +15,7 @@ Some of the abstractions I find most useful:
 - ~so~~ - Like ~o~~ but for stereo signals.
 - ~view~~ - Waveform view; basically a simple oscilloscope.
 - ~tview~ - Text view; a simple GUI showing the last 5 messages to the inlet.
-- ~drumseq2~ - Four-track step sequencer GUI; soon to be renamed to either just ~drumseq~ or ~ds~. the original ~drumseq~ (still included) is now deprecated so don't use it!)
+- ~drumseq~ - Four-track variable-length multi-pattern step sequencer GUI.
 - ~rrange~ - Random range; outputs random integers within the specified range.
 - ~rchoice~ - Random choice; outputs random elements from the provided list.
 - ~bpmm~ - Tempo clock GUI to generate bangs, floats, and a synced phasor signal to the specified BPM. Made for use with sequencers like ~drumseq~, ~anaseq~, etc.
@@ -197,7 +197,7 @@ Sequencers and similar high level control objects.
 - ~bpmm2~ - was supposed to be the next version of ~bpmm~ with fewer outlets but I might delete this actually.
 - ~bpmm~ - metro/gui for outputting bangs on the downbeat, bangs on each quarter note, and numbers for each quarter note. try connecting the third outlet to ~anaseq~ or ~drumseq~
 - ~burst~ - burst generator a la modular synths: when a bang is received, it outputs N bangs, spaced M milliseconds apart.
-- ~drumseq~ - a 16x4 matrix of toggle boxes. supports saving, loading, multiple patterns and more.
+- ~drumseq~ - Four-track variable-length multi-pattern step sequencer GUI. Supports saving, loading, and more. Formerly known as ~drumseq2~; the old version of ~drumseq~ is deprecated but still temporarily available as ~old-drumseq~.
 - ~dust~ - output bangs at random intervals lower than the provided argument.
 - ~edger~~ - basically a convenient interface to ~edge~~. left outlet bangs on a zero to non-zero transition, while the right bangs on a non-zero to zero transition.
 - ~ft~ - "friendly table". abstraction to make it easier to edit a table. need to redo this.
@@ -322,7 +322,6 @@ some of the functionality used by them can either be reproduced myself, or may b
 - add keyboard shortcuts to ~drumseq~ and other "bigger" abstractions.
 - update ~snd~~ so that you can also index the sound by samples, or maybe just make a separate version of ~snd~~ that always indexes by samples or time (seconds/etc).
 - finish ~looper~~.
-- replace ~drumseq~ with the new ~drumseq2~
 - finish ~grain~~ and ~granular~~
 - finish ~tb303~~ (add accent function, perhaps improve GUI further) and ~hoover~~.
 
