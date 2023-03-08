@@ -176,7 +176,7 @@ Abstractions for altering or generating streams of numbers.
 - ~num~ - holds a number and allows you to add, subtract, multiply, or divide from that number via messages.
 - ~rangem~ - scale a range to midi (0-127).
 - ~reciprocal~ - outputs the reciprocal of the input.
-- ~round~ - round a float to the nearest integer.
+- ~round~ - Round a float to a multiple of the specified number (default: 1).
 - ~rrange~ - random within a range (inclusive).
 - ~rtr~ - "range to range" - scale one arbitrary range to another arbitrary range.
 - ~runningmax~~ - output the highest value seen in a signal.
