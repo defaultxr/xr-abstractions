@@ -1,29 +1,27 @@
-#N canvas 1680 29 1600 871 10;
-#X obj 262 -121 inlet;
-#X obj 103 115 hsl 55 13 0 127 0 0 \$0-v \$0-vols volume -1 8 0 10
--24198 -1 -1 5400 1;
-#X obj 294 322 outlet~;
-#X obj 344 322 outlet~;
-#X obj 303 301 dac~;
-#X obj 324 230 *~;
-#X obj 294 230 *~;
-#X obj 186 205 env~;
-#X obj 137 102 vsl 8 10 0 127 0 0 \$0-ms \$0-mr empty 0 -9 0 10 -262144
--1 -1 354 1;
-#X obj 186 224 autoscale 0 127;
-#X obj 374 -7 r \$0-v;
-#X obj 374 125 / 127;
-#X obj 374 173 *~;
-#X obj 262 55 s \$0-vols;
-#X obj 262 17 line;
-#X obj 262 36 min 127;
-#X obj 186 281 s \$0-mr;
-#X obj 186 243 min 127;
-#X obj 186 262 max 0;
-#X obj 262 -34 t a b;
-#X obj 289 -15 f;
-#X obj 294 268 *~ 1;
-#X obj 325 268 *~ 1;
+#N canvas 1680 29 1920 1048 10;
+#X obj 262 19 inlet;
+#X obj 103 255 hsl 55 13 0 127 0 0 \$0-v \$0-vols volume -1 8 0 10 #14e814 #000000 #000000 0 1;
+#X obj 294 462 outlet~;
+#X obj 344 462 outlet~;
+#X obj 303 441 dac~;
+#X obj 324 370 *~;
+#X obj 294 370 *~;
+#X obj 186 345 env~;
+#X obj 137 242 vsl 8 10 0 127 0 0 \$0-ms \$0-mr empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 186 364 autoscale 0 127;
+#X obj 374 133 r \$0-v;
+#X obj 374 265 / 127;
+#X obj 374 313 *~;
+#X obj 262 195 s \$0-vols;
+#X obj 262 157 line;
+#X obj 262 176 min 127;
+#X obj 186 421 s \$0-mr;
+#X obj 186 383 min 127;
+#X obj 186 402 max 0;
+#X obj 262 106 t a b;
+#X obj 289 125 f;
+#X obj 294 408 *~ 1;
+#X obj 325 408 *~ 1;
 #N canvas 0 29 1600 849 mute 0;
 #X obj 507 274 route 0 1;
 #X msg 444 294 color 13 22 22;
@@ -33,8 +31,7 @@
 #X msg 433 235 0;
 #X msg 480 235 1;
 #X obj 407 367 outlet;
-#X obj 449 192 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 449 192 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 356 153 lb 1;
 #X obj 449 173 r \$0-mutes;
 #X connect 0 0 1 0;
@@ -50,27 +47,17 @@
 #X connect 8 0 4 0;
 #X connect 9 0 8 0;
 #X connect 10 0 8 0;
-#X restore 359 236 pd mute;
-#X obj 304 -121 r out;
-#X obj 332 -32 s \$0-mute;
-#X obj 340 -121 r o;
-#X obj 364 -121 r \$0-o;
-#X text 429 28 the o~ and so~ objects reserve the Menu-o key-combination.
-when you press Menu-o \, you will also have to type another key to
-select the individual instance \, or press enter to select them all.
-;
-#X text 429 -23 o~ and so~ are standard output objects. o~ is for mono
-output \, so~ is for stereo output. with these abstractions you can
-control volume and mute with the keyboard (as described below) as well
-as with the mouse or via messages.;
-#X obj 128 100 tgl 9 0 \$0-mutes \$0-mute empty 17 7 0 10 -262144 -1
--1 1 1;
-#X obj 339 -56 lb 1;
-#X text 431 78 keys: when the o~ or so~ object is selected \, the number
-keys change the volume (leftmost (1) is 0% volume while rightmost (0)
-is 100% volume). qwer change the speed of keyboard volume changes (q
-is the slowest speed \, r is the fastest). t toggles muting.;
-#X obj 262 -80 route vol mvol mute bang;
+#X restore 359 376 pd mute;
+#X obj 304 19 r out;
+#X obj 332 108 s \$0-mute;
+#X obj 340 19 r o;
+#X obj 364 19 r \$0-o;
+#X text 429 168 the o~ and so~ objects reserve the Menu-o key-combination. when you press Menu-o \, you will also have to type another key to select the individual instance \, or press enter to select them all.;
+#X text 429 117 o~ and so~ are standard output objects. o~ is for mono output \, so~ is for stereo output. with these abstractions you can control volume and mute with the keyboard (as described below) as well as with the mouse or via messages.;
+#X obj 128 240 tgl 9 0 \$0-mutes \$0-mute empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 339 84 lb 1;
+#X text 431 218 keys: when the o~ or so~ object is selected \, the number keys change the volume (leftmost (1) is 0% volume while rightmost (0) is 100% volume). qwer change the speed of keyboard volume changes (q is the slowest speed \, r is the fastest). t toggles muting.;
+#X obj 262 60 route vol mvol mute bang;
 #N canvas 1680 29 1600 871 box 0;
 #X obj 89 -56 route name ON OFF MENU key;
 #X msg 89 46 label \$1;
@@ -149,12 +136,11 @@ is the slowest speed \, r is the fastest). t toggles muting.;
 #X connect 29 0 28 0;
 #X connect 29 0 30 0;
 #X connect 31 0 0 0;
-#X restore 220 -121 pd box;
-#X obj 145 100 tgl 15 0 \$0-mc_tgls \$0-mc_tgl og 2 7 0 10 -262144
--262144 -62784 0 1;
-#X obj 374 144 aline~ 50;
-#X obj 278 94 adc~;
-#X obj 201 -37 lb 127;
+#X restore 220 19 pd box;
+#X obj 145 240 tgl 15 0 \$0-mc_tgls \$0-mc_tgl og 2 7 0 10 #fcfcfc #fcfcfc #3c50fc 0 1;
+#X obj 374 284 aline~ 50;
+#X obj 278 234 adc~;
+#X obj 201 103 lb 127;
 #X connect 0 0 33 0;
 #X connect 5 0 22 0;
 #X connect 6 0 21 0;
@@ -194,4 +180,4 @@ is the slowest speed \, r is the fastest). t toggles muting.;
 #X connect 37 1 5 0;
 #X connect 37 1 7 0;
 #X connect 38 0 19 0;
-#X coords 0 -1 1 1 60 30 1 100 100;
+#X coords 0 -1 1 1 60 30 1 100 240;
