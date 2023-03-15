@@ -171,7 +171,7 @@ Abstractions for altering or generating streams of numbers.
 - ~maybe~ - Maybe pass the left input through with a specific probability. The right inlet sets the probability; floats between 0 and 1 specify the probability as a percent (i.e. 0.25 is 25% chance); integers above 1 specify 1 in n chance (i.e. "5" is a 1 in 5 chance or 20%). Banging the inlet is a 50% chance. Similar in operation to ~coin~.
 - ~minv~ - "midi invert". 127 becomes 0, 0 becomes 127, and everything in between.
 - ~mrange~ - scale 0-127 to an arbitrary range.
-- ~num~ - holds a number and allows you to add, subtract, multiply, or divide from that number via messages.
+- ~num~ - Store and change a number with messages. Supports addition, subtraction, multiplication, and division.
 - ~rangem~ - scale a range to midi (0-127).
 - ~reciprocal~ - outputs the reciprocal of the input.
 - ~round~ - Round a float to a multiple of the specified number (default: 1).
