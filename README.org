@@ -1,17 +1,15 @@
 #+TITLE: xr-abstractions
 
-This is a collection of abstractions I've made for Pure Data. It includes sequencers, GUIs, general utilities, and a few effects and synths. I'm still in the process of writing them, so consider this collection to be in the "beta" stage, and expect changes if you upgrade later (which will hopefully be mentioned in commit messages). Some objects might get renamed, removed, or end up working/looking completely different later. Beware of this.
+This is a collection of Pure Data abstractions. It includes sequencers, GUIs, general utilities, and a few effects and synths. I'm still in the process of writing and updating them to fix bugs and add functionality, so consider this collection to be in the "alpha" stage. You should also expect changes if you update the library later (which will hopefully be mentioned in commit messages); some objects might get renamed, removed, or end up working/looking completely different later.
 
-Right now, most of these abstractions will probably only work under Pd-extended 0.43. Since Pd-extended is no longer maintained, I'm slowly be working towards ensuring full Pd-vanilla compatibility for this library.
-
-Please notify me of any bugs you find while using these abstractions.
+Feel free to open an issue for any bugs you come across.
 
 Some of the abstractions I find most useful:
 - ~map~ - Map to the elements of a list; provide a list as arguments (or send one to the second inlet), then send numbers or bangs to the first inlet to get the list item at the specified index.
 - ~unmap~ - The inverse of ~map~; provide a list, then send items to the first inlet to get the index of the item in the list.
-- ~rmap~ - Receive map; quickly create a lot of ~receive~ objects just by specifying them as arguments to ~rmap~.
+- ~rmap~ - Receive map; dynamically generate a subpatch of ~receive~ objects just by specifying their names as the arguments.
 - ~snd~~ - Convenient sound file access; provide a filename as the first argument to load it, then send a signal in the range 0-1 to the first inlet to read from the buffer.
-- ~o~~ - Output a mono signal to your DAC (speakers), with a few conveniences like a volume slider and mute toggle.
+- ~o~~ - Output a mono signal to your DAC (speakers), with a few conveniences like a volume slider, mute toggle, and a small volume meter.
 - ~so~~ - Like ~o~~ but for stereo signals.
 - ~view~~ - Waveform view; basically a simple oscilloscope.
 - ~tview~ - Text view; a simple GUI showing the last 5 messages to the inlet.
@@ -22,12 +20,12 @@ Some of the abstractions I find most useful:
 - ~tb303~~ - Basic Roland TB-303 imitation.
 
 * Requirements
-Here's a list of the libraries that this one depends on. All of these should be installed automatically if you're using Pd 0.48.
+Here's a list of the libraries that this one depends on. All of these should be installed automatically if you're using Pd 0.48 or above.
 
 - cyclone
 - iemguts
 - iemlib (for ~dollarg~, ...)
-- motex
+- motex (for ~getenv~, ...)
 - zexy
 
 * Installation
@@ -324,6 +322,7 @@ some of the functionality used by them can either be reproduced myself, or may b
 - finish ~looper~~.
 - finish ~grain~~ and ~granular~~
 - finish ~tb303~~ (add accent function, perhaps improve GUI further) and ~hoover~~.
+- figure out if there is a way to avoid ~tri~~ making loud clicks when its shape is ~-1~ or ~1~.
 
 ** testing
 Ideas for (unit) testing the library.
