@@ -266,6 +266,7 @@ Miscellaneous utilities.
 - ~qtimer~ - quantizible timer. similar to ~interval~ but allows you to specify the granularity of output values.
 - ~quote~ - surrounds the input with quotes.
 - ~rporta~~ - relative portamento. might need work.
+- ~si~~ - interface for stereo input from ~adc~~. see also: ~so~~.
 - ~so~~ - interface for stereo output to ~dac~~. see also: ~o~~.
 - ~spacesym~ - outputs a symbol that has a character that looks blank. thus, you can make symbols with "spaces" in them without them being lists. it's one of pd's quirks. don't know if this'll work everywhere.
 - ~span~~ - simple panner. like ~pan~~ but lets you specify the panning position as an argument if you're lazy.
