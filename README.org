@@ -105,7 +105,7 @@ See also: [[https://github.com/defaultxr/pd-ladspa-abstractions][pd-ladspa-abstr
 - ~pitchshifter~~ - 
 - ~rateshift2~~ - 
 - ~rateshift~~ - 
-- ~sdly~~ - 
+- ~sdly~~ - Simple delay. Delay time and feedback are settable by arguments and signal inlets.
 - ~shaper~~ - 
 - ~sidechain~~ - 
 - ~skip~~ - 
