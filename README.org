@@ -23,6 +23,7 @@ Some of the abstractions I find most useful:
 Here's a list of the libraries that this one depends on. All of these should be installed automatically if you're using Pd 0.48 or above.
 
 - cyclone
+- ext13 (for ~receive13~, ...)
 - iemguts
 - iemlib (for ~dollarg~, ...)
 - motex (for ~getenv~, ...)
