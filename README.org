@@ -296,7 +296,6 @@ some of the functionality used by them can either be reproduced myself, or may b
 - ~dollarg~ can be replaced by ~pdcontrol~'s ~args~ message.
 - maybe ~list-drip~ can be replaced by ~drip~ ?
 - maybe ~ftos~ can be replaced by ~makefilename %s~ ?
-- remove ~arraysize~ ?
 
 ** general/ideas
 - finish writing help files for all abstractions.
