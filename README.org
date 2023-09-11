@@ -30,9 +30,7 @@ Here's a list of the libraries that this one depends on. All of these should be 
 - zexy
 
 * Installation
-Once you have the requirements listed above, the abstractions should "just work". However there are a few that you may want to edit:
-
-- ~kfilename~ - this abstraction is used to shorten filenames. So for example, ~~~ is replaced with ~/home/modula~ by default. You will most likely want to change that so that it points to your home directory instead.
+Once you have the requirements listed above and have added this library and its subdirectories to your Pure Data path, the abstractions should "just work".
 
 * Overview
 Below is an overview of all of the included abstractions.
@@ -58,7 +56,7 @@ Abstractions for controlling things, either via keyboard or by clicking.
 - ~keyonchg~ - outputs a bang when the $1 key is pressed.
 - ~keyonoff~ - outputs 1 when the $1 key is pressed and 0 when it is released.
 - ~keyrow~ - converts numbers from ~key~ into the numbers 0-9. in other words, use a row of keys as numbers.
-- ~kfilename~ - abstraction for making paths. used by ~snd~~, ~drumseq~, ~anaseq~ and others.
+- ~kfilename~ - Expand filenames that begin with an abbreviation. For example, ~~/foo~ is abbreviated to the full path of ~foo~ in your home directory. This abstraction is used in ~snd~~, ~drumseq~, ~anaseq~ and others to allow filename abbreviations.
 - ~mono~ - monosynth implementation (keeps track of which keys are held down, only sending the most recent, including if more than one has been pressed/held down)
 - ~monos~ - simpler version of mono. should work better with synths expecting input from something like ~notein~.
 - ~mspigot~ - multi-spigot. has 5 message inlets and allows you to graphically control which of them are mixed to the outlet.
@@ -231,12 +229,13 @@ Sequencers and similar high level control objects.
 "Full-featured" synthesizers, many of which actually aren't even completed yet.
 
 - ~hoover~~ - hoover synth. WIP.
-- ~kick1~~ - extremely basic kick drum synth
-- ~kick2~~ - another extremely basic kick drum synth
-- ~kick3~~ - yet another extremely basic kick drum synth
-- ~snare1~~ - extremely basic snare drum synth
-- ~snare2~~ - another extremely basic snare drum synth
-- ~tb303~~ - TB303 clone. probably doesn't sound much like the real thing. WIP
+- ~kick1~~ - extremely basic kick drum synth.
+- ~kick2~~ - another extremely basic kick drum synth.
+- ~kick3~~ - yet another extremely basic kick drum synth.
+- ~snare1~~ - extremely basic snare drum synth.
+- ~snare2~~ - another extremely basic snare drum synth.
+- ~tb303~~ - TB303 clone. probably doesn't sound much like the real thing. WIP.
+- ~wavesynth~~ - Convenient interface to generate and play a sinesum-generated tone.
 
 ** utils
 Miscellaneous utilities.
@@ -258,7 +257,7 @@ Miscellaneous utilities.
 - ~lists~ - list store. basically works how ~float~ and ~symbol~ work, except, of course, that it's for lists.
 - ~list-without~ - returns a list without all instances of the specified element.
 - ~marquee~ - display elements of a list at regular intervals.
-- ~mp3conv~ - use the ~lame~ command-line utility to convert an mp3 to wav, storing the wav in /tmp and outputting the filename of the wav when conversion finishes. obviously you'll need to have ~lame~ installed in order for this to actually work.
+- ~mp3conv~ - use the ~lame~ command-line utility to convert an mp3 to wav, storing the wav in /tmp and outputting the filename of the wav when conversion finishes. you'll need to have ~lame~ installed in order for this to actually work.
 - ~o~~ - interface for mono output to ~dac~~.
 - ~parser~ - parses lisp-style commands from within the incoming message (i.e. "(function argument1 argument2 ... argumentN)") and outputs the original message with the output of each command replacing the command. currently accepts "rc" for ~rchoice~ and "rr" for ~rrange~. it's a decent start but I will probably add memory to it as well. maybe eventually it will be a full-fledged lisp implementation! ha.
 - ~po~~ - panned mono output. same as ~o~~ but the first argument is the stereo panning position of the input, from -45 to 45.
@@ -290,6 +289,8 @@ Here is a list of tasks and ideas for the future of the library:
 - remove a lot of the stuff in "fx", since a lot of it either sucks or isn't even original material.
 - remove usage of ~fiddle~~ since it is now deprecated in favor of ~sigmund~~ or ~bonk~~.
 - use ~swap~ instead of a "$2 $1" message when possible.
+- maybe change this readme into markdown format? it's more common but org provides export options and other potentially-useful features, and is easier to write.
+- document alternatives to this library, and to individual objects. for example, how does ~sequencer~ from ELSE compare to ~map~?
 
 ** decrease library dependencies
 some of the functionality used by them can either be reproduced myself, or may be part of modern versions of pd.
@@ -298,23 +299,29 @@ some of the functionality used by them can either be reproduced myself, or may b
 - maybe ~ftos~ can be replaced by ~makefilename %s~ ?
 
 ** general/ideas
-- finish writing help files for all abstractions.
 - make an "examples" folder full of better examples instead of cramming as many abstractions as possible into crappy "demos"
-- make abstractions for "patterns" inspired by the pattern libraries of SuperCollider/[[https://github.com/defaultxr/cl-patterns][cl-patterns]] (this might be best done as a separate library; perhaps it could be called "pd-patterns"?)
+- make abstractions for "patterns" inspired by the pattern libraries of SuperCollider/[[https://github.com/defaultxr/cl-patterns][cl-patterns]] (this might be best done as a separate library; perhaps it could be called "pd-patterns" or "sequencing-patterns"?)
 - make ~cline~ (controllable line using ~mc~ and keyboard shortcuts or messages)
   - make ~o~~ and the like use ~cline~ for the volume controls
 - consistent color coding for different types of GUI abstractions. (is there some already-existing convention that can be followed for this?)
 - update all abstractions that contain state (~drumseq~, ~anaseq~, etc) to make use of ~savestate~.
+- update all abstractions to handle multiple channels using the new [[https://github.com/pure-data/pure-data/blob/c0a7c16c63e86ccc8ce05c8273ccd8aec7ae044c/doc/1.manual/x5.htm#L33][multichannel functionality]] in Pd 0.54.
 - add the library to [[https://github.com/pure-data/deken][Deken]].
+- write help files for all abstractions.
 
 ** object improvements
 - see if there are better ways to analyze the "volume" of a sound for ~scroll~~
 - rename ~scroll~~ to something more descriptive
-- re-add ~mc~ for ~o~~??
+- re-add ~mc~ for ~o~~? - or see if there is a way to get the name of the parent patch so the ~o~~ can ~receive13~ from a variant of that name.
 - make a better ~analog~~
 - remove ~seqfill~ maybe.
 - redo ~ft~ maybe.
-- improve ~kfilename~; pd support filenames with spaces now. check if there is some way to store global data in a "variable" so that path abbreviations can be calculated just once without needing a "master patch". ~value~ is just a numeric value so it can't be used for this.
+- ~kfilename~ improvements:
+  - perhaps remove it entirely? use Pd's new ~savestate~ object instead if possible
+  - rename ~kfilename~, either to ~xrfilename~ or ~expand-filename~.
+  - ensure ~kfilename~ supports spaces in filenames.
+  - check that ~kfilename~'s custom abbreviations functionality works.
+  - fix ~kfilename~ giving incorrect output when the input ends with a ~/~ character.
 - implement voice stealing in ~polys~
 - make ~randomsong~~ use ~mp3conv~ (and fix ~mp3conv~).
 - finish ~proll~ (improve GUI; maybe rename to ~piano-roll~?)
@@ -324,6 +331,7 @@ some of the functionality used by them can either be reproduced myself, or may b
 - finish ~grain~~ and ~granular~~
 - finish ~tb303~~ (add accent function, perhaps improve GUI further) and ~hoover~~.
 - figure out if there is a way to avoid ~tri~~ making loud clicks when its shape is ~-1~ or ~1~.
+- make a stereo version of ~snd~~.
 
 ** testing
 Ideas for (unit) testing the library.
@@ -343,3 +351,14 @@ Ideas I have and would like to implement, but which I don't think are possible i
 - make ~keyonchg~, ~keyonoff~, etc work properly. Pd's ~keyname~, ~key~, ~keyup~, etc, all detect keyboard "repeat" events and it doesn't seem to be possible to easily filter them to only detect "key pressed" and "key release" events.
 - remove ~span~~. motex's ~pan~~ object would need to accept panning as an argument for this to be possible.
 - make ~kfilename~ (and all abstractions that use it) able to handle filenames with spaces (should be possible in pd 0.44 and above?)
+
+* More
+Here are a few other (unassociated) libraries and resources worth a look.
+
+** Intelligent patching demonstrations
+*** [[https://vimeo.com/273707442][intelligent patching in Pd-vanilla]]
+*** [[https://vimeo.com/279631360][More intelligent patching in Pd-vanilla]]
+*** [[https://vimeo.com/340437816][Less intelligent patching for Pd]]
+
+** [[https://github.com/porres/pd-else][ELSE]]
+Includes a lot of functionality, including a SoundFont object (~sfont~~), Mutable Instruments Plaits (~plaits~~), and many other useful utility and audio objects. There is also a [[https://github.com/porres/Live-Electronics-Tutorial][tutorial]] for doing live electronic music using Pure Data with ELSE.
