@@ -1,45 +1,32 @@
-#N canvas 800 0 800 849 10;
-#X obj 105 415 outlet;
+#N canvas 800 0 1920 1048 10;
+#X obj 105 417 outlet;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array \$0-kbdmidi2 123 float 1;
-#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 72 0 74 76 0 0 0 0 0 0 0 0 0 0 0 75 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 67 64 63 0 0 66 68 0 70 0 73 71 69 0 0 0 0 61 0 0 65 0 62 0 60;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 72 0 74 76 0 0 0 0 0 0 0 0 0 0 0 75 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 67 64 63 0 0 66 68 0 70 0 73 71 69 0 0 0 0 61 0 0 65 0 62 0 60;
 #X coords 0 127 122 0 200 140 1;
-#X restore 518 326 graph;
-#X obj 78 358 tabread \$0-kbdmidi0;
+#X restore 518 346 graph;
+#X obj 78 357 tabread \$0-kbdmidi0;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array \$0-kbdmidi1 123 float 1;
-#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 92 0 78 80 0 83 85 87 0 90 0 0 0
-95 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 94 0 96
-0 0 0 0 0 0 0 81 0 0 0 89 0 0 0 0 0 91 93 77 82 0 84 88 0 79 0 86 0
-;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 92 0 78 80 0 83 85 87 0 90 0 0 0 95 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 94 0 96 0 0 0 0 0 0 0 81 0 0 0 89 0 0 0 0 0 91 93 77 82 0 84 88 0 79 0 86 0;
 #X coords 0 127 122 0 200 140 1;
-#X restore 517 169 graph;
-#X text 227 124 first arg: 1 for only get key events from the top half
-of the keyboard (q2w3er5 \, etc). 2 for the bottom (zsxdcvg \, etc).
-0 for both.;
+#X restore 517 189 graph;
+#X text 137 54 first arg: 1 for only get key events from the top half of the keyboard (q2w3er5 \, etc). 2 for the bottom (zsxdcvg \, etc). 0 for both.;
 #X msg 78 319 set \$2-kbdmidi\$1;
-#X obj 78 300 pack f \$0;
-#X obj 4 240 inlet;
+#X obj 78 299 pack f \$0;
+#X obj 4 239 inlet;
 #X obj 154 259 lb \$1;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array \$0-kbdmidi0 123 float 1;
-#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 72 0 74 76 92 0 78 80 0 83 85 87 0 90 0 75
-0 95 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 94 0
-96 0 0 0 0 67 64 63 81 0 66 68 89 70 0 73 71 69 91 93 77 82 61 84 88
-65 79 62 86 60;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 72 0 74 76 92 0 78 80 0 83 85 87 0 90 0 75 0 95 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 94 0 96 0 0 0 0 67 64 63 81 0 66 68 89 70 0 73 71 69 91 93 77 82 61 84 88 65 79 62 86 60;
 #X coords 0 127 122 0 200 140 1;
-#X restore 517 9 graph;
+#X restore 517 29 graph;
 #X obj 4 259 route float keyboard oct;
 #X obj 78 377 sel 0;
-#X obj 105 396 +;
-#X obj 120 240 map -60 -48 -36 -24 -12 0 12 24 36;
-#X obj 120 221 + 5;
-#X obj 120 202 clip -5 3;
+#X obj 105 397 +;
+#X obj 120 222 map -60 -48 -36 -24 -12 0 12 24 36;
+#X obj 120 202 clip 0 8;
+#X text 137 28 kbdm - Translate key numbers into midi note numbers.;
 #X connect 2 0 11 0;
 #X connect 5 0 2 0;
 #X connect 6 0 5 0;
@@ -47,9 +34,8 @@ of the keyboard (q2w3er5 \, etc). 2 for the bottom (zsxdcvg \, etc).
 #X connect 8 0 6 0;
 #X connect 10 0 2 0;
 #X connect 10 1 6 0;
-#X connect 10 2 15 0;
+#X connect 10 2 14 0;
 #X connect 11 1 12 0;
 #X connect 12 0 0 0;
 #X connect 13 0 12 1;
 #X connect 14 0 13 0;
-#X connect 15 0 14 0;
