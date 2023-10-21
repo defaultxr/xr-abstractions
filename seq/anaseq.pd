@@ -1,79 +1,45 @@
-#N canvas 1680 29 1600 871 10;
-#X obj 23 17 vsl 13 128 0 127 0 0 \$0-volbar1 \$0-rvolbar1 empty 0
--9 0 10 -166441 -1 -262144 0 1;
-#X obj 10 17 vsl 13 128 0 127 0 0 \$0-volbar0 \$0-rvolbar0 empty 0
--9 0 10 -162280 -1 -262144 7800 1;
-#X obj 49 17 vsl 13 128 0 127 0 0 \$0-volbar3 \$0-rvolbar3 empty 0
--9 0 10 -162280 -1 -262144 0 1;
-#X obj 36 17 vsl 13 128 0 127 0 0 \$0-volbar2 \$0-rvolbar2 empty 0
--9 0 10 -162280 -1 -262144 0 1;
-#X obj 75 17 vsl 13 128 0 127 0 0 \$0-volbar5 \$0-rvolbar5 empty 0
--9 0 10 -228856 -1 -262144 0 1;
-#X obj 62 17 vsl 13 128 0 127 0 0 \$0-volbar4 \$0-rvolbar4 empty 0
--9 0 10 -228856 -1 -262144 7800 1;
-#X obj 101 17 vsl 13 128 0 127 0 0 \$0-volbar7 \$0-rvolbar7 empty 0
--9 0 10 -228856 -1 -262144 0 1;
-#X obj 88 17 vsl 13 128 0 127 0 0 \$0-volbar6 \$0-rvolbar6 empty 0
--9 0 10 -233017 -1 -262144 0 1;
-#X obj 127 17 vsl 13 128 0 127 0 0 \$0-volbar9 \$0-rvolbar9 empty 0
--9 0 10 -166441 -1 -262144 9000 1;
-#X obj 114 17 vsl 13 128 0 127 0 0 \$0-volbar8 \$0-rvolbar8 empty 0
--9 0 10 -162280 -1 -262144 7600 1;
-#X obj 153 17 vsl 13 128 0 127 0 0 \$0-volbar11 \$0-rvolbar11 empty
-0 -9 0 10 -162280 -1 -262144 0 1;
-#X obj 140 17 vsl 13 128 0 127 0 0 \$0-volbar10 \$0-rvolbar10 empty
-0 -9 0 10 -162280 -1 -262144 1600 1;
-#X obj 179 17 vsl 13 128 0 127 0 0 \$0-volbar13 \$0-rvolbar13 empty
-0 -9 0 10 -228856 -1 -262144 0 1;
-#X obj 166 17 vsl 13 128 0 127 0 0 \$0-volbar12 \$0-rvolbar12 empty
-0 -9 0 10 -228856 -1 -262144 6900 1;
-#X obj 205 17 vsl 13 128 0 127 0 0 \$0-volbar15 \$0-rvolbar15 empty
-0 -9 0 10 -228856 -1 -262144 0 1;
-#X obj 192 17 vsl 13 128 0 127 0 0 \$0-volbar14 \$0-rvolbar14 empty
-0 -9 0 10 -233017 -1 -262144 0 1;
+#N canvas 1680 29 1920 1048 10;
+#X obj 23 17 vsl 13 128 0 127 0 0 \$0-volbar1 \$0-rvolbar1 empty 0 -9 0 10 #a0a0a0 #000000 #fcfcfc 0 1;
+#X obj 10 17 vsl 13 128 0 127 0 0 \$0-volbar0 \$0-rvolbar0 empty 0 -9 0 10 #9c9c9c #000000 #fcfcfc 0 1;
+#X obj 49 17 vsl 13 128 0 127 0 0 \$0-volbar3 \$0-rvolbar3 empty 0 -9 0 10 #9c9c9c #000000 #fcfcfc 0 1;
+#X obj 36 17 vsl 13 128 0 127 0 0 \$0-volbar2 \$0-rvolbar2 empty 0 -9 0 10 #9c9c9c #000000 #fcfcfc 0 1;
+#X obj 75 17 vsl 13 128 0 127 0 0 \$0-volbar5 \$0-rvolbar5 empty 0 -9 0 10 #dcdcdc #000000 #fcfcfc 0 1;
+#X obj 62 17 vsl 13 128 0 127 0 0 \$0-volbar4 \$0-rvolbar4 empty 0 -9 0 10 #dcdcdc #000000 #fcfcfc 0 1;
+#X obj 101 17 vsl 13 128 0 127 0 0 \$0-volbar7 \$0-rvolbar7 empty 0 -9 0 10 #dcdcdc #000000 #fcfcfc 0 1;
+#X obj 88 17 vsl 13 128 0 127 0 0 \$0-volbar6 \$0-rvolbar6 empty 0 -9 0 10 #e0e0e0 #000000 #fcfcfc 0 1;
+#X obj 127 17 vsl 13 128 0 127 0 0 \$0-volbar9 \$0-rvolbar9 empty 0 -9 0 10 #a0a0a0 #000000 #fcfcfc 0 1;
+#X obj 114 17 vsl 13 128 0 127 0 0 \$0-volbar8 \$0-rvolbar8 empty 0 -9 0 10 #9c9c9c #000000 #fcfcfc 0 1;
+#X obj 153 17 vsl 13 128 0 127 0 0 \$0-volbar11 \$0-rvolbar11 empty 0 -9 0 10 #9c9c9c #000000 #fcfcfc 0 1;
+#X obj 140 17 vsl 13 128 0 127 0 0 \$0-volbar10 \$0-rvolbar10 empty 0 -9 0 10 #9c9c9c #000000 #fcfcfc 0 1;
+#X obj 179 17 vsl 13 128 0 127 0 0 \$0-volbar13 \$0-rvolbar13 empty 0 -9 0 10 #dcdcdc #000000 #fcfcfc 0 1;
+#X obj 166 17 vsl 13 128 0 127 0 0 \$0-volbar12 \$0-rvolbar12 empty 0 -9 0 10 #dcdcdc #000000 #fcfcfc 0 1;
+#X obj 205 17 vsl 13 128 0 127 0 0 \$0-volbar15 \$0-rvolbar15 empty 0 -9 0 10 #dcdcdc #000000 #fcfcfc 0 1;
+#X obj 192 17 vsl 13 128 0 127 0 0 \$0-volbar14 \$0-rvolbar14 empty 0 -9 0 10 #e0e0e0 #000000 #fcfcfc 0 1;
 #X obj 55 179 inlet;
-#X obj 10 148 tgl 13 0 \$0-ts0 \$0-tr0 empty 17 7 0 10 -166441 -1 -262144
-1 1;
-#X obj 23 148 tgl 13 0 \$0-ts1 \$0-tr1 empty 17 7 0 10 -166441 -1 -262144
-0 1;
-#X obj 36 148 tgl 13 0 \$0-ts2 \$0-tr2 empty 17 7 0 10 -166441 -1 -262144
-0 1;
-#X obj 49 148 tgl 13 0 \$0-ts3 \$0-tr3 empty 17 7 0 10 -166441 -1 -262144
-0 1;
-#X obj 62 148 tgl 13 0 \$0-ts4 \$0-tr4 empty 17 7 0 10 -233017 -1 -262144
-1 1;
-#X obj 75 148 tgl 13 0 \$0-ts5 \$0-tr5 empty 17 7 0 10 -233017 -1 -262144
-0 1;
-#X obj 88 148 tgl 13 0 \$0-ts6 \$0-tr6 empty 17 7 0 10 -233017 -1 -262144
-0 1;
-#X obj 101 148 tgl 13 0 \$0-ts7 \$0-tr7 empty 17 7 0 10 -258699 -1
--262144 0 1;
-#X obj 166 148 tgl 13 0 \$0-ts12 \$0-tr12 empty 17 7 0 10 -233017 -1
--262144 1 1;
-#X obj 179 148 tgl 13 0 \$0-ts13 \$0-tr13 empty 17 7 0 10 -233017 -1
--262144 0 1;
-#X obj 192 148 tgl 13 0 \$0-ts14 \$0-tr14 empty 17 7 0 10 -233017 -1
--262144 0 1;
-#X obj 205 148 tgl 13 0 \$0-ts15 \$0-tr15 empty 17 7 0 10 -233017 -1
--262144 0 1;
-#X obj 114 148 tgl 13 0 \$0-ts8 \$0-tr8 empty 17 7 0 10 -166441 -1
--262144 1 1;
-#X obj 127 148 tgl 13 0 \$0-ts9 \$0-tr9 empty 17 7 0 10 -166441 -1
--262144 1 1;
-#X obj 140 148 tgl 13 0 \$0-ts10 \$0-tr10 empty 17 7 0 10 -166441 -1
--262144 0 1;
-#X obj 153 148 tgl 13 0 \$0-ts11 \$0-tr11 empty 17 7 0 10 -166441 -1
--262144 0 1;
-#X floatatom 204 0 2 0 7 0 - #0-cpatswitch #0-curpat;
-#X obj 189 0 bng 15 250 50 0 \$0-go empty go 1 7 0 10 -4034 -1 -1;
-#X obj 159 0 bng 15 250 50 0 \$0-save empty sv 1 7 0 10 -258113 -1
--1;
-#X obj 174 0 bng 15 250 50 0 \$0-copy empty cp 1 7 0 10 -260097 -1
--1;
+#X obj 10 148 tgl 13 0 \$0-ts0 \$0-tr0 empty 17 7 0 10 #a0a0a0 #000000 #fcfcfc 0 1;
+#X obj 23 148 tgl 13 0 \$0-ts1 \$0-tr1 empty 17 7 0 10 #fc2828 #000000 #fcfcfc 0 1;
+#X obj 36 148 tgl 13 0 \$0-ts2 \$0-tr2 empty 17 7 0 10 #a0a0a0 #000000 #fcfcfc 0 1;
+#X obj 49 148 tgl 13 0 \$0-ts3 \$0-tr3 empty 17 7 0 10 #a0a0a0 #000000 #fcfcfc 0 1;
+#X obj 62 148 tgl 13 0 \$0-ts4 \$0-tr4 empty 17 7 0 10 #e0e0e0 #000000 #fcfcfc 0 1;
+#X obj 75 148 tgl 13 0 \$0-ts5 \$0-tr5 empty 17 7 0 10 #e0e0e0 #000000 #fcfcfc 0 1;
+#X obj 88 148 tgl 13 0 \$0-ts6 \$0-tr6 empty 17 7 0 10 #e0e0e0 #000000 #fcfcfc 0 1;
+#X obj 101 148 tgl 13 0 \$0-ts7 \$0-tr7 empty 17 7 0 10 #e0e0e0 #000000 #fcfcfc 0 1;
+#X obj 166 148 tgl 13 0 \$0-ts12 \$0-tr12 empty 17 7 0 10 #e0e0e0 #000000 #fcfcfc 0 1;
+#X obj 179 148 tgl 13 0 \$0-ts13 \$0-tr13 empty 17 7 0 10 #e0e0e0 #000000 #fcfcfc 0 1;
+#X obj 192 148 tgl 13 0 \$0-ts14 \$0-tr14 empty 17 7 0 10 #e0e0e0 #000000 #fcfcfc 0 1;
+#X obj 205 148 tgl 13 0 \$0-ts15 \$0-tr15 empty 17 7 0 10 #e0e0e0 #000000 #fcfcfc 0 1;
+#X obj 114 148 tgl 13 0 \$0-ts8 \$0-tr8 empty 17 7 0 10 #a0a0a0 #000000 #fcfcfc 0 1;
+#X obj 127 148 tgl 13 0 \$0-ts9 \$0-tr9 empty 17 7 0 10 #a0a0a0 #000000 #fcfcfc 0 1;
+#X obj 140 148 tgl 13 0 \$0-ts10 \$0-tr10 empty 17 7 0 10 #a0a0a0 #000000 #fcfcfc 0 1;
+#X obj 153 148 tgl 13 0 \$0-ts11 \$0-tr11 empty 17 7 0 10 #a0a0a0 #000000 #fcfcfc 0 1;
+#X floatatom 204 0 2 0 7 0 - \$0-cpatswitch \$0-curpat 0;
+#X obj 189 0 bng 15 250 50 0 \$0-go empty go 1 7 0 10 #00fc04 #000000 #000000;
+#X obj 159 0 bng 15 250 50 0 \$0-save empty sv 1 7 0 10 #fc0400 #000000 #000000;
+#X obj 174 0 bng 15 250 50 0 \$0-copy empty cp 1 7 0 10 #fc8000 #000000 #000000;
 #X obj 306 12 r \$0-curpat;
 #X obj 291 31 f;
 #X obj 27 237 count 16;
-#N canvas 1680 29 1600 871 set 0;
+#N canvas 1680 29 1920 1048 set 0;
 #X obj 260 263 inlet;
 #X obj 260 282 unpack f f;
 #X obj 313 352 s;
@@ -336,7 +302,7 @@
 #X obj 595 488 r \$0-vs;
 #X msg 547 488 set \$1;
 #X obj 595 507 pack f f \$0;
-#X floatatom 596 441 5 0 0 0 - - -;
+#X floatatom 596 441 5 0 0 0 - - - 0;
 #X msg 595 526 \; \$3-rvolbar\$2 \$1;
 #X connect 0 0 19 0;
 #X connect 1 0 20 0;
@@ -507,8 +473,7 @@
 #X obj 203 256 symbol \$1;
 #X text 249 149 send a symbol to the inlet to "save as...";
 #X obj 154 206 inlet;
-#X text 356 211 anaseq stores its data in two files - anaseqb for the
-bars \, anaseqt for the toggle switches.;
+#X text 356 211 anaseq stores its data in two files - anaseqb for the bars \, anaseqt for the toggle switches.;
 #X msg 423 325 ~d/anaseqb-\$1;
 #X msg 290 325 ~d/anaseqt-\$1;
 #X obj 423 363 pack s \$0;
@@ -520,8 +485,7 @@ bars \, anaseqt for the toggle switches.;
 #X obj 203 275 emptysymbol;
 #X obj 249 480 print anaseq;
 #X msg 249 416 data saved as \$1;
-#X msg 203 435 cant write table - no name provided (open anaseq and
-enter one in the symbol box);
+#X msg 203 435 cant write table - no name provided (open anaseq and enter one in the symbol box);
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 2 0;
@@ -573,8 +537,8 @@ enter one in the symbol box);
 #X connect 15 1 8 0;
 #X connect 15 1 7 0;
 #X restore 499 95 pd loader;
-#X symbolatom 445 59 20 0 0 0 - - -;
-#X symbolatom 499 77 20 0 0 0 - - -;
+#X symbolatom 445 59 20 0 0 0 - - - 0;
+#X symbolatom 499 77 20 0 0 0 - - - 0;
 #N canvas 0 0 1600 849 copier 0;
 #X obj 342 86 r \$0-copy;
 #X obj 369 124 route float list bang;
@@ -636,39 +600,15 @@ enter one in the symbol box);
 #X obj 276 255 s \$0-go;
 #X obj 291 -7 r \$0-go;
 #X obj 306 236 s \$0-copy;
-#X text 469 117 the sequencer accepts bangs to go to the next step
-\, or floats from 0 to 15 to specify the step.;
-#X text 470 146 WARNING: be sure to change the paths within the "pd
-saver" and "pd loader" sub-patches before you attempt to save \; it's
-unlikely that the path i use exists on your system.;
-#X text 475 509 the "cp" button will copy the previous pattern to the
-current one. if you want to copy a different pattern \, you can send
-a "copy [from] [to]" message to copy from whichever pattern you want.
-;
-#X text 470 184 if you send a "save" message without any extra parameters
-\, the sequencer will overwrite the data to the file specified by the
-anaseq's first argument (\$1). otherwise \, you can always send "save
-foo" to save to the file "foo".;
-#X text 470 236 if you don't specify the filename to save the data
-to by providing a first argument for the drumseq \, it may attempt
-to write to the file "anaseq-0" which is most likely undesirable. if
-you've made a pattern without a first argument and you want to save
-it \, type a name in the symbol atom above and the data will be saved
-there. then you can add a first argument to the anaseq and it should
-load the newly-saved data.;
-#X text 472 329 send a "pat [number]" message to change the pattern
-being displayed. send a "play [number] [output]" message to change
-the pattern being played. since there are 4 outputs \, you can have
-4 different patterns playing simultaneously. outputs are indexed from
-0 to 3;
-#X text 473 391 the "go" button (as well as sending a "go" message)
-changes the pattern playing on the first outlet to the one currently
-displayed.;
-#X text 475 559 sending a "bypass [number] [value]" message will send
-the value to the outlet specified by the number. remember that outlets
-are indexed from zero.;
-#X obj 55 198 route bang float set toggle tog play pat go copy bypass
-;
+#X text 469 117 the sequencer accepts bangs to go to the next step \, or floats from 0 to 15 to specify the step.;
+#X text 470 146 WARNING: be sure to change the paths within the "pd saver" and "pd loader" sub-patches before you attempt to save \; it's unlikely that the path i use exists on your system.;
+#X text 475 589 the "cp" button will copy the previous pattern to the current one. if you want to copy a different pattern \, you can send a "copy [from] [to]" message to copy from whichever pattern you want.;
+#X text 470 194 if you send a "save" message without any extra parameters \, the sequencer will overwrite the data to the file specified by the anaseq's first argument (\$1). otherwise \, you can always send "save foo" to save to the file "foo".;
+#X text 470 256 if you don't specify the filename to save the data to by providing a first argument for the drumseq \, it may attempt to write to the file "anaseq-0" which is most likely undesirable. if you've made a pattern without a first argument and you want to save it \, type a name in the symbol atom above and the data will be saved there. then you can add a first argument to the anaseq and it should load the newly-saved data.;
+#X text 472 369 send a "pat [number]" message to change the pattern being displayed. send a "play [number] [output]" message to change the pattern being played. since there are 4 outputs \, you can have 4 different patterns playing simultaneously. outputs are indexed from 0 to 3;
+#X text 473 441 the "go" button (as well as sending a "go" message) changes the pattern playing on the first outlet to the one currently displayed.;
+#X text 475 649 sending a "bypass [number] [value]" message will send the value to the outlet specified by the number. remember that outlets are indexed from zero.;
+#X obj 55 198 route bang float set toggle tog play pat go copy bypass;
 #X obj 349 217 s \$0-bypass;
 #N canvas 1680 29 1600 871 seq 0;
 #X obj 199 54 inlet;
@@ -683,10 +623,8 @@ are indexed from zero.;
 #X text 233 84 here's some math to make sure we get good numbers.;
 #X text 458 237 here's stuff to change the colors of the tgls.;
 #X obj 199 338 s \$0-seq;
-#X msg 316 164 \; \$2-tr\$1 color 13 \; \$2-tr\$1 color 13 \; \$2-tr\$1
-color 13 \; \$2-tr\$1 color 13;
-#X msg 316 314 \; \$3-tr\$1 color \$2 \; \$3-tr\$1 color \$2 \; \$3-tr\$1
-color \$2 \; \$3-tr\$1 color \$2;
+#X msg 316 164 \; \$2-tr\$1 color 13 \; \$2-tr\$1 color 13 \; \$2-tr\$1 color 13 \; \$2-tr\$1 color 13;
+#X msg 316 314 \; \$3-tr\$1 color \$2 \; \$3-tr\$1 color \$2 \; \$3-tr\$1 color \$2 \; \$3-tr\$1 color \$2;
 #X obj 347 276 map 1 1 1 1 10 10 10 10;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -703,7 +641,7 @@ color \$2 \; \$3-tr\$1 color \$2;
 #X connect 8 1 14 0;
 #X connect 14 0 7 1;
 #X restore 84 274 pd seq;
-#X floatatom 139 0 3 0 127 0 - #0-vr #0-vs;
+#X floatatom 139 0 3 0 127 0 - \$0-vr \$0-vs 0;
 #X obj -13 349 outlet;
 #X obj 29 349 outlet;
 #X obj 71 349 outlet;
@@ -712,12 +650,8 @@ color \$2 \; \$3-tr\$1 color \$2;
 #X msg 224 179 play 1 1 \, play 2 2 \, play 3 3;
 #X obj 291 50 s \$0-playpat0;
 #X obj 1 179 r anaseq;
-#X text 474 427 sending a "set [x] [value]" message will change the
-value of the slider for the specified x-index on the currently displayed
-pattern. remember that x is indexed from zero!;
-#X text 475 467 sending a "tog [x] [value]" message will change the
-value of the toggle for the specified x-index on the currently displayed
-pattern.;
+#X text 474 487 sending a "set [x] [value]" message will change the value of the slider for the specified x-index on the currently displayed pattern. remember that x is indexed from zero!;
+#X text 475 537 sending a "tog [x] [value]" message will change the value of the toggle for the specified x-index on the currently displayed pattern.;
 #X connect 16 0 65 0;
 #X connect 37 0 38 1;
 #X connect 38 0 75 0;
