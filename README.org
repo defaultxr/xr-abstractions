@@ -291,6 +291,7 @@ Here is a list of tasks and ideas for the future of the library:
 - use ~swap~ instead of a "$2 $1" message when possible.
 - maybe change this readme into markdown format? it's more common but org provides export options and other potentially-useful features, and is easier to write.
 - document alternatives to this library, and to individual objects. for example, how does ~sequencer~ from ELSE compare to ~map~?
+- ensure there are no object name conflicts with other popular libraries
 
 ** decrease library dependencies
 some of the functionality used by them can either be reproduced myself, or may be part of modern versions of pd.
