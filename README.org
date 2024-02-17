@@ -25,9 +25,9 @@ Here's a list of the libraries that this one depends on. All of these should be 
 - cyclone
 - ext13 (for ~receive13~, ...)
 - iemguts
-- iemlib (for ~dollarg~, ...)
+- iemlib (for ~dollarg~, ~any~, ...)
 - motex (for ~getenv~, ...)
-- zexy
+- zexy (for ~drip~, ...)
 
 * Installation
 Once you have the requirements listed above and have added this library and its subdirectories to your Pure Data path, the abstractions should "just work".
