@@ -241,6 +241,7 @@ Sequencers and similar high level control objects.
 Miscellaneous utilities.
 
 - ~*+~~ - multiply and then add to a signal with one object.
+- ~*+~ - multiply and then add to a number with one object.
 - ~autosend~ - use the first item in a message as the destination for the rest of the message.
 - ~chars~ - separate a symbol into a list of its characters.
 - ~colors~ - outputs a pd color when the left inlet is banged. otherwise, the inlets take floats: from left, the red amount, green amount, and blue amount.
