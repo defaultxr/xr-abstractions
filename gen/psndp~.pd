@@ -1,17 +1,15 @@
-#N canvas 0 29 800 849 10;
+#N canvas 0 29 2560 1568 10;
 #X obj 381 358 soundfiler;
-#X obj 456 222 loadbang;
-#X obj 456 251 f \$0;
+#X obj 458 222 loadbang;
+#X obj 458 251 f \$0;
 #X obj 381 307 pack s f;
 #X obj 297 358 table \$0-file;
 #X obj 180 601 outlet~;
 #X obj 381 250 symbol \$1;
-#X obj 319 250 openpanel;
-#X obj 302 250 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X symbolatom 82 269 50 0 0 0 - - -;
-#X obj 381 229 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 398 219 openpanel;
+#X obj 398 202 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X symbolatom 82 269 50 0 0 0 - - - 0;
+#X obj 381 202 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 46 185 inlet;
 #X obj 46 250 / 127;
 #X msg 46 223 127;
@@ -21,24 +19,15 @@
 #X obj 46 299 t b f;
 #X msg 381 326 read -resize \$1 \$2-file \; \$2-file normalize;
 #X obj 19 273 sel 0;
-#X obj 381 269 kfilename;
 #N canvas 0 29 800 849 voices 0;
-#X obj 100 116 tgl 15 0 empty \$0-v0t empty 17 7 0 10 -262144 -1 -1
-0 1;
-#X obj 115 116 tgl 15 0 empty \$0-v1t empty 17 7 0 10 -262144 -1 -1
-0 1;
-#X obj 130 116 tgl 15 0 empty \$0-v2t empty 17 7 0 10 -262144 -1 -1
-1 1;
-#X obj 145 116 tgl 15 0 empty \$0-v3t empty 17 7 0 10 -262144 -1 -1
-1 1;
-#X obj 160 116 tgl 15 0 empty \$0-v4t empty 17 7 0 10 -262144 -1 -1
-1 1;
-#X obj 175 116 tgl 15 0 empty \$0-v5t empty 17 7 0 10 -262144 -1 -1
-1 1;
-#X obj 190 116 tgl 15 0 empty \$0-v6t empty 17 7 0 10 -262144 -1 -1
-0 1;
-#X obj 205 116 tgl 15 0 empty \$0-v7t empty 17 7 0 10 -262144 -1 -1
-0 1;
+#X obj 100 116 tgl 15 0 empty \$0-v0t empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 115 116 tgl 15 0 empty \$0-v1t empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 130 116 tgl 15 0 empty \$0-v2t empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 145 116 tgl 15 0 empty \$0-v3t empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 160 116 tgl 15 0 empty \$0-v4t empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 175 116 tgl 15 0 empty \$0-v5t empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 190 116 tgl 15 0 empty \$0-v6t empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 205 116 tgl 15 0 empty \$0-v7t empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X coords 0 -1 1 1 120 31 1 100 100;
 #X restore 285 397 pd voices;
 #N canvas 0 29 800 849 v0 0;
@@ -200,7 +189,7 @@
 #X connect 2 0 3 1;
 #X connect 3 0 18 0;
 #X connect 6 0 9 0;
-#X connect 6 0 20 0;
+#X connect 6 0 3 0;
 #X connect 7 0 6 0;
 #X connect 8 0 7 0;
 #X connect 10 0 6 0;
@@ -211,26 +200,25 @@
 #X connect 14 1 12 0;
 #X connect 14 2 6 0;
 #X connect 14 3 6 0;
-#X connect 16 0 28 0;
-#X connect 17 0 31 0;
+#X connect 16 0 27 0;
+#X connect 17 0 30 0;
 #X connect 17 1 16 1;
 #X connect 18 0 0 0;
 #X connect 19 1 17 0;
-#X connect 20 0 3 0;
+#X connect 21 0 5 0;
 #X connect 22 0 5 0;
 #X connect 23 0 5 0;
 #X connect 24 0 5 0;
 #X connect 25 0 5 0;
 #X connect 26 0 5 0;
-#X connect 27 0 5 0;
-#X connect 28 0 22 0;
-#X connect 28 1 23 0;
-#X connect 28 2 24 0;
-#X connect 28 3 25 0;
-#X connect 28 4 26 0;
-#X connect 28 5 27 0;
-#X connect 28 6 29 0;
-#X connect 28 7 30 0;
+#X connect 27 0 21 0;
+#X connect 27 1 22 0;
+#X connect 27 2 23 0;
+#X connect 27 3 24 0;
+#X connect 27 4 25 0;
+#X connect 27 5 26 0;
+#X connect 27 6 28 0;
+#X connect 27 7 29 0;
+#X connect 28 0 5 0;
 #X connect 29 0 5 0;
-#X connect 30 0 5 0;
-#X connect 31 0 16 0;
+#X connect 30 0 16 0;
