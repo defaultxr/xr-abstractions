@@ -261,7 +261,6 @@ Miscellaneous utilities.
 - ~mp3conv~ - use the ~lame~ command-line utility to convert an mp3 to wav, storing the wav in /tmp and outputting the filename of the wav when conversion finishes. you'll need to have ~lame~ installed in order for this to actually work.
 - ~o~~ - interface for mono output to ~dac~~.
 - ~parser~ - parses lisp-style commands from within the incoming message (i.e. "(function argument1 argument2 ... argumentN)") and outputs the original message with the output of each command replacing the command. currently accepts "rc" for ~rchoice~ and "rr" for ~rrange~. it's a decent start but I will probably add memory to it as well. maybe eventually it will be a full-fledged lisp implementation! ha.
-- ~po~~ - panned mono output. same as ~o~~ but the first argument is the stereo panning position of the input, from -45 to 45.
 - ~porta~~ - portamento. might need work.
 - ~qtabwrite~ - quick tab write. specify a table as the argument, and then you can send messages to the inlet or to qt-$1 in the format "INDEX VALUE"
 - ~qtimer~ - quantizible timer. similar to ~interval~ but allows you to specify the granularity of output values.

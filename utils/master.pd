@@ -80,7 +80,7 @@ y z;
 #X obj 122 299 s master-listman-ro;
 #X text 273 81 syntax of bye: bye <NAME>;
 #X text 273 122 SNAME = a letter to prefix before the name that [master]
-will assign to that object. i.e. o~ \, so~ \, and po~ use "o";
+will assign to that object. i.e. o~ and so~ use "o";
 #X text 273 153 NAME = the name that [master] gave to the object.;
 #X text 273 61 syntax of hi: hi <FROM> [SNAME];
 #X obj 83 387 value MASTER;

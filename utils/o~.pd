@@ -1,4 +1,4 @@
-#N canvas 1920 30 1920 1048 10;
+#N canvas 0 0 2560 1568 10;
 #X obj 249 246 inlet~;
 #X obj 262 9 inlet;
 #X obj 103 245 hsl 55 13 0 127 0 0 \$0-v \$0-vols volume -1 8 0 10 #14e814 #000000 #000000 0 1;
@@ -53,12 +53,12 @@
 #X obj 262 50 route vol mvol mute bang pan;
 #X obj 394 98 s \$0-pan;
 #X obj 402 73 lb \$1;
-#X text 476 151 The small toggle in the top row is the mute switch. When active \, the volume slider is green and sound is sent to the dac. When muted \, the volume slider is red and no sound is output.;
-#X text 476 277 The big toggle--to the right of the level meter--is a "select". When it is active \, this abstraction will respond to its keyboard shortcuts. It automatically deactivates itself when you enter edit mode.;
-#X text 476 346 The volume slider should be self-explanatory. When it's red \, it means the output is muted. Click the small toggle to unmute.;
-#X text 479 52 Arguments:;
-#X text 479 121 Interface:;
-#N canvas 1920 30 1920 1050 meter 0;
+#X text 476 231 The small toggle in the top row is the mute switch. When active \, the volume slider is green and sound is sent to the dac. When muted \, the volume slider is red and no sound is output.;
+#X text 476 357 The big toggle--to the right of the level meter--is a "select". When it is active \, this abstraction will respond to its keyboard shortcuts. It automatically deactivates itself when you enter edit mode.;
+#X text 476 426 The volume slider should be self-explanatory. When it's red \, it means the output is muted. Click the small toggle to unmute.;
+#X text 479 132 Arguments:;
+#X text 479 201 Interface:;
+#N canvas 1920 30 2560 1568 meter 0;
 #X obj 572 182 inlet~;
 #X obj 602 229 threshold~ 1 100 1 100;
 #X obj 572 229 env~;
@@ -73,9 +73,10 @@
 #X connect 4 0 3 0;
 #X connect 5 0 3 0;
 #X restore 249 337 pd meter;
-#X text 475 216 The vertical slider to the right of the mute is a level meter. It shows you the level of the incoming signal and has a red background when the signal is outside of -1 to 1 ("clipping"). It does not react to clicks.;
-#X text 477 80 \$1 = panning position (o~ only). from -45 (hard left) to 45 (hard right). defaults to 0 which is center.;
-#X text 477 6 o~ & so~ - output audio to dac~ with conveniences;
+#X text 475 296 The vertical slider to the right of the mute is a level meter. It shows you the level of the incoming signal and has a red background when the signal is outside of -1 to 1 ("clipping"). It does not react to clicks.;
+#X text 477 160 \$1 = panning position (o~ only). from -45 (hard left) to 45 (hard right). defaults to 0 which is center.;
+#X text 477 6 o~ - convenient dac~ output;
+#X text 477 36 o~ and so~ are audio output objects. They wrap dac~ and add a few conveniences. o~ accepts mono input (sending it equally to the left and right speakers with optional panning) \, and so~ is for stereo input. With these abstractions you can control volume and mute using the built-in controls \, or via messages.;
 #X connect 0 0 13 0;
 #X connect 1 0 28 0;
 #X connect 3 0 14 0;
