@@ -297,7 +297,6 @@ Here is a list of tasks and ideas for the future of the library:
 some of the functionality used by them can either be reproduced myself, or may be part of modern versions of pd.
 - ~dollarg~ can be replaced by ~pdcontrol~'s ~args~ message.
 - maybe ~list-drip~ can be replaced by ~drip~ ?
-- maybe ~ftos~ can be replaced by ~makefilename %s~ ?
 
 ** general/ideas
 - make an "examples" folder full of better examples instead of cramming as many abstractions as possible into crappy "demos"
