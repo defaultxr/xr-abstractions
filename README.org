@@ -273,6 +273,10 @@ Miscellaneous utilities.
 - ~ssend~~ - settable ~send~~.
 - ~sym~ - turn a list into a symbol (basically just ~l2s~ with an empty symbol sent to the right inlet. see also: ~chars~)
 
+** scripts
+Various Pure Data utility scripts.
+- ~pd-objects-search~ - Get objects used in the specified file(s) or files that reference the specified object.
+
 * Future
 There is a lot of work to be done for this library to clean it up, fix bugs, add features, and remove deprecated/broken/unneeded abstractions. If you're using this library, keep an eye on the commit log when updating to note potentially breaking changes.
 

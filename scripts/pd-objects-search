@@ -1,0 +1,55 @@
+#!/usr/bin/env fish
+# pd-objects-search - Get objects used in the specified file(s) or files that reference the specified object.
+
+set -- script "$(path basename (status filename))"
+
+argparse -n "$script" 'h/help' 'u/used-by' 'U/using' -- $argv
+
+if set -q _flag_h
+    echo "$script - Get objects used in the specified file(s) or files that reference the specified object."
+    echo "Usage: $script [arguments]"
+    echo
+    echo "  -h/--help    - Print help and exit."
+    echo "  -u/--used-by - Print Pd objects that the specified files use."
+    echo "  -U/--using   - Given a Pd object name (first argument), and files or directories (other arguments), print the files that use that object."
+    exit
+end
+
+function fileize -d "Echo the arguments, with all directories replaced with the files contained within them."
+    for item in $argv
+        if test -d "$item"
+            find "$item" -type f
+        else
+            echo "$item"
+        end
+    end
+end
+
+function file-scan-for-pd-objects -d "For each line in the specified file, print the object it contains, if any."
+    cat "$argv[1]" | string match --regex --groups-only '^#X obj [-0-9]+ [-0-9]+ ([^ ;]+)'
+end
+
+function file-contains-pd-object -d "True if the specified Pd object (first argument) is contained in the specified file (second argument)."
+    set -l output (cat "$argv[2]" | string match --regex --groups-only "^#X obj [-0-9]+ [-0-9]+ ($argv[1])[ ;]")
+    if test -z "$output"
+        return 1
+    else
+        return 0
+    end
+end
+
+if set -q _flag_used_by
+    for file in (fileize $argv)
+        file-scan-for-pd-objects "$file2"
+    end | sort | uniq
+else if set -q _flag_using
+    set -l object "$argv[1]"
+    for file in (fileize $argv[2..])
+        if file-contains-pd-object "$object" "$file"
+            echo "$file"
+        end
+    end
+else
+    echo "$script: Error: You must specify an action; please provide either --used-by or --using." >&2
+    exit 1
+end
