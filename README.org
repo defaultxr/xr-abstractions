@@ -97,7 +97,6 @@ See also: [[https://github.com/defaultxr/pd-ladspa-abstractions][pd-ladspa-abstr
 - ~mcomb~~ - 
 - ~mfv~~ - 
 - ~mmf~~ - 
-- ~old_flanger~~ - older version of ~flanger~~. deprecated; don't use.
 - ~phaser~~ - 
 - ~pingpong~~ - 
 - ~pitchshifter~~ - 
