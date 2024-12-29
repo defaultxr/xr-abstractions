@@ -1,22 +1,19 @@
-#N canvas 1920 32 1920 1048 10;
+#N canvas 1920 32 2560 1566 10;
 #X obj 226 116 ktimer;
-#X floatatom 153 133 4 0 0 0 - - -;
-#X floatatom 139 133 2 0 0 0 - - -;
-#X floatatom 125 133 2 0 0 0 - - -;
+#X floatatom 153 133 4 0 0 0 - - - 0;
+#X floatatom 139 133 2 0 0 0 - - - 0;
+#X floatatom 119 133 3 0 0 0 - - - 0;
 #X msg 228 82 start;
 #X msg 271 85 stop;
-#X obj 149 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
--1;
-#X obj 164 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
--1 -1;
+#X obj 149 118 bng 15 250 50 0 empty empty empty 17 7 0 10 #00fc04 #000000 #000000;
+#X obj 164 118 bng 15 250 50 0 empty empty empty 17 7 0 10 #fc0400 #000000 #000000;
 #X obj 228 8 inlet;
 #X obj 228 60 sel 1 0;
 #X obj 194 146 outlet;
 #X obj 236 146 outlet;
 #X obj 278 146 outlet;
 #X obj 228 27 route float bang;
-#X obj 294 52 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 294 52 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 0 0 3 0;
 #X connect 0 0 10 0;
 #X connect 0 1 2 0;
