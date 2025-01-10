@@ -253,7 +253,6 @@ Miscellaneous utilities.
 - =hue_to_rgb= - convert a hue to rgb colors. see also: =colors=
 - =interval= - outputs time between bangs, measured with =realtime=.
 - =itimer= - interface timer. shows minutes, seconds, and milliseconds.
-- =ktimer= - timer abstraction. outputs minutes, seconds, and milliseconds from an internal =realtime= object. this is used by =itimer= but I might delete this.
 - =lb= - =loadbang= abstraction. lets you output a specific number or value on load, rather than just a bang.
 - =limit~= - handy limiter abstraction. basically just outputs a signal limited by =limiter~= in case you're lazy like me. be warned that this introduces a delay of 64 samples, of course.
 - =list-find-1= - basically the same as =list-find= but only finds the first instance of an item in the list.
