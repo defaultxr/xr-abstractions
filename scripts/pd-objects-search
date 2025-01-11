@@ -1,5 +1,6 @@
 #!/usr/bin/env fish
 # pd-objects-search - Get objects used in the specified file(s) or files that reference the specified object.
+# requirements: fish, find
 
 set -- script "$(path basename (status filename))"
 
@@ -44,7 +45,11 @@ if set -q _flag_used_by
     end | sort | uniq
 else if set -q _flag_using
     set -l object "$argv[1]"
-    for file in (fileize $argv[2..])
+    set -l files $argv[2..]
+    if test (count $files) = '0'
+        set files '.'
+    end
+    for file in (fileize $files)
         if file-contains-pd-object "$object" "$file"
             echo "$file"
         end
