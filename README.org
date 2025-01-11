@@ -25,12 +25,21 @@ Here's a list of the libraries that this one depends on. All of these should be 
 - cyclone
 - ext13 (for =receive13=, ...)
 - iemguts
-- iemlib (for =dollarg=, =any=, ...)
-- motex (for =getenv=, ...)
-- zexy (for =drip=, =<~=, ...)
-- list-abs (for =list-drip=, =list-drip2=, ...)
+- iemlib (for =dollarg=, =any=, =unsig~=, ...)
+- motex (for =pan~=, =getenv=, ...)
+- zexy (for =l=, =list2symbol=, =symbol2list=, =drip=, =makesymbol=, =nop=, ===~=, =<~=, =>~=...)
+- list-abs (for =list-drip=, =list-drip2=, =compare-any=, ...)
+- hcs (for =autoscale=, =cursor=, ...)
+- markex (for =average=, ...)
+- cxc (for =bfilt2=, ...)
+- ekext (for =count=, ...)
+- freeverb (for =freeverb~=, ...)
+- jmmmp (for =prepent=, ...)
+- creb (for =bpm=, ...)
+- my local collection (for =accum=, =count~=, =fromsymbol=, =comb~=, ...)
 
 * Installation
+# FIX: improve the installation instructions (make them step-by-step)
 Once you have the requirements listed above and have added this library and its subdirectories to your Pure Data path, the abstractions should "just work".
 
 * Overview
@@ -116,10 +125,10 @@ See also: [[https://github.com/defaultxr/pd-ladspa-abstractions][pd-ladspa-abstr
 ** gen
 Abstractions for generating sound.
 
-- =analog~= - analog "simulation". Basically supposed to be like quiet line noise and a small dc offset, for providing as input to your synths to make them not as static. [FIX - improve this]
-- =noisef~= - Noise with a frequency input. Effectively just white noise through sample+hold.
-- =playsf~= - play a file from the argument. Effectively just a slightly more convenient wrapper around =readsf~=.
-- =pm~= - Basic sine-based phase modulation oscillator.
+- =analog~= - "analog simulation". Basically this is just quiet noise and a small DC offset, for providing as input to your synths to make them not as static.
+- =noisef~= - Noise with a frequency input. This is basically just white noise through sample+hold.
+- =playsf~= - play a file from the argument. basically just a slightly more convenient wrapper around =readsf~=.
+- =pm~= - A simple sine-based phase modulation oscillator.
 - =psndm~= - polyphonic midinote-based sound player. You can send it midi numbers to play the sample at different rates. It has 8 voices. [FIX - can this be improved with =poly~=?]
 - =psndp~= - polyphonic sound player. Similar to =sndp~= but with 6 voices. [FIX - can this be improved with =poly~=?]
 - =pulse~= - Basic pulse wave oscillator with modulatable pulse width.
@@ -129,7 +138,7 @@ Abstractions for generating sound.
 - =saw~= - Basic saw wave oscillator. Effectively just a bipolar version of =phasor~=.
 - =sine~= - basic sine wave oscillator. Based on =phasor~= and =cos~=. [FIX - this is redundant with =pm~=.]
 - =snd~= - convenient sound file access; provide a filename as the first argument to load it, then send a signal in the range 0-1 to the first inlet to read from the buffer.
-- =sndcf~= - =snd~= control based on multiple of the sound's base rate. [FIX - rename to =sndcr~=]
+- =sndcf~= - =snd~= control based on multiple of the sound's base rate.
 - =sndcl~= - =snd~= control based on =line~=. Allows you to specify the start and end points and the time between them.
 - =sndcm~= - =snd~= control based on midi note numbers. 60 is the default midi note number [FIX]
 - =sndd~= - sound duplicate. Like =snd~= but does not re-load the file; simply re-uses the existing table containing the already-loaded file. Useful for polyphony.
@@ -137,7 +146,7 @@ Abstractions for generating sound.
 - =sndl~= - sound line. Play a sound or snippets of it based a =line~=. Effectively just shorthand for =snd~= and =sndcl~=.
 - =sndm~= - sound midi. Play a sound based on midi note numbers, with 60 being the default base note. Effectively just shorthand for =snd~= and =sndcm~=.
 - =sndp~= - sound play. Loads a sound into a table and accepts bangs to play the whole sound. Handy for one-shot samples like drums.
-- =stsnd~= - stereo sound. Similar to =snd~= but for stereo samples. [FIX - check if this works]
+- =stsnd~= - stereo sound. Similar to =snd~= but for stereo samples.
 - =timestretch~= - "timestretch" a sound by going back and forth through it.
 - =tri~= - Basic triangle oscillator. Can be smoothly morphed to an upward or downward saw wave using its second signal inlet.
 
@@ -252,8 +261,8 @@ Miscellaneous utilities.
 - =emptysymbol= - Test if a symbol is the empty symbol.
 - =hue_to_rgb= - convert a hue to rgb colors. see also: =colors=
 - =interval= - outputs time between bangs, measured with =realtime=.
-- =itimer= - interface timer. shows minutes, seconds, and milliseconds.
-- =lb= - =loadbang= abstraction. lets you output a specific number or value on load, rather than just a bang.
+- =itimer= - Timer with an interface. Shows minutes, seconds, and milliseconds.
+- =lb= - like =loadbang=, but outputs its argument at load time, rather than just a bang.
 - =limit~= - handy limiter abstraction. basically just outputs a signal limited by =limiter~= in case you're lazy like me. be warned that this introduces a delay of 64 samples, of course.
 - =list-find-1= - basically the same as =list-find= but only finds the first instance of an item in the list.
 - =list-replacer= - replaces all instances of one item in a list with another list.
@@ -263,9 +272,8 @@ Miscellaneous utilities.
 - =mp3conv= - use the =lame= command-line utility to convert an mp3 to wav, storing the wav in /tmp and outputting the filename of the wav when conversion finishes. you'll need to have =lame= installed in order for this to actually work.
 - =o~= - interface for mono output to =dac~=.
 - =parser= - parses lisp-style commands from within the incoming message (i.e. "(function argument1 argument2 ... argumentN)") and outputs the original message with the output of each command replacing the command. currently accepts "rc" for =rchoice= and "rr" for =rrange=. it's a decent start but I will probably add memory to it as well. maybe eventually it will be a full-fledged lisp implementation! ha.
-- =parse-arguments= - parse dash-prefixed "arguments" from a list.
 - =porta~= - portamento. might need work.
-- =qtabwrite= - quick tab write. specify a table as the argument, and then you can send messages to the inlet or to qt-$1 in the format "INDEX VALUE"
+- =qtabwrite= - quick tab write. specify a table as the argument, and then you can send messages to the inlet or to qt-$1 in the format ~INDEX VALUE~
 - =qtimer= - quantizible timer. similar to =interval= but allows you to specify the granularity of output values.
 - =quote= - surrounds the input with quotes.
 - =rporta~= - relative portamento. might need work.
@@ -303,6 +311,11 @@ Here is a list of tasks and ideas for the future of the library:
 - rename =tview= to =view=
 - delete =chars= and =sym= in favor of =list fromsymbol= and =list tosymbol=
 - remove use of deprecated =%= object
+- rename (or remove?) =kinv= and =kinv~=
+- remove references to =kline~= and =kount=
+- remove =recp~= and =recsnd~= in favor of a more general buffer player?
+- rename =sndcf~= (and the like) to to =sndcr~=
+- give =parser= a more accurate name (maybe =lisp=, =lispd= ("lisp + pd"), or something along those lines)
 
 ** decrease library dependencies
 some of the functionality used by them can either be reproduced myself, or may be part of modern versions of pd.
@@ -316,7 +329,8 @@ some of the functionality used by them can either be reproduced myself, or may b
   - make =o~= and the like use =cline= for the volume controls
 - consistent color coding for different types of GUI abstractions. (is there some already-existing convention that can be followed for this?)
 - update all abstractions that contain state (=drumseq=, =anaseq=, etc) to make use of =savestate=.
-- update all abstractions to handle multiple channels using the new [[https://github.com/pure-data/pure-data/blob/c0a7c16c63e86ccc8ce05c8273ccd8aec7ae044c/doc/1.manual/x5.htm#L33][multichannel functionality]] in Pd 0.54.
+- update all abstractions to handle multiple channels using the new [[https://github.com/pure-data/pure-data/blob/c0a7c16c63e86ccc8ce05c8273ccd8aec7ae044c/doc/1.manual/x5.htm#L33][multichannel functionality]] (=snake~=, etc) in Pd 0.54.
+  - update =snd~= to support stereo samples transparently, then delete =stsnd~=.
 - add the library to [[https://github.com/pure-data/deken][Deken]].
 - write help files for all abstractions.
 
@@ -336,7 +350,6 @@ some of the functionality used by them can either be reproduced myself, or may b
 - finish =grain~= and =granular~=
 - finish =tb303~= (add accent function, perhaps improve GUI further) and =hoover~=.
 - figure out if there is a way to avoid =tri~= making loud clicks/NaNs when its shape is =-1= or =1=.
-- make a stereo version of =snd~=.
 - remove use of =cursor= object (i.e. in =sndsel=, =inputd=)?
 
 ** testing
@@ -354,7 +367,7 @@ Ideas for (unit) testing the library.
 ** not possible?
 Ideas I have and would like to implement, but which I don't think are possible in Pure Data yet, either due to bugs or missing features, or perhaps just my lack of knowing how to do so.
 
-- make =keyonchg=, =keyonoff=, etc work properly. Pd's =keyname=, =key=, =keyup=, etc, all detect keyboard "repeat" events and it doesn't seem to be possible to easily filter them to only detect "key pressed" and "key release" events.
+- make =keyonchg=, =keyonoff=, etc work properly. Pd's =keyname=, =key=, =keyup=, etc, all detect keyboard "repeat" events and it doesn't seem to be possible to easily filter them to only detect "key pressed" and "key release" events. [[https://github.com/pure-data/pure-data/issues/945][related issue]].
 - remove =span~=. motex's =pan~= object would need to accept panning as an argument for this to be possible.
 
 * More
