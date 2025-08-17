@@ -256,6 +256,7 @@ Miscellaneous utilities.
 - =*+~= - multiply and then add to a signal with one object.
 - =*+= - multiply and then add to a number with one object.
 - =autosend= - use the first item in a message as the destination for the rest of the message.
+- =char-sym= - Output a symbol consisting of a single "special" character. Currently, ~space~ and ~newline~ are supported.
 - =chars= - separate a symbol into a list of its characters.
 - =colors= - outputs a pd color when the left inlet is banged. otherwise, the inlets take floats: from left, the red amount, green amount, and blue amount.
 - =e= - "Every". Pass through every $1-th input, with an offset of $2.
@@ -280,7 +281,7 @@ Miscellaneous utilities.
 - =rporta~= - relative portamento. might need work.
 - =si~= - interface for stereo input from =adc~=. see also: =so~=.
 - =so~= - interface for stereo output to =dac~=. see also: =o~=.
-- =spacesym= - outputs a symbol that has a character that looks blank. thus, you can make symbols with "spaces" in them without them being lists. it's one of pd's quirks. don't know if this'll work everywhere.
+- =spacesym= - *DEPRECATED* - use =[char-sym space]= instead. Outputs a symbol consisting of a single space, which can be used in messages and the like to put spaces inside other symbols.
 - =span~= - simple panner. like =pan~= but lets you specify the panning position as an argument if you're lazy.
 - =sreceive~= - settable =receive~=.
 - =ssend~= - settable =send~=.
@@ -311,6 +312,7 @@ Here is a list of tasks and ideas for the future of the library:
 - finish removing =kfilename= - only =anaseq= still uses it (need to implement =savestate= support in it).
 - delete =chars= and =sym= in favor of =list fromsymbol= and =list tosymbol=
 - remove use of deprecated =%= object
+- replace uses of =spacesym= with =[char-sym space]=
 - rename (or remove?) =kinv= and =kinv~=
 - remove references to =kline~= and =kount=
 - remove =recp~= and =recsnd~= in favor of a more general buffer player?

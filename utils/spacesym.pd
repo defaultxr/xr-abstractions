@@ -1,15 +1,10 @@
-#N canvas 0 29 1600 849 10;
-#X obj 188 200 makefilename %c;
-#X msg 188 181 32;
+#N canvas 0 29 2560 1566 10;
 #X obj 188 162 bang;
 #X obj 188 143 inlet;
-#X obj 188 238 outlet;
-#X msg 188 219 symbol \$1;
-#X text 336 173 spacesym - bang the inlet to output a "space symbol"
-- useful for if you want to put spaces in labels. unfortunately pure
-data doesn't like it if you save patches with them...;
-#X connect 0 0 5 0;
+#X obj 188 200 outlet;
+#X text 287 160 spacesym - bang the inlet to output a "space symbol" - useful for if you want to put spaces in labels. unfortunately pure data doesn't like it if you save patches with them...;
+#X obj 188 181 char-sym space;
+#X text 222 94 THIS ABSTRACTION IS DEPRECATED! USE [char-sym space] INSTEAD.;
+#X connect 0 0 4 0;
 #X connect 1 0 0 0;
-#X connect 2 0 1 0;
-#X connect 3 0 2 0;
-#X connect 5 0 4 0;
+#X connect 4 0 2 0;
