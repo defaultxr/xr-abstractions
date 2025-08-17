@@ -1,4 +1,4 @@
-#N canvas 0 0 1600 849 10;
+#N canvas 0 0 2560 1566 10;
 #X obj 83 354 freeverb~;
 #X obj 56 43 inlet~;
 #X obj 134 43 inlet~;
@@ -6,19 +6,14 @@
 #X obj 83 392 outlet~;
 #X obj 134 392 outlet~;
 #X msg 83 249 roomsize \$1;
-#X obj 219 175 hsl 100 12 0 10 0 0 empty empty roomsize -2 4 0 10 -262144
--1 -1 7920 1;
+#X obj 219 175 hsl 100 12 0 10 0 0 empty empty roomsize -2 4 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 171 124 lb \$1;
-#X obj 219 187 hsl 100 12 0 10 0 0 empty empty damping -2 4 0 10 -262144
--1 -1 6930 1;
+#X obj 219 187 hsl 100 12 0 10 0 0 empty empty damping -2 4 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 207 124 lb \$2;
 #X msg 90 268 damping \$1;
-#X obj 219 199 hsl 100 12 0 10 0 0 empty empty width -2 4 0 10 -262144
--1 -1 8910 1;
-#X obj 219 211 hsl 100 12 0 10 0 0 empty empty wet -2 4 0 10 -262144
--1 -1 4950 1;
-#X obj 219 223 hsl 100 12 0 10 0 0 empty empty dry -2 4 0 10 -262144
--1 -1 4950 1;
+#X obj 219 199 hsl 100 12 0 10 0 0 empty empty width -2 4 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 219 211 hsl 100 12 0 10 0 0 empty empty wet -2 4 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 219 223 hsl 100 12 0 10 0 0 empty empty dry -2 4 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 243 124 lb \$3;
 #X obj 279 124 lb \$4;
 #X obj 315 124 lb \$5;
@@ -30,21 +25,22 @@
 #X obj 285 244 / 10;
 #X obj 319 244 / 10;
 #X obj 353 244 / 10;
-#X obj 306 160 tgl 15 0 empty empty f 5 7 0 10 -262144 -1 -1 0 1;
+#X obj 306 160 tgl 15 0 empty empty f 5 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 351 124 lb \$6;
 #X msg 417 267 freeze \$1;
-#X floatatom 217 333 5 0 0 0 - - -;
-#X floatatom 251 333 5 0 0 0 - - -;
-#X floatatom 285 333 5 0 0 0 - - -;
-#X floatatom 319 333 5 0 0 0 - - -;
-#X floatatom 353 333 5 0 0 0 - - -;
-#X obj 98 62 route roomsize size room damping damp width wet dry freeze
-bang bypass float;
+#X floatatom 217 333 5 0 0 0 - - - 0;
+#X floatatom 251 333 5 0 0 0 - - - 0;
+#X floatatom 285 333 5 0 0 0 - - - 0;
+#X floatatom 319 333 5 0 0 0 - - - 0;
+#X floatatom 353 333 5 0 0 0 - - - 0;
+#X obj 98 62 route roomsize size room damping damp width wet dry freeze bang bypass float;
 #X obj 20 284 noise~;
 #X obj 20 303 *~ 1e-09;
 #X obj 83 373 /~ 2;
 #X obj 134 373 /~ 2;
 #X msg 27 378 reset;
+#X msg 304 428 firstpassfilter \$1;
+#X obj 304 406 tgl 18 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 0 0 37 0;
 #X connect 0 1 38 0;
 #X connect 1 0 0 0;
@@ -95,4 +91,6 @@ bang bypass float;
 #X connect 37 0 4 0;
 #X connect 38 0 5 0;
 #X connect 39 0 0 0;
+#X connect 40 0 0 0;
+#X connect 41 0 40 0;
 #X coords 0 -1 1 1 105 75 1 216 160;
