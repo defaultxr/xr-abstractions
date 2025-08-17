@@ -225,6 +225,7 @@ Sequencers and similar high level control objects.
 - =proll= - piano roll-like sequencer. WIP.
 - =queue= - a first-in-first-out queue. you can enqueue things onto the queue or dequeue them from it. see also: =stack=.
 - =rchoice= - random choice from either the arguments, or from the incoming list.
+- =remap= - Remap from one set of values to another set of values.
 - =rmap= - receive map. takes as arguments a list of names to receive from, and outputs data received from them with numbers prepended.
 - =sbox= - box abstraction used by =boxseq= and =pattseq=.
 - =seqfill= - abstraction used by =drumseq='s "e" command. might remove this in the future.
