@@ -308,7 +308,6 @@ Here is a list of tasks and ideas for the future of the library:
 - document alternatives to this library, and to individual objects. for example, how does =sequencer= from ELSE compare to =map=?
 - ensure there are no object name conflicts with other popular libraries
 - finish removing =kfilename= - only =anaseq= still uses it (need to implement =savestate= support in it).
-- rename =tview= to =view=
 - delete =chars= and =sym= in favor of =list fromsymbol= and =list tosymbol=
 - remove use of deprecated =%= object
 - rename (or remove?) =kinv= and =kinv~=
