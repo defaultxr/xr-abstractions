@@ -182,10 +182,10 @@ Abstractions for altering or generating streams of numbers.
 - =minv= - "midi invert". 127 becomes 0, 0 becomes 127, and everything in between.
 - =mrange= - scale 0-127 to an arbitrary range.
 - =num= - Store and change a number with messages. Supports addition, subtraction, multiplication, and division.
-- =rangem= - scale a range to midi (0-127).
 - =reciprocal= - outputs the reciprocal of the input.
 - =round= - Round a float to a multiple of the specified number (default: 1).
 - =rrange= - random within a range (inclusive).
+- =rtom= - "Range to MIDI" - scale an arbitrary range to MIDI range (0-127).
 - =rtr= - "range to range" - scale one arbitrary range to another arbitrary range.
 - =runningmax~= - output the highest value seen in a signal.
 - =transposer= - outputs number to multiply a frequency by in order to shift it by a number of semitones (provided as input or argument)
