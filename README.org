@@ -290,6 +290,7 @@ Miscellaneous utilities.
 ** scripts
 Various Pure Data utility scripts.
 - =pd-objects-search= - Get objects used in the specified file(s) or files that reference the specified object.
+- =xr-abstractions-test= - Run the xr-abstractions test suite.
 
 * Future
 There is a lot of work to be done for this library to clean it up, fix bugs, add features, and remove deprecated/broken/unneeded abstractions. If you're using this library, keep an eye on the commit log when updating to note potentially breaking changes.
@@ -353,18 +354,6 @@ some of the functionality used by them can either be reproduced myself, or may b
 - finish =tb303~= (add accent function, perhaps improve GUI further) and =hoover~=.
 - figure out if there is a way to avoid =tri~= making loud clicks/NaNs when its shape is =-1= or =1=.
 - remove use of =cursor= object (i.e. in =sndsel=, =inputd=)?
-
-** testing
-Ideas for (unit) testing the library.
-- =pd= supports the following command line flags which will likely be useful for this:
-  - =-path= - add to the search path.
-  - =-nostdpath= - don't include the standard search paths (i.e. "extra").
-  - =-open= - open a specific patch on startup.
-  - =-verbose= - increase verbosity when starting up and searching for objects.
-  - =-nogui= - don't open the gui.
-  - =-send= - send a message on startup after patches are loaded.
-  - =-noprefs= - don't load preferences.
-  - =-batch= - run offline, as a batch process.
 
 ** not possible?
 Ideas I have and would like to implement, but which I don't think are possible in Pure Data yet, either due to bugs or missing features, or perhaps just my lack of knowing how to do so.

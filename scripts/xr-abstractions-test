@@ -1,0 +1,220 @@
+#!/usr/bin/env fish
+# xr-abstractions-test - Run the xr-abstractions test suite.
+
+# code:
+
+set -- filename (status filename)
+set -- script_dir (path dirname "$filename")
+set -- xr_dir (path resolve "$script_dir/..")
+set -- script "$(path basename $filename)"
+
+argparse -n "$script" 'h/help' 'v/verbose' 's/sections=' 't/tests=' -- $argv
+
+if set -q _flag_h
+    echo "$script - Run the xr-abstractions test suite."
+    echo "Usage: $script [arguments]"
+    echo
+    echo "  -h/--help     - Print help and exit."
+    echo "  -v/--verbose  - Tell Pd to print verbose output."
+    echo "  -s/--sections - Only run the specified sections (comma- or space-separated; without a value, list sections. Default: all)."
+    echo "  -t/--tests    - Only run the specified tests (comma- or space-separated; without a value, list tests. Default: all)."
+    echo "  -l/--logdir   - Set the directory to store logs in (default: /tmp/$script)."
+    exit
+end
+
+# utility functions
+
+function echo-header -d "Echo a header. Provide the color as the first argument and the text as the second. If the third argument is the string 'noblank', don't print a blank line before the header."
+    set -l color "$argv[1]"
+    if not test "$argv[3]" = 'noblank'
+        echo
+    end
+    set_color -b "$color" black
+    echo -n "$argv[2]"
+    set_color normal
+    echo
+end
+
+function echo-section -d "Echo the header for a section of output from this script."
+    echo-header red "$argv[1]"
+end
+
+function echo-test -d "Echo the header for a test's output from this script."
+    echo-header yellow "$argv[1]"
+end
+
+function relative-to-repo -d "Get the provided paths, but relative to the repo's root."
+    while read line
+        string replace --regex -- "^$xr_dir/" '' "$line"
+    end
+end
+
+function files-in-repo -d "Get a list of the path to each of the files in xr-abstractions (relative to the library's root) which are supposed to be documented in the README."
+    find "$xr_dir" -not -path '*/.git/*' -type f -not -name 'README.org' -not -name '*-help.pd' | relative-to-repo
+end
+
+function dirs-in-repo -d "Get a list of absolute paths to all directories in the repo. Does not recurse; only lists top-level directories."
+    find "$xr_dir" -maxdepth 1 -not -path '*/.git/*' -type d -not -name '.git' | tail -n +2
+end
+
+if set -q _flag_l
+    set log_dir "$_flag_l"
+else
+    set log_dir "/tmp/$script"
+end
+
+set sections 'all'
+if set -q _flag_s
+    set sections (string split ',' "$_flag_s" | string split ' ')
+end
+
+function run-section -d "True if the specified section should be run."
+    if test "$sections" = 'all'; return 0; end
+    if contains "$argv[1]" $sections
+        return 0
+    end
+    return 1
+end
+
+set tests 'all'
+if set -q _flag_t
+    set tests (string split ',' "$_flag_t" | string split ' ')
+end
+
+function run-test -d "True if the specified test should be run."
+    if test "$tests" = 'all'; return 0; end
+    if contains "$argv[1]" $tests
+        return 0
+    end
+    return 1
+end
+
+# Start
+
+echo-header cyan "xr-abstractions test suite - starting up..." noblank
+echo "This script: $filename"
+echo "xr-abstractions root: $xr_dir"
+
+mkdir -p "$log_dir"
+
+echo "log directory: $log_dir"
+echo -n "Will run sections: "
+printf '%s ' $sections
+echo
+echo -n "Will run tests: "
+printf '%s ' $tests
+echo
+
+# README testing
+
+set readme "$xr_dir/README.org"
+
+function org-header-contents -d "Get the content of the specified top-level org header in the text provided via stdin."
+    set -l header "$argv[1]"
+    set -l in_header 1 # 1 = not in header, 0 = in header
+    while read line
+        if string match --regex --quiet -- '^\*+ ' "$line"
+            set in_header 1
+            if string match --regex --quiet -- "^\*+ $header\$" "$line"
+                echo "Match: $line"
+                set in_header 0
+            end
+            continue
+        end
+        if test "$in_header" = 0
+            echo "$line"
+        end
+    end
+end
+
+function org-list-items -d "Get all unindented list items in the text provided via stdin."
+    while read line
+        string match -- '- *' "$line"
+    end
+end
+
+function org-monospace-text -d "Get the first instance of monospace text from each line of text provided via stdin."
+    while read line
+        string match --regex --groups-only -- '=(.+?)=' "$line"
+    end
+end
+
+function readme-documented -d "Get a list of all items (abstractions, scripts, files) that are documented in the README."
+    cat "$readme" | org-header-contents '(ctrl|demos|fx|gen|guis|math|patterns|seq|synths|utils|scripts|tests)' | org-list-items | org-monospace-text
+end
+
+function readme-undocumented -d "Get a list of all files in the repo that are not documented in the README."
+    set documented (readme-documented)
+    for file in (files-in-repo)
+        if not contains (path basename "$file" | path change-extension '') $documented
+            echo "$file"
+        end
+    end
+end
+
+function readme-missing-files -d "Get a list of all files documented in the README that don't actually exist in the repo."
+    set files (files-in-repo | path basename | path change-extension '')
+    for documented in (readme-documented)
+        if not contains "$documented" $files
+            echo "$documented"
+        end
+    end
+end
+
+if run-section 'readme'
+    echo-section 'README tests:'
+
+    if run-test 'undocumented'
+        set undocumented (readme-undocumented)
+        if test (count $undocumented) -gt 0
+            echo-test "Files that are in the library, but are undocumented in the README:"
+            printf '%s\n' $undocumented
+        end
+    end
+
+    if run-test 'missing'
+        set missing (readme-missing-files)
+        if test (count $missing) -gt 0
+            echo-test "Files that are documented in the README, but are missing from the library:"
+            printf '%s\n' $missing
+        end
+    end
+end
+
+# Check for help files - FIX
+
+if run-section 'help'
+    echo-section 'Help files:'
+
+    if run-test 'help-files'
+        echo-test ".pd files that are missing help files:"
+        set pd_files (find "$xr_dir" -type f -not -path '*/demos/*' -name '*.pd' -not -name '*-help.pd')
+        for file in $pd_files
+            path change-extension -- '-help.pd' "$file" | relative-to-repo
+        end
+    end
+end
+
+# Pure Data-based tests
+
+if run-section 'pd'
+    echo-section "Pure Data-based tests:"
+
+    if set -q _flag_v
+        set -- pd_extra_args -verbose
+    end
+
+    set pd_path_args
+
+    for dir in (dirs-in-repo)
+        set -a -- pd_path_args "-path" "$dir"
+    end
+
+    for test_file in $xr_dir/tests/*.pd
+        if not run-test (path basename "$test_file" | path change-extension ''); continue; end
+        set -l base "$(path basename "$test_file")"
+        set -l out_pre "$log_dir/$base"
+        echo-test "Test: $base:"
+        pd $pd_extra_args -noprefs -nostdpath -nogui $pd_path_args -open "$test_file" -send 'run-test bang' 2>&1 | tee "$out_pre-output.txt"
+    end
+end
