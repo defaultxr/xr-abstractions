@@ -1,19 +1,15 @@
-#N canvas 0 29 1600 849 10;
-#X obj 82 332 bswitcher~;
+#N canvas 0 29 2560 1566 10;
 #X text 299 144 bswitcher~;
-#X text 267 174 not sure why i named it 'bswitcher~'. i'm probably
-going to rename it in the future.;
-#X text 269 218 bswitcher~ allows you to switch between 2 signal inputs
-\, either by clicking on the gui with your mouse \, or by sending a
-0 or 1 to the middle inlet.;
+#X text 267 174 not sure why i named it 'bswitcher~'. i'm probably going to rename it in the future.;
+#X text 269 218 bswitcher~ allows you to switch between 2 signal inputs \, either by clicking on the gui with your mouse \, or by sending a 0 or 1 to the middle inlet.;
 #X obj 50 283 osc~ 3;
 #X obj 137 283 osc~ 300;
-#X obj 93 278 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X floatatom 93 295 5 0 0 0 - - -;
+#X obj 93 278 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 93 295 5 0 0 0 - - - 0;
 #X obj 82 379 view~;
-#X connect 0 0 8 0;
-#X connect 4 0 0 0;
-#X connect 5 0 0 2;
-#X connect 6 0 7 0;
-#X connect 7 0 0 1;
+#X obj 82 332 switcher~;
+#X connect 3 0 8 0;
+#X connect 4 0 8 2;
+#X connect 5 0 6 0;
+#X connect 6 0 8 1;
+#X connect 8 0 7 0;

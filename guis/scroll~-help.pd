@@ -1,37 +1,30 @@
-#N canvas 800 29 800 849 10;
+#N canvas 800 29 2560 1566 10;
 #X obj 134 266 scroll~;
 #X obj 134 111 osc~ 333;
 #X obj 170 152 atc~;
 #X obj 134 247 *~;
 #X obj 170 249 vcsig~;
 #X obj 170 133 osc~ 0.1;
-#X obj 170 211 bswitcher~;
-#X obj 196 173 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+#X obj 196 173 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 378 80 scroll~ - scrolling amplitude view;
-#X text 371 119 this abstraction shows you the amplitude of an incoming
-signal \, and scrolls it. right now it just uses [env~] internally
-but i might change it in the future.;
-#X text 365 185 the [tgl] stops polling the amplitude and also stops
-scrolling the view. so if you see something interesting you can pause
-it. the [nbx] changes how many milliseconds between each poll of the
-amplitude.;
+#X text 371 119 this abstraction shows you the amplitude of an incoming signal \, and scrolls it. right now it just uses [env~] internally but i might change it in the future.;
+#X text 365 185 the [tgl] stops polling the amplitude and also stops scrolling the view. so if you see something interesting you can pause it. the [nbx] changes how many milliseconds between each poll of the amplitude.;
 #X obj 193 190 aline~ 50;
 #N canvas 0 29 800 849 META 0;
 #X text 12 65 LIBRARY defaultxr;
 #X text 12 85 AUTHOR modula t. worm;
-#X text 12 105 WEBSITE http://github.com/defaultxr/pure-data-patches
-;
+#X text 12 105 WEBSITE http://github.com/defaultxr/pure-data-patches;
 #X text 12 125 RELEASE_DATE 2013;
 #X text 12 5 KEYWORDS scroll gui amplitude analysis;
 #X text 12 25 DESCRIPTION scrolling amplitude view;
 #X text 12 45 INLET_0 signal;
 #X restore 380 347 pd META;
+#X obj 170 211 switcher~;
 #X connect 1 0 3 0;
-#X connect 2 0 6 0;
+#X connect 2 0 12 0;
 #X connect 3 0 0 0;
 #X connect 5 0 2 0;
-#X connect 6 0 4 0;
-#X connect 6 0 3 1;
-#X connect 7 0 11 0;
-#X connect 11 0 6 2;
+#X connect 6 0 10 0;
+#X connect 10 0 12 2;
+#X connect 12 0 4 0;
+#X connect 12 0 3 1;
