@@ -1,4 +1,4 @@
-#N canvas 1920 30 1920 1048 10;
+#N canvas 1920 30 2560 1566 10;
 #X obj 480 236 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 497 232 this should be an X when edit mode is ON;
 #X obj 480 258 outlet;
@@ -18,6 +18,8 @@
 #X text 68 125 Edit mode is active by default on new patches and inactive by default on loaded patches. We assume that edit mode is active at first since that's the more common case. It's also less likely to cause unwanted things to happen since usually you'll want to disable functions when edit mode is on.;
 #X text 67 19 editmode - output 1 when edit mode is on \, output 0 when it's off.;
 #X text 66 62 Note that this abstraction is not 100% reliable \, because (as far as I'm currently aware) it's not possible to detect with complete certainty whether edit mode is on in a Pd patch.;
+#X text 61 232 Relevant issue: https://github.com/pure-data/pure-data/issues/819;
+#X text 59 278 Relevant pull request: https://github.com/pure-data/pure-data/pull/828;
 #X connect 0 0 2 0;
 #X connect 3 0 0 0;
 #X connect 4 0 3 0;
