@@ -25,7 +25,7 @@ Here's a list of the libraries that this one depends on. All of these should be 
 - cyclone
 - ext13 (for =receive13=, ...)
 - iemguts
-- iemlib (for =dollarg=, =any=, =unsig~=, ...)
+- iemlib (for =any=, =unsig~=, ...)
 - motex (for =pan~=, =getenv=, ...)
 - zexy (for =l=, =list2symbol=, =symbol2list=, =drip=, =makesymbol=, =nop=, ===~=, =<~=, =>~=...)
 - list-abs (for =list-drip=, =list-drip2=, =compare-any=, ...)
@@ -322,7 +322,6 @@ Here is a list of tasks and ideas for the future of the library:
 
 ** decrease library dependencies
 some of the functionality used by them can either be reproduced myself, or may be part of modern versions of pd.
-- =dollarg= can be replaced by =pdcontrol args=
 - maybe =list-drip= (list-abs) can be replaced by =drip= (zexy)?
 
 ** general/ideas

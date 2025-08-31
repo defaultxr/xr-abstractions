@@ -1,4 +1,4 @@
-#N canvas 1680 29 800 871 10;
+#N canvas 1680 29 2560 1566 10;
 #X obj 50 25 inlet~;
 #X obj 188 50 inlet;
 #X obj 50 197 outlet~;
@@ -57,7 +57,7 @@
 #X obj 59 269 s table-length-\$0;
 #X msg 67 78 set 0;
 #X obj 79 212 + 2;
-#X floatatom 178 235 5 0 0 0 - - -;
+#X floatatom 178 235 5 0 0 0 - - - 0;
 #X msg 40 154;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -84,25 +84,25 @@
 #X restore 188 109 pd parse-into-table;
 #X obj 50 178 tabread4~ table-\$0;
 #X obj 188 128 table table-\$0;
-#X obj 229 42 lb 0;
-#X obj 229 61 dollarg;
 #X obj 188 90 list;
 #X obj 50 159 +~ 1;
-#X text 349 148 td - table drawer. use messages to draw a table. accepts
-args like map does. blah blah. it's not finished yet. fix this later.
-;
+#X text 349 148 td - table drawer. use messages to draw a table. accepts args like map does. blah blah. it's not finished yet. fix this later.;
 #X obj 50 44 phasor~;
-#X floatatom 71 82 5 0 0 0 - - -;
+#X floatatom 71 82 5 0 0 0 - - - 0;
 #X obj 95 110 - 2;
-#X connect 0 0 13 0;
-#X connect 1 0 10 0;
-#X connect 3 0 14 0;
-#X connect 3 0 15 0;
-#X connect 4 0 11 0;
+#X obj 225 50 pdcontrol;
+#X obj 225 10 loadbang;
+#X msg 225 30 args;
+#X connect 0 0 11 0;
+#X connect 1 0 8 0;
+#X connect 3 0 12 0;
+#X connect 3 0 13 0;
+#X connect 4 0 9 0;
 #X connect 6 0 2 0;
-#X connect 8 0 9 0;
-#X connect 9 0 10 0;
-#X connect 10 0 5 0;
-#X connect 11 0 6 0;
-#X connect 13 0 4 0;
-#X connect 15 0 4 1;
+#X connect 8 0 5 0;
+#X connect 9 0 6 0;
+#X connect 11 0 4 0;
+#X connect 13 0 4 1;
+#X connect 14 0 8 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 0;
