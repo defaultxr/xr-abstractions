@@ -41,7 +41,7 @@ end
 
 if set -q _flag_used_by
     for file in (fileize $argv)
-        file-scan-for-pd-objects "$file2"
+        file-scan-for-pd-objects "$file"
     end | sort | uniq
 else if set -q _flag_using
     set -l object "$argv[1]"
