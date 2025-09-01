@@ -214,7 +214,6 @@ Sequencers and similar high level control objects.
 - =hashread= - read from =hash='s hash table. analogous to =table='s =tabread=.
 - =hashwrite= - write to =hash='s hash table. analogous to =table='s =tabwrite=.
 - =iadsr~= - interface ADSR envelope. WIP.
-- =ilist= - indexed list manager. insert into or remove from a list by index, just by sending messages.
 - =listman= - list manager. you can add elements to a list, remove them, check for their existence within the list, etc. you can't remove by index, only by value, so don't use this if you want to have multiple of the same element.
 - =lmap= - line map. was supposed to be used to generate a complex line. but I might delete this.
 - =map= - map bangs or floats to elements of a list provided as arguments or set via the right inlet. probably the most useful abstraction you'll ever find.
