@@ -99,8 +99,9 @@ See also: [[https://github.com/defaultxr/pd-ladspa-abstractions][pd-ladspa-abstr
 - =dist1~= - 
 - =dist2~= - 
 - =flanger~= - 
-- =gater~= - 
-- =icomb~= - 
+- =gater~= -
+- =ibob~= - Graphical interface for =bob~=.
+- =icomb~= - graphical interface for =comb~=.
 - =ifilter~= - 
 - =ifv~= - 
 - =ilattice~= - 
