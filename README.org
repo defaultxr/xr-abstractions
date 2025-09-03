@@ -259,6 +259,7 @@ Miscellaneous utilities.
 - =char-sym= - Output a symbol consisting of a single "special" character. Currently, ~space~ and ~newline~ are supported.
 - =chars= - separate a symbol into a list of its characters.
 - =colors= - outputs a pd color when the left inlet is banged. otherwise, the inlets take floats: from left, the red amount, green amount, and blue amount.
+- =detect-double-click= - Detect when the user double-clicks on an =hsl= or =vsl=.
 - =e= - "Every". Pass through every $1-th input, with an offset of $2.
 - =emptysymbol= - Test if a symbol is the empty symbol.
 - =hue_to_rgb= - convert a hue to rgb colors. see also: =colors=
