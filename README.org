@@ -55,7 +55,7 @@ Abstractions related to controlling things.
 - =cb= - control bend. shows the current value of the MIDI bend parameter, also adjusting its range to 0-127.
 - =cnum= - control number. use your keyboard's numpad to increase or decrease a number. use 8 to increase it or 2 to decrease it. probably won't work if your numlock is on.
 - =c= - midi continuous controller interface
-- =crossfade~= - graphical "crossfader". see also: =scrossfade~=
+- =crossfade~= - Graphical mono crossfader. See also: =scrossfade~=
 - =editmode= - detect whether edit mode is on or off.
 - =inputd= - input accumulator deluxe
 - =inputn= - input accumulator for numbers
@@ -77,7 +77,7 @@ Abstractions related to controlling things.
 - =numlock= - shows whether numlock is on or off and also outputs 1 or 0 depending.
 - =polys= - similar to pd's built-in =poly= but allows you to specify a specific voice with note-offs (i.e. so you can have multiple voices with the same note). WIP: voice stealing is not yet implemented.
 - =router= - routes one input (left inlet) to either the left or right outlet, depending on the state of the ratio control. the right inlet allows you to switch the outlet.
-- =scrossfade~= - graphical stereo "crossfader". see also: =crossfade~=
+- =scrossfade~= - Graphical stereo crossfader. See also: =crossfade~=
 - =sndsel= - sound selector. allows you to select a sound by browsing folders graphically, because =playlist= kind of sucks. it's a work-in-progress, but it's probably ready for regular use.
 - =switcher~= - graphically switches between 2 audio inputs. there are 3 inlets: the middle is a message inlet accepting floats to select the input to send to the outlet, while the left and right inlets are the audio inputs.
 - =switcher= - switches between outputting the left inlet or the right inlet graphically via a ratio control. you can also change the inlet by sending a "switch" message to the first inlet.
