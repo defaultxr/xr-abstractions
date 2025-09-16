@@ -41,8 +41,12 @@ end
 
 if set -q _flag_used_by
     for file in (fileize $argv)
-        file-scan-for-pd-objects "$file"
-    end | sort | uniq
+        if not test -e "$file"
+            echo "$script: Error: File does not exist: $file" >&2
+        else
+            file-scan-for-pd-objects "$file"
+        end
+    end | sort --unique
 else if set -q _flag_using
     set -l object "$argv[1]"
     set -l files $argv[2..]
@@ -50,8 +54,12 @@ else if set -q _flag_using
         set files '.'
     end
     for file in (fileize $files)
-        if file-contains-pd-object "$object" "$file"
-            echo "$file"
+        if not test -e "$file"
+            echo "$script: Error: File does not exist: $file" >&2
+        else
+            if file-contains-pd-object "$object" "$file"
+                echo "$file"
+            end
         end
     end
 else
