@@ -176,6 +176,7 @@ Abstractions for altering or generating streams of numbers.
 - =coin= - "Flip a coin" with a specific probability of landing heads. Outputs 1 on heads, 0 on tails. Defaults to 50% probability. Similar in operation to =maybe=.
 - =cta~= - "control to audio" - converts a unipolar signal (0 to 1) to a bipolar signal (-1 to 1)
 - =cta= - "control to audio" - converts unipolar numbers (0 to 1) to bipolar numbers (-1 to 1)
+- =ctr= - "control to range" - converts a unipolar number (0 to 1) to an arbitrary range specified as arguments or via inlets.
 - =ctr~= - "control to range" - converts a unipolar signal (0 to 1) to an arbitrary range specified as arguments or via inlets.
 - =kinv~= - signal inverter. 0 becomes 1, 1 becomes 0, and everything in between.
 - =kinv= - number inverter. 0 becomes 1, 1 becomes 0, and everything in between.
