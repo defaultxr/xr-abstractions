@@ -270,7 +270,6 @@ Miscellaneous utilities.
 - =limit~= - handy limiter abstraction. basically just outputs a signal limited by =limiter~= in case you're lazy like me. be warned that this introduces a delay of 64 samples, of course.
 - =list-find-1= - basically the same as =list-find= but only finds the first instance of an item in the list.
 - =list-replacer= - replaces all instances of one item in a list with another list.
-- =lists= - list store. basically works how =float= and =symbol= work, except, of course, that it's for lists.
 - =list-without= - returns a list without all instances of the specified element.
 - =marquee= - display elements of a list at regular intervals.
 - =mp3conv= - use the =lame= command-line utility to convert an mp3 to wav, storing the wav in /tmp and outputting the filename of the wav when conversion finishes. you'll need to have =lame= installed in order for this to actually work.
