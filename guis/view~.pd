@@ -1,4 +1,4 @@
-#N canvas 0 0 2560 1566 10;
+#N canvas 0 0 2880 1586 10;
 #X obj 288 94 inlet~;
 #X obj 308 233 tabwrite~ \$0-view;
 #N canvas 0 50 450 300 (subpatch) 0;
@@ -25,13 +25,10 @@
 #X obj 422 177 s \$0-set-redraw-rate;
 #X obj 363 111 route bang float rate reset;
 #N canvas 1280 1620 2560 1566 init 0;
-#X obj 23 150 outlet;
-#X obj 23 128 r \$0-set-redraw-rate;
-#X msg 23 40 \; \$1-set-redraw-rate 75 \, label_pos -85 33 \, range 11 900 \, size 3 14 \, color 0 22 13 \, send \\\$0-redraw-rate \, label cur:0 \; \$1-set-auto-redraw 1 \; \$1-view visname 0 \, edit 0 \;;
 #X obj 23 21 init \$0;
-#X connect 1 0 0 0;
-#X connect 3 0 2 0;
-#X restore 128 96 pd init;
+#X msg 23 40 \; \$1-set-redraw-rate 75 \; \$1-cnv label_pos -87 28 \, size 2 2 \, vis_size 1 1 \, color 0 22 13 \, label cur:0 \; \$1-set-auto-redraw 1 \; \$1-view visname 0 \, edit 0 \;;
+#X connect 0 0 1 0;
+#X restore 133 96 pd init;
 #X obj 482 152 s \$0-set-reset;
 #N canvas 0 0 2560 1566 analysis 0;
 #X obj 167 17 inlet~;
@@ -45,26 +42,29 @@
 #X obj 299 195 * -1;
 #X obj 296 15 r \$0-reset;
 #X obj 395 55 inlet;
-#X msg 167 309 \; \$5-set-redraw-rate label cur:\$1\$4max:\$2\$4min:\$3;
 #X obj 167 287 pack f f f s \$0;
+#X msg 167 309 \; \$5-cnv label cur:\$1\$4max:\$2\$4min:\$3;
 #X connect 0 0 1 0;
 #X connect 0 0 5 0;
 #X connect 0 0 7 0;
-#X connect 1 0 12 0;
-#X connect 2 0 12 3;
+#X connect 1 0 11 0;
+#X connect 2 0 11 3;
 #X connect 3 0 4 0;
 #X connect 4 0 2 0;
-#X connect 5 0 12 1;
+#X connect 5 0 11 1;
 #X connect 6 0 8 0;
 #X connect 7 0 6 0;
-#X connect 8 0 12 2;
+#X connect 8 0 11 2;
 #X connect 9 0 6 1;
 #X connect 9 0 5 1;
 #X connect 10 0 1 0;
-#X connect 12 0 11 0;
+#X connect 11 0 12 0;
 #X restore 272 289 pd analysis;
 #X obj 522 130 print view~: unrecognized message;
-#X floatatom 128 119 5 0 0 0 - - - 8;
+#X floatatom 133 119 4 11 999 0 - \$0-set-redraw-rate \$0-redraw-rate 8;
+#X obj 121 121 cnv 2 1 1 \$0-redraw-rate \$0-cnv cur:0
+max:0
+min:0 -87 28 0 10 #fcfcfc #fc2828 0;
 #X connect 0 0 3 0;
 #X connect 0 0 6 0;
 #X connect 0 0 21 0;
@@ -81,5 +81,4 @@
 #X connect 18 2 17 0;
 #X connect 18 3 20 0;
 #X connect 18 4 22 0;
-#X connect 19 0 23 0;
 #X coords 0 -1 1 1 150 112 1 33 119;
