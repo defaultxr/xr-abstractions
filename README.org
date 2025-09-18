@@ -266,7 +266,7 @@ Miscellaneous utilities.
 - =hue_to_rgb= - convert a hue to rgb colors. see also: =colors=
 - =interval= - outputs time between bangs, measured with =realtime=.
 - =itimer= - Timer with an interface. Shows minutes, seconds, and milliseconds.
-- =lb= - like =loadbang=, but outputs its argument at load time, rather than just a bang.
+- =lb= - *DEPRECATED.* Like =loadbang=, but outputs its argument rather than a bang. This is deprecated; just use =init= (from iemlib) instead.
 - =limit~= - handy limiter abstraction. basically just outputs a signal limited by =limiter~= in case you're lazy like me. be warned that this introduces a delay of 64 samples, of course.
 - =list-find-1= - basically the same as =list-find= but only finds the first instance of an item in the list.
 - =list-replacer= - replaces all instances of one item in a list with another list.

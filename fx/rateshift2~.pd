@@ -1,4 +1,4 @@
-#N canvas 0 0 1600 849 10;
+#N canvas 0 0 2560 1566 10;
 #X obj 63 32 inlet~;
 #X obj 166 149 vd~ \$0-rs;
 #X obj 166 170 outlet~;
@@ -7,10 +7,15 @@
 #X text 65 115 rate shifter 2;
 #X obj 166 128 *~ 100;
 #X obj 63 55 delwrite~ \$0-rs 100;
-#X obj 233 105 lb \$1 100;
+#X obj 234 85 init \$1 100;
+#X obj 234 107 sel 0;
+#X msg 234 129 100;
 #X connect 0 0 7 0;
 #X connect 1 0 2 0;
 #X connect 3 0 6 0;
 #X connect 4 0 3 0;
 #X connect 6 0 1 0;
-#X connect 8 0 6 1;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 9 1 6 1;
+#X connect 10 0 6 1;

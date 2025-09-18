@@ -9,15 +9,13 @@
 #X obj 250 359 *~ 0;
 #X obj 201 287 r \$0-mix;
 #X obj 377 280 s \$0-control;
-#N canvas 0 1620 2880 1586 internals 0;
+#N canvas 0 1620 2560 1566 internals 1;
 #X floatatom 418 223 5 0 9999 1 time_to_auto_move_to_other_side - - 0;
 #X obj 325 314 pack float float;
-#X obj 281 384 lb \$1;
 #X obj 340 274 kinv;
 #X obj 325 385 line;
 #X obj 325 294 f 1;
 #X obj 285 187 sel 127;
-#X obj 418 192 lb \$2 2000;
 #X obj 285 168 route float time bang;
 #X obj 325 334 t a b;
 #X obj 352 354 f;
