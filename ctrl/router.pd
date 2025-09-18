@@ -1,15 +1,14 @@
-#N canvas 0 29 1600 849 10;
-#X obj 127 55 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -4034 -1
--1 0;
-#X obj 69 -26 inlet;
-#X obj 88 125 outlet;
-#X obj 69 -7 route switch;
-#X obj 130 125 outlet;
-#X obj 88 91 route 0 1;
-#X obj 88 72 prepent;
-#X obj 165 -13 inlet;
-#X obj 151 36 == 0;
-#X obj 127 36 f 1;
+#N canvas 0 29 2560 1566 10;
+#X obj 127 105 hradio 15 1 0 2 empty empty empty 0 -8 0 10 #00fc04 #000000 #000000 0;
+#X obj 69 24 inlet;
+#X obj 88 175 outlet;
+#X obj 69 43 route switch;
+#X obj 130 175 outlet;
+#X obj 88 141 route 0 1;
+#X obj 88 122 prepent;
+#X obj 165 37 inlet;
+#X obj 151 86 == 0;
+#X obj 127 86 f 1;
 #X connect 0 0 6 1;
 #X connect 1 0 3 0;
 #X connect 3 0 9 0;
@@ -21,4 +20,4 @@
 #X connect 8 0 9 1;
 #X connect 9 0 0 0;
 #X connect 9 0 8 0;
-#X coords 0 -1 1 1 30 15 2 127 55;
+#X coords 0 -1 1 1 30 15 2 127 105;

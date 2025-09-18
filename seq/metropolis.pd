@@ -1,54 +1,48 @@
-#N canvas 1680 29 1600 871 10;
-#X obj 374 446 outlet~;
-#X obj 454 446 outlet~;
-#X obj 389 337 vradio 12 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 401 337 vradio 12 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 413 337 vradio 12 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 425 337 vradio 12 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 437 337 vradio 12 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 449 337 vradio 12 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 461 337 vradio 12 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 473 337 vradio 12 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 389 239 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 401 239 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 413 239 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 425 239 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 437 239 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 449 239 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 461 239 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 473 239 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 389 159 vsl 12 75 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
-#X obj 401 159 vsl 12 75 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
-#X obj 413 159 vsl 12 75 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
-#X obj 425 159 vsl 12 75 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
-#X obj 437 159 vsl 12 75 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
-#X obj 449 159 vsl 12 75 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
-#X obj 461 159 vsl 12 75 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
-#X obj 473 159 vsl 12 75 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
-#X text 291 84 Intellijel Metropolis Eurorack Sequencer clone;
-#X text 518 286 pulse count;
-#X text 648 358 gate mode;
+#N canvas 1680 29 2560 1566 10;
+#X obj 100 205 vradio 12 1 0 4 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
+#X obj 112 205 vradio 12 1 0 4 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
+#X obj 124 205 vradio 12 1 0 4 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
+#X obj 136 205 vradio 12 1 0 4 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
+#X obj 148 205 vradio 12 1 0 4 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
+#X obj 160 205 vradio 12 1 0 4 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
+#X obj 172 205 vradio 12 1 0 4 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
+#X obj 184 205 vradio 12 1 0 4 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
+#X text 30 186 pulse count;
+#X text 42 216 gate mode;
+#X text 2 42 Intellijel Metropolis-inspired sequencer;
+#X obj 58 319 outlet;
+#X obj 133 319 outlet;
+#X floatatom 100 182 1 0 8 0 - - - 16;
+#X floatatom 112 182 1 0 8 0 - - - 16;
+#X floatatom 124 182 1 0 8 0 - - - 16;
+#X floatatom 136 182 1 0 8 0 - - - 16;
+#X floatatom 148 182 1 0 8 0 - - - 16;
+#X floatatom 160 182 1 0 8 0 - - - 16;
+#X floatatom 172 182 1 0 8 0 - - - 16;
+#X floatatom 184 182 1 0 8 0 - - - 16;
+#X text 72 149 note;
+#X obj 100 117 vsl 12 64 0 63 0 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 112 117 vsl 12 64 0 63 0 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 124 117 vsl 12 64 0 63 0 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 136 117 vsl 12 64 0 63 0 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 148 117 vsl 12 64 0 63 0 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 160 117 vsl 12 64 0 63 0 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 172 117 vsl 12 64 0 63 0 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 184 117 vsl 12 64 0 63 0 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 58 281 inlet;
+#X obj 133 281 inlet;
+#N canvas 0 0 2560 1566 metropolis 0;
+#X obj 53 360 outlet;
+#X obj 133 360 outlet;
+#X obj 53 280 inlet;
+#X obj 133 280 inlet;
+#X restore 58 300 pd metropolis;
+#X floatatom 168 100 2 0 99 0 - \$0-vpatc \$0-view-pattern 0;
+#X floatatom 182 100 2 0 99 0 - \$0-playpatc \$0-play-pattern 0;
+#X obj 179 100 cnv 2 2 2 empty \$0-co 0/16 -31 -5 0 10 #fcfcfc #fc2828 0;
+#X obj 194 100 cnv 2 2 2 empty \$0-po 15 -11 -5 0 10 #fcfcfc #14e814 0;
+#X connect 30 0 32 0;
+#X connect 31 0 32 1;
+#X connect 32 0 11 0;
+#X connect 32 1 12 0;
+#X coords 0 -1 1 1 96 155 1 100 100;

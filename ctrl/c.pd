@@ -1,9 +1,9 @@
-#N canvas 1920 32 1920 1048 10;
+#N canvas 1920 32 2560 1566 10;
 #X obj 295 424 outlet;
-#X text 467 37 args: 1 - midi control number;
+#X text 467 47 args: 1 - midi control number;
 #X obj 306 145 route float symbol;
 #X obj 141 258 mrange 127;
-#X text 466 59 2 - B for bang on 127 \, number to change the range (from zero to that number) or a symbol to prefix the numbers with that symbol.;
+#X text 466 69 2 - B for bang on 127 \, number to change the range (from zero to that number) or a symbol to prefix the numbers with that symbol.;
 #X obj 182 286 spigot 1;
 #X obj 236 286 spigot 0;
 #X msg 447 277 set \, add2 \$1 \, adddollar 1;
@@ -12,7 +12,7 @@
 #X msg 358 245 1;
 #X obj 24 90 r c;
 #X obj 24 110 route \$1;
-#X obj 123 215 hsl 77 14 0 127 0 0 empty empty v15 -2 8 0 10 #9c00fc #000000 #fcfcfc 0 1;
+#X obj 123 215 hsl 77 14 0 127 0 0 empty empty v0 -2 8 0 10 #9c00fc #000000 #fcfcfc 0 1;
 #X obj 78 90 r c-\$1;
 #X obj 120 90 r c\$1;
 #X obj 156 90 ctlin \$1;
@@ -69,12 +69,13 @@
 #X obj 182 423 s \$0-c;
 #X obj 35 182 r \$0-c;
 #X obj 120 233 round;
-#X text 466 105 3 - the initial value;
+#X text 466 115 3 - the initial value;
 #X obj 306 125 any \$2;
 #X obj 206 168 lb \$3;
 #X obj 206 148 inlet;
 #X obj 358 185 symbol;
 #X obj 306 165 sel 0;
+#X text 467 16 cbang - Send a bang when the specified MIDI CC is set to 127;
 #X connect 2 0 38 0;
 #X connect 2 1 37 0;
 #X connect 2 2 37 0;
