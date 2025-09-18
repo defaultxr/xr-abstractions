@@ -163,7 +163,7 @@ Abstractions whose primary purpose is to display information.
 - =siga~= - signal analysis. shows the current value, average value, maximum and minimum values, and a =vsl= to plot the input. there is also a =bng= to reset the recorded maximum and minimum.
 - =spectrum~= - shows the FFT spectrum of the input.
 - =view= - Input view GUI. Shows the last 5 inputs received.
-- =view~= - waveform view.
+- =view~= - Audio input view GUI (oscilloscope). Shows the incoming audio as a waveform, as well as the current, maximum, and minimum values that have been received.
 - =vsig~= - "view signal". shows a graphical representation of the signal from -1 to 1.
 
 ** math
