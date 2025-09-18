@@ -22,21 +22,20 @@ Some of the abstractions I find most useful:
 * Requirements
 Here's a list of the libraries that this one depends on. All of these should be installed automatically if you're using Pd 0.48 or above.
 
-- cyclone
+- cyclone (for =accum=, =change~=, =comb~=, =count~=, =fromsymbol=, ...)
 - ext13 (for =receive13=, ...)
+- iemlib (for =any=, =unsig~=, =init=, ...)
 - iemguts
-- iemlib (for =any=, =unsig~=, ...)
 - motex (for =pan~=, =getenv=, ...)
-- zexy (for =l=, =list2symbol=, =symbol2list=, =drip=, =makesymbol=, =nop=, ===~=, =<~=, =>~=...)
-- list-abs (for =list-drip=, =list-drip2=, =compare-any=, ...)
-- hcs (for =autoscale=, =cursor=, ...)
-- markex (for =average=, ...)
+- zexy (for =l=, =list2symbol=, =symbol2list=, =drip=, =makesymbol=, =nop=, =z~=, =abs~=, ===~=, =<~=, =>~=, ...)
+- list-abs (for =list-drip=, =list-drip2=, =list-dripslow=, =list-find=, =list-idx=, =list-delete=, =list-insert=, =list-replace=, =list-rev=, =list-splat=, =compare-any=, ...)
+- hcs (for =autoscale=, =cursor=, =window_name=, ...)
+- markex (for =average=, =randomF=, ...)
 - cxc (for =bfilt2=, ...)
 - ekext (for =count=, ...)
 - freeverb (for =freeverb~=, ...)
 - jmmmp (for =prepent=, ...)
 - creb (for =bpm=, ...)
-- my local collection (for =accum=, =count~=, =fromsymbol=, =comb~=, ...)
 
 * Installation
 # FIX: improve the installation instructions (make them step-by-step)
@@ -192,6 +191,9 @@ Abstractions for altering or generating streams of numbers.
 - =runningmax~= - output the highest value seen in a signal.
 - =transposer= - outputs number to multiply a frequency by in order to shift it by a number of semitones (provided as input or argument)
 
+** patterns
+Trigger-based value generators based on the patterns systems of [[https://supercollider.github.io/][SuperCollider]] and [[https://github.com/defaultxr/cl-patterns][cl-patterns]].
+- =pseq= - Yield each element of the input list in order.
 
 ** seq
 Sequencers and similar high level control objects.
@@ -203,7 +205,7 @@ Sequencers and similar high level control objects.
 - =amap= - advanced version of =map=. has more features like random selection, insertion, deletion, and dumping the contents.
 - =anaseq= - a sequencer made of vertical sliders; supports saving, loading, multiple patterns and more.
 - =beat~= - make beats from a phasor by dividing the phasor into $1 sections and outputting a bang every $2 sections.
-- =boxseq= - 6x6 "box" sequencer. can be played in any direction, even diagonally. was an experiment. might change it later.
+- =boxseq= - *BROKEN.* 4x4 "box" sequencer. can be played in any direction, even diagonally. was an experiment. might change it later.
 - =bpma= - "bpm any". WIP.
 - =bpmm2= - was supposed to be the next version of =bpmm= with fewer outlets but I might delete this actually.
 - =bpmm= - metro/gui for outputting bangs on the downbeat, bangs on each quarter note, and numbers for each quarter note. try connecting the third outlet to =anaseq= or =drumseq=
@@ -216,7 +218,7 @@ Sequencers and similar high level control objects.
 - =hashread= - read from =hash='s hash table. analogous to =table='s =tabread=.
 - =hashwrite= - write to =hash='s hash table. analogous to =table='s =tabwrite=.
 - =iadsr~= - interface ADSR envelope. WIP.
-- =listman= - list manager. you can add elements to a list, remove them, check for their existence within the list, etc. you can't remove by index, only by value, so don't use this if you want to have multiple of the same element.
+- =listman= - *DEPRECATED.* list manager. you can add elements to a list, remove them, check for their existence within the list, etc. you can't remove by index, only by value, so don't use this if you want to have multiple of the same element.
 - =lmap= - line map. was supposed to be used to generate a complex line. but I might delete this.
 - =map= - map bangs or floats to elements of a list provided as arguments or set via the right inlet. probably the most useful abstraction you'll ever find.
 - =ometro= - "on metro". a =metro= that is on by default.
@@ -235,7 +237,7 @@ Sequencers and similar high level control objects.
 - =taptempo= - tap or send bangs to get the tempo.
 - =td~= - table draw. supposed to draw into a table via messages, but it's not finished yet. probably never will be. might delete this.
 - =tmap= - timed map that plays through the whole list with one bang.
-- =tracker= - DEPRECATED; just use messages instead. A tracker-inspired GUI that was a bad idea, isn't actually very useful, and is glitchy (can even crash Pd sometimes). Don't use it!
+- =tracker= - *DEPRECATED.* - this sucks tbh. just use messages instead. A tracker-inspired GUI that was a bad idea, isn't actually very useful, and is glitchy. it can even crash Pd sometimes! wow! don't use it!
 - =unmap= - get the index of incoming values in a list provided either as arguments or via the right inlet. This is the opposite of =map=.
 - =vslz= - extremely simple 8-step vsl-based sequencer.
 
@@ -282,7 +284,7 @@ Miscellaneous utilities.
 - =rporta~= - relative portamento. might need work.
 - =si~= - interface for stereo input from =adc~=. see also: =so~=.
 - =so~= - interface for stereo output to =dac~=. see also: =o~=.
-- =spacesym= - *DEPRECATED* - use =[char-sym space]= instead. Outputs a symbol consisting of a single space, which can be used in messages and the like to put spaces inside other symbols.
+- =spacesym= - *DEPRECATED.* - use =[char-sym space]= instead. Outputs a symbol consisting of a single space, which can be used in messages and the like to put spaces inside other symbols.
 - =span~= - simple panner. like =pan~= but lets you specify the panning position as an argument if you're lazy.
 - =sreceive~= - settable =receive~=.
 - =ssend~= - settable =send~=.
@@ -292,6 +294,9 @@ Miscellaneous utilities.
 Various Pure Data utility scripts.
 - =pd-objects-search= - Get objects used in the specified file(s) or files that reference the specified object.
 - =xr-abstractions-test= - Run the xr-abstractions test suite.
+
+** tests
+Directory containing the tests and test utilities for this library. You probably don't want to add this directory to your Pd search path.
 
 * Future
 There is a lot of work to be done for this library to clean it up, fix bugs, add features, and remove deprecated/broken/unneeded abstractions. If you're using this library, keep an eye on the commit log when updating to note potentially breaking changes.
@@ -304,7 +309,8 @@ Here is a list of tasks and ideas for the future of the library:
 - remove incomplete/broken/unneeded extensions.
 - rename =adsr= and =adsr~= to just =adr= and =adr~= and remove the sustain functionality
 - remake =adsr= and =adsr~= into actual ADSR envelopes
-- =atc=, =cta=, =atr=, and the others should probably be renamed to something like =btu=, =utb=, and =btr=, since the technical term for a signal from 0 to 1 is "unipolar" and the technical term for a signal from -1 to 1 is "bipolar"
+- =atc=, =cta=, =atr=, and the others should probably be renamed to something like =btou=, =utob=, and =btor=, since the technical term for a signal from 0 to 1 is "unipolar" and the technical term for a signal from -1 to 1 is "bipolar", and Pd's convention for conversions seems to be =xtoy= - for example =mtof=, etc.
+  - todo: =atc=, =cta=, =atr=, =rta=, =ctr=, =rtc=, =rtr=, =mrange=
 - remove a lot of the stuff in "fx", since a lot of it either sucks or isn't even original material.
 - remove usage of =fiddle~= since it is now deprecated in favor of =sigmund~= or =bonk~=.
 - use =swap= instead of a "$2 $1" message when possible.
@@ -320,10 +326,66 @@ Here is a list of tasks and ideas for the future of the library:
 - remove =recp~= and =recsnd~= in favor of a more general buffer player?
 - rename =sndcf~= (and the like) to to =sndcr~=
 - give =parser= a more accurate name (maybe =lisp=, =lispd= ("lisp + pd"), or something along those lines)
+- put all the abstractions in the top-level directory rather than subdirectories, so that multiple directories don't have to be added to Pure Data's path.
 
 ** decrease library dependencies
 some of the functionality used by them can either be reproduced myself, or may be part of modern versions of pd.
-- maybe =list-drip= (list-abs) can be replaced by =drip= (zexy)?
+- maybe =list-drip= (list-abs) can be replaced by =drip= (zexy) or vice-versa?
+- replace =nop= (zexy) with =t a=
+
+*** objects in use
+These objects are in use by at least one abstraction in the library. I need to sort through this list and check which library each of them belong to.
+- biquad~
+- bpm
+- cheby~
+- compare-any
+- count~
+- cursor
+- delta
+- edge~
+- envgen
+- f2s
+- get
+- getenv
+- interpolate
+- lattice~
+- limiter~
+- mc - in my personal collection. remove all uses of it.
+- mixer~
+- MouseState
+- nbx
+- nems
+- output~
+- pan~
+- pitchshifter~
+- plaits~
+- pointer
+- poke~
+- pow
+- q8_sqrt~
+- r13
+- rangem
+- receive13
+- rfft~
+- router
+- rpole~
+- runningmax~
+- rzero_rev~
+- sbox
+- set
+- shell
+- siga~
+- soundfiler
+- steady
+- struct
+- svf~
+- sym
+- table
+- unsymbol
+- vcf_lp4~
+- vline~
+- wavinfo
+- zerox~
 
 ** general/ideas
 - make an "examples" folder full of better examples instead of cramming as many abstractions as possible into crappy "demos"
@@ -334,6 +396,8 @@ some of the functionality used by them can either be reproduced myself, or may b
 - update all abstractions that contain state (=anaseq=, etc) to make use of =savestate=.
 - update all abstractions to handle multiple channels using the new [[https://github.com/pure-data/pure-data/blob/c0a7c16c63e86ccc8ce05c8273ccd8aec7ae044c/doc/1.manual/x5.htm#L33][multichannel functionality]] (=snake~=, etc) in Pd 0.54 (as well as improvements to it added in subsequent versions).
   - update =snd~= to support stereo samples transparently, then delete =stsnd~=.
+  - update =crossfade~= to support multichannel input, then delete =scrossfade~=.
+- make an abstraction for loading single-cycle waveforms for =tabosc4~= (maybe similar to =snd~=?). it will need to resample the waveform if it's not a power of 2 plus three.
 - add the library to [[https://github.com/pure-data/deken][Deken]].
 - write help files for all abstractions.
 
@@ -354,6 +418,19 @@ some of the functionality used by them can either be reproduced myself, or may b
 - finish =tb303~= (add accent function, perhaps improve GUI further) and =hoover~=.
 - figure out if there is a way to avoid =tri~= making loud clicks/NaNs when its shape is =-1= or =1=.
 - remove use of =cursor= object (i.e. in =sndsel=, =inputd=)?
+- =random= now supports a "hot" inlet to set the range and output at the same time. simplify any manual cold+bang inputs to just a hot input for any use of =random=.
+- remove use of =randomF= object; maybe just use multiplication + division instead.
+- allow setting the size of =view= and =view~= via their arguments.
+- remove use of manual "string manipulation" (various abstractions) in favor of =makefilename='s new capabilities in Pd 0.56.
+- remove use of =cnv= as abstraction background colors - the =pd= object supports a =colors= message as of Pd 0.56.
+- rename =cb= to =cbend=, and remove =ca= (?)
+- use =declare= in each abstraction to ensure that objects inside it are the xr objects rather than other libraries'. for example, it seems that ELSE also has an =lb=.
+- check compatibility with plugdata - try to get all abstractions to work in it, if possible.
+- replace =crossfade~= with =ifade~= or integrate =ifade~= into =crossfade~=
+- use =detect-double-click= in =vslz= (and whatever else needs it)
+
+** bugs
+- =rrange 0.05 0.2= only outputs =0.05=.
 
 ** not possible?
 Ideas I have and would like to implement, but which I don't think are possible in Pure Data yet, either due to bugs or missing features, or perhaps just my lack of knowing how to do so.
