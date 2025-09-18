@@ -143,7 +143,7 @@ function readme-documented -d "Get a list of all items (abstractions, scripts, f
     cat "$readme" | org-header-contents '(ctrl|demos|fx|gen|guis|math|patterns|seq|synths|utils|scripts|tests)' | org-list-items | org-monospace-text
 end
 
-function readme-undocumented -d "Get a list of all files in the repo that are not documented in the README."
+function readme-unlisted -d "Get a list of all files in the repo that are not documented in the README."
     set documented (readme-documented)
     for file in (files-in-repo)
         if not contains (path basename "$file" | path change-extension '') $documented
@@ -164,11 +164,11 @@ end
 if run-section 'readme'
     echo-section 'README tests:'
 
-    if run-test 'undocumented'
-        set undocumented (readme-undocumented)
-        if test (count $undocumented) -gt 0
-            echo-test "Files that are in the library, but are undocumented in the README:"
-            printf '%s\n' $undocumented
+    if run-test 'unlisted'
+        set unlisted (readme-unlisted)
+        if test (count $unlisted) -gt 0
+            echo-test "Files that are in the library, but are not listed in the README:"
+            printf '%s\n' $unlisted
         end
     end
 
@@ -181,7 +181,7 @@ if run-section 'readme'
     end
 end
 
-# Check for help files - FIX
+# Check that abstractions have help files
 
 if run-section 'help'
     echo-section 'Help files:'
@@ -190,7 +190,10 @@ if run-section 'help'
         echo-test ".pd files that are missing help files:"
         set pd_files (find "$xr_dir" -type f -not -path '*/demos/*' -name '*.pd' -not -name '*-help.pd')
         for file in $pd_files
-            path change-extension -- '-help.pd' "$file" | relative-to-repo
+            set help_file (path change-extension -- '-help.pd' "$file")
+            if not test -e "$help_file"
+                 echo "$file" | relative-to-repo
+            end
         end
     end
 end
