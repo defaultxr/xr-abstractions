@@ -70,7 +70,8 @@ Abstractions related to controlling things.
 - =kfilename= - *DEPRECATED.* Expand filenames that begin with an abbreviation. For example, =~/foo= is abbreviated to the full path of =foo= in your home directory. This abstraction is used in =snd~=, =anaseq=, and others to allow filename abbreviations.
 - =mono= - monosynth implementation (keeps track of which keys are held down, only sending the most recent, including if more than one has been pressed/held down)
 - =monos= - simpler version of mono. should work better with synths expecting input from something like =notein=.
-- =mspigot= - multi-spigot. has 5 message inlets and allows you to graphically control which of them are mixed to the outlet.
+- =mspigot= - Multi-=spigot= GUI. Five inlets are "mixed" to the outlet, passing their input only if their respective toggle is checked.
+- =mspigot~= - Multi-=spigot~= GUI. Five inlets are "mixed" to the outlet, passing their input only if their respective toggle is checked.
 - =mstr= - master. don't use it. i'll make a better version eventually, maybe.
 - =nems= - non-edit mode spigot. only allows messages to pass when edit mode is off.
 - =numlock= - shows whether numlock is on or off and also outputs 1 or 0 depending.
