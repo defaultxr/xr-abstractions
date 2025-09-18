@@ -11,8 +11,8 @@ Some of the abstractions I find most useful:
 - =snd~= - Convenient sound file access; provide a filename as the first argument to load it, then send a signal in the range 0-1 to the first inlet to read from the buffer.
 - =o~= - Output a mono signal to your DAC (speakers), with a few conveniences like a volume slider, mute toggle, and a small volume meter.
 - =so~= - Like =o~= but for stereo signals.
+- =view= - Text view; a simple GUI showing the last 5 messages to the inlet.
 - =view~= - Waveform view; basically a simple oscilloscope.
-- =tview= - Text view; a simple GUI showing the last 5 messages to the inlet.
 - =drumseq= - Four-track variable-length multi-pattern step sequencer GUI.
 - =rrange= - Random range; outputs random integers within the specified range.
 - =rchoice= - Random choice; outputs random elements from the provided list.
@@ -162,7 +162,7 @@ Abstractions whose primary purpose is to display information.
 - =scroll~= - scrolling amplitude view.
 - =siga~= - signal analysis. shows the current value, average value, maximum and minimum values, and a =vsl= to plot the input. there is also a =bng= to reset the recorded maximum and minimum.
 - =spectrum~= - shows the FFT spectrum of the input.
-- =tview= - text viewer. scrolls the last 5 received inputs.
+- =view= - Input view GUI. Shows the last 5 inputs received.
 - =view~= - waveform view.
 - =vsig~= - "view signal". shows a graphical representation of the signal from -1 to 1.
 
