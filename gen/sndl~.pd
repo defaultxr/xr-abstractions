@@ -1,4 +1,4 @@
-#N canvas 0 29 1680 1021 10;
+#N canvas 0 29 2560 1566 10;
 #X obj 275 287 inlet;
 #X obj 332 442 snd~ \$1;
 #X obj 332 461 outlet~;
@@ -9,6 +9,7 @@
 #X text 515 379 sndl~ - just a shortcut for sndcl~ and snd~;
 #X obj 332 423 sndcl~ \$2;
 #X obj 275 306 route open;
+#X obj 380 461 outlet~;
 #X connect 0 0 9 0;
 #X connect 1 0 2 0;
 #X connect 1 1 8 0;
@@ -17,5 +18,6 @@
 #X connect 5 0 8 1;
 #X connect 6 0 8 2;
 #X connect 8 0 1 0;
+#X connect 8 0 10 0;
 #X connect 9 0 3 0;
 #X connect 9 1 8 0;
